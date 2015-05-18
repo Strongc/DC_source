@@ -1,0 +1,227 @@
+
+                                   Tue Apr 07 08:54:57 2015           Page 1
+                                   Tue Apr 07 08:54:56 2015       gh_2i06k.s
+Command Line:   C:\GHS\V35\mips35\asmips.exe -noundefined -elf -b0
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos\inc
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\ConvertMono
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Font
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\LCDDriver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\MemDev
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\VNC
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Widget
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\wm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\util
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\datapoint
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\factory
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\webpage
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\xnet
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\stub
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\test
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENIusb\emUSB\USB\Driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\intercom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\controller
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\webif
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\relay
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\GENIApp
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\alarm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\AnaInConfigCtrl
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\Sms
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\display_task
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\gui_utility
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\mpcunit
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIbus
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIcom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIrs232
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\Virtual
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\imagesTFT
+                -IC:\GHS\V35\mips35\mipsl_sf -r4121 -source=GUI_Goto.c -o
+                objs\gh_2i06k.o -list=objs\GUI_Goto.lst
+                C:\Users\55602\AppData\Local\Temp\gh_2i06k.s
+Source File:    C:\Users\55602\AppData\Local\Temp\gh_2i06k.s
+Directory:      C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+Host OS:        GHS_WIN32
+Version:        AS-MIPS 3.5#11 
+Release:        MULTI 2000, MIPS v3.5
+Revision Date:  Wed Feb 27 12:19:03 2002
+Release Date:   Sat Mar 02 02:57:59 2002
+                             1	 #Source File:   C:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\GUI\Core\GUI_Goto.c
+
+                                   Tue Apr 07 08:54:57 2015           Page 2
+                                   Tue Apr 07 08:54:56 2015       gh_2i06k.s
+                             2	 #Directory:     
+                             3	 #		C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                             4	 #Compile Date:  Tue Apr 07 08:54:56 2015
+                             5	 #Host OS:       Win32
+                             6	 #Version:       C-MIPS 3.5#11 RELEASE VERSION
+                             7	 #Release:       MULTI 2000, MIPS v3.5
+                             8	 #Revision Date: Fri Mar 01 11:32:40 2002
+                             9	 #Release Date:  Sat Mar 02 02:58:48 2002
+                            10		.set	noat
+                            11		.set	noreorder
+                            12		.set	nomacro
+                            13		.text
+                            14		.align	4
+                            15	_GotoY:
+        34020000 00000000   16		ori	$2, $0, 0
+                            17	 #	    .bf
+                            18	 #	    .ef
+        3c010000 00000004   19		lui	$1, %hi(GUI_Context+40)
+        03e00008 00000008   20		jr	$ra
+        a4240000 0000000c   21		sh	$4, %lo(GUI_Context+40)($1)
+                            22		.type	_GotoY,@function
+                            23		.size	_GotoY,.-_GotoY
+                            24		.align	4
+                            25	
+                            26	 #y	$4	param
+                            27	
+                            28		.data
+                            29	.L15:
+                            30		.text
+                            31		.align	4
+                            32		.align	4
+                            33	_GotoX:
+        34020000 00000010   34		ori	$2, $0, 0
+                            35	 #	    .bf
+                            36	 #	    .ef
+        3c010000 00000014   37		lui	$1, %hi(GUI_Context+38)
+        03e00008 00000018   38		jr	$ra
+        a4240000 0000001c   39		sh	$4, %lo(GUI_Context+38)($1)
+                            40		.type	_GotoX,@function
+                            41		.size	_GotoX,.-_GotoX
+                            42		.align	4
+                            43	
+                            44	 #x	$4	param
+                            45	
+                            46		.data
+                            47	.L33:
+                            48		.text
+                            49		.align	4
+                            50		.align	4
+                            51		.globl	GUI_GotoY
+                            52	GUI_GotoY:
+        27bdfff0 00000020   53		addiu	$sp, $sp, -16
+        afbf000c 00000024   54		sw	$ra, 12($sp)
+        afb00000 00000028   55		sw	$16, 0($sp)
+                            56	 #	    .bf
+        0c000000 0000002c   57		jal	GUI_Lock
+
+                                   Tue Apr 07 08:54:57 2015           Page 3
+                                   Tue Apr 07 08:54:56 2015       gh_2i06k.s
+        00808025 00000030   58		move	$16, $4
+        0c000000 00000034   59		jal	_GotoY
+        02002025 00000038   60		move	$4, $16
+        0c000000 0000003c   61		jal	GUI_Unlock
+        00408025 00000040   62		move	$16, $2
+                            63	 #	    .ef
+        02001025 00000044   64		move	$2, $16
+        8fbf000c 00000048   65		lw	$ra, 12($sp)
+        8fb00000 0000004c   66		lw	$16, 0($sp)
+        03e00008 00000050   67		jr	$ra
+        27bd0010 00000054   68		addiu	$sp, $sp, 16
+                            69		.type	GUI_GotoY,@function
+                            70		.size	GUI_GotoY,.-GUI_GotoY
+                            71		.align	4
+                            72	
+                            73	 #y	$16	param
+                            74	
+                            75		.data
+                            76	.L51:
+                            77		.text
+                            78		.align	4
+                            79		.align	4
+                            80		.globl	GUI_GotoX
+                            81	GUI_GotoX:
+        27bdfff0 00000058   82		addiu	$sp, $sp, -16
+        afbf000c 0000005c   83		sw	$ra, 12($sp)
+        afb00000 00000060   84		sw	$16, 0($sp)
+                            85	 #	    .bf
+        0c000000 00000064   86		jal	GUI_Lock
+        00808025 00000068   87		move	$16, $4
+        0c000000 0000006c   88		jal	_GotoX
+        02002025 00000070   89		move	$4, $16
+        0c000000 00000074   90		jal	GUI_Unlock
+        00408025 00000078   91		move	$16, $2
+                            92	 #	    .ef
+        02001025 0000007c   93		move	$2, $16
+        8fbf000c 00000080   94		lw	$ra, 12($sp)
+        8fb00000 00000084   95		lw	$16, 0($sp)
+        03e00008 00000088   96		jr	$ra
+        27bd0010 0000008c   97		addiu	$sp, $sp, 16
+                            98		.type	GUI_GotoX,@function
+                            99		.size	GUI_GotoX,.-GUI_GotoX
+                           100		.align	4
+                           101	
+                           102	 #x	$16	param
+                           103	
+                           104		.data
+                           105	.L70:
+                           106		.text
+                           107		.align	4
+                           108		.align	4
+                           109		.globl	GUI_GotoXY
+                           110	GUI_GotoXY:
+        27bdfff0 00000090  111		addiu	$sp, $sp, -16
+        afbf000c 00000094  112		sw	$ra, 12($sp)
+        afb10004 00000098  113		sw	$17, 4($sp)
+
+                                   Tue Apr 07 08:54:57 2015           Page 4
+                                   Tue Apr 07 08:54:56 2015       gh_2i06k.s
+        afb00000 0000009c  114		sw	$16, 0($sp)
+        00808025 000000a0  115		move	$16, $4
+                           116	 #	    .bf
+        0c000000 000000a4  117		jal	GUI_Lock
+        00a08825 000000a8  118		move	$17, $5
+        0c000000 000000ac  119		jal	_GotoX
+        02002025 000000b0  120		move	$4, $16
+        00408025 000000b4  121		move	$16, $2
+        0c000000 000000b8  122		jal	_GotoY
+        02202025 000000bc  123		move	$4, $17
+        0c000000 000000c0  124		jal	GUI_Unlock
+        02028025 000000c4  125		or	$16, $16, $2
+                           126	 #	    .ef
+        00108600 000000c8  127		sll	$16, $16, 24
+        00108603 000000cc  128		sra	$16, $16, 24
+        02001025 000000d0  129		move	$2, $16
+        8fbf000c 000000d4  130		lw	$ra, 12($sp)
+        8fb00000 000000d8  131		lw	$16, 0($sp)
+        8fb10004 000000dc  132		lw	$17, 4($sp)
+        03e00008 000000e0  133		jr	$ra
+        27bd0010 000000e4  134		addiu	$sp, $sp, 16
+                           135		.type	GUI_GotoXY,@function
+                           136		.size	GUI_GotoXY,.-GUI_GotoXY
+                           137		.align	4
+                           138	 #r	$16	local
+                           139	
+                           140	 #x	$16	param
+                           141	 #y	$17	param
+                           142	
+                           143		.data
+                           144	.L89:
+                           145		.text
+                           146		.align	4
+                           147	 #GUI_Context	GUI_Context	import
+                           148	
+                           149		.data
+                           150		.text

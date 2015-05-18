@@ -1,0 +1,43 @@
+#!build
+default:
+	subproject
+application\driver\ipconfig\DHCPClient.cpp
+	C++
+application\driver\ipconfig\IPAddress.cpp
+	C++
+application\driver\ipconfig\IPConfigByWeb.cpp
+	C++
+application\driver\ipconfig\IPConfigErrorHandler.cpp
+	C++
+application\driver\ipconfig\IPConfiguration.cpp
+	C++
+application\driver\ipconfig\IPStackConfigurationInterface.cpp
+	C++
+application\driver\ipconfig\IPStackConfigurator.cpp
+	C++
+application\driver\ipconfig\IPUtils.cpp
+	C++
+application\driver\ipconfig\MPCNetworkDaemon.cpp
+	C++
+application\driver\ipconfig\MPCVNCServer.cpp
+	C++
+application\driver\ipconfig\MPCWebServer.cpp
+	C++
+application\driver\ipconfig\ObserverIO.cpp
+	C++
+application\driver\ipconfig\PasswordSetting.cpp
+	C++
+application\driver\ipconfig\RTIPConfigurationInterface.cpp
+	C++
+application\driver\ipconfig\RTIPDHCPClient.cpp
+	C++
+application\driver\ipconfig\Semaphore.cpp
+	C++
+application\driver\ipconfig\SubjectIO.cpp
+	C++
+application\driver\ipconfig\Thread.cpp
+	C++
+application\driver\ipconfig\MPCIPConfig.cpp
+	C++
+application\driver\ipconfig\PasswordConfiguration.cpp
+	C++

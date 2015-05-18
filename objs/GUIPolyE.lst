@@ -1,0 +1,645 @@
+
+                                   Tue Apr 07 08:56:27 2015           Page 1
+                                   Tue Apr 07 08:56:27 2015       gh_2i08i.s
+Command Line:   C:\GHS\V35\mips35\asmips.exe -noundefined -elf -b0
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos\inc
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\ConvertMono
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Font
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\LCDDriver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\MemDev
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\VNC
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Widget
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\wm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\util
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\datapoint
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\factory
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\webpage
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\xnet
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\stub
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\test
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENIusb\emUSB\USB\Driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\intercom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\controller
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\webif
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\relay
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\GENIApp
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\alarm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\AnaInConfigCtrl
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\Sms
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\display_task
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\gui_utility
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\mpcunit
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIbus
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIcom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIrs232
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\Virtual
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\imagesTFT
+                -IC:\GHS\V35\mips35\mipsl_sf -r4121 -source=GUIPolyE.c -o
+                objs\gh_2i08i.o -list=objs\GUIPolyE.lst
+                C:\Users\55602\AppData\Local\Temp\gh_2i08i.s
+Source File:    C:\Users\55602\AppData\Local\Temp\gh_2i08i.s
+Directory:      C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+Host OS:        GHS_WIN32
+Version:        AS-MIPS 3.5#11 
+Release:        MULTI 2000, MIPS v3.5
+Revision Date:  Wed Feb 27 12:19:03 2002
+Release Date:   Sat Mar 02 02:57:59 2002
+                             1	 #Source File:   C:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\GUI\Core\GUIPolyE.c
+
+                                   Tue Apr 07 08:56:27 2015           Page 2
+                                   Tue Apr 07 08:56:27 2015       gh_2i08i.s
+                             2	 #Directory:     
+                             3	 #		C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                             4	 #Compile Date:  Tue Apr 07 08:56:27 2015
+                             5	 #Host OS:       Win32
+                             6	 #Version:       C-MIPS 3.5#11 RELEASE VERSION
+                             7	 #Release:       MULTI 2000, MIPS v3.5
+                             8	 #Revision Date: Fri Mar 01 11:32:40 2002
+                             9	 #Release Date:  Sat Mar 02 02:58:48 2002
+                            10		.set	noat
+                            11		.set	noreorder
+                            12		.set	nomacro
+                            13		.text
+                            14		.align	4
+                            15	_fround:
+        27bdfff8 00000000   16		addiu	$sp, $sp, -8
+                            17	 #	    .bf
+        1880000f 00000004   18		blez	$4, .L14
+        afbf0004 00000008   19		sw	$ra, 4($sp)
+        0c000000 0000000c   20		jal	__ftod
+        00000000 00000010   21		nop
+        00602825 00000014   22		move	$5, $3
+        00402025 00000018   23		move	$4, $2
+        3c010000 0000001c   24		lui	$1, %hi(.L35)
+        8c260000 00000020   25		lw	$6, %lo(.L35)($1)
+        0c000000 00000024   26		jal	__dadd
+        8c270000 00000028   27		lw	$7, %lo(.L35+4)($1)
+        00602825 0000002c   28		move	$5, $3
+        0c000000 00000030   29		jal	__dtoi
+        00402025 00000034   30		move	$4, $2
+        8fbf0004 00000038   31		lw	$ra, 4($sp)
+        03e00008 0000003c   32		jr	$ra
+        27bd0008 00000040   33		addiu	$sp, $sp, 8
+                            34	.L14:
+        0c000000 00000044   35		jal	__ftod
+        00000000 00000048   36		nop
+        00602825 0000004c   37		move	$5, $3
+        00402025 00000050   38		move	$4, $2
+        3c010000 00000054   39		lui	$1, %hi(.L36)
+        8c260000 00000058   40		lw	$6, %lo(.L36)($1)
+        0c000000 0000005c   41		jal	__dsub
+        8c270000 00000060   42		lw	$7, %lo(.L36+4)($1)
+        00602825 00000064   43		move	$5, $3
+        0c000000 00000068   44		jal	__dtoi
+        00402025 0000006c   45		move	$4, $2
+                            46	 #	    .ef
+        8fbf0004 00000070   47		lw	$ra, 4($sp)
+        03e00008 00000074   48		jr	$ra
+        27bd0008 00000078   49		addiu	$sp, $sp, 8
+                            50		.type	_fround,@function
+                            51		.size	_fround,.-_fround
+                            52		.align	4
+                            53	
+                            54	 #f	$4	param
+                            55	
+                            56		.data
+                            57	.L34:
+
+                                   Tue Apr 07 08:56:27 2015           Page 3
+                                   Tue Apr 07 08:56:27 2015       gh_2i08i.s
+                            58		.section ".rodata","a"
+        00000000 00000000   59	.L35:	.byte	0,0,0,0
+        3fe00000 00000004   60		.byte	0,0,224,63
+        00000000 00000008   61	.L36:	.byte	0,0,0,0
+        3fe00000 0000000c   62		.byte	0,0,224,63
+                            63		.data
+                            64		.text
+                            65		.align	4
+                            66		.align	4
+                            67	_Normalize:
+        27bdffe8 0000007c   68		addiu	$sp, $sp, -24
+        afbf0014 00000080   69		sw	$ra, 20($sp)
+        afb3000c 00000084   70		sw	$19, 12($sp)
+        afb20008 00000088   71		sw	$18, 8($sp)
+        afb10004 0000008c   72		sw	$17, 4($sp)
+        afb00000 00000090   73		sw	$16, 0($sp)
+        00808025 00000094   74		move	$16, $4
+                            75	 #	    .bf
+        8e120004 00000098   76		lw	$18, 4($16)
+        8e110000 0000009c   77		lw	$17, 0($16)
+        02402025 000000a0   78		move	$4, $18
+        0c000000 000000a4   79		jal	__fmul
+        02402825 000000a8   80		move	$5, $18
+        00409825 000000ac   81		move	$19, $2
+        02202025 000000b0   82		move	$4, $17
+        0c000000 000000b4   83		jal	__fmul
+        02202825 000000b8   84		move	$5, $17
+        00402025 000000bc   85		move	$4, $2
+        0c000000 000000c0   86		jal	__fadd
+        02602825 000000c4   87		move	$5, $19
+        0c000000 000000c8   88		jal	__ftod
+        00402025 000000cc   89		move	$4, $2
+        00602825 000000d0   90		move	$5, $3
+        0c000000 000000d4   91		jal	sqrt
+        00402025 000000d8   92		move	$4, $2
+        00602825 000000dc   93		move	$5, $3
+        0c000000 000000e0   94		jal	__dtof
+        00402025 000000e4   95		move	$4, $2
+        00409825 000000e8   96		move	$19, $2
+        1a600008 000000ec   97		blez	$19, .L45
+        02202025 000000f0   98		move	$4, $17
+        0c000000 000000f4   99		jal	__fdiv
+        02602825 000000f8  100		move	$5, $19
+        ae020000 000000fc  101		sw	$2, 0($16)
+        02402025 00000100  102		move	$4, $18
+        0c000000 00000104  103		jal	__fdiv
+        02602825 00000108  104		move	$5, $19
+        ae020004 0000010c  105		sw	$2, 4($16)
+                           106	.L45:
+        8fb3000c 00000110  107		lw	$19, 12($sp)
+                           108	 #	    .ef
+        8fb20008 00000114  109		lw	$18, 8($sp)
+        8fbf0014 00000118  110		lw	$ra, 20($sp)
+        8fb00000 0000011c  111		lw	$16, 0($sp)
+        8fb10004 00000120  112		lw	$17, 4($sp)
+        03e00008 00000124  113		jr	$ra
+
+                                   Tue Apr 07 08:56:27 2015           Page 4
+                                   Tue Apr 07 08:56:27 2015       gh_2i08i.s
+        27bd0018 00000128  114		addiu	$sp, $sp, 24
+                           115		.type	_Normalize,@function
+                           116		.size	_Normalize,.-_Normalize
+                           117		.align	4
+                           118	 #fx	$17	local
+                           119	 #fy	$18	local
+                           120	 #r	$19	local
+                           121	
+                           122	 #pfPoint	$16	param
+                           123	
+                           124		.data
+                           125	.L63:
+                           126		.text
+                           127		.align	4
+                           128		.align	4
+                           129	_GetVect:
+        27bdffe8 0000012c  130		addiu	$sp, $sp, -24
+                           131	 #	    .bf
+        afbf0014 00000130  132		sw	$ra, 20($sp)
+        afb20008 00000134  133		sw	$18, 8($sp)
+        afb10004 00000138  134		sw	$17, 4($sp)
+        afb00000 0000013c  135		sw	$16, 0($sp)
+        00808025 00000140  136		move	$16, $4
+        00e6c821 00000144  137		addu	$25, $7, $6
+        2738ffff 00000148  138		addiu	$24, $25, -1
+        54c00002 0000014c  139		bnel	$6, $0, .L90
+        0306001a 00000150  140		div	$0,$24, $6
+        0007000d 00000154  141		break	7
+                           142	.L90:
+        00001810 00000158  143		mfhi	$3
+        00000000 0000015c  144		nop
+        54c00002 00000160  145		bnel	$6, $0, .L91
+        00e6001a 00000164  146		div	$0,$7, $6
+        0007000d 00000168  147		break	7
+                           148	.L91:
+        00001010 0000016c  149		mfhi	$2
+        00027880 00000170  150		sll	$15, $2, 2
+        00af8821 00000174  151		addu	$17, $5, $15
+        862d0000 00000178  152		lh	$13, 0($17)
+        00037080 0000017c  153		sll	$14, $3, 2
+        00ae9021 00000180  154		addu	$18, $5, $14
+        86590000 00000184  155		lh	$25, 0($18)
+        0c000000 00000188  156		jal	__itof
+        01b92023 0000018c  157		subu	$4, $13, $25
+        864f0002 00000190  158		lh	$15, 2($18)
+        86380002 00000194  159		lh	$24, 2($17)
+        ae020000 00000198  160		sw	$2, 0($16)
+        0c000000 0000019c  161		jal	__itof
+        030f2023 000001a0  162		subu	$4, $24, $15
+                           163	 #	    .ef
+        ae020004 000001a4  164		sw	$2, 4($16)
+        8fb20008 000001a8  165		lw	$18, 8($sp)
+        8fb10004 000001ac  166		lw	$17, 4($sp)
+        8fbf0014 000001b0  167		lw	$ra, 20($sp)
+        8fb00000 000001b4  168		lw	$16, 0($sp)
+        03e00008 000001b8  169		jr	$ra
+
+                                   Tue Apr 07 08:56:27 2015           Page 5
+                                   Tue Apr 07 08:56:27 2015       gh_2i08i.s
+        27bd0018 000001bc  170		addiu	$sp, $sp, 24
+                           171		.type	_GetVect,@function
+                           172		.size	_GetVect,.-_GetVect
+                           173		.align	4
+                           174	 #Off0	$3	local
+                           175	 #Off1	$2	local
+                           176	
+                           177	 #pfPoint	$16	param
+                           178	 #pSrc	$5	param
+                           179	 #NumPoints	$6	param
+                           180	 #Index	$7	param
+                           181	
+                           182		.data
+                           183	.L85:
+                           184		.text
+                           185		.align	4
+                           186		.align	4
+                           187		.globl	GUI_EnlargePolygon
+                           188	GUI_EnlargePolygon:
+        27bdff98 000001c0  189		addiu	$sp, $sp, -104
+                           190	 #	    .bf
+        afa00038 000001c4  191		sw	$0, 56($sp)
+        afb7001c 000001c8  192		sw	$23, 28($sp)
+        afb60018 000001cc  193		sw	$22, 24($sp)
+        afb50014 000001d0  194		sw	$21, 20($sp)
+        afb40010 000001d4  195		sw	$20, 16($sp)
+        afb00000 000001d8  196		sw	$16, 0($sp)
+        00808025 000001dc  197		move	$16, $4
+        afb10004 000001e0  198		sw	$17, 4($sp)
+        00a08825 000001e4  199		move	$17, $5
+        afb3000c 000001e8  200		sw	$19, 12($sp)
+        00e09825 000001ec  201		move	$19, $7
+        afbe0020 000001f0  202		sw	$fp, 32($sp)
+        341e0000 000001f4  203		ori	$fp, $0, 0
+        afb20008 000001f8  204		sw	$18, 8($sp)
+        00c09025 000001fc  205		move	$18, $6
+        34010000 00000200  206		ori	$1, $0, 0
+        0032c82a 00000204  207		slt	$25, $1, $18
+        13200002 00000208  208		beq	$25, $0, .L177
+        afbf0064 0000020c  209		sw	$ra, 100($sp)
+        afb20038 00000210  210		sw	$18, 56($sp)
+                           211	.L177:
+        8fa10038 00000214  212		lw	$1, 56($sp)
+        00016042 00000218  213		srl	$12, $1, 1
+        118000bb 0000021c  214		beq	$12, $0, .L119
+        afac0028 00000220  215		sw	$12, 40($sp)
+        27b40050 00000224  216		addiu	$20, $sp, 80
+        afb1002c 00000228  217		sw	$17, 44($sp)
+        afb00030 0000022c  218		sw	$16, 48($sp)
+        27ac0058 00000230  219		addiu	$12, $sp, 88
+        afac004c 00000234  220		sw	$12, 76($sp)
+        0c000000 00000238  221		jal	__itof
+        02602025 0000023c  222		move	$4, $19
+        afa20048 00000240  223		sw	$2, 72($sp)
+                           224	.L120:
+        02802025 00000244  225		move	$4, $20
+
+                                   Tue Apr 07 08:56:27 2015           Page 6
+                                   Tue Apr 07 08:56:27 2015       gh_2i08i.s
+        02202825 00000248  226		move	$5, $17
+        02403025 0000024c  227		move	$6, $18
+        0c000000 00000250  228		jal	_GetVect
+        03c03825 00000254  229		move	$7, $fp
+        27c70001 00000258  230		addiu	$7, $fp, 1
+        afa70044 0000025c  231		sw	$7, 68($sp)
+        8fa4004c 00000260  232		lw	$4, 76($sp)
+        02202825 00000264  233		move	$5, $17
+        0c000000 00000268  234		jal	_GetVect
+        02403025 0000026c  235		move	$6, $18
+        0c000000 00000270  236		jal	_Normalize
+        02802025 00000274  237		move	$4, $20
+        0c000000 00000278  238		jal	_Normalize
+        8fa4004c 0000027c  239		lw	$4, 76($sp)
+        8e840000 00000280  240		lw	$4, 0($20)
+        0c000000 00000284  241		jal	__fadd
+        8e850008 00000288  242		lw	$5, 8($20)
+        ae820000 0000028c  243		sw	$2, 0($20)
+        8e840004 00000290  244		lw	$4, 4($20)
+        0c000000 00000294  245		jal	__fadd
+        8e85000c 00000298  246		lw	$5, 12($20)
+        ae820004 0000029c  247		sw	$2, 4($20)
+        8e960000 000002a0  248		lw	$22, 0($20)
+        0040b825 000002a4  249		move	$23, $2
+        02e02025 000002a8  250		move	$4, $23
+        0c000000 000002ac  251		jal	__fmul
+        02e02825 000002b0  252		move	$5, $23
+        00402025 000002b4  253		move	$4, $2
+        0c000000 000002b8  254		jal	__fdiv
+        3c054000 000002bc  255		lui	$5, 16384
+        0040a825 000002c0  256		move	$21, $2
+        02c02025 000002c4  257		move	$4, $22
+        0c000000 000002c8  258		jal	__fmul
+        02c02825 000002cc  259		move	$5, $22
+        3c054000 000002d0  260		lui	$5, 16384
+        0c000000 000002d4  261		jal	__fdiv
+        00402025 000002d8  262		move	$4, $2
+        00402025 000002dc  263		move	$4, $2
+        0c000000 000002e0  264		jal	__fadd
+        02a02825 000002e4  265		move	$5, $21
+        0c000000 000002e8  266		jal	__ftod
+        00402025 000002ec  267		move	$4, $2
+        00602825 000002f0  268		move	$5, $3
+        0c000000 000002f4  269		jal	sqrt
+        00402025 000002f8  270		move	$4, $2
+        00602825 000002fc  271		move	$5, $3
+        0c000000 00000300  272		jal	__dtof
+        00402025 00000304  273		move	$4, $2
+        0040a825 00000308  274		move	$21, $2
+        1aa0000e 0000030c  275		blez	$21, .L124
+        02c02025 00000310  276		move	$4, $22
+        0c000000 00000314  277		jal	__fdiv
+        02a02825 00000318  278		move	$5, $21
+        00402025 0000031c  279		move	$4, $2
+        0c000000 00000320  280		jal	__fdiv
+        02a02825 00000324  281		move	$5, $21
+
+                                   Tue Apr 07 08:56:27 2015           Page 7
+                                   Tue Apr 07 08:56:27 2015       gh_2i08i.s
+        ae820000 00000328  282		sw	$2, 0($20)
+        02e02025 0000032c  283		move	$4, $23
+        0c000000 00000330  284		jal	__fdiv
+        02a02825 00000334  285		move	$5, $21
+        00402025 00000338  286		move	$4, $2
+        0c000000 0000033c  287		jal	__fdiv
+        02a02825 00000340  288		move	$5, $21
+        ae820004 00000344  289		sw	$2, 4($20)
+                           290	.L124:
+        8e840004 00000348  291		lw	$4, 4($20)
+        0c000000 0000034c  292		jal	__fmul
+        8fa50048 00000350  293		lw	$5, 72($sp)
+        0c000000 00000354  294		jal	_fround
+        00402025 00000358  295		move	$4, $2
+        0040a825 0000035c  296		move	$21, $2
+        8e840000 00000360  297		lw	$4, 0($20)
+        0c000000 00000364  298		jal	__fmul
+        8fa50048 00000368  299		lw	$5, 72($sp)
+        0c000000 0000036c  300		jal	_fround
+        00402025 00000370  301		move	$4, $2
+        8faf002c 00000374  302		lw	$15, 44($sp)
+        02802025 00000378  303		move	$4, $20
+        02202825 0000037c  304		move	$5, $17
+        85f90000 00000380  305		lh	$25, 0($15)
+        8fa10030 00000384  306		lw	$1, 48($sp)
+        02403025 00000388  307		move	$6, $18
+        03357021 0000038c  308		addu	$14, $25, $21
+        a42e0000 00000390  309		sh	$14, 0($1)
+        85ef0002 00000394  310		lh	$15, 2($15)
+        8fa70044 00000398  311		lw	$7, 68($sp)
+        27de0002 0000039c  312		addiu	$fp, $fp, 2
+        01e2c023 000003a0  313		subu	$24, $15, $2
+        0c000000 000003a4  314		jal	_GetVect
+        a4380002 000003a8  315		sh	$24, 2($1)
+        8fa4004c 000003ac  316		lw	$4, 76($sp)
+        02202825 000003b0  317		move	$5, $17
+        02403025 000003b4  318		move	$6, $18
+        0c000000 000003b8  319		jal	_GetVect
+        03c03825 000003bc  320		move	$7, $fp
+        0c000000 000003c0  321		jal	_Normalize
+        02802025 000003c4  322		move	$4, $20
+        0c000000 000003c8  323		jal	_Normalize
+        8fa4004c 000003cc  324		lw	$4, 76($sp)
+        8e840000 000003d0  325		lw	$4, 0($20)
+        0c000000 000003d4  326		jal	__fadd
+        8e850008 000003d8  327		lw	$5, 8($20)
+        ae820000 000003dc  328		sw	$2, 0($20)
+        8e840004 000003e0  329		lw	$4, 4($20)
+        0c000000 000003e4  330		jal	__fadd
+        8e85000c 000003e8  331		lw	$5, 12($20)
+        ae820004 000003ec  332		sw	$2, 4($20)
+        8e960000 000003f0  333		lw	$22, 0($20)
+        0040b825 000003f4  334		move	$23, $2
+        02e02025 000003f8  335		move	$4, $23
+        0c000000 000003fc  336		jal	__fmul
+        02e02825 00000400  337		move	$5, $23
+
+                                   Tue Apr 07 08:56:27 2015           Page 8
+                                   Tue Apr 07 08:56:27 2015       gh_2i08i.s
+        00402025 00000404  338		move	$4, $2
+        0c000000 00000408  339		jal	__fdiv
+        3c054000 0000040c  340		lui	$5, 16384
+        0040a825 00000410  341		move	$21, $2
+        02c02025 00000414  342		move	$4, $22
+        0c000000 00000418  343		jal	__fmul
+        02c02825 0000041c  344		move	$5, $22
+        00402025 00000420  345		move	$4, $2
+        0c000000 00000424  346		jal	__fdiv
+        3c054000 00000428  347		lui	$5, 16384
+        00402025 0000042c  348		move	$4, $2
+        0c000000 00000430  349		jal	__fadd
+        02a02825 00000434  350		move	$5, $21
+        0c000000 00000438  351		jal	__ftod
+        00402025 0000043c  352		move	$4, $2
+        00602825 00000440  353		move	$5, $3
+        0c000000 00000444  354		jal	sqrt
+        00402025 00000448  355		move	$4, $2
+        00602825 0000044c  356		move	$5, $3
+        0c000000 00000450  357		jal	__dtof
+        00402025 00000454  358		move	$4, $2
+        0040a825 00000458  359		move	$21, $2
+        1aa0000e 0000045c  360		blez	$21, .L127
+        02c02025 00000460  361		move	$4, $22
+        0c000000 00000464  362		jal	__fdiv
+        02a02825 00000468  363		move	$5, $21
+        00402025 0000046c  364		move	$4, $2
+        0c000000 00000470  365		jal	__fdiv
+        02a02825 00000474  366		move	$5, $21
+        ae820000 00000478  367		sw	$2, 0($20)
+        02e02025 0000047c  368		move	$4, $23
+        0c000000 00000480  369		jal	__fdiv
+        02a02825 00000484  370		move	$5, $21
+        00402025 00000488  371		move	$4, $2
+        0c000000 0000048c  372		jal	__fdiv
+        02a02825 00000490  373		move	$5, $21
+        ae820004 00000494  374		sw	$2, 4($20)
+                           375	.L127:
+        8e840004 00000498  376		lw	$4, 4($20)
+        0c000000 0000049c  377		jal	__fmul
+        8fa50048 000004a0  378		lw	$5, 72($sp)
+        0c000000 000004a4  379		jal	_fround
+        00402025 000004a8  380		move	$4, $2
+        0040a825 000004ac  381		move	$21, $2
+        8e840000 000004b0  382		lw	$4, 0($20)
+        0c000000 000004b4  383		jal	__fmul
+        8fa50048 000004b8  384		lw	$5, 72($sp)
+        0c000000 000004bc  385		jal	_fround
+        00402025 000004c0  386		move	$4, $2
+        8fae002c 000004c4  387		lw	$14, 44($sp)
+        85d80004 000004c8  388		lh	$24, 4($14)
+        8fa10030 000004cc  389		lw	$1, 48($sp)
+        0315c821 000004d0  390		addu	$25, $24, $21
+        a4390004 000004d4  391		sh	$25, 4($1)
+        85ce0006 000004d8  392		lh	$14, 6($14)
+        01c27823 000004dc  393		subu	$15, $14, $2
+
+                                   Tue Apr 07 08:56:27 2015           Page 9
+                                   Tue Apr 07 08:56:27 2015       gh_2i08i.s
+        a42f0006 000004e0  394		sh	$15, 6($1)
+        8fa1002c 000004e4  395		lw	$1, 44($sp)
+        242c0008 000004e8  396		addiu	$12, $1, 8
+        8fa10030 000004ec  397		lw	$1, 48($sp)
+        afac002c 000004f0  398		sw	$12, 44($sp)
+        242c0008 000004f4  399		addiu	$12, $1, 8
+        8fa10028 000004f8  400		lw	$1, 40($sp)
+        afac0030 000004fc  401		sw	$12, 48($sp)
+        242cffff 00000500  402		addiu	$12, $1, -1
+        1580ff4f 00000504  403		bne	$12, $0, .L120
+        afac0028 00000508  404		sw	$12, 40($sp)
+                           405	.L119:
+        8fa10038 0000050c  406		lw	$1, 56($sp)
+        302c0001 00000510  407		andi	$12, $1, 1
+        11800062 00000514  408		beq	$12, $0, .L92
+        afac0028 00000518  409		sw	$12, 40($sp)
+        001ea880 0000051c  410		sll	$21, $fp, 2
+        27ac0058 00000520  411		addiu	$12, $sp, 88
+        afac0040 00000524  412		sw	$12, 64($sp)
+        02602025 00000528  413		move	$4, $19
+        0c000000 0000052c  414		jal	__itof
+        27b40050 00000530  415		addiu	$20, $sp, 80
+        afa2003c 00000534  416		sw	$2, 60($sp)
+        02359821 00000538  417		addu	$19, $17, $21
+        02158021 0000053c  418		addu	$16, $16, $21
+                           419	.L130:
+        02802025 00000540  420		move	$4, $20
+        02202825 00000544  421		move	$5, $17
+        02403025 00000548  422		move	$6, $18
+        0c000000 0000054c  423		jal	_GetVect
+        03c03825 00000550  424		move	$7, $fp
+        27de0001 00000554  425		addiu	$fp, $fp, 1
+        8fa40040 00000558  426		lw	$4, 64($sp)
+        02202825 0000055c  427		move	$5, $17
+        02403025 00000560  428		move	$6, $18
+        0c000000 00000564  429		jal	_GetVect
+        03c03825 00000568  430		move	$7, $fp
+        0c000000 0000056c  431		jal	_Normalize
+        02802025 00000570  432		move	$4, $20
+        0c000000 00000574  433		jal	_Normalize
+        8fa40040 00000578  434		lw	$4, 64($sp)
+        8e840000 0000057c  435		lw	$4, 0($20)
+        0c000000 00000580  436		jal	__fadd
+        8e850008 00000584  437		lw	$5, 8($20)
+        ae820000 00000588  438		sw	$2, 0($20)
+        8e840004 0000058c  439		lw	$4, 4($20)
+        0c000000 00000590  440		jal	__fadd
+        8e85000c 00000594  441		lw	$5, 12($20)
+        ae820004 00000598  442		sw	$2, 4($20)
+        8e960000 0000059c  443		lw	$22, 0($20)
+        0040b825 000005a0  444		move	$23, $2
+        02e02025 000005a4  445		move	$4, $23
+        0c000000 000005a8  446		jal	__fmul
+        02e02825 000005ac  447		move	$5, $23
+        00402025 000005b0  448		move	$4, $2
+        0c000000 000005b4  449		jal	__fdiv
+
+                                   Tue Apr 07 08:56:27 2015           Page 10
+                                   Tue Apr 07 08:56:27 2015       gh_2i08i.s
+        3c054000 000005b8  450		lui	$5, 16384
+        0040a825 000005bc  451		move	$21, $2
+        02c02025 000005c0  452		move	$4, $22
+        0c000000 000005c4  453		jal	__fmul
+        02c02825 000005c8  454		move	$5, $22
+        3c054000 000005cc  455		lui	$5, 16384
+        0c000000 000005d0  456		jal	__fdiv
+        00402025 000005d4  457		move	$4, $2
+        00402025 000005d8  458		move	$4, $2
+        0c000000 000005dc  459		jal	__fadd
+        02a02825 000005e0  460		move	$5, $21
+        0c000000 000005e4  461		jal	__ftod
+        00402025 000005e8  462		move	$4, $2
+        00602825 000005ec  463		move	$5, $3
+        0c000000 000005f0  464		jal	sqrt
+        00402025 000005f4  465		move	$4, $2
+        00602825 000005f8  466		move	$5, $3
+        0c000000 000005fc  467		jal	__dtof
+        00402025 00000600  468		move	$4, $2
+        0040a825 00000604  469		move	$21, $2
+        1aa0000e 00000608  470		blez	$21, .L133
+        02c02025 0000060c  471		move	$4, $22
+        0c000000 00000610  472		jal	__fdiv
+        02a02825 00000614  473		move	$5, $21
+        00402025 00000618  474		move	$4, $2
+        0c000000 0000061c  475		jal	__fdiv
+        02a02825 00000620  476		move	$5, $21
+        ae820000 00000624  477		sw	$2, 0($20)
+        02e02025 00000628  478		move	$4, $23
+        0c000000 0000062c  479		jal	__fdiv
+        02a02825 00000630  480		move	$5, $21
+        00402025 00000634  481		move	$4, $2
+        0c000000 00000638  482		jal	__fdiv
+        02a02825 0000063c  483		move	$5, $21
+        ae820004 00000640  484		sw	$2, 4($20)
+                           485	.L133:
+        8e840004 00000644  486		lw	$4, 4($20)
+        0c000000 00000648  487		jal	__fmul
+        8fa5003c 0000064c  488		lw	$5, 60($sp)
+        0c000000 00000650  489		jal	_fround
+        00402025 00000654  490		move	$4, $2
+        0040a825 00000658  491		move	$21, $2
+        8e840000 0000065c  492		lw	$4, 0($20)
+        0c000000 00000660  493		jal	__fmul
+        8fa5003c 00000664  494		lw	$5, 60($sp)
+        0c000000 00000668  495		jal	_fround
+        00402025 0000066c  496		move	$4, $2
+        86780000 00000670  497		lh	$24, 0($19)
+        8fa10028 00000674  498		lw	$1, 40($sp)
+        26730004 00000678  499		addiu	$19, $19, 4
+        0315c821 0000067c  500		addu	$25, $24, $21
+        a6190000 00000680  501		sh	$25, 0($16)
+        866efffe 00000684  502		lh	$14, -2($19)
+        242cffff 00000688  503		addiu	$12, $1, -1
+        afac0028 0000068c  504		sw	$12, 40($sp)
+        01c27823 00000690  505		subu	$15, $14, $2
+
+                                   Tue Apr 07 08:56:27 2015           Page 11
+                                   Tue Apr 07 08:56:27 2015       gh_2i08i.s
+        26100004 00000694  506		addiu	$16, $16, 4
+        1580ffa9 00000698  507		bne	$12, $0, .L130
+        a60ffffe 0000069c  508		sh	$15, -2($16)
+                           509	.L92:
+        8fbe0020 000006a0  510		lw	$fp, 32($sp)
+                           511	 #	    .ef
+        8fb7001c 000006a4  512		lw	$23, 28($sp)
+        8fbf0064 000006a8  513		lw	$ra, 100($sp)
+        8fb00000 000006ac  514		lw	$16, 0($sp)
+        8fb10004 000006b0  515		lw	$17, 4($sp)
+        8fb20008 000006b4  516		lw	$18, 8($sp)
+        8fb3000c 000006b8  517		lw	$19, 12($sp)
+        8fb40010 000006bc  518		lw	$20, 16($sp)
+        8fb50014 000006c0  519		lw	$21, 20($sp)
+        8fb60018 000006c4  520		lw	$22, 24($sp)
+        03e00008 000006c8  521		jr	$ra
+        27bd0068 000006cc  522		addiu	$sp, $sp, 104
+                           523		.type	GUI_EnlargePolygon,@function
+                           524		.size	GUI_EnlargePolygon,.-GUI_EnlargePolygon
+                           525		.align	4
+                           526	 #j	$fp	local
+                           527	 #x	$21	local
+                           528	 #y	$3	local
+                           529	 #aVect	80($sp)	local
+                           530	 #fx	$22	local
+                           531	 #fy	$23	local
+                           532	 #r	$21	local
+                           533	
+                           534	 #pDest	$16	param
+                           535	 #pSrc	$17	param
+                           536	 #NumPoints	$18	param
+                           537	 #Len	$19	param
+                           538	
+                           539		.data
+                           540	.L176:
+                           541		.text
+                           542		.align	4
+                           543	
+                           544		.data
+                           545		.section ".rodata","a"
+                           546		.align	8
+                           547		.text

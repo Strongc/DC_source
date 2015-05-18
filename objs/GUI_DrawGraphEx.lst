@@ -1,0 +1,550 @@
+
+                                   Tue Apr 07 08:54:06 2015           Page 1
+                                   Tue Apr 07 08:54:06 2015       gh_2i05j.s
+Command Line:   C:\GHS\V35\mips35\asmips.exe -noundefined -elf -b0
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos\inc
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\ConvertMono
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Font
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\LCDDriver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\MemDev
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\VNC
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Widget
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\wm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\util
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\datapoint
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\factory
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\webpage
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\xnet
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\stub
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\test
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENIusb\emUSB\USB\Driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\intercom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\controller
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\webif
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\relay
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\GENIApp
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\alarm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\AnaInConfigCtrl
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\Sms
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\display_task
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\gui_utility
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\mpcunit
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIbus
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIcom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIrs232
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\Virtual
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\imagesTFT
+                -IC:\GHS\V35\mips35\mipsl_sf -r4121 -source=GUI_DrawGraphEx.c -o
+                objs\gh_2i05j.o -list=objs\GUI_DrawGraphEx.lst
+                C:\Users\55602\AppData\Local\Temp\gh_2i05j.s
+Source File:    C:\Users\55602\AppData\Local\Temp\gh_2i05j.s
+Directory:      C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+Host OS:        GHS_WIN32
+Version:        AS-MIPS 3.5#11 
+Release:        MULTI 2000, MIPS v3.5
+Revision Date:  Wed Feb 27 12:19:03 2002
+Release Date:   Sat Mar 02 02:57:59 2002
+                             1	 #Source File:   C:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\GUI\Core\GUI_DrawGraphEx.c
+
+                                   Tue Apr 07 08:54:06 2015           Page 2
+                                   Tue Apr 07 08:54:06 2015       gh_2i05j.s
+                             2	 #Directory:     
+                             3	 #		C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                             4	 #Compile Date:  Tue Apr 07 08:54:06 2015
+                             5	 #Host OS:       Win32
+                             6	 #Version:       C-MIPS 3.5#11 RELEASE VERSION
+                             7	 #Release:       MULTI 2000, MIPS v3.5
+                             8	 #Revision Date: Fri Mar 01 11:32:40 2002
+                             9	 #Release Date:  Sat Mar 02 02:58:48 2002
+                            10		.set	noat
+                            11		.set	noreorder
+                            12		.set	nomacro
+                            13		.text
+                            14		.align	4
+                            15		.globl	GUI_DrawGraphEx
+                            16	GUI_DrawGraphEx:
+        27bdffa0 00000000   17		addiu	$sp, $sp, -96
+        afbf005c 00000004   18		sw	$ra, 92($sp)
+        afbe0020 00000008   19		sw	$fp, 32($sp)
+        afb7001c 0000000c   20		sw	$23, 28($sp)
+        afb60018 00000010   21		sw	$22, 24($sp)
+        afb00000 00000014   22		sw	$16, 0($sp)
+        00808025 00000018   23		move	$16, $4
+        afb10004 0000001c   24		sw	$17, 4($sp)
+        00a08825 00000020   25		move	$17, $5
+        afb20008 00000024   26		sw	$18, 8($sp)
+        00c09025 00000028   27		move	$18, $6
+        afb3000c 0000002c   28		sw	$19, 12($sp)
+        00e09825 00000030   29		move	$19, $7
+        afb40010 00000034   30		sw	$20, 16($sp)
+        0100a025 00000038   31		move	$20, $8
+        afb50014 0000003c   32		sw	$21, 20($sp)
+        0120a825 00000040   33		move	$21, $9
+                            34	 #	    .bf
+        0c000000 00000044   35		jal	GUI_Lock
+        3c160000 00000048   36		lui	$22, %hi(GUI_Context)
+        26d60000 0000004c   37		addiu	$22, $22, %lo(GUI_Context)
+        8ed90044 00000050   38		lw	$25, 68($22)
+        8ed80048 00000054   39		lw	$24, 72($22)
+        34040000 00000058   40		ori	$4, $0, 0
+        02599021 0000005c   41		addu	$18, $18, $25
+        0c000000 00000060   42		jal	WM__InitIVRSearch
+        02789821 00000064   43		addu	$19, $19, $24
+        1040014a 00000068   44		beq	$2, $0, .L110
+        3aaf0001 0000006c   45		xori	$15, $21, 1
+        afb60038 00000070   46		sw	$22, 56($sp)
+        2dec0001 00000074   47		sltiu	$12, $15, 1
+        afac002c 00000078   48		sw	$12, 44($sp)
+        2e8c0001 0000007c   49		sltiu	$12, $20, 1
+        afac003c 00000080   50		sw	$12, 60($sp)
+        2eac0001 00000084   51		sltiu	$12, $21, 1
+        afac0040 00000088   52		sw	$12, 64($sp)
+        240effff 0000008c   53		addiu	$14, $0, -1
+        028e6826 00000090   54		xor	$13, $20, $14
+        2dac0001 00000094   55		sltiu	$12, $13, 1
+        afac0044 00000098   56		sw	$12, 68($sp)
+        3a990001 0000009c   57		xori	$25, $20, 1
+
+                                   Tue Apr 07 08:54:06 2015           Page 3
+                                   Tue Apr 07 08:54:06 2015       gh_2i05j.s
+        2f2c0001 000000a0   58		sltiu	$12, $25, 1
+        afac0048 000000a4   59		sw	$12, 72($sp)
+        8fa30038 000000a8   60		lw	$3, 56($sp)
+                            61	.L1000114:
+        8c630014 000000ac   62		lw	$3, 20($3)
+        846c0002 000000b0   63		lh	$12, 2($3)
+        8fa1003c 000000b4   64		lw	$1, 60($sp)
+        afac0030 000000b8   65		sw	$12, 48($sp)
+        846c0006 000000bc   66		lh	$12, 6($3)
+        afb10028 000000c0   67		sw	$17, 40($sp)
+        1420012f 000000c4   68		bne	$1, $0, .L113
+        afac0034 000000c8   69		sw	$12, 52($sp)
+        8fa10040 000000cc   70		lw	$1, 64($sp)
+        1420012c 000000d0   71		bne	$1, $0, .L113
+        02200825 000000d4   72		move	$1, $17
+        1820012a 000000d8   73		blez	$1, .L113
+        00000000 000000dc   74		nop
+        8fa10044 000000e0   75		lw	$1, 68($sp)
+        5020000c 000000e4   76		beql	$1, $0, .L1000124
+        8fa10048 000000e8   77		lw	$1, 72($sp)
+        8fa1002c 000000ec   78		lw	$1, 44($sp)
+        10200005 000000f0   79		beq	$1, $0, .L1000123
+        34160000 000000f4   80		ori	$22, $0, 0
+        1460001b 000000f8   81		bne	$3, $0, .L132
+        341e0001 000000fc   82		ori	$fp, $0, 1
+        08000000 00000100   83		j	.L1000136
+        8fac0028 00000104   84		lw	$12, 40($sp)
+                            85	.L1000123:
+        14600017 00000108   86		bne	$3, $0, .L132
+        341e0002 0000010c   87		ori	$fp, $0, 2
+        08000000 00000110   88		j	.L1000136
+        8fac0028 00000114   89		lw	$12, 40($sp)
+                            90	.L1000124:
+        1020000b 00000118   91		beq	$1, $0, .L1000128
+        8fa1002c 0000011c   92		lw	$1, 44($sp)
+        10200005 00000120   93		beq	$1, $0, .L1000127
+        34160000 00000124   94		ori	$22, $0, 0
+        1460000f 00000128   95		bne	$3, $0, .L132
+        341e0000 0000012c   96		ori	$fp, $0, 0
+        08000000 00000130   97		j	.L1000136
+        8fac0028 00000134   98		lw	$12, 40($sp)
+                            99	.L1000127:
+        1460000b 00000138  100		bne	$3, $0, .L132
+        341e0003 0000013c  101		ori	$fp, $0, 3
+        08000000 00000140  102		j	.L1000136
+        8fac0028 00000144  103		lw	$12, 40($sp)
+                           104	.L1000128:
+        10200005 00000148  105		beq	$1, $0, .L1000130
+        34160000 0000014c  106		ori	$22, $0, 0
+        14600005 00000150  107		bne	$3, $0, .L132
+        341e0004 00000154  108		ori	$fp, $0, 4
+        08000000 00000158  109		j	.L1000136
+        8fac0028 0000015c  110		lw	$12, 40($sp)
+                           111	.L1000130:
+        1060000f 00000160  112		beq	$3, $0, .L136
+        341e0005 00000164  113		ori	$fp, $0, 5
+
+                                   Tue Apr 07 08:54:06 2015           Page 4
+                                   Tue Apr 07 08:54:06 2015       gh_2i05j.s
+                           114	.L132:
+        84620000 00000168  115		lh	$2, 0($3)
+        0242c82a 0000016c  116		slt	$25, $18, $2
+        57200001 00000170  117		bnel	$25, $0, .L134
+        0052b023 00000174  118		subu	$22, $2, $18
+                           119	.L134:
+        8fac0028 00000178  120		lw	$12, 40($sp)
+        84630004 0000017c  121		lh	$3, 4($3)
+        024cc021 00000180  122		addu	$24, $18, $12
+        2718ffff 00000184  123		addiu	$24, $24, -1
+        0078702a 00000188  124		slt	$14, $3, $24
+        51c00005 0000018c  125		beql	$14, $0, .L1000136
+        8fac0028 00000190  126		lw	$12, 40($sp)
+        00726823 00000194  127		subu	$13, $3, $18
+        25ac0001 00000198  128		addiu	$12, $13, 1
+        afac0028 0000019c  129		sw	$12, 40($sp)
+                           130	.L136:
+        8fac0028 000001a0  131		lw	$12, 40($sp)
+                           132	.L1000136:
+        02ccc82a 000001a4  133		slt	$25, $22, $12
+        132000f6 000001a8  134		beq	$25, $0, .L113
+        03c01825 000001ac  135		move	$3, $fp
+        2c780003 000001b0  136		sltiu	$24, $3, 3
+        13000008 000001b4  137		beq	$24, $0, .L364
+        00000000 000001b8  138		nop
+        2463ffff 000001bc  139		addiu	$3, $3, -1
+        1060000f 000001c0  140		beq	$3, $0, .L138
+        2463ffff 000001c4  141		addiu	$3, $3, -1
+        50600019 000001c8  142		beql	$3, $0, .L1000139
+        02c0c025 000001cc  143		move	$24, $22
+        08000000 000001d0  144		j	.L1000143
+        02c07825 000001d4  145		move	$15, $22
+                           146	.L364:
+        2c6d0004 000001d8  147		sltiu	$13, $3, 4
+        55a00023 000001dc  148		bnel	$13, $0, .L1000140
+        02c0c025 000001e0  149		move	$24, $22
+        34190004 000001e4  150		ori	$25, $0, 4
+        1079002f 000001e8  151		beq	$3, $25, .L141
+        2463fffb 000001ec  152		addiu	$3, $3, -5
+        5060003b 000001f0  153		beql	$3, $0, .L1000142
+        02c0c025 000001f4  154		move	$24, $22
+        08000000 000001f8  155		j	.L1000143
+        02c07825 000001fc  156		move	$15, $22
+                           157	.L138:
+        02c07825 00000200  158		move	$15, $22
+        000f7840 00000204  159		sll	$15, $15, 1
+        020f7021 00000208  160		addu	$14, $16, $15
+        85cd0000 0000020c  161		lh	$13, 0($14)
+        8fac0028 00000210  162		lw	$12, 40($sp)
+        26d60001 00000214  163		addiu	$22, $22, 1
+        026d1823 00000218  164		subu	$3, $19, $13
+        02ccc02a 0000021c  165		slt	$24, $22, $12
+        57000049 00000220  166		bnel	$24, $0, .L1000144
+        03c01025 00000224  167		move	$2, $fp
+        08000000 00000228  168		j	.L113
+        00000000 0000022c  169		nop
+
+                                   Tue Apr 07 08:54:06 2015           Page 5
+                                   Tue Apr 07 08:54:06 2015       gh_2i05j.s
+                           170	.L1000139:
+        0018c040 00000230  171		sll	$24, $24, 1
+        02187821 00000234  172		addu	$15, $16, $24
+        85ed0000 00000238  173		lh	$13, 0($15)
+        26d60001 0000023c  174		addiu	$22, $22, 1
+        026d7023 00000240  175		subu	$14, $19, $13
+        56a00002 00000244  176		bnel	$21, $0, .L457
+        01d5001b 00000248  177		divu	$0,$14, $21
+        0007000d 0000024c  178		break	7
+                           179	.L457:
+        8fac0028 00000250  180		lw	$12, 40($sp)
+        00001812 00000254  181		mflo	$3
+        02ccc02a 00000258  182		slt	$24, $22, $12
+        5700003a 0000025c  183		bnel	$24, $0, .L1000144
+        03c01025 00000260  184		move	$2, $fp
+        08000000 00000264  185		j	.L113
+        00000000 00000268  186		nop
+                           187	.L1000140:
+        0018c040 0000026c  188		sll	$24, $24, 1
+        02187821 00000270  189		addu	$15, $16, $24
+        85ed0000 00000274  190		lh	$13, 0($15)
+        26d60001 00000278  191		addiu	$22, $22, 1
+        01b37021 0000027c  192		addu	$14, $13, $19
+        56a00002 00000280  193		bnel	$21, $0, .L458
+        01d5001b 00000284  194		divu	$0,$14, $21
+        0007000d 00000288  195		break	7
+                           196	.L458:
+        8fac0028 0000028c  197		lw	$12, 40($sp)
+        00001812 00000290  198		mflo	$3
+        02ccc02a 00000294  199		slt	$24, $22, $12
+        5700002b 00000298  200		bnel	$24, $0, .L1000144
+        03c01025 0000029c  201		move	$2, $fp
+        08000000 000002a0  202		j	.L113
+        00000000 000002a4  203		nop
+                           204	.L141:
+        02c0c025 000002a8  205		move	$24, $22
+        0018c040 000002ac  206		sll	$24, $24, 1
+        02187821 000002b0  207		addu	$15, $16, $24
+        85ed0000 000002b4  208		lh	$13, 0($15)
+        8fac0028 000002b8  209		lw	$12, 40($sp)
+        26d60001 000002bc  210		addiu	$22, $22, 1
+        01b37021 000002c0  211		addu	$14, $13, $19
+        01d40018 000002c4  212		mult	$14, $20
+        00001812 000002c8  213		mflo	$3
+        02ccc02a 000002cc  214		slt	$24, $22, $12
+        5700001d 000002d0  215		bnel	$24, $0, .L1000144
+        03c01025 000002d4  216		move	$2, $fp
+        08000000 000002d8  217		j	.L113
+        00000000 000002dc  218		nop
+                           219	.L1000142:
+        0018c040 000002e0  220		sll	$24, $24, 1
+        02187821 000002e4  221		addu	$15, $16, $24
+        85ed0000 000002e8  222		lh	$13, 0($15)
+        01b37021 000002ec  223		addu	$14, $13, $19
+        01d40018 000002f0  224		mult	$14, $20
+        0000c812 000002f4  225		mflo	$25
+
+                                   Tue Apr 07 08:54:06 2015           Page 6
+                                   Tue Apr 07 08:54:06 2015       gh_2i05j.s
+        26d60001 000002f8  226		addiu	$22, $22, 1
+        56a00002 000002fc  227		bnel	$21, $0, .L459
+        0335001b 00000300  228		divu	$0,$25, $21
+        0007000d 00000304  229		break	7
+                           230	.L459:
+        8fac0028 00000308  231		lw	$12, 40($sp)
+        00001812 0000030c  232		mflo	$3
+        02ccc02a 00000310  233		slt	$24, $22, $12
+        5700000c 00000314  234		bnel	$24, $0, .L1000144
+        03c01025 00000318  235		move	$2, $fp
+        08000000 0000031c  236		j	.L113
+        00000000 00000320  237		nop
+                           238	.L1000143:
+        000f7840 00000324  239		sll	$15, $15, 1
+        020f7021 00000328  240		addu	$14, $16, $15
+        85cd0000 0000032c  241		lh	$13, 0($14)
+        8fac0028 00000330  242		lw	$12, 40($sp)
+        26d60001 00000334  243		addiu	$22, $22, 1
+        01b31821 00000338  244		addu	$3, $13, $19
+        02ccc02a 0000033c  245		slt	$24, $22, $12
+        13000090 00000340  246		beq	$24, $0, .L113
+        03c01025 00000344  247		move	$2, $fp
+                           248	.L1000144:
+        2c590003 00000348  249		sltiu	$25, $2, 3
+        13200008 0000034c  250		beq	$25, $0, .L365
+        00000000 00000350  251		nop
+        2442ffff 00000354  252		addiu	$2, $2, -1
+        1040000e 00000358  253		beq	$2, $0, .L145
+        2442ffff 0000035c  254		addiu	$2, $2, -1
+        50400016 00000360  255		beql	$2, $0, .L1000146
+        00167040 00000364  256		sll	$14, $22, 1
+        08000000 00000368  257		j	.L1000150
+        0016c840 0000036c  258		sll	$25, $22, 1
+                           259	.L365:
+        2c4e0004 00000370  260		sltiu	$14, $2, 4
+        15c0001e 00000374  261		bne	$14, $0, .L147
+        340d0004 00000378  262		ori	$13, $0, 4
+        104d002a 0000037c  263		beq	$2, $13, .L148
+        2442fffb 00000380  264		addiu	$2, $2, -5
+        50400034 00000384  265		beql	$2, $0, .L1000149
+        0016c840 00000388  266		sll	$25, $22, 1
+        08000000 0000038c  267		j	.L1000150
+        0016c840 00000390  268		sll	$25, $22, 1
+                           269	.L145:
+        0016c840 00000394  270		sll	$25, $22, 1
+        0219c021 00000398  271		addu	$24, $16, $25
+        870f0000 0000039c  272		lh	$15, 0($24)
+        8fac0030 000003a0  273		lw	$12, 48($sp)
+        026fb823 000003a4  274		subu	$23, $19, $15
+        006c702a 000003a8  275		slt	$14, $3, $12
+        51c00046 000003ac  276		beql	$14, $0, .L1000153
+        8fa10034 000003b0  277		lw	$1, 52($sp)
+        08000000 000003b4  278		j	.L1000152
+        8fac0030 000003b8  279		lw	$12, 48($sp)
+                           280	.L1000146:
+        020e6821 000003bc  281		addu	$13, $16, $14
+
+                                   Tue Apr 07 08:54:06 2015           Page 7
+                                   Tue Apr 07 08:54:06 2015       gh_2i05j.s
+        85b80000 000003c0  282		lh	$24, 0($13)
+        0278c823 000003c4  283		subu	$25, $19, $24
+        56a00002 000003c8  284		bnel	$21, $0, .L460
+        0335001b 000003cc  285		divu	$0,$25, $21
+        0007000d 000003d0  286		break	7
+                           287	.L460:
+        8fac0030 000003d4  288		lw	$12, 48($sp)
+        0000b812 000003d8  289		mflo	$23
+        006c702a 000003dc  290		slt	$14, $3, $12
+        51c00039 000003e0  291		beql	$14, $0, .L1000153
+        8fa10034 000003e4  292		lw	$1, 52($sp)
+        08000000 000003e8  293		j	.L1000152
+        8fac0030 000003ec  294		lw	$12, 48($sp)
+                           295	.L147:
+        00167840 000003f0  296		sll	$15, $22, 1
+        020f7021 000003f4  297		addu	$14, $16, $15
+        85d90000 000003f8  298		lh	$25, 0($14)
+        03336821 000003fc  299		addu	$13, $25, $19
+        56a00002 00000400  300		bnel	$21, $0, .L461
+        01b5001b 00000404  301		divu	$0,$13, $21
+        0007000d 00000408  302		break	7
+                           303	.L461:
+        8fac0030 0000040c  304		lw	$12, 48($sp)
+        0000b812 00000410  305		mflo	$23
+        006c702a 00000414  306		slt	$14, $3, $12
+        51c0002b 00000418  307		beql	$14, $0, .L1000153
+        8fa10034 0000041c  308		lw	$1, 52($sp)
+        08000000 00000420  309		j	.L1000152
+        8fac0030 00000424  310		lw	$12, 48($sp)
+                           311	.L148:
+        0016c040 00000428  312		sll	$24, $22, 1
+        02187821 0000042c  313		addu	$15, $16, $24
+        85ed0000 00000430  314		lh	$13, 0($15)
+        8fac0030 00000434  315		lw	$12, 48($sp)
+        01b37021 00000438  316		addu	$14, $13, $19
+        01d40018 0000043c  317		mult	$14, $20
+        0000b812 00000440  318		mflo	$23
+        006c702a 00000444  319		slt	$14, $3, $12
+        51c0001f 00000448  320		beql	$14, $0, .L1000153
+        8fa10034 0000044c  321		lw	$1, 52($sp)
+        08000000 00000450  322		j	.L1000152
+        8fac0030 00000454  323		lw	$12, 48($sp)
+                           324	.L1000149:
+        0219c021 00000458  325		addu	$24, $16, $25
+        870e0000 0000045c  326		lh	$14, 0($24)
+        01d37821 00000460  327		addu	$15, $14, $19
+        01f40018 00000464  328		mult	$15, $20
+        00006812 00000468  329		mflo	$13
+        00000000 0000046c  330		nop
+        56a00002 00000470  331		bnel	$21, $0, .L462
+        01b5001b 00000474  332		divu	$0,$13, $21
+        0007000d 00000478  333		break	7
+                           334	.L462:
+        8fac0030 0000047c  335		lw	$12, 48($sp)
+        0000b812 00000480  336		mflo	$23
+        006c702a 00000484  337		slt	$14, $3, $12
+
+                                   Tue Apr 07 08:54:06 2015           Page 8
+                                   Tue Apr 07 08:54:06 2015       gh_2i05j.s
+        51c0000f 00000488  338		beql	$14, $0, .L1000153
+        8fa10034 0000048c  339		lw	$1, 52($sp)
+        08000000 00000490  340		j	.L1000152
+        8fac0030 00000494  341		lw	$12, 48($sp)
+                           342	.L1000150:
+        0219c021 00000498  343		addu	$24, $16, $25
+        870f0000 0000049c  344		lh	$15, 0($24)
+        8fac0030 000004a0  345		lw	$12, 48($sp)
+        01f3b821 000004a4  346		addu	$23, $15, $19
+        006c702a 000004a8  347		slt	$14, $3, $12
+        51c00006 000004ac  348		beql	$14, $0, .L1000153
+        8fa10034 000004b0  349		lw	$1, 52($sp)
+        8fac0030 000004b4  350		lw	$12, 48($sp)
+                           351	.L1000152:
+        02ec682a 000004b8  352		slt	$13, $23, $12
+        55a0002c 000004bc  353		bnel	$13, $0, .L1000158
+        8fac0028 000004c0  354		lw	$12, 40($sp)
+        8fa10034 000004c4  355		lw	$1, 52($sp)
+                           356	.L1000153:
+        0023c82a 000004c8  357		slt	$25, $1, $3
+        53200004 000004cc  358		beql	$25, $0, .L1000155
+        02e31021 000004d0  359		addu	$2, $23, $3
+        0037c02a 000004d4  360		slt	$24, $1, $23
+        17000024 000004d8  361		bne	$24, $0, .L158
+        02e31021 000004dc  362		addu	$2, $23, $3
+                           363	.L1000155:
+        00027fc3 000004e0  364		sra	$15, $2, 31
+        000f77c2 000004e4  365		srl	$14, $15, 31
+        01c26821 000004e8  366		addu	$13, $14, $2
+        000d6043 000004ec  367		sra	$12, $13, 1
+        01802825 000004f0  368		move	$5, $12
+        01803025 000004f4  369		move	$6, $12
+        02e3c82a 000004f8  370		slt	$25, $23, $3
+        17200012 000004fc  371		bne	$25, $0, .L157
+        afac0054 00000500  372		sw	$12, 84($sp)
+        02d26021 00000504  373		addu	$12, $22, $18
+        afac004c 00000508  374		sw	$12, 76($sp)
+        2584ffff 0000050c  375		addiu	$4, $12, -1
+        0c000000 00000510  376		jal	LCD_DrawVLine
+        00602825 00000514  377		move	$5, $3
+        8fa4004c 00000518  378		lw	$4, 76($sp)
+        8fa50054 0000051c  379		lw	$5, 84($sp)
+        0c000000 00000520  380		jal	LCD_DrawVLine
+        02e03025 00000524  381		move	$6, $23
+        8fac0028 00000528  382		lw	$12, 40($sp)
+        02e01825 0000052c  383		move	$3, $23
+        26d60001 00000530  384		addiu	$22, $22, 1
+        02ccc02a 00000534  385		slt	$24, $22, $12
+        5700ff83 00000538  386		bnel	$24, $0, .L1000144
+        03c01025 0000053c  387		move	$2, $fp
+        08000000 00000540  388		j	.L113
+        00000000 00000544  389		nop
+                           390	.L157:
+        02d26021 00000548  391		addu	$12, $22, $18
+        afac0050 0000054c  392		sw	$12, 80($sp)
+        2584ffff 00000550  393		addiu	$4, $12, -1
+
+                                   Tue Apr 07 08:54:06 2015           Page 9
+                                   Tue Apr 07 08:54:06 2015       gh_2i05j.s
+        0c000000 00000554  394		jal	LCD_DrawVLine
+        00603025 00000558  395		move	$6, $3
+        8fa40050 0000055c  396		lw	$4, 80($sp)
+        02e02825 00000560  397		move	$5, $23
+        0c000000 00000564  398		jal	LCD_DrawVLine
+        8fa60054 00000568  399		lw	$6, 84($sp)
+                           400	.L158:
+        8fac0028 0000056c  401		lw	$12, 40($sp)
+                           402	.L1000158:
+        02e01825 00000570  403		move	$3, $23
+        26d60001 00000574  404		addiu	$22, $22, 1
+        02ccc02a 00000578  405		slt	$24, $22, $12
+        5700ff72 0000057c  406		bnel	$24, $0, .L1000144
+        03c01025 00000580  407		move	$2, $fp
+                           408	.L113:
+        0c000000 00000584  409		jal	WM__GetNextIVR
+        00000000 00000588  410		nop
+        5440fec7 0000058c  411		bnel	$2, $0, .L1000114
+        8fa30038 00000590  412		lw	$3, 56($sp)
+                           413	.L110:
+        0c000000 00000594  414		jal	GUI_Unlock
+        00000000 00000598  415		nop
+                           416	 #	    .ef
+        8fb60018 0000059c  417		lw	$22, 24($sp)
+        8fb50014 000005a0  418		lw	$21, 20($sp)
+        8fb40010 000005a4  419		lw	$20, 16($sp)
+        8fb3000c 000005a8  420		lw	$19, 12($sp)
+        8fb20008 000005ac  421		lw	$18, 8($sp)
+        8fb10004 000005b0  422		lw	$17, 4($sp)
+        8fb00000 000005b4  423		lw	$16, 0($sp)
+        8fbf005c 000005b8  424		lw	$ra, 92($sp)
+        8fb7001c 000005bc  425		lw	$23, 28($sp)
+        8fbe0020 000005c0  426		lw	$fp, 32($sp)
+        03e00008 000005c4  427		jr	$ra
+        27bd0060 000005c8  428		addiu	$sp, $sp, 96
+                           429		.type	GUI_DrawGraphEx,@function
+                           430		.size	GUI_DrawGraphEx,.-GUI_DrawGraphEx
+                           431		.align	4
+                           432	 #NumPoints	40($sp)	local
+                           433	 #i	$22	local
+                           434	 #y0	$3	local
+                           435	 #y1	$23	local
+                           436	 #yClip0	48($sp)	local
+                           437	 #yClip1	52($sp)	local
+                           438	 #Method	$fp	local
+                           439	 #y01	84($sp)	local
+                           440	
+                           441	 #pay	$16	param
+                           442	 #NumPoints	$17	param
+                           443	 #x0	$18	param
+                           444	 #y0	$19	param
+                           445	 #Numerator	$20	param
+                           446	 #Denominator	$21	param
+                           447	
+                           448		.data
+                           449	.L363:
+
+                                   Tue Apr 07 08:54:06 2015           Page 10
+                                   Tue Apr 07 08:54:06 2015       gh_2i05j.s
+                           450		.text
+                           451		.align	4
+                           452	 #GUI_Context	GUI_Context	import
+                           453	
+                           454		.data
+                           455		.text

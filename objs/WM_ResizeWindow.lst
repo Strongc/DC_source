@@ -1,0 +1,253 @@
+
+                                   Tue Apr 07 08:51:29 2015           Page 1
+                                   Tue Apr 07 08:51:29 2015       gh_2i022.s
+Command Line:   C:\GHS\V35\mips35\asmips.exe -noundefined -elf -b0
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\MPC_control\source\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos\inc
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\ConvertMono
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Font
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\LCDDriver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\MemDev
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\VNC
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Widget
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\wm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\util
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\datapoint
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\factory
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\webpage
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\xnet
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\stub
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\test
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENIusb\emUSB\USB\Driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\intercom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\controller
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\webif
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\relay
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\GENIApp
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\alarm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\AnaInConfigCtrl
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\Sms
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\display_task
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\gui_utility
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\mpcunit
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIbus
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIcom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIrs232
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\Virtual
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\imagesTFT
+                -IC:\GHS\V35\mips35\mipsl_sf -r4121 -source=WM_ResizeWindow.c -o
+                objs\gh_2i022.o -list=objs\WM_ResizeWindow.lst
+                C:\Users\55602\AppData\Local\Temp\gh_2i022.s
+Source File:    C:\Users\55602\AppData\Local\Temp\gh_2i022.s
+Directory:      C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+Host OS:        GHS_WIN32
+Version:        AS-MIPS 3.5#11 
+Release:        MULTI 2000, MIPS v3.5
+Revision Date:  Wed Feb 27 12:19:03 2002
+Release Date:   Sat Mar 02 02:57:59 2002
+                             1	 #Source File:   C:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\GUI\WM\WM_ResizeWindow.c
+
+                                   Tue Apr 07 08:51:29 2015           Page 2
+                                   Tue Apr 07 08:51:29 2015       gh_2i022.s
+                             2	 #Directory:     
+                             3	 #		C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                             4	 #Compile Date:  Tue Apr 07 08:51:29 2015
+                             5	 #Host OS:       Win32
+                             6	 #Version:       C-MIPS 3.5#11 RELEASE VERSION
+                             7	 #Release:       MULTI 2000, MIPS v3.5
+                             8	 #Revision Date: Fri Mar 01 11:32:40 2002
+                             9	 #Release Date:  Sat Mar 02 02:58:48 2002
+                            10		.set	noat
+                            11		.set	noreorder
+                            12		.set	nomacro
+                            13		.text
+                            14		.align	4
+                            15		.globl	WM_ResizeWindow
+                            16	WM_ResizeWindow:
+        27bdffd0 00000000   17		addiu	$sp, $sp, -48
+                            18	 #	    .bf
+        afb00000 00000004   19		sw	$16, 0($sp)
+        00048400 00000008   20		sll	$16, $4, 16
+        00108403 0000000c   21		sra	$16, $16, 16
+        afb3000c 00000010   22		sw	$19, 12($sp)
+        afb10004 00000014   23		sw	$17, 4($sp)
+        00a08825 00000018   24		move	$17, $5
+        afb20008 0000001c   25		sw	$18, 8($sp)
+        00c09025 00000020   26		move	$18, $6
+        0232c825 00000024   27		or	$25, $17, $18
+        13200068 00000028   28		beq	$25, $0, .L2
+        afbf002c 0000002c   29		sw	$ra, 44($sp)
+        52000067 00000030   30		beql	$16, $0, .L1000002
+        8fb3000c 00000034   31		lw	$19, 12($sp)
+        0c000000 00000038   32		jal	GUI_Lock
+        00000000 0000003c   33		nop
+        0c000000 00000040   34		jal	GUI_ALLOC_h2p
+        02002025 00000044   35		move	$4, $16
+        00409825 00000048   36		move	$19, $2
+        86790004 0000004c   37		lh	$25, 4($19)
+        86630000 00000050   38		lh	$3, 0($19)
+        86780006 00000054   39		lh	$24, 6($19)
+        86620002 00000058   40		lh	$2, 2($19)
+        a7b90024 0000005c   41		sh	$25, 36($sp)
+        a7b80026 00000060   42		sh	$24, 38($sp)
+        8fae0024 00000064   43		lw	$14, 36($sp)
+        a7a30020 00000068   44		sh	$3, 32($sp)
+        a7a20022 0000006c   45		sh	$2, 34($sp)
+        8faf0020 00000070   46		lw	$15, 32($sp)
+        afae001c 00000074   47		sw	$14, 28($sp)
+        12200010 00000078   48		beq	$17, $0, .L8
+        afaf0018 0000007c   49		sw	$15, 24($sp)
+        9663001c 00000080   50		lhu	$3, 28($19)
+        30790080 00000084   51		andi	$25, $3, 128
+        13200009 00000088   52		beq	$25, $0, .L10
+        306f0200 0000008c   53		andi	$15, $3, 512
+        55e00008 00000090   54		bnel	$15, $0, .L1000010
+        87b9001c 00000094   55		lh	$25, 28($sp)
+        87ad0018 00000098   56		lh	$13, 24($sp)
+        01b16823 0000009c   57		subu	$13, $13, $17
+
+                                   Tue Apr 07 08:51:29 2015           Page 3
+                                   Tue Apr 07 08:51:29 2015       gh_2i022.s
+        12400022 000000a0   58		beq	$18, $0, .L14
+        a7ad0018 000000a4   59		sh	$13, 24($sp)
+        08000000 000000a8   60		j	.L1000015
+        9663001c 000000ac   61		lhu	$3, 28($19)
+                            62	.L10:
+        87b9001c 000000b0   63		lh	$25, 28($sp)
+                            64	.L1000010:
+        0331c821 000000b4   65		addu	$25, $25, $17
+        a7b9001c 000000b8   66		sh	$25, 28($sp)
+                            67	.L8:
+        5240001c 000000bc   68		beql	$18, $0, .L1000014
+        87a30018 000000c0   69		lh	$3, 24($sp)
+        9663001c 000000c4   70		lhu	$3, 28($19)
+                            71	.L1000015:
+        306f0100 000000c8   72		andi	$15, $3, 256
+        11e00014 000000cc   73		beq	$15, $0, .L16
+        306d0400 000000d0   74		andi	$13, $3, 1024
+        55a00013 000000d4   75		bnel	$13, $0, .L1000016
+        87af001e 000000d8   76		lh	$15, 30($sp)
+        87b8001a 000000dc   77		lh	$24, 26($sp)
+        87a30018 000000e0   78		lh	$3, 24($sp)
+        87b9001c 000000e4   79		lh	$25, 28($sp)
+        0312c023 000000e8   80		subu	$24, $24, $18
+        a7b8001a 000000ec   81		sh	$24, 26($sp)
+        03001025 000000f0   82		move	$2, $24
+        87b8001e 000000f4   83		lh	$24, 30($sp)
+        a6620002 000000f8   84		sh	$2, 2($19)
+        a6780006 000000fc   85		sh	$24, 6($19)
+        9678001c 00000100   86		lhu	$24, 28($19)
+        a6790004 00000104   87		sh	$25, 4($19)
+        a6630000 00000108   88		sh	$3, 0($19)
+        33190002 0000010c   89		andi	$25, $24, 2
+        53200019 00000110   90		beql	$25, $0, .L1000020
+        87b80022 00000114   91		lh	$24, 34($sp)
+        08000000 00000118   92		j	.L1000021
+        27b10010 0000011c   93		addiu	$17, $sp, 16
+                            94	.L16:
+        87af001e 00000120   95		lh	$15, 30($sp)
+                            96	.L1000016:
+        01f27821 00000124   97		addu	$15, $15, $18
+        a7af001e 00000128   98		sh	$15, 30($sp)
+                            99	.L14:
+        87a30018 0000012c  100		lh	$3, 24($sp)
+                           101	.L1000014:
+        87b8001e 00000130  102		lh	$24, 30($sp)
+        87a2001a 00000134  103		lh	$2, 26($sp)
+        87b9001c 00000138  104		lh	$25, 28($sp)
+        a6780006 0000013c  105		sh	$24, 6($19)
+        9678001c 00000140  106		lhu	$24, 28($19)
+        a6620002 00000144  107		sh	$2, 2($19)
+        a6790004 00000148  108		sh	$25, 4($19)
+        33190002 0000014c  109		andi	$25, $24, 2
+        13200008 00000150  110		beq	$25, $0, .L20
+        a6630000 00000154  111		sh	$3, 0($19)
+        27b10010 00000158  112		addiu	$17, $sp, 16
+                           113	.L1000021:
+
+                                   Tue Apr 07 08:51:29 2015           Page 4
+                                   Tue Apr 07 08:51:29 2015       gh_2i022.s
+        02202025 0000015c  114		move	$4, $17
+        27a50020 00000160  115		addiu	$5, $sp, 32
+        0c000000 00000164  116		jal	GUI_MergeRect
+        27a60018 00000168  117		addiu	$6, $sp, 24
+        0c000000 0000016c  118		jal	WM_InvalidateArea
+        02202025 00000170  119		move	$4, $17
+                           120	.L20:
+        87b80022 00000174  121		lh	$24, 34($sp)
+                           122	.L1000020:
+        87b9001a 00000178  123		lh	$25, 26($sp)
+        02602025 0000017c  124		move	$4, $19
+        87ad0020 00000180  125		lh	$13, 32($sp)
+        87ae0018 00000184  126		lh	$14, 24($sp)
+        03383023 00000188  127		subu	$6, $25, $24
+        87af001c 0000018c  128		lh	$15, 28($sp)
+        01cd2823 00000190  129		subu	$5, $14, $13
+        87ae0024 00000194  130		lh	$14, 36($sp)
+        87b90026 00000198  131		lh	$25, 38($sp)
+        87ad001e 0000019c  132		lh	$13, 30($sp)
+        01ee3823 000001a0  133		subu	$7, $15, $14
+        0c000000 000001a4  134		jal	WM__UpdateChildPositions
+        01b94023 000001a8  135		subu	$8, $13, $25
+        26640008 000001ac  136		addiu	$4, $19, 8
+        0c000000 000001b0  137		jal	GUI__IntersectRect
+        02602825 000001b4  138		move	$5, $19
+        02002025 000001b8  139		move	$4, $16
+        0c000000 000001bc  140		jal	WM__SendMsgNoData
+        34050005 000001c0  141		ori	$5, $0, 5
+        0c000000 000001c4  142		jal	GUI_Unlock
+        00000000 000001c8  143		nop
+                           144	.L2:
+        8fb3000c 000001cc  145		lw	$19, 12($sp)
+                           146	.L1000002:
+                           147	 #	    .ef
+        8fb20008 000001d0  148		lw	$18, 8($sp)
+        8fbf002c 000001d4  149		lw	$ra, 44($sp)
+        8fb00000 000001d8  150		lw	$16, 0($sp)
+        8fb10004 000001dc  151		lw	$17, 4($sp)
+        03e00008 000001e0  152		jr	$ra
+        27bd0030 000001e4  153		addiu	$sp, $sp, 48
+                           154		.type	WM_ResizeWindow,@function
+                           155		.size	WM_ResizeWindow,.-WM_ResizeWindow
+                           156		.align	4
+                           157	 #rOld	32($sp)	local
+                           158	 #rNew	24($sp)	local
+                           159	 #rMerge	16($sp)	local
+                           160	 #pWin	$19	local
+                           161	
+                           162	 #hWin	$16	param
+                           163	 #dx	$17	param
+                           164	 #dy	$18	param
+                           165	
+                           166		.data
+                           167	.L75:
+                           168		.text
+                           169		.align	4
+
+                                   Tue Apr 07 08:51:29 2015           Page 5
+                                   Tue Apr 07 08:51:29 2015       gh_2i022.s
+                           170	
+                           171		.data
+                           172		.text

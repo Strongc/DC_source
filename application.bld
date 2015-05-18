@@ -1,0 +1,349 @@
+#!build
+default:
+	subproject
+	:sourcedirs=util
+	:sourcedirs=datapoint
+	:sourcedirs=application\driver
+	:sourcedirs=application\GENIApp
+	:sourcedirs=application\controller
+	:sourcedirs=application\floatswitchctrl
+	:sourcedirs=application\levelctrl
+	:sourcedirs=application\foamdrain
+	:sourcedirs=application\counters
+	:sourcedirs=application\dailyemptyingctrl
+	:sourcedirs=application\intercom
+	:sourcedirs=GENIpro
+	:sourcedirs=GENIpro\GENIrs232
+	:sourcedirs=GENIpro\GENI_sys
+	:sourcedirs=application\alarm
+	:sourcedirs=application\relay
+	:sourcedirs=application\config
+	:sourcedirs=application\PumpCtrl
+	:sourcedirs=application\MixerCtrl
+	:sourcedirs=application\UserIoCtrl
+	:sourcedirs=application\display\MPCUnit
+	:sourcedirs=application\display\GUI_Utility
+	:sourcedirs=application\AnaInConfigCtrl
+	:sourcedirs=application\FirmwareUpdate
+	:sourcedirs=application\webif
+	:sourcedirs=application\MaxPumpRunTimeCtrl
+	:sourcedirs=application\NoOfRunningPumpsCtrl
+	:sourcedirs=application\NoOfPumpsInGroupsCtrl
+	:sourcedirs=application\AppModeCtrl
+	:sourcedirs=application\AntiSeizingCtrl
+	:sourcedirs=application\AntiBlockingCtrl
+	:sourcedirs=application\ServiceTimeAlarmCtrl
+	:sourcedirs=application\Levels
+	:sourcedirs=application\Sms
+	:sourcedirs=application\FlowAndVolume
+	:sourcedirs=application\FlowAndVolume\AdvancedFlow
+	:sourcedirs=application\PowerAndEnergy
+	:sourcedirs=application\CombiAlarmCtrl
+	:sourcedirs=application\WaterInOilCtrl
+	:sourcedirs=application\LoggingCtrl
+	:sourcedirs=application\InterLockedCtrl
+	:sourcedirs=application\IOPTCAlarmCtrl
+	:sourcedirs=application\PowerOnWarningCtrl
+	:sourcedirs=application\UpsFaultCtrl
+	:sourcedirs=application\AnaOutCtrl
+	:sourcedirs=application\VfdCtrl
+	:sourcedirs=application\UserDefinedCounterCtrl
+	:sourcedirs=application\ServiceModeCtrl
+	:sourcedirs=application\DosingPumpCtrl
+application\alarm\CiuCardFailureCtrl.cpp
+	C++
+application\alarm\AlarmControl.cpp
+	C++
+application\alarm\AlarmEvent.cpp
+	C++
+application\alarm\AlarmLog.cpp
+	C++
+application\alarm\AlarmLogDataHistory.cpp
+	C++
+application\alarm\ResetAlarmCtrl.cpp
+	C++
+application\alarm\StatusLedCtrl.cpp
+	C++
+application\alarm\AlarmBellsCtrl.cpp
+	C++
+application\alarm\AlarmText.cpp
+	C++
+application\AnaInConfigCtrl\AnaInMeasureValueCtrl.cpp
+	C++
+application\AnaInConfigCtrl\AnaInCurrentProtectionCtrl.cpp
+	C++
+application\AnaOutCtrl\AnaOutCtrl.cpp
+	C++
+application\intercom\iob_h_irq.cpp
+	C++
+application\intercom\IobComDrv.cpp
+	C++
+application\intercom\IobMonitor.cpp
+	C++
+application\intercom\GeniDrv.cpp
+	C++
+application\config\NonVolatileDataTables.cpp
+	C++
+application\config\FlashControl.cpp
+	C++
+application\config\ConfigControl.cpp
+	C++
+application\driver\c1648.c
+	C
+application\driver\DiFuncHandler.cpp
+	C++
+application\driver\EthernetCtrl.cpp
+	C++
+application\driver\ethernetloopback.cpp
+	C++
+application\driver\AnaInOnIOCtrl.cpp
+	C++
+application\driver\IO351IOModule.cpp
+	C++
+application\driver\PowerDown.cpp
+	C++
+application\FirmwareUpdate\TFTPSUBS.C
+	C
+application\FirmwareUpdate\TFTP.C
+	C
+application\FirmwareUpdate\TFTPCONS.C
+	C
+application\FirmwareUpdate\TFTPDATA.C
+	C
+application\FirmwareUpdate\FirmwareUpdateCtrl.cpp
+	C++
+application\FirmwareUpdate\MPCBasicFirmwareUpdater.cpp
+	C++
+application\controller\InfoFieldCtrl.cpp
+	C++
+application\PumpCtrl\PumpCtrl.cpp
+	C++
+application\relay\RelayFuncHandler.cpp
+	C++
+application\relay\SimpleRelayCtrl.cpp
+	C++
+application\controller\OnOffAutoCtrl.cpp
+	C++
+application\controller\Pump.cpp
+	C++
+application\controller\AutoManDigInCtrl.cpp
+	C++
+application\FloatSwitchCtrl\FloatSwitchCnfCtrl.cpp
+	C++
+application\Counters\PumpRunTimeCnt.cpp
+	C++
+application\Counters\SystemRunTimeCnt.cpp
+	C++
+application\Counters\ParallelPumpRunTimeCnt.cpp
+	C++
+application\FloatSwitchCtrl\FloatSwitchCtrl.cpp
+	C++
+application\FloatSwitchCtrl\FloatSwitchCtrlTest.cpp
+	C++
+application\LevelCtrl\LevelCtrl.cpp
+	C++
+application\FoamDrain\FoamDrain.cpp
+	C++
+application\DailyEmptyingCtrl\DailyEmptyingCtrl.cpp
+	C++
+application\counters\StartPumpCnt.cpp
+	C++
+application\MaxPumpRunTimeCtrl\MaxPumpRunTimeCtrl.cpp
+	C++
+application\MixerCtrl\MixerCtrl.cpp
+	C++
+application\NoOfRunningPumpsCtrl\NoOfRunningPumpsCtrl.cpp
+	C++
+application\NoOfPumpsInGroupsCtrl\NoOfPumpsInGroupsCtrl.cpp
+	C++
+application\AntiSeizingCtrl\AntiSeizingCtrl.cpp
+	C++
+application\AntiBlockingCtrl\AntiBlockingCtrl.cpp
+	C++
+application\AntiBlockingCtrl\BlockageDetectionCtrl.cpp
+	C++
+application\AppModeCtrl\AppModeCtrl.cpp
+	C++
+application\ServiceTimeAlarmCtrl\ServiceTimeAlarmCtrl.cpp
+	C++
+application\Levels\StartStopLevelCtrl.cpp
+	C++
+application\Levels\LevelUltaSoundCtrl.cpp
+	C++
+application\Levels\WaterLevelCtrl.cpp
+	C++
+application\Levels\LevelSimCtrl.cpp
+	C++
+application\config\FlashBlock.cpp
+	C++
+application\alarm\AlarmRelay.cpp
+	C++
+application\alarm\AlarmConfig.cpp
+	C++
+application\Sms\Sms.cpp
+	C++
+application\Sms\SmsCtrl.cpp
+	C++
+application\Sms\SmsHeartBeatCtrl.cpp
+	C++
+application\Sms\GsmCardDataCtrl.cpp
+	C++
+application\driver\IO111Module.cpp
+	C++
+application\Sms\CurrentSmsNoCtrl.cpp
+	C++
+application\Sms\SmsAlarm.cpp
+	C++
+application\Sms\ModemCtrl.cpp
+	C++
+application\Sms\CurrentSmsCategoryCtrl.cpp
+	C++
+application\alarm\AlarmDelay.cpp
+	C++
+application\Levels\SurfaceTrendCtrl.cpp
+	C++
+application\FlowAndVolume\PitBasedFlowCtrl.cpp
+	C++
+application\FlowAndVolume\ReferencePointsBasedFlowCtrl.cpp
+	C++
+application\FlowAndVolume\FlowAndVolumeCtrl.cpp
+	C++
+application\FlowAndVolume\PumpFlowCtrl.cpp
+	C++
+application\PowerAndEnergy\PowerAndEnergyCtrl.cpp
+	C++
+application\PowerAndEnergy\EfficiencyCtrl.cpp
+	C++
+application\CombiAlarmCtrl\AlarmDetectCtrl.cpp
+	C++
+application\CombiAlarmCtrl\CombiAlarmCtrl.cpp
+	C++
+application\FlowAndVolume\OverflowCtrl.cpp
+	C++
+application\WaterInOilCtrl\WaterInOilCtrl.cpp
+	C++
+application\LoggingCtrl\LoggingCtrl.cpp
+	C++
+application\LoggingCtrl\LogSeriesCtrl.cpp
+	C++
+application\PowerAndEnergy\MotorCurrentCtrl.cpp
+	C++
+application\alarm\EnableAlarmSmsCtrl.cpp
+	C++
+application\GENIApp\SlaveData.CPP
+	C++
+application\GENIApp\BaseGeniAppIf.cpp
+	C++
+application\GENIApp\GeniAppIf.cpp
+	C++
+application\GENIApp\GeniAppIfData.cpp
+	C++
+application\GENIApp\GeniConvert.cpp
+	C++
+application\GENIApp\GeniExtHandler.cpp
+	C++
+application\GENIApp\GeniObjectInterface.cpp
+	C++
+application\GENIApp\GeniSlaveIf.cpp
+	C++
+application\GENIApp\GeniAppTestMode.cpp
+	C++
+application\GENIApp\GeniTestModeData.cpp
+	C++
+application\InterLockedCtrl\InterLockedCtrl.cpp
+	C++
+application\GENIApp\GeniProConfCtrl.cpp
+	C++
+application\GENIApp\GeniAppRtcCtrl.cpp
+	C++
+application\IOPTCAlarmCtrl\IOPTCAlarmCtrl.cpp
+	C++
+application\alarm\AlarmStatusCtrl.cpp
+	C++
+application\alarm\CustomRelayAlarmCtrl.cpp
+	C++
+application\alarm\AllPumpAlarmCtrl.cpp
+	C++
+application\alarm\AnalogSensorAlarmCtrl.cpp
+	C++
+application\alarm\DigitalInputAlarmCtrl.cpp
+	C++
+application\alarm\BoolInputAlarmCtrl.cpp
+	C++
+application\InterLockedCtrl\InterLockMasterCtrl.cpp
+	C++
+application\alarm\EventLogCtrl.cpp
+	C++
+application\PowerOnWarningCtrl\PowerOnWarningCtrl.cpp
+	C++
+application\Sms\ScadaCallbackCtrl.cpp
+	C++
+application\UpsFaultCtrl\UpsFaultCtrl.cpp
+	C++
+application\alarm\SimulatedAlarmCtrl.cpp
+	C++
+application\Relay\CustomRelayCtrl.cpp
+	C++
+application\UserIoCtrl\IoChannelConfig.cpp
+	C++
+application\UserIoCtrl\IoChannel.cpp
+	C++
+application\UserIoCtrl\UserIoConfig.cpp
+	C++
+application\UserIoCtrl\UserIo.cpp
+	C++
+application\Levels\RandomStartLevelCtrl.cpp
+	C++
+application\driver\CUEModule.cpp
+	C++
+application\VfdCtrl\VfdMasterCtrl.cpp
+	C++
+application\VfdCtrl\VfdFlushStateCtrl.cpp
+	C++
+application\VfdCtrl\VfdSignalCtrl.cpp
+	C++
+application\VfdCtrl\VfdEnergyTestCtrl.cpp
+	C++
+application\VfdCtrl\PidCtrl.cpp
+	C++
+application\VfdCtrl\PidBlock.cpp
+	C++
+application\driver\MP204Module.cpp
+	C++
+application\VfdCtrl\MaxFrequencyCtrl.cpp
+	C++
+application\FlowAndVolume\AdvancedFlowCtrl.cpp
+	C++
+application\FlowAndVolume\AdvancedFlow\SystemFlow.cpp
+	C++
+application\FlowAndVolume\AdvancedFlow\PumpCurves.cpp
+	C++
+application\FlowAndVolume\AdvancedFlow\PumpEvaluation.cpp
+	C++
+application\FlowAndVolume\AdvancedFlow\DynparIdent.cpp
+	C++
+application\FlowAndVolume\AdvancedFlow\FlowLearnControl.cpp
+	C++
+application\FlowAndVolume\AdvancedFlow\KalmanCalc.cpp
+	C++
+application\FlowAndVolume\AdvancedFlow\MotorModel.cpp
+	C++
+application\FlowAndVolume\AdvancedFlow\ParIdent.cpp
+	C++
+application\FlowAndVolume\AdvancedFlow\PitFlow.cpp
+	C++
+application\UserDefinedCounterCtrl\UserDefinedCounterCtrl.cpp
+	C++
+application\GENIApp\GeniSlaveAddrUpdateCtrl.cpp
+	C++
+application\ServiceModeCtrl\ServiceModeCtrl.cpp
+	C++
+application\Sms\ScadaCallbackTestCtrl.cpp
+	C++
+application\Sms\ScadaStateCtrl.cpp
+	C++
+application\Sms\WatchSmsAlarm.cpp
+	C++
+application\DosingPumpCtrl\DDACtrl.cpp
+	C++
+

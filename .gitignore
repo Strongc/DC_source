@@ -1,0 +1,10 @@
+*.mdb
+*.pyc
+*.log
+*.bld
+*.inf
+*.lst
+*.exe
+Factory.cpp
+FactoryTypes.h
+exe/*.*

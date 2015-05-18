@@ -1,0 +1,87 @@
+#!build
+default:
+	subproject
+	:sourcedirs=GENIPro\GENIusb
+	:sourcedirs=GENIPro\Virtual
+	:sourcedirs=application\GENIApp
+	:sourcedirs=GENIPro
+	:sourcedirs=GENIPro\GENIbus
+	:sourcedirs=GENIPro\GENIrs232
+	:sourcedirs=GENIPro\GENI_sys
+	:sourcedirs=GENIPro\GENIcom
+	:sourcedirs=GENIPro\GENIusb\emUSB\USB\Core
+	:sourcedirs=GENIPro\GENIusb\emUSB\USB\Driver
+	:sourcedirs=GENIPro\GENIusb\emUSB\USB\CDC
+	:sourcedirs=GENIPro\GENIusb\emUSB\Application
+	:sourcedirs=GENIPro\GENIusb\emUSB\Config
+	:sourcedirs=GENIPro\GENIusb\emUSB\OS\embOS
+GENIPro\bu_tab_ref32.c
+	C
+GENIPro\bu_tab_ref16.c
+	C
+GENIPro\bu_tab_meas32.c
+	C
+GENIPro\bu_tab_meas16.c
+	C
+GENIPro\bu_tab_conf32.c
+	C
+GENIPro\bu_tab_conf16.c
+	C
+GENIPro\bu_tab_meas.c
+	C
+GENIPro\bu_tab_conf.c
+	C
+GENIPro\bu_tab_ref.c
+	C
+GENIPro\bu_tab_string.c
+	C
+GENIPro\bu_tab_test.c
+	C
+GENIpro\bu_tab_cmd.c
+	C
+GENIpro\common_info_tab.c
+	C
+GENIPro\GENI_sys\PROFILES.C
+	C
+GENIPro\GENI_sys\GENI_SYS.C
+	C
+GENIPro\GENI_sys\mips_irq.c
+	C
+GENIPro\GENI_sys\CRC.C
+	C
+GENIPro\GENIbus\bus_drv_l.c
+	C
+GENIPro\GENIcom\com_drv_l.c
+	C
+GENIPro\Virtual\vir_tab_master.c
+	C
+GENIPro\Virtual\vir_ctr_master.c
+	C
+GENIPro\Virtual\vir_ctr_slave.c
+	C
+GENIPro\Virtual\vir_dia_master.c
+	C
+GENIPro\Virtual\vir_dia_slave.c
+	C
+GENIPro\Virtual\vir_drv.c
+	C
+GENIPro\Virtual\vir_common.c
+	C
+GENIPro\GENIusb\usb_drv_I.c
+	C
+GENIPro\GENIusb\emUSB\Application\USB_CDC_Echo.c
+	C
+GENIPro\GENIusb\emUSB\OS\embOS\USB_OS_embOS.c
+	C
+GENIPro\GENIusb\emUSB\USB\CDC\USB_CDC.c
+	C
+GENIPro\GENIusb\emUSB\USB\Core\USB__memcpy.c
+	C
+GENIPro\GENIusb\emUSB\USB\Core\USB_IAD.c
+	C
+GENIPro\GENIusb\emUSB\USB\Core\USB_Main.c
+	C
+GENIPro\GENIusb\emUSB\USB\Core\USB_Setup.c
+	C
+GENIPro\GENIusb\emUSB\USB\Driver\USB_HW_vr4181a.c
+	C

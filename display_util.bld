@@ -1,0 +1,21 @@
+#!build
+default:
+	subproject
+application\display\gui_utility\Languages.cpp
+	C++
+application\display\gui_utility\LanguagesDataPoint.cpp
+	C++
+application\display\gui_utility\LanguagesStringTable.cpp
+	C++
+application\display\gui_utility\TimeDataPoint.cpp
+	C++
+application\display\gui_utility\TimeFormatDataPoint.cpp
+	C++
+application\display\gui_utility\keys.cpp
+	C++
+application\display\gui_utility\GUI_Utility.cpp
+	C++
+application\display\gui_utility\FloatDataPointToString.cpp
+	C++
+application\display\gui_utility\FloatDataPointQuantity.cpp
+	C++

@@ -1,0 +1,9 @@
+#!build
+default:
+	nobuild
+memory.ld
+	linker_file
+standalone_config.ld
+	linker_file
+standalone_ram.ld
+	linker_file

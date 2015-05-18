@@ -1,0 +1,56 @@
+#!build
+default:
+	subproject
+	:sourcedirs=application\GENIApp
+GENIPro\bu_tab_ref32.c
+	C
+GENIPro\bu_tab_ref16.c
+	C
+GENIPro\bu_tab_meas32.c
+	C
+GENIPro\bu_tab_meas16.c
+	C
+GENIPro\bu_tab_conf32.c
+	C
+GENIPro\bu_tab_conf16.c
+	C
+GENIPro\bu_tab_meas.c
+	C
+GENIPro\bu_tab_conf.c
+	C
+GENIPro\bu_tab_ref.c
+	C
+GENIPro\bu_tab_string.c
+	C
+GENIPro\bu_tab_test.c
+	C
+GENIpro\bu_tab_cmd.c
+	C
+GeniPro\GENI_sys\PROFILES.C
+	C
+GeniPro\GENI_sys\CRC.C
+	C
+GeniPro\GENI_sys\GENI_SYS.C
+	C
+GeniPro\GENI_sys\mips_irq.c
+	C
+GeniPro\GENIbus\bus_drv_l.c
+	C
+GeniPro\GENIcom\com_drv_l.c
+	C
+GeniPro\Virtual\vir_drv.c
+	C
+GeniPro\Virtual\vir_common.c
+	C
+GeniPro\Virtual\vir_ctr_master.c
+	C
+GeniPro\Virtual\vir_ctr_slave.c
+	C
+GeniPro\Virtual\vir_dia_master.c
+	C
+GeniPro\Virtual\vir_dia_slave.c
+	C
+GeniPro\common_info_tab.c
+	C
+GeniPro\Virtual\vir_tab_master.c
+	C

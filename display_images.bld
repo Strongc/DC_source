@@ -1,0 +1,169 @@
+#!build
+default:
+	subproject
+Alarm.c
+	C
+ArrowLeft.c
+	C
+ArrowRight.c
+	C
+Brightness_icon.c
+	C
+Brightness_scale.c
+	C
+Check.c
+	C
+ClosedSwitch.c
+	C
+Completed.c
+	C
+Contrast_icon.c
+	C
+Contrast_scale.c
+	C
+Cursor.c
+	C
+FloatSwitchOff.c
+	C
+FloatSwitchOn.c
+	C
+GoBack.c
+	C
+GoOn.c
+	C
+GoOnSkip.c
+	C
+Help.c
+	C
+HorisontalFlowAnimation.c
+	C
+Info.c
+	C
+LargePitBottom.c
+	C
+LargePitLeft.c
+	C
+LargePitRight.c
+	C
+MenuStatusAlarm.c
+	C
+MenuStatusNone.c
+	C
+MenuStatusService.c
+	C
+MenuStatusWarning.c
+	C
+MixerAnimation.c
+	C
+OpenSwitch.c
+	C
+OverflowAhighlevelSwitch.c
+	C
+OverflowAnoSwitch.c
+	C
+OverflowAoverflowSwitch.c
+	C
+OverflowBemptyChannel.c
+	C
+OverflowBflowSensorInChannel.c
+	C
+OverflowBlevelSensorInChannel.c
+	C
+OverflowCemptyPit.c
+	C
+OverflowClevelSensorInPit.c
+	C
+OverflowDerrorSwitch.c
+	C
+OverflowDimensionsCirc.c
+	C
+OverflowDimensionsRect.c
+	C
+OverflowDimensionsTrap.c
+	C
+OverflowDnoErrorSwitch.c
+	C
+PasswordIcon.c
+	C
+Pit1Pump.c
+	C
+Pit2Pumps.c
+	C
+Pit3Pumps.c
+	C
+Pit4Pumps.c
+	C
+Pit5Pumps.c
+	C
+Pit6Pumps.c
+	C
+PitBottom.c
+	C
+PitInlet.c
+	C
+PitLeft.c
+	C
+PitLevel2.c
+	C
+PitLevel.c
+	C
+PitLevelSensor.c
+	C
+PitPumpDisabled.c
+	C
+PitRight.c
+	C
+PitSonicSensor.c
+	C
+PitSurface.c
+	C
+PitTop2Pumps.c
+	C
+PitTop4Pumps.c
+	C
+PitTop6Pumps.c
+	C
+PitTopDash.c
+	C
+PitWater.c
+	C
+PumpAlarm.c
+	C
+PumpAnimationDisabled.c
+	C
+PumpAnimationAlarm.c
+	C
+PumpAnimationWarning.c
+	C
+PumpAnimationReady.c
+	C
+PumpTop.c
+	C
+PumpGroups.c
+	C
+StartingUp.c
+	C
+StatusAlarm.c
+	C
+StatusManual.c
+	C
+StatusNone.c
+	C
+StatusWarning.c
+	C
+SurfaceArea.c
+	C
+TestScreen1.c
+	C
+TestScreen2.c
+	C
+TrendDown.c
+	C
+TrendSteady.c
+	C
+TrendUp.c
+	C
+VerticalFlowAnimation.c
+	C
+Warning.c
+	C

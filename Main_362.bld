@@ -1,0 +1,52 @@
+#!build
+default:
+	nobuild
+	:program_layout=ram
+	:directivedir=Link362
+	:cx_e_option=upgrade_cxx_errors
+	:asm_list_option=listing
+	:elxr_map_option=map
+	:mips_option=no64_bit
+	:config_setting=byteorder
+	:config_setting=farcall_patch
+	:nolibraries=false
+	:xda_thresholdkind=small
+	:c_mode=ansi
+	:ec_mode=ansi
+	:prototype_mode=error
+	:cx_mode=ansi
+	:cx_gnu_mode=none
+	:cx_template=never
+	:object_dir=objs
+	:target=mips/necvr41xx/standalone
+	:start_address=_stepstone
+	:xda_threshold=8
+	:sourcedirs=include
+	:sourcedirs=util
+	:sourcedirs=datapoint
+	:sourcedirs=GeniPro
+	:sourcedirs=GeniPro\GENI_sys
+	:sourcedirs=GeniPro\GENIbus
+	:sourcedirs=GeniPro\GENIcom
+	:sourcedirs=GeniPro\GENIrs232
+	:sourcedirs=GeniPro\Virtual
+	:sourcedirs=..\..\..\cu3x1Platform_SRC\Platform\common
+	:sourcedirs=..\..\..\cu3x1Platform_SRC\Platform\hardware
+	:sourcedirs=..\..\..\cu3x1Platform_SRC\Platform\hardware\D3018X
+	:sourcedirs=..\..\..\cu3x1Platform_SRC\embos\inc
+	:sourcedirs=..\..\..\cu3x1Platform_SRC\emWinColour\config
+	:sourcedirs=..\..\..\cu3x1Platform_SRC\emWinColour\gui\Core
+	:sourcedirs=rtip\config
+	:sourcedirs=application\display\imagesTFT
+	:defines=OS_LIBMODE_DP
+	:defines=DONTUSETHIS__MRC_DEBUG__
+	:defines=TFT_16_BIT_LCD
+	:defines=_RAM_32_ROM_16_UPGRADE_
+	:defines=TCS_USB_SER_PORT
+	:defines=USE_TFT_COLOURS
+default.con
+	connections
+CU362.bld
+	program
+Link362\resources.bld
+	nobuild

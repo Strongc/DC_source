@@ -1,0 +1,51 @@
+#!build
+default:
+	subproject
+util\Observer.cpp
+	C++
+util\Subject.cpp
+	C++
+util\SwTimerBassClass.cpp
+	C++
+util\SwTimer.cpp
+	C++
+util\SubTask.cpp
+	C++
+util\TaskCtrl.cpp
+	C++
+util\TaskCtrlEvent.cpp
+	C++
+util\TaskCtrlPeriodic.cpp
+	C++
+util\SwTimerTask.cpp
+	C++
+util\SoftwareVersion.cpp
+	C++
+util\MpcTime.cpp
+	C++
+util\ActTime.cpp
+	C++
+util\Clock.cpp
+	C++
+util\MpcTimeCmpCtrl.cpp
+	C++
+util\ErrorLog.cpp
+	C++
+util\Mailbox.cpp
+	C++
+util\DPMaxCtrl.cpp
+	C++
+util\BoolLogic.cpp
+	C++
+util\AnyAvailableCtrl.cpp
+	C++
+ZLib.bld
+	subproject
+util\ErrorHandler.cpp
+	C++
+util\EventList.cpp
+	C++
+util\TestAlloc.cpp
+	C++
+util\TestPerformance.cpp
+	C++

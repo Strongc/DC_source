@@ -1,0 +1,17 @@
+#!build
+default:
+	subproject
+application\display\graph\Chalk.cpp
+	C++
+application\display\graph\CurrentPointChalk.cpp
+	C++
+application\display\graph\CurveChalk.cpp
+	C++
+application\display\graph\CrossChalk.cpp
+	C++
+application\display\graph\BlackBoard.cpp
+	C++
+application\display\graph\CurrentPointCurveData.cpp
+	C++
+application\display\graph\CurrentPointCurveGraph.cpp
+	C++

@@ -1,0 +1,6 @@
+#!build
+default:
+	subproject
+	:object_dir=objs
+stepstone\stepstone.mip
+	assembly

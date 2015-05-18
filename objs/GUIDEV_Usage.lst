@@ -1,0 +1,292 @@
+
+                                   Tue Apr 07 08:58:19 2015           Page 1
+                                   Tue Apr 07 08:58:18 2015       gh_2i0am.s
+Command Line:   C:\GHS\V35\mips35\asmips.exe -noundefined -elf -b0
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos\inc
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\ConvertMono
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Font
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\LCDDriver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\MemDev
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\VNC
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Widget
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\wm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\util
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\datapoint
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\factory
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\webpage
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\xnet
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\stub
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\test
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENIusb\emUSB\USB\Driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\intercom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\controller
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\webif
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\relay
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\GENIApp
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\alarm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\AnaInConfigCtrl
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\Sms
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\display_task
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\gui_utility
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\mpcunit
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIbus
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIcom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIrs232
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\Virtual
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\imagesTFT
+                -IC:\GHS\V35\mips35\mipsl_sf -r4121 -source=GUIDEV_Usage.c -o
+                objs\gh_2i0am.o -list=objs\GUIDEV_Usage.lst
+                C:\Users\55602\AppData\Local\Temp\gh_2i0am.s
+Source File:    C:\Users\55602\AppData\Local\Temp\gh_2i0am.s
+Directory:      C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+Host OS:        GHS_WIN32
+Version:        AS-MIPS 3.5#11 
+Release:        MULTI 2000, MIPS v3.5
+Revision Date:  Wed Feb 27 12:19:03 2002
+Release Date:   Sat Mar 02 02:57:59 2002
+                             1	 #Source File:   C:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\GUI\MemDev\GUIDEV_Usage.c
+
+                                   Tue Apr 07 08:58:19 2015           Page 2
+                                   Tue Apr 07 08:58:18 2015       gh_2i0am.s
+                             2	 #Directory:     
+                             3	 #		C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                             4	 #Compile Date:  Tue Apr 07 08:58:18 2015
+                             5	 #Host OS:       Win32
+                             6	 #Version:       C-MIPS 3.5#11 RELEASE VERSION
+                             7	 #Release:       MULTI 2000, MIPS v3.5
+                             8	 #Revision Date: Fri Mar 01 11:32:40 2002
+                             9	 #Release Date:  Sat Mar 02 02:58:48 2002
+                            10		.set	noat
+                            11		.set	noreorder
+                            12		.set	nomacro
+                            13		.text
+                            14		.align	4
+                            15		.globl	GUI_USAGE_Select
+                            16	GUI_USAGE_Select:
+        27bdfff0 00000000   17		addiu	$sp, $sp, -16
+        afbf000c 00000004   18		sw	$ra, 12($sp)
+        afb00000 00000008   19		sw	$16, 0($sp)
+                            20	 #	    .bf
+        0c000000 0000000c   21		jal	GUI_Lock
+        00808025 00000010   22		move	$16, $4
+        3c010000 00000014   23		lui	$1, %hi(GUI_Context+80)
+        0c000000 00000018   24		jal	GUI_ALLOC_h2p
+        84240000 0000001c   25		lh	$4, %lo(GUI_Context+80)($1)
+        0c000000 00000020   26		jal	GUI_Unlock
+        a4500018 00000024   27		sh	$16, 24($2)
+                            28	 #	    .ef
+        8fbf000c 00000028   29		lw	$ra, 12($sp)
+        8fb00000 0000002c   30		lw	$16, 0($sp)
+        03e00008 00000030   31		jr	$ra
+        27bd0010 00000034   32		addiu	$sp, $sp, 16
+                            33		.type	GUI_USAGE_Select,@function
+                            34		.size	GUI_USAGE_Select,.-GUI_USAGE_Select
+                            35		.align	4
+                            36	
+                            37	 #hUsage	$16	param
+                            38	
+                            39		.data
+                            40	.L15:
+                            41		.text
+                            42		.align	4
+                            43		.align	4
+                            44		.globl	GUI_USAGE_DecUseCnt
+                            45	GUI_USAGE_DecUseCnt:
+        27bdfff0 00000038   46		addiu	$sp, $sp, -16
+        afbf000c 0000003c   47		sw	$ra, 12($sp)
+        afb00000 00000040   48		sw	$16, 0($sp)
+                            49	 #	    .bf
+        0c000000 00000044   50		jal	GUI_Lock
+        00048400 00000048   51		sll	$16, $4, 16
+        00108403 0000004c   52		sra	$16, $16, 16
+        0c000000 00000050   53		jal	GUI_ALLOC_h2p
+        02002025 00000054   54		move	$4, $16
+        8443000c 00000058   55		lh	$3, 12($2)
+        2463ffff 0000005c   56		addiu	$3, $3, -1
+        00031c00 00000060   57		sll	$3, $3, 16
+
+                                   Tue Apr 07 08:58:19 2015           Page 3
+                                   Tue Apr 07 08:58:18 2015       gh_2i0am.s
+        00031c03 00000064   58		sra	$3, $3, 16
+        14600003 00000068   59		bne	$3, $0, .L23
+        a443000c 0000006c   60		sh	$3, 12($2)
+        0c000000 00000070   61		jal	GUI_ALLOC_Free
+        02002025 00000074   62		move	$4, $16
+                            63	.L23:
+        0c000000 00000078   64		jal	GUI_Unlock
+        00000000 0000007c   65		nop
+                            66	 #	    .ef
+        8fbf000c 00000080   67		lw	$ra, 12($sp)
+        8fb00000 00000084   68		lw	$16, 0($sp)
+        03e00008 00000088   69		jr	$ra
+        27bd0010 0000008c   70		addiu	$sp, $sp, 16
+                            71		.type	GUI_USAGE_DecUseCnt,@function
+                            72		.size	GUI_USAGE_DecUseCnt,.-GUI_USAGE_DecUseCnt
+                            73		.align	4
+                            74	
+                            75	 #hUsage	$16	param
+                            76	
+                            77		.data
+                            78	.L42:
+                            79		.text
+                            80		.align	4
+                            81		.align	4
+                            82		.globl	GUI_USAGE_AddRect
+                            83	GUI_USAGE_AddRect:
+        27bdffe0 00000090   84		addiu	$sp, $sp, -32
+                            85	 #	    .bf
+        afb3000c 00000094   86		sw	$19, 12($sp)
+        00e09825 00000098   87		move	$19, $7
+        afb00000 0000009c   88		sw	$16, 0($sp)
+        00808025 000000a0   89		move	$16, $4
+        afb10004 000000a4   90		sw	$17, 4($sp)
+        00a08825 000000a8   91		move	$17, $5
+        afb20008 000000ac   92		sw	$18, 8($sp)
+        00c09025 000000b0   93		move	$18, $6
+        afb40010 000000b4   94		sw	$20, 16($sp)
+        afb50014 000000b8   95		sw	$21, 20($sp)
+        01001825 000000bc   96		move	$3, $8
+        0060a825 000000c0   97		move	$21, $3
+        0015a0c2 000000c4   98		srl	$20, $21, 3
+        12800044 000000c8   99		beq	$20, $0, .L67
+        afbf001c 000000cc  100		sw	$ra, 28($sp)
+        8e0f0008 000000d0  101		lw	$15, 8($16)
+                           102	.L1000075:
+        02002025 000000d4  103		move	$4, $16
+        02202825 000000d8  104		move	$5, $17
+        8def0004 000000dc  105		lw	$15, 4($15)
+        02403025 000000e0  106		move	$6, $18
+        26520001 000000e4  107		addiu	$18, $18, 1
+        01e0f809 000000e8  108		jalr	$15
+        02603825 000000ec  109		move	$7, $19
+        8e0e0008 000000f0  110		lw	$14, 8($16)
+        02002025 000000f4  111		move	$4, $16
+        02202825 000000f8  112		move	$5, $17
+        8dce0004 000000fc  113		lw	$14, 4($14)
+
+                                   Tue Apr 07 08:58:19 2015           Page 4
+                                   Tue Apr 07 08:58:18 2015       gh_2i0am.s
+        02403025 00000100  114		move	$6, $18
+        26520001 00000104  115		addiu	$18, $18, 1
+        01c0f809 00000108  116		jalr	$14
+        02603825 0000010c  117		move	$7, $19
+        8e0d0008 00000110  118		lw	$13, 8($16)
+        02002025 00000114  119		move	$4, $16
+        02202825 00000118  120		move	$5, $17
+        8dad0004 0000011c  121		lw	$13, 4($13)
+        02403025 00000120  122		move	$6, $18
+        26520001 00000124  123		addiu	$18, $18, 1
+        01a0f809 00000128  124		jalr	$13
+        02603825 0000012c  125		move	$7, $19
+        8e190008 00000130  126		lw	$25, 8($16)
+        02002025 00000134  127		move	$4, $16
+        02202825 00000138  128		move	$5, $17
+        8f390004 0000013c  129		lw	$25, 4($25)
+        02403025 00000140  130		move	$6, $18
+        26520001 00000144  131		addiu	$18, $18, 1
+        0320f809 00000148  132		jalr	$25
+        02603825 0000014c  133		move	$7, $19
+        8e180008 00000150  134		lw	$24, 8($16)
+        02002025 00000154  135		move	$4, $16
+        02202825 00000158  136		move	$5, $17
+        8f180004 0000015c  137		lw	$24, 4($24)
+        02403025 00000160  138		move	$6, $18
+        26520001 00000164  139		addiu	$18, $18, 1
+        0300f809 00000168  140		jalr	$24
+        02603825 0000016c  141		move	$7, $19
+        8e0f0008 00000170  142		lw	$15, 8($16)
+        02002025 00000174  143		move	$4, $16
+        02202825 00000178  144		move	$5, $17
+        8def0004 0000017c  145		lw	$15, 4($15)
+        02403025 00000180  146		move	$6, $18
+        26520001 00000184  147		addiu	$18, $18, 1
+        01e0f809 00000188  148		jalr	$15
+        02603825 0000018c  149		move	$7, $19
+        8e0e0008 00000190  150		lw	$14, 8($16)
+        02002025 00000194  151		move	$4, $16
+        02202825 00000198  152		move	$5, $17
+        8dce0004 0000019c  153		lw	$14, 4($14)
+        02403025 000001a0  154		move	$6, $18
+        26520001 000001a4  155		addiu	$18, $18, 1
+        01c0f809 000001a8  156		jalr	$14
+        02603825 000001ac  157		move	$7, $19
+        02002025 000001b0  158		move	$4, $16
+        8e0d0008 000001b4  159		lw	$13, 8($16)
+        02202825 000001b8  160		move	$5, $17
+        02403025 000001bc  161		move	$6, $18
+        8dad0004 000001c0  162		lw	$13, 4($13)
+        26520001 000001c4  163		addiu	$18, $18, 1
+        2694ffff 000001c8  164		addiu	$20, $20, -1
+        01a0f809 000001cc  165		jalr	$13
+        02603825 000001d0  166		move	$7, $19
+        5680ffbf 000001d4  167		bnel	$20, $0, .L1000075
+        8e0f0008 000001d8  168		lw	$15, 8($16)
+                           169	.L67:
+
+                                   Tue Apr 07 08:58:19 2015           Page 5
+                                   Tue Apr 07 08:58:18 2015       gh_2i0am.s
+        32b40007 000001dc  170		andi	$20, $21, 7
+        1280000b 000001e0  171		beq	$20, $0, .L52
+        02002025 000001e4  172		move	$4, $16
+                           173	.L1000078:
+        8e0f0008 000001e8  174		lw	$15, 8($16)
+        02202825 000001ec  175		move	$5, $17
+        02403025 000001f0  176		move	$6, $18
+        8def0004 000001f4  177		lw	$15, 4($15)
+        26520001 000001f8  178		addiu	$18, $18, 1
+        2694ffff 000001fc  179		addiu	$20, $20, -1
+        01e0f809 00000200  180		jalr	$15
+        02603825 00000204  181		move	$7, $19
+        5680fff7 00000208  182		bnel	$20, $0, .L1000078
+        02002025 0000020c  183		move	$4, $16
+                           184	.L52:
+        8fb50014 00000210  185		lw	$21, 20($sp)
+                           186	 #	    .ef
+        8fb40010 00000214  187		lw	$20, 16($sp)
+        8fbf001c 00000218  188		lw	$ra, 28($sp)
+        8fb00000 0000021c  189		lw	$16, 0($sp)
+        8fb10004 00000220  190		lw	$17, 4($sp)
+        8fb20008 00000224  191		lw	$18, 8($sp)
+        8fb3000c 00000228  192		lw	$19, 12($sp)
+        03e00008 0000022c  193		jr	$ra
+        27bd0020 00000230  194		addiu	$sp, $sp, 32
+                           195		.type	GUI_USAGE_AddRect,@function
+                           196		.size	GUI_USAGE_AddRect,.-GUI_USAGE_AddRect
+                           197		.align	4
+                           198	
+                           199	 #pUsage	$16	param
+                           200	 #x0	$17	param
+                           201	 #y0	$18	param
+                           202	 #xSize	$19	param
+                           203	 #ySize	$3	param
+                           204	
+                           205		.data
+                           206	.L115:
+                           207		.text
+                           208		.align	4
+                           209	 #GUI_Context	GUI_Context	import
+                           210	
+                           211		.data
+                           212		.text

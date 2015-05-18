@@ -1,0 +1,11 @@
+#!build
+default:
+	subproject
+application\display\fonts\Helvetica_57_18.c
+	C
+application\display\fonts\Helvetica_57_13.c
+	C
+application\display\fonts\Helvetica_57_11.c
+	C
+application\display\fonts\GB2312_s1112.c
+	C

@@ -1,0 +1,227 @@
+#!build
+default:
+	library
+	:passsource=true
+	:outputname=lib\rtip.a
+	:object_dir=objs
+	:sourcedirs=rtip\xnet
+	:sourcedirs=rtip\config
+	:sourcedirs=stub
+
+rtipConfig.bld
+	nobuild
+
+rtip\xnet\VT100C.C
+	C
+rtip\xnet\3CFE574.C
+	C
+rtip\xnet\83815.C
+	C
+rtip\xnet\ARP.C
+	C
+rtip\xnet\BASE64.C
+	C
+rtip\xnet\BGET.C
+	C
+rtip\xnet\CONFDATA.C
+	C
+rtip\xnet\DEBUG.C
+	C
+rtip\xnet\DHCPAPI.C
+	C
+rtip\xnet\DHCPCONS.C
+	C
+rtip\xnet\DHCPDATA.C
+	C
+rtip\xnet\DHCPPROC.C
+	C
+rtip\xnet\DHCPUTIL.C
+	C
+rtip\xnet\DIAG_LOG.C
+	C
+rtip\xnet\DIAG_USR.C
+	C
+rtip\xnet\DM9102A.C
+	C
+rtip\xnet\DNS.C
+	C
+rtip\xnet\EBSLIB.C
+	C
+rtip\xnet\I82559.C
+	C
+rtip\xnet\ICMP.C
+	C
+rtip\xnet\IFACE.C
+	C
+rtip\xnet\IFED.C
+	C
+rtip\xnet\IGMP.C
+	C
+rtip\xnet\IP.C
+	C
+rtip\xnet\IPV6.C
+	C
+rtip\xnet\LAN8900.C
+	C
+rtip\xnet\LANCE.C
+	C
+rtip\xnet\LANCEISA.C
+	C
+rtip\xnet\LOOP.C
+	C
+rtip\xnet\MD5RSA.C
+	C
+rtip\xnet\MEMFILE.C
+	C
+rtip\xnet\NAME2IP.C
+	C
+rtip\xnet\NETUTIL.C
+	C
+rtip\xnet\NIL.C
+	C
+rtip\xnet\OS.C
+	C
+rtip\xnet\OSENV.C
+	C
+rtip\xnet\OSINT.C
+	C
+rtip\xnet\OSMALLOC.C
+	C
+rtip\xnet\OSPORT.C
+	C
+rtip\xnet\OSTASK.C
+	C
+rtip\xnet\OSTIME.C
+	C
+rtip\xnet\PACKET.C
+	C
+rtip\xnet\PCI.C
+	C
+rtip\xnet\PCMCIA.C
+	C
+rtip\xnet\PCMCTRL.C
+	C
+rtip\xnet\PCVID.C
+	C
+rtip\xnet\POLLOS.C
+	C
+rtip\xnet\POP.C
+	C
+rtip\xnet\POPCONS.C
+	C
+rtip\xnet\POPDATA.C
+	C
+rtip\xnet\PPP.C
+	C
+rtip\xnet\PPPAPI.C
+	C
+rtip\xnet\PPPCHAP.C
+	C
+rtip\xnet\PPPCONS.C
+	C
+rtip\xnet\PPPDATA.C
+	C
+rtip\xnet\PPPFSM.C
+	C
+rtip\xnet\PPPIPCP.C
+	C
+rtip\xnet\PPPLCP.C
+	C
+rtip\xnet\PPPPAP.C
+	C
+rtip\xnet\PPPUSER.C
+	C
+rtip\xnet\PRINTF.C
+	C
+rtip\xnet\R8139.C
+	C
+rtip\xnet\REGISTER.C
+	C
+rtip\xnet\RIP.C
+	C
+rtip\xnet\ROUTE.C
+	C
+rtip\xnet\ROUTER.C
+	C
+rtip\xnet\RS232.C
+	C
+rtip\xnet\RS232API.C
+	C
+rtip\xnet\RTIPAPI.C
+	C
+rtip\xnet\RTIPCONS.C
+	C
+rtip\xnet\RTIPDATA.C
+	C
+rtip\xnet\RTIPSTUB.C
+	C
+rtip\xnet\RTLANCE.C
+	C
+rtip\xnet\SERVERS.C
+	C
+rtip\xnet\SLHC.C
+	C
+rtip\xnet\SLIP.C
+	C
+rtip\xnet\SMC91C9X.C
+	C
+rtip\xnet\SMTP.C
+	C
+rtip\xnet\SMTPCONS.C
+	C
+rtip\xnet\SMTPDATA.C
+	C
+rtip\xnet\SNTP.C
+	C
+rtip\xnet\SOCK.C
+	C
+rtip\xnet\SOCKET.C
+	C
+rtip\xnet\SYSLOG.C
+	C
+rtip\xnet\TASKS.C
+	C
+rtip\xnet\TCP.C
+	C
+rtip\xnet\TCPOUT.C
+	C
+rtip\xnet\TCPUSER.C
+	C
+rtip\xnet\TERMINAL.C
+	C
+rtip\xnet\TNCDATA.C
+	C
+rtip\xnet\TOOLS.C
+	C
+rtip\xnet\UART.C
+	C
+rtip\xnet\UARTPORT.C
+	C
+rtip\xnet\UDP.C
+	C
+rtip\xnet\VFDATA.C
+	C
+rtip\xnet\VFDOS.C
+	C
+rtip\xnet\VFILE.C
+	C
+rtip\xnet\VFNFS.C
+	C
+rtip\xnet\VFRTFI.C
+	C
+rtip\xnet\VFRTFS.C
+	C
+rtip\xnet\VFUTIL.C
+	C
+rtip\xnet\3C90X.C
+	C
+rtip\xnet\WEBAPI.C
+	C
+rtip\xnet\WEBCONS.C
+	C
+rtip\xnet\WEBDATA.C
+	C
+rtip\xnet\WEBPROC.C
+	C
+rtip\config\HW_ETH.c
+	C

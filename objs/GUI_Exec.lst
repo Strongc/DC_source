@@ -1,0 +1,156 @@
+
+                                   Tue Apr 07 08:54:21 2015           Page 1
+                                   Tue Apr 07 08:54:21 2015       gh_2i05u.s
+Command Line:   C:\GHS\V35\mips35\asmips.exe -noundefined -elf -b0
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos\inc
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\ConvertMono
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Font
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\LCDDriver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\MemDev
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\VNC
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Widget
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\wm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\util
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\datapoint
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\factory
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\webpage
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\xnet
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\stub
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\test
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENIusb\emUSB\USB\Driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\intercom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\controller
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\webif
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\relay
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\GENIApp
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\alarm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\AnaInConfigCtrl
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\Sms
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\display_task
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\gui_utility
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\mpcunit
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIbus
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIcom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIrs232
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\Virtual
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\imagesTFT
+                -IC:\GHS\V35\mips35\mipsl_sf -r4121 -source=GUI_Exec.c -o
+                objs\gh_2i05u.o -list=objs\GUI_Exec.lst
+                C:\Users\55602\AppData\Local\Temp\gh_2i05u.s
+Source File:    C:\Users\55602\AppData\Local\Temp\gh_2i05u.s
+Directory:      C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+Host OS:        GHS_WIN32
+Version:        AS-MIPS 3.5#11 
+Release:        MULTI 2000, MIPS v3.5
+Revision Date:  Wed Feb 27 12:19:03 2002
+Release Date:   Sat Mar 02 02:57:59 2002
+                             1	 #Source File:   C:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\GUI\Core\GUI_Exec.c
+
+                                   Tue Apr 07 08:54:21 2015           Page 2
+                                   Tue Apr 07 08:54:21 2015       gh_2i05u.s
+                             2	 #Directory:     
+                             3	 #		C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                             4	 #Compile Date:  Tue Apr 07 08:54:21 2015
+                             5	 #Host OS:       Win32
+                             6	 #Version:       C-MIPS 3.5#11 RELEASE VERSION
+                             7	 #Release:       MULTI 2000, MIPS v3.5
+                             8	 #Revision Date: Fri Mar 01 11:32:40 2002
+                             9	 #Release Date:  Sat Mar 02 02:58:48 2002
+                            10		.set	noat
+                            11		.set	noreorder
+                            12		.set	nomacro
+                            13		.text
+                            14		.align	4
+                            15		.globl	GUI_Exec1
+                            16	GUI_Exec1:
+        27bdfff0 00000000   17		addiu	$sp, $sp, -16
+                            18	 #	    .bf
+        8f990000 00000004   19		lw	$25, %sdaoff(GUI_pfTimerExec)($28)
+        afb00000 00000008   20		sw	$16, 0($sp)
+        34100000 0000000c   21		ori	$16, $0, 0
+        13200005 00000010   22		beq	$25, $0, .L4
+        afbf000c 00000014   23		sw	$ra, 12($sp)
+        0320f809 00000018   24		jalr	$25
+        00000000 0000001c   25		nop
+        54400001 00000020   26		bnel	$2, $0, .L4
+        34100001 00000024   27		ori	$16, $0, 1
+                            28	.L4:
+        0c000000 00000028   29		jal	WM_Exec
+        00000000 0000002c   30		nop
+        54400001 00000030   31		bnel	$2, $0, .L8
+        34100001 00000034   32		ori	$16, $0, 1
+                            33	.L8:
+        02001025 00000038   34		move	$2, $16
+                            35	 #	    .ef
+        8fb00000 0000003c   36		lw	$16, 0($sp)
+        8fbf000c 00000040   37		lw	$ra, 12($sp)
+        03e00008 00000044   38		jr	$ra
+        27bd0010 00000048   39		addiu	$sp, $sp, 16
+                            40		.type	GUI_Exec1,@function
+                            41		.size	GUI_Exec1,.-GUI_Exec1
+                            42		.align	4
+                            43	 #r	$16	local
+                            44	
+                            45		.data
+                            46	.L36:
+                            47		.text
+                            48		.align	4
+                            49		.align	4
+                            50		.globl	GUI_Exec
+                            51	GUI_Exec:
+        27bdfff0 0000004c   52		addiu	$sp, $sp, -16
+        afbf000c 00000050   53		sw	$ra, 12($sp)
+                            54	 #	    .bf
+        0c000000 00000054   55		jal	GUI_Exec1
+        afb00000 00000058   56		sw	$16, 0($sp)
+        10400004 0000005c   57		beq	$2, $0, .L55
+
+                                   Tue Apr 07 08:54:21 2015           Page 3
+                                   Tue Apr 07 08:54:21 2015       gh_2i05u.s
+        34100000 00000060   58		ori	$16, $0, 0
+                            59	.L56:
+        0c000000 00000064   60		jal	GUI_Exec1
+        34100001 00000068   61		ori	$16, $0, 1
+        1440fffd 0000006c   62		bne	$2, $0, .L56
+                            63	.L55:
+        02001025 00000070   64		move	$2, $16
+                            65	 #	    .ef
+        8fb00000 00000074   66		lw	$16, 0($sp)
+        8fbf000c 00000078   67		lw	$ra, 12($sp)
+        03e00008 0000007c   68		jr	$ra
+        27bd0010 00000080   69		addiu	$sp, $sp, 16
+                            70		.type	GUI_Exec,@function
+                            71		.size	GUI_Exec,.-GUI_Exec
+                            72		.align	4
+                            73	 #r	$16	local
+                            74	
+                            75		.data
+                            76	.L77:
+                            77		.text
+                            78		.align	4
+                            79	 #GUI_pfTimerExec	%sdaoff(GUI_pfTimerExec)	import
+                            80	
+                            81		.data
+                            82		.text

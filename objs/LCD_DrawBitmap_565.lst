@@ -1,0 +1,764 @@
+
+                                   Tue Apr 07 08:56:48 2015           Page 1
+                                   Tue Apr 07 08:56:48 2015       gh_2i08v.s
+Command Line:   C:\GHS\V35\mips35\asmips.exe -noundefined -elf -b0
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos\inc
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\ConvertMono
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Font
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\LCDDriver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\MemDev
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\VNC
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Widget
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\wm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\util
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\datapoint
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\factory
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\webpage
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\xnet
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\stub
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\test
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENIusb\emUSB\USB\Driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\intercom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\controller
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\webif
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\relay
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\GENIApp
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\alarm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\AnaInConfigCtrl
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\Sms
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\display_task
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\gui_utility
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\mpcunit
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIbus
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIcom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIrs232
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\Virtual
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\imagesTFT
+                -IC:\GHS\V35\mips35\mipsl_sf -r4121 -source=LCD_DrawBitmap_565.c
+                -o objs\gh_2i08v.o -list=objs\LCD_DrawBitmap_565.lst
+                C:\Users\55602\AppData\Local\Temp\gh_2i08v.s
+Source File:    C:\Users\55602\AppData\Local\Temp\gh_2i08v.s
+Directory:      C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+Host OS:        GHS_WIN32
+Version:        AS-MIPS 3.5#11 
+Release:        MULTI 2000, MIPS v3.5
+Revision Date:  Wed Feb 27 12:19:03 2002
+Release Date:   Sat Mar 02 02:57:59 2002
+                             1	 #Source File:   C:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\GUI\Core\LCD_DrawBitmap_565.c
+
+                                   Tue Apr 07 08:56:48 2015           Page 2
+                                   Tue Apr 07 08:56:48 2015       gh_2i08v.s
+                             2	 #Directory:     
+                             3	 #		C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                             4	 #Compile Date:  Tue Apr 07 08:56:48 2015
+                             5	 #Host OS:       Win32
+                             6	 #Version:       C-MIPS 3.5#11 RELEASE VERSION
+                             7	 #Release:       MULTI 2000, MIPS v3.5
+                             8	 #Revision Date: Fri Mar 01 11:32:40 2002
+                             9	 #Release Date:  Sat Mar 02 02:58:48 2002
+                            10		.set	noat
+                            11		.set	noreorder
+                            12		.set	nomacro
+                            13		.text
+                            14		.align	4
+                            15	_DrawBitmap:
+        27bdff70 00000000   16		addiu	$sp, $sp, -144
+                            17	 #	    .bf
+        afbf008c 00000004   18		sw	$ra, 140($sp)
+        afb70024 00000008   19		sw	$23, 36($sp)
+        afb00008 0000000c   20		sw	$16, 8($sp)
+        00808025 00000010   21		move	$16, $4
+        afb1000c 00000014   22		sw	$17, 12($sp)
+        00a08825 00000018   23		move	$17, $5
+        afb20010 0000001c   24		sw	$18, 16($sp)
+        00c09025 00000020   25		move	$18, $6
+        afb30014 00000024   26		sw	$19, 20($sp)
+        00e09825 00000028   27		move	$19, $7
+        afb40018 0000002c   28		sw	$20, 24($sp)
+        0100a025 00000030   29		move	$20, $8
+        afb5001c 00000034   30		sw	$21, 28($sp)
+        0140a825 00000038   31		move	$21, $10
+        afb60020 0000003c   32		sw	$22, 32($sp)
+        0160b025 00000040   33		move	$22, $11
+        afa00060 00000044   34		sw	$0, 96($sp)
+        0c000000 00000048   35		jal	LCD_GetColorIndex
+        afbe0028 0000004c   36		sw	$fp, 40($sp)
+        afa20068 00000050   37		sw	$2, 104($sp)
+        0040b825 00000054   38		move	$23, $2
+        afb40038 00000058   39		sw	$20, 56($sp)
+        3c1e0000 0000005c   40		lui	$fp, %hi(GUI_Context)
+        27de0000 00000060   41		addiu	$fp, $fp, %lo(GUI_Context)
+        0c000000 00000064   42		jal	LCD_GetFixedPaletteEx
+        93c40011 00000068   43		lbu	$4, 17($fp)
+        afa20064 0000006c   44		sw	$2, 100($sp)
+        0c000000 00000070   45		jal	LCD_GetSwapRBEx
+        93c40011 00000074   46		lbu	$4, 17($fp)
+        8fc3004c 00000078   47		lw	$3, 76($fp)
+        00126040 0000007c   48		sll	$12, $18, 1
+        afac006c 00000080   49		sw	$12, 108($sp)
+        8c63003c 00000084   50		lw	$3, 60($3)
+        0040c025 00000088   51		move	$24, $2
+        02b61025 0000008c   52		or	$2, $21, $22
+        50600016 00000090   53		beql	$3, $0, .L1000004
+        8fa10060 00000094   54		lw	$1, 96($sp)
+        87d90050 00000098   55		lh	$25, 80($fp)
+        13200006 0000009c   56		beq	$25, $0, .L9
+        00000000 000000a0   57		nop
+
+                                   Tue Apr 07 08:56:48 2015           Page 3
+                                   Tue Apr 07 08:56:48 2015       gh_2i08v.s
+        8c6e0004 000000a4   58		lw	$14, 4($3)
+        3c0d0000 000000a8   59		lui	$13, %hi(LCD_Index2Color_565)
+        25ad0000 000000ac   60		addiu	$13, $13, %lo(LCD_Index2Color_565)
+        51cd000b 000000b0   61		beql	$14, $13, .L1000008
+        34190001 000000b4   62		ori	$25, $0, 1
+                            63	.L9:
+        5720000c 000000b8   64		bnel	$25, $0, .L1000004
+        8fa10060 000000bc   65		lw	$1, 96($sp)
+        8fa10064 000000c0   66		lw	$1, 100($sp)
+        340f0235 000000c4   67		ori	$15, $0, 565
+        542f0008 000000c8   68		bnel	$1, $15, .L1000004
+        8fa10060 000000cc   69		lw	$1, 96($sp)
+        938e0000 000000d0   70		lbu	$14, %sdaoff(_BitmapSwapRB)($28)
+        570e0005 000000d4   71		bnel	$24, $14, .L1000004
+        8fa10060 000000d8   72		lw	$1, 96($sp)
+        34190001 000000dc   73		ori	$25, $0, 1
+                            74	.L1000008:
+        50590001 000000e0   75		beql	$2, $25, .L4
+        afb90060 000000e4   76		sw	$25, 96($sp)
+                            77	.L4:
+        8fa10060 000000e8   78		lw	$1, 96($sp)
+                            79	.L1000004:
+        10200017 000000ec   80		beq	$1, $0, .L13
+        02002025 000000f0   81		move	$4, $16
+        afa00004 000000f4   82		sw	$0, 4($sp)
+        afb40000 000000f8   83		sw	$20, 0($sp)
+        02202825 000000fc   84		move	$5, $17
+        02403025 00000100   85		move	$6, $18
+        02603825 00000104   86		move	$7, $19
+        8fab006c 00000108   87		lw	$11, 108($sp)
+        34080001 0000010c   88		ori	$8, $0, 1
+        34090001 00000110   89		ori	$9, $0, 1
+        0c000000 00000114   90		jal	LCD_DrawBitmap
+        340a0010 00000118   91		ori	$10, $0, 16
+        8fbe0028 0000011c   92		lw	$fp, 40($sp)
+        8fb70024 00000120   93		lw	$23, 36($sp)
+        8fbf008c 00000124   94		lw	$ra, 140($sp)
+        8fb00008 00000128   95		lw	$16, 8($sp)
+        8fb1000c 0000012c   96		lw	$17, 12($sp)
+        8fb20010 00000130   97		lw	$18, 16($sp)
+        8fb30014 00000134   98		lw	$19, 20($sp)
+        8fb40018 00000138   99		lw	$20, 24($sp)
+        8fb5001c 0000013c  100		lw	$21, 28($sp)
+        8fb60020 00000140  101		lw	$22, 32($sp)
+        03e00008 00000144  102		jr	$ra
+        27bd0090 00000148  103		addiu	$sp, $sp, 144
+                           104	.L13:
+        340f0001 0000014c  105		ori	$15, $0, 1
+        144f0122 00000150  106		bne	$2, $15, .L16
+        27c20008 00000154  107		addiu	$2, $fp, 8
+        02337021 00000158  108		addu	$14, $17, $19
+        87d8000a 0000015c  109		lh	$24, 10($fp)
+        02126821 00000160  110		addu	$13, $16, $18
+        25a6ffff 00000164  111		addiu	$6, $13, -1
+        03001825 00000168  112		move	$3, $24
+        0223c82a 0000016c  113		slt	$25, $17, $3
+
+                                   Tue Apr 07 08:56:48 2015           Page 4
+                                   Tue Apr 07 08:56:48 2015       gh_2i08v.s
+        1320000c 00000170  114		beq	$25, $0, .L18
+        25c5ffff 00000174  115		addiu	$5, $14, -1
+        8fac006c 00000178  116		lw	$12, 108($sp)
+        00711823 0000017c  117		subu	$3, $3, $17
+        03008825 00000180  118		move	$17, $24
+        006c0018 00000184  119		mult	$3, $12
+        0000c012 00000188  120		mflo	$24
+        8fa10038 0000018c  121		lw	$1, 56($sp)
+        02639823 00000190  122		subu	$19, $19, $3
+        00187842 00000194  123		srl	$15, $24, 1
+        000f7040 00000198  124		sll	$14, $15, 1
+        002e6021 0000019c  125		addu	$12, $1, $14
+        afac0038 000001a0  126		sw	$12, 56($sp)
+                           127	.L18:
+        844d0006 000001a4  128		lh	$13, 6($2)
+        00ad1823 000001a8  129		subu	$3, $5, $13
+        5c600001 000001ac  130		bgtzl	$3, .L20
+        02639823 000001b0  131		subu	$19, $19, $3
+                           132	.L20:
+        5a600179 000001b4  133		blezl	$19, .L1000002
+        8fbe0028 000001b8  134		lw	$fp, 40($sp)
+        844f0004 000001bc  135		lh	$15, 4($2)
+        00cf1823 000001c0  136		subu	$3, $6, $15
+        5c600001 000001c4  137		bgtzl	$3, .L25
+        02439023 000001c8  138		subu	$18, $18, $3
+                           139	.L25:
+        84430000 000001cc  140		lh	$3, 0($2)
+        0203682a 000001d0  141		slt	$13, $16, $3
+        11a00008 000001d4  142		beq	$13, $0, .L27
+        00000000 000001d8  143		nop
+        00701823 000001dc  144		subu	$3, $3, $16
+        8fa10038 000001e0  145		lw	$1, 56($sp)
+        02439023 000001e4  146		subu	$18, $18, $3
+        0003c840 000001e8  147		sll	$25, $3, 1
+        00396021 000001ec  148		addu	$12, $1, $25
+        afac0038 000001f0  149		sw	$12, 56($sp)
+        02038021 000001f4  150		addu	$16, $16, $3
+                           151	.L27:
+        5a400168 000001f8  152		blezl	$18, .L1000002
+        8fbe0028 000001fc  153		lw	$fp, 40($sp)
+        8fa1006c 00000200  154		lw	$1, 108($sp)
+        afbe0050 00000204  155		sw	$fp, 80($sp)
+        0013702a 00000208  156		slt	$14, $0, $19
+        00017fc3 0000020c  157		sra	$15, $1, 31
+        000f1fc2 00000210  158		srl	$3, $15, 31
+        00611821 00000214  159		addu	$3, $3, $1
+        00031843 00000218  160		sra	$3, $3, 1
+        00036040 0000021c  161		sll	$12, $3, 1
+        afac0058 00000220  162		sw	$12, 88($sp)
+        11c0015a 00000224  163		beq	$14, $0, .L45
+        afa00040 00000228  164		sw	$0, 64($sp)
+                           165	.L34:
+        34010000 0000022c  166		ori	$1, $0, 0
+        afa0004c 00000230  167		sw	$0, 76($sp)
+        afa0003c 00000234  168		sw	$0, 60($sp)
+        0032702a 00000238  169		slt	$14, $1, $18
+
+                                   Tue Apr 07 08:56:48 2015           Page 5
+                                   Tue Apr 07 08:56:48 2015       gh_2i08v.s
+        11c00002 0000023c  170		beq	$14, $0, .L363
+        8fb50038 00000240  171		lw	$21, 56($sp)
+        afb2003c 00000244  172		sw	$18, 60($sp)
+                           173	.L363:
+        8fa1003c 00000248  174		lw	$1, 60($sp)
+        0001f082 0000024c  175		srl	$fp, $1, 2
+        53c000a3 00000250  176		beql	$fp, $0, .L1000160
+        8fa1003c 00000254  177		lw	$1, 60($sp)
+        8fa10050 00000258  178		lw	$1, 80($sp)
+        24360002 0000025c  179		addiu	$22, $1, 2
+        8fa10040 00000260  180		lw	$1, 64($sp)
+        00316021 00000264  181		addu	$12, $1, $17
+        afac0080 00000268  182		sw	$12, 128($sp)
+        260c0003 0000026c  183		addiu	$12, $16, 3
+        afac0084 00000270  184		sw	$12, 132($sp)
+        001e6080 00000274  185		sll	$12, $fp, 2
+        afac004c 00000278  186		sw	$12, 76($sp)
+                           187	.L161:
+        96b40000 0000027c  188		lhu	$20, 0($21)
+        26b50002 00000280  189		addiu	$21, $21, 2
+        5297001c 00000284  190		beql	$20, $23, .L1000168
+        8ece004a 00000288  191		lw	$14, 74($22)
+        93980000 0000028c  192		lbu	$24, %sdaoff(_BitmapSwapRB)($28)
+        13000013 00000290  193		beq	$24, $0, .L164
+        00000000 00000294  194		nop
+        0c000000 00000298  195		jal	LCD_Index2Color_M565
+        02802025 0000029c  196		move	$4, $20
+        0c000000 000002a0  197		jal	LCD_SetColor
+        00402025 000002a4  198		move	$4, $2
+        8ece004a 000002a8  199		lw	$14, 74($22)
+        0280b825 000002ac  200		move	$23, $20
+        8fa10084 000002b0  201		lw	$1, 132($sp)
+        8dce0024 000002b4  202		lw	$14, 36($14)
+        8fa50080 000002b8  203		lw	$5, 128($sp)
+        2424fffd 000002bc  204		addiu	$4, $1, -3
+        01c0f809 000002c0  205		jalr	$14
+        96c60000 000002c4  206		lhu	$6, 0($22)
+        96b40000 000002c8  207		lhu	$20, 0($21)
+        26b50002 000002cc  208		addiu	$21, $21, 2
+        5297002e 000002d0  209		beql	$20, $23, .L1000175
+        8ecf004a 000002d4  210		lw	$15, 74($22)
+        08000000 000002d8  211		j	.L1000169
+        93990000 000002dc  212		lbu	$25, %sdaoff(_BitmapSwapRB)($28)
+                           213	.L164:
+        0c000000 000002e0  214		jal	LCD_Index2Color_565
+        02802025 000002e4  215		move	$4, $20
+        0c000000 000002e8  216		jal	LCD_SetColor
+        00402025 000002ec  217		move	$4, $2
+        0280b825 000002f0  218		move	$23, $20
+        8ece004a 000002f4  219		lw	$14, 74($22)
+                           220	.L1000168:
+        8fa10084 000002f8  221		lw	$1, 132($sp)
+        8dce0024 000002fc  222		lw	$14, 36($14)
+        2424fffd 00000300  223		addiu	$4, $1, -3
+        8fa50080 00000304  224		lw	$5, 128($sp)
+        01c0f809 00000308  225		jalr	$14
+
+                                   Tue Apr 07 08:56:48 2015           Page 6
+                                   Tue Apr 07 08:56:48 2015       gh_2i08v.s
+        96c60000 0000030c  226		lhu	$6, 0($22)
+        96b40000 00000310  227		lhu	$20, 0($21)
+        26b50002 00000314  228		addiu	$21, $21, 2
+        5297001c 00000318  229		beql	$20, $23, .L1000175
+        8ecf004a 0000031c  230		lw	$15, 74($22)
+        93990000 00000320  231		lbu	$25, %sdaoff(_BitmapSwapRB)($28)
+                           232	.L1000169:
+        13200013 00000324  233		beq	$25, $0, .L171
+        00000000 00000328  234		nop
+        0c000000 0000032c  235		jal	LCD_Index2Color_M565
+        02802025 00000330  236		move	$4, $20
+        0c000000 00000334  237		jal	LCD_SetColor
+        00402025 00000338  238		move	$4, $2
+        8ecf004a 0000033c  239		lw	$15, 74($22)
+        0280b825 00000340  240		move	$23, $20
+        8fa10084 00000344  241		lw	$1, 132($sp)
+        8def0024 00000348  242		lw	$15, 36($15)
+        8fa50080 0000034c  243		lw	$5, 128($sp)
+        2424fffe 00000350  244		addiu	$4, $1, -2
+        01e0f809 00000354  245		jalr	$15
+        96c60000 00000358  246		lhu	$6, 0($22)
+        96b40000 0000035c  247		lhu	$20, 0($21)
+        26b50002 00000360  248		addiu	$21, $21, 2
+        5297002e 00000364  249		beql	$20, $23, .L1000182
+        8ed8004a 00000368  250		lw	$24, 74($22)
+        08000000 0000036c  251		j	.L1000176
+        938d0000 00000370  252		lbu	$13, %sdaoff(_BitmapSwapRB)($28)
+                           253	.L171:
+        0c000000 00000374  254		jal	LCD_Index2Color_565
+        02802025 00000378  255		move	$4, $20
+        0c000000 0000037c  256		jal	LCD_SetColor
+        00402025 00000380  257		move	$4, $2
+        0280b825 00000384  258		move	$23, $20
+        8ecf004a 00000388  259		lw	$15, 74($22)
+                           260	.L1000175:
+        8fa10084 0000038c  261		lw	$1, 132($sp)
+        8def0024 00000390  262		lw	$15, 36($15)
+        2424fffe 00000394  263		addiu	$4, $1, -2
+        8fa50080 00000398  264		lw	$5, 128($sp)
+        01e0f809 0000039c  265		jalr	$15
+        96c60000 000003a0  266		lhu	$6, 0($22)
+        96b40000 000003a4  267		lhu	$20, 0($21)
+        26b50002 000003a8  268		addiu	$21, $21, 2
+        5297001c 000003ac  269		beql	$20, $23, .L1000182
+        8ed8004a 000003b0  270		lw	$24, 74($22)
+        938d0000 000003b4  271		lbu	$13, %sdaoff(_BitmapSwapRB)($28)
+                           272	.L1000176:
+        11a00013 000003b8  273		beq	$13, $0, .L178
+        00000000 000003bc  274		nop
+        0c000000 000003c0  275		jal	LCD_Index2Color_M565
+        02802025 000003c4  276		move	$4, $20
+        0c000000 000003c8  277		jal	LCD_SetColor
+        00402025 000003cc  278		move	$4, $2
+        8ed8004a 000003d0  279		lw	$24, 74($22)
+        0280b825 000003d4  280		move	$23, $20
+        8fa10084 000003d8  281		lw	$1, 132($sp)
+
+                                   Tue Apr 07 08:56:48 2015           Page 7
+                                   Tue Apr 07 08:56:48 2015       gh_2i08v.s
+        8f180024 000003dc  282		lw	$24, 36($24)
+        8fa50080 000003e0  283		lw	$5, 128($sp)
+        2424ffff 000003e4  284		addiu	$4, $1, -1
+        0300f809 000003e8  285		jalr	$24
+        96c60000 000003ec  286		lhu	$6, 0($22)
+        96b40000 000003f0  287		lhu	$20, 0($21)
+        26b50002 000003f4  288		addiu	$21, $21, 2
+        5297002e 000003f8  289		beql	$20, $23, .L1000188
+        8ed9004a 000003fc  290		lw	$25, 74($22)
+        08000000 00000400  291		j	.L1000183
+        938e0000 00000404  292		lbu	$14, %sdaoff(_BitmapSwapRB)($28)
+                           293	.L178:
+        0c000000 00000408  294		jal	LCD_Index2Color_565
+        02802025 0000040c  295		move	$4, $20
+        0c000000 00000410  296		jal	LCD_SetColor
+        00402025 00000414  297		move	$4, $2
+        0280b825 00000418  298		move	$23, $20
+        8ed8004a 0000041c  299		lw	$24, 74($22)
+                           300	.L1000182:
+        8fa10084 00000420  301		lw	$1, 132($sp)
+        8f180024 00000424  302		lw	$24, 36($24)
+        2424ffff 00000428  303		addiu	$4, $1, -1
+        8fa50080 0000042c  304		lw	$5, 128($sp)
+        0300f809 00000430  305		jalr	$24
+        96c60000 00000434  306		lhu	$6, 0($22)
+        96b40000 00000438  307		lhu	$20, 0($21)
+        26b50002 0000043c  308		addiu	$21, $21, 2
+        5297001c 00000440  309		beql	$20, $23, .L1000188
+        8ed9004a 00000444  310		lw	$25, 74($22)
+        938e0000 00000448  311		lbu	$14, %sdaoff(_BitmapSwapRB)($28)
+                           312	.L1000183:
+        11c00013 0000044c  313		beq	$14, $0, .L185
+        00000000 00000450  314		nop
+        0c000000 00000454  315		jal	LCD_Index2Color_M565
+        02802025 00000458  316		move	$4, $20
+        0c000000 0000045c  317		jal	LCD_SetColor
+        00402025 00000460  318		move	$4, $2
+        8ed9004a 00000464  319		lw	$25, 74($22)
+        8f390024 00000468  320		lw	$25, 36($25)
+        8fa40084 0000046c  321		lw	$4, 132($sp)
+        8fa50080 00000470  322		lw	$5, 128($sp)
+        0320f809 00000474  323		jalr	$25
+        96c60000 00000478  324		lhu	$6, 0($22)
+        8fa10084 0000047c  325		lw	$1, 132($sp)
+        0280b825 00000480  326		move	$23, $20
+        27deffff 00000484  327		addiu	$fp, $fp, -1
+        242c0004 00000488  328		addiu	$12, $1, 4
+        17c0ff7b 0000048c  329		bne	$fp, $0, .L161
+        afac0084 00000490  330		sw	$12, 132($sp)
+        08000000 00000494  331		j	.L1000160
+        8fa1003c 00000498  332		lw	$1, 60($sp)
+                           333	.L185:
+        0c000000 0000049c  334		jal	LCD_Index2Color_565
+        02802025 000004a0  335		move	$4, $20
+        0c000000 000004a4  336		jal	LCD_SetColor
+        00402025 000004a8  337		move	$4, $2
+
+                                   Tue Apr 07 08:56:48 2015           Page 8
+                                   Tue Apr 07 08:56:48 2015       gh_2i08v.s
+        0280b825 000004ac  338		move	$23, $20
+        8ed9004a 000004b0  339		lw	$25, 74($22)
+                           340	.L1000188:
+        8f390024 000004b4  341		lw	$25, 36($25)
+        8fa40084 000004b8  342		lw	$4, 132($sp)
+        8fa50080 000004bc  343		lw	$5, 128($sp)
+        0320f809 000004c0  344		jalr	$25
+        96c60000 000004c4  345		lhu	$6, 0($22)
+        8fa10084 000004c8  346		lw	$1, 132($sp)
+        27deffff 000004cc  347		addiu	$fp, $fp, -1
+        242c0004 000004d0  348		addiu	$12, $1, 4
+        17c0ff69 000004d4  349		bne	$fp, $0, .L161
+        afac0084 000004d8  350		sw	$12, 132($sp)
+        8fa1003c 000004dc  351		lw	$1, 60($sp)
+                           352	.L1000160:
+        303e0003 000004e0  353		andi	$fp, $1, 3
+        53c00033 000004e4  354		beql	$fp, $0, .L1000036
+        8fa10038 000004e8  355		lw	$1, 56($sp)
+        8fa10050 000004ec  356		lw	$1, 80($sp)
+        242c0002 000004f0  357		addiu	$12, $1, 2
+        8fa10040 000004f4  358		lw	$1, 64($sp)
+        afac0034 000004f8  359		sw	$12, 52($sp)
+        00316021 000004fc  360		addu	$12, $1, $17
+        8fa1004c 00000500  361		lw	$1, 76($sp)
+        afac0070 00000504  362		sw	$12, 112($sp)
+        0030b021 00000508  363		addu	$22, $1, $16
+        96b40000 0000050c  364		lhu	$20, 0($21)
+                           365	.L1000191:
+        26b50002 00000510  366		addiu	$21, $21, 2
+        5297001c 00000514  367		beql	$20, $23, .L1000197
+        8fa10034 00000518  368		lw	$1, 52($sp)
+        938d0000 0000051c  369		lbu	$13, %sdaoff(_BitmapSwapRB)($28)
+        11a00013 00000520  370		beq	$13, $0, .L194
+        00000000 00000524  371		nop
+        0c000000 00000528  372		jal	LCD_Index2Color_M565
+        02802025 0000052c  373		move	$4, $20
+        0c000000 00000530  374		jal	LCD_SetColor
+        00402025 00000534  375		move	$4, $2
+        8fa10034 00000538  376		lw	$1, 52($sp)
+        0280b825 0000053c  377		move	$23, $20
+        8c38004a 00000540  378		lw	$24, 74($1)
+        02c02025 00000544  379		move	$4, $22
+        8fa50070 00000548  380		lw	$5, 112($sp)
+        8f180024 0000054c  381		lw	$24, 36($24)
+        27deffff 00000550  382		addiu	$fp, $fp, -1
+        94260000 00000554  383		lhu	$6, 0($1)
+        0300f809 00000558  384		jalr	$24
+        26d60001 0000055c  385		addiu	$22, $22, 1
+        57c0ffeb 00000560  386		bnel	$fp, $0, .L1000191
+        96b40000 00000564  387		lhu	$20, 0($21)
+        08000000 00000568  388		j	.L1000036
+        8fa10038 0000056c  389		lw	$1, 56($sp)
+                           390	.L194:
+        0c000000 00000570  391		jal	LCD_Index2Color_565
+        02802025 00000574  392		move	$4, $20
+        0c000000 00000578  393		jal	LCD_SetColor
+
+                                   Tue Apr 07 08:56:48 2015           Page 9
+                                   Tue Apr 07 08:56:48 2015       gh_2i08v.s
+        00402025 0000057c  394		move	$4, $2
+        0280b825 00000580  395		move	$23, $20
+        8fa10034 00000584  396		lw	$1, 52($sp)
+                           397	.L1000197:
+        8c38004a 00000588  398		lw	$24, 74($1)
+        02c02025 0000058c  399		move	$4, $22
+        8fa50070 00000590  400		lw	$5, 112($sp)
+        8f180024 00000594  401		lw	$24, 36($24)
+        27deffff 00000598  402		addiu	$fp, $fp, -1
+        94260000 0000059c  403		lhu	$6, 0($1)
+        0300f809 000005a0  404		jalr	$24
+        26d60001 000005a4  405		addiu	$22, $22, 1
+        57c0ffd9 000005a8  406		bnel	$fp, $0, .L1000191
+        96b40000 000005ac  407		lhu	$20, 0($21)
+        8fa10038 000005b0  408		lw	$1, 56($sp)
+                           409	.L1000036:
+        8fac0058 000005b4  410		lw	$12, 88($sp)
+        002c6021 000005b8  411		addu	$12, $1, $12
+        8fa10040 000005bc  412		lw	$1, 64($sp)
+        afac0038 000005c0  413		sw	$12, 56($sp)
+        242c0001 000005c4  414		addiu	$12, $1, 1
+        0193702a 000005c8  415		slt	$14, $12, $19
+        15c0ff17 000005cc  416		bne	$14, $0, .L34
+        afac0040 000005d0  417		sw	$12, 64($sp)
+        08000000 000005d4  418		j	.L45
+        00000000 000005d8  419		nop
+                           420	.L16:
+        8fa1006c 000005dc  421		lw	$1, 108($sp)
+        02366821 000005e0  422		addu	$13, $17, $22
+        afa00044 000005e4  423		sw	$0, 68($sp)
+        00011fc3 000005e8  424		sra	$3, $1, 31
+        00031fc2 000005ec  425		srl	$3, $3, 31
+        00611821 000005f0  426		addu	$3, $3, $1
+        00031843 000005f4  427		sra	$3, $3, 1
+        00036040 000005f8  428		sll	$12, $3, 1
+        afac005c 000005fc  429		sw	$12, 92($sp)
+        25acffff 00000600  430		addiu	$12, $13, -1
+        afac0048 00000604  431		sw	$12, 72($sp)
+        afbe0054 00000608  432		sw	$fp, 84($sp)
+        0013682a 0000060c  433		slt	$13, $0, $19
+        11a0005f 00000610  434		beq	$13, $0, .L45
+        afb10078 00000614  435		sw	$17, 120($sp)
+        8fb90054 00000618  436		lw	$25, 84($sp)
+                           437	.L1000048:
+        8fac0048 0000061c  438		lw	$12, 72($sp)
+        8739000a 00000620  439		lh	$25, 10($25)
+        afac0074 00000624  440		sw	$12, 116($sp)
+        0199c02a 00000628  441		slt	$24, $12, $25
+        57000046 0000062c  442		bnel	$24, $0, .L1000050
+        8fac005c 00000630  443		lw	$12, 92($sp)
+        8faf0054 00000634  444		lw	$15, 84($sp)
+        8fac0078 00000638  445		lw	$12, 120($sp)
+        85ef000e 0000063c  446		lh	$15, 14($15)
+        01ec702a 00000640  447		slt	$14, $15, $12
+        55c00040 00000644  448		bnel	$14, $0, .L1000050
+        8fac005c 00000648  449		lw	$12, 92($sp)
+
+                                   Tue Apr 07 08:56:48 2015           Page 10
+                                   Tue Apr 07 08:56:48 2015       gh_2i08v.s
+        8fac0038 0000064c  450		lw	$12, 56($sp)
+        0200f025 00000650  451		move	$fp, $16
+        03d56821 00000654  452		addu	$13, $fp, $21
+        afac0030 00000658  453		sw	$12, 48($sp)
+        25acffff 0000065c  454		addiu	$12, $13, -1
+        afac007c 00000660  455		sw	$12, 124($sp)
+        0012702a 00000664  456		slt	$14, $0, $18
+        11c00036 00000668  457		beq	$14, $0, .L50
+        afa0002c 0000066c  458		sw	$0, 44($sp)
+        8fa10030 00000670  459		lw	$1, 48($sp)
+                           460	.L1000055:
+        94310000 00000674  461		lhu	$17, 0($1)
+        24210002 00000678  462		addiu	$1, $1, 2
+        afa10030 0000067c  463		sw	$1, 48($sp)
+        52370021 00000680  464		beql	$17, $23, .L1000057
+        03c02025 00000684  465		move	$4, $fp
+        93980000 00000688  466		lbu	$24, %sdaoff(_BitmapSwapRB)($28)
+        13000018 0000068c  467		beq	$24, $0, .L59
+        00000000 00000690  468		nop
+        0c000000 00000694  469		jal	LCD_Index2Color_M565
+        02202025 00000698  470		move	$4, $17
+        0c000000 0000069c  471		jal	LCD_SetColor
+        00402025 000006a0  472		move	$4, $2
+        0220b825 000006a4  473		move	$23, $17
+        03c02025 000006a8  474		move	$4, $fp
+        8fa50078 000006ac  475		lw	$5, 120($sp)
+        8fa6007c 000006b0  476		lw	$6, 124($sp)
+        0c000000 000006b4  477		jal	LCD_FillRect
+        8fa70074 000006b8  478		lw	$7, 116($sp)
+        8fa1002c 000006bc  479		lw	$1, 44($sp)
+        242c0001 000006c0  480		addiu	$12, $1, 1
+        8fa1007c 000006c4  481		lw	$1, 124($sp)
+        afac002c 000006c8  482		sw	$12, 44($sp)
+        00356021 000006cc  483		addu	$12, $1, $21
+        8fa1002c 000006d0  484		lw	$1, 44($sp)
+        afac007c 000006d4  485		sw	$12, 124($sp)
+        03d5f021 000006d8  486		addu	$fp, $fp, $21
+        0032702a 000006dc  487		slt	$14, $1, $18
+        55c0ffe4 000006e0  488		bnel	$14, $0, .L1000055
+        8fa10030 000006e4  489		lw	$1, 48($sp)
+        08000000 000006e8  490		j	.L1000050
+        8fac005c 000006ec  491		lw	$12, 92($sp)
+                           492	.L59:
+        0c000000 000006f0  493		jal	LCD_Index2Color_565
+        02202025 000006f4  494		move	$4, $17
+        0c000000 000006f8  495		jal	LCD_SetColor
+        00402025 000006fc  496		move	$4, $2
+        0220b825 00000700  497		move	$23, $17
+        03c02025 00000704  498		move	$4, $fp
+                           499	.L1000057:
+        8fa50078 00000708  500		lw	$5, 120($sp)
+        8fa6007c 0000070c  501		lw	$6, 124($sp)
+        0c000000 00000710  502		jal	LCD_FillRect
+        8fa70074 00000714  503		lw	$7, 116($sp)
+        8fa1002c 00000718  504		lw	$1, 44($sp)
+        242c0001 0000071c  505		addiu	$12, $1, 1
+
+                                   Tue Apr 07 08:56:48 2015           Page 11
+                                   Tue Apr 07 08:56:48 2015       gh_2i08v.s
+        8fa1007c 00000720  506		lw	$1, 124($sp)
+        afac002c 00000724  507		sw	$12, 44($sp)
+        00356021 00000728  508		addu	$12, $1, $21
+        8fa1002c 0000072c  509		lw	$1, 44($sp)
+        afac007c 00000730  510		sw	$12, 124($sp)
+        03d5f021 00000734  511		addu	$fp, $fp, $21
+        0032702a 00000738  512		slt	$14, $1, $18
+        55c0ffcd 0000073c  513		bnel	$14, $0, .L1000055
+        8fa10030 00000740  514		lw	$1, 48($sp)
+                           515	.L50:
+        8fac005c 00000744  516		lw	$12, 92($sp)
+                           517	.L1000050:
+        8fa10038 00000748  518		lw	$1, 56($sp)
+        002c6021 0000074c  519		addu	$12, $1, $12
+        8fa10044 00000750  520		lw	$1, 68($sp)
+        afac0038 00000754  521		sw	$12, 56($sp)
+        242c0001 00000758  522		addiu	$12, $1, 1
+        8fa10048 0000075c  523		lw	$1, 72($sp)
+        afac0044 00000760  524		sw	$12, 68($sp)
+        00366021 00000764  525		addu	$12, $1, $22
+        8fa10078 00000768  526		lw	$1, 120($sp)
+        afac0048 0000076c  527		sw	$12, 72($sp)
+        00366021 00000770  528		addu	$12, $1, $22
+        afac0078 00000774  529		sw	$12, 120($sp)
+        8fac006c 00000778  530		lw	$12, 108($sp)
+        8fa10044 0000077c  531		lw	$1, 68($sp)
+        028ca021 00000780  532		addu	$20, $20, $12
+        0033682a 00000784  533		slt	$13, $1, $19
+        55a0ffa4 00000788  534		bnel	$13, $0, .L1000048
+        8fb90054 0000078c  535		lw	$25, 84($sp)
+                           536	.L45:
+        0c000000 00000790  537		jal	GUI_SetColorIndex
+        8fa40068 00000794  538		lw	$4, 104($sp)
+        8fbe0028 00000798  539		lw	$fp, 40($sp)
+                           540	.L1000002:
+                           541	 #	    .ef
+        8fb70024 0000079c  542		lw	$23, 36($sp)
+        8fbf008c 000007a0  543		lw	$ra, 140($sp)
+        8fb00008 000007a4  544		lw	$16, 8($sp)
+        8fb1000c 000007a8  545		lw	$17, 12($sp)
+        8fb20010 000007ac  546		lw	$18, 16($sp)
+        8fb30014 000007b0  547		lw	$19, 20($sp)
+        8fb40018 000007b4  548		lw	$20, 24($sp)
+        8fb5001c 000007b8  549		lw	$21, 28($sp)
+        8fb60020 000007bc  550		lw	$22, 32($sp)
+        03e00008 000007c0  551		jr	$ra
+        27bd0090 000007c4  552		addiu	$sp, $sp, 144
+                           553		.type	_DrawBitmap,@function
+                           554		.size	_DrawBitmap,.-_DrawBitmap
+                           555		.align	4
+                           556	 #pData	56($sp)	local
+                           557	 #y	64($sp)	local
+                           558	 #OldIndex	104($sp)	local
+                           559	 #PrevIndex	$23	local
+                           560	 #Mode	100($sp)	local
+                           561	 #SwapRB	$24	local
+
+                                   Tue Apr 07 08:56:48 2015           Page 12
+                                   Tue Apr 07 08:56:48 2015       gh_2i08v.s
+                           562	 #Mag	$2	local
+                           563	 #BytesPerLine	108($sp)	local
+                           564	 #UseDrawBitmap	96($sp)	local
+                           565	 #x1	$6	local
+                           566	 #y1	$5	local
+                           567	 #Diff	$3	local
+                           568	 #x	76($sp)	local
+                           569	 #p	$21	local
+                           570	 #Index	$20	local
+                           571	 #x	$fp	local
+                           572	 #y	120($sp)	local
+                           573	 #yi	68($sp)	local
+                           574	 #yMax	116($sp)	local
+                           575	 #xi	44($sp)	local
+                           576	 #p	48($sp)	local
+                           577	 #Index	$17	local
+                           578	
+                           579	 #x0	$16	param
+                           580	 #y0	$17	param
+                           581	 #xsize	$18	param
+                           582	 #ysize	$19	param
+                           583	 #pPixel	$20	param
+                           584	 #pLogPal	none	param
+                           585	 #xMag	$21	param
+                           586	 #yMag	$22	param
+                           587	
+                           588		.data
+                           589	.L362:
+                           590		.lsbss	_BitmapSwapRB,1,1
+                           591	
+                           592		.text
+                           593		.align	4
+                           594		.align	4
+                           595	_DrawBitmap_565:
+                           596	 #	    .bf
+        08000000 000007c8  597		j	_DrawBitmap
+        a3800000 000007cc  598		sb	$0, %sdaoff(_BitmapSwapRB)($28)
+                           599	 #	    .ef
+                           600		.type	_DrawBitmap_565,@function
+                           601		.size	_DrawBitmap_565,.-_DrawBitmap_565
+                           602		.align	4
+                           603	
+                           604	 #x0	none	param
+                           605	 #y0	none	param
+                           606	 #xsize	none	param
+                           607	 #ysize	none	param
+                           608	 #pPixel	none	param
+                           609	 #pLogPal	none	param
+                           610	 #xMag	none	param
+                           611	 #yMag	none	param
+                           612	
+                           613		.data
+                           614	.L519:
+                           615		.text
+                           616		.align	4
+                           617		.align	4
+
+                                   Tue Apr 07 08:56:48 2015           Page 13
+                                   Tue Apr 07 08:56:48 2015       gh_2i08v.s
+                           618	_DrawBitmap_M565:
+        34190001 000007d0  619		ori	$25, $0, 1
+                           620	 #	    .bf
+        08000000 000007d4  621		j	_DrawBitmap
+        a3990000 000007d8  622		sb	$25, %sdaoff(_BitmapSwapRB)($28)
+                           623	 #	    .ef
+                           624		.type	_DrawBitmap_M565,@function
+                           625		.size	_DrawBitmap_M565,.-_DrawBitmap_M565
+                           626		.align	4
+                           627	
+                           628	 #x0	none	param
+                           629	 #y0	none	param
+                           630	 #xsize	none	param
+                           631	 #ysize	none	param
+                           632	 #pPixel	none	param
+                           633	 #pLogPal	none	param
+                           634	 #xMag	none	param
+                           635	 #yMag	none	param
+                           636	
+                           637		.data
+                           638	.L537:
+                           639		.text
+                           640		.align	4
+                           641	 #GUI_Context	GUI_Context	import
+                           642	 #_BitmapSwapRB	%sdaoff(_BitmapSwapRB)	static
+                           643	
+                           644		.section ".rodata","a"
+                           645	.L544:
+                           646		.globl	GUI_BitmapMethods565
+        00000000 00000000  647	GUI_BitmapMethods565:	.word	_DrawBitmap_565
+        00000000 00000004  648		.word	LCD_Index2Color_565
+                           649		.type	GUI_BitmapMethods565,@object
+                           650		.size	GUI_BitmapMethods565,8
+                           651	.L545:
+                           652		.globl	GUI_BitmapMethodsM565
+        00000000 00000008  653	GUI_BitmapMethodsM565:	.word	_DrawBitmap_M565
+        00000000 0000000c  654		.word	LCD_Index2Color_M565
+                           655		.type	GUI_BitmapMethodsM565,@object
+                           656		.size	GUI_BitmapMethodsM565,8
+                           657		.data
+                           658		.section ".rodata","a"
+                           659		.align	4
+                           660		.text

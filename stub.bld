@@ -1,0 +1,8 @@
+#!build
+default:
+	subproject
+	:object_dir=objs
+stub\pwm_drv.c
+	C
+stub\gpio.cpp
+	C++

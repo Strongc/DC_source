@@ -1,0 +1,152 @@
+
+                                   Tue Apr 07 08:50:10 2015           Page 1
+                                   Tue Apr 07 08:50:09 2015        gh_2i0c.s
+Command Line:   C:\GHS\V35\mips35\asmips.exe -noundefined -elf -b0
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\MPC_control\source\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos\inc
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\ConvertMono
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Font
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\LCDDriver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\MemDev
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\VNC
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Widget
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\wm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\util
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\datapoint
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\factory
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\webpage
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\xnet
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\stub
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\test
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENIusb\emUSB\USB\Driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\intercom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\controller
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\webif
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\relay
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\GENIApp
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\alarm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\AnaInConfigCtrl
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\Sms
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\display_task
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\gui_utility
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\mpcunit
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIbus
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIcom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIrs232
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\Virtual
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\imagesTFT
+                -IC:\GHS\V35\mips35\mipsl_sf -r4121 -source=WM__SendMessage.c -o
+                objs\gh_2i0c.o -list=objs\WM__SendMessage.lst
+                C:\Users\55602\AppData\Local\Temp\gh_2i0c.s
+Source File:    C:\Users\55602\AppData\Local\Temp\gh_2i0c.s
+Directory:      C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+Host OS:        GHS_WIN32
+Version:        AS-MIPS 3.5#11 
+Release:        MULTI 2000, MIPS v3.5
+Revision Date:  Wed Feb 27 12:19:03 2002
+Release Date:   Sat Mar 02 02:57:59 2002
+                             1	 #Source File:   C:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\GUI\WM\WM__SendMessage.c
+
+                                   Tue Apr 07 08:50:10 2015           Page 2
+                                   Tue Apr 07 08:50:09 2015        gh_2i0c.s
+                             2	 #Directory:     
+                             3	 #		C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                             4	 #Compile Date:  Tue Apr 07 08:50:09 2015
+                             5	 #Host OS:       Win32
+                             6	 #Version:       C-MIPS 3.5#11 RELEASE VERSION
+                             7	 #Release:       MULTI 2000, MIPS v3.5
+                             8	 #Revision Date: Fri Mar 01 11:32:40 2002
+                             9	 #Release Date:  Sat Mar 02 02:58:48 2002
+                            10		.set	noat
+                            11		.set	noreorder
+                            12		.set	nomacro
+                            13		.text
+                            14		.align	4
+                            15		.globl	WM__SendMessage
+                            16	WM__SendMessage:
+        27bdfff0 00000000   17		addiu	$sp, $sp, -16
+                            18	 #	    .bf
+        afb10004 00000004   19		sw	$17, 4($sp)
+        00a08825 00000008   20		move	$17, $5
+        afb00000 0000000c   21		sw	$16, 0($sp)
+        8f810000 00000010   22		lw	$1, %sdaoff(.L33)($28)
+        00048400 00000014   23		sll	$16, $4, 16
+        00108403 00000018   24		sra	$16, $16, 16
+        28390014 0000001c   25		slti	$25, $1, 20
+        13200017 00000020   26		beq	$25, $0, .L2
+        afbf000c 00000024   27		sw	$ra, 12($sp)
+        0c000000 00000028   28		jal	GUI_ALLOC_h2p
+        02002025 0000002c   29		move	$4, $16
+        8c580010 00000030   30		lw	$24, 16($2)
+        a6300004 00000034   31		sh	$16, 4($17)
+        1300000f 00000038   32		beq	$24, $0, .L6
+        00000000 0000003c   33		nop
+        8f810000 00000040   34		lw	$1, %sdaoff(.L33)($28)
+        03007025 00000044   35		move	$14, $24
+        02202025 00000048   36		move	$4, $17
+        242c0001 0000004c   37		addiu	$12, $1, 1
+        01c0f809 00000050   38		jalr	$14
+        af8c0000 00000054   39		sw	$12, %sdaoff(.L33)($28)
+        8fb10004 00000058   40		lw	$17, 4($sp)
+        8f810000 0000005c   41		lw	$1, %sdaoff(.L33)($28)
+        8fb00000 00000060   42		lw	$16, 0($sp)
+        8fbf000c 00000064   43		lw	$ra, 12($sp)
+        27bd0010 00000068   44		addiu	$sp, $sp, 16
+        242cffff 0000006c   45		addiu	$12, $1, -1
+        03e00008 00000070   46		jr	$ra
+        af8c0000 00000074   47		sw	$12, %sdaoff(.L33)($28)
+                            48	.L6:
+        0c000000 00000078   49		jal	WM_DefaultProc
+        02202025 0000007c   50		move	$4, $17
+                            51	.L2:
+        8fb10004 00000080   52		lw	$17, 4($sp)
+                            53	 #	    .ef
+        8fb00000 00000084   54		lw	$16, 0($sp)
+        8fbf000c 00000088   55		lw	$ra, 12($sp)
+        03e00008 0000008c   56		jr	$ra
+        27bd0010 00000090   57		addiu	$sp, $sp, 16
+
+                                   Tue Apr 07 08:50:10 2015           Page 3
+                                   Tue Apr 07 08:50:09 2015        gh_2i0c.s
+                            58		.type	WM__SendMessage,@function
+                            59		.size	WM__SendMessage,.-WM__SendMessage
+                            60		.align	4
+                            61	 #_EntranceCnt	%sdaoff(.L33)	static
+                            62	 #pWin	$3	local
+                            63	
+                            64	 #hWin	$16	param
+                            65	 #pMsg	$17	param
+                            66	
+                            67		.data
+                            68	.L30:
+                            69		.lsbss	.L33,4,4
+                            70	
+                            71		.text
+                            72		.align	4
+                            73	
+                            74		.data
+                            75		.section ".sbss","awb"
+                            76		.align	4
+                            77		.text

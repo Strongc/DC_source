@@ -1,0 +1,228 @@
+
+                                   Tue Apr 07 08:57:20 2015           Page 1
+                                   Tue Apr 07 08:57:19 2015       gh_2i09l.s
+Command Line:   C:\GHS\V35\mips35\asmips.exe -noundefined -elf -b0
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos\inc
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\ConvertMono
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Font
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\LCDDriver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\MemDev
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\VNC
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Widget
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\wm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\util
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\datapoint
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\factory
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\webpage
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\xnet
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\stub
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\test
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENIusb\emUSB\USB\Driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\intercom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\controller
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\webif
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\relay
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\GENIApp
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\alarm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\AnaInConfigCtrl
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\Sms
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\display_task
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\gui_utility
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\mpcunit
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIbus
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIcom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIrs232
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\Virtual
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\imagesTFT
+                -IC:\GHS\V35\mips35\mipsl_sf -r4121 -source=LCDInfo0.c -o
+                objs\gh_2i09l.o -list=objs\LCDInfo0.lst
+                C:\Users\55602\AppData\Local\Temp\gh_2i09l.s
+Source File:    C:\Users\55602\AppData\Local\Temp\gh_2i09l.s
+Directory:      C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+Host OS:        GHS_WIN32
+Version:        AS-MIPS 3.5#11 
+Release:        MULTI 2000, MIPS v3.5
+Revision Date:  Wed Feb 27 12:19:03 2002
+Release Date:   Sat Mar 02 02:57:59 2002
+                             1	 #Source File:   C:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\GUI\Core\LCDInfo0.c
+
+                                   Tue Apr 07 08:57:20 2015           Page 2
+                                   Tue Apr 07 08:57:19 2015       gh_2i09l.s
+                             2	 #Directory:     
+                             3	 #		C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                             4	 #Compile Date:  Tue Apr 07 08:57:19 2015
+                             5	 #Host OS:       Win32
+                             6	 #Version:       C-MIPS 3.5#11 RELEASE VERSION
+                             7	 #Release:       MULTI 2000, MIPS v3.5
+                             8	 #Revision Date: Fri Mar 01 11:32:40 2002
+                             9	 #Release Date:  Sat Mar 02 02:58:48 2002
+                            10		.set	noat
+                            11		.set	noreorder
+                            12		.set	nomacro
+                            13		.text
+                            14		.align	4
+                            15		.globl	LCD_GetXSize
+                            16	LCD_GetXSize:
+                            17	 #	    .bf
+                            18	 #	    .ef
+        03e00008 00000000   19		jr	$ra
+        340200f0 00000004   20		ori	$2, $0, 240
+                            21		.type	LCD_GetXSize,@function
+                            22		.size	LCD_GetXSize,.-LCD_GetXSize
+                            23		.align	4
+                            24	
+                            25		.data
+                            26	.L75:
+                            27		.text
+                            28		.align	4
+                            29		.align	4
+                            30		.globl	LCD_GetYSize
+                            31	LCD_GetYSize:
+                            32	 #	    .bf
+                            33	 #	    .ef
+        03e00008 00000008   34		jr	$ra
+        34020140 0000000c   35		ori	$2, $0, 320
+                            36		.type	LCD_GetYSize,@function
+                            37		.size	LCD_GetYSize,.-LCD_GetYSize
+                            38		.align	4
+                            39	
+                            40		.data
+                            41	.L91:
+                            42		.text
+                            43		.align	4
+                            44		.align	4
+                            45		.globl	LCD_GetVXSize
+                            46	LCD_GetVXSize:
+                            47	 #	    .bf
+                            48	 #	    .ef
+        03e00008 00000010   49		jr	$ra
+        340200f0 00000014   50		ori	$2, $0, 240
+                            51		.type	LCD_GetVXSize,@function
+                            52		.size	LCD_GetVXSize,.-LCD_GetVXSize
+                            53		.align	4
+                            54	
+                            55		.data
+                            56	.L107:
+                            57		.text
+
+                                   Tue Apr 07 08:57:20 2015           Page 3
+                                   Tue Apr 07 08:57:19 2015       gh_2i09l.s
+                            58		.align	4
+                            59		.align	4
+                            60		.globl	LCD_GetVYSize
+                            61	LCD_GetVYSize:
+                            62	 #	    .bf
+                            63	 #	    .ef
+        03e00008 00000018   64		jr	$ra
+        34020140 0000001c   65		ori	$2, $0, 320
+                            66		.type	LCD_GetVYSize,@function
+                            67		.size	LCD_GetVYSize,.-LCD_GetVYSize
+                            68		.align	4
+                            69	
+                            70		.data
+                            71	.L123:
+                            72		.text
+                            73		.align	4
+                            74		.align	4
+                            75		.globl	LCD_GetBitsPerPixel
+                            76	LCD_GetBitsPerPixel:
+                            77	 #	    .bf
+                            78	 #	    .ef
+        03e00008 00000020   79		jr	$ra
+        34020010 00000024   80		ori	$2, $0, 16
+                            81		.type	LCD_GetBitsPerPixel,@function
+                            82		.size	LCD_GetBitsPerPixel,.-LCD_GetBitsPerPixel
+                            83		.align	4
+                            84	
+                            85		.data
+                            86	.L139:
+                            87		.text
+                            88		.align	4
+                            89		.align	4
+                            90		.globl	LCD_GetNumColors
+                            91	LCD_GetNumColors:
+                            92	 #	    .bf
+                            93	 #	    .ef
+        03e00008 00000028   94		jr	$ra
+        3c020001 0000002c   95		lui	$2, 1
+                            96		.type	LCD_GetNumColors,@function
+                            97		.size	LCD_GetNumColors,.-LCD_GetNumColors
+                            98		.align	4
+                            99	
+                           100		.data
+                           101	.L155:
+                           102		.text
+                           103		.align	4
+                           104		.align	4
+                           105		.globl	LCD_GetYMag
+                           106	LCD_GetYMag:
+                           107	 #	    .bf
+                           108	 #	    .ef
+        03e00008 00000030  109		jr	$ra
+        34020001 00000034  110		ori	$2, $0, 1
+                           111		.type	LCD_GetYMag,@function
+                           112		.size	LCD_GetYMag,.-LCD_GetYMag
+                           113		.align	4
+
+                                   Tue Apr 07 08:57:20 2015           Page 4
+                                   Tue Apr 07 08:57:19 2015       gh_2i09l.s
+                           114	
+                           115		.data
+                           116	.L171:
+                           117		.text
+                           118		.align	4
+                           119		.align	4
+                           120		.globl	LCD_GetXMag
+                           121	LCD_GetXMag:
+                           122	 #	    .bf
+                           123	 #	    .ef
+        03e00008 00000038  124		jr	$ra
+        34020001 0000003c  125		ori	$2, $0, 1
+                           126		.type	LCD_GetXMag,@function
+                           127		.size	LCD_GetXMag,.-LCD_GetXMag
+                           128		.align	4
+                           129	
+                           130		.data
+                           131	.L187:
+                           132		.text
+                           133		.align	4
+                           134		.align	4
+                           135		.globl	LCD_GetFixedPalette
+                           136	LCD_GetFixedPalette:
+                           137	 #	    .bf
+                           138	 #	    .ef
+        03e00008 00000040  139		jr	$ra
+        34020235 00000044  140		ori	$2, $0, 565
+                           141		.type	LCD_GetFixedPalette,@function
+                           142		.size	LCD_GetFixedPalette,.-LCD_GetFixedPalette
+                           143		.align	4
+                           144	
+                           145		.data
+                           146	.L203:
+                           147		.text
+                           148		.align	4
+                           149	
+                           150		.data
+                           151		.text

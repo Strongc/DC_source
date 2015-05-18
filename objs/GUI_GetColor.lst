@@ -1,0 +1,201 @@
+
+                                   Tue Apr 07 08:54:31 2015           Page 1
+                                   Tue Apr 07 08:54:31 2015       gh_2i065.s
+Command Line:   C:\GHS\V35\mips35\asmips.exe -noundefined -elf -b0
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos\inc
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\ConvertMono
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Font
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\LCDDriver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\MemDev
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\VNC
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Widget
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\wm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\util
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\datapoint
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\factory
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\webpage
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\xnet
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\stub
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\test
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENIusb\emUSB\USB\Driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\intercom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\controller
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\webif
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\relay
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\GENIApp
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\alarm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\AnaInConfigCtrl
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\Sms
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\display_task
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\gui_utility
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\mpcunit
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIbus
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIcom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIrs232
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\Virtual
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\imagesTFT
+                -IC:\GHS\V35\mips35\mipsl_sf -r4121 -source=GUI_GetColor.c -o
+                objs\gh_2i065.o -list=objs\GUI_GetColor.lst
+                C:\Users\55602\AppData\Local\Temp\gh_2i065.s
+Source File:    C:\Users\55602\AppData\Local\Temp\gh_2i065.s
+Directory:      C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+Host OS:        GHS_WIN32
+Version:        AS-MIPS 3.5#11 
+Release:        MULTI 2000, MIPS v3.5
+Revision Date:  Wed Feb 27 12:19:03 2002
+Release Date:   Sat Mar 02 02:57:59 2002
+                             1	 #Source File:   C:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\GUI\Core\GUI_GetColor.c
+
+                                   Tue Apr 07 08:54:31 2015           Page 2
+                                   Tue Apr 07 08:54:31 2015       gh_2i065.s
+                             2	 #Directory:     
+                             3	 #		C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                             4	 #Compile Date:  Tue Apr 07 08:54:30 2015
+                             5	 #Host OS:       Win32
+                             6	 #Version:       C-MIPS 3.5#11 RELEASE VERSION
+                             7	 #Release:       MULTI 2000, MIPS v3.5
+                             8	 #Revision Date: Fri Mar 01 11:32:40 2002
+                             9	 #Release Date:  Sat Mar 02 02:58:48 2002
+                            10		.set	noat
+                            11		.set	noreorder
+                            12		.set	nomacro
+                            13		.text
+                            14		.align	4
+                            15		.globl	GUI_GetBkColorIndex
+                            16	GUI_GetBkColorIndex:
+        27bdfff0 00000000   17		addiu	$sp, $sp, -16
+        afbf000c 00000004   18		sw	$ra, 12($sp)
+                            19	 #	    .bf
+        0c000000 00000008   20		jal	GUI_Lock
+        afb00000 0000000c   21		sw	$16, 0($sp)
+        0c000000 00000010   22		jal	LCD_GetBkColorIndex
+        00000000 00000014   23		nop
+        0c000000 00000018   24		jal	GUI_Unlock
+        00408025 0000001c   25		move	$16, $2
+                            26	 #	    .ef
+        02001025 00000020   27		move	$2, $16
+        8fbf000c 00000024   28		lw	$ra, 12($sp)
+        8fb00000 00000028   29		lw	$16, 0($sp)
+        03e00008 0000002c   30		jr	$ra
+        27bd0010 00000030   31		addiu	$sp, $sp, 16
+                            32		.type	GUI_GetBkColorIndex,@function
+                            33		.size	GUI_GetBkColorIndex,.-GUI_GetBkColorIndex
+                            34		.align	4
+                            35	
+                            36		.data
+                            37	.L15:
+                            38		.text
+                            39		.align	4
+                            40		.align	4
+                            41		.globl	GUI_GetBkColor
+                            42	GUI_GetBkColor:
+        27bdfff0 00000034   43		addiu	$sp, $sp, -16
+        afbf000c 00000038   44		sw	$ra, 12($sp)
+                            45	 #	    .bf
+        0c000000 0000003c   46		jal	GUI_Lock
+        afb00000 00000040   47		sw	$16, 0($sp)
+        0c000000 00000044   48		jal	LCD_GetBkColorIndex
+        00000000 00000048   49		nop
+        0c000000 0000004c   50		jal	LCD_Index2Color
+        00402025 00000050   51		move	$4, $2
+        0c000000 00000054   52		jal	GUI_Unlock
+        00408025 00000058   53		move	$16, $2
+                            54	 #	    .ef
+        02001025 0000005c   55		move	$2, $16
+        8fbf000c 00000060   56		lw	$ra, 12($sp)
+        8fb00000 00000064   57		lw	$16, 0($sp)
+
+                                   Tue Apr 07 08:54:31 2015           Page 3
+                                   Tue Apr 07 08:54:31 2015       gh_2i065.s
+        03e00008 00000068   58		jr	$ra
+        27bd0010 0000006c   59		addiu	$sp, $sp, 16
+                            60		.type	GUI_GetBkColor,@function
+                            61		.size	GUI_GetBkColor,.-GUI_GetBkColor
+                            62		.align	4
+                            63	
+                            64		.data
+                            65	.L34:
+                            66		.text
+                            67		.align	4
+                            68		.align	4
+                            69		.globl	GUI_GetColorIndex
+                            70	GUI_GetColorIndex:
+        27bdfff0 00000070   71		addiu	$sp, $sp, -16
+        afbf000c 00000074   72		sw	$ra, 12($sp)
+                            73	 #	    .bf
+        0c000000 00000078   74		jal	GUI_Lock
+        afb00000 0000007c   75		sw	$16, 0($sp)
+        0c000000 00000080   76		jal	LCD_GetColorIndex
+        00000000 00000084   77		nop
+        0c000000 00000088   78		jal	GUI_Unlock
+        00408025 0000008c   79		move	$16, $2
+                            80	 #	    .ef
+        02001025 00000090   81		move	$2, $16
+        8fbf000c 00000094   82		lw	$ra, 12($sp)
+        8fb00000 00000098   83		lw	$16, 0($sp)
+        03e00008 0000009c   84		jr	$ra
+        27bd0010 000000a0   85		addiu	$sp, $sp, 16
+                            86		.type	GUI_GetColorIndex,@function
+                            87		.size	GUI_GetColorIndex,.-GUI_GetColorIndex
+                            88		.align	4
+                            89	
+                            90		.data
+                            91	.L53:
+                            92		.text
+                            93		.align	4
+                            94		.align	4
+                            95		.globl	GUI_GetColor
+                            96	GUI_GetColor:
+        27bdfff0 000000a4   97		addiu	$sp, $sp, -16
+        afbf000c 000000a8   98		sw	$ra, 12($sp)
+                            99	 #	    .bf
+        0c000000 000000ac  100		jal	GUI_Lock
+        afb00000 000000b0  101		sw	$16, 0($sp)
+        0c000000 000000b4  102		jal	LCD_GetColorIndex
+        00000000 000000b8  103		nop
+        0c000000 000000bc  104		jal	LCD_Index2Color
+        00402025 000000c0  105		move	$4, $2
+        0c000000 000000c4  106		jal	GUI_Unlock
+        00408025 000000c8  107		move	$16, $2
+                           108	 #	    .ef
+        02001025 000000cc  109		move	$2, $16
+        8fbf000c 000000d0  110		lw	$ra, 12($sp)
+        8fb00000 000000d4  111		lw	$16, 0($sp)
+        03e00008 000000d8  112		jr	$ra
+        27bd0010 000000dc  113		addiu	$sp, $sp, 16
+
+                                   Tue Apr 07 08:54:31 2015           Page 4
+                                   Tue Apr 07 08:54:31 2015       gh_2i065.s
+                           114		.type	GUI_GetColor,@function
+                           115		.size	GUI_GetColor,.-GUI_GetColor
+                           116		.align	4
+                           117	
+                           118		.data
+                           119	.L72:
+                           120		.text
+                           121		.align	4
+                           122	
+                           123		.data
+                           124		.text

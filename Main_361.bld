@@ -1,0 +1,49 @@
+#!build
+default:
+	nobuild
+	:program_layout=ram
+	:directivedir=Link361
+	:cx_e_option=upgrade_cxx_errors
+	:asm_list_option=listing
+	:elxr_map_option=map
+	:mips_option=no64_bit
+	:config_setting=byteorder
+	:config_setting=farcall_patch
+	:nolibraries=false
+	:xda_thresholdkind=small
+	:c_mode=ansi
+	:ec_mode=ansi
+	:prototype_mode=error
+	:cx_mode=ansi
+	:cx_gnu_mode=none
+	:cx_template=never
+	:object_dir=objs
+	:target=mips/necvr41xx/standalone
+	:start_address=_stepstone
+	:xda_threshold=8
+	:sourcedirs=include
+	:sourcedirs=util
+	:sourcedirs=datapoint
+	:sourcedirs=GeniPro
+	:sourcedirs=GeniPro\GENI_sys
+	:sourcedirs=GeniPro\GENIbus
+	:sourcedirs=GeniPro\GENIcom
+	:sourcedirs=GeniPro\GENIrs232
+	:sourcedirs=GeniPro\Virtual
+	:sourcedirs=platform\common
+	:sourcedirs=platform\hardware
+	:sourcedirs=platform\hardware\D3018X
+	:sourcedirs=embos\inc
+	:sourcedirs=emWin\config
+	:sourcedirs=emWin\gui\Core
+	:sourcedirs=rtip\config
+	:sourcedirs=application\display\imagesSTN
+	:defines=OS_LIBMODE_DP
+	:defines=__MRC_DEBUG__
+	:defines=USE_STN_COLOURS
+default.con
+	connections
+CU361.bld
+	program
+Link361\resources.bld
+	nobuild

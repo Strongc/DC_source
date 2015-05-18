@@ -1,0 +1,405 @@
+
+                                   Tue Apr 07 08:56:43 2015           Page 1
+                                   Tue Apr 07 08:56:42 2015       gh_2i08r.s
+Command Line:   C:\GHS\V35\mips35\asmips.exe -noundefined -elf -b0
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos\inc
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\ConvertMono
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Font
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\LCDDriver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\MemDev
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\VNC
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Widget
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\wm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\util
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\datapoint
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\factory
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\webpage
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\xnet
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\stub
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\test
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENIusb\emUSB\USB\Driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\intercom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\controller
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\webif
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\relay
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\GENIApp
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\alarm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\AnaInConfigCtrl
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\Sms
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\display_task
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\gui_utility
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\mpcunit
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIbus
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIcom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIrs232
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\Virtual
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\imagesTFT
+                -IC:\GHS\V35\mips35\mipsl_sf -r4121 -source=GUIVal.c -o
+                objs\gh_2i08r.o -list=objs\GUIVal.lst
+                C:\Users\55602\AppData\Local\Temp\gh_2i08r.s
+Source File:    C:\Users\55602\AppData\Local\Temp\gh_2i08r.s
+Directory:      C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+Host OS:        GHS_WIN32
+Version:        AS-MIPS 3.5#11 
+Release:        MULTI 2000, MIPS v3.5
+Revision Date:  Wed Feb 27 12:19:03 2002
+Release Date:   Sat Mar 02 02:57:59 2002
+                             1	 #Source File:   C:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\GUI\Core\GUIVal.c
+
+                                   Tue Apr 07 08:56:43 2015           Page 2
+                                   Tue Apr 07 08:56:42 2015       gh_2i08r.s
+                             2	 #Directory:     
+                             3	 #		C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                             4	 #Compile Date:  Tue Apr 07 08:56:42 2015
+                             5	 #Host OS:       Win32
+                             6	 #Version:       C-MIPS 3.5#11 RELEASE VERSION
+                             7	 #Release:       MULTI 2000, MIPS v3.5
+                             8	 #Revision Date: Fri Mar 01 11:32:40 2002
+                             9	 #Release Date:  Sat Mar 02 02:58:48 2002
+                            10		.set	noat
+                            11		.set	noreorder
+                            12		.set	nomacro
+                            13		.text
+                            14		.align	4
+                            15		.globl	GUI_DispDecShift
+                            16	GUI_DispDecShift:
+        27bdffe0 00000000   17		addiu	$sp, $sp, -32
+                            18	 #	    .bf
+        afbf001c 00000004   19		sw	$ra, 28($sp)
+        30a500ff 00000008   20		andi	$5, $5, 255
+        30c600ff 0000000c   21		andi	$6, $6, 255
+        afb00000 00000010   22		sw	$16, 0($sp)
+        27b0000c 00000014   23		addiu	$16, $sp, 12
+        afb00008 00000018   24		sw	$16, 8($sp)
+        0c000000 0000001c   25		jal	GUI_AddDecShift
+        27a70008 00000020   26		addiu	$7, $sp, 8
+        0c000000 00000024   27		jal	GUI_DispString
+        02002025 00000028   28		move	$4, $16
+                            29	 #	    .ef
+        8fbf001c 0000002c   30		lw	$ra, 28($sp)
+        8fb00000 00000030   31		lw	$16, 0($sp)
+        03e00008 00000034   32		jr	$ra
+        27bd0020 00000038   33		addiu	$sp, $sp, 32
+                            34		.type	GUI_DispDecShift,@function
+                            35		.size	GUI_DispDecShift,.-GUI_DispDecShift
+                            36		.align	4
+                            37	 #ac	12($sp)	local
+                            38	 #s	8($sp)	local
+                            39	
+                            40	 #v	none	param
+                            41	 #Len	$5	param
+                            42	 #Shift	$6	param
+                            43	
+                            44		.data
+                            45	.L15:
+                            46		.text
+                            47		.align	4
+                            48		.align	4
+                            49		.globl	GUI_DispSDecShift
+                            50	GUI_DispSDecShift:
+        27bdffd8 0000003c   51		addiu	$sp, $sp, -40
+                            52	 #	    .bf
+        afbf0024 00000040   53		sw	$ra, 36($sp)
+        afb00000 00000044   54		sw	$16, 0($sp)
+        24b0ffff 00000048   55		addiu	$16, $5, -1
+        afb10004 0000004c   56		sw	$17, 4($sp)
+        30d100ff 00000050   57		andi	$17, $6, 255
+
+                                   Tue Apr 07 08:56:43 2015           Page 3
+                                   Tue Apr 07 08:56:42 2015       gh_2i08r.s
+        afb20008 00000054   58		sw	$18, 8($sp)
+        27b20014 00000058   59		addiu	$18, $sp, 20
+        afb20010 0000005c   60		sw	$18, 16($sp)
+        afb3000c 00000060   61		sw	$19, 12($sp)
+        27b30010 00000064   62		addiu	$19, $sp, 16
+        0c000000 00000068   63		jal	GUI_AddSign
+        02602825 0000006c   64		move	$5, $19
+        00402025 00000070   65		move	$4, $2
+        320500ff 00000074   66		andi	$5, $16, 255
+        02203025 00000078   67		move	$6, $17
+        0c000000 0000007c   68		jal	GUI_AddDecShift
+        02603825 00000080   69		move	$7, $19
+        0c000000 00000084   70		jal	GUI_DispString
+        02402025 00000088   71		move	$4, $18
+                            72	 #	    .ef
+        8fb10004 0000008c   73		lw	$17, 4($sp)
+        8fb00000 00000090   74		lw	$16, 0($sp)
+        8fbf0024 00000094   75		lw	$ra, 36($sp)
+        8fb20008 00000098   76		lw	$18, 8($sp)
+        8fb3000c 0000009c   77		lw	$19, 12($sp)
+        03e00008 000000a0   78		jr	$ra
+        27bd0028 000000a4   79		addiu	$sp, $sp, 40
+                            80		.type	GUI_DispSDecShift,@function
+                            81		.size	GUI_DispSDecShift,.-GUI_DispSDecShift
+                            82		.align	4
+                            83	 #ac	20($sp)	local
+                            84	 #s	16($sp)	local
+                            85	
+                            86	 #v	none	param
+                            87	 #Len	$16	param
+                            88	 #Shift	$17	param
+                            89	
+                            90		.data
+                            91	.L34:
+                            92		.text
+                            93		.align	4
+                            94		.align	4
+                            95		.globl	GUI_DispDecMin
+                            96	GUI_DispDecMin:
+        27bdffe0 000000a8   97		addiu	$sp, $sp, -32
+                            98	 #	    .bf
+        afbf001c 000000ac   99		sw	$ra, 28($sp)
+        afb00000 000000b0  100		sw	$16, 0($sp)
+        27b0000c 000000b4  101		addiu	$16, $sp, 12
+        afb00008 000000b8  102		sw	$16, 8($sp)
+        0c000000 000000bc  103		jal	GUI_AddDecMin
+        27a50008 000000c0  104		addiu	$5, $sp, 8
+        0c000000 000000c4  105		jal	GUI_DispString
+        02002025 000000c8  106		move	$4, $16
+                           107	 #	    .ef
+        8fbf001c 000000cc  108		lw	$ra, 28($sp)
+        8fb00000 000000d0  109		lw	$16, 0($sp)
+        03e00008 000000d4  110		jr	$ra
+        27bd0020 000000d8  111		addiu	$sp, $sp, 32
+                           112		.type	GUI_DispDecMin,@function
+                           113		.size	GUI_DispDecMin,.-GUI_DispDecMin
+
+                                   Tue Apr 07 08:56:43 2015           Page 4
+                                   Tue Apr 07 08:56:42 2015       gh_2i08r.s
+                           114		.align	4
+                           115	 #ac	12($sp)	local
+                           116	 #s	8($sp)	local
+                           117	
+                           118	 #v	none	param
+                           119	
+                           120		.data
+                           121	.L53:
+                           122		.text
+                           123		.align	4
+                           124		.align	4
+                           125		.globl	GUI_DispDecSpace
+                           126	GUI_DispDecSpace:
+        27bdffd8 000000dc  127		addiu	$sp, $sp, -40
+                           128	 #	    .bf
+        27b90014 000000e0  129		addiu	$25, $sp, 20
+        afb90010 000000e4  130		sw	$25, 16($sp)
+        afb20008 000000e8  131		sw	$18, 8($sp)
+        afb00000 000000ec  132		sw	$16, 0($sp)
+        00808025 000000f0  133		move	$16, $4
+        afb10004 000000f4  134		sw	$17, 4($sp)
+        30b100ff 000000f8  135		andi	$17, $5, 255
+        06010006 000000fc  136		bgez	$16, .L61
+        afbf0024 00000100  137		sw	$ra, 36($sp)
+        0c000000 00000104  138		jal	GUI_AddSign
+        27a50010 00000108  139		addiu	$5, $sp, 16
+        00408025 0000010c  140		move	$16, $2
+        2631ffff 00000110  141		addiu	$17, $17, -1
+        323100ff 00000114  142		andi	$17, $17, 255
+                           143	.L61:
+        34120020 00000118  144		ori	$18, $0, 32
+        0c000000 0000011c  145		jal	GUI_Long2Len
+        02002025 00000120  146		move	$4, $16
+        304200ff 00000124  147		andi	$2, $2, 255
+        24430001 00000128  148		addiu	$3, $2, 1
+        262fffff 0000012c  149		addiu	$15, $17, -1
+        01e37023 00000130  150		subu	$14, $15, $3
+        25cd0002 00000134  151		addiu	$13, $14, 2
+        340b0000 00000138  152		ori	$11, $0, 0
+        016dc82a 0000013c  153		slt	$25, $11, $13
+        13200002 00000140  154		beq	$25, $0, .L166
+        00000000 00000144  155		nop
+        01a05825 00000148  156		move	$11, $13
+                           157	.L166:
+        000b10c2 0000014c  158		srl	$2, $11, 3
+        10400023 00000150  159		beq	$2, $0, .L84
+        27a30010 00000154  160		addiu	$3, $sp, 16
+                           161	.L100:
+        8c6d0000 00000158  162		lw	$13, 0($3)
+        25ae0001 0000015c  163		addiu	$14, $13, 1
+        ac6e0000 00000160  164		sw	$14, 0($3)
+        a1b20000 00000164  165		sb	$18, 0($13)
+        8c780000 00000168  166		lw	$24, 0($3)
+        27190001 0000016c  167		addiu	$25, $24, 1
+        ac790000 00000170  168		sw	$25, 0($3)
+        a3120000 00000174  169		sb	$18, 0($24)
+
+                                   Tue Apr 07 08:56:43 2015           Page 5
+                                   Tue Apr 07 08:56:42 2015       gh_2i08r.s
+        8c6e0000 00000178  170		lw	$14, 0($3)
+        25cf0001 0000017c  171		addiu	$15, $14, 1
+        ac6f0000 00000180  172		sw	$15, 0($3)
+        a1d20000 00000184  173		sb	$18, 0($14)
+        8c790000 00000188  174		lw	$25, 0($3)
+        272d0001 0000018c  175		addiu	$13, $25, 1
+        ac6d0000 00000190  176		sw	$13, 0($3)
+        a3320000 00000194  177		sb	$18, 0($25)
+        8c6f0000 00000198  178		lw	$15, 0($3)
+        25f80001 0000019c  179		addiu	$24, $15, 1
+        ac780000 000001a0  180		sw	$24, 0($3)
+        a1f20000 000001a4  181		sb	$18, 0($15)
+        8c6d0000 000001a8  182		lw	$13, 0($3)
+        25ae0001 000001ac  183		addiu	$14, $13, 1
+        ac6e0000 000001b0  184		sw	$14, 0($3)
+        a1b20000 000001b4  185		sb	$18, 0($13)
+        8c780000 000001b8  186		lw	$24, 0($3)
+        27190001 000001bc  187		addiu	$25, $24, 1
+        ac790000 000001c0  188		sw	$25, 0($3)
+        a3120000 000001c4  189		sb	$18, 0($24)
+        8c6e0000 000001c8  190		lw	$14, 0($3)
+        2442ffff 000001cc  191		addiu	$2, $2, -1
+        25cf0001 000001d0  192		addiu	$15, $14, 1
+        ac6f0000 000001d4  193		sw	$15, 0($3)
+        1440ffdf 000001d8  194		bne	$2, $0, .L100
+        a1d20000 000001dc  195		sb	$18, 0($14)
+                           196	.L84:
+        31620007 000001e0  197		andi	$2, $11, 7
+        10400007 000001e4  198		beq	$2, $0, .L64
+        27a30010 000001e8  199		addiu	$3, $sp, 16
+                           200	.L104:
+        8c6f0000 000001ec  201		lw	$15, 0($3)
+        2442ffff 000001f0  202		addiu	$2, $2, -1
+        25f80001 000001f4  203		addiu	$24, $15, 1
+        ac780000 000001f8  204		sw	$24, 0($3)
+        1440fffb 000001fc  205		bne	$2, $0, .L104
+        a1f20000 00000200  206		sb	$18, 0($15)
+                           207	.L64:
+        02002025 00000204  208		move	$4, $16
+        0c000000 00000208  209		jal	GUI_AddDecMin
+        27a50010 0000020c  210		addiu	$5, $sp, 16
+        0c000000 00000210  211		jal	GUI_DispString
+        27a40014 00000214  212		addiu	$4, $sp, 20
+                           213	 #	    .ef
+        8fb00000 00000218  214		lw	$16, 0($sp)
+        8fbf0024 0000021c  215		lw	$ra, 36($sp)
+        8fb10004 00000220  216		lw	$17, 4($sp)
+        8fb20008 00000224  217		lw	$18, 8($sp)
+        03e00008 00000228  218		jr	$ra
+        27bd0028 0000022c  219		addiu	$sp, $sp, 40
+                           220		.type	GUI_DispDecSpace,@function
+                           221		.size	GUI_DispDecSpace,.-GUI_DispDecSpace
+                           222		.align	4
+                           223	 #ac	20($sp)	local
+                           224	 #s	16($sp)	local
+                           225	 #Len	$24	local
+
+                                   Tue Apr 07 08:56:43 2015           Page 6
+                                   Tue Apr 07 08:56:42 2015       gh_2i08r.s
+                           226	
+                           227	 #v	$16	param
+                           228	 #MaxDigits	$17	param
+                           229	
+                           230		.data
+                           231	.L165:
+                           232		.text
+                           233		.align	4
+                           234		.align	4
+                           235		.globl	GUI_DispSDec
+                           236	GUI_DispSDec:
+        34060000 00000230  237		ori	$6, $0, 0
+                           238	 #	    .bf
+        08000000 00000234  239		j	GUI_DispSDecShift
+        30a500ff 00000238  240		andi	$5, $5, 255
+                           241	 #	    .ef
+                           242		.type	GUI_DispSDec,@function
+                           243		.size	GUI_DispSDec,.-GUI_DispSDec
+                           244		.align	4
+                           245	
+                           246	 #v	none	param
+                           247	 #Len	$5	param
+                           248	
+                           249		.data
+                           250	.L201:
+                           251		.text
+                           252		.align	4
+                           253		.align	4
+                           254		.globl	GUI_DispDec
+                           255	GUI_DispDec:
+        34060000 0000023c  256		ori	$6, $0, 0
+                           257	 #	    .bf
+        08000000 00000240  258		j	GUI_DispDecShift
+        30a500ff 00000244  259		andi	$5, $5, 255
+                           260	 #	    .ef
+                           261		.type	GUI_DispDec,@function
+                           262		.size	GUI_DispDec,.-GUI_DispDec
+                           263		.align	4
+                           264	
+                           265	 #v	none	param
+                           266	 #Len	$5	param
+                           267	
+                           268		.data
+                           269	.L220:
+                           270		.text
+                           271		.align	4
+                           272		.align	4
+                           273		.globl	GUI_DispDecAt
+                           274	GUI_DispDecAt:
+        27bdffd8 00000248  275		addiu	$sp, $sp, -40
+                           276	 #	    .bf
+        afbf0024 0000024c  277		sw	$ra, 36($sp)
+        afb00000 00000250  278		sw	$16, 0($sp)
+        00058400 00000254  279		sll	$16, $5, 16
+        00108403 00000258  280		sra	$16, $16, 16
+        afb10004 0000025c  281		sw	$17, 4($sp)
+
+                                   Tue Apr 07 08:56:43 2015           Page 7
+                                   Tue Apr 07 08:56:42 2015       gh_2i08r.s
+        00068c00 00000260  282		sll	$17, $6, 16
+        00118c03 00000264  283		sra	$17, $17, 16
+        30e500ff 00000268  284		andi	$5, $7, 255
+        afb20008 0000026c  285		sw	$18, 8($sp)
+        27b20014 00000270  286		addiu	$18, $sp, 20
+        afb20010 00000274  287		sw	$18, 16($sp)
+        34060000 00000278  288		ori	$6, $0, 0
+        0c000000 0000027c  289		jal	GUI_AddDecShift
+        27a70010 00000280  290		addiu	$7, $sp, 16
+        02402025 00000284  291		move	$4, $18
+        02002825 00000288  292		move	$5, $16
+        0c000000 0000028c  293		jal	GUI_DispStringAt
+        02203025 00000290  294		move	$6, $17
+                           295	 #	    .ef
+        8fb00000 00000294  296		lw	$16, 0($sp)
+        8fbf0024 00000298  297		lw	$ra, 36($sp)
+        8fb10004 0000029c  298		lw	$17, 4($sp)
+        8fb20008 000002a0  299		lw	$18, 8($sp)
+        03e00008 000002a4  300		jr	$ra
+        27bd0028 000002a8  301		addiu	$sp, $sp, 40
+                           302		.type	GUI_DispDecAt,@function
+                           303		.size	GUI_DispDecAt,.-GUI_DispDecAt
+                           304		.align	4
+                           305	 #ac	20($sp)	local
+                           306	 #s	16($sp)	local
+                           307	
+                           308	 #v	none	param
+                           309	 #x	$16	param
+                           310	 #y	$17	param
+                           311	 #Len	$7	param
+                           312	
+                           313		.data
+                           314	.L239:
+                           315		.text
+                           316		.align	4
+                           317	
+                           318		.data
+                           319		.text

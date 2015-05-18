@@ -1,0 +1,49 @@
+#!build
+default:
+	library
+	:outputname=lib\http_CU352.a
+	:object_dir=objs
+	:sourcedirs=rtip\webpage
+	:sourcedirs=rtip\webpage\CU352
+	:sourcedirs=rtip\xnet
+
+rtip\webpage\serv.c
+	C
+rtip\webpage\HTTPPSTF.C
+	C
+rtip\webpage\HTTPGETF.C
+	C
+
+rtip\webpage\webpages.c
+	C
+rtip\webpage\index_html.c
+	C
+rtip\webpage\ipconfig_html.c
+	C
+rtip\webpage\pwconfig_html.c
+	C
+rtip\webpage\iostatus_html.c
+	C
+rtip\webpage\firmware_update_html.c
+	C
+rtip\webpage\CU352\cu351viewer_jar.c
+	C
+rtip\webpage\favicon_ico.c
+	C
+rtip\webpage\background_jpg.c
+	C
+rtip\webpage\top_banner_jpg.c
+	C
+rtip\webpage\bottom_banner_jpg.c
+	C
+rtip\webpage\menu_title_png.c
+	C
+rtip\webpage\menu_selected_jpg.c
+	C
+rtip\webpage\style_css.c
+	C
+rtip\webpage\script_js.c
+	C
+rtip\webpage\ajax_js.c
+	C
+

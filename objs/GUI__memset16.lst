@@ -1,0 +1,207 @@
+
+                                   Tue Apr 07 08:52:42 2015           Page 1
+                                   Tue Apr 07 08:52:42 2015       gh_2i03m.s
+Command Line:   C:\GHS\V35\mips35\asmips.exe -noundefined -elf -b0
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos\inc
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\ConvertMono
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Font
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\LCDDriver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\MemDev
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\VNC
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Widget
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\wm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\util
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\datapoint
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\factory
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\webpage
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\xnet
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\stub
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\test
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENIusb\emUSB\USB\Driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\intercom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\controller
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\webif
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\relay
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\GENIApp
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\alarm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\AnaInConfigCtrl
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\Sms
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\display_task
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\gui_utility
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\mpcunit
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIbus
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIcom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIrs232
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\Virtual
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\imagesTFT
+                -IC:\GHS\V35\mips35\mipsl_sf -r4121 -source=GUI__memset16.c -o
+                objs\gh_2i03m.o -list=objs\GUI__memset16.lst
+                C:\Users\55602\AppData\Local\Temp\gh_2i03m.s
+Source File:    C:\Users\55602\AppData\Local\Temp\gh_2i03m.s
+Directory:      C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+Host OS:        GHS_WIN32
+Version:        AS-MIPS 3.5#11 
+Release:        MULTI 2000, MIPS v3.5
+Revision Date:  Wed Feb 27 12:19:03 2002
+Release Date:   Sat Mar 02 02:57:59 2002
+                             1	 #Source File:   C:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\GUI\Core\GUI__memset16.c
+
+                                   Tue Apr 07 08:52:42 2015           Page 2
+                                   Tue Apr 07 08:52:42 2015       gh_2i03m.s
+                             2	 #Directory:     
+                             3	 #		C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                             4	 #Compile Date:  Tue Apr 07 08:52:42 2015
+                             5	 #Host OS:       Win32
+                             6	 #Version:       C-MIPS 3.5#11 RELEASE VERSION
+                             7	 #Release:       MULTI 2000, MIPS v3.5
+                             8	 #Revision Date: Fri Mar 01 11:32:40 2002
+                             9	 #Release Date:  Sat Mar 02 02:58:48 2002
+                            10		.set	noat
+                            11		.set	noreorder
+                            12		.set	nomacro
+                            13		.text
+                            14		.align	4
+                            15		.globl	GUI__memset16
+                            16	GUI__memset16:
+        30990002 00000000   17		andi	$25, $4, 2
+                            18	 #	    .bf
+        13200004 00000004   19		beq	$25, $0, .L12
+        30a5ffff 00000008   20		andi	$5, $5, 65535
+        24840002 0000000c   21		addiu	$4, $4, 2
+        a485fffe 00000010   22		sh	$5, -2($4)
+        24c6ffff 00000014   23		addiu	$6, $6, -1
+                            24	.L12:
+        00065842 00000018   25		srl	$11, $6, 1
+        11600048 0000001c   26		beq	$11, $0, .L14
+        00801825 00000020   27		move	$3, $4
+        00056c00 00000024   28		sll	$13, $5, 16
+        29790004 00000028   29		slti	$25, $11, 4
+        17200041 0000002c   30		bne	$25, $0, .L21
+        01a51021 00000030   31		addu	$2, $13, $5
+        340f0004 00000034   32		ori	$15, $0, 4
+        01ebc023 00000038   33		subu	$24, $15, $11
+        00187023 0000003c   34		subu	$14, $0, $24
+        000e6883 00000040   35		sra	$13, $14, 2
+        34190000 00000044   36		ori	$25, $0, 0
+        032dc02a 00000048   37		slt	$24, $25, $13
+        13000002 0000004c   38		beq	$24, $0, .L139
+        00000000 00000050   39		nop
+        01a0c825 00000054   40		move	$25, $13
+                            41	.L139:
+        27380001 00000058   42		addiu	$24, $25, 1
+        0018c8c2 0000005c   43		srl	$25, $24, 3
+        13200025 00000060   44		beq	$25, $0, .L70
+        00197140 00000064   45		sll	$14, $25, 5
+        016e5823 00000068   46		subu	$11, $11, $14
+                            47	.L78:
+        ac620078 0000006c   48		sw	$2, 120($3)
+        ac620074 00000070   49		sw	$2, 116($3)
+        ac620070 00000074   50		sw	$2, 112($3)
+        ac62006c 00000078   51		sw	$2, 108($3)
+        ac620068 0000007c   52		sw	$2, 104($3)
+        ac620064 00000080   53		sw	$2, 100($3)
+        ac620060 00000084   54		sw	$2, 96($3)
+        ac62005c 00000088   55		sw	$2, 92($3)
+        ac620058 0000008c   56		sw	$2, 88($3)
+        ac620054 00000090   57		sw	$2, 84($3)
+
+                                   Tue Apr 07 08:52:42 2015           Page 3
+                                   Tue Apr 07 08:52:42 2015       gh_2i03m.s
+        ac620050 00000094   58		sw	$2, 80($3)
+        ac62004c 00000098   59		sw	$2, 76($3)
+        ac620048 0000009c   60		sw	$2, 72($3)
+        ac620044 000000a0   61		sw	$2, 68($3)
+        ac620040 000000a4   62		sw	$2, 64($3)
+        24630080 000000a8   63		addiu	$3, $3, 128
+        ac62ffb8 000000ac   64		sw	$2, -72($3)
+        ac62ffb4 000000b0   65		sw	$2, -76($3)
+        ac62ffb0 000000b4   66		sw	$2, -80($3)
+        ac62ffac 000000b8   67		sw	$2, -84($3)
+        ac62ffa8 000000bc   68		sw	$2, -88($3)
+        ac62ffa4 000000c0   69		sw	$2, -92($3)
+        ac62ffa0 000000c4   70		sw	$2, -96($3)
+        ac62ff9c 000000c8   71		sw	$2, -100($3)
+        ac62ff98 000000cc   72		sw	$2, -104($3)
+        ac62ff94 000000d0   73		sw	$2, -108($3)
+        ac62ff90 000000d4   74		sw	$2, -112($3)
+        ac62ff8c 000000d8   75		sw	$2, -116($3)
+        ac62ff88 000000dc   76		sw	$2, -120($3)
+        ac62ff84 000000e0   77		sw	$2, -124($3)
+        ac62ff80 000000e4   78		sw	$2, -128($3)
+        ac62fffc 000000e8   79		sw	$2, -4($3)
+        2739ffff 000000ec   80		addiu	$25, $25, -1
+        1720ffde 000000f0   81		bne	$25, $0, .L78
+        ac62ffbc 000000f4   82		sw	$2, -68($3)
+                            83	.L70:
+        33190007 000000f8   84		andi	$25, $24, 7
+        1320000d 000000fc   85		beq	$25, $0, .L21
+        0019c080 00000100   86		sll	$24, $25, 2
+        01785823 00000104   87		subu	$11, $11, $24
+                            88	.L81:
+        24630010 00000108   89		addiu	$3, $3, 16
+        ac62fff4 0000010c   90		sw	$2, -12($3)
+        ac62fff8 00000110   91		sw	$2, -8($3)
+        ac62fffc 00000114   92		sw	$2, -4($3)
+        2739ffff 00000118   93		addiu	$25, $25, -1
+        1720fffa 0000011c   94		bne	$25, $0, .L81
+        ac62fff0 00000120   95		sw	$2, -16($3)
+        08000000 00000124   96		j	.L21
+        00000000 00000128   97		nop
+                            98	.L1000023:
+        ac62fffc 0000012c   99		sw	$2, -4($3)
+        256bffff 00000130  100		addiu	$11, $11, -1
+                           101	.L21:
+        5560fffd 00000134  102		bnel	$11, $0, .L1000023
+        24630004 00000138  103		addiu	$3, $3, 4
+        00602025 0000013c  104		move	$4, $3
+                           105	.L14:
+        30d90001 00000140  106		andi	$25, $6, 1
+        57200001 00000144  107		bnel	$25, $0, .L2
+        a4850000 00000148  108		sh	$5, 0($4)
+                           109	.L2:
+                           110	 #	    .ef
+        03e00008 0000014c  111		jr	$ra
+        00000000 00000150  112		nop
+                           113		.type	GUI__memset16,@function
+
+                                   Tue Apr 07 08:52:42 2015           Page 4
+                                   Tue Apr 07 08:52:42 2015       gh_2i03m.s
+                           114		.size	GUI__memset16,.-GUI__memset16
+                           115		.align	4
+                           116	 #NumInts	$11	local
+                           117	 #FillInt	$2	local
+                           118	 #pInt	$3	local
+                           119	
+                           120	 #p	$4	param
+                           121	 #Fill	$5	param
+                           122	 #NumWords	$6	param
+                           123	
+                           124		.data
+                           125	.L138:
+                           126		.text
+                           127		.align	4
+                           128	
+                           129		.data
+                           130		.text

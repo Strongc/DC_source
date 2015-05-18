@@ -1,0 +1,24 @@
+#!build
+default:
+	subproject
+	:object_dir=objs
+
+stub.bld
+	subproject
+stepstone.bld
+	subproject
+util.bld
+	subproject
+datapoint.bld
+	subproject
+factory.bld
+	subproject
+ipconfig.bld
+	subproject
+webif.bld
+  	subproject
+display.bld
+	subproject
+display_fonts.bld
+	subproject
+

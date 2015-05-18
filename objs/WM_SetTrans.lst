@@ -1,0 +1,223 @@
+
+                                   Tue Apr 07 08:51:57 2015           Page 1
+                                   Tue Apr 07 08:51:56 2015       gh_2i02l.s
+Command Line:   C:\GHS\V35\mips35\asmips.exe -noundefined -elf -b0
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\MPC_control\source\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos\inc
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\ConvertMono
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Font
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\LCDDriver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\MemDev
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\VNC
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Widget
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\wm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\util
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\datapoint
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\factory
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\webpage
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\xnet
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\stub
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\test
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENIusb\emUSB\USB\Driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\intercom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\controller
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\webif
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\relay
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\GENIApp
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\alarm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\AnaInConfigCtrl
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\Sms
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\display_task
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\gui_utility
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\mpcunit
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIbus
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIcom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIrs232
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\Virtual
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\imagesTFT
+                -IC:\GHS\V35\mips35\mipsl_sf -r4121 -source=WM_SetTrans.c -o
+                objs\gh_2i02l.o -list=objs\WM_SetTrans.lst
+                C:\Users\55602\AppData\Local\Temp\gh_2i02l.s
+Source File:    C:\Users\55602\AppData\Local\Temp\gh_2i02l.s
+Directory:      C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+Host OS:        GHS_WIN32
+Version:        AS-MIPS 3.5#11 
+Release:        MULTI 2000, MIPS v3.5
+Revision Date:  Wed Feb 27 12:19:03 2002
+Release Date:   Sat Mar 02 02:57:59 2002
+                             1	 #Source File:   C:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\GUI\WM\WM_SetTrans.c
+
+                                   Tue Apr 07 08:51:57 2015           Page 2
+                                   Tue Apr 07 08:51:56 2015       gh_2i02l.s
+                             2	 #Directory:     
+                             3	 #		C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                             4	 #Compile Date:  Tue Apr 07 08:51:56 2015
+                             5	 #Host OS:       Win32
+                             6	 #Version:       C-MIPS 3.5#11 RELEASE VERSION
+                             7	 #Release:       MULTI 2000, MIPS v3.5
+                             8	 #Revision Date: Fri Mar 01 11:32:40 2002
+                             9	 #Release Date:  Sat Mar 02 02:58:48 2002
+                            10		.set	noat
+                            11		.set	noreorder
+                            12		.set	nomacro
+                            13		.text
+                            14		.align	4
+                            15		.globl	WM_SetHasTrans
+                            16	WM_SetHasTrans:
+        27bdfff0 00000000   17		addiu	$sp, $sp, -16
+        afbf000c 00000004   18		sw	$ra, 12($sp)
+        afb00000 00000008   19		sw	$16, 0($sp)
+        00048400 0000000c   20		sll	$16, $4, 16
+                            21	 #	    .bf
+        0c000000 00000010   22		jal	GUI_Lock
+        00108403 00000014   23		sra	$16, $16, 16
+        1200000f 00000018   24		beq	$16, $0, .L4
+        00000000 0000001c   25		nop
+        0c000000 00000020   26		jal	GUI_ALLOC_h2p
+        02002025 00000024   27		move	$4, $16
+        00401825 00000028   28		move	$3, $2
+        946f001c 0000002c   29		lhu	$15, 28($3)
+        31f80001 00000030   30		andi	$24, $15, 1
+        17000008 00000034   31		bne	$24, $0, .L4
+        00000000 00000038   32		nop
+        8f990000 0000003c   33		lw	$25, %sdaoff(WM__TransWindowCnt)($28)
+        35ef0001 00000040   34		ori	$15, $15, 1
+        a46f001c 00000044   35		sh	$15, 28($3)
+        27390001 00000048   36		addiu	$25, $25, 1
+        af990000 0000004c   37		sw	$25, %sdaoff(WM__TransWindowCnt)($28)
+        0c000000 00000050   38		jal	WM_InvalidateWindow
+        02002025 00000054   39		move	$4, $16
+                            40	.L4:
+        0c000000 00000058   41		jal	GUI_Unlock
+        00000000 0000005c   42		nop
+                            43	 #	    .ef
+        8fbf000c 00000060   44		lw	$ra, 12($sp)
+        8fb00000 00000064   45		lw	$16, 0($sp)
+        03e00008 00000068   46		jr	$ra
+        27bd0010 0000006c   47		addiu	$sp, $sp, 16
+                            48		.type	WM_SetHasTrans,@function
+                            49		.size	WM_SetHasTrans,.-WM_SetHasTrans
+                            50		.align	4
+                            51	 #pWin	$3	local
+                            52	
+                            53	 #hWin	$16	param
+                            54	
+                            55		.data
+                            56	.L28:
+                            57		.text
+
+                                   Tue Apr 07 08:51:57 2015           Page 3
+                                   Tue Apr 07 08:51:56 2015       gh_2i02l.s
+                            58		.align	4
+                            59		.align	4
+                            60		.globl	WM_ClrHasTrans
+                            61	WM_ClrHasTrans:
+        27bdfff0 00000070   62		addiu	$sp, $sp, -16
+        afbf000c 00000074   63		sw	$ra, 12($sp)
+        afb00000 00000078   64		sw	$16, 0($sp)
+                            65	 #	    .bf
+        0c000000 0000007c   66		jal	GUI_Lock
+        00048400 00000080   67		sll	$16, $4, 16
+        00108403 00000084   68		sra	$16, $16, 16
+        1200000f 00000088   69		beq	$16, $0, .L42
+        00000000 0000008c   70		nop
+        0c000000 00000090   71		jal	GUI_ALLOC_h2p
+        02002025 00000094   72		move	$4, $16
+        00401825 00000098   73		move	$3, $2
+        946f001c 0000009c   74		lhu	$15, 28($3)
+        31f80001 000000a0   75		andi	$24, $15, 1
+        13000008 000000a4   76		beq	$24, $0, .L42
+        00000000 000000a8   77		nop
+        8f990000 000000ac   78		lw	$25, %sdaoff(WM__TransWindowCnt)($28)
+        31effffe 000000b0   79		andi	$15, $15, 65534
+        a46f001c 000000b4   80		sh	$15, 28($3)
+        2739ffff 000000b8   81		addiu	$25, $25, -1
+        af990000 000000bc   82		sw	$25, %sdaoff(WM__TransWindowCnt)($28)
+        0c000000 000000c0   83		jal	WM_InvalidateWindow
+        02002025 000000c4   84		move	$4, $16
+                            85	.L42:
+        0c000000 000000c8   86		jal	GUI_Unlock
+        00000000 000000cc   87		nop
+                            88	 #	    .ef
+        8fbf000c 000000d0   89		lw	$ra, 12($sp)
+        8fb00000 000000d4   90		lw	$16, 0($sp)
+        03e00008 000000d8   91		jr	$ra
+        27bd0010 000000dc   92		addiu	$sp, $sp, 16
+                            93		.type	WM_ClrHasTrans,@function
+                            94		.size	WM_ClrHasTrans,.-WM_ClrHasTrans
+                            95		.align	4
+                            96	 #pWin	$3	local
+                            97	
+                            98	 #hWin	$16	param
+                            99	
+                           100		.data
+                           101	.L66:
+                           102		.text
+                           103		.align	4
+                           104		.align	4
+                           105		.globl	WM_GetHasTrans
+                           106	WM_GetHasTrans:
+        27bdfff0 000000e0  107		addiu	$sp, $sp, -16
+        afbf000c 000000e4  108		sw	$ra, 12($sp)
+        afb10004 000000e8  109		sw	$17, 4($sp)
+        afb00000 000000ec  110		sw	$16, 0($sp)
+                           111	 #	    .bf
+        0c000000 000000f0  112		jal	GUI_Lock
+        00048400 000000f4  113		sll	$16, $4, 16
+
+                                   Tue Apr 07 08:51:57 2015           Page 4
+                                   Tue Apr 07 08:51:56 2015       gh_2i02l.s
+        00108403 000000f8  114		sra	$16, $16, 16
+        12000005 000000fc  115		beq	$16, $0, .L80
+        34110000 00000100  116		ori	$17, $0, 0
+        0c000000 00000104  117		jal	GUI_ALLOC_h2p
+        02002025 00000108  118		move	$4, $16
+        9458001c 0000010c  119		lhu	$24, 28($2)
+        33110001 00000110  120		andi	$17, $24, 1
+                           121	.L80:
+        0c000000 00000114  122		jal	GUI_Unlock
+        00000000 00000118  123		nop
+                           124	 #	    .ef
+        02201025 0000011c  125		move	$2, $17
+        8fbf000c 00000120  126		lw	$ra, 12($sp)
+        8fb00000 00000124  127		lw	$16, 0($sp)
+        8fb10004 00000128  128		lw	$17, 4($sp)
+        03e00008 0000012c  129		jr	$ra
+        27bd0010 00000130  130		addiu	$sp, $sp, 16
+                           131		.type	WM_GetHasTrans,@function
+                           132		.size	WM_GetHasTrans,.-WM_GetHasTrans
+                           133		.align	4
+                           134	 #r	$17	local
+                           135	
+                           136	 #hWin	$16	param
+                           137	
+                           138		.data
+                           139	.L99:
+                           140		.text
+                           141		.align	4
+                           142	 #WM__TransWindowCnt	%sdaoff(WM__TransWindowCnt)	import
+                           143	
+                           144		.data
+                           145		.text

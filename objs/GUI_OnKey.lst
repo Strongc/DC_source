@@ -1,0 +1,272 @@
+
+                                   Tue Apr 07 08:57:36 2015           Page 1
+                                   Tue Apr 07 08:57:36 2015       gh_2i0a1.s
+Command Line:   C:\GHS\V35\mips35\asmips.exe -noundefined -elf -b0
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos\inc
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\ConvertMono
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Font
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\LCDDriver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\MemDev
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\VNC
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Widget
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\wm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\util
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\datapoint
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\factory
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\webpage
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\xnet
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\stub
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\test
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENIusb\emUSB\USB\Driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\intercom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\controller
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\webif
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\relay
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\GENIApp
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\alarm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\AnaInConfigCtrl
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\Sms
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\display_task
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\gui_utility
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\mpcunit
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIbus
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIcom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIrs232
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\Virtual
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\imagesTFT
+                -IC:\GHS\V35\mips35\mipsl_sf -r4121 -source=GUI_OnKey.c -o
+                objs\gh_2i0a1.o -list=objs\GUI_OnKey.lst
+                C:\Users\55602\AppData\Local\Temp\gh_2i0a1.s
+Source File:    C:\Users\55602\AppData\Local\Temp\gh_2i0a1.s
+Directory:      C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+Host OS:        GHS_WIN32
+Version:        AS-MIPS 3.5#11 
+Release:        MULTI 2000, MIPS v3.5
+Revision Date:  Wed Feb 27 12:19:03 2002
+Release Date:   Sat Mar 02 02:57:59 2002
+                             1	 #Source File:   C:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\GUI\Core\GUI_OnKey.c
+
+                                   Tue Apr 07 08:57:36 2015           Page 2
+                                   Tue Apr 07 08:57:36 2015       gh_2i0a1.s
+                             2	 #Directory:     
+                             3	 #		C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                             4	 #Compile Date:  Tue Apr 07 08:57:36 2015
+                             5	 #Host OS:       Win32
+                             6	 #Version:       C-MIPS 3.5#11 RELEASE VERSION
+                             7	 #Release:       MULTI 2000, MIPS v3.5
+                             8	 #Revision Date: Fri Mar 01 11:32:40 2002
+                             9	 #Release Date:  Sat Mar 02 02:58:48 2002
+                            10		.set	noat
+                            11		.set	noreorder
+                            12		.set	nomacro
+                            13		.text
+                            14		.align	4
+                            15		.globl	GUI_GetKey
+                            16	GUI_GetKey:
+        8f820000 00000000   17		lw	$2, %sdaoff(_Key)($28)
+                            18	 #	    .bf
+                            19	 #	    .ef
+        03e00008 00000004   20		jr	$ra
+        af800000 00000008   21		sw	$0, %sdaoff(_Key)($28)
+                            22		.type	GUI_GetKey,@function
+                            23		.size	GUI_GetKey,.-GUI_GetKey
+                            24		.align	4
+                            25	 #r	$3	local
+                            26	
+                            27		.data
+                            28	.L15:
+                            29		.lsbss	_Key,4,4
+                            30	
+                            31		.lsbss	_KeyMsgCnt,4,4
+                            32	
+                            33		.lsbss	_KeyMsg,8,4
+                            34	
+                            35		.text
+                            36		.align	4
+                            37		.align	4
+                            38		.globl	GUI_StoreKey
+                            39	GUI_StoreKey:
+        8f990000 0000000c   40		lw	$25, %sdaoff(_Key)($28)
+                            41	 #	    .bf
+        53200001 00000010   42		beql	$25, $0, .L21
+        af840000 00000014   43		sw	$4, %sdaoff(_Key)($28)
+                            44	.L21:
+                            45	 #	    .ef
+        03e00008 00000018   46		jr	$ra
+        00000000 0000001c   47		nop
+                            48		.type	GUI_StoreKey,@function
+                            49		.size	GUI_StoreKey,.-GUI_StoreKey
+                            50		.align	4
+                            51	
+                            52	 #Key	$4	param
+                            53	
+                            54		.data
+                            55	.L39:
+                            56		.text
+                            57		.align	4
+
+                                   Tue Apr 07 08:57:36 2015           Page 3
+                                   Tue Apr 07 08:57:36 2015       gh_2i0a1.s
+                            58		.align	4
+                            59		.globl	GUI_ClearKeyBuffer
+                            60	GUI_ClearKeyBuffer:
+        27bdfff8 00000020   61		addiu	$sp, $sp, -8
+                            62	 #	    .bf
+        afbf0004 00000024   63		sw	$ra, 4($sp)
+                            64	.L51:
+        0c000000 00000028   65		jal	GUI_GetKey
+        00000000 0000002c   66		nop
+        1440fffd 00000030   67		bne	$2, $0, .L51
+        00000000 00000034   68		nop
+        8fbf0004 00000038   69		lw	$ra, 4($sp)
+                            70	 #	    .ef
+        03e00008 0000003c   71		jr	$ra
+        27bd0008 00000040   72		addiu	$sp, $sp, 8
+                            73		.type	GUI_ClearKeyBuffer,@function
+                            74		.size	GUI_ClearKeyBuffer,.-GUI_ClearKeyBuffer
+                            75		.align	4
+                            76	
+                            77		.data
+                            78	.L68:
+                            79		.text
+                            80		.align	4
+                            81		.align	4
+                            82		.globl	GUI_StoreKeyMsg
+                            83	GUI_StoreKeyMsg:
+        34190001 00000044   84		ori	$25, $0, 1
+                            85	 #	    .bf
+                            86	 #	    .ef
+        af990000 00000048   87		sw	$25, %sdaoff(_KeyMsgCnt)($28)
+        af850000 0000004c   88		sw	$5, %sdaoff(_KeyMsg+4)($28)
+        03e00008 00000050   89		jr	$ra
+        af840000 00000054   90		sw	$4, %sdaoff(_KeyMsg)($28)
+                            91		.type	GUI_StoreKeyMsg,@function
+                            92		.size	GUI_StoreKeyMsg,.-GUI_StoreKeyMsg
+                            93		.align	4
+                            94	
+                            95	 #Key	$4	param
+                            96	 #PressedCnt	$5	param
+                            97	
+                            98		.data
+                            99	.L91:
+                           100		.text
+                           101		.align	4
+                           102		.align	4
+                           103		.globl	GUI_PollKeyMsg
+                           104	GUI_PollKeyMsg:
+        27bdfff0 00000058  105		addiu	$sp, $sp, -16
+        afbf000c 0000005c  106		sw	$ra, 12($sp)
+        afb10004 00000060  107		sw	$17, 4($sp)
+                           108	 #	    .bf
+        0c000000 00000064  109		jal	GUI_Lock
+        afb00000 00000068  110		sw	$16, 0($sp)
+        8f990000 0000006c  111		lw	$25, %sdaoff(_KeyMsgCnt)($28)
+        34100000 00000070  112		ori	$16, $0, 0
+        1320000e 00000074  113		beq	$25, $0, .L99
+
+                                   Tue Apr 07 08:57:36 2015           Page 4
+                                   Tue Apr 07 08:57:36 2015       gh_2i0a1.s
+        272fffff 00000078  114		addiu	$15, $25, -1
+        8f910000 0000007c  115		lw	$17, %sdaoff(_KeyMsg)($28)
+        af8f0000 00000080  116		sw	$15, %sdaoff(_KeyMsgCnt)($28)
+        27900000 00000084  117		addiu	$16, $28, %sdaoff(_KeyMsg)
+        02202025 00000088  118		move	$4, $17
+        0c000000 0000008c  119		jal	WM_OnKey
+        8f850000 00000090  120		lw	$5, %sdaoff(_KeyMsg+4)($28)
+        8e0e0004 00000094  121		lw	$14, 4($16)
+        340d0001 00000098  122		ori	$13, $0, 1
+        55cd0004 0000009c  123		bnel	$14, $13, .L1000103
+        34100001 000000a0  124		ori	$16, $0, 1
+        0c000000 000000a4  125		jal	GUI_StoreKey
+        02202025 000000a8  126		move	$4, $17
+        34100001 000000ac  127		ori	$16, $0, 1
+                           128	.L1000103:
+                           129	.L99:
+        0c000000 000000b0  130		jal	GUI_Unlock
+        00000000 000000b4  131		nop
+                           132	 #	    .ef
+        02001025 000000b8  133		move	$2, $16
+        8fbf000c 000000bc  134		lw	$ra, 12($sp)
+        8fb00000 000000c0  135		lw	$16, 0($sp)
+        8fb10004 000000c4  136		lw	$17, 4($sp)
+        03e00008 000000c8  137		jr	$ra
+        27bd0010 000000cc  138		addiu	$sp, $sp, 16
+                           139		.type	GUI_PollKeyMsg,@function
+                           140		.size	GUI_PollKeyMsg,.-GUI_PollKeyMsg
+                           141		.align	4
+                           142	 #r	$16	local
+                           143	 #Key	$17	local
+                           144	
+                           145		.data
+                           146	.L131:
+                           147		.text
+                           148		.align	4
+                           149		.align	4
+                           150		.globl	GUI_SendKeyMsg
+                           151	GUI_SendKeyMsg:
+        27bdfff0 000000d0  152		addiu	$sp, $sp, -16
+                           153	 #	    .bf
+        afbf000c 000000d4  154		sw	$ra, 12($sp)
+        afb10004 000000d8  155		sw	$17, 4($sp)
+        afb00000 000000dc  156		sw	$16, 0($sp)
+        00808025 000000e0  157		move	$16, $4
+        0c000000 000000e4  158		jal	WM_OnKey
+        00a08825 000000e8  159		move	$17, $5
+        14400003 000000ec  160		bne	$2, $0, .L148
+        02002025 000000f0  161		move	$4, $16
+        0c000000 000000f4  162		jal	GUI_StoreKeyMsg
+        02202825 000000f8  163		move	$5, $17
+                           164	.L148:
+        8fb10004 000000fc  165		lw	$17, 4($sp)
+                           166	 #	    .ef
+        8fb00000 00000100  167		lw	$16, 0($sp)
+        8fbf000c 00000104  168		lw	$ra, 12($sp)
+        03e00008 00000108  169		jr	$ra
+
+                                   Tue Apr 07 08:57:36 2015           Page 5
+                                   Tue Apr 07 08:57:36 2015       gh_2i0a1.s
+        27bd0010 0000010c  170		addiu	$sp, $sp, 16
+                           171		.type	GUI_SendKeyMsg,@function
+                           172		.size	GUI_SendKeyMsg,.-GUI_SendKeyMsg
+                           173		.align	4
+                           174	
+                           175	 #Key	$16	param
+                           176	 #PressedCnt	$17	param
+                           177	
+                           178		.data
+                           179	.L166:
+                           180		.text
+                           181		.align	4
+                           182	 #_KeyMsgCnt	%sdaoff(_KeyMsgCnt)	static
+                           183	 #_KeyMsg	%sdaoff(_KeyMsg)	static
+                           184	 #_Key	%sdaoff(_Key)	static
+                           185	
+                           186		.data
+                           187		.sbss	GUI_pfKeyMsgHook,4,4
+                           188		.type	GUI_pfKeyMsgHook,@object
+                           189		.size	GUI_pfKeyMsgHook,4
+                           190		.section ".sbss","awb"
+                           191		.align	4
+                           192		.text

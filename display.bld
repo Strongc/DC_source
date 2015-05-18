@@ -1,0 +1,193 @@
+#!build
+default:
+	subproject
+	:object_dir=objs
+	:sourcedirs=application\driver\ipconfig
+	:sourcedirs=application\display\state
+	:sourcedirs=application\display\graph
+display_images.bld
+	subproject
+display_ctrl.bld
+	subproject
+display_util.bld
+	subproject
+display_state.bld
+	subproject
+display_graph.bld
+	subproject
+application\display\Component.cpp
+	C++
+application\display\DataPointText.cpp
+	C++
+application\display\datapointtime.cpp
+	C++
+application\display\Display.cpp
+	C++
+application\display\DisplayController.cpp
+	C++
+application\display\Frame.cpp
+	C++
+application\display\Group.cpp
+	C++
+application\display\keyboard.cpp
+	C++
+application\display\Label.cpp
+	C++
+application\display\ListView.cpp
+	C++
+application\display\ListViewItem.cpp
+	C++
+application\display\LowerStatusLine.cpp
+	C++
+application\display\MenuBar.cpp
+	C++
+application\display\MenuTab.cpp
+	C++
+application\display\Number.cpp
+	C++
+application\display\NumberQuantity.cpp
+	C++
+application\display\NumericalDataPointInterface.cpp
+	C++
+application\display\ObserverText.cpp
+	C++
+application\display\Quantity.cpp
+	C++
+application\display\ScrollBar.cpp
+	C++
+application\display\Text.cpp
+	C++
+application\display\display_task\display_task.cpp
+	C++
+application\display\MPCUnit\mpcunits.cpp
+	C++
+application\display\MPCUnit\mpcunits.conf.cpp
+	C++
+application\display\ObserverGroup.cpp
+	C++
+application\display\UpperStatusLine.cpp
+	C++
+application\display\ModeCheckBox.cpp
+	C++
+application\display\CheckBox.cpp
+	C++
+application\display\TimeText.cpp
+	C++
+application\display\AlarmLogList.cpp
+	C++
+application\display\ActiveAlarmList.cpp
+	C++
+application\display\Image.cpp
+	C++
+application\display\MessageBox.cpp
+	C++
+application\display\PopupBox.cpp
+	C++
+application\display\AlarmListItem.cpp
+	C++
+application\display\ActiveAlarmListItem.cpp
+	C++
+application\display\AlarmLogLogList.cpp
+	C++
+application\display\OnOffCheckBox.cpp
+	C++
+application\display\AlarmInLog.cpp
+	C++
+application\display\StatusGraphics.cpp
+	C++
+application\display\ActualAlarmString.cpp
+	C++
+application\display\ContrastMessageBox.cpp
+	C++
+application\display\Animation.cpp
+	C++
+application\display\PasswordMessageBox.cpp
+	C++
+application\display\DigitalInputConfListView.cpp
+	C++
+application\display\StateBracket.cpp
+	C++
+application\display\WriteValueToDataPointAtKeyPressAndJumpToSpecificDisplay.cpp
+	C++
+application\display\AnalogInputConfListView.cpp
+	C++
+application\display\AnalogInputSetupListView.cpp
+	C++
+application\display\DigitalOutputConfListView.cpp
+	C++
+application\display\AvalibleIfNotSet.cpp
+	C++
+application\display\MultiNumber.cpp
+	C++
+application\display\AvalibleIfSet.cpp
+	C++
+application\display\ProgressBar.cpp
+	C++
+application\display\ResetWebServerPassword.cpp
+	C++
+application\display\AvailabilityGroup.cpp
+	C++
+application\display\ChineseLabel.cpp
+	C++
+application\display\HelpMessageBox.cpp
+	C++
+application\display\EnglishLabel.cpp
+	C++
+application\display\HeapSize.cpp
+	C++
+application\display\TimeNumber.cpp
+	C++
+application\display\InfoFieldObserverGroup.cpp
+	C++
+application\display\StatusDisplayObserverGroup.cpp
+	C++
+application\display\SetIntDatapointAction.cpp
+	C++
+application\display\AvailableIfBelowMax.cpp
+	C++
+application\display\PitSizeGraphic.cpp
+	C++
+application\display\AbstractPitGraphic.cpp
+	C++
+application\display\PitLevelGraphic.cpp
+	C++
+application\display\PitGraphic.cpp
+	C++
+application\display\PitFloatSwitchGraphic.cpp
+	C++
+application\display\PitMixerGraphic.cpp
+	C++
+application\display\CombiAlarmSourceListView.cpp
+	C++
+application\display\SetEventDatapointAction.cpp
+	C++
+application\display\PhoneChar.cpp
+	C++
+application\display\PhoneNumber.cpp
+	C++
+application\display\SmsScheduleGraphic.cpp
+	C++
+application\display\MultiStringChar.cpp
+	C++
+application\display\MultiString.cpp
+	C++
+application\display\ConfirmWrite.cpp
+	C++
+application\display\SetIntDatapointOnFocus.cpp
+	C++
+application\display\PumpGroupGraphic.cpp
+	C++
+application\display\DeactivatableLabel.cpp
+	C++
+application\display\PumpManifoldGraphic.cpp
+	C++
+application\display\SpecificEnergyGraph.cpp
+	C++
+application\display\SpecificEnergyListView.cpp
+	C++
+application\display\PTCInputConfListView.cpp
+	C++	
+application\display\AnimatedImage.cpp
+	C++	
+application\display\AnimatedPump.cpp
+	C++	

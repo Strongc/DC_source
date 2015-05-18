@@ -1,0 +1,14 @@
+#!build
+default:
+	subproject
+	:object_dir=objs
+
+..\..\..\cu3x1Platform_SRC\platform\Platform.bld
+	subproject
+GENIpro.bld
+	subproject
+http_CU351.bld
+	library
+rtip.bld
+	library
+

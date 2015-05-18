@@ -1,0 +1,206 @@
+
+                                   Tue Apr 07 08:51:00 2015           Page 1
+                                   Tue Apr 07 08:50:59 2015       gh_2i01e.s
+Command Line:   C:\GHS\V35\mips35\asmips.exe -noundefined -elf -b0
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\MPC_control\source\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos\inc
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\ConvertMono
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Font
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\LCDDriver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\MemDev
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\VNC
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Widget
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\wm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\util
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\datapoint
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\factory
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\webpage
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\xnet
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\stub
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\test
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENIusb\emUSB\USB\Driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\intercom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\controller
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\webif
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\relay
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\GENIApp
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\alarm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\AnaInConfigCtrl
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\Sms
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\display_task
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\gui_utility
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\mpcunit
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIbus
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIcom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIrs232
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\Virtual
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\imagesTFT
+                -IC:\GHS\V35\mips35\mipsl_sf -r4121 -source=WM_GetScrollPos.c -o
+                objs\gh_2i01e.o -list=objs\WM_GetScrollPos.lst
+                C:\Users\55602\AppData\Local\Temp\gh_2i01e.s
+Source File:    C:\Users\55602\AppData\Local\Temp\gh_2i01e.s
+Directory:      C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+Host OS:        GHS_WIN32
+Version:        AS-MIPS 3.5#11 
+Release:        MULTI 2000, MIPS v3.5
+Revision Date:  Wed Feb 27 12:19:03 2002
+Release Date:   Sat Mar 02 02:57:59 2002
+                             1	 #Source File:   C:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\GUI\WM\WM_GetScrollPos.c
+
+                                   Tue Apr 07 08:51:00 2015           Page 2
+                                   Tue Apr 07 08:50:59 2015       gh_2i01e.s
+                             2	 #Directory:     
+                             3	 #		C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                             4	 #Compile Date:  Tue Apr 07 08:50:59 2015
+                             5	 #Host OS:       Win32
+                             6	 #Version:       C-MIPS 3.5#11 RELEASE VERSION
+                             7	 #Release:       MULTI 2000, MIPS v3.5
+                             8	 #Revision Date: Fri Mar 01 11:32:40 2002
+                             9	 #Release Date:  Sat Mar 02 02:58:48 2002
+                            10		.set	noat
+                            11		.set	noreorder
+                            12		.set	nomacro
+                            13		.text
+                            14		.align	4
+                            15	_GetScrollPos:
+        00042400 00000000   16		sll	$4, $4, 16
+                            17	 #	    .bf
+        00042403 00000004   18		sra	$4, $4, 16
+        27bdffe8 00000008   19		addiu	$sp, $sp, -24
+        afbf0014 0000000c   20		sw	$ra, 20($sp)
+        3c190000 00000010   21		lui	$25, %hi(.L27)
+        8f2f0000 00000014   22		lw	$15, %lo(.L27)($25)
+        27390000 00000018   23		addiu	$25, $25, %lo(.L27)
+        8f2d0008 0000001c   24		lw	$13, 8($25)
+        8f2e0004 00000020   25		lw	$14, 4($25)
+        afaf0004 00000024   26		sw	$15, 4($sp)
+        afad000c 00000028   27		sw	$13, 12($sp)
+        0c000000 0000002c   28		jal	WM_GetDialogItem
+        afae0008 00000030   29		sw	$14, 8($sp)
+        00401825 00000034   30		move	$3, $2
+        10600003 00000038   31		beq	$3, $0, .L4
+        00602025 0000003c   32		move	$4, $3
+        0c000000 00000040   33		jal	WM_GetScrollState
+        27a50004 00000044   34		addiu	$5, $sp, 4
+                            35	.L4:
+        8fbf0014 00000048   36		lw	$ra, 20($sp)
+                            37	 #	    .ef
+        8fa20008 0000004c   38		lw	$2, 8($sp)
+        03e00008 00000050   39		jr	$ra
+        27bd0018 00000054   40		addiu	$sp, $sp, 24
+                            41		.type	_GetScrollPos,@function
+                            42		.size	_GetScrollPos,.-_GetScrollPos
+                            43		.align	4
+                            44	 #ScrollState	4($sp)	local
+                            45	 #.L24	.L27	static
+                            46	 #hVScroll	$3	local
+                            47	
+                            48	 #hWin	$4	param
+                            49	 #Id	none	param
+                            50	
+                            51		.data
+                            52	.L23:
+                            53		.section ".rodata","a"
+        00000000 00000000   54	.L27:	.space	4
+        00000000 00000004   55		.space	4
+        00000000 00000008   56		.space	4
+                            57		.type	.L27,@object
+
+                                   Tue Apr 07 08:51:00 2015           Page 3
+                                   Tue Apr 07 08:50:59 2015       gh_2i01e.s
+                            58		.size	.L27,12
+                            59		.data
+                            60		.text
+                            61		.align	4
+                            62		.align	4
+                            63		.globl	WM_GetScrollPosH
+                            64	WM_GetScrollPosH:
+        27bdfff0 00000058   65		addiu	$sp, $sp, -16
+        afbf000c 0000005c   66		sw	$ra, 12($sp)
+        afb00000 00000060   67		sw	$16, 0($sp)
+                            68	 #	    .bf
+        0c000000 00000064   69		jal	GUI_Lock
+        00048400 00000068   70		sll	$16, $4, 16
+        00108403 0000006c   71		sra	$16, $16, 16
+        02002025 00000070   72		move	$4, $16
+        0c000000 00000074   73		jal	_GetScrollPos
+        340500ff 00000078   74		ori	$5, $0, 255
+        0c000000 0000007c   75		jal	GUI_Unlock
+        00408025 00000080   76		move	$16, $2
+                            77	 #	    .ef
+        02001025 00000084   78		move	$2, $16
+        8fbf000c 00000088   79		lw	$ra, 12($sp)
+        8fb00000 0000008c   80		lw	$16, 0($sp)
+        03e00008 00000090   81		jr	$ra
+        27bd0010 00000094   82		addiu	$sp, $sp, 16
+                            83		.type	WM_GetScrollPosH,@function
+                            84		.size	WM_GetScrollPosH,.-WM_GetScrollPosH
+                            85		.align	4
+                            86	
+                            87	 #hWin	$16	param
+                            88	
+                            89		.data
+                            90	.L47:
+                            91		.text
+                            92		.align	4
+                            93		.align	4
+                            94		.globl	WM_GetScrollPosV
+                            95	WM_GetScrollPosV:
+        27bdfff0 00000098   96		addiu	$sp, $sp, -16
+        afbf000c 0000009c   97		sw	$ra, 12($sp)
+        afb00000 000000a0   98		sw	$16, 0($sp)
+                            99	 #	    .bf
+        0c000000 000000a4  100		jal	GUI_Lock
+        00048400 000000a8  101		sll	$16, $4, 16
+        00108403 000000ac  102		sra	$16, $16, 16
+        02002025 000000b0  103		move	$4, $16
+        0c000000 000000b4  104		jal	_GetScrollPos
+        340500fe 000000b8  105		ori	$5, $0, 254
+        0c000000 000000bc  106		jal	GUI_Unlock
+        00408025 000000c0  107		move	$16, $2
+                           108	 #	    .ef
+        02001025 000000c4  109		move	$2, $16
+        8fbf000c 000000c8  110		lw	$ra, 12($sp)
+        8fb00000 000000cc  111		lw	$16, 0($sp)
+        03e00008 000000d0  112		jr	$ra
+        27bd0010 000000d4  113		addiu	$sp, $sp, 16
+
+                                   Tue Apr 07 08:51:00 2015           Page 4
+                                   Tue Apr 07 08:50:59 2015       gh_2i01e.s
+                           114		.type	WM_GetScrollPosV,@function
+                           115		.size	WM_GetScrollPosV,.-WM_GetScrollPosV
+                           116		.align	4
+                           117	
+                           118	 #hWin	$16	param
+                           119	
+                           120		.data
+                           121	.L66:
+                           122		.text
+                           123		.align	4
+                           124	
+                           125		.data
+                           126		.section ".rodata","a"
+                           127		.align	4
+                           128		.text

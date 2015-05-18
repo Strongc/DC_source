@@ -1,0 +1,8 @@
+#!build
+default:
+	subproject
+        :sourcedirs=application\win32
+application\win32\ConvertUTF.c
+	c
+datapoint\StringDataPoint.cpp
+	C++

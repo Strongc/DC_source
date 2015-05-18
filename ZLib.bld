@@ -1,0 +1,47 @@
+#!build
+default:
+	subproject
+util\ZLIB\zutil.h
+	include_file
+util\ZLIB\compress.c
+	C
+util\ZLIB\crc32.c
+	C
+util\ZLIB\crc32.h
+	include_file
+util\ZLIB\deflate.c
+	C
+util\ZLIB\deflate.h
+	include_file
+util\ZLIB\gzio.c
+	C
+util\ZLIB\infback.c
+	C
+util\ZLIB\inffast.c
+	C
+util\ZLIB\inffast.h
+	include_file
+util\ZLIB\inffixed.h
+	include_file
+util\ZLIB\inflate.c
+	C
+util\ZLIB\inflate.h
+	include_file
+util\ZLIB\inftrees.c
+	C
+util\ZLIB\inftrees.h
+	include_file
+util\ZLIB\trees.c
+	C
+util\ZLIB\trees.h
+	include_file
+util\ZLIB\uncompr.c
+	C
+util\ZLIB\zconf.h
+	include_file
+util\ZLIB\zlib.h
+	include_file
+util\ZLIB\zutil.c
+	C
+util\ZLIB\adler32.c
+	C

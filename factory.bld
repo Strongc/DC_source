@@ -1,0 +1,9 @@
+#!build
+default:
+	subproject
+	:sourcedirs=application\display\state
+	:sourcedirs=application\display\graph
+	:sourcedirs=application\FlowAndVolume\AdvancedFlow
+	:sourcedirs=application\UserIoCtrl
+factory\Factory.cpp
+	C++

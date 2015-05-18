@@ -1,0 +1,398 @@
+
+                                   Tue Apr 07 08:57:55 2015           Page 1
+                                   Tue Apr 07 08:57:54 2015       gh_2i0ad.s
+Command Line:   C:\GHS\V35\mips35\asmips.exe -noundefined -elf -b0
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos\inc
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\ConvertMono
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Font
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\LCDDriver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\MemDev
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\VNC
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Widget
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\wm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\util
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\datapoint
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\factory
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\webpage
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\xnet
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\stub
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\test
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENIusb\emUSB\USB\Driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\intercom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\controller
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\webif
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\relay
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\GENIApp
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\alarm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\AnaInConfigCtrl
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\Sms
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\display_task
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\gui_utility
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\mpcunit
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIbus
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIcom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIrs232
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\Virtual
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\imagesTFT
+                -IC:\GHS\V35\mips35\mipsl_sf -r4121 -source=GUIDEV_CopyFromLCD.c
+                -o objs\gh_2i0ad.o -list=objs\GUIDEV_CopyFromLCD.lst
+                C:\Users\55602\AppData\Local\Temp\gh_2i0ad.s
+Source File:    C:\Users\55602\AppData\Local\Temp\gh_2i0ad.s
+Directory:      C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+Host OS:        GHS_WIN32
+Version:        AS-MIPS 3.5#11 
+Release:        MULTI 2000, MIPS v3.5
+Revision Date:  Wed Feb 27 12:19:03 2002
+Release Date:   Sat Mar 02 02:57:59 2002
+                             1	 #Source File:   C:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\GUI\MemDev\GUIDEV_CopyFromLCD.c
+
+                                   Tue Apr 07 08:57:55 2015           Page 2
+                                   Tue Apr 07 08:57:54 2015       gh_2i0ad.s
+                             2	 #Directory:     
+                             3	 #		C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                             4	 #Compile Date:  Tue Apr 07 08:57:54 2015
+                             5	 #Host OS:       Win32
+                             6	 #Version:       C-MIPS 3.5#11 RELEASE VERSION
+                             7	 #Release:       MULTI 2000, MIPS v3.5
+                             8	 #Revision Date: Fri Mar 01 11:32:40 2002
+                             9	 #Release Date:  Sat Mar 02 02:58:48 2002
+                            10		.set	noat
+                            11		.set	noreorder
+                            12		.set	nomacro
+                            13		.text
+                            14		.align	4
+                            15		.globl	GUI_MEMDEV_CopyFromLCD
+                            16	GUI_MEMDEV_CopyFromLCD:
+        27bdffb8 00000000   17		addiu	$sp, $sp, -72
+                            18	 #	    .bf
+        afb10004 00000004   19		sw	$17, 4($sp)
+        afbe0020 00000008   20		sw	$fp, 32($sp)
+        afb7001c 0000000c   21		sw	$23, 28($sp)
+        afb60018 00000010   22		sw	$22, 24($sp)
+        afb50014 00000014   23		sw	$21, 20($sp)
+        afb40010 00000018   24		sw	$20, 16($sp)
+        afb3000c 0000001c   25		sw	$19, 12($sp)
+        afb20008 00000020   26		sw	$18, 8($sp)
+        afb00000 00000024   27		sw	$16, 0($sp)
+        00048400 00000028   28		sll	$16, $4, 16
+        00108403 0000002c   29		sra	$16, $16, 16
+        16000003 00000030   30		bne	$16, $0, .L4
+        afbf0044 00000034   31		sw	$ra, 68($sp)
+        3c010000 00000038   32		lui	$1, %hi(GUI_Context+80)
+        84300000 0000003c   33		lh	$16, %lo(GUI_Context+80)($1)
+                            34	.L4:
+        120000d8 00000040   35		beq	$16, $0, .L2
+        34130000 00000044   36		ori	$19, $0, 0
+        0c000000 00000048   37		jal	GUI_ALLOC_h2p
+        02002025 0000004c   38		move	$4, $16
+        3c010000 00000050   39		lui	$1, %hi(GUI_Context+80)
+        842c0000 00000054   40		lh	$12, %lo(GUI_Context+80)($1)
+        00408825 00000058   41		move	$17, $2
+        02002025 0000005c   42		move	$4, $16
+        0c000000 00000060   43		jal	GUI_MEMDEV_Select
+        a7ac002a 00000064   44		sh	$12, 42($sp)
+        86230018 00000068   45		lh	$3, 24($17)
+        50600005 0000006c   46		beql	$3, $0, .L1000009
+        862e0002 00000070   47		lh	$14, 2($17)
+        0c000000 00000074   48		jal	GUI_ALLOC_h2p
+        00602025 00000078   49		move	$4, $3
+        00409825 0000007c   50		move	$19, $2
+        862e0002 00000080   51		lh	$14, 2($17)
+                            52	.L1000009:
+        27b00038 00000084   53		addiu	$16, $sp, 56
+        a7ae003a 00000088   54		sh	$14, 58($sp)
+        862e0000 0000008c   55		lh	$14, 0($17)
+        0200b025 00000090   56		move	$22, $16
+        a6ce0000 00000094   57		sh	$14, 0($22)
+
+                                   Tue Apr 07 08:57:55 2015           Page 3
+                                   Tue Apr 07 08:57:54 2015       gh_2i0ad.s
+        86380000 00000098   58		lh	$24, 0($17)
+        862f0004 0000009c   59		lh	$15, 4($17)
+        030fc821 000000a0   60		addu	$25, $24, $15
+        2739ffff 000000a4   61		addiu	$25, $25, -1
+        a7b9003c 000000a8   62		sh	$25, 60($sp)
+        86390002 000000ac   63		lh	$25, 2($17)
+        86380006 000000b0   64		lh	$24, 6($17)
+        03386821 000000b4   65		addu	$13, $25, $24
+        25adffff 000000b8   66		addiu	$13, $13, -1
+        05c10002 000000bc   67		bgez	$14, .L11
+        a7ad003e 000000c0   68		sh	$13, 62($sp)
+        a6c00000 000000c4   69		sh	$0, 0($22)
+                            70	.L11:
+        86180002 000000c8   71		lh	$24, 2($16)
+        07020001 000000cc   72		bltzl	$24, .L13
+        a6000002 000000d0   73		sh	$0, 2($16)
+                            74	.L13:
+        0c000000 000000d4   75		jal	LCD_GetVXSize
+        00000000 000000d8   76		nop
+        2443ffff 000000dc   77		addiu	$3, $2, -1
+        86020004 000000e0   78		lh	$2, 4($16)
+        0062182a 000000e4   79		slt	$3, $3, $2
+        10600005 000000e8   80		beq	$3, $0, .L15
+        00000000 000000ec   81		nop
+        0c000000 000000f0   82		jal	LCD_GetVXSize
+        00000000 000000f4   83		nop
+        2443ffff 000000f8   84		addiu	$3, $2, -1
+        a6030004 000000fc   85		sh	$3, 4($16)
+                            86	.L15:
+        0c000000 00000100   87		jal	LCD_GetVYSize
+        00000000 00000104   88		nop
+        2443ffff 00000108   89		addiu	$3, $2, -1
+        86020006 0000010c   90		lh	$2, 6($16)
+        0062182a 00000110   91		slt	$3, $3, $2
+        50600006 00000114   92		beql	$3, $0, .L1000017
+        86120002 00000118   93		lh	$18, 2($16)
+        0c000000 0000011c   94		jal	LCD_GetVYSize
+        00000000 00000120   95		nop
+        2443ffff 00000124   96		addiu	$3, $2, -1
+        a6030006 00000128   97		sh	$3, 6($16)
+        86120002 0000012c   98		lh	$18, 2($16)
+                            99	.L1000017:
+        86190006 00000130  100		lh	$25, 6($16)
+        afa00024 00000134  101		sw	$0, 36($sp)
+        34010000 00000138  102		ori	$1, $0, 0
+        03326823 0000013c  103		subu	$13, $25, $18
+        25b80001 00000140  104		addiu	$24, $13, 1
+        0038782a 00000144  105		slt	$15, $1, $24
+        11e00002 00000148  106		beq	$15, $0, .L217
+        86150004 0000014c  107		lh	$21, 4($16)
+        afb80024 00000150  108		sw	$24, 36($sp)
+                           109	.L217:
+        8fa10024 00000154  110		lw	$1, 36($sp)
+        0001a082 00000158  111		srl	$20, $1, 2
+        5280006c 0000015c  112		beql	$20, $0, .L1000077
+        8fa10024 00000160  113		lw	$1, 36($sp)
+
+                                   Tue Apr 07 08:57:55 2015           Page 4
+                                   Tue Apr 07 08:57:54 2015       gh_2i0ad.s
+        86d60000 00000164  114		lh	$22, 0($22)
+        2e7e0001 00000168  115		sltiu	$fp, $19, 1
+        02b66823 0000016c  116		subu	$13, $21, $22
+        25b70001 00000170  117		addiu	$23, $13, 1
+                           118	.L78:
+        02c08025 00000174  119		move	$16, $22
+        02002025 00000178  120		move	$4, $16
+        0c000000 0000017c  121		jal	GUI_MEMDEV__XY2PTR
+        02402825 00000180  122		move	$5, $18
+        17c00010 00000184  123		bne	$fp, $0, .L81
+        00408825 00000188  124		move	$17, $2
+        8e780008 0000018c  125		lw	$24, 8($19)
+        02602025 00000190  126		move	$4, $19
+        8f180004 00000194  127		lw	$24, 4($24)
+        02403025 00000198  128		move	$6, $18
+        02002825 0000019c  129		move	$5, $16
+        0300f809 000001a0  130		jalr	$24
+        02e03825 000001a4  131		move	$7, $23
+        02b0782a 000001a8  132		slt	$15, $21, $16
+        15e00009 000001ac  133		bne	$15, $0, .L84
+        02402825 000001b0  134		move	$5, $18
+                           135	.L1000080:
+        0c000000 000001b4  136		jal	LCD_L0_GetPixelIndex
+        02002025 000001b8  137		move	$4, $16
+        a6220000 000001bc  138		sh	$2, 0($17)
+        26310002 000001c0  139		addiu	$17, $17, 2
+        26100001 000001c4  140		addiu	$16, $16, 1
+                           141	.L81:
+        02b0782a 000001c8  142		slt	$15, $21, $16
+        51e0fff9 000001cc  143		beql	$15, $0, .L1000080
+        02402825 000001d0  144		move	$5, $18
+                           145	.L84:
+        02c08025 000001d4  146		move	$16, $22
+        26450001 000001d8  147		addiu	$5, $18, 1
+        afa50034 000001dc  148		sw	$5, 52($sp)
+        0c000000 000001e0  149		jal	GUI_MEMDEV__XY2PTR
+        02002025 000001e4  150		move	$4, $16
+        17c00010 000001e8  151		bne	$fp, $0, .L87
+        00408825 000001ec  152		move	$17, $2
+        8e6d0008 000001f0  153		lw	$13, 8($19)
+        02602025 000001f4  154		move	$4, $19
+        8dad0004 000001f8  155		lw	$13, 4($13)
+        8fa60034 000001fc  156		lw	$6, 52($sp)
+        02002825 00000200  157		move	$5, $16
+        01a0f809 00000204  158		jalr	$13
+        02e03825 00000208  159		move	$7, $23
+        02b0c82a 0000020c  160		slt	$25, $21, $16
+        17200009 00000210  161		bne	$25, $0, .L90
+        26450001 00000214  162		addiu	$5, $18, 1
+                           163	.L1000086:
+        0c000000 00000218  164		jal	LCD_L0_GetPixelIndex
+        02002025 0000021c  165		move	$4, $16
+        a6220000 00000220  166		sh	$2, 0($17)
+        26310002 00000224  167		addiu	$17, $17, 2
+        26100001 00000228  168		addiu	$16, $16, 1
+                           169	.L87:
+
+                                   Tue Apr 07 08:57:55 2015           Page 5
+                                   Tue Apr 07 08:57:54 2015       gh_2i0ad.s
+        02b0c82a 0000022c  170		slt	$25, $21, $16
+        5320fff9 00000230  171		beql	$25, $0, .L1000086
+        26450001 00000234  172		addiu	$5, $18, 1
+                           173	.L90:
+        02c08025 00000238  174		move	$16, $22
+        26450002 0000023c  175		addiu	$5, $18, 2
+        afa50030 00000240  176		sw	$5, 48($sp)
+        0c000000 00000244  177		jal	GUI_MEMDEV__XY2PTR
+        02002025 00000248  178		move	$4, $16
+        17c00010 0000024c  179		bne	$fp, $0, .L93
+        00408825 00000250  180		move	$17, $2
+        8e6f0008 00000254  181		lw	$15, 8($19)
+        02602025 00000258  182		move	$4, $19
+        8def0004 0000025c  183		lw	$15, 4($15)
+        8fa60030 00000260  184		lw	$6, 48($sp)
+        02002825 00000264  185		move	$5, $16
+        01e0f809 00000268  186		jalr	$15
+        02e03825 0000026c  187		move	$7, $23
+        02b0702a 00000270  188		slt	$14, $21, $16
+        15c00009 00000274  189		bne	$14, $0, .L96
+        26450002 00000278  190		addiu	$5, $18, 2
+                           191	.L1000092:
+        0c000000 0000027c  192		jal	LCD_L0_GetPixelIndex
+        02002025 00000280  193		move	$4, $16
+        a6220000 00000284  194		sh	$2, 0($17)
+        26310002 00000288  195		addiu	$17, $17, 2
+        26100001 0000028c  196		addiu	$16, $16, 1
+                           197	.L93:
+        02b0702a 00000290  198		slt	$14, $21, $16
+        51c0fff9 00000294  199		beql	$14, $0, .L1000092
+        26450002 00000298  200		addiu	$5, $18, 2
+                           201	.L96:
+        02c08025 0000029c  202		move	$16, $22
+        26450003 000002a0  203		addiu	$5, $18, 3
+        afa5002c 000002a4  204		sw	$5, 44($sp)
+        0c000000 000002a8  205		jal	GUI_MEMDEV__XY2PTR
+        02002025 000002ac  206		move	$4, $16
+        17c00010 000002b0  207		bne	$fp, $0, .L99
+        00408825 000002b4  208		move	$17, $2
+        8e790008 000002b8  209		lw	$25, 8($19)
+        02602025 000002bc  210		move	$4, $19
+        8f390004 000002c0  211		lw	$25, 4($25)
+        8fa6002c 000002c4  212		lw	$6, 44($sp)
+        02002825 000002c8  213		move	$5, $16
+        0320f809 000002cc  214		jalr	$25
+        02e03825 000002d0  215		move	$7, $23
+        02b0c02a 000002d4  216		slt	$24, $21, $16
+        17000009 000002d8  217		bne	$24, $0, .L101
+        26450003 000002dc  218		addiu	$5, $18, 3
+                           219	.L1000098:
+        0c000000 000002e0  220		jal	LCD_L0_GetPixelIndex
+        02002025 000002e4  221		move	$4, $16
+        a6220000 000002e8  222		sh	$2, 0($17)
+        26310002 000002ec  223		addiu	$17, $17, 2
+        26100001 000002f0  224		addiu	$16, $16, 1
+                           225	.L99:
+
+                                   Tue Apr 07 08:57:55 2015           Page 6
+                                   Tue Apr 07 08:57:54 2015       gh_2i0ad.s
+        02b0c02a 000002f4  226		slt	$24, $21, $16
+        5300fff9 000002f8  227		beql	$24, $0, .L1000098
+        26450003 000002fc  228		addiu	$5, $18, 3
+                           229	.L101:
+        2694ffff 00000300  230		addiu	$20, $20, -1
+        1680ff9b 00000304  231		bne	$20, $0, .L78
+        26520004 00000308  232		addiu	$18, $18, 4
+        8fa10024 0000030c  233		lw	$1, 36($sp)
+                           234	.L1000077:
+        30340003 00000310  235		andi	$20, $1, 3
+        12800021 00000314  236		beq	$20, $0, .L19
+        00000000 00000318  237		nop
+        87a2003c 0000031c  238		lh	$2, 60($sp)
+        87b60038 00000320  239		lh	$22, 56($sp)
+        2e7e0001 00000324  240		sltiu	$fp, $19, 1
+        00566823 00000328  241		subu	$13, $2, $22
+        25b70001 0000032c  242		addiu	$23, $13, 1
+                           243	.L104:
+        02c08025 00000330  244		move	$16, $22
+        02002025 00000334  245		move	$4, $16
+        0c000000 00000338  246		jal	GUI_MEMDEV__XY2PTR
+        02402825 0000033c  247		move	$5, $18
+        17c00010 00000340  248		bne	$fp, $0, .L107
+        00408825 00000344  249		move	$17, $2
+        8e780008 00000348  250		lw	$24, 8($19)
+        02602025 0000034c  251		move	$4, $19
+        8f180004 00000350  252		lw	$24, 4($24)
+        02403025 00000354  253		move	$6, $18
+        02002825 00000358  254		move	$5, $16
+        0300f809 0000035c  255		jalr	$24
+        02e03825 00000360  256		move	$7, $23
+        02b0782a 00000364  257		slt	$15, $21, $16
+        15e00009 00000368  258		bne	$15, $0, .L109
+        02402825 0000036c  259		move	$5, $18
+                           260	.L1000106:
+        0c000000 00000370  261		jal	LCD_L0_GetPixelIndex
+        02002025 00000374  262		move	$4, $16
+        a6220000 00000378  263		sh	$2, 0($17)
+        26310002 0000037c  264		addiu	$17, $17, 2
+        26100001 00000380  265		addiu	$16, $16, 1
+                           266	.L107:
+        02b0782a 00000384  267		slt	$15, $21, $16
+        51e0fff9 00000388  268		beql	$15, $0, .L1000106
+        02402825 0000038c  269		move	$5, $18
+                           270	.L109:
+        2694ffff 00000390  271		addiu	$20, $20, -1
+        1680ffe6 00000394  272		bne	$20, $0, .L104
+        26520001 00000398  273		addiu	$18, $18, 1
+                           274	.L19:
+        0c000000 0000039c  275		jal	GUI_MEMDEV_Select
+        87a4002a 000003a0  276		lh	$4, 42($sp)
+                           277	.L2:
+        8fbe0020 000003a4  278		lw	$fp, 32($sp)
+                           279	 #	    .ef
+        8fb7001c 000003a8  280		lw	$23, 28($sp)
+        8fbf0044 000003ac  281		lw	$ra, 68($sp)
+
+                                   Tue Apr 07 08:57:55 2015           Page 7
+                                   Tue Apr 07 08:57:54 2015       gh_2i0ad.s
+        8fb00000 000003b0  282		lw	$16, 0($sp)
+        8fb10004 000003b4  283		lw	$17, 4($sp)
+        8fb20008 000003b8  284		lw	$18, 8($sp)
+        8fb3000c 000003bc  285		lw	$19, 12($sp)
+        8fb40010 000003c0  286		lw	$20, 16($sp)
+        8fb50014 000003c4  287		lw	$21, 20($sp)
+        8fb60018 000003c8  288		lw	$22, 24($sp)
+        03e00008 000003cc  289		jr	$ra
+        27bd0048 000003d0  290		addiu	$sp, $sp, 72
+                           291		.type	GUI_MEMDEV_CopyFromLCD,@function
+                           292		.size	GUI_MEMDEV_CopyFromLCD,.-GUI_MEMDEV_CopyFromLCD
+                           293		.align	4
+                           294	 #pDevData	$17	local
+                           295	 #r	56($sp)	local
+                           296	 #y	$18	local
+                           297	 #XMax	$21	local
+                           298	 #pUsage	$19	local
+                           299	 #hMemOld	42($sp)	local
+                           300	 #x	$16	local
+                           301	 #pData	$17	local
+                           302	
+                           303	 #hMem	$16	param
+                           304	
+                           305		.data
+                           306	.L216:
+                           307		.text
+                           308		.align	4
+                           309	 #GUI_Context	GUI_Context	import
+                           310	
+                           311		.data
+                           312		.text

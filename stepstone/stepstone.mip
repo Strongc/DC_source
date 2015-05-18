@@ -1,0 +1,64 @@
+//////////////////////////////////////////////////////////////////////////////
+//                                                                          //
+//                                                                          //
+//                         GRUNDFOS Management A/S                          //
+//                           DK-8850 BJERRINGBRO                            //
+//                                 DENMARK                                  //
+//                                                                          //
+//               --------------------------------------------               //
+//                                                                          //
+//                Segment: MSI                                              //
+//                Project: MPC                                              //
+//                                                                          //
+//               --------------------------------------------               //
+//                                                                          //
+//               As this is the  property of  GRUNDFOS  it                  //
+//               must not be passed on to any person not aut-               //
+//               horized  by GRUNDFOS or be  copied or other-               //
+//               wise  utilized by anybody without GRUNDFOS'                //
+//               expressed written permission.                              //
+//                                                                          //
+//                                                                          //
+//////////////////////////////////////////////////////////////////////////////
+// Project     : MPC
+// Unit        : The stepstone
+// File        : stepstone.mip
+// By          : FKA
+//
+// Description : used to step from bootloader to the application-program.
+//
+//////////////////////////////////////////////////////////////////////////////
+
+.section ".stepstone", "ax"
+.globl _stepstone
+.ent   _stepstone
+.type  _stepstone,@function
+
+
+///////////////////////////////////////////////////////////////////////////////
+// Function decription : Used to step from bootloader to the application-
+//                       program. Has to be place at 0x80000200 or 0xa0000200
+// Prototype :           void _stepstone(void)
+
+_stepstone:
+
+        // Clear of ram  begin
+        //.heap                8090f400 <= MUST MATCH THE ADRESS IN THE .MAP FILE !
+
+//        lui         $3, 0xa090
+//        ori         $3, $3, 0xf400
+//        or          $25, $0, $0
+//        sw          $25, 0($3)
+//        addiu       $3, $3, 0x4
+//        lui         $24, 0xa0ff
+//        ori         $24, $24, 0x6900
+//        sltu        $15, $24, $3
+//        beq         $15, $0, _stepstone+0x08
+//        nop
+       // Clear of ram  end
+
+        bal   _start
+        nop
+
+.end _stepstone
+

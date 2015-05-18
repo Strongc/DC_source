@@ -1,0 +1,178 @@
+
+                                   Tue Apr 07 08:50:33 2015           Page 1
+                                   Tue Apr 07 08:50:32 2015        gh_2i0r.s
+Command Line:   C:\GHS\V35\mips35\asmips.exe -noundefined -elf -b0
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\MPC_control\source\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos\inc
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\ConvertMono
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Font
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\LCDDriver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\MemDev
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\VNC
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Widget
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\wm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\util
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\datapoint
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\factory
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\webpage
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\xnet
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\stub
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\test
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENIusb\emUSB\USB\Driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\intercom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\controller
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\webif
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\relay
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\GENIApp
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\alarm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\AnaInConfigCtrl
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\Sms
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\display_task
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\gui_utility
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\mpcunit
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIbus
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIcom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIrs232
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\Virtual
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\imagesTFT
+                -IC:\GHS\V35\mips35\mipsl_sf -r4121 -source=WM_GetClientRect.c -o
+                objs\gh_2i0r.o -list=objs\WM_GetClientRect.lst
+                C:\Users\55602\AppData\Local\Temp\gh_2i0r.s
+Source File:    C:\Users\55602\AppData\Local\Temp\gh_2i0r.s
+Directory:      C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+Host OS:        GHS_WIN32
+Version:        AS-MIPS 3.5#11 
+Release:        MULTI 2000, MIPS v3.5
+Revision Date:  Wed Feb 27 12:19:03 2002
+Release Date:   Sat Mar 02 02:57:59 2002
+                             1	 #Source File:   C:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\GUI\WM\WM_GetClientRect.c
+
+                                   Tue Apr 07 08:50:33 2015           Page 2
+                                   Tue Apr 07 08:50:32 2015        gh_2i0r.s
+                             2	 #Directory:     
+                             3	 #		C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                             4	 #Compile Date:  Tue Apr 07 08:50:32 2015
+                             5	 #Host OS:       Win32
+                             6	 #Version:       C-MIPS 3.5#11 RELEASE VERSION
+                             7	 #Release:       MULTI 2000, MIPS v3.5
+                             8	 #Revision Date: Fri Mar 01 11:32:40 2002
+                             9	 #Release Date:  Sat Mar 02 02:58:48 2002
+                            10		.set	noat
+                            11		.set	noreorder
+                            12		.set	nomacro
+                            13		.text
+                            14		.align	4
+                            15		.globl	WM_GetClientRectEx
+                            16	WM_GetClientRectEx:
+        27bdfff0 00000000   17		addiu	$sp, $sp, -16
+        afbf000c 00000004   18		sw	$ra, 12($sp)
+        afb10004 00000008   19		sw	$17, 4($sp)
+        afb00000 0000000c   20		sw	$16, 0($sp)
+        00048400 00000010   21		sll	$16, $4, 16
+        00108403 00000014   22		sra	$16, $16, 16
+                            23	 #	    .bf
+        0c000000 00000018   24		jal	GUI_Lock
+        00a08825 0000001c   25		move	$17, $5
+        12000008 00000020   26		beq	$16, $0, .L4
+        00000000 00000024   27		nop
+        12200006 00000028   28		beq	$17, $0, .L4
+        00000000 0000002c   29		nop
+        0c000000 00000030   30		jal	GUI_ALLOC_h2p
+        02002025 00000034   31		move	$4, $16
+        00402025 00000038   32		move	$4, $2
+        0c000000 0000003c   33		jal	WM__GetClientRectWin
+        02202825 00000040   34		move	$5, $17
+                            35	.L4:
+        0c000000 00000044   36		jal	GUI_Unlock
+        00000000 00000048   37		nop
+                            38	 #	    .ef
+        8fbf000c 0000004c   39		lw	$ra, 12($sp)
+        8fb00000 00000050   40		lw	$16, 0($sp)
+        8fb10004 00000054   41		lw	$17, 4($sp)
+        03e00008 00000058   42		jr	$ra
+        27bd0010 0000005c   43		addiu	$sp, $sp, 16
+                            44		.type	WM_GetClientRectEx,@function
+                            45		.size	WM_GetClientRectEx,.-WM_GetClientRectEx
+                            46		.align	4
+                            47	
+                            48	 #hWin	$16	param
+                            49	 #pRect	$17	param
+                            50	
+                            51		.data
+                            52	.L28:
+                            53		.text
+                            54		.align	4
+                            55		.align	4
+                            56		.align	4
+                            57		.globl	WM_GetClientRect
+
+                                   Tue Apr 07 08:50:33 2015           Page 3
+                                   Tue Apr 07 08:50:32 2015        gh_2i0r.s
+                            58	WM_GetClientRect:
+        27bdfff0 00000060   59		addiu	$sp, $sp, -16
+        afbf000c 00000064   60		sw	$ra, 12($sp)
+        afb00000 00000068   61		sw	$16, 0($sp)
+                            62	 #	    .bf
+        0c000000 0000006c   63		jal	GUI_Lock
+        00808025 00000070   64		move	$16, $4
+        87830000 00000074   65		lh	$3, %sdaoff(WM__hATransWindow)($28)
+        10600009 00000078   66		beq	$3, $0, .L42
+        00602025 0000007c   67		move	$4, $3
+        0c000000 00000080   68		jal	WM_GetClientRectEx
+        02002825 00000084   69		move	$5, $16
+        0c000000 00000088   70		jal	GUI_Unlock
+        00000000 0000008c   71		nop
+        8fbf000c 00000090   72		lw	$ra, 12($sp)
+        8fb00000 00000094   73		lw	$16, 0($sp)
+        03e00008 00000098   74		jr	$ra
+        27bd0010 0000009c   75		addiu	$sp, $sp, 16
+                            76	.L42:
+        3c010000 000000a0   77		lui	$1, %hi(GUI_Context+64)
+        84240000 000000a4   78		lh	$4, %lo(GUI_Context+64)($1)
+        0c000000 000000a8   79		jal	WM_GetClientRectEx
+        02002825 000000ac   80		move	$5, $16
+        0c000000 000000b0   81		jal	GUI_Unlock
+        00000000 000000b4   82		nop
+                            83	 #	    .ef
+        8fbf000c 000000b8   84		lw	$ra, 12($sp)
+        8fb00000 000000bc   85		lw	$16, 0($sp)
+        03e00008 000000c0   86		jr	$ra
+        27bd0010 000000c4   87		addiu	$sp, $sp, 16
+                            88		.type	WM_GetClientRect,@function
+                            89		.size	WM_GetClientRect,.-WM_GetClientRect
+                            90		.align	4
+                            91	 #hWin	$3	local
+                            92	
+                            93	 #pRect	$16	param
+                            94	
+                            95		.data
+                            96	.L65:
+                            97		.text
+                            98		.align	4
+                            99	 #GUI_Context	GUI_Context	import
+                           100	 #WM__hATransWindow	%sdaoff(WM__hATransWindow)	import
+                           101	
+                           102		.data
+                           103		.text

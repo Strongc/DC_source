@@ -1,0 +1,16 @@
+#!build
+default:
+	nobuild
+
+rtip\config\ETHCONF.H
+	include_file
+rtip\config\Ethernet_hwc.h
+	include_file
+rtip\config\OSENV.H
+	include_file
+rtip\config\OSINT.H
+	include_file
+rtip\config\OSTYPE.H
+	include_file
+rtip\config\XNCONF.H
+	include_file

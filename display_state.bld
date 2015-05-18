@@ -1,0 +1,131 @@
+#!build
+default:
+	subproject
+	:sourcedirs=application\UserIoCtrl
+application\display\state\YesNoState.cpp
+	C++
+application\display\state\ActiveState.cpp
+	C++
+application\display\state\AlarmIconState.cpp
+	C++
+application\display\state\AlarmLogIconState.cpp
+	C++
+application\display\state\AlarmSourceState.cpp
+	C++
+application\display\state\AlarmState.cpp
+	C++
+application\display\state\AnalogInputConfNumberState.cpp
+	C++
+application\display\state\AnalogInputFunctionState.cpp
+	C++
+application\display\state\AnalogInputSetupNumberState.cpp
+	C++
+application\display\state\CombiAlarmNumberState.cpp
+	C++
+application\display\state\ControlSourceState.cpp
+	C++
+application\display\state\DHCPSetState.cpp
+	C++
+application\display\state\DigitalInputConfHeadlineState.cpp
+	C++
+application\display\state\DigitalInputConfNumberState.cpp
+	C++
+application\display\state\DigitalInputFunctionState.cpp
+	C++
+application\display\state\DigitalInputLogicState.cpp
+	C++
+application\display\state\DigitalOutputConfHeadlineState.cpp
+	C++
+application\display\state\DigitalOutputConfNumberState.cpp
+	C++
+application\display\state\DigitalOutputFunctionState.cpp
+	C++
+application\display\state\EnergyUnitState.cpp
+	C++
+application\display\state\FirmwareUpdateState.cpp
+	C++
+application\display\state\FloatSwitchConfState.cpp
+	C++
+application\display\state\FloatSwitchIconState.cpp
+	C++
+application\display\state\FloatSwitchState.cpp
+	C++
+application\display\state\IconState.cpp
+	C++
+application\display\state\OperationModeState.cpp
+	C++
+application\display\state\SensorElectricalMaxState.cpp
+	C++
+application\display\state\SensorElectricalMinState.cpp
+	C++
+application\display\state\ServiceIconState.cpp
+	C++
+application\display\state\SignalState.cpp
+	C++
+application\display\state\SIMCardState.cpp
+	C++
+application\display\state\State.cpp
+	C++
+application\display\state\SwitchIconState.cpp
+	C++
+application\display\state\SystemModeState.cpp
+	C++
+application\display\state\TrendIconState.cpp
+	C++
+application\display\state\VolumeUnitState.cpp
+	C++
+application\display\state\WeekdayHeadlineState.cpp
+	C++
+application\display\state\CommunicationState.cpp
+	C++
+application\display\state\PumpIconState.cpp
+	C++
+application\display\state\ChannelDimensionsIconState.cpp
+	C++
+application\display\state\OverflowPitTopIconState.cpp
+	C++
+application\display\state\OverflowPitBottomIconState.cpp
+	C++
+application\display\state\OverflowChannelIconState.cpp
+	C++
+application\display\state\OverflowErrorIconState.cpp
+	C++
+application\display\state\BatteryState.cpp
+	C++
+application\display\state\OverflowMonthState.cpp
+	C++
+application\display\state\OverflowMethodState.cpp
+	C++
+application\display\state\UserIoSourceState.cpp
+	C++
+application\display\state\IoChannelHeadlineState.cpp
+	C++
+application\display\state\UserIoState.cpp
+	C++
+application\display\state\UserIoLogicState.cpp
+	C++
+application\display\state\InputFunctionState.cpp
+	C++
+application\display\state\FirstUserIoChannelState.cpp
+	C++
+application\display\state\SecondUserIoChannelState.cpp
+	C++
+application\display\state\IoChannelLogicState.cpp
+	C++
+application\display\state\VfdOperationModeState.cpp
+	C++
+application\display\state\AnalogOutputFunctionState.cpp
+	C++
+application\display\state\AnalogOutputConfHeadlineState.cpp
+	C++
+application\display\state\AlarmWarningIconState.cpp
+	C++
+application\display\state\WarningEnabledIconState.cpp
+	C++
+application\display\state\AlarmEnabledIconState.cpp
+	C++
+application\display\state\PTCInputFunctionState.cpp
+	C++	
+application\display\state\PTCInputConfHeadlineState.cpp
+	C++	
+

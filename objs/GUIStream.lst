@@ -1,0 +1,163 @@
+
+                                   Tue Apr 07 08:56:33 2015           Page 1
+                                   Tue Apr 07 08:56:33 2015       gh_2i08m.s
+Command Line:   C:\GHS\V35\mips35\asmips.exe -noundefined -elf -b0
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos\inc
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\ConvertMono
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Font
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\LCDDriver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\MemDev
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\VNC
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Widget
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\wm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\util
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\datapoint
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\factory
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\webpage
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\xnet
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\stub
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\test
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENIusb\emUSB\USB\Driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\intercom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\controller
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\webif
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\relay
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\GENIApp
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\alarm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\AnaInConfigCtrl
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\Sms
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\display_task
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\gui_utility
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\mpcunit
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIbus
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIcom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIrs232
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\Virtual
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\imagesTFT
+                -IC:\GHS\V35\mips35\mipsl_sf -r4121 -source=GUIStream.c -o
+                objs\gh_2i08m.o -list=objs\GUIStream.lst
+                C:\Users\55602\AppData\Local\Temp\gh_2i08m.s
+Source File:    C:\Users\55602\AppData\Local\Temp\gh_2i08m.s
+Directory:      C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+Host OS:        GHS_WIN32
+Version:        AS-MIPS 3.5#11 
+Release:        MULTI 2000, MIPS v3.5
+Revision Date:  Wed Feb 27 12:19:03 2002
+Release Date:   Sat Mar 02 02:57:59 2002
+                             1	 #Source File:   C:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\GUI\Core\GUIStream.c
+
+                                   Tue Apr 07 08:56:33 2015           Page 2
+                                   Tue Apr 07 08:56:33 2015       gh_2i08m.s
+                             2	 #Directory:     
+                             3	 #		C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                             4	 #Compile Date:  Tue Apr 07 08:56:33 2015
+                             5	 #Host OS:       Win32
+                             6	 #Version:       C-MIPS 3.5#11 RELEASE VERSION
+                             7	 #Release:       MULTI 2000, MIPS v3.5
+                             8	 #Revision Date: Fri Mar 01 11:32:40 2002
+                             9	 #Release Date:  Sat Mar 02 02:58:48 2002
+                            10		.set	noat
+                            11		.set	noreorder
+                            12		.set	nomacro
+                            13		.text
+                            14		.align	4
+                            15		.globl	GUI_DrawStreamedBitmap
+                            16	GUI_DrawStreamedBitmap:
+        27bdffd8 00000000   17		addiu	$sp, $sp, -40
+                            18	 #	    .bf
+        afbf0024 00000004   19		sw	$ra, 36($sp)
+        3c190000 00000008   20		lui	$25, %hi(.L19)
+        8f2f0000 0000000c   21		lw	$15, %lo(.L19)($25)
+        27390000 00000010   22		addiu	$25, $25, %lo(.L19)
+        8f2e0004 00000014   23		lw	$14, 4($25)
+        8f2d0008 00000018   24		lw	$13, 8($25)
+        8f23000c 0000001c   25		lw	$3, 12($25)
+        afaf000c 00000020   26		sw	$15, 12($sp)
+        afae0010 00000024   27		sw	$14, 16($sp)
+        afad0014 00000028   28		sw	$13, 20($sp)
+        afa30018 0000002c   29		sw	$3, 24($sp)
+        8f2f0010 00000030   30		lw	$15, 16($25)
+        27b8000c 00000034   31		addiu	$24, $sp, 12
+        afaf001c 00000038   32		sw	$15, 28($sp)
+        9499000a 0000003c   33		lhu	$25, 10($4)
+        03001825 00000040   34		move	$3, $24
+        a4790006 00000044   35		sh	$25, 6($3)
+        94980008 00000048   36		lhu	$24, 8($4)
+        ac7d000c 0000004c   37		sw	$sp, 12($3)
+        a4780004 00000050   38		sh	$24, 4($3)
+        948f000c 00000054   39		lhu	$15, 12($4)
+        948d0004 00000058   40		lhu	$13, 4($4)
+        248b0010 0000005c   41		addiu	$11, $4, 16
+        000f7880 00000060   42		sll	$15, $15, 2
+        016f7021 00000064   43		addu	$14, $11, $15
+        ac6e0008 00000068   44		sw	$14, 8($3)
+        a46d0000 0000006c   45		sh	$13, 0($3)
+        94990006 00000070   46		lhu	$25, 6($4)
+        a4790002 00000074   47		sh	$25, 2($3)
+        9498000e 00000078   48		lhu	$24, 14($4)
+        afab0008 0000007c   49		sw	$11, 8($sp)
+        a3b80004 00000080   50		sb	$24, 4($sp)
+        948f000c 00000084   51		lhu	$15, 12($4)
+        00602025 00000088   52		move	$4, $3
+        0c000000 0000008c   53		jal	GUI_DrawBitmap
+        afaf0000 00000090   54		sw	$15, 0($sp)
+                            55	 #	    .ef
+        8fbf0024 00000094   56		lw	$ra, 36($sp)
+        03e00008 00000098   57		jr	$ra
+
+                                   Tue Apr 07 08:56:33 2015           Page 3
+                                   Tue Apr 07 08:56:33 2015       gh_2i08m.s
+        27bd0028 0000009c   58		addiu	$sp, $sp, 40
+                            59		.type	GUI_DrawStreamedBitmap,@function
+                            60		.size	GUI_DrawStreamedBitmap,.-GUI_DrawStreamedBitmap
+                            61		.align	4
+                            62	 #Bitmap	12($sp)	local
+                            63	 #.L16	.L19	static
+                            64	 #Palette	0($sp)	local
+                            65	
+                            66	 #pBitmapHeader	$4	param
+                            67	 #x	none	param
+                            68	 #y	none	param
+                            69	
+                            70		.data
+                            71	.L15:
+                            72		.section ".rodata","a"
+            0000 00000000   73	.L19:	.space	2
+            0000 00000002   74		.space	2
+            0000 00000004   75		.space	2
+            0000 00000006   76		.space	2
+        00000000 00000008   77		.space	4
+        00000000 0000000c   78		.space	4
+        00000000 00000010   79		.space	4
+                            80		.type	.L19,@object
+                            81		.size	.L19,20
+                            82		.data
+                            83		.text
+                            84		.align	4
+                            85	
+                            86		.data
+                            87		.section ".rodata","a"
+                            88		.align	4
+                            89		.text

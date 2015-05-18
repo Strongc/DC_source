@@ -1,0 +1,56 @@
+#!build
+default:
+	subproject
+	:sourcedirs=application\UserIoctrl
+application\display\ctrl\DigitalInputConfigSlipPoint.h
+	include_file
+application\display\ctrl\DigitalInputConfigSlipPoint.cpp
+	C++
+application\display\ctrl\DigitalOutputConfigSlipPoint.h
+	include_file
+application\display\ctrl\AnalogInputConfigSlipPoint.h
+	include_file
+application\display\ctrl\DigitalOutputConfigSlipPoint.cpp
+	C++
+application\display\ctrl\AnalogInputConfigSlipPoint.cpp
+	C++
+application\display\ctrl\ServiceModeEnabled.h
+	include_file
+application\display\ctrl\ServiceModeEnabled.cpp
+	C++
+application\display\ctrl\ServiceLanguageCtrl.h
+	include_file
+application\display\ctrl\ServiceLanguageCtrl.cpp
+	C++
+application\display\ctrl\GENINumberCtrl.h
+	include_file
+application\display\ctrl\GENINumberCtrl.cpp
+	C++
+application\display\ctrl\CombiAlarmSlipPoint.cpp
+	C++
+application\display\ctrl\AlarmSlipPoint.cpp
+	C++
+application\display\ctrl\SmsScheduleSlipPoint.cpp
+	C++
+application\display\ctrl\WizardCtrl.cpp
+	C++
+application\display\ctrl\CounterInputConfCtrl.cpp
+	C++
+application\display\ctrl\UserIoSlipPoint.cpp
+	C++
+application\display\ctrl\IoChannelSlipPoint.cpp
+	C++
+application\display\ctrl\VfdConfSlipPoint.cpp
+	C++
+application\display\ctrl\VfdEnergyTestSlipPoint.cpp
+	C++
+application\display\ctrl\AnalogOutputConfigSlipPoint.cpp
+	C++
+application\display\ctrl\AlarmSnapShotSlipPoint.cpp
+	C++
+application\display\ctrl\PTCInputConfigSlipPoint.h
+	include_file
+application\display\ctrl\PTCInputConfigSlipPoint.cpp
+	C++
+	
+	

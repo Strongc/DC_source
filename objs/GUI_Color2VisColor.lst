@@ -1,0 +1,177 @@
+
+                                   Tue Apr 07 08:53:08 2015           Page 1
+                                   Tue Apr 07 08:53:08 2015       gh_2i049.s
+Command Line:   C:\GHS\V35\mips35\asmips.exe -noundefined -elf -b0
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos\inc
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\ConvertMono
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Font
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\LCDDriver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\MemDev
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\VNC
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Widget
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\wm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\util
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\datapoint
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\factory
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\webpage
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\xnet
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\stub
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\test
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENIusb\emUSB\USB\Driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\intercom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\controller
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\webif
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\relay
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\GENIApp
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\alarm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\AnaInConfigCtrl
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\Sms
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\display_task
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\gui_utility
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\mpcunit
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIbus
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIcom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIrs232
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\Virtual
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\imagesTFT
+                -IC:\GHS\V35\mips35\mipsl_sf -r4121 -source=GUI_Color2VisColor.c
+                -o objs\gh_2i049.o -list=objs\GUI_Color2VisColor.lst
+                C:\Users\55602\AppData\Local\Temp\gh_2i049.s
+Source File:    C:\Users\55602\AppData\Local\Temp\gh_2i049.s
+Directory:      C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+Host OS:        GHS_WIN32
+Version:        AS-MIPS 3.5#11 
+Release:        MULTI 2000, MIPS v3.5
+Revision Date:  Wed Feb 27 12:19:03 2002
+Release Date:   Sat Mar 02 02:57:59 2002
+                             1	 #Source File:   C:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\GUI\Core\GUI_Color2VisColor.c
+
+                                   Tue Apr 07 08:53:08 2015           Page 2
+                                   Tue Apr 07 08:53:08 2015       gh_2i049.s
+                             2	 #Directory:     
+                             3	 #		C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                             4	 #Compile Date:  Tue Apr 07 08:53:08 2015
+                             5	 #Host OS:       Win32
+                             6	 #Version:       C-MIPS 3.5#11 RELEASE VERSION
+                             7	 #Release:       MULTI 2000, MIPS v3.5
+                             8	 #Revision Date: Fri Mar 01 11:32:40 2002
+                             9	 #Release Date:  Sat Mar 02 02:58:48 2002
+                            10		.set	noat
+                            11		.set	noreorder
+                            12		.set	nomacro
+                            13		.text
+                            14		.align	4
+                            15		.globl	GUI_Color2VisColor
+                            16	GUI_Color2VisColor:
+        27bdfff0 00000000   17		addiu	$sp, $sp, -16
+        afbf000c 00000004   18		sw	$ra, 12($sp)
+        afb00000 00000008   19		sw	$16, 0($sp)
+                            20	 #	    .bf
+        0c000000 0000000c   21		jal	GUI_Lock
+        00808025 00000010   22		move	$16, $4
+        0c000000 00000014   23		jal	LCD_Color2Index
+        02002025 00000018   24		move	$4, $16
+        00022400 0000001c   25		sll	$4, $2, 16
+        0c000000 00000020   26		jal	LCD_Index2Color
+        00042403 00000024   27		sra	$4, $4, 16
+        0c000000 00000028   28		jal	GUI_Unlock
+        00408025 0000002c   29		move	$16, $2
+                            30	 #	    .ef
+        02001025 00000030   31		move	$2, $16
+        8fbf000c 00000034   32		lw	$ra, 12($sp)
+        8fb00000 00000038   33		lw	$16, 0($sp)
+        03e00008 0000003c   34		jr	$ra
+        27bd0010 00000040   35		addiu	$sp, $sp, 16
+                            36		.type	GUI_Color2VisColor,@function
+                            37		.size	GUI_Color2VisColor,.-GUI_Color2VisColor
+                            38		.align	4
+                            39	
+                            40	 #color	$16	param
+                            41	
+                            42		.data
+                            43	.L15:
+                            44		.text
+                            45		.align	4
+                            46		.align	4
+                            47		.globl	GUI_ColorIsAvailable
+                            48	GUI_ColorIsAvailable:
+        27bdfff0 00000044   49		addiu	$sp, $sp, -16
+        afbf000c 00000048   50		sw	$ra, 12($sp)
+        afb00000 0000004c   51		sw	$16, 0($sp)
+                            52	 #	    .bf
+        0c000000 00000050   53		jal	GUI_Color2VisColor
+        00808025 00000054   54		move	$16, $4
+                            55	 #	    .ef
+        00501826 00000058   56		xor	$3, $2, $16
+        8fb00000 0000005c   57		lw	$16, 0($sp)
+
+                                   Tue Apr 07 08:53:08 2015           Page 3
+                                   Tue Apr 07 08:53:08 2015       gh_2i049.s
+        8fbf000c 00000060   58		lw	$ra, 12($sp)
+        27bd0010 00000064   59		addiu	$sp, $sp, 16
+        2c630001 00000068   60		sltiu	$3, $3, 1
+        00031600 0000006c   61		sll	$2, $3, 24
+        03e00008 00000070   62		jr	$ra
+        00021603 00000074   63		sra	$2, $2, 24
+                            64		.type	GUI_ColorIsAvailable,@function
+                            65		.size	GUI_ColorIsAvailable,.-GUI_ColorIsAvailable
+                            66		.align	4
+                            67	
+                            68	 #color	$16	param
+                            69	
+                            70		.data
+                            71	.L37:
+                            72		.text
+                            73		.align	4
+                            74		.align	4
+                            75		.globl	GUI_CalcVisColorError
+                            76	GUI_CalcVisColorError:
+        27bdfff0 00000078   77		addiu	$sp, $sp, -16
+        afbf000c 0000007c   78		sw	$ra, 12($sp)
+        afb00000 00000080   79		sw	$16, 0($sp)
+                            80	 #	    .bf
+        0c000000 00000084   81		jal	GUI_Color2VisColor
+        00808025 00000088   82		move	$16, $4
+        02002025 0000008c   83		move	$4, $16
+        0c000000 00000090   84		jal	GUI_CalcColorDist
+        00402825 00000094   85		move	$5, $2
+                            86	 #	    .ef
+        8fbf000c 00000098   87		lw	$ra, 12($sp)
+        8fb00000 0000009c   88		lw	$16, 0($sp)
+        03e00008 000000a0   89		jr	$ra
+        27bd0010 000000a4   90		addiu	$sp, $sp, 16
+                            91		.type	GUI_CalcVisColorError,@function
+                            92		.size	GUI_CalcVisColorError,.-GUI_CalcVisColorError
+                            93		.align	4
+                            94	
+                            95	 #color	$16	param
+                            96	
+                            97		.data
+                            98	.L56:
+                            99		.text
+                           100		.align	4
+                           101	
+                           102		.data
+                           103		.text

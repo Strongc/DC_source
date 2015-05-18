@@ -1,0 +1,151 @@
+
+                                   Tue Apr 07 08:51:17 2015           Page 1
+                                   Tue Apr 07 08:51:17 2015       gh_2i01q.s
+Command Line:   C:\GHS\V35\mips35\asmips.exe -noundefined -elf -b0
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\MPC_control\source\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos\inc
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\ConvertMono
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Font
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\LCDDriver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\MemDev
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\VNC
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Widget
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\wm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\util
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\datapoint
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\factory
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\webpage
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\xnet
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\stub
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\test
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENIusb\emUSB\USB\Driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\intercom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\controller
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\webif
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\relay
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\GENIApp
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\alarm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\AnaInConfigCtrl
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\Sms
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\display_task
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\gui_utility
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\mpcunit
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIbus
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIcom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIrs232
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\Virtual
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\imagesTFT
+                -IC:\GHS\V35\mips35\mipsl_sf -r4121 -source=WM_MakeModal.c -o
+                objs\gh_2i01q.o -list=objs\WM_MakeModal.lst
+                C:\Users\55602\AppData\Local\Temp\gh_2i01q.s
+Source File:    C:\Users\55602\AppData\Local\Temp\gh_2i01q.s
+Directory:      C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+Host OS:        GHS_WIN32
+Version:        AS-MIPS 3.5#11 
+Release:        MULTI 2000, MIPS v3.5
+Revision Date:  Wed Feb 27 12:19:03 2002
+Release Date:   Sat Mar 02 02:57:59 2002
+                             1	 #Source File:   C:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\GUI\WM\WM_MakeModal.c
+
+                                   Tue Apr 07 08:51:17 2015           Page 2
+                                   Tue Apr 07 08:51:17 2015       gh_2i01q.s
+                             2	 #Directory:     
+                             3	 #		C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                             4	 #Compile Date:  Tue Apr 07 08:51:17 2015
+                             5	 #Host OS:       Win32
+                             6	 #Version:       C-MIPS 3.5#11 RELEASE VERSION
+                             7	 #Release:       MULTI 2000, MIPS v3.5
+                             8	 #Revision Date: Fri Mar 01 11:32:40 2002
+                             9	 #Release Date:  Sat Mar 02 02:58:48 2002
+                            10		.set	noat
+                            11		.set	noreorder
+                            12		.set	nomacro
+                            13		.text
+                            14		.align	4
+                            15		.globl	WM_MakeModal
+                            16	WM_MakeModal:
+        27bdffe8 00000000   17		addiu	$sp, $sp, -24
+        afbf0014 00000004   18		sw	$ra, 20($sp)
+        afb00000 00000008   19		sw	$16, 0($sp)
+                            20	 #	    .bf
+        0c000000 0000000c   21		jal	GUI_Lock
+        00808025 00000010   22		move	$16, $4
+        a7900000 00000014   23		sh	$16, %sdaoff(WM__CHWinModal+4)($28)
+        87990000 00000018   24		lh	$25, %sdaoff(WM__CHWinLast+4)($28)
+        13200010 0000001c   25		beq	$25, $0, .L4
+        00000000 00000020   26		nop
+        0c000000 00000024   27		jal	WM__IsInModalArea
+        87840000 00000028   28		lh	$4, %sdaoff(WM__CHWinLast+4)($28)
+        1440000c 0000002c   29		bne	$2, $0, .L4
+        3c0f0000 00000030   30		lui	$15, %hi(.L32)
+        25ef0000 00000034   31		addiu	$15, $15, %lo(.L32)
+        8df90004 00000038   32		lw	$25, 4($15)
+        27a50004 0000003c   33		addiu	$5, $sp, 4
+        8df80008 00000040   34		lw	$24, 8($15)
+        afb90008 00000044   35		sw	$25, 8($sp)
+        340f000c 00000048   36		ori	$15, $0, 12
+        afb8000c 0000004c   37		sw	$24, 12($sp)
+        afaf0004 00000050   38		sw	$15, 4($sp)
+        0c000000 00000054   39		jal	WM__SendPIDMessage
+        87840000 00000058   40		lh	$4, %sdaoff(WM__CHWinLast+4)($28)
+        a7800000 0000005c   41		sh	$0, %sdaoff(WM__CHWinLast+4)($28)
+                            42	.L4:
+        0c000000 00000060   43		jal	GUI_Unlock
+        00000000 00000064   44		nop
+                            45	 #	    .ef
+        8fbf0014 00000068   46		lw	$ra, 20($sp)
+        8fb00000 0000006c   47		lw	$16, 0($sp)
+        03e00008 00000070   48		jr	$ra
+        27bd0018 00000074   49		addiu	$sp, $sp, 24
+                            50		.type	WM_MakeModal,@function
+                            51		.size	WM_MakeModal,.-WM_MakeModal
+                            52		.align	4
+                            53	 #Msg	4($sp)	local
+                            54	 #.L29	.L32	static
+                            55	
+                            56	 #hWin	$16	param
+                            57	
+
+                                   Tue Apr 07 08:51:17 2015           Page 3
+                                   Tue Apr 07 08:51:17 2015       gh_2i01q.s
+                            58		.data
+                            59	.L28:
+                            60		.section ".rodata","a"
+        00000000 00000000   61	.L32:	.space	4
+            0000 00000004   62		.space	2
+            0000 00000006   63		.space	2
+        00000000 00000008   64		.space	4
+                            65		.type	.L32,@object
+                            66		.size	.L32,12
+                            67		.data
+                            68		.text
+                            69		.align	4
+                            70	 #WM__CHWinModal	%sdaoff(WM__CHWinModal)	import
+                            71	 #WM__CHWinLast	%sdaoff(WM__CHWinLast)	import
+                            72	
+                            73		.data
+                            74		.section ".rodata","a"
+                            75		.align	4
+                            76		.text

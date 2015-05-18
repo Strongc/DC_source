@@ -1,0 +1,147 @@
+
+                                   Tue Apr 07 08:50:58 2015           Page 1
+                                   Tue Apr 07 08:50:58 2015       gh_2i01d.s
+Command Line:   C:\GHS\V35\mips35\asmips.exe -noundefined -elf -b0
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\MPC_control\source\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos\inc
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\ConvertMono
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Font
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\LCDDriver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\MemDev
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\VNC
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Widget
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\wm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\util
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\datapoint
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\factory
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\webpage
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\xnet
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\stub
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\test
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENIusb\emUSB\USB\Driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\intercom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\controller
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\webif
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\relay
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\GENIApp
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\alarm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\AnaInConfigCtrl
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\Sms
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\display_task
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\gui_utility
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\mpcunit
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIbus
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIcom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIrs232
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\Virtual
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\imagesTFT
+                -IC:\GHS\V35\mips35\mipsl_sf -r4121 -source=WM_GetScrollPartner.c
+                -o objs\gh_2i01d.o -list=objs\WM_GetScrollPartner.lst
+                C:\Users\55602\AppData\Local\Temp\gh_2i01d.s
+Source File:    C:\Users\55602\AppData\Local\Temp\gh_2i01d.s
+Directory:      C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+Host OS:        GHS_WIN32
+Version:        AS-MIPS 3.5#11 
+Release:        MULTI 2000, MIPS v3.5
+Revision Date:  Wed Feb 27 12:19:03 2002
+Release Date:   Sat Mar 02 02:57:59 2002
+                             1	 #Source File:   C:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\GUI\WM\WM_GetScrollPartner.c
+
+                                   Tue Apr 07 08:50:58 2015           Page 2
+                                   Tue Apr 07 08:50:58 2015       gh_2i01d.s
+                             2	 #Directory:     
+                             3	 #		C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                             4	 #Compile Date:  Tue Apr 07 08:50:58 2015
+                             5	 #Host OS:       Win32
+                             6	 #Version:       C-MIPS 3.5#11 RELEASE VERSION
+                             7	 #Release:       MULTI 2000, MIPS v3.5
+                             8	 #Revision Date: Fri Mar 01 11:32:40 2002
+                             9	 #Release Date:  Sat Mar 02 02:58:48 2002
+                            10		.set	noat
+                            11		.set	noreorder
+                            12		.set	nomacro
+                            13		.text
+                            14		.align	4
+                            15		.globl	WM_GetScrollPartner
+                            16	WM_GetScrollPartner:
+        27bdfff0 00000000   17		addiu	$sp, $sp, -16
+        afbf000c 00000004   18		sw	$ra, 12($sp)
+        afb10004 00000008   19		sw	$17, 4($sp)
+        afb00000 0000000c   20		sw	$16, 0($sp)
+        00048400 00000010   21		sll	$16, $4, 16
+        00108403 00000014   22		sra	$16, $16, 16
+                            23	 #	    .bf
+        0c000000 00000018   24		jal	WM_GetId
+        02002025 0000001c   25		move	$4, $16
+        00408825 00000020   26		move	$17, $2
+        341900ff 00000024   27		ori	$25, $0, 255
+        5639000d 00000028   28		bnel	$17, $25, .L1000004
+        341800fe 0000002c   29		ori	$24, $0, 254
+        0c000000 00000030   30		jal	WM_GetParent
+        02002025 00000034   31		move	$4, $16
+        00402025 00000038   32		move	$4, $2
+        0c000000 0000003c   33		jal	WM_GetDialogItem
+        340500fe 00000040   34		ori	$5, $0, 254
+        8fb10004 00000044   35		lw	$17, 4($sp)
+        8fb00000 00000048   36		lw	$16, 0($sp)
+        8fbf000c 0000004c   37		lw	$ra, 12($sp)
+        27bd0010 00000050   38		addiu	$sp, $sp, 16
+        00021400 00000054   39		sll	$2, $2, 16
+        03e00008 00000058   40		jr	$ra
+        00021403 0000005c   41		sra	$2, $2, 16
+                            42	.L1000004:
+        52380001 00000060   43		beql	$17, $24, .L6
+        341100ff 00000064   44		ori	$17, $0, 255
+                            45	.L6:
+        0c000000 00000068   46		jal	WM_GetParent
+        02002025 0000006c   47		move	$4, $16
+        00402025 00000070   48		move	$4, $2
+        0c000000 00000074   49		jal	WM_GetDialogItem
+        02202825 00000078   50		move	$5, $17
+                            51	 #	    .ef
+        8fb10004 0000007c   52		lw	$17, 4($sp)
+        8fb00000 00000080   53		lw	$16, 0($sp)
+        8fbf000c 00000084   54		lw	$ra, 12($sp)
+        27bd0010 00000088   55		addiu	$sp, $sp, 16
+        00021400 0000008c   56		sll	$2, $2, 16
+        03e00008 00000090   57		jr	$ra
+
+                                   Tue Apr 07 08:50:58 2015           Page 3
+                                   Tue Apr 07 08:50:58 2015       gh_2i01d.s
+        00021403 00000094   58		sra	$2, $2, 16
+                            59		.type	WM_GetScrollPartner,@function
+                            60		.size	WM_GetScrollPartner,.-WM_GetScrollPartner
+                            61		.align	4
+                            62	 #Id	$17	local
+                            63	
+                            64	 #hScroll	$16	param
+                            65	
+                            66		.data
+                            67	.L32:
+                            68		.text
+                            69		.align	4
+                            70	
+                            71		.data
+                            72		.text

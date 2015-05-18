@@ -1,0 +1,197 @@
+
+                                   Tue Apr 07 08:55:57 2015           Page 1
+                                   Tue Apr 07 08:55:57 2015       gh_2i080.s
+Command Line:   C:\GHS\V35\mips35\asmips.exe -noundefined -elf -b0
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos\inc
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\ConvertMono
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Font
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\LCDDriver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\MemDev
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\VNC
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Widget
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\wm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\util
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\datapoint
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\factory
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\webpage
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\xnet
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\stub
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\test
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENIusb\emUSB\USB\Driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\intercom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\controller
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\webif
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\relay
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\GENIApp
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\alarm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\AnaInConfigCtrl
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\Sms
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\display_task
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\gui_utility
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\mpcunit
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIbus
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIcom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIrs232
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\Virtual
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\imagesTFT
+                -IC:\GHS\V35\mips35\mipsl_sf -r4121 -source=GUI_UC_EncodeNone.c
+                -o objs\gh_2i080.o -list=objs\GUI_UC_EncodeNone.lst
+                C:\Users\55602\AppData\Local\Temp\gh_2i080.s
+Source File:    C:\Users\55602\AppData\Local\Temp\gh_2i080.s
+Directory:      C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+Host OS:        GHS_WIN32
+Version:        AS-MIPS 3.5#11 
+Release:        MULTI 2000, MIPS v3.5
+Revision Date:  Wed Feb 27 12:19:03 2002
+Release Date:   Sat Mar 02 02:57:59 2002
+                             1	 #Source File:   C:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\GUI\Core\GUI_UC_EncodeNone.c
+
+                                   Tue Apr 07 08:55:57 2015           Page 2
+                                   Tue Apr 07 08:55:57 2015       gh_2i080.s
+                             2	 #Directory:     
+                             3	 #		C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                             4	 #Compile Date:  Tue Apr 07 08:55:57 2015
+                             5	 #Host OS:       Win32
+                             6	 #Version:       C-MIPS 3.5#11 RELEASE VERSION
+                             7	 #Release:       MULTI 2000, MIPS v3.5
+                             8	 #Revision Date: Fri Mar 01 11:32:40 2002
+                             9	 #Release Date:  Sat Mar 02 02:58:48 2002
+                            10		.set	noat
+                            11		.set	noreorder
+                            12		.set	nomacro
+                            13		.text
+                            14		.align	4
+                            15	_GetCharCode:
+                            16	 #	    .bf
+                            17	 #	    .ef
+        03e00008 00000000   18		jr	$ra
+        90820000 00000004   19		lbu	$2, 0($4)
+                            20		.type	_GetCharCode,@function
+                            21		.size	_GetCharCode,.-_GetCharCode
+                            22		.align	4
+                            23	
+                            24	 #s	$4	param
+                            25	
+                            26		.data
+                            27	.L15:
+                            28		.text
+                            29		.align	4
+                            30		.align	4
+                            31	_GetCharSize:
+                            32	 #	    .bf
+                            33	 #	    .ef
+        03e00008 00000008   34		jr	$ra
+        34020001 0000000c   35		ori	$2, $0, 1
+                            36		.type	_GetCharSize,@function
+                            37		.size	_GetCharSize,.-_GetCharSize
+                            38		.align	4
+                            39	
+                            40	 #s	none	param
+                            41	
+                            42		.data
+                            43	.L33:
+                            44		.text
+                            45		.align	4
+                            46		.align	4
+                            47	_CalcSizeOfChar:
+                            48	 #	    .bf
+                            49	 #	    .ef
+        03e00008 00000010   50		jr	$ra
+        34020001 00000014   51		ori	$2, $0, 1
+                            52		.type	_CalcSizeOfChar,@function
+                            53		.size	_CalcSizeOfChar,.-_CalcSizeOfChar
+                            54		.align	4
+                            55	
+                            56	 #Char	none	param
+                            57	
+
+                                   Tue Apr 07 08:55:57 2015           Page 3
+                                   Tue Apr 07 08:55:57 2015       gh_2i080.s
+                            58		.data
+                            59	.L51:
+                            60		.text
+                            61		.align	4
+                            62		.align	4
+                            63	_Encode:
+        34020001 00000018   64		ori	$2, $0, 1
+                            65	 #	    .bf
+                            66	 #	    .ef
+        03e00008 0000001c   67		jr	$ra
+        a0850000 00000020   68		sb	$5, 0($4)
+                            69		.type	_Encode,@function
+                            70		.size	_Encode,.-_Encode
+                            71		.align	4
+                            72	
+                            73	 #s	$4	param
+                            74	 #Char	none	param
+                            75	
+                            76		.data
+                            77	.L69:
+                            78		.text
+                            79		.align	4
+                            80		.align	4
+                            81		.align	4
+                            82		.globl	GUI_UC_SetEncodeNone
+                            83	GUI_UC_SetEncodeNone:
+        27bdfff8 00000024   84		addiu	$sp, $sp, -8
+                            85	 #	    .bf
+        afbf0004 00000028   86		sw	$ra, 4($sp)
+        0c000000 0000002c   87		jal	GUI_Lock
+        00000000 00000030   88		nop
+        3c190000 00000034   89		lui	$25, %hi(GUI_UC_None)
+        27390000 00000038   90		addiu	$25, $25, %lo(GUI_UC_None)
+        3c010000 0000003c   91		lui	$1, %hi(GUI_Context+32)
+        0c000000 00000040   92		jal	GUI_Unlock
+        ac390000 00000044   93		sw	$25, %lo(GUI_Context+32)($1)
+                            94	 #	    .ef
+        8fbf0004 00000048   95		lw	$ra, 4($sp)
+        03e00008 0000004c   96		jr	$ra
+        27bd0008 00000050   97		addiu	$sp, $sp, 8
+                            98		.type	GUI_UC_SetEncodeNone,@function
+                            99		.size	GUI_UC_SetEncodeNone,.-GUI_UC_SetEncodeNone
+                           100		.align	4
+                           101	
+                           102		.data
+                           103	.L87:
+                           104		.text
+                           105		.align	4
+                           106	 #GUI_Context	GUI_Context	import
+                           107	
+                           108		.section ".rodata","a"
+                           109	.L95:
+                           110		.globl	GUI_UC_None
+        00000000 00000000  111	GUI_UC_None:	.word	_GetCharCode
+        00000000 00000004  112		.word	_GetCharSize
+        00000000 00000008  113		.word	_CalcSizeOfChar
+
+                                   Tue Apr 07 08:55:57 2015           Page 4
+                                   Tue Apr 07 08:55:57 2015       gh_2i080.s
+        00000000 0000000c  114		.word	_Encode
+                           115		.type	GUI_UC_None,@object
+                           116		.size	GUI_UC_None,16
+                           117		.data
+                           118		.section ".rodata","a"
+                           119		.align	4
+                           120		.text

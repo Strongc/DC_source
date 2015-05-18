@@ -1,0 +1,166 @@
+
+                                   Tue Apr 07 08:55:07 2015           Page 1
+                                   Tue Apr 07 08:55:07 2015       gh_2i06s.s
+Command Line:   C:\GHS\V35\mips35\asmips.exe -noundefined -elf -b0
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos\inc
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\ConvertMono
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Font
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\LCDDriver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\MemDev
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\VNC
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Widget
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\wm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\util
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\datapoint
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\factory
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\webpage
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\xnet
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\stub
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\test
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENIusb\emUSB\USB\Driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\intercom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\controller
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\webif
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\relay
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\GENIApp
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\alarm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\AnaInConfigCtrl
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\Sms
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\display_task
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\gui_utility
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\mpcunit
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIbus
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIcom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIrs232
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\Virtual
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\imagesTFT
+                -IC:\GHS\V35\mips35\mipsl_sf -r4121 -source=GUI_DispBin.c -o
+                objs\gh_2i06s.o -list=objs\GUI_DispBin.lst
+                C:\Users\55602\AppData\Local\Temp\gh_2i06s.s
+Source File:    C:\Users\55602\AppData\Local\Temp\gh_2i06s.s
+Directory:      C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+Host OS:        GHS_WIN32
+Version:        AS-MIPS 3.5#11 
+Release:        MULTI 2000, MIPS v3.5
+Revision Date:  Wed Feb 27 12:19:03 2002
+Release Date:   Sat Mar 02 02:57:59 2002
+                             1	 #Source File:   C:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\GUI\Core\GUI_DispBin.c
+
+                                   Tue Apr 07 08:55:07 2015           Page 2
+                                   Tue Apr 07 08:55:07 2015       gh_2i06s.s
+                             2	 #Directory:     
+                             3	 #		C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                             4	 #Compile Date:  Tue Apr 07 08:55:07 2015
+                             5	 #Host OS:       Win32
+                             6	 #Version:       C-MIPS 3.5#11 RELEASE VERSION
+                             7	 #Release:       MULTI 2000, MIPS v3.5
+                             8	 #Revision Date: Fri Mar 01 11:32:40 2002
+                             9	 #Release Date:  Sat Mar 02 02:58:48 2002
+                            10		.set	noat
+                            11		.set	noreorder
+                            12		.set	nomacro
+                            13		.text
+                            14		.align	4
+                            15		.globl	GUI_DispBin
+                            16	GUI_DispBin:
+        27bdffc8 00000000   17		addiu	$sp, $sp, -56
+                            18	 #	    .bf
+        afbf0034 00000004   19		sw	$ra, 52($sp)
+        30a500ff 00000008   20		andi	$5, $5, 255
+        afb00000 0000000c   21		sw	$16, 0($sp)
+        27b0000c 00000010   22		addiu	$16, $sp, 12
+        afb00008 00000014   23		sw	$16, 8($sp)
+        0c000000 00000018   24		jal	GUI_AddBin
+        27a60008 0000001c   25		addiu	$6, $sp, 8
+        0c000000 00000020   26		jal	GUI_DispString
+        02002025 00000024   27		move	$4, $16
+                            28	 #	    .ef
+        8fbf0034 00000028   29		lw	$ra, 52($sp)
+        8fb00000 0000002c   30		lw	$16, 0($sp)
+        03e00008 00000030   31		jr	$ra
+        27bd0038 00000034   32		addiu	$sp, $sp, 56
+                            33		.type	GUI_DispBin,@function
+                            34		.size	GUI_DispBin,.-GUI_DispBin
+                            35		.align	4
+                            36	 #ac	12($sp)	local
+                            37	 #s	8($sp)	local
+                            38	
+                            39	 #v	none	param
+                            40	 #Len	$5	param
+                            41	
+                            42		.data
+                            43	.L15:
+                            44		.text
+                            45		.align	4
+                            46		.align	4
+                            47		.globl	GUI_DispBinAt
+                            48	GUI_DispBinAt:
+        27bdffc0 00000038   49		addiu	$sp, $sp, -64
+                            50	 #	    .bf
+        afbf003c 0000003c   51		sw	$ra, 60($sp)
+        afb00000 00000040   52		sw	$16, 0($sp)
+        00058400 00000044   53		sll	$16, $5, 16
+        00108403 00000048   54		sra	$16, $16, 16
+        afb10004 0000004c   55		sw	$17, 4($sp)
+        00068c00 00000050   56		sll	$17, $6, 16
+        00118c03 00000054   57		sra	$17, $17, 16
+
+                                   Tue Apr 07 08:55:07 2015           Page 3
+                                   Tue Apr 07 08:55:07 2015       gh_2i06s.s
+        30e500ff 00000058   58		andi	$5, $7, 255
+        afb20008 0000005c   59		sw	$18, 8($sp)
+        27b20014 00000060   60		addiu	$18, $sp, 20
+        afb20010 00000064   61		sw	$18, 16($sp)
+        0c000000 00000068   62		jal	GUI_AddBin
+        27a60010 0000006c   63		addiu	$6, $sp, 16
+        02402025 00000070   64		move	$4, $18
+        02002825 00000074   65		move	$5, $16
+        0c000000 00000078   66		jal	GUI_DispStringAt
+        02203025 0000007c   67		move	$6, $17
+                            68	 #	    .ef
+        8fb00000 00000080   69		lw	$16, 0($sp)
+        8fbf003c 00000084   70		lw	$ra, 60($sp)
+        8fb10004 00000088   71		lw	$17, 4($sp)
+        8fb20008 0000008c   72		lw	$18, 8($sp)
+        03e00008 00000090   73		jr	$ra
+        27bd0040 00000094   74		addiu	$sp, $sp, 64
+                            75		.type	GUI_DispBinAt,@function
+                            76		.size	GUI_DispBinAt,.-GUI_DispBinAt
+                            77		.align	4
+                            78	 #ac	20($sp)	local
+                            79	 #s	16($sp)	local
+                            80	
+                            81	 #v	none	param
+                            82	 #x	$16	param
+                            83	 #y	$17	param
+                            84	 #Len	$7	param
+                            85	
+                            86		.data
+                            87	.L34:
+                            88		.text
+                            89		.align	4
+                            90	
+                            91		.data
+                            92		.text

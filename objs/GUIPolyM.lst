@@ -1,0 +1,214 @@
+
+                                   Tue Apr 07 08:56:29 2015           Page 1
+                                   Tue Apr 07 08:56:28 2015       gh_2i08j.s
+Command Line:   C:\GHS\V35\mips35\asmips.exe -noundefined -elf -b0
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos\inc
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\ConvertMono
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Font
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\LCDDriver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\MemDev
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\VNC
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Widget
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\wm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\util
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\datapoint
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\factory
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\webpage
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\xnet
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\stub
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\test
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENIusb\emUSB\USB\Driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\intercom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\controller
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\webif
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\relay
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\GENIApp
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\alarm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\AnaInConfigCtrl
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\Sms
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\display_task
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\gui_utility
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\mpcunit
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIbus
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIcom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIrs232
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\Virtual
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\imagesTFT
+                -IC:\GHS\V35\mips35\mipsl_sf -r4121 -source=GUIPolyM.c -o
+                objs\gh_2i08j.o -list=objs\GUIPolyM.lst
+                C:\Users\55602\AppData\Local\Temp\gh_2i08j.s
+Source File:    C:\Users\55602\AppData\Local\Temp\gh_2i08j.s
+Directory:      C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+Host OS:        GHS_WIN32
+Version:        AS-MIPS 3.5#11 
+Release:        MULTI 2000, MIPS v3.5
+Revision Date:  Wed Feb 27 12:19:03 2002
+Release Date:   Sat Mar 02 02:57:59 2002
+                             1	 #Source File:   C:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\GUI\Core\GUIPolyM.c
+
+                                   Tue Apr 07 08:56:29 2015           Page 2
+                                   Tue Apr 07 08:56:28 2015       gh_2i08j.s
+                             2	 #Directory:     
+                             3	 #		C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                             4	 #Compile Date:  Tue Apr 07 08:56:28 2015
+                             5	 #Host OS:       Win32
+                             6	 #Version:       C-MIPS 3.5#11 RELEASE VERSION
+                             7	 #Release:       MULTI 2000, MIPS v3.5
+                             8	 #Revision Date: Fri Mar 01 11:32:40 2002
+                             9	 #Release Date:  Sat Mar 02 02:58:48 2002
+                            10		.set	noat
+                            11		.set	noreorder
+                            12		.set	nomacro
+                            13		.text
+                            14		.align	4
+                            15		.globl	GUI_MagnifyPolygon
+                            16	GUI_MagnifyPolygon:
+        340a0000 00000000   17		ori	$10, $0, 0
+                            18	 #	    .bf
+        0146c82a 00000004   19		slt	$25, $10, $6
+        13200002 00000008   20		beq	$25, $0, .L96
+        34090000 0000000c   21		ori	$9, $0, 0
+        00c05025 00000010   22		move	$10, $6
+                            23	.L96:
+        000a58c2 00000014   24		srl	$11, $10, 3
+        11600047 00000018   25		beq	$11, $0, .L20
+        00a01825 0000001c   26		move	$3, $5
+        00801025 00000020   27		move	$2, $4
+        000b48c0 00000024   28		sll	$9, $11, 3
+                            29	.L36:
+        846e0000 00000028   30		lh	$14, 0($3)
+        01c70018 0000002c   31		mult	$14, $7
+        00007812 00000030   32		mflo	$15
+        a44f0000 00000034   33		sh	$15, 0($2)
+        84790002 00000038   34		lh	$25, 2($3)
+        03270018 0000003c   35		mult	$25, $7
+        00006812 00000040   36		mflo	$13
+        a44d0002 00000044   37		sh	$13, 2($2)
+        846f0004 00000048   38		lh	$15, 4($3)
+        01e70018 0000004c   39		mult	$15, $7
+        0000c012 00000050   40		mflo	$24
+        a4580004 00000054   41		sh	$24, 4($2)
+        846d0006 00000058   42		lh	$13, 6($3)
+        01a70018 0000005c   43		mult	$13, $7
+        00007012 00000060   44		mflo	$14
+        a44e0006 00000064   45		sh	$14, 6($2)
+        84780008 00000068   46		lh	$24, 8($3)
+        03070018 0000006c   47		mult	$24, $7
+        0000c812 00000070   48		mflo	$25
+        a4590008 00000074   49		sh	$25, 8($2)
+        846e000a 00000078   50		lh	$14, 10($3)
+        01c70018 0000007c   51		mult	$14, $7
+        00007812 00000080   52		mflo	$15
+        a44f000a 00000084   53		sh	$15, 10($2)
+        8479000c 00000088   54		lh	$25, 12($3)
+        03270018 0000008c   55		mult	$25, $7
+        00006812 00000090   56		mflo	$13
+        a44d000c 00000094   57		sh	$13, 12($2)
+
+                                   Tue Apr 07 08:56:29 2015           Page 3
+                                   Tue Apr 07 08:56:28 2015       gh_2i08j.s
+        846f000e 00000098   58		lh	$15, 14($3)
+        01e70018 0000009c   59		mult	$15, $7
+        0000c012 000000a0   60		mflo	$24
+        a458000e 000000a4   61		sh	$24, 14($2)
+        846d0010 000000a8   62		lh	$13, 16($3)
+        01a70018 000000ac   63		mult	$13, $7
+        00007012 000000b0   64		mflo	$14
+        a44e0010 000000b4   65		sh	$14, 16($2)
+        84780012 000000b8   66		lh	$24, 18($3)
+        03070018 000000bc   67		mult	$24, $7
+        0000c812 000000c0   68		mflo	$25
+        a4590012 000000c4   69		sh	$25, 18($2)
+        846e0014 000000c8   70		lh	$14, 20($3)
+        01c70018 000000cc   71		mult	$14, $7
+        00007812 000000d0   72		mflo	$15
+        a44f0014 000000d4   73		sh	$15, 20($2)
+        84790016 000000d8   74		lh	$25, 22($3)
+        03270018 000000dc   75		mult	$25, $7
+        00006812 000000e0   76		mflo	$13
+        a44d0016 000000e4   77		sh	$13, 22($2)
+        846f0018 000000e8   78		lh	$15, 24($3)
+        01e70018 000000ec   79		mult	$15, $7
+        0000c012 000000f0   80		mflo	$24
+        a4580018 000000f4   81		sh	$24, 24($2)
+        846d001a 000000f8   82		lh	$13, 26($3)
+        01a70018 000000fc   83		mult	$13, $7
+        00007012 00000100   84		mflo	$14
+        a44e001a 00000104   85		sh	$14, 26($2)
+        8478001c 00000108   86		lh	$24, 28($3)
+        03070018 0000010c   87		mult	$24, $7
+        0000c812 00000110   88		mflo	$25
+        a459001c 00000114   89		sh	$25, 28($2)
+        846e001e 00000118   90		lh	$14, 30($3)
+        24420020 0000011c   91		addiu	$2, $2, 32
+        24630020 00000120   92		addiu	$3, $3, 32
+        01c70018 00000124   93		mult	$14, $7
+        256bffff 00000128   94		addiu	$11, $11, -1
+        00007812 0000012c   95		mflo	$15
+        1560ffbd 00000130   96		bne	$11, $0, .L36
+        a44ffffe 00000134   97		sh	$15, -2($2)
+                            98	.L20:
+        314b0007 00000138   99		andi	$11, $10, 7
+        1160000f 0000013c  100		beq	$11, $0, .L2
+        00091080 00000140  101		sll	$2, $9, 2
+        00a21821 00000144  102		addu	$3, $5, $2
+        00821021 00000148  103		addu	$2, $4, $2
+                           104	.L40:
+        846e0000 0000014c  105		lh	$14, 0($3)
+        01c70018 00000150  106		mult	$14, $7
+        00007812 00000154  107		mflo	$15
+        a44f0000 00000158  108		sh	$15, 0($2)
+        84790002 0000015c  109		lh	$25, 2($3)
+        24420004 00000160  110		addiu	$2, $2, 4
+        24630004 00000164  111		addiu	$3, $3, 4
+        03270018 00000168  112		mult	$25, $7
+        256bffff 0000016c  113		addiu	$11, $11, -1
+
+                                   Tue Apr 07 08:56:29 2015           Page 4
+                                   Tue Apr 07 08:56:28 2015       gh_2i08j.s
+        00006812 00000170  114		mflo	$13
+        1560fff5 00000174  115		bne	$11, $0, .L40
+        a44dfffe 00000178  116		sh	$13, -2($2)
+                           117	.L2:
+                           118	 #	    .ef
+        03e00008 0000017c  119		jr	$ra
+        00000000 00000180  120		nop
+                           121		.type	GUI_MagnifyPolygon,@function
+                           122		.size	GUI_MagnifyPolygon,.-GUI_MagnifyPolygon
+                           123		.align	4
+                           124	 #j	$9	local
+                           125	
+                           126	 #pDest	$4	param
+                           127	 #pSrc	$5	param
+                           128	 #NumPoints	$6	param
+                           129	 #Mag	$7	param
+                           130	
+                           131		.data
+                           132	.L95:
+                           133		.text
+                           134		.align	4
+                           135	
+                           136		.data
+                           137		.text

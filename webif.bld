@@ -1,0 +1,16 @@
+#!build
+default:
+	subproject
+	:object_dir=objs
+	:sourcedirs=application\webif
+application\webif\WebIf.cpp
+	C++
+application\webif\WebIfHandler.cpp
+	C++
+application\webif\IOContextStreambuf.cpp
+	C++
+application\webif\HttpRequest.cpp
+	C++
+application\webif\HttpResponse.cpp
+	C++
+  

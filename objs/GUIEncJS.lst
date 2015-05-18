@@ -1,0 +1,298 @@
+
+                                   Tue Apr 07 08:56:25 2015           Page 1
+                                   Tue Apr 07 08:56:24 2015       gh_2i08g.s
+Command Line:   C:\GHS\V35\mips35\asmips.exe -noundefined -elf -b0
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos\inc
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\ConvertMono
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Font
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\LCDDriver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\MemDev
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\VNC
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Widget
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\wm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\util
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\datapoint
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\factory
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\webpage
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\xnet
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\stub
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\test
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENIusb\emUSB\USB\Driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\intercom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\controller
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\webif
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\relay
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\GENIApp
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\alarm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\AnaInConfigCtrl
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\Sms
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\display_task
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\gui_utility
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\mpcunit
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIbus
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIcom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIrs232
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\Virtual
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\imagesTFT
+                -IC:\GHS\V35\mips35\mipsl_sf -r4121 -source=GUIEncJS.c -o
+                objs\gh_2i08g.o -list=objs\GUIEncJS.lst
+                C:\Users\55602\AppData\Local\Temp\gh_2i08g.s
+Source File:    C:\Users\55602\AppData\Local\Temp\gh_2i08g.s
+Directory:      C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+Host OS:        GHS_WIN32
+Version:        AS-MIPS 3.5#11 
+Release:        MULTI 2000, MIPS v3.5
+Revision Date:  Wed Feb 27 12:19:03 2002
+Release Date:   Sat Mar 02 02:57:59 2002
+                             1	 #Source File:   C:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\GUI\Core\GUIEncJS.c
+
+                                   Tue Apr 07 08:56:25 2015           Page 2
+                                   Tue Apr 07 08:56:24 2015       gh_2i08g.s
+                             2	 #Directory:     
+                             3	 #		C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                             4	 #Compile Date:  Tue Apr 07 08:56:24 2015
+                             5	 #Host OS:       Win32
+                             6	 #Version:       C-MIPS 3.5#11 RELEASE VERSION
+                             7	 #Release:       MULTI 2000, MIPS v3.5
+                             8	 #Revision Date: Fri Mar 01 11:32:40 2002
+                             9	 #Release Date:  Sat Mar 02 02:58:48 2002
+                            10		.set	noat
+                            11		.set	noreorder
+                            12		.set	nomacro
+                            13		.text
+                            14		.align	4
+                            15	DB2SJIS:
+        30a500ff 00000000   16		andi	$5, $5, 255
+                            17	 #	    .bf
+        308400ff 00000004   18		andi	$4, $4, 255
+        0004ca00 00000008   19		sll	$25, $4, 8
+        00b9c025 0000000c   20		or	$24, $5, $25
+                            21	 #	    .ef
+        03e00008 00000010   22		jr	$ra
+        3302ffff 00000014   23		andi	$2, $24, 65535
+                            24		.type	DB2SJIS,@function
+                            25		.size	DB2SJIS,.-DB2SJIS
+                            26		.align	4
+                            27	
+                            28	 #Byte0	$4	param
+                            29	 #Byte1	$5	param
+                            30	
+                            31		.data
+                            32	.L15:
+                            33		.text
+                            34		.align	4
+                            35		.align	4
+                            36	_GetLineDistX_SJIS:
+        27bdffe8 00000018   37		addiu	$sp, $sp, -24
+        afb20008 0000001c   38		sw	$18, 8($sp)
+                            39	 #	    .bf
+        34120000 00000020   40		ori	$18, $0, 0
+        afb00000 00000024   41		sw	$16, 0($sp)
+        00808025 00000028   42		move	$16, $4
+        afb10004 0000002c   43		sw	$17, 4($sp)
+        00a08825 00000030   44		move	$17, $5
+        1200001e 00000034   45		beq	$16, $0, .L22
+        afbf0014 00000038   46		sw	$ra, 20($sp)
+        92030000 0000003c   47		lbu	$3, 0($16)
+        5060001c 00000040   48		beql	$3, $0, .L1000022
+        02401025 00000044   49		move	$2, $18
+        08000000 00000048   50		j	.L30
+        00000000 0000004c   51		nop
+                            52	.L1000026:
+        2c780080 00000050   53		sltiu	$24, $3, 128
+        1700000e 00000054   54		bne	$24, $0, .L27
+        26100001 00000058   55		addiu	$16, $16, 1
+        92050000 0000005c   56		lbu	$5, 0($16)
+        2631ffff 00000060   57		addiu	$17, $17, -1
+
+                                   Tue Apr 07 08:56:25 2015           Page 3
+                                   Tue Apr 07 08:56:24 2015       gh_2i08g.s
+        0c000000 00000064   58		jal	DB2SJIS
+        00602025 00000068   59		move	$4, $3
+        0c000000 0000006c   60		jal	GUI_GetCharDistX
+        00402025 00000070   61		move	$4, $2
+        92030001 00000074   62		lbu	$3, 1($16)
+        26100001 00000078   63		addiu	$16, $16, 1
+        02429021 0000007c   64		addu	$18, $18, $2
+        5060000c 00000080   65		beql	$3, $0, .L1000022
+        02401025 00000084   66		move	$2, $18
+        08000000 00000088   67		j	.L30
+        00000000 0000008c   68		nop
+                            69	.L27:
+        0c000000 00000090   70		jal	GUI_GetCharDistX
+        00602025 00000094   71		move	$4, $3
+        92030000 00000098   72		lbu	$3, 0($16)
+        02429021 0000009c   73		addu	$18, $18, $2
+        50600004 000000a0   74		beql	$3, $0, .L1000022
+        02401025 000000a4   75		move	$2, $18
+                            76	.L30:
+        0623ffe9 000000a8   77		bgezl	$17, .L1000026
+        2631ffff 000000ac   78		addiu	$17, $17, -1
+                            79	.L22:
+        02401025 000000b0   80		move	$2, $18
+                            81	.L1000022:
+                            82	 #	    .ef
+        8fb20008 000000b4   83		lw	$18, 8($sp)
+        8fb10004 000000b8   84		lw	$17, 4($sp)
+        8fbf0014 000000bc   85		lw	$ra, 20($sp)
+        8fb00000 000000c0   86		lw	$16, 0($sp)
+        03e00008 000000c4   87		jr	$ra
+        27bd0018 000000c8   88		addiu	$sp, $sp, 24
+                            89		.type	_GetLineDistX_SJIS,@function
+                            90		.size	_GetLineDistX_SJIS,.-_GetLineDistX_SJIS
+                            91		.align	4
+                            92	 #Dist	$18	local
+                            93	 #c0	$3	local
+                            94	 #c1	$2	local
+                            95	
+                            96	 #s	$16	param
+                            97	 #Len	$17	param
+                            98	
+                            99		.data
+                           100	.L73:
+                           101		.text
+                           102		.align	4
+                           103		.align	4
+                           104	_GetLineLen_SJIS:
+        90820000 000000cc  105		lbu	$2, 0($4)
+                           106	 #	    .bf
+        34030000 000000d0  107		ori	$3, $0, 0
+        10400016 000000d4  108		beq	$2, $0, .L95
+        00000000 000000d8  109		nop
+        08000000 000000dc  110		j	.L1000104
+        0065702a 000000e0  111		slt	$14, $3, $5
+                           112	.L1000096:
+        17200008 000000e4  113		bne	$25, $0, .L97
+
+                                   Tue Apr 07 08:56:25 2015           Page 4
+                                   Tue Apr 07 08:56:24 2015       gh_2i08g.s
+        24840001 000000e8  114		addiu	$4, $4, 1
+        90820001 000000ec  115		lbu	$2, 1($4)
+        24840001 000000f0  116		addiu	$4, $4, 1
+        24630002 000000f4  117		addiu	$3, $3, 2
+        1040000d 000000f8  118		beq	$2, $0, .L95
+        00000000 000000fc  119		nop
+        08000000 00000100  120		j	.L1000104
+        0065702a 00000104  121		slt	$14, $3, $5
+                           122	.L97:
+        2442fff6 00000108  123		addiu	$2, $2, -10
+        54400003 0000010c  124		bnel	$2, $0, .L1000099
+        90820000 00000110  125		lbu	$2, 0($4)
+        03e00008 00000114  126		jr	$ra
+        00601025 00000118  127		move	$2, $3
+                           128	.L1000099:
+        24630001 0000011c  129		addiu	$3, $3, 1
+        10400003 00000120  130		beq	$2, $0, .L95
+        0065702a 00000124  131		slt	$14, $3, $5
+                           132	.L1000104:
+        55c0ffee 00000128  133		bnel	$14, $0, .L1000096
+        2c590080 0000012c  134		sltiu	$25, $2, 128
+                           135	.L95:
+                           136	 #	    .ef
+        03e00008 00000130  137		jr	$ra
+        00601025 00000134  138		move	$2, $3
+                           139		.type	_GetLineLen_SJIS,@function
+                           140		.size	_GetLineLen_SJIS,.-_GetLineLen_SJIS
+                           141		.align	4
+                           142	 #Len	$3	local
+                           143	 #c0	$2	local
+                           144	
+                           145	 #s	$4	param
+                           146	 #MaxLen	$5	param
+                           147	
+                           148		.data
+                           149	.L140:
+                           150		.text
+                           151		.align	4
+                           152		.align	4
+                           153	_DispLine_SJIS:
+        27bdfff0 00000138  154		addiu	$sp, $sp, -16
+                           155	 #	    .bf
+        afb00000 0000013c  156		sw	$16, 0($sp)
+        00808025 00000140  157		move	$16, $4
+        afb10004 00000144  158		sw	$17, 4($sp)
+        24b1ffff 00000148  159		addiu	$17, $5, -1
+        06200016 0000014c  160		bltz	$17, .L163
+        afbf000c 00000150  161		sw	$ra, 12($sp)
+        92030000 00000154  162		lbu	$3, 0($16)
+                           163	.L1000167:
+        26100001 00000158  164		addiu	$16, $16, 1
+        2c790080 0000015c  165		sltiu	$25, $3, 128
+        1720000c 00000160  166		bne	$25, $0, .L168
+        00000000 00000164  167		nop
+        92050000 00000168  168		lbu	$5, 0($16)
+        26100001 0000016c  169		addiu	$16, $16, 1
+
+                                   Tue Apr 07 08:56:25 2015           Page 5
+                                   Tue Apr 07 08:56:24 2015       gh_2i08g.s
+        2631fffe 00000170  170		addiu	$17, $17, -2
+        0c000000 00000174  171		jal	DB2SJIS
+        00602025 00000178  172		move	$4, $3
+        0c000000 0000017c  173		jal	GL_DispChar
+        00402025 00000180  174		move	$4, $2
+        0623fff4 00000184  175		bgezl	$17, .L1000167
+        92030000 00000188  176		lbu	$3, 0($16)
+        08000000 0000018c  177		j	.L1000163
+        8fb10004 00000190  178		lw	$17, 4($sp)
+                           179	.L168:
+        0c000000 00000194  180		jal	GL_DispChar
+        00602025 00000198  181		move	$4, $3
+        2631ffff 0000019c  182		addiu	$17, $17, -1
+        0623ffed 000001a0  183		bgezl	$17, .L1000167
+        92030000 000001a4  184		lbu	$3, 0($16)
+                           185	.L163:
+        8fb10004 000001a8  186		lw	$17, 4($sp)
+                           187	.L1000163:
+                           188	 #	    .ef
+        8fb00000 000001ac  189		lw	$16, 0($sp)
+        8fbf000c 000001b0  190		lw	$ra, 12($sp)
+        03e00008 000001b4  191		jr	$ra
+        27bd0010 000001b8  192		addiu	$sp, $sp, 16
+                           193		.type	_DispLine_SJIS,@function
+                           194		.size	_DispLine_SJIS,.-_DispLine_SJIS
+                           195		.align	4
+                           196	 #c0	$3	local
+                           197	 #c1	$2	local
+                           198	
+                           199	 #s	$16	param
+                           200	 #Len	$17	param
+                           201	
+                           202		.data
+                           203	.L194:
+                           204		.text
+                           205		.align	4
+                           206	
+                           207		.section ".rodata","a"
+                           208	.L211:
+                           209		.globl	GUI_ENC_APIList_SJIS
+        00000000 00000000  210	GUI_ENC_APIList_SJIS:	.word	_GetLineDistX_SJIS
+        00000000 00000004  211		.word	_GetLineLen_SJIS
+        00000000 00000008  212		.word	_DispLine_SJIS
+                           213		.type	GUI_ENC_APIList_SJIS,@object
+                           214		.size	GUI_ENC_APIList_SJIS,12
+                           215		.data
+                           216		.section ".rodata","a"
+                           217		.align	4
+                           218		.text

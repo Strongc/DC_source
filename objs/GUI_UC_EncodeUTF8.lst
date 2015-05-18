@@ -1,0 +1,327 @@
+
+                                   Tue Apr 07 08:56:04 2015           Page 1
+                                   Tue Apr 07 08:56:03 2015       gh_2i081.s
+Command Line:   C:\GHS\V35\mips35\asmips.exe -noundefined -elf -b0
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos\inc
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\ConvertMono
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Font
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\LCDDriver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\MemDev
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\VNC
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Widget
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\wm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\util
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\datapoint
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\factory
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\webpage
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\xnet
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\stub
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\test
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENIusb\emUSB\USB\Driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\intercom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\controller
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\webif
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\relay
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\GENIApp
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\alarm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\AnaInConfigCtrl
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\Sms
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\display_task
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\gui_utility
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\mpcunit
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIbus
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIcom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIrs232
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\Virtual
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\imagesTFT
+                -IC:\GHS\V35\mips35\mipsl_sf -r4121 -source=GUI_UC_EncodeUTF8.c
+                -o objs\gh_2i081.o -list=objs\GUI_UC_EncodeUTF8.lst
+                C:\Users\55602\AppData\Local\Temp\gh_2i081.s
+Source File:    C:\Users\55602\AppData\Local\Temp\gh_2i081.s
+Directory:      C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+Host OS:        GHS_WIN32
+Version:        AS-MIPS 3.5#11 
+Release:        MULTI 2000, MIPS v3.5
+Revision Date:  Wed Feb 27 12:19:03 2002
+Release Date:   Sat Mar 02 02:57:59 2002
+                             1	 #Source File:   C:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\GUI\Core\GUI_UC_EncodeUTF8.c
+
+                                   Tue Apr 07 08:56:04 2015           Page 2
+                                   Tue Apr 07 08:56:03 2015       gh_2i081.s
+                             2	 #Directory:     
+                             3	 #		C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                             4	 #Compile Date:  Tue Apr 07 08:56:03 2015
+                             5	 #Host OS:       Win32
+                             6	 #Version:       C-MIPS 3.5#11 RELEASE VERSION
+                             7	 #Release:       MULTI 2000, MIPS v3.5
+                             8	 #Revision Date: Fri Mar 01 11:32:40 2002
+                             9	 #Release Date:  Sat Mar 02 02:58:48 2002
+                            10		.set	noat
+                            11		.set	noreorder
+                            12		.set	nomacro
+                            13		.text
+                            14		.align	4
+                            15	_GetCharCode:
+        90830000 00000000   16		lbu	$3, 0($4)
+                            17	 #	    .bf
+        30790080 00000004   18		andi	$25, $3, 128
+        57200003 00000008   19		bnel	$25, $0, .L1000004
+        306f00e0 0000000c   20		andi	$15, $3, 224
+        03e00008 00000010   21		jr	$ra
+        00601025 00000014   22		move	$2, $3
+                            23	.L1000004:
+        340e00c0 00000018   24		ori	$14, $0, 192
+        15ee0007 0000001c   25		bne	$15, $14, .L7
+        306d001f 00000020   26		andi	$13, $3, 31
+        90830001 00000024   27		lbu	$3, 1($4)
+        000d1180 00000028   28		sll	$2, $13, 6
+        3063003f 0000002c   29		andi	$3, $3, 63
+        00431025 00000030   30		or	$2, $2, $3
+        03e00008 00000034   31		jr	$ra
+        3042ffff 00000038   32		andi	$2, $2, 65535
+                            33	.L7:
+        307900f0 0000003c   34		andi	$25, $3, 240
+        341800e0 00000040   35		ori	$24, $0, 224
+        1738000b 00000044   36		bne	$25, $24, .L10
+        306f000f 00000048   37		andi	$15, $3, 15
+        90830001 0000004c   38		lbu	$3, 1($4)
+        000f1300 00000050   39		sll	$2, $15, 12
+        3063003f 00000054   40		andi	$3, $3, 63
+        00037180 00000058   41		sll	$14, $3, 6
+        90830002 0000005c   42		lbu	$3, 2($4)
+        004e1025 00000060   43		or	$2, $2, $14
+        3063003f 00000064   44		andi	$3, $3, 63
+        00431025 00000068   45		or	$2, $2, $3
+        03e00008 0000006c   46		jr	$ra
+        3042ffff 00000070   47		andi	$2, $2, 65535
+                            48	.L10:
+                            49	 #	    .ef
+        03e00008 00000074   50		jr	$ra
+        34020001 00000078   51		ori	$2, $0, 1
+                            52		.type	_GetCharCode,@function
+                            53		.size	_GetCharCode,.-_GetCharCode
+                            54		.align	4
+                            55	 #r	$2	local
+                            56	 #Char	$3	local
+                            57	
+
+                                   Tue Apr 07 08:56:04 2015           Page 3
+                                   Tue Apr 07 08:56:03 2015       gh_2i081.s
+                            58	 #s	$4	param
+                            59	
+                            60		.data
+                            61	.L45:
+                            62		.text
+                            63		.align	4
+                            64		.align	4
+                            65	_GetCharSize:
+        90830000 0000007c   66		lbu	$3, 0($4)
+                            67	 #	    .bf
+        30790080 00000080   68		andi	$25, $3, 128
+        57200003 00000084   69		bnel	$25, $0, .L1000066
+        306f00e0 00000088   70		andi	$15, $3, 224
+        03e00008 0000008c   71		jr	$ra
+        34020001 00000090   72		ori	$2, $0, 1
+                            73	.L1000066:
+        340e00c0 00000094   74		ori	$14, $0, 192
+        55ee0003 00000098   75		bnel	$15, $14, .L1000070
+        306d00f0 0000009c   76		andi	$13, $3, 240
+        03e00008 000000a0   77		jr	$ra
+        34020002 000000a4   78		ori	$2, $0, 2
+                            79	.L1000070:
+        341900e0 000000a8   80		ori	$25, $0, 224
+        15b90003 000000ac   81		bne	$13, $25, .L69
+        00000000 000000b0   82		nop
+        03e00008 000000b4   83		jr	$ra
+        34020003 000000b8   84		ori	$2, $0, 3
+                            85	.L69:
+                            86	 #	    .ef
+        03e00008 000000bc   87		jr	$ra
+        34020001 000000c0   88		ori	$2, $0, 1
+                            89		.type	_GetCharSize,@function
+                            90		.size	_GetCharSize,.-_GetCharSize
+                            91		.align	4
+                            92	 #Char	$3	local
+                            93	
+                            94	 #s	$4	param
+                            95	
+                            96		.data
+                            97	.L106:
+                            98		.text
+                            99		.align	4
+                           100		.align	4
+                           101	_CalcSizeOfChar:
+        3099f800 000000c4  102		andi	$25, $4, 63488
+                           103	 #	    .bf
+        13200003 000000c8  104		beq	$25, $0, .L127
+        3085ffff 000000cc  105		andi	$5, $4, 65535
+        03e00008 000000d0  106		jr	$ra
+        34020003 000000d4  107		ori	$2, $0, 3
+                           108	.L127:
+        308fff80 000000d8  109		andi	$15, $4, 65408
+        11e00003 000000dc  110		beq	$15, $0, .L130
+        00000000 000000e0  111		nop
+        03e00008 000000e4  112		jr	$ra
+        34020002 000000e8  113		ori	$2, $0, 2
+
+                                   Tue Apr 07 08:56:04 2015           Page 4
+                                   Tue Apr 07 08:56:03 2015       gh_2i081.s
+                           114	.L130:
+                           115	 #	    .ef
+        03e00008 000000ec  116		jr	$ra
+        34020001 000000f0  117		ori	$2, $0, 1
+                           118		.type	_CalcSizeOfChar,@function
+                           119		.size	_CalcSizeOfChar,.-_CalcSizeOfChar
+                           120		.align	4
+                           121	 #r	$3	local
+                           122	
+                           123	 #Char	$5	param
+                           124	
+                           125		.data
+                           126	.L159:
+                           127		.text
+                           128		.align	4
+                           129		.align	4
+                           130	_Encode:
+        27bdfff0 000000f4  131		addiu	$sp, $sp, -16
+        afbf000c 000000f8  132		sw	$ra, 12($sp)
+        afb00000 000000fc  133		sw	$16, 0($sp)
+        00808025 00000100  134		move	$16, $4
+        afb10004 00000104  135		sw	$17, 4($sp)
+        30b1ffff 00000108  136		andi	$17, $5, 65535
+                           137	 #	    .bf
+        0c000000 0000010c  138		jal	_CalcSizeOfChar
+        02202025 00000110  139		move	$4, $17
+        00401825 00000114  140		move	$3, $2
+        10600025 00000118  141		beq	$3, $0, .L175
+        34180001 0000011c  142		ori	$24, $0, 1
+        10780007 00000120  143		beq	$3, $24, .L177
+        2c6f0003 00000124  144		sltiu	$15, $3, 3
+        15e0000c 00000128  145		bne	$15, $0, .L178
+        340e0003 0000012c  146		ori	$14, $0, 3
+        506e0016 00000130  147		beql	$3, $14, .L1000179
+        0011cb03 00000134  148		sra	$25, $17, 12
+        08000000 00000138  149		j	.L1000175
+        8fb10004 0000013c  150		lw	$17, 4($sp)
+                           151	.L177:
+        a2110000 00000140  152		sb	$17, 0($16)
+        8fb10004 00000144  153		lw	$17, 4($sp)
+        8fb00000 00000148  154		lw	$16, 0($sp)
+        8fbf000c 0000014c  155		lw	$ra, 12($sp)
+        27bd0010 00000150  156		addiu	$sp, $sp, 16
+        03e00008 00000154  157		jr	$ra
+        00601025 00000158  158		move	$2, $3
+                           159	.L178:
+        0011c983 0000015c  160		sra	$25, $17, 6
+        373900c0 00000160  161		ori	$25, $25, 192
+        a2190000 00000164  162		sb	$25, 0($16)
+        322f003f 00000168  163		andi	$15, $17, 63
+        35ef0080 0000016c  164		ori	$15, $15, 128
+        a20f0001 00000170  165		sb	$15, 1($16)
+        8fb10004 00000174  166		lw	$17, 4($sp)
+        8fb00000 00000178  167		lw	$16, 0($sp)
+        8fbf000c 0000017c  168		lw	$ra, 12($sp)
+        27bd0010 00000180  169		addiu	$sp, $sp, 16
+
+                                   Tue Apr 07 08:56:04 2015           Page 5
+                                   Tue Apr 07 08:56:03 2015       gh_2i081.s
+        03e00008 00000184  170		jr	$ra
+        00601025 00000188  171		move	$2, $3
+                           172	.L1000179:
+        373900e0 0000018c  173		ori	$25, $25, 224
+        a2190000 00000190  174		sb	$25, 0($16)
+        00117182 00000194  175		srl	$14, $17, 6
+        31ce003f 00000198  176		andi	$14, $14, 63
+        35ce0080 0000019c  177		ori	$14, $14, 128
+        a20e0001 000001a0  178		sb	$14, 1($16)
+        3238003f 000001a4  179		andi	$24, $17, 63
+        37180080 000001a8  180		ori	$24, $24, 128
+        a2180002 000001ac  181		sb	$24, 2($16)
+                           182	.L175:
+        8fb10004 000001b0  183		lw	$17, 4($sp)
+                           184	.L1000175:
+                           185	 #	    .ef
+        8fb00000 000001b4  186		lw	$16, 0($sp)
+        8fbf000c 000001b8  187		lw	$ra, 12($sp)
+        27bd0010 000001bc  188		addiu	$sp, $sp, 16
+        03e00008 000001c0  189		jr	$ra
+        00601025 000001c4  190		move	$2, $3
+                           191		.type	_Encode,@function
+                           192		.size	_Encode,.-_Encode
+                           193		.align	4
+                           194	 #r	$3	local
+                           195	
+                           196	 #s	$16	param
+                           197	 #Char	$17	param
+                           198	
+                           199		.data
+                           200	.L203:
+                           201		.text
+                           202		.align	4
+                           203		.align	4
+                           204		.align	4
+                           205		.globl	GUI_UC_SetEncodeUTF8
+                           206	GUI_UC_SetEncodeUTF8:
+        27bdfff8 000001c8  207		addiu	$sp, $sp, -8
+                           208	 #	    .bf
+        afbf0004 000001cc  209		sw	$ra, 4($sp)
+        0c000000 000001d0  210		jal	GUI_Lock
+        00000000 000001d4  211		nop
+        3c190000 000001d8  212		lui	$25, %hi(.L233)
+        27390000 000001dc  213		addiu	$25, $25, %lo(.L233)
+        3c010000 000001e0  214		lui	$1, %hi(GUI_Context+32)
+        0c000000 000001e4  215		jal	GUI_Unlock
+        ac390000 000001e8  216		sw	$25, %lo(GUI_Context+32)($1)
+                           217	 #	    .ef
+        8fbf0004 000001ec  218		lw	$ra, 4($sp)
+        03e00008 000001f0  219		jr	$ra
+        27bd0008 000001f4  220		addiu	$sp, $sp, 8
+                           221		.type	GUI_UC_SetEncodeUTF8,@function
+                           222		.size	GUI_UC_SetEncodeUTF8,.-GUI_UC_SetEncodeUTF8
+                           223		.align	4
+                           224	
+                           225		.data
+
+                                   Tue Apr 07 08:56:04 2015           Page 6
+                                   Tue Apr 07 08:56:03 2015       gh_2i081.s
+                           226	.L232:
+                           227		.section ".rodata","a"
+                           228	.L233:
+        00000000 00000000  229	_API_Table:	.word	_GetCharCode
+        00000000 00000004  230		.word	_GetCharSize
+        00000000 00000008  231		.word	_CalcSizeOfChar
+        00000000 0000000c  232		.word	_Encode
+                           233		.type	_API_Table,@object
+                           234		.size	_API_Table,16
+                           235		.data
+                           236		.text
+                           237		.align	4
+                           238	 #GUI_Context	GUI_Context	import
+                           239	 #_API_Table	.L233	static
+                           240	
+                           241		.data
+                           242		.section ".rodata","a"
+                           243		.align	4
+                           244		.text

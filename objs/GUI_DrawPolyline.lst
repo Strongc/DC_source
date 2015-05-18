@@ -1,0 +1,229 @@
+
+                                   Tue Apr 07 08:54:16 2015           Page 1
+                                   Tue Apr 07 08:54:15 2015       gh_2i05q.s
+Command Line:   C:\GHS\V35\mips35\asmips.exe -noundefined -elf -b0
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos\inc
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\ConvertMono
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Font
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\LCDDriver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\MemDev
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\VNC
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\Widget
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\wm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\include
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\util
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\datapoint
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\factory
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\embos
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\gui\core
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\webpage
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\rtip\xnet
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\stub
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\test
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GENIpro\GENIusb\emUSB\USB\Driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\intercom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\controller
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\driver
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\webif
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\relay
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\GENIApp
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\alarm
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\config
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\AnaInConfigCtrl
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\Sms
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\display_task
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\gui_utility
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\mpcunit
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENI_sys
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIbus
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIcom
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\GENIrs232
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\GeniPro\Virtual
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\common
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\Platform\hardware\D3018X
+                -IC:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source\application\display\imagesTFT
+                -IC:\GHS\V35\mips35\mipsl_sf -r4121 -source=GUI_DrawPolyline.c -o
+                objs\gh_2i05q.o -list=objs\GUI_DrawPolyline.lst
+                C:\Users\55602\AppData\Local\Temp\gh_2i05q.s
+Source File:    C:\Users\55602\AppData\Local\Temp\gh_2i05q.s
+Directory:      C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+Host OS:        GHS_WIN32
+Version:        AS-MIPS 3.5#11 
+Release:        MULTI 2000, MIPS v3.5
+Revision Date:  Wed Feb 27 12:19:03 2002
+Release Date:   Sat Mar 02 02:57:59 2002
+                             1	 #Source File:   C:\local\Workspace\DC_V04.01.00_int\cu3x1Platform_SRC\emWinColour\GUI\Core\GUI_DrawPolyline.c
+
+                                   Tue Apr 07 08:54:16 2015           Page 2
+                                   Tue Apr 07 08:54:15 2015       gh_2i05q.s
+                             2	 #Directory:     
+                             3	 #		C:\local\Workspace\DC_V04.01.00_int\cu3x1App_SRC\Control\source
+                             4	 #Compile Date:  Tue Apr 07 08:54:15 2015
+                             5	 #Host OS:       Win32
+                             6	 #Version:       C-MIPS 3.5#11 RELEASE VERSION
+                             7	 #Release:       MULTI 2000, MIPS v3.5
+                             8	 #Revision Date: Fri Mar 01 11:32:40 2002
+                             9	 #Release Date:  Sat Mar 02 02:58:48 2002
+                            10		.set	noat
+                            11		.set	noreorder
+                            12		.set	nomacro
+                            13		.text
+                            14		.align	4
+                            15		.globl	GUI_DrawPolyLine
+                            16	GUI_DrawPolyLine:
+        27bdffd8 00000000   17		addiu	$sp, $sp, -40
+        afbf0024 00000004   18		sw	$ra, 36($sp)
+        afb60018 00000008   19		sw	$22, 24($sp)
+        afb50014 0000000c   20		sw	$21, 20($sp)
+        afb40010 00000010   21		sw	$20, 16($sp)
+        afb3000c 00000014   22		sw	$19, 12($sp)
+        afb00000 00000018   23		sw	$16, 0($sp)
+        00808025 0000001c   24		move	$16, $4
+        afb10004 00000020   25		sw	$17, 4($sp)
+        00a08825 00000024   26		move	$17, $5
+        afb20008 00000028   27		sw	$18, 8($sp)
+        00c09025 0000002c   28		move	$18, $6
+                            29	 #	    .bf
+        0c000000 00000030   30		jal	GUI_Lock
+        00e09825 00000034   31		move	$19, $7
+        3c030000 00000038   32		lui	$3, %hi(GUI_Context)
+        24630000 0000003c   33		addiu	$3, $3, %lo(GUI_Context)
+        8c790044 00000040   34		lw	$25, 68($3)
+        8c780048 00000044   35		lw	$24, 72($3)
+        34040000 00000048   36		ori	$4, $0, 0
+        02599021 0000004c   37		addu	$18, $18, $25
+        0c000000 00000050   38		jal	WM__InitIVRSearch
+        02789821 00000054   39		addu	$19, $19, $24
+        1040004a 00000058   40		beq	$2, $0, .L16
+        2636ffff 0000005c   41		addiu	$22, $17, -1
+        02008825 00000060   42		move	$17, $16
+                            43	.L1000020:
+        862e0002 00000064   44		lh	$14, 2($17)
+        862f0000 00000068   45		lh	$15, 0($17)
+        01d32821 0000006c   46		addu	$5, $14, $19
+        0c000000 00000070   47		jal	GL_MoveTo
+        01f22021 00000074   48		addu	$4, $15, $18
+        34150000 00000078   49		ori	$21, $0, 0
+        02b6682a 0000007c   50		slt	$13, $21, $22
+        11a00002 00000080   51		beq	$13, $0, .L145
+        00000000 00000084   52		nop
+        02c0a825 00000088   53		move	$21, $22
+                            54	.L145:
+        0015a0c2 0000008c   55		srl	$20, $21, 3
+        5280002d 00000090   56		beql	$20, $0, .L1000059
+        32b40007 00000094   57		andi	$20, $21, 7
+
+                                   Tue Apr 07 08:54:16 2015           Page 3
+                                   Tue Apr 07 08:54:15 2015       gh_2i05q.s
+                            58	.L75:
+        86380004 00000098   59		lh	$24, 4($17)
+        862f0006 0000009c   60		lh	$15, 6($17)
+        03122021 000000a0   61		addu	$4, $24, $18
+        0c000000 000000a4   62		jal	GL_DrawLineTo
+        01f32821 000000a8   63		addu	$5, $15, $19
+        862e0008 000000ac   64		lh	$14, 8($17)
+        862d000a 000000b0   65		lh	$13, 10($17)
+        01d22021 000000b4   66		addu	$4, $14, $18
+        0c000000 000000b8   67		jal	GL_DrawLineTo
+        01b32821 000000bc   68		addu	$5, $13, $19
+        8639000c 000000c0   69		lh	$25, 12($17)
+        8638000e 000000c4   70		lh	$24, 14($17)
+        03322021 000000c8   71		addu	$4, $25, $18
+        0c000000 000000cc   72		jal	GL_DrawLineTo
+        03132821 000000d0   73		addu	$5, $24, $19
+        862f0010 000000d4   74		lh	$15, 16($17)
+        862e0012 000000d8   75		lh	$14, 18($17)
+        01f22021 000000dc   76		addu	$4, $15, $18
+        0c000000 000000e0   77		jal	GL_DrawLineTo
+        01d32821 000000e4   78		addu	$5, $14, $19
+        862d0014 000000e8   79		lh	$13, 20($17)
+        86390016 000000ec   80		lh	$25, 22($17)
+        01b22021 000000f0   81		addu	$4, $13, $18
+        0c000000 000000f4   82		jal	GL_DrawLineTo
+        03332821 000000f8   83		addu	$5, $25, $19
+        86380018 000000fc   84		lh	$24, 24($17)
+        862f001a 00000100   85		lh	$15, 26($17)
+        03122021 00000104   86		addu	$4, $24, $18
+        0c000000 00000108   87		jal	GL_DrawLineTo
+        01f32821 0000010c   88		addu	$5, $15, $19
+        862e001c 00000110   89		lh	$14, 28($17)
+        862d001e 00000114   90		lh	$13, 30($17)
+        01d22021 00000118   91		addu	$4, $14, $18
+        0c000000 0000011c   92		jal	GL_DrawLineTo
+        01b32821 00000120   93		addu	$5, $13, $19
+        86380022 00000124   94		lh	$24, 34($17)
+        86390020 00000128   95		lh	$25, 32($17)
+        03132821 0000012c   96		addu	$5, $24, $19
+        0c000000 00000130   97		jal	GL_DrawLineTo
+        03322021 00000134   98		addu	$4, $25, $18
+        2694ffff 00000138   99		addiu	$20, $20, -1
+        1680ffd6 0000013c  100		bne	$20, $0, .L75
+        26310020 00000140  101		addiu	$17, $17, 32
+        32b40007 00000144  102		andi	$20, $21, 7
+                           103	.L1000059:
+        1280000a 00000148  104		beq	$20, $0, .L19
+        00000000 0000014c  105		nop
+        86390006 00000150  106		lh	$25, 6($17)
+                           107	.L1000079:
+        26310004 00000154  108		addiu	$17, $17, 4
+        862d0000 00000158  109		lh	$13, 0($17)
+        03332821 0000015c  110		addu	$5, $25, $19
+        0c000000 00000160  111		jal	GL_DrawLineTo
+        01b22021 00000164  112		addu	$4, $13, $18
+        2694ffff 00000168  113		addiu	$20, $20, -1
+
+                                   Tue Apr 07 08:54:16 2015           Page 4
+                                   Tue Apr 07 08:54:15 2015       gh_2i05q.s
+        5680fff9 0000016c  114		bnel	$20, $0, .L1000079
+        86390006 00000170  115		lh	$25, 6($17)
+                           116	.L19:
+        0c000000 00000174  117		jal	WM__GetNextIVR
+        00000000 00000178  118		nop
+        5440ffb9 0000017c  119		bnel	$2, $0, .L1000020
+        02008825 00000180  120		move	$17, $16
+                           121	.L16:
+        0c000000 00000184  122		jal	GUI_Unlock
+        00000000 00000188  123		nop
+                           124	 #	    .ef
+        8fb40010 0000018c  125		lw	$20, 16($sp)
+        8fb3000c 00000190  126		lw	$19, 12($sp)
+        8fb20008 00000194  127		lw	$18, 8($sp)
+        8fb10004 00000198  128		lw	$17, 4($sp)
+        8fb00000 0000019c  129		lw	$16, 0($sp)
+        8fbf0024 000001a0  130		lw	$ra, 36($sp)
+        8fb50014 000001a4  131		lw	$21, 20($sp)
+        8fb60018 000001a8  132		lw	$22, 24($sp)
+        03e00008 000001ac  133		jr	$ra
+        27bd0028 000001b0  134		addiu	$sp, $sp, 40
+                           135		.type	GUI_DrawPolyLine,@function
+                           136		.size	GUI_DrawPolyLine,.-GUI_DrawPolyLine
+                           137		.align	4
+                           138	 #pPoints	$17	local
+                           139	
+                           140	 #pPoints	$16	param
+                           141	 #NumPoints	$17	param
+                           142	 #x0	$18	param
+                           143	 #y0	$19	param
+                           144	
+                           145		.data
+                           146	.L144:
+                           147		.text
+                           148		.align	4
+                           149	 #GUI_Context	GUI_Context	import
+                           150	
+                           151		.data
+                           152		.text

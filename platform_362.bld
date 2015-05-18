@@ -1,0 +1,15 @@
+#!build
+default:
+	subproject
+	:object_dir=objs
+..\..\..\cu3x1Platform_SRC\Platform\isr.bld
+	subproject
+..\..\..\cu3x1Platform_SRC\emWinColour\emWin.bld
+	subproject
+GENIproUsb.bld
+	subproject
+http_CU352.bld
+	library
+rtip.bld
+	library
+

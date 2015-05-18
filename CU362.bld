@@ -1,0 +1,73 @@
+#!build
+default:
+	program
+	:outputname=CU362
+	:sourcedirs=include
+	:sourcedirs=util
+	:sourcedirs=datapoint
+	:sourcedirs=factory
+	:sourcedirs=..\..\..\cu3x1Platform_SRC\platform\include
+	:sourcedirs=..\..\..\cu3x1Platform_SRC\platform\common
+	:sourcedirs=..\..\..\cu3x1Platform_SRC\platform\hardware
+	:sourcedirs=..\..\..\cu3x1Platform_SRC\platform\hardware\D3018X
+	:sourcedirs=..\..\..\cu3x1Platform_SRC\embos
+	:sourcedirs=..\..\..\cu3x1Platform_SRC\embos\inc
+	:sourcedirs=..\..\..\cu3x1Platform_SRC\emWinColour\config
+	:sourcedirs=..\..\..\cu3x1Platform_SRC\emWinColour\gui\core
+	:sourcedirs=..\..\..\cu3x1Platform_SRC\emWinColour\gui\wm
+	:sourcedirs=rtip\webpage
+	:sourcedirs=rtip\config
+	:sourcedirs=rtip\xnet
+	:sourcedirs=stub
+	:sourcedirs=test
+	:sourcedirs=GENIpro
+	:sourcedirs=GENIpro\GENI_sys
+	:sourcedirs=GENIpro\GENIusb\emUSB\USB\Driver
+	:sourcedirs=application\intercom
+	:sourcedirs=application\controller
+	:sourcedirs=application\driver
+	:sourcedirs=application\webif
+	:sourcedirs=application\relay
+	:sourcedirs=application\GENIApp
+	:sourcedirs=application\alarm
+	:sourcedirs=application\config
+	:sourcedirs=application\AnaInConfigCtrl
+  :sourcedirs=application\Sms
+	:sourcedirs=application\display
+	:sourcedirs=application\display\display_task
+	:sourcedirs=application\display\gui_utility
+	:sourcedirs=application\display\mpcunit
+	:defines=OS_LIBMODE_DP
+	:defines=__MRC_DEBUG__
+	:defines=__WEB_ENABLE_NOT
+	:postexec=gmemfile -o exe\CU362.bin CU362
+main.cpp
+	C++
+new.cpp
+	C++
+..\..\..\cu3x1Platform_SRC\emWinColour\lib\convert.a
+	library
+..\..\..\cu3x1Platform_SRC\emWinColour\lib\GUI_X_init.a
+	library
+..\..\..\cu3x1Platform_SRC\emWinColour\lib\GUICore.a
+	library
+..\..\..\cu3x1Platform_SRC\emWinColour\lib\GUIFont.a
+	library
+..\..\..\cu3x1Platform_SRC\emWinColour\lib\LCDDriver.a
+	library
+..\..\..\cu3x1Platform_SRC\emWinColour\lib\Memdev.a
+	library
+..\..\..\cu3x1Platform_SRC\emWinColour\lib\VNC.a
+	library
+..\..\..\cu3x1Platform_SRC\emWinColour\lib\wm.a
+	library
+..\..\..\cu3x1Platform_SRC\embOS\Lib\RTOS32L_DP.a
+	library
+lib\http_CU352.a
+	library
+platform_362.bld
+	subproject
+environment.bld
+	subproject
+application.bld
+	subproject
