@@ -70,11 +70,6 @@ DDACtrl::DDACtrl()
     mpDDAAlarmDelay[i] = new AlarmDelay(this);
     mDDAAlarmDelayCheckFlag[i] = false;
   }
-  for (unsigned int i = FIRST_DOSING_PUMP_FAULT_OBJ; i < NO_OF_DOSING_PUMP_FAULT_OBJ; i++)
-  {
-    mpDosingPumpAlarmDelay[i] = new AlarmDelay(this);
-    mDosingPumpAlarmDelayCheckFlag[i] = false;
-  }
 }
 /*****************************************************************************
  * Function - Destructor
@@ -86,10 +81,6 @@ DDACtrl::~DDACtrl()
   for (unsigned int i = FIRST_DDA_FAULT_OBJ; i < NO_OF_DDA_FAULT_OBJ; i++)
   {
     delete mpDDAAlarmDelay[i];
-  }
-  for (unsigned int i = FIRST_DOSING_PUMP_FAULT_OBJ; i < NO_OF_DOSING_PUMP_FAULT_OBJ; i++)
-  {
-    delete mpDosingPumpAlarmDelay[i];
   }
 }
 /*****************************************************************************
@@ -111,13 +102,6 @@ void DDACtrl::InitSubTask()
     mpDDAAlarmDelay[i]->ResetFault();
     mpDDAAlarmDelay[i]->ResetWarning();
     mDDAAlarmDelayCheckFlag[i] = false;
-  }
-  for (unsigned int i = FIRST_DOSING_PUMP_FAULT_OBJ; i < NO_OF_DOSING_PUMP_FAULT_OBJ; i++)
-  {
-    mpDosingPumpAlarmDelay[i]->InitAlarmDelay();
-    mpDosingPumpAlarmDelay[i]->ResetFault();
-    mpDosingPumpAlarmDelay[i]->ResetWarning();
-    mDosingPumpAlarmDelayCheckFlag[i] = false;
   }
   ReqTaskTime();                         // Assures task is run at startup
 }
@@ -152,34 +136,19 @@ void DDACtrl::RunSubTask()
     }
   }
 
-  for (unsigned int i = FIRST_DOSING_PUMP_FAULT_OBJ; i < NO_OF_DOSING_PUMP_FAULT_OBJ; i++)
-  {
-    if (mDosingPumpAlarmDelayCheckFlag[i] == true)
-    {
-      mDosingPumpAlarmDelayCheckFlag[i] = false;
-      mpDosingPumpAlarmDelay[i]->CheckErrorTimers();
-    }
-  }
-
   if (dda_ed)
   {
     mpDDAAlarmDelay[DDA_FAULT_OBJ]->SetFault();
-    mpDosingPumpAlarmDelay[DOSING_PUMP_FAULT_OBJ]->SetFault();
   }
   else
   {
     mpDDAAlarmDelay[DDA_FAULT_OBJ]->ResetFault();
-    mpDosingPumpAlarmDelay[DOSING_PUMP_FAULT_OBJ]->ResetFault();
   }
   
   // Service AlarmDelays
   for (unsigned int i = FIRST_DDA_FAULT_OBJ; i < NO_OF_DDA_FAULT_OBJ; i++)
   {
     mpDDAAlarmDelay[i]->UpdateAlarmDataPoint();
-  }
-  for (unsigned int i = FIRST_DOSING_PUMP_FAULT_OBJ; i < NO_OF_DOSING_PUMP_FAULT_OBJ; i++)
-  {
-    mpDosingPumpAlarmDelay[i]->UpdateAlarmDataPoint();
   }
 }
 /*****************************************************************************
@@ -197,10 +166,6 @@ void DDACtrl::ConnectToSubjects()
   for (unsigned int i = FIRST_DDA_FAULT_OBJ; i < NO_OF_DDA_FAULT_OBJ; i++)
   {
     mpDDAAlarmDelay[i]->ConnectToSubjects();
-  }
-  for (unsigned int i = FIRST_DOSING_PUMP_FAULT_OBJ; i < NO_OF_DOSING_PUMP_FAULT_OBJ; i++)
-  {
-    mpDosingPumpAlarmDelay[i]->ConnectToSubjects();
   }
 }
 /*****************************************************************************
@@ -225,14 +190,6 @@ void DDACtrl::Update(Subject* pSubject)
       break;
     }
   }
-  for (unsigned int i = FIRST_DOSING_PUMP_FAULT_OBJ; i < NO_OF_DOSING_PUMP_FAULT_OBJ; i++)
-  {
-    if (pSubject == mpDosingPumpAlarmDelay[i])
-    {
-      mDosingPumpAlarmDelayCheckFlag[i] = true;
-      break;
-    }
-  }
   ReqTaskTime();
 }
 /*****************************************************************************
@@ -246,10 +203,6 @@ void DDACtrl::SubscribtionCancelled(Subject* pSubject)
   {
     mpDDAAlarmDelay[i]->SubscribtionCancelled(pSubject);
   }
-  for (unsigned int i = FIRST_DOSING_PUMP_FAULT_OBJ; i < NO_OF_DOSING_PUMP_FAULT_OBJ; i++)
-  {
-    mpDosingPumpAlarmDelay[i]->SubscribtionCancelled(pSubject);
-  }
 }
 /*****************************************************************************
  * Function - SetSubjectPointer
@@ -261,7 +214,7 @@ void DDACtrl::SetSubjectPointer(int id, Subject* pSubject)
 {
   switch (id)
   {
-    case SP_DDA_DDA_CONTROL_ENABLED:
+    case SP_DDA_DOSING_PUMP_ENABLED:
       mpDDAed.Attach(pSubject);
       break;
     case SP_DDA_H2S_LEVEL_ACT:
@@ -279,10 +232,6 @@ void DDACtrl::SetSubjectPointer(int id, Subject* pSubject)
     case SP_DDA_SYS_ALARM_DDA_FAULT_ALARM_OBJ:
       mDDAAlarms[DDA_FAULT_OBJ].Attach(pSubject);
       mpDDAAlarmDelay[DDA_FAULT_OBJ]->SetSubjectPointer(id, pSubject);
-      break;
-    case SP_DDA_SYS_ALARM_DOSING_PUMP_ALARM_OBJ:
-      mDosingPumpAlarms[DOSING_PUMP_FAULT_OBJ].Attach(pSubject);
-      mpDosingPumpAlarmDelay[DOSING_PUMP_FAULT_OBJ]->SetSubjectPointer(id, pSubject);
       break;
     default:
       break;

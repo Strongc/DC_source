@@ -346,4 +346,6 @@ application\Sms\WatchSmsAlarm.cpp
 	C++
 application\DosingPumpCtrl\DDACtrl.cpp
 	C++
+application\DosingPumpCtrl\NonGFDosingPumpCtrl.cpp
+	C++
 

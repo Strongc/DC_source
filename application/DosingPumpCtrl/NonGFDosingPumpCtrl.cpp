@@ -187,13 +187,13 @@ void NonGFDosingPumpCtrl::SetSubjectPointer(int id, Subject* pSubject)
 {
   switch (id)
   {
-    case SP_DP_DDA_CONTROL_ENABLED:
+    case SP_DPC_DOSING_PUMP_ENABLED:
       mpDosingPumpEnable.Attach(pSubject);
       break;
-    case SP_DP_DOSING_PUMP_TYPE:
+    case SP_DPC_DOSING_PUMP_TYPE:
       mpDosingPumpType.Attach(pSubject);
       break;
-    case SP_DP_SYS_ALARM_DOSING_PUMP_ALARM_OBJ:
+    case SP_DPC_SYS_ALARM_DOSING_PUMP_ALARM_OBJ:
       mDosingPumpAlarms[DOSING_PUMP_FAULT_OBJ].Attach(pSubject);
       mpDosingPumpAlarmDelay[DOSING_PUMP_FAULT_OBJ]->SetSubjectPointer(id, pSubject);
       break;

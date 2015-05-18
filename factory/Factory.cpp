@@ -114,6 +114,7 @@
 #include "application\powerandenergy\MotorCurrentCtrl.h"
 #include "application\driver\MP204Module.h"
 #include "application\display\mpcunit\MpcUnits.h"
+#include "application\dosingpumpctrl\NonGFDosingPumpCtrl.h"
 #include "application\noofpumpsingroupsctrl\NoOfPumpsInGroupsCtrl.h"
 #include "application\noofrunningpumpsctrl\NoOfRunningPumpsCtrl.h"
 #include "application\controller\OnOffAutoCtrl.h"
@@ -499,7 +500,8 @@ typedef enum
   ObTypeScadaCallbackTestCtrl,
   ObTypeScadaStateCtrl,
   ObTypeWatchSmsAlarm,
-  ObTypeDDACtrl
+  ObTypeDDACtrl,
+  ObTypeNonGFDosingPumpCtrl
 } OBSERVER_TYPE;
 
 typedef enum
@@ -4274,7 +4276,7 @@ const DbSubject SUBJECTS[] = {
   {4545, SUBJECT_TYPE_BOOLDATAPOINT}, // mixe_falling_level_only
   {4546, SUBJECT_TYPE_INTDATAPOINT}, // unit_ppm_actual
   {4547, SUBJECT_TYPE_INTDATAPOINT}, // unit_level_actual
-  {4548, SUBJECT_TYPE_BOOLDATAPOINT}, // dda_control_enabled
+  {4548, SUBJECT_TYPE_BOOLDATAPOINT}, // dosing_pump_enabled
   {4549, SUBJECT_TYPE_ENUMDATAPOINT}, // dosing_pump_type
   {4550, SUBJECT_TYPE_INTDATAPOINT}, // h2s_level_act
   {4551, SUBJECT_TYPE_INTDATAPOINT}, // dosing_feed_tank_level
@@ -7819,10 +7821,11 @@ const DbObserver OBSERVERS[] = {
   {1034, ObTypeScadaCallbackTestCtrl, -1}, // scada_callback_test_ctrl
   {1035, ObTypeScadaStateCtrl, -1}, // scada_state_ctrl
   {1036, ObTypeWatchSmsAlarm, -1}, // watch_sms_alarm
-  {1037, ObTypeDDACtrl, -1} // dosing_pump_ctrl
+  {1037, ObTypeDDACtrl, -1}, // dda_ctrl
+  {1038, ObTypeNonGFDosingPumpCtrl, -1} // dosing_pump_ctrl
 };
 
-const int OBSERVERS_CNT = 568;
+const int OBSERVERS_CNT = 569;
 
 /**************************************************************************
  Display Observer Single Subject table
@@ -11289,6 +11292,7 @@ const DbObserverTask OBSERVER_TASK[] = {
   {1032, 4}, 
   {1036, 4}, 
   {1037, 4}, 
+  {1038, 4}, 
   {12, 5}, 
   {16, 5}, 
   {161, 5}, 
@@ -11308,7 +11312,7 @@ const DbObserverTask OBSERVER_TASK[] = {
   {990, 5}
 };
 
-const int OBSERVER_TASK_CNT = 393;
+const int OBSERVER_TASK_CNT = 394;
 
 const DbObserverSubject OBSERVER_SUBJECTS[] = {
   {1, 1, SP_DC_CONTRAST}, 
@@ -12544,10 +12548,10 @@ const DbObserverSubject OBSERVER_SUBJECTS[] = {
   {3646, 255, SP_PC_PUMP_4_REF_LEVEL}, 
   {3647, 255, SP_PC_PUMP_5_REF_LEVEL}, 
   {3648, 255, SP_PC_PUMP_6_REF_LEVEL}, 
-  {3649, 255, SP_PC_RUN_FOR_LOWEST_STOP_REF_2}, 
-  {3649, 255, SP_PC_RUN_FOR_LOWEST_STOP_REF_5}, 
   {3649, 255, SP_PC_RUN_FOR_LOWEST_STOP_REF_3}, 
+  {3649, 255, SP_PC_RUN_FOR_LOWEST_STOP_REF_2}, 
   {3649, 255, SP_PC_RUN_FOR_LOWEST_STOP_REF_1}, 
+  {3649, 255, SP_PC_RUN_FOR_LOWEST_STOP_REF_5}, 
   {3649, 255, SP_PC_RUN_FOR_LOWEST_STOP_REF_6}, 
   {3649, 255, SP_PC_RUN_FOR_LOWEST_STOP_REF_4}, 
   {3686, 255, SP_PC_PUMP_1_LAST_START_TIME}, 
@@ -17495,16 +17499,18 @@ const DbObserverSubject OBSERVER_SUBJECTS[] = {
   {4500, 1036, SP_WSA_SCADA_WATCH_ENABLED}, 
   {4504, 1036, SP_WSA_SCADA_STATE}, 
   {4510, 1036, SP_WSA_SCADA_STATE_UPDATED}, 
-  {4548, 1037, SP_DDA_DDA_CONTROL_ENABLED}, 
+  {4548, 1037, SP_DDA_DOSING_PUMP_ENABLED}, 
   {4549, 1037, SP_DDA_DOSING_PUMP_TYPE}, 
   {4550, 1037, SP_DDA_H2S_LEVEL_ACT}, 
   {4551, 1037, SP_DDA_DOSING_FEED_TANK_LEVEL}, 
   {4552, 1037, SP_DDA_CHEMICAL_TOTAL_DOSED}, 
   {4554, 1037, SP_DDA_SYS_ALARM_DDA_FAULT_ALARM_OBJ}, 
-  {4556, 1037, SP_DDA_SYS_ALARM_DOSING_PUMP_ALARM_OBJ}
+  {4548, 1038, SP_DPC_DOSING_PUMP_ENABLED}, 
+  {4549, 1038, SP_DPC_DOSING_PUMP_TYPE}, 
+  {4556, 1038, SP_DPC_SYS_ALARM_DOSING_PUMP_ALARM_OBJ}
 };
 
-const int OBSERVER_SUBJECTS_CNT = 6191;
+const int OBSERVER_SUBJECTS_CNT = 6193;
 
 const DbConfigSubject CONFIG_SUBJECTS_CONFIG[] = {
   {1}, // display_contrast
@@ -18730,7 +18736,7 @@ const DbConfigSubject CONFIG_SUBJECTS_CONFIG[] = {
   {4545}, // mixe_falling_level_only
   {4546}, // unit_ppm_actual
   {4547}, // unit_level_actual
-  {4548}, // dda_control_enabled
+  {4548}, // dosing_pump_enabled
   {4549}, // dosing_pump_type
   {4553}, // sys_alarm_dda_fault_alarm_conf
   {4555} // sys_alarm_dosing_pump_alarm_conf
@@ -43588,8 +43594,10 @@ static Observer* ConstructObserver(const U16 observerId)
     return new ScadaStateCtrl();
   case 1036: // watch_sms_alarm
     return new WatchSmsAlarm();
-  case 1037: // dosing_pump_ctrl
+  case 1037: // dda_ctrl
     return new DDACtrl();
+  case 1038: // dosing_pump_ctrl
+    return new NonGFDosingPumpCtrl();
   default:
     return NULL;
   }
@@ -45306,6 +45314,9 @@ void RunFactory(void)
         p_observer = ConstructObserver(OBSERVERS[j].Id);
       break;
       case ObTypeDDACtrl:
+        p_observer = ConstructObserver(OBSERVERS[j].Id);
+      break;
+      case ObTypeNonGFDosingPumpCtrl:
         p_observer = ConstructObserver(OBSERVERS[j].Id);
       break;
 

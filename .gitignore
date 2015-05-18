@@ -1,7 +1,6 @@
 *.mdb
 *.pyc
 *.log
-*.bld
 *.inf
 *.lst
 *.exe

@@ -95,16 +95,6 @@ typedef enum
   LAST_DDA_FAULT_OBJ = NO_OF_DDA_FAULT_OBJ - 1
 }DDA_FAULT_OBJ_TYPE;
 
-typedef enum
-{
-  FIRST_DOSING_PUMP_FAULT_OBJ,
-  DOSING_PUMP_FAULT_OBJ = FIRST_DOSING_PUMP_FAULT_OBJ,
-  //DDA_FAULT_OBJ_EMPTY_TANK,
-
-  NO_OF_DOSING_PUMP_FAULT_OBJ,
-  LAST_DOSING_PUMP_FAULT_OBJ = NO_OF_DOSING_PUMP_FAULT_OBJ - 1
-}DOSING_PUMP_FAULT_OBJ_TYPE;
-
 typedef struct
 {
  U8 Pumping_Status;
@@ -172,9 +162,6 @@ class DDACtrl : public SubTask, public SwTimerBaseClass
     SubjectPtr<AlarmDataPoint*> mDDAAlarms[NO_OF_DDA_FAULT_OBJ];
     AlarmDelay* mpDDAAlarmDelay[NO_OF_DDA_FAULT_OBJ];
     bool mDDAAlarmDelayCheckFlag[NO_OF_DDA_FAULT_OBJ];
-    SubjectPtr<AlarmDataPoint*> mDosingPumpAlarms[NO_OF_DOSING_PUMP_FAULT_OBJ];
-    AlarmDelay* mpDosingPumpAlarmDelay[NO_OF_DOSING_PUMP_FAULT_OBJ];
-    bool mDosingPumpAlarmDelayCheckFlag[NO_OF_DOSING_PUMP_FAULT_OBJ];
     static int counter;
 
   protected:

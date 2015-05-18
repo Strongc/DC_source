@@ -1047,7 +1047,7 @@ const NON_VOLATILE_SUBJECT_TYPE NON_VOLATILE_CONFIG_SUBJECTS[] = {
   {4545, FLASH_SAVE_VALUE}, // mixe_falling_level_only
   {4546, FLASH_SAVE_VALUE}, // unit_ppm_actual
   {4547, FLASH_SAVE_VALUE}, // unit_level_actual
-  {4548, FLASH_SAVE_VALUE}, // dda_control_enabled
+  {4548, FLASH_SAVE_VALUE}, // dosing_pump_enabled
   {4549, FLASH_SAVE_VALUE}, // dosing_pump_type
   {4553, FLASH_SAVE_VALUE}, // sys_alarm_dda_fault_alarm_conf
   {4555, FLASH_SAVE_VALUE} // sys_alarm_dosing_pump_alarm_conf

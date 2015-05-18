@@ -18,9 +18,9 @@
 /*               wise  utilized by anybody without GRUNDFOS'                */
 /*               expressed written permission.                              */
 /****************************************************************************/
-/* CLASS NAME       : DDACtrl                                               */
+/* CLASS NAME       : NonGFDosingPumpCtrl                                               */
 /*                                                                          */
-/* FILE NAME        : DDACtrl.h                                     */
+/* FILE NAME        : NonGFDosingPumpCtrl.h                                     */
 /*                                                                          */
 /* CREATED DATE     : 05-07-2013 dd-mm-yyyy                                 */
 /*                                                                          */
@@ -34,8 +34,8 @@
 /*****************************************************************************
    Protect against multiple inclusion through the use of guards:
  ****************************************************************************/
-#ifndef mrcDDACtrl_h
-#define mrcDDACtrl_h
+#ifndef mrcDosingPumpCtrl_h
+#define mrcDosingPumpCtrl_h 
 
 /*****************************************************************************
   SYSTEM INCLUDES
