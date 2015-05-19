@@ -658,6 +658,12 @@ void DiFuncHandler::SetSubjectPointer(int Id, Subject* pSubject)
     case SP_DIFH_DIG_IN_FUNC_INPUT_SERVICE_MODE:
       mpDiFuncInput[DIGITAL_INPUT_FUNC_SERVICE_MODE].Attach(pSubject);
       break;
+    case SP_DIFH_DIG_IN_FUNC_STATE_DOSING_PUMP:
+      mpDiFuncState[DIGITAL_INPUT_FUNC_DOSING_PUMP].Attach(pSubject);
+      break;
+    case SP_DIFH_DIG_IN_FUNC_INPUT_DOSING_PUMP:
+      mpDiFuncInput[DIGITAL_INPUT_FUNC_DOSING_PUMP].Attach(pSubject);
+      break;
     /* Add digital input Function State and input Objects above */
 
     // digital input configuration objects, one per digital input

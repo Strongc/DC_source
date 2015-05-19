@@ -115,7 +115,12 @@ void NonGFDosingPumpCtrl::RunSubTask()
     }
   }
 
-  if (dosing_pump_ed)
+  /* test through alarm */
+  //I guess this digital in is singal external, not the check state of checkbox in menu DI
+  //if (mpDosingPumpDigInRequest.IsUpdated())
+  //{
+    //if (mpDosingPumpDigInRequest->GetValue() == DIGITAL_INPUT_FUNC_STATE_ACTIVE)
+  if (dosing_pump_ed && (mpDosingPumpType->GetValue() == DOSING_PUMP_TYPE_ANALOG))
   {
     mpDosingPumpAlarmDelay[DOSING_PUMP_FAULT_OBJ]->SetFault();
   }
@@ -139,6 +144,7 @@ void NonGFDosingPumpCtrl::ConnectToSubjects()
 {
   mpDosingPumpEnable->Subscribe(this);
   mpDosingPumpType->Subscribe(this);
+  mpDosingPumpDigInRequest->Subscribe(this);
   for (unsigned int i = FIRST_DOSING_PUMP_FAULT_OBJ; i < NO_OF_DOSING_PUMP_FAULT_OBJ; i++)
   {
     mpDosingPumpAlarmDelay[i]->ConnectToSubjects();
@@ -154,6 +160,7 @@ void NonGFDosingPumpCtrl::Update(Subject* pSubject)
 {
   mpDosingPumpEnable.Update(pSubject);
   mpDosingPumpType.Update(pSubject);
+  mpDosingPumpDigInRequest.Update(pSubject);
 
   for (unsigned int i = FIRST_DOSING_PUMP_FAULT_OBJ; i < NO_OF_DOSING_PUMP_FAULT_OBJ; i++)
   {
@@ -192,6 +199,9 @@ void NonGFDosingPumpCtrl::SetSubjectPointer(int id, Subject* pSubject)
       break;
     case SP_DPC_DOSING_PUMP_TYPE:
       mpDosingPumpType.Attach(pSubject);
+      break;
+    case SP_DPC_DOSING_PUMP_DIG_IN_REQUEST:
+      mpDosingPumpDigInRequest.Attach(pSubject);
       break;
     case SP_DPC_SYS_ALARM_DOSING_PUMP_ALARM_OBJ:
       mDosingPumpAlarms[DOSING_PUMP_FAULT_OBJ].Attach(pSubject);
