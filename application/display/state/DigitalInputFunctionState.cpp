@@ -117,7 +117,7 @@ namespace mpc
       { DIGITAL_INPUT_FUNC_EXTRA_FAULT_2                 , SID_NONE                             }, // Uses user-defined string
       { DIGITAL_INPUT_FUNC_EXTRA_FAULT_3                 , SID_NONE                             }, // Uses user-defined string
       { DIGITAL_INPUT_FUNC_EXTRA_FAULT_4                 , SID_NONE                             }, // Uses user-defined string
-      { DIGITAL_INPUT_FUNC_DOSING_PUMP                   , SID_DOSING_PUMP                      }
+      { DIGITAL_INPUT_FUNC_DOSING_PUMP                   , SID_DI_DOSING_PUMP_READY             }
       
     };
 
