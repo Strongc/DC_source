@@ -61,7 +61,7 @@ namespace mpc
     #define mpc2ND_COLUMN_WIDTH 64
     #define mpcNO_WIDTH 0
 
-    #define FIRST_USER_IO_INDEX 19
+    #define FIRST_USER_IO_INDEX 20
 
     const MODE_CHECK_BOX_LABEL_VALUE LIST_VIEW_DATA[] =
     {
@@ -85,6 +85,7 @@ namespace mpc
       { SID_DO_VFD_4_REVERSE,              RELAY_FUNC_VFD_4_REVERSE             },
       { SID_DO_VFD_5_REVERSE,              RELAY_FUNC_VFD_5_REVERSE             },
       { SID_DO_VFD_6_REVERSE,              RELAY_FUNC_VFD_6_REVERSE             },
+      { SID_DO_START_DOSING_PUMP,          RELAY_FUNC_DOSING_PUMP               },
       { SID_USERDEFINED_FUNCTION_1,        RELAY_FUNC_USER_IO_1                 },
       { SID_USERDEFINED_FUNCTION_2,        RELAY_FUNC_USER_IO_2                 },
       { SID_USERDEFINED_FUNCTION_3,        RELAY_FUNC_USER_IO_3                 },
@@ -93,7 +94,6 @@ namespace mpc
       { SID_USERDEFINED_FUNCTION_6,        RELAY_FUNC_USER_IO_6                 },
       { SID_USERDEFINED_FUNCTION_7,        RELAY_FUNC_USER_IO_7                 },
       { SID_USERDEFINED_FUNCTION_8,        RELAY_FUNC_USER_IO_8                 }
-      //{ SID_DO_START_DOSING_PUMP,          RELAY_FUNC_DOSING_PUMP               }
     };
 
     const int LIST_VIEW_DATA_CNT = sizeof(LIST_VIEW_DATA) / sizeof(LIST_VIEW_DATA[0]);

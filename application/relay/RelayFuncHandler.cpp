@@ -322,6 +322,9 @@ void RelayFuncHandler::Update(Subject* pSubject)
     case SUBJECT_ID_VFD_6_RELAY_STATUS_RELAY_FUNC_REVERSE:
       mpRelayStatus[RELAY_FUNC_VFD_6_REVERSE].Update(pSubject);
       break;
+    case SUBJECT_ID_RELAY_STATUS_RELAY_FUNC_DOSING_PUMP:
+      mpRelayStatus[RELAY_FUNC_DOSING_PUMP].Update(pSubject);
+      break;
 
       // relay func conf
     case SUBJECT_ID_DIG_OUT_1_CONF_RELAY_FUNC:
@@ -642,6 +645,12 @@ void RelayFuncHandler::SetSubjectPointer(int Id, Subject* pSubject)
       break;
     case SP_RFH_RELAY_FUNC_OUTPUT_VFD_6_REVERSE:
       mpRelayFuncOutput[RELAY_FUNC_VFD_6_REVERSE].Attach(pSubject);
+      break;
+    case SP_RFH_RELAY_FUNC_DOSING_PUMP:
+      mpRelayStatus[RELAY_FUNC_DOSING_PUMP].Attach(pSubject);
+      break;
+    case SP_RFH_RELAY_FUNC_OUTPUT_DOSING_PUMP:
+      mpRelayFuncOutput[RELAY_FUNC_DOSING_PUMP].Attach(pSubject);
       break;
 
 

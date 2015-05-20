@@ -89,8 +89,8 @@ namespace mpc
       { RELAY_FUNC_VFD_3_REVERSE                , SID_DO_VFD_3_REVERSE                      },
       { RELAY_FUNC_VFD_4_REVERSE                , SID_DO_VFD_4_REVERSE                      },
       { RELAY_FUNC_VFD_5_REVERSE                , SID_DO_VFD_5_REVERSE                      },
-      { RELAY_FUNC_VFD_6_REVERSE                , SID_DO_VFD_6_REVERSE                      }
-      //{ SID_DO_START_DOSING_PUMP                , RELAY_FUNC_DOSING_PUMP                    }
+      { RELAY_FUNC_VFD_6_REVERSE                , SID_DO_VFD_6_REVERSE                      },
+      { RELAY_FUNC_DOSING_PUMP                  , SID_DO_START_DOSING_PUMP                  }
     };
 
     /*****************************************************************************
