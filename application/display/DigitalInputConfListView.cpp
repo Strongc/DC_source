@@ -108,7 +108,7 @@ namespace mpc
       { SID_DI_GAS_DETECTOR               , DIGITAL_INPUT_FUNC_GAS_DETECTOR                },
       { SID_DI_WATER_ON_PIT_FLOOR         , DIGITAL_INPUT_FUNC_WATER_ON_PIT_FLOOR          },
       { SID_DI_SERVICE_MODE               , DIGITAL_INPUT_FUNC_SERVICE_MODE                },
-      { SID_DOSING_PUMP                   , DIGITAL_INPUT_FUNC_DOSING_PUMP                 },
+      { SID_DOSING_PUMP_READY             , DIGITAL_INPUT_FUNC_DOSING_PUMP                 },
       { SID_NONE                          , DIGITAL_INPUT_FUNC_EXTRA_FAULT_1               }, // The last 8 rows uses datapointtext and multistring
       { SID_NAME_OF_UDF                   , DIGITAL_INPUT_FUNC_EXTRA_FAULT_1               },
       { SID_NONE                          , DIGITAL_INPUT_FUNC_EXTRA_FAULT_2               },

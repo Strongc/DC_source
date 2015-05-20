@@ -66,7 +66,7 @@ namespace mpc
     const MODE_CHECK_BOX_LABEL_VALUE LIST_VIEW_DATA[] =
     {
       { SID_DO_RELAY_NO_FUNC,              RELAY_FUNC_NO_FUNCTION               },
-      { SID_DO_START_DOSING_PUMP,               RELAY_FUNC_PUMP_1                    },
+      { SID_DO_PUMP_1_START,               RELAY_FUNC_PUMP_1                    },
       { SID_DO_PUMP_2_START,               RELAY_FUNC_PUMP_2                    },
       { SID_PUMP_3_START,                  RELAY_FUNC_PUMP_3                    },
       { SID_PUMP_4_START,                  RELAY_FUNC_PUMP_4                    },
