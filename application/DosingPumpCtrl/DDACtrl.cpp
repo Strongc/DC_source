@@ -46,6 +46,34 @@ enum
   DDA_WAIT_TIMER,
   DDA_RUN_TIMER
 };
+
+typedef struct
+{
+  unsigned int event_code;
+  ALARM_ID_TYPE   alarm_code;
+} DDA_ALARM_CONVERSION_TYPE;
+
+const DDA_ALARM_CONVERSION_TYPE alarm_table[] =
+{
+  {210, (ALARM_ID_TYPE)256},             // Over pressure
+  {211, (ALARM_ID_TYPE)257},             // Mean pressure to low (Under pressure).
+  {35,  (ALARM_ID_TYPE)258},             // Gas in pump head, deaerating problem
+  {208, (ALARM_ID_TYPE)259},             // Cavitations
+  {36,  (ALARM_ID_TYPE)260},             // Pressure valve leakage
+  {37,  (ALARM_ID_TYPE)261},             // Suction valve leakage
+  {38,  (ALARM_ID_TYPE)262},             // Venting valve defect
+  {12,  (ALARM_ID_TYPE)263},             // Time for service is exceed
+  {33,  (ALARM_ID_TYPE)264},             // Soon time for service
+  {17,  (ALARM_ID_TYPE)265},             // Capacity too low (Perform. requirem. not met)
+  {19,  (ALARM_ID_TYPE)266},             // Diaphragm break - dosing pump
+  {51,  (ALARM_ID_TYPE)267},             // Blocked motor/pump
+  {206, (ALARM_ID_TYPE)268},             // Pre empty tank
+  {57,  (ALARM_ID_TYPE)269},             // Empty tank (Dry Running)
+  {169, (ALARM_ID_TYPE)270},             // Cable breakdown on Flow Monitor (Flow sensor sig. fault)
+  {47,  (ALARM_ID_TYPE)271}              // Cable breakdown on Analogue (Reference input sig. fault)
+};
+#define ALARM_TABLE_SIZE  (sizeof(alarm_table)/sizeof(alarm_table[0]))
+
 /*****************************************************************************
   TYPE DEFINES
  *****************************************************************************/
@@ -138,6 +166,7 @@ void DDACtrl::RunSubTask()
 
   if (dda_ed)
   {
+    mDDAAlarms[DDA_FAULT_OBJ]->SetValue((ALARM_ID_TYPE)258);
     mpDDAAlarmDelay[DDA_FAULT_OBJ]->SetFault();
   }
   else
