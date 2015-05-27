@@ -7,3 +7,4 @@
 Factory.cpp
 FactoryTypes.h
 exe/*.*
+objs/

@@ -93,7 +93,8 @@ namespace mpc
 
       { MEASURED_VALUE_USER_DEFINED_SOURCE_1,     SID_AI_OPTIONAL_SENSOR_1                  },
       { MEASURED_VALUE_USER_DEFINED_SOURCE_2,     SID_AI_OPTIONAL_SENSOR_2,                 },
-      { MEASURED_VALUE_USER_DEFINED_SOURCE_3,     SID_AI_OPTIONAL_SENSOR_3,                 }
+      { MEASURED_VALUE_USER_DEFINED_SOURCE_3,     SID_AI_OPTIONAL_SENSOR_3,                 },
+      { MEASURED_VALUE_CHEMICAL_CONTAINER,        SID_AI_LEVEL_CHEMICAL_CONTAINER,          }
     };
 
     /*****************************************************************************

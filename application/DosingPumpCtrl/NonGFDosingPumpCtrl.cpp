@@ -203,6 +203,9 @@ void NonGFDosingPumpCtrl::SetSubjectPointer(int id, Subject* pSubject)
     case SP_DPC_DOSING_PUMP_DIG_IN_REQUEST:
       mpDosingPumpDigInRequest.Attach(pSubject);
       break;
+    case SP_DPC_MEASURED_VALUE_CHEMICAL_CONTAINER:
+      mpMeasuredValue.Attach(pSubject);
+      break;
     case SP_DPC_SYS_ALARM_DOSING_PUMP_ALARM_OBJ:
       mDosingPumpAlarms[DOSING_PUMP_FAULT_OBJ].Attach(pSubject);
       mpDosingPumpAlarmDelay[DOSING_PUMP_FAULT_OBJ]->SetSubjectPointer(id, pSubject);

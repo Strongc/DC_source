@@ -91,7 +91,8 @@ namespace mpc
       { SID_AI_POWER_PUMP_6,                      MEASURED_VALUE_POWER_PUMP_6             },      
       { SID_AI_OPTIONAL_SENSOR_1,                 MEASURED_VALUE_USER_DEFINED_SOURCE_1    },
       { SID_AI_OPTIONAL_SENSOR_2,                 MEASURED_VALUE_USER_DEFINED_SOURCE_2    },
-      { SID_AI_OPTIONAL_SENSOR_3,                 MEASURED_VALUE_USER_DEFINED_SOURCE_3    }
+      { SID_AI_OPTIONAL_SENSOR_3,                 MEASURED_VALUE_USER_DEFINED_SOURCE_3    },
+      { SID_AI_LEVEL_CHEMICAL_CONTAINER,          MEASURED_VALUE_CHEMICAL_CONTAINER       }
     };
 
     const int LIST_VIEW_DATA_CNT = sizeof(LIST_VIEW_DATA) / sizeof(LIST_VIEW_DATA[0]);

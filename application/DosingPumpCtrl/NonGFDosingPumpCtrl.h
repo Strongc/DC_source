@@ -54,6 +54,7 @@
 #include <BoolDataPoint.h>
 #include <U32DataPoint.h>
 #include <U16DataPoint.h>
+#include <FloatDataPoint.h>
 #include <AlarmDelay.h>
 #include <U8DataPoint.h>
 
@@ -122,6 +123,7 @@ class NonGFDosingPumpCtrl : public SubTask, public SwTimerBaseClass
     SubjectPtr<BoolDataPoint*> mpDosingPumpEnable;
     SubjectPtr<EnumDataPoint<DOSING_PUMP_TYPE_TYPE>*>  mpDosingPumpType;
     SubjectPtr<EnumDataPoint<DIGITAL_INPUT_FUNC_STATE_TYPE>*> mpDosingPumpDigInRequest;
+    SubjectPtr<FloatDataPoint*> mpMeasuredValue;
 
     //DDA_STATUS *dda_pump_status;
     //DOSING_PUMP_TYPE_TYPE mDosingPumpType;

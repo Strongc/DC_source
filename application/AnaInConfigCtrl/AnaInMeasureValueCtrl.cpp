@@ -365,6 +365,24 @@ void AnaInMeasureValueCtrl::RunSubTask()
           }
           break;
 
+        case MEASURED_VALUE_CHEMICAL_CONTAINER:
+          mpConfSensorMinValue[i]->SetQuantity(Q_HEIGHT);
+          mpConfSensorMinValue[i]->SetMaxValue(100.0f);
+          mpConfSensorMinValue[i]->SetMinValue(0);
+          if (mpAnaInSetupFromGeniFlag->GetValue() == false)  // the change is not arisen from GENI, so set min.
+          {
+            mpConfSensorMinValue[i]->SetValue(0); // 0m
+          }
+
+          mpConfSensorMaxValue[i]->SetQuantity(Q_HEIGHT);
+          mpConfSensorMaxValue[i]->SetMaxValue(100.0f);
+          mpConfSensorMaxValue[i]->SetMinValue(0);
+          if (mpAnaInSetupFromGeniFlag->GetValue() == false)  // the change is not arisen from GENI, so set max.
+          {
+            mpConfSensorMaxValue[i]->SetValue(5.0f);   //5.0m
+          }
+          break;
+
         default:
           FatalErrorOccured("AnaInMeasureValueCtrl: measured value type not supported");
           break;
@@ -915,6 +933,9 @@ void AnaInMeasureValueCtrl::SetSubjectPointer(int Id, Subject* pSubject)
       break;
     case SP_AIMVC_MEASURED_VALUE_USER_DEFINED_SOURCE_3:
       mpOutputList[MEASURED_VALUE_USER_DEFINED_SOURCE_3].Attach(pSubject);
+      break;
+    case SP_AIMVC_MEASURED_VALUE_CHEMICAL_CONTAINER:
+      mpOutputList[MEASURED_VALUE_CHEMICAL_CONTAINER].Attach(pSubject);
       break;
 
     case SP_AIMVC_ANA_IN_SETUP_FROM_GENI_FLAG:

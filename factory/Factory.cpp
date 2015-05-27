@@ -4284,10 +4284,15 @@ const DbSubject SUBJECTS[] = {
   {4553, SUBJECT_TYPE_ALARMCONFIG}, // sys_alarm_dda_fault_alarm_conf
   {4554, SUBJECT_TYPE_ALARMDATAPOINT}, // sys_alarm_dda_fault_alarm_obj
   {4555, SUBJECT_TYPE_ALARMCONFIG}, // sys_alarm_dosing_pump_alarm_conf
-  {4556, SUBJECT_TYPE_ALARMDATAPOINT} // sys_alarm_dosing_pump_alarm_obj
+  {4556, SUBJECT_TYPE_ALARMDATAPOINT}, // sys_alarm_dosing_pump_alarm_obj
+  {4557, SUBJECT_TYPE_INTDATAPOINT}, // dig_in_func_input_dosing_pump
+  {4558, SUBJECT_TYPE_ENUMDATAPOINT}, // dig_in_func_state_dosing_pump
+  {4559, SUBJECT_TYPE_BOOLDATAPOINT}, // relay_status_relay_func_dosing_pump
+  {4560, SUBJECT_TYPE_INTDATAPOINT}, // relay_func_output_dosing_pump
+  {4561, SUBJECT_TYPE_FLOATDATAPOINT} // measured_value_chemical_container
 };
 
-const int SUBJECTS_CNT = 3175;
+const int SUBJECTS_CNT = 3180;
 
 /**************************************************************************
  FloatDataPoint table
@@ -4936,10 +4941,11 @@ const DbFloatDataPoint FLOAT_DATAPOINTS[] = {
   {4366, 0.000000f, 3.000000f, 0.000000f, Q_FLOW}, 
   {4470, 0.000000f, 99999996802856925000000000000000000000.000000f, 0.000000f, Q_ENERGY}, 
   {4512, 0.000000f, 100000000.000000f, 0.000000f, Q_VOLUME}, 
-  {4514, 0.000000f, 100000000.000000f, 0.000000f, Q_VOLUME}
+  {4514, 0.000000f, 100000000.000000f, 0.000000f, Q_VOLUME}, 
+  {4561, 0.000000f, 0.000000f, 0.000000f, Q_HEIGHT}
 };
 
-const int FLOAT_DATAPOINTS_CNT = 644;
+const int FLOAT_DATAPOINTS_CNT = 645;
 
 /**************************************************************************
  IntDataPoint table
@@ -5702,10 +5708,12 @@ const DbIntDataPoint INT_DATAPOINTS[] = {
   {4547, DP_MIN_MAX_TYPE_I32, 0, 10, 0, Q_NO_UNIT}, 
   {4550, DP_MIN_MAX_TYPE_U32, 0, 99999999, 0, Q_PARTS_PER_MILLION}, 
   {4551, DP_MIN_MAX_TYPE_U32, 0, 99999999, 0, Q_DEPTH}, 
-  {4552, DP_MIN_MAX_TYPE_U32, 0, 99999999, 0, Q_VOLUME}
+  {4552, DP_MIN_MAX_TYPE_U32, 0, 99999999, 0, Q_VOLUME}, 
+  {4557, DP_MIN_MAX_TYPE_U32, 0, 30, 0, Q_NO_UNIT}, 
+  {4560, DP_MIN_MAX_TYPE_U32, 0, 16, 0, Q_NO_UNIT}
 };
 
-const int INT_DATAPOINTS_CNT = 758;
+const int INT_DATAPOINTS_CNT = 760;
 
 /**************************************************************************
  EnumDataPoint table
@@ -6168,10 +6176,11 @@ const DbEnumDataPoint ENUM_DATAPOINTS[] = {
   {4463, ENUM_TYPE_IO11X_UNIT_TYPE, IO11X_UNIT_TYPE_NOT_AVAILABLE}, 
   {4499, ENUM_TYPE_DIGITAL_INPUT_FUNC_STATE, DIGITAL_INPUT_FUNC_STATE_NOT_CONFIGURED}, 
   {4504, ENUM_TYPE_SCADA_STATE, SCADA_STATE_IDLE}, 
-  {4549, ENUM_TYPE_DOSING_PUMP_TYPE, DOSING_PUMP_TYPE_DDA}
+  {4549, ENUM_TYPE_DOSING_PUMP_TYPE, DOSING_PUMP_TYPE_DDA}, 
+  {4558, ENUM_TYPE_DIGITAL_INPUT_FUNC_STATE, DIGITAL_INPUT_FUNC_STATE_NOT_CONFIGURED}
 };
 
-const int ENUM_DATAPOINTS_CNT = 458;
+const int ENUM_DATAPOINTS_CNT = 459;
 
 /**************************************************************************
  StringDataPoint table
@@ -6790,10 +6799,11 @@ const DbBoolDataPoint BOOL_DATAPOINTS[] = {
   {4518, 0}, 
   {4520, 0}, 
   {4545, 0}, 
-  {4548, 0}
+  {4548, 0}, 
+  {4559, 0}
 };
 
-const int BOOL_DATAPOINTS_CNT = 549;
+const int BOOL_DATAPOINTS_CNT = 550;
 
 /**************************************************************************
  UserIoConfig table
@@ -11747,6 +11757,8 @@ const DbObserverSubject OBSERVER_SUBJECTS[] = {
   {4435, 15, SP_DIFH_DIG_IN_FUNC_INPUT_WATER_ON_PIT_FLOOR}, 
   {4498, 15, SP_DIFH_DIG_IN_FUNC_INPUT_SERVICE_MODE}, 
   {4499, 15, SP_DIFH_DIG_IN_FUNC_STATE_SERVICE_MODE}, 
+  {4557, 15, SP_DIFH_DIG_IN_FUNC_INPUT_DOSING_PUMP}, 
+  {4558, 15, SP_DIFH_DIG_IN_FUNC_STATE_DOSING_PUMP}, 
   {66, 16, SP_DOCSP_DIG_OUT_1_CONF_RELAY_FUNC}, 
   {67, 16, SP_DOCSP_DIG_OUT_2_CONF_RELAY_FUNC}, 
   {68, 16, SP_DOCSP_DIG_OUT_3_CONF_RELAY_FUNC}, 
@@ -12066,6 +12078,7 @@ const DbObserverSubject OBSERVER_SUBJECTS[] = {
   {4094, 221, SP_AIMVC_MEASURED_VALUE_POWER_PUMP_4}, 
   {4095, 221, SP_AIMVC_MEASURED_VALUE_POWER_PUMP_5}, 
   {4096, 221, SP_AIMVC_MEASURED_VALUE_POWER_PUMP_6}, 
+  {4561, 221, SP_AIMVC_MEASURED_VALUE_CHEMICAL_CONTAINER}, 
   {66, 223, SP_RFH_DIG_OUT_1_CONF_RELAY_FUNC}, 
   {67, 223, SP_RFH_DIG_OUT_2_CONF_RELAY_FUNC}, 
   {68, 223, SP_RFH_DIG_OUT_3_CONF_RELAY_FUNC}, 
@@ -12181,6 +12194,8 @@ const DbObserverSubject OBSERVER_SUBJECTS[] = {
   {3714, 223, SP_RFH_RELAY_FUNC_OUTPUT_VFD_4_REVERSE}, 
   {3715, 223, SP_RFH_RELAY_FUNC_OUTPUT_VFD_5_REVERSE}, 
   {3716, 223, SP_RFH_RELAY_FUNC_OUTPUT_VFD_6_REVERSE}, 
+  {4559, 223, SP_RFH_RELAY_FUNC_DOSING_PUMP}, 
+  {4560, 223, SP_RFH_RELAY_FUNC_OUTPUT_DOSING_PUMP}, 
   {278, 225, SP_ERROR_LOG_VALUES}, 
   {275, 227, SP_SRC_RELAY_STATUS}, 
   {279, 227, SP_SRC_INPUT_VALUE}, 
@@ -12548,11 +12563,11 @@ const DbObserverSubject OBSERVER_SUBJECTS[] = {
   {3646, 255, SP_PC_PUMP_4_REF_LEVEL}, 
   {3647, 255, SP_PC_PUMP_5_REF_LEVEL}, 
   {3648, 255, SP_PC_PUMP_6_REF_LEVEL}, 
+  {3649, 255, SP_PC_RUN_FOR_LOWEST_STOP_REF_6}, 
   {3649, 255, SP_PC_RUN_FOR_LOWEST_STOP_REF_3}, 
   {3649, 255, SP_PC_RUN_FOR_LOWEST_STOP_REF_2}, 
   {3649, 255, SP_PC_RUN_FOR_LOWEST_STOP_REF_1}, 
   {3649, 255, SP_PC_RUN_FOR_LOWEST_STOP_REF_5}, 
-  {3649, 255, SP_PC_RUN_FOR_LOWEST_STOP_REF_6}, 
   {3649, 255, SP_PC_RUN_FOR_LOWEST_STOP_REF_4}, 
   {3686, 255, SP_PC_PUMP_1_LAST_START_TIME}, 
   {3687, 255, SP_PC_PUMP_2_LAST_START_TIME}, 
@@ -17507,10 +17522,12 @@ const DbObserverSubject OBSERVER_SUBJECTS[] = {
   {4554, 1037, SP_DDA_SYS_ALARM_DDA_FAULT_ALARM_OBJ}, 
   {4548, 1038, SP_DPC_DOSING_PUMP_ENABLED}, 
   {4549, 1038, SP_DPC_DOSING_PUMP_TYPE}, 
-  {4556, 1038, SP_DPC_SYS_ALARM_DOSING_PUMP_ALARM_OBJ}
+  {4556, 1038, SP_DPC_SYS_ALARM_DOSING_PUMP_ALARM_OBJ}, 
+  {4558, 1038, SP_DPC_DOSING_PUMP_DIG_IN_REQUEST}, 
+  {4561, 1038, SP_DPC_MEASURED_VALUE_CHEMICAL_CONTAINER}
 };
 
-const int OBSERVER_SUBJECTS_CNT = 6193;
+const int OBSERVER_SUBJECTS_CNT = 6200;
 
 const DbConfigSubject CONFIG_SUBJECTS_CONFIG[] = {
   {1}, // display_contrast
@@ -40282,18 +40299,18 @@ const DbLabel DISPLAY_LABEL[] = {
   {6910, 2075}, 
   {6913, 2077}, 
   {6915, 2077}, 
-  {6918, 2079}, 
-  {6920, 2080}, 
-  {6922, 2081}, 
-  {6924, 2082}, 
-  {6926, 2083}, 
-  {6927, 2083}, 
-  {6929, 2084}, 
-  {6931, 2084}, 
+  {6918, 2097}, 
+  {6920, 2098}, 
+  {6922, 2099}, 
+  {6924, 2100}, 
+  {6926, 2101}, 
+  {6927, 2101}, 
+  {6929, 2102}, 
+  {6931, 2102}, 
   {6933, 1482}, 
-  {6934, 2085}, 
-  {6935, 2086}, 
-  {6937, 2087}, 
+  {6934, 2103}, 
+  {6935, 2104}, 
+  {6937, 2105}, 
   {6939, 1513}, 
   {6940, 1341}
 };
@@ -40461,8 +40478,8 @@ const DbDisplay DISPLAY[] = {
   {175, 6686, 1977, 1, 0, 6687, 0, "4.5.8"}, 
   {176, 6721, 1985, 1, 0, 6722, 0, "4.4.7"}, 
   {177, 6796, 2023, 1, 0, 6798, 0, "4.4.7.1"}, 
-  {178, 6927, 2083, 1, 0, 6928, 0, "4.2.14"}, 
-  {179, 6931, 2084, 1, 0, 6932, 0, "4.2.14.1"}
+  {178, 6927, 2101, 1, 0, 6928, 0, "4.2.14"}, 
+  {179, 6931, 2102, 1, 0, 6932, 0, "4.2.14.1"}
 };
 
 const int DISPLAY_CNT = 162;
@@ -41884,10 +41901,26 @@ const DbAlarmStrings DISPLAY_ALARM_STRINGS[] = {
   {252, 0}, 
   {253, 2066}, 
   {254, 2074}, 
-  {255, 2076}
+  {255, 2076}, 
+  {256, 2078}, 
+  {257, 2079}, 
+  {258, 2080}, 
+  {259, 2081}, 
+  {260, 2082}, 
+  {261, 2083}, 
+  {262, 2084}, 
+  {263, 2085}, 
+  {264, 2086}, 
+  {265, 2087}, 
+  {266, 2088}, 
+  {267, 2089}, 
+  {268, 2090}, 
+  {269, 2091}, 
+  {270, 2092}, 
+  {271, 2093}
 };
 
-const int DISPLAY_ALARM_STRINGS_CNT = 169;
+const int DISPLAY_ALARM_STRINGS_CNT = 185;
 
 const DbOnOffCheckBox DISPLAY_ONOFFCHECKBOX[] = {
   {75, 1, 0}, 
@@ -42162,28 +42195,28 @@ const DbWriteValueToDataPointAtKeyPressAndJumpToSpecificDisplay WRITE_VALUE_TO_D
   {1440, 16}, 
   {1441, 9}, 
   {1442, 0}, 
-  {1464, 30}, 
-  {1465, 31}, 
+  {1464, 32}, 
+  {1465, 33}, 
   {1466, 17}, 
-  {1467, 32}, 
-  {1468, 44}, 
-  {1469, 45}, 
-  {1471, 35}, 
-  {1472, 36}, 
-  {1474, 43}, 
-  {1475, 41}, 
-  {1477, 34}, 
-  {1478, 42}, 
-  {1479, 37}, 
-  {1480, 40}, 
-  {1481, 33}, 
-  {1492, 56}, 
-  {1493, 57}, 
-  {1494, 58}, 
-  {1587, 59}, 
-  {1588, 60}, 
-  {1589, 61}, 
-  {1590, 62}, 
+  {1467, 34}, 
+  {1468, 46}, 
+  {1469, 47}, 
+  {1471, 37}, 
+  {1472, 38}, 
+  {1474, 45}, 
+  {1475, 43}, 
+  {1477, 36}, 
+  {1478, 44}, 
+  {1479, 39}, 
+  {1480, 42}, 
+  {1481, 35}, 
+  {1492, 58}, 
+  {1493, 59}, 
+  {1494, 60}, 
+  {1587, 61}, 
+  {1588, 62}, 
+  {1589, 63}, 
+  {1590, 64}, 
   {1670, 6}, 
   {1671, 0}, 
   {1672, 1}, 
@@ -42208,8 +42241,8 @@ const DbWriteValueToDataPointAtKeyPressAndJumpToSpecificDisplay WRITE_VALUE_TO_D
   {2724, 1}, 
   {2725, 2}, 
   {2726, 0}, 
-  {2742, 38}, 
-  {2744, 39}, 
+  {2742, 40}, 
+  {2744, 41}, 
   {2842, 1}, 
   {2843, 2}, 
   {2844, 3}, 
@@ -42234,7 +42267,7 @@ const DbWriteValueToDataPointAtKeyPressAndJumpToSpecificDisplay WRITE_VALUE_TO_D
   {3077, 20}, 
   {3078, 21}, 
   {3079, 22}, 
-  {3083, 46}, 
+  {3083, 48}, 
   {4241, 8}, 
   {4245, 9}, 
   {4253, 22}, 
@@ -42262,11 +42295,11 @@ const DbWriteValueToDataPointAtKeyPressAndJumpToSpecificDisplay WRITE_VALUE_TO_D
   {4363, 28}, 
   {4369, 29}, 
   {4375, 30}, 
-  {4998, 47}, 
-  {5000, 48}, 
+  {4998, 49}, 
+  {5000, 50}, 
   {5805, 23}, 
-  {5807, 53}, 
-  {5900, 54}, 
+  {5807, 55}, 
+  {5900, 56}, 
   {6281, 24}, 
   {6283, 25}, 
   {6285, 26}, 
@@ -42291,7 +42324,7 @@ const DbWriteValueToDataPointAtKeyPressAndJumpToSpecificDisplay WRITE_VALUE_TO_D
   {6787, 16}, 
   {6791, 17}, 
   {6795, 18}, 
-  {6812, 55}, 
+  {6812, 57}, 
   {6909, 30}, 
   {6914, 31}
 };
