@@ -541,6 +541,7 @@ typedef enum
   ANA_OUT_FUNC_USER_DEFINED_1,
   ANA_OUT_FUNC_USER_DEFINED_2,
   ANA_OUT_FUNC_USER_DEFINED_3,
+  ANA_OUT_FUNC_DOSING_PUMP,
 
   // insert analog output functions above
   NO_OF_ANA_OUT_FUNC,

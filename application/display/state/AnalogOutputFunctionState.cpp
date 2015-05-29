@@ -66,7 +66,8 @@ namespace mpc
       { ANA_OUT_FUNC_VFD_6,          SID_AO_VFD_FREQUENCY_PUMP_6             },
       { ANA_OUT_FUNC_USER_DEFINED_1, SID_AO_USER_DEFINED_1                   },
       { ANA_OUT_FUNC_USER_DEFINED_2, SID_AO_USER_DEFINED_2                   },
-      { ANA_OUT_FUNC_USER_DEFINED_3, SID_AO_USER_DEFINED_3                   }
+      { ANA_OUT_FUNC_USER_DEFINED_3, SID_AO_USER_DEFINED_3                   },
+      { ANA_OUT_FUNC_DOSING_PUMP,    SID_AO_DOSING_PUMP_SETPOINT             }
 
     };
 

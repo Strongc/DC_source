@@ -210,6 +210,9 @@ void AnaOutCtrl::SetSubjectPointer(int Id, Subject* pSubject)
     case SP_AOC_ANA_OUT_FUNC_USER_DEFINED_3:
       mpAnaOutInputValue[ANA_OUT_FUNC_USER_DEFINED_3].Attach(pSubject);
       break;
+    case SP_AOC_ANA_OUT_FUNC_DOSING_PUMP:
+      mpAnaOutInputValue[ANA_OUT_FUNC_DOSING_PUMP].Attach(pSubject);
+      break;
 
 
     // Analog outputs configuration
