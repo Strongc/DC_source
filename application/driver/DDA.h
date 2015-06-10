@@ -5,7 +5,7 @@
 /*                           DK-8850 BJERRINGBRO                            */
 /*                                 DENMARK                                  */
 /*               --------------------------------------------               */
-/*                Project: H2S Prevention                                     */
+/*                Project: CU 351 Platform                                  */
 /*               --------------------------------------------               */
 /*                                                                          */
 /*               (C) Copyright Grundfos                                     */
@@ -18,45 +18,34 @@
 /*               wise  utilized by anybody without GRUNDFOS'                */
 /*               expressed written permission.                              */
 /****************************************************************************/
-/* CLASS NAME       : DDACtrl                                               */
+/* CLASS NAME       : DDA                                           */
 /*                                                                          */
-/* FILE NAME        : DDACtrl.h                                     */
+/* FILE NAME        : DDAFuncHandler.h                                         */
 /*                                                                          */
-/* CREATED DATE     : 05-07-2013 dd-mm-yyyy                                 */
+/* CREATED DATE     : 10-08-2009 dd-mm-yyyy                                 */
 /*                                                                          */
-/* SHORT FILE DESCRIPTION : Controls the DDA functionality */
-/*                                                                          */
-/*                                                                          */
-/*                                                                          */
-/*                                                                          */
-/*                                                                          */
+/* SHORT FILE DESCRIPTION : MP204 driver                                    */
 /****************************************************************************/
 /*****************************************************************************
    Protect against multiple inclusion through the use of guards:
  ****************************************************************************/
-#ifndef mrcDDACtrl_h
-#define mrcDDACtrl_h
+#ifndef __DDA_MODULE_H__
+#define __DDA_MODULE_H__
 
 /*****************************************************************************
   SYSTEM INCLUDES
  *****************************************************************************/
-#include <AppTypeDefs.h>
 
 /*****************************************************************************
   PROJECT INCLUDES
  *****************************************************************************/
-#include "cu351_cpu_types.h"
+#include <cu351_cpu_types.h>
 #include <Observer.h>
 #include <SubTask.h>
 #include <SwTimerBassClass.h>
 #include <SwTimer.h>
-#include <EnumDataPoint.h>
-#include <BoolDataPoint.h>
-#include <U32DataPoint.h>
-#include <U16DataPoint.h>
-#include <AlarmDelay.h>
-#include <U8DataPoint.h>
 #include <FloatDataPoint.h>
+
 
 /*****************************************************************************
   LOCAL INCLUDES
@@ -66,60 +55,33 @@
   DEFINES
  *****************************************************************************/
 
-
 /*****************************************************************************
   TYPE DEFINES
  *****************************************************************************/
 
-typedef enum
-{
-  DDA_PREVENTED,
-  DDA_LEGAL
-} DDA_STATE;
-
-
-typedef enum
-{
-  DDA_LEGAL_WAITING,
-  DDA_LEGAL_REQUESTED,
-  DDA_LEGAL_RUNNING
-} DDA_LEGAL_STATE;
-
-
-typedef enum
-{
-  FIRST_DDA_FAULT_OBJ,
-  DDA_FAULT_OBJ = FIRST_DDA_FAULT_OBJ,
-  //DDA_FAULT_OBJ_EMPTY_TANK,
-
-  NO_OF_DDA_FAULT_OBJ,
-  LAST_DDA_FAULT_OBJ = NO_OF_DDA_FAULT_OBJ - 1
-}DDA_FAULT_OBJ_TYPE;
-
-typedef struct
-{
- U8 Pumping_Status;
- U8 Chemical_Status;
- U8 Alarm_status;
-
-}DDA_STATUS;
 
 /*****************************************************************************
- * CLASS:
- * DESCRIPTION:
- *
+  FORWARDS
  *****************************************************************************/
-class DDACtrl : public SubTask, public SwTimerBaseClass
+class GeniSlaveIf;
+
+/*****************************************************************************
+ * CLASS: MP204Module
+ * DESCRIPTION: MP204 driver
+ *****************************************************************************/
+class DDA : public SubTask, public Observer
 {
   public:
     /********************************************************************
-    LIFECYCLE - Default constructor.
+    LIFECYCLE - Constructor
     ********************************************************************/
-    DDACtrl();
+    DDA();
+
     /********************************************************************
-    LIFECYCLE - Destructor.
+    DDAModule - Destructor
     ********************************************************************/
-    ~DDACtrl();
+    ~DDA();
+
     /********************************************************************
     ASSIGNMENT OPERATOR
     ********************************************************************/
@@ -127,52 +89,44 @@ class DDACtrl : public SubTask, public SwTimerBaseClass
     /********************************************************************
     OPERATIONS
     ********************************************************************/
-    void InitSubTask();
-    void RunSubTask();
+    // Subject
+    void SetSubjectPointer(int Id, Subject* pSubject);
+    void ConnectToSubjects();
     void Update(Subject* pSubject);
     void SubscribtionCancelled(Subject* pSubject);
-    void ConnectToSubjects();
-    void SetSubjectPointer(int id, Subject* pSubject);
 
+    // SubTask
+    void InitSubTask(void);
+    void RunSubTask();
+
+
+    
   private:
     /********************************************************************
     OPERATIONS
     ********************************************************************/
-    void StopTimers(void);
+
 
     /********************************************************************
-    ATTRIBUTE
+    ATTRIBUTES
     ********************************************************************/
 
-    SubjectPtr<BoolDataPoint*> mpDDAed;
-    SubjectPtr<U32DataPoint*> mpDDALevelAct;
-    SubjectPtr<FloatDataPoint*> mpDDADosingFeedTankLevel;
-    SubjectPtr<FloatDataPoint*> mpDDAChemicalTotalDosed;
-    SubjectPtr<EnumDataPoint<DOSING_PUMP_TYPE_TYPE>*>  mpDosingPumpType;
+    // Config
+    
+    // Input
 
-    DDA_STATE mDDAState;
-    DDA_LEGAL_STATE mDDALegalState;
-    //DDA_STATUS *dda_pump_status;
-    //DOSING_PUMP_TYPE_TYPE mDosingPumpType;
+    SubjectPtr<FloatDataPoint*> mpSetDosingRef;
 
-    bool mDDAWaitTimerFlag;
-    bool mDDARunTimerFlag;
-    bool mRunRequestedFlag;
+    GeniSlaveIf* mpGeniSlaveIf;
 
-    /* Variables for alarm handling */
-    SubjectPtr<AlarmDataPoint*> mDDAAlarms[NO_OF_DDA_FAULT_OBJ];
-    AlarmDelay* mpDDAAlarmDelay[NO_OF_DDA_FAULT_OBJ];
-    bool mDDAAlarmDelayCheckFlag[NO_OF_DDA_FAULT_OBJ];
-    static int counter;
 
+  
   protected:
     /********************************************************************
     OPERATIONS
     ********************************************************************/
-
-    /********************************************************************
+   /********************************************************************
     ATTRIBUTE
     ********************************************************************/
 };
-
 #endif

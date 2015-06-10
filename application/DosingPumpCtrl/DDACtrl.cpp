@@ -121,8 +121,8 @@ void DDACtrl::InitSubTask()
   //mpTimerObjList[DDA_RUN_TIMER] = new SwTimer(mpDDARunTime->GetValue(), S, false, false, this);
   //mpTimerObjList[ANTI_SEIZE_WAIT_TIMER] = new SwTimer(mpDDAWaitTime->GetValue(), S, true, false, this);
   mpDDALevelAct->SetValue(10);
-  mpDDADosingFeedTankLevel->SetValue(20);
-  mpDDAChemicalTotalDosed->SetValue(30);
+  mpDDADosingFeedTankLevel->SetAsFloat(23.55555);
+  mpDDAChemicalTotalDosed->SetAsFloat(32.55555);
   //mRunRequestedFlag = true;
   for (unsigned int i = FIRST_DDA_FAULT_OBJ; i < NO_OF_DDA_FAULT_OBJ; i++)
   {
@@ -144,8 +144,8 @@ void DDACtrl::RunSubTask()
   ALARM_ID_TYPE new_alarm_code = ALARM_ID_NO_ALARM;
   bool dda_ed = 0;
   U32 dda_h2s_level_act;
-  U32 dda_dosing_feed_tank_level;
-  U32 dda_chemical_total_dosed;
+  float dda_dosing_feed_tank_level;
+  float dda_chemical_total_dosed;
 
   dda_ed = mpDDAed->GetValue();
   dda_h2s_level_act = mpDDALevelAct->GetValue();
@@ -243,22 +243,22 @@ void DDACtrl::SetSubjectPointer(int id, Subject* pSubject)
 {
   switch (id)
   {
-    case SP_DDA_DOSING_PUMP_ENABLED:
+    case SP_DDAC_DOSING_PUMP_ENABLED:
       mpDDAed.Attach(pSubject);
       break;
-    case SP_DDA_H2S_LEVEL_ACT:
+    case SP_DDAC_H2S_LEVEL_ACT:
       mpDDALevelAct.Attach(pSubject);
       break;
-    case SP_DDA_DOSING_FEED_TANK_LEVEL:
+    case SP_DDAC_DOSING_FEED_TANK_LEVEL:
       mpDDADosingFeedTankLevel.Attach(pSubject);
       break;
-    case SP_DDA_CHEMICAL_TOTAL_DOSED:
+    case SP_DDAC_CHEMICAL_TOTAL_DOSED:
       mpDDAChemicalTotalDosed.Attach(pSubject);
       break;
-    case SP_DDA_DOSING_PUMP_TYPE:
+    case SP_DDAC_DOSING_PUMP_TYPE:
       mpDosingPumpType.Attach(pSubject);
       break;
-    case SP_DDA_SYS_ALARM_DDA_FAULT_ALARM_OBJ:
+    case SP_DDAC_SYS_ALARM_DDA_FAULT_ALARM_OBJ:
       mDDAAlarms[DDA_FAULT_OBJ].Attach(pSubject);
       mpDDAAlarmDelay[DDA_FAULT_OBJ]->SetSubjectPointer(id, pSubject);
       break;
