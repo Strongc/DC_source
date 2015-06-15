@@ -79,6 +79,9 @@ const INFO_DATA common_info_tab[COM_INFO_LEN] =
   {0x83    ,  GENI_UNIT_1MBAR,     0,       0},     //  COM_INDEX_EXT_PRESSURE_1MBAR
   {0x83    ,  GENI_UNIT_DOT1M3,    0,       0},     //  COM_INDEX_EXT_TOTAL_PUMPED_VOLUME_DOT1M3
   {0x83    ,  GENI_UNIT_DOT1M3,    0,       0},     //  COM_INDEX_EXT_TOTAL_OVERFLOW_VOLUME_DOT1M3
-  {0x82	   ,  GENI_UNIT_2HZ	  ,    GENI_2HZ_ZERO_VALUE,    	GENI_2HZ_RANGE}
+  {0x82	   ,  GENI_UNIT_2HZ	  ,    GENI_2HZ_ZERO_VALUE,    	GENI_2HZ_RANGE},
+  {0x83    ,  GENI_UNIT_1PPM,      0,       0},     //  33 COM_INDEX_EXT_PERCENTAGE_1PPM
+  {0x83    ,  GENI_UNIT_DOT1LH,    0,       0},     //  34 COM_INDEX_EXT_FLOW_DOT1LH
+  {0x83    ,  GENI_UNIT_1ML,       0,       0},     //  35 COM_INDEX_EXT_VOLUME_1ML 
 
 };

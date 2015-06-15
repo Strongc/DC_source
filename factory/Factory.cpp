@@ -61,6 +61,7 @@
 #include "application\alarm\CustomRelayAlarmCtrl.h"
 #include "application\relay\CustomRelayCtrl.h"
 #include "application\dailyemptyingctrl\DailyEmptyingCtrl.h"
+#include "application\driver\DDA.h"
 #include "application\dosingpumpctrl\DDACtrl.h"
 #include "application\driver\DiFuncHandler.h"
 #include "application\alarm\DigitalInputAlarmCtrl.h"
@@ -501,7 +502,8 @@ typedef enum
   ObTypeScadaStateCtrl,
   ObTypeWatchSmsAlarm,
   ObTypeDDACtrl,
-  ObTypeNonGFDosingPumpCtrl
+  ObTypeNonGFDosingPumpCtrl,
+  ObTypeDDA
 } OBSERVER_TYPE;
 
 typedef enum
@@ -4276,23 +4278,27 @@ const DbSubject SUBJECTS[] = {
   {4545, SUBJECT_TYPE_BOOLDATAPOINT}, // mixe_falling_level_only
   {4546, SUBJECT_TYPE_INTDATAPOINT}, // unit_ppm_actual
   {4547, SUBJECT_TYPE_INTDATAPOINT}, // unit_level_actual
-  {4548, SUBJECT_TYPE_BOOLDATAPOINT}, // dosing_pump_enabled
+  {4548, SUBJECT_TYPE_BOOLDATAPOINT}, // dosing_pump_installed
   {4549, SUBJECT_TYPE_ENUMDATAPOINT}, // dosing_pump_type
   {4550, SUBJECT_TYPE_INTDATAPOINT}, // h2s_level_act
-  {4551, SUBJECT_TYPE_INTDATAPOINT}, // dosing_feed_tank_level
-  {4552, SUBJECT_TYPE_INTDATAPOINT}, // chemical_total_dosed
-  {4553, SUBJECT_TYPE_ALARMCONFIG}, // sys_alarm_dda_fault_alarm_conf
-  {4554, SUBJECT_TYPE_ALARMDATAPOINT}, // sys_alarm_dda_fault_alarm_obj
-  {4555, SUBJECT_TYPE_ALARMCONFIG}, // sys_alarm_dosing_pump_alarm_conf
-  {4556, SUBJECT_TYPE_ALARMDATAPOINT}, // sys_alarm_dosing_pump_alarm_obj
-  {4557, SUBJECT_TYPE_INTDATAPOINT}, // dig_in_func_input_dosing_pump
-  {4558, SUBJECT_TYPE_ENUMDATAPOINT}, // dig_in_func_state_dosing_pump
-  {4559, SUBJECT_TYPE_BOOLDATAPOINT}, // relay_status_relay_func_dosing_pump
-  {4560, SUBJECT_TYPE_INTDATAPOINT}, // relay_func_output_dosing_pump
-  {4561, SUBJECT_TYPE_FLOATDATAPOINT} // measured_value_chemical_container
+  {4551, SUBJECT_TYPE_INTDATAPOINT}, // h2s_level_today
+  {4552, SUBJECT_TYPE_INTDATAPOINT}, // h2s_level_yesterday
+  {4553, SUBJECT_TYPE_FLOATDATAPOINT}, // dosing_feed_tank_level
+  {4554, SUBJECT_TYPE_FLOATDATAPOINT}, // chemical_total_dosed
+  {4555, SUBJECT_TYPE_FLOATDATAPOINT}, // set_dosing_ref
+  {4556, SUBJECT_TYPE_ALARMCONFIG}, // sys_alarm_dda_fault_alarm_conf
+  {4557, SUBJECT_TYPE_ALARMDATAPOINT}, // sys_alarm_dda_fault_alarm_obj
+  {4558, SUBJECT_TYPE_ALARMCONFIG}, // sys_alarm_dosing_pump_alarm_conf
+  {4559, SUBJECT_TYPE_ALARMDATAPOINT}, // sys_alarm_dosing_pump_alarm_obj
+  {4560, SUBJECT_TYPE_INTDATAPOINT}, // dig_in_func_input_dosing_pump
+  {4561, SUBJECT_TYPE_ENUMDATAPOINT}, // dig_in_func_state_dosing_pump
+  {4562, SUBJECT_TYPE_BOOLDATAPOINT}, // relay_status_relay_func_dosing_pump
+  {4563, SUBJECT_TYPE_INTDATAPOINT}, // relay_func_output_dosing_pump
+  {4564, SUBJECT_TYPE_FLOATDATAPOINT}, // measured_value_chemical_container
+  {4565, SUBJECT_TYPE_FLOATDATAPOINT} // ao_dosing_pump_setpoint
 };
 
-const int SUBJECTS_CNT = 3180;
+const int SUBJECTS_CNT = 3184;
 
 /**************************************************************************
  FloatDataPoint table
@@ -4942,10 +4948,14 @@ const DbFloatDataPoint FLOAT_DATAPOINTS[] = {
   {4470, 0.000000f, 99999996802856925000000000000000000000.000000f, 0.000000f, Q_ENERGY}, 
   {4512, 0.000000f, 100000000.000000f, 0.000000f, Q_VOLUME}, 
   {4514, 0.000000f, 100000000.000000f, 0.000000f, Q_VOLUME}, 
-  {4561, 0.000000f, 0.000000f, 0.000000f, Q_HEIGHT}
+  {4553, 0.000000f, 999.900024f, 0.100000f, Q_DEPTH}, 
+  {4554, 0.000000f, 999.900024f, 0.100000f, Q_HEIGHT}, 
+  {4555, 0.000000f, 999.000000f, 0.000000f, Q_HEIGHT}, 
+  {4564, 0.000000f, 100.000000f, 0.000000f, Q_HEIGHT}, 
+  {4565, 0.000000f, 100.000000f, 0.000000f, Q_HEIGHT}
 };
 
-const int FLOAT_DATAPOINTS_CNT = 645;
+const int FLOAT_DATAPOINTS_CNT = 649;
 
 /**************************************************************************
  IntDataPoint table
@@ -5707,10 +5717,10 @@ const DbIntDataPoint INT_DATAPOINTS[] = {
   {4546, DP_MIN_MAX_TYPE_I32, 0, 10, 0, Q_NO_UNIT}, 
   {4547, DP_MIN_MAX_TYPE_I32, 0, 10, 0, Q_NO_UNIT}, 
   {4550, DP_MIN_MAX_TYPE_U32, 0, 99999999, 0, Q_PARTS_PER_MILLION}, 
-  {4551, DP_MIN_MAX_TYPE_U32, 0, 99999999, 0, Q_DEPTH}, 
-  {4552, DP_MIN_MAX_TYPE_U32, 0, 99999999, 0, Q_VOLUME}, 
-  {4557, DP_MIN_MAX_TYPE_U32, 0, 30, 0, Q_NO_UNIT}, 
-  {4560, DP_MIN_MAX_TYPE_U32, 0, 16, 0, Q_NO_UNIT}
+  {4551, DP_MIN_MAX_TYPE_U32, 0, 99999999, 0, Q_PARTS_PER_MILLION}, 
+  {4552, DP_MIN_MAX_TYPE_U32, 0, 99999999, 0, Q_PARTS_PER_MILLION}, 
+  {4560, DP_MIN_MAX_TYPE_U32, 0, 30, 0, Q_NO_UNIT}, 
+  {4563, DP_MIN_MAX_TYPE_U32, 0, 16, 0, Q_NO_UNIT}
 };
 
 const int INT_DATAPOINTS_CNT = 760;
@@ -6177,7 +6187,7 @@ const DbEnumDataPoint ENUM_DATAPOINTS[] = {
   {4499, ENUM_TYPE_DIGITAL_INPUT_FUNC_STATE, DIGITAL_INPUT_FUNC_STATE_NOT_CONFIGURED}, 
   {4504, ENUM_TYPE_SCADA_STATE, SCADA_STATE_IDLE}, 
   {4549, ENUM_TYPE_DOSING_PUMP_TYPE, DOSING_PUMP_TYPE_DDA}, 
-  {4558, ENUM_TYPE_DIGITAL_INPUT_FUNC_STATE, DIGITAL_INPUT_FUNC_STATE_NOT_CONFIGURED}
+  {4561, ENUM_TYPE_DIGITAL_INPUT_FUNC_STATE, DIGITAL_INPUT_FUNC_STATE_NOT_CONFIGURED}
 };
 
 const int ENUM_DATAPOINTS_CNT = 459;
@@ -6800,7 +6810,7 @@ const DbBoolDataPoint BOOL_DATAPOINTS[] = {
   {4520, 0}, 
   {4545, 0}, 
   {4548, 0}, 
-  {4559, 0}
+  {4562, 0}
 };
 
 const int BOOL_DATAPOINTS_CNT = 550;
@@ -6918,8 +6928,8 @@ const DbAlarmConfig ALARM_CONFIGS[] = {
   {4477, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1.0, SUBJECT_TYPE_BOOLDATAPOINT, ALARM_CRITERIA_E, 1, 1, 0, 0, 0, 0, 1, 1, Q_NO_UNIT}, 
   {4478, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1.0, SUBJECT_TYPE_BOOLDATAPOINT, ALARM_CRITERIA_E, 1, 1, 0, 0, 0, 0, 1, 1, Q_NO_UNIT}, 
   {4505, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1.0, SUBJECT_TYPE_BOOLDATAPOINT, ALARM_CRITERIA_E, 1, 1, 0, 0, 0, 0, 1, 1, Q_NO_UNIT}, 
-  {4553, 0, 0, 0, 0, 0, 0, 1, 1, 1, .0, SUBJECT_TYPE_BOOLDATAPOINT, ALARM_CRITERIA_E, 1, 1, 0, 0, 0, 0, 1, 1, Q_NO_UNIT}, 
-  {4555, 0, 0, 0, 0, 0, 0, 1, 1, 1, .0, SUBJECT_TYPE_BOOLDATAPOINT, ALARM_CRITERIA_E, 1, 1, 0, 0, 0, 0, 1, 1, Q_NO_UNIT}
+  {4556, 0, 0, 0, 0, 0, 0, 1, 1, 1, .0, SUBJECT_TYPE_BOOLDATAPOINT, ALARM_CRITERIA_E, 1, 1, 0, 0, 0, 0, 1, 1, Q_NO_UNIT}, 
+  {4558, 0, 0, 0, 0, 0, 0, 1, 1, 1, .0, SUBJECT_TYPE_BOOLDATAPOINT, ALARM_CRITERIA_E, 1, 1, 0, 0, 0, 0, 1, 1, Q_NO_UNIT}
 };
 
 const int ALARM_CONFIGS_CNT = 95;
@@ -7254,8 +7264,8 @@ const DbAlarmDataPoint ALARM_DATAPOINTS[] = {
   {4483, ERRONEOUS_UNIT_PUMP, 5, 4477, 4478, 22}, 
   {4484, ERRONEOUS_UNIT_PUMP, 6, 4477, 4478, 22}, 
   {4506, ERRONEOUS_UNIT_SYSTEM, 0, 4505, 622, 253}, 
-  {4554, ERRONEOUS_UNIT_SYSTEM, 0, 4553, 622, 254}, 
-  {4556, ERRONEOUS_UNIT_SYSTEM, 0, 4555, 622, 255}
+  {4557, ERRONEOUS_UNIT_SYSTEM, 0, 4556, 622, 254}, 
+  {4559, ERRONEOUS_UNIT_SYSTEM, 0, 4558, 622, 255}
 };
 
 const int ALARM_DATAPOINTS_CNT = 328;
@@ -7832,10 +7842,11 @@ const DbObserver OBSERVERS[] = {
   {1035, ObTypeScadaStateCtrl, -1}, // scada_state_ctrl
   {1036, ObTypeWatchSmsAlarm, -1}, // watch_sms_alarm
   {1037, ObTypeDDACtrl, -1}, // dda_ctrl
-  {1038, ObTypeNonGFDosingPumpCtrl, -1} // dosing_pump_ctrl
+  {1038, ObTypeNonGFDosingPumpCtrl, -1}, // dosing_pump_ctrl
+  {1039, ObTypeDDA, -1} // dda
 };
 
-const int OBSERVERS_CNT = 569;
+const int OBSERVERS_CNT = 570;
 
 /**************************************************************************
  Display Observer Single Subject table
@@ -10906,21 +10917,23 @@ const DbDisplayObserverSingleSubject DISPLAY_OBSERVER_SINGLE_SUBJECT[] = {
   {6905, ObTypeNumberQuantity, 4521}, 
   {6907, ObTypeOnOffCheckBox, 4545}, 
   {6909, ObTypeWriteValueToDataPointAtKeyPressAndJumpToSpecificDisplay, 603}, 
-  {6911, ObTypeAlarmEnabledIconState, 4553}, 
-  {6912, ObTypeWarningEnabledIconState, 4553}, 
+  {6911, ObTypeAlarmEnabledIconState, 4556}, 
+  {6912, ObTypeWarningEnabledIconState, 4556}, 
   {6914, ObTypeWriteValueToDataPointAtKeyPressAndJumpToSpecificDisplay, 603}, 
-  {6916, ObTypeAlarmEnabledIconState, 4555}, 
-  {6917, ObTypeWarningEnabledIconState, 4555}, 
-  {6919, ObTypeNumberQuantity, 4550}, 
-  {6921, ObTypeNumberQuantity, 4551}, 
-  {6923, ObTypeNumberQuantity, 4552}, 
-  {6925, ObTypeOnOffCheckBox, 4548}, 
-  {6930, ObTypeAvalibleIfSet, 4548}, 
-  {6936, ObTypeModeCheckBox, 4549}, 
-  {6938, ObTypeModeCheckBox, 4549}
+  {6916, ObTypeAlarmEnabledIconState, 4558}, 
+  {6917, ObTypeWarningEnabledIconState, 4558}, 
+  {6919, ObTypeModeCheckBox, 3440}, 
+  {6921, ObTypeNumberQuantity, 4550}, 
+  {6923, ObTypeNumberQuantity, 4553}, 
+  {6925, ObTypeNumberQuantity, 4554}, 
+  {6927, ObTypeOnOffCheckBox, 4548}, 
+  {6929, ObTypeNumberQuantity, 4554}, 
+  {6934, ObTypeAvalibleIfSet, 4548}, 
+  {6940, ObTypeModeCheckBox, 4549}, 
+  {6942, ObTypeModeCheckBox, 4549}
 };
 
-const int DISPLAY_OBSERVER_SINGLE_SUBJECT_CNT = 3077;
+const int DISPLAY_OBSERVER_SINGLE_SUBJECT_CNT = 3079;
 
 /**************************************************************************
  Observer Task table
@@ -11303,6 +11316,7 @@ const DbObserverTask OBSERVER_TASK[] = {
   {1036, 4}, 
   {1037, 4}, 
   {1038, 4}, 
+  {1039, 4}, 
   {12, 5}, 
   {16, 5}, 
   {161, 5}, 
@@ -11322,7 +11336,7 @@ const DbObserverTask OBSERVER_TASK[] = {
   {990, 5}
 };
 
-const int OBSERVER_TASK_CNT = 394;
+const int OBSERVER_TASK_CNT = 395;
 
 const DbObserverSubject OBSERVER_SUBJECTS[] = {
   {1, 1, SP_DC_CONTRAST}, 
@@ -11757,8 +11771,8 @@ const DbObserverSubject OBSERVER_SUBJECTS[] = {
   {4435, 15, SP_DIFH_DIG_IN_FUNC_INPUT_WATER_ON_PIT_FLOOR}, 
   {4498, 15, SP_DIFH_DIG_IN_FUNC_INPUT_SERVICE_MODE}, 
   {4499, 15, SP_DIFH_DIG_IN_FUNC_STATE_SERVICE_MODE}, 
-  {4557, 15, SP_DIFH_DIG_IN_FUNC_INPUT_DOSING_PUMP}, 
-  {4558, 15, SP_DIFH_DIG_IN_FUNC_STATE_DOSING_PUMP}, 
+  {4560, 15, SP_DIFH_DIG_IN_FUNC_INPUT_DOSING_PUMP}, 
+  {4561, 15, SP_DIFH_DIG_IN_FUNC_STATE_DOSING_PUMP}, 
   {66, 16, SP_DOCSP_DIG_OUT_1_CONF_RELAY_FUNC}, 
   {67, 16, SP_DOCSP_DIG_OUT_2_CONF_RELAY_FUNC}, 
   {68, 16, SP_DOCSP_DIG_OUT_3_CONF_RELAY_FUNC}, 
@@ -12078,7 +12092,7 @@ const DbObserverSubject OBSERVER_SUBJECTS[] = {
   {4094, 221, SP_AIMVC_MEASURED_VALUE_POWER_PUMP_4}, 
   {4095, 221, SP_AIMVC_MEASURED_VALUE_POWER_PUMP_5}, 
   {4096, 221, SP_AIMVC_MEASURED_VALUE_POWER_PUMP_6}, 
-  {4561, 221, SP_AIMVC_MEASURED_VALUE_CHEMICAL_CONTAINER}, 
+  {4564, 221, SP_AIMVC_MEASURED_VALUE_CHEMICAL_CONTAINER}, 
   {66, 223, SP_RFH_DIG_OUT_1_CONF_RELAY_FUNC}, 
   {67, 223, SP_RFH_DIG_OUT_2_CONF_RELAY_FUNC}, 
   {68, 223, SP_RFH_DIG_OUT_3_CONF_RELAY_FUNC}, 
@@ -12194,8 +12208,8 @@ const DbObserverSubject OBSERVER_SUBJECTS[] = {
   {3714, 223, SP_RFH_RELAY_FUNC_OUTPUT_VFD_4_REVERSE}, 
   {3715, 223, SP_RFH_RELAY_FUNC_OUTPUT_VFD_5_REVERSE}, 
   {3716, 223, SP_RFH_RELAY_FUNC_OUTPUT_VFD_6_REVERSE}, 
-  {4559, 223, SP_RFH_RELAY_FUNC_DOSING_PUMP}, 
-  {4560, 223, SP_RFH_RELAY_FUNC_OUTPUT_DOSING_PUMP}, 
+  {4562, 223, SP_RFH_RELAY_FUNC_DOSING_PUMP}, 
+  {4563, 223, SP_RFH_RELAY_FUNC_OUTPUT_DOSING_PUMP}, 
   {278, 225, SP_ERROR_LOG_VALUES}, 
   {275, 227, SP_SRC_RELAY_STATUS}, 
   {279, 227, SP_SRC_INPUT_VALUE}, 
@@ -12563,12 +12577,12 @@ const DbObserverSubject OBSERVER_SUBJECTS[] = {
   {3646, 255, SP_PC_PUMP_4_REF_LEVEL}, 
   {3647, 255, SP_PC_PUMP_5_REF_LEVEL}, 
   {3648, 255, SP_PC_PUMP_6_REF_LEVEL}, 
-  {3649, 255, SP_PC_RUN_FOR_LOWEST_STOP_REF_6}, 
-  {3649, 255, SP_PC_RUN_FOR_LOWEST_STOP_REF_3}, 
+  {3649, 255, SP_PC_RUN_FOR_LOWEST_STOP_REF_4}, 
   {3649, 255, SP_PC_RUN_FOR_LOWEST_STOP_REF_2}, 
   {3649, 255, SP_PC_RUN_FOR_LOWEST_STOP_REF_1}, 
   {3649, 255, SP_PC_RUN_FOR_LOWEST_STOP_REF_5}, 
-  {3649, 255, SP_PC_RUN_FOR_LOWEST_STOP_REF_4}, 
+  {3649, 255, SP_PC_RUN_FOR_LOWEST_STOP_REF_3}, 
+  {3649, 255, SP_PC_RUN_FOR_LOWEST_STOP_REF_6}, 
   {3686, 255, SP_PC_PUMP_1_LAST_START_TIME}, 
   {3687, 255, SP_PC_PUMP_2_LAST_START_TIME}, 
   {3688, 255, SP_PC_PUMP_3_LAST_START_TIME}, 
@@ -13009,8 +13023,8 @@ const DbObserverSubject OBSERVER_SUBJECTS[] = {
   {4429, 286, SP_ASP_SYS_ALARM_WATER_ON_PIT_FLOOR}, 
   {4477, 286, SP_ASP_PG1_ALARM_MOISTURE_PTC_IO351}, 
   {4478, 286, SP_ASP_PG2_ALARM_MOISTURE_PTC_IO351}, 
-  {4553, 286, SP_ASP_SYS_ALARM_DDA_FAULT}, 
-  {4555, 286, SP_ASP_SYS_ALARM_DOSING_PUMP}, 
+  {4556, 286, SP_ASP_SYS_ALARM_DDA_FAULT}, 
+  {4558, 286, SP_ASP_SYS_ALARM_DOSING_PUMP}, 
   {382, 331, SP_SRTC_SYSTEM_RUN_TIME}, 
   {602, 331, SP_SRTC_POWER_ON_CNT}, 
   {747, 332, SP_SSSP_WORK_ENABLED}, 
@@ -14411,6 +14425,7 @@ const DbObserverSubject OBSERVER_SUBJECTS[] = {
   {3732, 501, SP_AOC_ANA_OUT_FUNC_USER_DEFINED_1}, 
   {3733, 501, SP_AOC_ANA_OUT_FUNC_USER_DEFINED_2}, 
   {3734, 501, SP_AOC_ANA_OUT_FUNC_USER_DEFINED_3}, 
+  {4565, 501, SP_AOC_ANA_OUT_FUNC_DOSING_PUMP}, 
   {1470, 502, SP_ASAC_MEASURED_VALUE}, 
   {1491, 502, SP_ASAC_SENSOR_ALARM_OBJ}, 
   {1471, 503, SP_ASAC_MEASURED_VALUE}, 
@@ -17514,20 +17529,23 @@ const DbObserverSubject OBSERVER_SUBJECTS[] = {
   {4500, 1036, SP_WSA_SCADA_WATCH_ENABLED}, 
   {4504, 1036, SP_WSA_SCADA_STATE}, 
   {4510, 1036, SP_WSA_SCADA_STATE_UPDATED}, 
-  {4548, 1037, SP_DDA_DOSING_PUMP_ENABLED}, 
-  {4549, 1037, SP_DDA_DOSING_PUMP_TYPE}, 
-  {4550, 1037, SP_DDA_H2S_LEVEL_ACT}, 
-  {4551, 1037, SP_DDA_DOSING_FEED_TANK_LEVEL}, 
-  {4552, 1037, SP_DDA_CHEMICAL_TOTAL_DOSED}, 
-  {4554, 1037, SP_DDA_SYS_ALARM_DDA_FAULT_ALARM_OBJ}, 
-  {4548, 1038, SP_DPC_DOSING_PUMP_ENABLED}, 
+  {4548, 1037, SP_DDAC_DOSING_PUMP_INSTALLED}, 
+  {4549, 1037, SP_DDAC_DOSING_PUMP_TYPE}, 
+  {4550, 1037, SP_DDAC_H2S_LEVEL_ACT}, 
+  {4551, 1037, SP_DDAC_H2S_LEVEL_TODAY}, 
+  {4552, 1037, SP_DDAC_H2S_LEVEL_YESTERDAY}, 
+  {4553, 1037, SP_DDAC_DOSING_FEED_TANK_LEVEL}, 
+  {4554, 1037, SP_DDAC_CHEMICAL_TOTAL_DOSED}, 
+  {4557, 1037, SP_DDAC_SYS_ALARM_DDA_FAULT_ALARM_OBJ}, 
+  {4548, 1038, SP_DPC_DOSING_PUMP_INSTALLED}, 
   {4549, 1038, SP_DPC_DOSING_PUMP_TYPE}, 
-  {4556, 1038, SP_DPC_SYS_ALARM_DOSING_PUMP_ALARM_OBJ}, 
-  {4558, 1038, SP_DPC_DOSING_PUMP_DIG_IN_REQUEST}, 
-  {4561, 1038, SP_DPC_MEASURED_VALUE_CHEMICAL_CONTAINER}
+  {4559, 1038, SP_DPC_SYS_ALARM_DOSING_PUMP_ALARM_OBJ}, 
+  {4561, 1038, SP_DPC_DOSING_PUMP_DIG_IN_REQUEST}, 
+  {4564, 1038, SP_DPC_MEASURED_VALUE_CHEMICAL_CONTAINER}, 
+  {4555, 1039, SP_DDA_SET_DOSING_REF}
 };
 
-const int OBSERVER_SUBJECTS_CNT = 6200;
+const int OBSERVER_SUBJECTS_CNT = 6204;
 
 const DbConfigSubject CONFIG_SUBJECTS_CONFIG[] = {
   {1}, // display_contrast
@@ -18753,10 +18771,10 @@ const DbConfigSubject CONFIG_SUBJECTS_CONFIG[] = {
   {4545}, // mixe_falling_level_only
   {4546}, // unit_ppm_actual
   {4547}, // unit_level_actual
-  {4548}, // dosing_pump_enabled
+  {4548}, // dosing_pump_installed
   {4549}, // dosing_pump_type
-  {4553}, // sys_alarm_dda_fault_alarm_conf
-  {4555} // sys_alarm_dosing_pump_alarm_conf
+  {4556}, // sys_alarm_dda_fault_alarm_conf
+  {4558} // sys_alarm_dosing_pump_alarm_conf
 };
 
 const int CONFIG_SUBJECTS_CONFIG_CNT = 1227;
@@ -19355,10 +19373,13 @@ const DbGeniAppIfSubject GENIAPPIF_SUBJECTS[] = {
   {4544}, 
   {4550}, 
   {4551}, 
-  {4552}
+  {4552}, 
+  {4553}, 
+  {4554}, 
+  {4555}
 };
 
-const int GENIAPPIF_SUBJECTS_CNT = 594;
+const int GENIAPPIF_SUBJECTS_CNT = 597;
 
 const DbComponent DISPLAY_COMPONENT[] = {
   {1, CmpTypeText, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0}, 
@@ -25456,31 +25477,35 @@ const DbComponent DISPLAY_COMPONENT[] = {
   {6916, CmpTypeAlarmEnabledIconState, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0}, 
   {6917, CmpTypeWarningEnabledIconState, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0}, 
   {6918, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0}, 
-  {6919, CmpTypeNumberQuantity, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0}, 
+  {6919, CmpTypeModeCheckBox, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0}, 
   {6920, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0}, 
   {6921, CmpTypeNumberQuantity, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0}, 
   {6922, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0}, 
   {6923, CmpTypeNumberQuantity, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0}, 
   {6924, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0}, 
-  {6925, CmpTypeOnOffCheckBox, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0}, 
-  {6926, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 178, 0}, 
-  {6927, CmpTypeGroup, 0, 0, 0, 0, 1, 0, 0, 0, 33, 239, 305, 0, 0}, 
-  {6928, CmpTypeListView, 6927, 0, 0, 0, 1, 0, 0, 0, 15, 239, 271, 0, 0}, 
-  {6929, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 179, 0}, 
-  {6930, CmpTypeAvalibleIfSet, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0}, 
+  {6925, CmpTypeNumberQuantity, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0}, 
+  {6926, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0}, 
+  {6927, CmpTypeOnOffCheckBox, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0}, 
+  {6928, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0}, 
+  {6929, CmpTypeNumberQuantity, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0}, 
+  {6930, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 178, 0}, 
   {6931, CmpTypeGroup, 0, 0, 0, 0, 1, 0, 0, 0, 33, 239, 305, 0, 0}, 
   {6932, CmpTypeListView, 6931, 0, 0, 0, 1, 0, 0, 0, 15, 239, 271, 0, 0}, 
-  {6933, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 137, 0}, 
-  {6934, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 1, 0, 239, 29, 0, 0}, 
-  {6935, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0}, 
-  {6936, CmpTypeModeCheckBox, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0}, 
-  {6937, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0}, 
-  {6938, CmpTypeModeCheckBox, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0}, 
-  {6939, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 143, 0}, 
-  {6940, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 35, 0}
+  {6933, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 179, 0}, 
+  {6934, CmpTypeAvalibleIfSet, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0}, 
+  {6935, CmpTypeGroup, 0, 0, 0, 0, 1, 0, 0, 0, 33, 239, 305, 0, 0}, 
+  {6936, CmpTypeListView, 6935, 0, 0, 0, 1, 0, 0, 0, 15, 239, 271, 0, 0}, 
+  {6937, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 137, 0}, 
+  {6938, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 1, 0, 239, 29, 0, 0}, 
+  {6939, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0}, 
+  {6940, CmpTypeModeCheckBox, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0}, 
+  {6941, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0}, 
+  {6942, CmpTypeModeCheckBox, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0}, 
+  {6943, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 143, 0}, 
+  {6944, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 35, 0}
 };
 
-const int DISPLAY_COMPONENT_CNT = 6117;
+const int DISPLAY_COMPONENT_CNT = 6121;
 
 const DbFrame DISPLAY_FRAME[] = {
   {633, 0, 1}, 
@@ -25795,8 +25820,8 @@ const DbListView DISPLAY_LISTVIEW[] = {
   {6885, 15, -1, 6103, 6100}, 
   {6895, 15, -1, 5768, 5767}, 
   {6903, 15, -1, 1813, 1821}, 
-  {6928, 15, 0, 0, 0}, 
-  {6932, 15, 0, 0, 0}
+  {6932, 15, 0, 0, 0}, 
+  {6936, 15, 0, 0, 0}
 };
 
 const int DISPLAY_LISTVIEW_CNT = 288;
@@ -26588,12 +26613,12 @@ const DbListViewColumns DISPLAY_LISTVIEW_COLUMNS[] = {
   {2, 6895, 72}, 
   {0, 6903, 164}, 
   {1, 6903, 62}, 
-  {0, 6928, 160}, 
-  {1, 6928, 64}, 
-  {2, 6928, 0}, 
-  {0, 6932, 164}, 
-  {1, 6932, 74}, 
-  {2, 6932, 0}
+  {0, 6932, 160}, 
+  {1, 6932, 64}, 
+  {2, 6932, 0}, 
+  {0, 6936, 164}, 
+  {1, 6936, 74}, 
+  {2, 6936, 0}
 };
 
 const int DISPLAY_LISTVIEW_COLUMNS_CNT = 792;
@@ -26623,7 +26648,7 @@ const DbListViewItem DISPLAY_LISTVIEW_ITEMS[] = {
   {1870, 49, 11}, 
   {2389, 49, 12}, 
   {2517, 49, 13}, 
-  {2833, 49, 14}, 
+  {2835, 49, 14}, 
   {27, 61, 0}, 
   {29, 67, 0}, 
   {30, 67, 1}, 
@@ -26861,58 +26886,59 @@ const DbListViewItem DISPLAY_LISTVIEW_ITEMS[] = {
   {254, 802, 4}, 
   {255, 802, 5}, 
   {256, 802, 6}, 
-  {328, 802, 7}, 
-  {329, 802, 8}, 
-  {330, 802, 9}, 
-  {331, 802, 10}, 
-  {333, 802, 12}, 
-  {334, 802, 13}, 
-  {335, 802, 14}, 
-  {336, 802, 15}, 
-  {337, 802, 16}, 
-  {338, 802, 17}, 
-  {340, 802, 19}, 
-  {341, 802, 20}, 
-  {342, 802, 21}, 
-  {343, 802, 22}, 
-  {344, 802, 23}, 
-  {345, 802, 24}, 
-  {960, 802, 26}, 
-  {961, 802, 27}, 
-  {962, 802, 28}, 
-  {963, 802, 29}, 
-  {964, 802, 30}, 
-  {965, 802, 31}, 
-  {967, 802, 33}, 
-  {1113, 802, 34}, 
-  {1114, 802, 35}, 
-  {1523, 802, 36}, 
-  {1524, 802, 37}, 
-  {1525, 802, 38}, 
-  {1527, 802, 40}, 
-  {1528, 802, 41}, 
-  {1529, 802, 42}, 
-  {1530, 802, 43}, 
-  {1531, 802, 44}, 
-  {1532, 802, 45}, 
-  {1534, 802, 47}, 
-  {1535, 802, 48}, 
-  {1536, 802, 49}, 
-  {1537, 802, 50}, 
-  {1538, 802, 51}, 
-  {1539, 802, 52}, 
-  {1541, 802, 54}, 
-  {1542, 802, 55}, 
-  {1543, 802, 56}, 
-  {1544, 802, 57}, 
-  {1547, 802, 60}, 
-  {1548, 802, 61}, 
-  {1549, 802, 62}, 
-  {1550, 802, 63}, 
-  {2600, 802, 64}, 
-  {2601, 802, 65}, 
-  {2602, 802, 66}, 
-  {2822, 802, 67}, 
+  {2834, 802, 7}, 
+  {328, 802, 8}, 
+  {329, 802, 9}, 
+  {330, 802, 10}, 
+  {331, 802, 11}, 
+  {333, 802, 13}, 
+  {334, 802, 14}, 
+  {335, 802, 15}, 
+  {336, 802, 16}, 
+  {337, 802, 17}, 
+  {338, 802, 18}, 
+  {340, 802, 20}, 
+  {341, 802, 21}, 
+  {342, 802, 22}, 
+  {343, 802, 23}, 
+  {344, 802, 24}, 
+  {345, 802, 25}, 
+  {960, 802, 27}, 
+  {961, 802, 28}, 
+  {962, 802, 29}, 
+  {963, 802, 30}, 
+  {964, 802, 31}, 
+  {965, 802, 32}, 
+  {967, 802, 34}, 
+  {1113, 802, 35}, 
+  {1114, 802, 36}, 
+  {1523, 802, 37}, 
+  {1524, 802, 38}, 
+  {1525, 802, 39}, 
+  {1527, 802, 41}, 
+  {1528, 802, 42}, 
+  {1529, 802, 43}, 
+  {1530, 802, 44}, 
+  {1531, 802, 45}, 
+  {1532, 802, 46}, 
+  {1534, 802, 48}, 
+  {1535, 802, 49}, 
+  {1536, 802, 50}, 
+  {1537, 802, 51}, 
+  {1538, 802, 52}, 
+  {1539, 802, 53}, 
+  {1541, 802, 55}, 
+  {1542, 802, 56}, 
+  {1543, 802, 57}, 
+  {1544, 802, 58}, 
+  {1547, 802, 61}, 
+  {1548, 802, 62}, 
+  {1549, 802, 63}, 
+  {1550, 802, 64}, 
+  {2600, 802, 65}, 
+  {2601, 802, 66}, 
+  {2602, 802, 67}, 
+  {2822, 802, 68}, 
   {265, 838, 0}, 
   {266, 838, 1}, 
   {267, 838, 2}, 
@@ -26928,9 +26954,9 @@ const DbListViewItem DISPLAY_LISTVIEW_ITEMS[] = {
   {2591, 838, 13}, 
   {2592, 838, 14}, 
   {2593, 838, 15}, 
-  {2828, 838, 16}, 
-  {2829, 838, 17}, 
-  {2830, 838, 18}, 
+  {2829, 838, 16}, 
+  {2830, 838, 17}, 
+  {2831, 838, 18}, 
   {272, 854, 0}, 
   {273, 854, 1}, 
   {274, 854, 2}, 
@@ -28266,8 +28292,8 @@ const DbListViewItem DISPLAY_LISTVIEW_ITEMS[] = {
   {2206, 4888, 22}, 
   {2207, 4888, 23}, 
   {2208, 4888, 24}, 
-  {2831, 4888, 25}, 
-  {2832, 4888, 26}, 
+  {2832, 4888, 25}, 
+  {2833, 4888, 26}, 
   {1805, 4934, 0}, 
   {1806, 4934, 1}, 
   {1807, 4934, 2}, 
@@ -28340,6 +28366,7 @@ const DbListViewItem DISPLAY_LISTVIEW_ITEMS[] = {
   {2261, 5139, 12}, 
   {2262, 5139, 13}, 
   {2263, 5139, 14}, 
+  {2828, 5139, 15}, 
   {1904, 5163, 0}, 
   {1905, 5163, 1}, 
   {1926, 5208, 0}, 
@@ -28922,18 +28949,18 @@ const DbListViewItem DISPLAY_LISTVIEW_ITEMS[] = {
   {2814, 6895, 1}, 
   {2815, 6895, 2}, 
   {2820, 6903, 0}, 
-  {2834, 6928, 0}, 
-  {2835, 6928, 1}, 
   {2836, 6932, 0}, 
   {2837, 6932, 1}, 
-  {2838, 6932, 2}, 
-  {2839, 6932, 3}, 
-  {2840, 6932, 4}, 
-  {2841, 6932, 5}, 
-  {2842, 6932, 6}
+  {2838, 6936, 0}, 
+  {2839, 6936, 1}, 
+  {2840, 6936, 2}, 
+  {2841, 6936, 3}, 
+  {2842, 6936, 4}, 
+  {2843, 6936, 5}, 
+  {2844, 6936, 6}
 };
 
-const int DISPLAY_LISTVIEW_ITEMS_CNT = 2332;
+const int DISPLAY_LISTVIEW_ITEMS_CNT = 2334;
 
 const DbListViewItemComponent DISPLAY_LISTVIEW_ITEM_COMPONENTS[] = {
   {1, 1, 0, 16}, 
@@ -32294,6 +32321,8 @@ const DbListViewItemComponent DISPLAY_LISTVIEW_ITEM_COMPONENTS[] = {
   {5068, 1901, 1, 5725}, 
   {5069, 1902, 0, 5726}, 
   {5070, 1902, 1, 5727}, 
+  {6596, 1903, 0, 6918}, 
+  {6597, 1903, 1, 6919}, 
   {4191, 1904, 0, 5164}, 
   {4192, 1904, 1, 5165}, 
   {4193, 1905, 0, 5166}, 
@@ -32828,8 +32857,8 @@ const DbListViewItemComponent DISPLAY_LISTVIEW_ITEM_COMPONENTS[] = {
   {4870, 2182, 2, 5613}, 
   {4856, 2182, 4, 5616}, 
   {4871, 2182, 4, 5616}, 
-  {4851, 2183, 0, 5608}, 
   {4866, 2183, 0, 5610}, 
+  {4851, 2183, 0, 5608}, 
   {4867, 2183, 2, 5611}, 
   {4852, 2183, 2, 5609}, 
   {4868, 2183, 4, 5616}, 
@@ -33073,14 +33102,11 @@ const DbListViewItemComponent DISPLAY_LISTVIEW_ITEM_COMPONENTS[] = {
   {1929, 2259, 2, 2701}, 
   {1930, 2260, 1, 2702}, 
   {1931, 2260, 2, 2703}, 
-  {4183, 2261, 0, 5157}, 
-  {4184, 2261, 20, 5162}, 
-  {4185, 2262, 0, 5158}, 
-  {4186, 2262, 1, 5159}, 
-  {4187, 2262, 20, 5162}, 
-  {4188, 2263, 0, 5160}, 
-  {4189, 2263, 1, 5161}, 
-  {4190, 2263, 20, 5162}, 
+  {4183, 2262, 0, 5157}, 
+  {4184, 2262, 20, 5162}, 
+  {4185, 2263, 0, 5158}, 
+  {4186, 2263, 1, 5159}, 
+  {4187, 2263, 20, 5162}, 
   {1690, 2264, 0, 2443}, 
   {1691, 2264, 1, 2444}, 
   {5075, 2266, 0, 5729}, 
@@ -33423,8 +33449,8 @@ const DbListViewItemComponent DISPLAY_LISTVIEW_ITEM_COMPONENTS[] = {
   {5439, 2491, 3, 3259}, 
   {4860, 2492, 0, 5614}, 
   {5453, 2492, 0, 6057}, 
-  {4861, 2492, 2, 5615}, 
   {5454, 2492, 2, 6058}, 
+  {4861, 2492, 2, 5615}, 
   {4862, 2492, 4, 5616}, 
   {4818, 2493, 0, 5585}, 
   {4819, 2493, 2, 5586}, 
@@ -34205,28 +34231,33 @@ const DbListViewItemComponent DISPLAY_LISTVIEW_ITEM_COMPONENTS[] = {
   {6593, 2827, 0, 6915}, 
   {6594, 2827, 1, 6916}, 
   {6595, 2827, 2, 6917}, 
-  {6596, 2828, 0, 6918}, 
-  {6597, 2828, 2, 6919}, 
+  {4188, 2828, 0, 5160}, 
+  {4189, 2828, 1, 5161}, 
+  {4190, 2828, 20, 5162}, 
   {6598, 2829, 0, 6920}, 
   {6599, 2829, 2, 6921}, 
   {6600, 2830, 0, 6922}, 
   {6601, 2830, 2, 6923}, 
-  {6602, 2832, 0, 6924}, 
-  {6603, 2832, 1, 6925}, 
+  {6602, 2831, 0, 6924}, 
+  {6603, 2831, 2, 6925}, 
   {6604, 2833, 0, 6926}, 
-  {6605, 2834, 0, 6929}, 
-  {6606, 2834, 2, 6930}, 
-  {6607, 2835, 0, 6933}, 
-  {6608, 2836, 0, 6934}, 
-  {6609, 2837, 0, 6935}, 
-  {6610, 2837, 1, 6936}, 
-  {6611, 2838, 0, 6937}, 
-  {6612, 2838, 1, 6938}, 
-  {6613, 2840, 0, 6939}, 
-  {6614, 2842, 0, 6940}
+  {6605, 2833, 1, 6927}, 
+  {6606, 2834, 0, 6928}, 
+  {6607, 2834, 2, 6929}, 
+  {6608, 2835, 0, 6930}, 
+  {6609, 2836, 0, 6933}, 
+  {6610, 2836, 2, 6934}, 
+  {6611, 2837, 0, 6937}, 
+  {6612, 2838, 0, 6938}, 
+  {6613, 2839, 0, 6939}, 
+  {6614, 2839, 1, 6940}, 
+  {6615, 2840, 0, 6941}, 
+  {6616, 2840, 1, 6942}, 
+  {6617, 2842, 0, 6943}, 
+  {6618, 2844, 0, 6944}
 };
 
-const int DISPLAY_LISTVIEW_ITEM_COMPONENTS_CNT = 5288;
+const int DISPLAY_LISTVIEW_ITEM_COMPONENTS_CNT = 5292;
 
 const DbText DISPLAY_TEXT[] = {
   {4, "", 14, DEFAULT_FONT_13_LANGUAGE_DEP, 1, 0, 0}, 
@@ -37276,28 +37307,31 @@ const DbText DISPLAY_TEXT[] = {
   {6910, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 8, 0, 0}, 
   {6913, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 8, 0, 0}, 
   {6915, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 8, 0, 0}, 
-  {6918, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 2, 0, 0}, 
-  {6919, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 0, 0, 0}, 
+  {6918, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 8, 0, 0}, 
   {6920, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 2, 0, 0}, 
   {6921, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 0, 0, 0}, 
   {6922, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 2, 0, 0}, 
   {6923, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 0, 0, 0}, 
   {6924, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 2, 0, 0}, 
-  {6926, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 8, 0, 0}, 
-  {6927, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 8, 0, 0}, 
+  {6925, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 0, 0, 0}, 
+  {6926, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 2, 0, 0}, 
   {6928, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 8, 0, 0}, 
-  {6929, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 2, 1, 0}, 
+  {6929, "", 14, DEFAULT_FONT_13_LANGUAGE_DEP, 0, 0, 0}, 
+  {6930, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 8, 0, 0}, 
   {6931, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 8, 0, 0}, 
   {6932, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 8, 0, 0}, 
   {6933, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 2, 1, 0}, 
-  {6934, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 0, 0, 0}, 
-  {6935, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 4, 0, 0}, 
-  {6937, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 4, 0, 0}, 
-  {6939, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 1, 0, 0}, 
-  {6940, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 1, 0, 0}
+  {6935, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 8, 0, 0}, 
+  {6936, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 8, 0, 0}, 
+  {6937, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 2, 1, 0}, 
+  {6938, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 0, 0, 0}, 
+  {6939, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 4, 0, 0}, 
+  {6941, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 4, 0, 0}, 
+  {6943, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 1, 0, 0}, 
+  {6944, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 1, 0, 0}
 };
 
-const int DISPLAY_TEXT_CNT = 3066;
+const int DISPLAY_TEXT_CNT = 3069;
 
 const DbNumber DISPLAY_NUMBER[] = {
   {348, 3}, 
@@ -38036,12 +38070,13 @@ const DbNumberQuantity DISPLAY_NUMBER_QUANTITY[] = {
   {6836, Q_POWER, 5, DEFAULT_FONT_13_LANGUAGE_INDEP, DEFAULT_FONT_13_LANGUAGE_INDEP}, 
   {6887, Q_TIME_SUM, 5, DEFAULT_FONT_13_LANGUAGE_INDEP, DEFAULT_FONT_13_LANGUAGE_INDEP}, 
   {6905, Q_NO_UNIT, 3, DEFAULT_FONT_13_LANGUAGE_INDEP, DEFAULT_FONT_13_LANGUAGE_INDEP}, 
-  {6919, Q_PARTS_PER_MILLION, 3, DEFAULT_FONT_13_LANGUAGE_INDEP, DEFAULT_FONT_13_LANGUAGE_INDEP}, 
-  {6921, Q_DEPTH, 3, DEFAULT_FONT_13_LANGUAGE_INDEP, DEFAULT_FONT_13_LANGUAGE_INDEP}, 
-  {6923, Q_VOLUME, 3, DEFAULT_FONT_13_LANGUAGE_INDEP, DEFAULT_FONT_13_LANGUAGE_INDEP}
+  {6921, Q_PARTS_PER_MILLION, 3, DEFAULT_FONT_13_LANGUAGE_INDEP, DEFAULT_FONT_13_LANGUAGE_INDEP}, 
+  {6923, Q_DEPTH, 5, DEFAULT_FONT_13_LANGUAGE_INDEP, DEFAULT_FONT_13_LANGUAGE_INDEP}, 
+  {6925, Q_VOLUME, 5, DEFAULT_FONT_13_LANGUAGE_INDEP, DEFAULT_FONT_13_LANGUAGE_INDEP}, 
+  {6929, Q_NO_UNIT, 5, DEFAULT_FONT_13_LANGUAGE_INDEP, DEFAULT_FONT_13_LANGUAGE_INDEP}
 };
 
-const int DISPLAY_NUMBER_QUANTITY_CNT = 627;
+const int DISPLAY_NUMBER_QUANTITY_CNT = 628;
 
 const DbLabel DISPLAY_LABEL[] = {
   {13, 226}, 
@@ -40304,18 +40339,20 @@ const DbLabel DISPLAY_LABEL[] = {
   {6922, 2099}, 
   {6924, 2100}, 
   {6926, 2101}, 
-  {6927, 2101}, 
-  {6929, 2102}, 
-  {6931, 2102}, 
-  {6933, 1482}, 
-  {6934, 2103}, 
+  {6928, 2102}, 
+  {6930, 2103}, 
+  {6931, 2103}, 
+  {6933, 2104}, 
   {6935, 2104}, 
-  {6937, 2105}, 
-  {6939, 1513}, 
-  {6940, 1341}
+  {6937, 1482}, 
+  {6938, 2105}, 
+  {6939, 2106}, 
+  {6941, 2107}, 
+  {6943, 1513}, 
+  {6944, 1341}
 };
 
-const int DISPLAY_LABEL_CNT = 2269;
+const int DISPLAY_LABEL_CNT = 2271;
 
 const DbDisplay DISPLAY[] = {
   {1, 8, 395, 1, 1, 632, 0, "1"}, 
@@ -40478,8 +40515,8 @@ const DbDisplay DISPLAY[] = {
   {175, 6686, 1977, 1, 0, 6687, 0, "4.5.8"}, 
   {176, 6721, 1985, 1, 0, 6722, 0, "4.4.7"}, 
   {177, 6796, 2023, 1, 0, 6798, 0, "4.4.7.1"}, 
-  {178, 6927, 2101, 1, 0, 6928, 0, "4.2.14"}, 
-  {179, 6931, 2102, 1, 0, 6932, 0, "4.2.14.1"}
+  {178, 6931, 2103, 1, 0, 6932, 0, "4.2.14"}, 
+  {179, 6935, 2104, 1, 0, 6936, 0, "4.2.14.1"}
 };
 
 const int DISPLAY_CNT = 162;
@@ -41131,11 +41168,12 @@ const DbModeCheckBox DISPLAY_MODE_CHECK_BOX[] = {
   {6880, 50}, 
   {6884, 50}, 
   {6902, 4}, 
-  {6936, 0}, 
-  {6938, 1}
+  {6919, 11}, 
+  {6940, 0}, 
+  {6942, 1}
 };
 
-const int DISPLAY_MODE_CHECK_BOX_CNT = 607;
+const int DISPLAY_MODE_CHECK_BOX_CNT = 608;
 
 const DbAvailable DISPLAY_AVAILABLE[] = {
   {44, 0}, 
@@ -41615,7 +41653,7 @@ const DbAvailable DISPLAY_AVAILABLE[] = {
   {6278, 5}, 
   {6279, 5}, 
   {6888, 1}, 
-  {6930, 1}
+  {6934, 1}
 };
 
 const int DISPLAY_AVAILABLE_CNT = 478;
@@ -42120,7 +42158,7 @@ const DbOnOffCheckBox DISPLAY_ONOFFCHECKBOX[] = {
   {6898, 1, 0}, 
   {6902, 1, 0}, 
   {6907, 1, 0}, 
-  {6925, 1, 0}
+  {6927, 1, 0}
 };
 
 const int DISPLAY_ONOFFCHECKBOX_CNT = 198;
@@ -43631,6 +43669,8 @@ static Observer* ConstructObserver(const U16 observerId)
     return new DDACtrl();
   case 1038: // dosing_pump_ctrl
     return new NonGFDosingPumpCtrl();
+  case 1039: // dda
+    return new DDA();
   default:
     return NULL;
   }
@@ -45350,6 +45390,9 @@ void RunFactory(void)
         p_observer = ConstructObserver(OBSERVERS[j].Id);
       break;
       case ObTypeNonGFDosingPumpCtrl:
+        p_observer = ConstructObserver(OBSERVERS[j].Id);
+      break;
+      case ObTypeDDA:
         p_observer = ConstructObserver(OBSERVERS[j].Id);
       break;
 

@@ -191,6 +191,9 @@ protected:
   SubjectPtr<FloatDataPoint*> mp_resulting_value_motor_current_pump_5;
   SubjectPtr<FloatDataPoint*> mp_resulting_value_motor_current_pump_6;
   SubjectPtr<FloatDataPoint*> mp_measured_value_outlet_pressure;
+  SubjectPtr<FloatDataPoint*> mp_dosing_feed_tank_level;
+  SubjectPtr<FloatDataPoint*> mp_chemical_total_dosed;
+  SubjectPtr<FloatDataPoint*> mp_set_dosing_ref;
   SubjectPtr<U32DataPoint*> mp_ethernet_mac_address_hi;
   SubjectPtr<U32DataPoint*> mp_ethernet_mac_address_lo;
   SubjectPtr<U8DataPoint*> mp_geni_setup;
@@ -418,8 +421,8 @@ protected:
   SubjectPtr<U16DataPoint*> mp_today_user_defined_counter_2;
   SubjectPtr<U16DataPoint*> mp_today_user_defined_counter_3;
   SubjectPtr<U32DataPoint*> mp_h2s_level_act;
-  SubjectPtr<U32DataPoint*> mp_dosing_feed_tank_level;
-  SubjectPtr<U32DataPoint*> mp_chemical_total_dosed;
+  SubjectPtr<U32DataPoint*> mp_h2s_level_today;
+  SubjectPtr<U32DataPoint*> mp_h2s_level_yesterday;
   SubjectPtr<EnumDataPoint<APPLICATION_MODE_TYPE>*> mp_application_mode;
   SubjectPtr<EnumDataPoint<MEASURED_VALUE_TYPE>*> mp_ana_in_1_conf_measured_value;
   SubjectPtr<EnumDataPoint<MEASURED_VALUE_TYPE>*> mp_ana_in_2_conf_measured_value;

@@ -60,6 +60,7 @@ extern "C"
 #define IO113_MIXER_ADDR_OFFSET      0x32 // IO113 (MIXER)     (0x32= 50)
 #define IO351_PM_ADDR_OFFSET         0x3E // IO351 Pump Module (0x3E = 62, first number on unit is 31)
 #define IO351_IOM_ADDR_OFFSET        0x48 // IO351 IO Module   (0x48 = 72, first number on unit is 41)
+#define DDA_ADDR_OFFSET              0x52 // DDA Module   (0x52 = 82, first number on unit is 51 (31+51))
 
 #define UNIT_FAMILY_CUE              2
 #define UNIT_FAMILY_MP204            7
@@ -235,6 +236,55 @@ const U8 apdu_local[] =
   0x81, //OPERATION=SET + Length of APDU
   0x08  //LOCAL
   };
+
+const U8 apdu_DDA_UseMode[] =
+  {
+  0x03, //Length of the rest of buffer
+  0x03, //Class
+  0x81, //OPERATION=SET + Length of APDU
+  19  //Use Mode
+  };
+
+const U8 apdu_DDA_ManualDosing[] =
+  {
+  0x03, //Length of the rest of buffer
+  0x03, //Class
+  0x81, //OPERATION=SET + Length of APDU
+  61    //Sets the pump in Control mode ¡°Manual dosing¡±
+  };
+
+const U8 apdu_DDA_AnalogueDosing[] =
+  {
+  0x03, //Length of the rest of buffer
+  0x03, //Class
+  0x81, //OPERATION=SET + Length of APDU
+  63    //Sets the pump in Control mode "Analogue dosing"
+  };
+
+const U8 apdu_DDA_PulseDosing[] =
+  {
+  0x03, //Length of the rest of buffer
+  0x03, //Class
+  0x81, //OPERATION=SET + Length of APDU
+  62    //Sets the pump in Control mode "Pulse dosing"
+  };
+
+const U8 apdu_DDA_PressStartKey[] =
+  {
+  0x03, //Length of the rest of buffer
+  0x03, //Class
+  0x81, //OPERATION=SET + Length of APDU
+  67    //Start the Manual dosing
+  };
+
+const U8 apdu_DDA_PressStopKey[] =
+  {
+  0x03, //Length of the rest of buffer
+  0x03, //Class
+  0x81, //OPERATION=SET + Length of APDU
+  68    //Stop the Manual dosing
+  };
+
 
 const U8 apdu_const_freq[] =
   {
@@ -426,7 +476,9 @@ U8 GeniSlaveIf::GetUnitAddress(IO351_NO_TYPE moduleNo) const
     return MP204_ADDR_OFFSET + 4;
   case MP204_NO_6:
     return MP204_ADDR_OFFSET + 5;
-
+  case DDA_NO_1:
+    return DDA_ADDR_OFFSET + 0;
+    
   default:
     FatalErrorOccured("GENI address out of range!");
     return 0;       // We have no address to return - thus return a 0
@@ -2993,6 +3045,623 @@ bool GeniSlaveIf::SetIO351AnalogOutput(IO351_NO_TYPE moduleNo, IO351_ANA_OUT_NO_
 *****************************************************************************/
 
 
+/*****************************************************************************
+ *
+ * DDA functions
+ *
+*****************************************************************************/
+
+/*****************************************************************************
+ * Function - ConnectDDA
+ * DESCRIPTION:
+*****************************************************************************/
+bool GeniSlaveIf::ConnectDDA(IO351_NO_TYPE moduleNo)
+{
+  return (ConnectDevice(moduleNo, DEVICE_DDA) != NO_UNIT);
+}
+
+/*****************************************************************************
+ * Function - DisconnectDDA
+ * DESCRIPTION:
+*****************************************************************************/
+void GeniSlaveIf::DisconnectDDA(IO351_NO_TYPE moduleNo)
+{
+  DisconnectDevice(moduleNo, DEVICE_DDA);
+}
+
+/*****************************************************************************
+ * Function - DDAReset
+ * DESCRIPTION:
+*****************************************************************************/
+void GeniSlaveIf::DDAReset(IO351_NO_TYPE moduleNo)
+{
+  OS_Use(&geni_master);
+  SendDirAPDU(NO_RESP_FNC, (U8 *)apdu_reset, GetUnitAddress(moduleNo));
+  OS_Unuse(&geni_master);
+}
+
+/*****************************************************************************
+ * Function - DDAAlarmReset
+ * DESCRIPTION:
+*****************************************************************************/
+void GeniSlaveIf::DDA_AlarmReset(IO351_NO_TYPE moduleNo)
+{
+  OS_Use(&geni_master);
+  SendDirAPDU(DUMMY_RESP_FNC, (U8 *)apdu_alarm_reset, GetUnitAddress(moduleNo));
+  OS_Unuse(&geni_master);
+}
+
+/*****************************************************************************
+ * Function - GetDDA pressure_max
+ * DESCRIPTION:
+*****************************************************************************/
+bool GeniSlaveIf::GetDDA_pressure_max(IO351_NO_TYPE moduleNo, float* pValue)
+{
+  U8 unit_index;
+  U8 geni_value;
+  GENI_DEVICE_TYPE device;
+  bool ret_val = false;
+
+  // find unit
+  OS_Use(&geni_master);
+  unit_index = FindUnit(GetUnitAddress(moduleNo));
+  OS_Unuse(&geni_master);
+
+  // get device
+  if (GetDevice(unit_index, &device))
+  {
+    // verify device type
+    if (device == DEVICE_DDA)
+    {
+      OS_Use(&geni_class_data);
+      geni_value = (U8)s_cl2_id000[unit_index];     // Maximum possible pressure in dosing
+      OS_Unuse(&geni_class_data);
+      if (geni_value < 0xFF)
+      {
+        *pValue = 0.1f*geni_value;
+        ret_val = true;
+      }
+    }
+  }
+  return ret_val;
+}
+
+/*****************************************************************************
+ * Function - GetDDA Maximum possible dosing capacity
+ * DESCRIPTION:
+*****************************************************************************/
+bool GeniSlaveIf::GetDDA_dosing_cap_max(IO351_NO_TYPE moduleNo, float* pValue)
+{
+  U8 unit_index;
+  U32 geni_value = 0;
+  GENI_DEVICE_TYPE device;
+  bool ret_val = false;
+
+  // find unit
+  OS_Use(&geni_master);
+  unit_index = FindUnit(GetUnitAddress(moduleNo));
+  OS_Unuse(&geni_master);
+
+  // get device
+  if (GetDevice(unit_index, &device))
+  {
+    // verify device type
+    if (device == DEVICE_DDA)
+    {
+      OS_Use(&geni_class_data);
+      geni_value |= (U32)s_cl2_id001[unit_index]<<16;     // Maximum possible pressure in dosing
+      geni_value |= (U32)s_cl2_id002[unit_index]<<8;    
+      geni_value |= (U32)s_cl2_id003[unit_index];
+      OS_Unuse(&geni_class_data);
+      if (geni_value < 0xFF0000)
+      {
+	  *pValue = 1.0f * geni_value;
+        ret_val = true;
+      }
+    }
+  }
+
+  return ret_val;
+}
+
+/*****************************************************************************
+ * Function - GetDDA flow monitor dosing capacity
+ * DESCRIPTION:
+*****************************************************************************/
+bool GeniSlaveIf::GetDDA_flow_mon_dosing_cap(IO351_NO_TYPE moduleNo, float* pValue)
+{
+  U8 unit_index;
+  U32 geni_value = 0;
+  GENI_DEVICE_TYPE device;
+  bool ret_val = false;
+
+  // find unit
+  OS_Use(&geni_master);
+  unit_index = FindUnit(GetUnitAddress(moduleNo));
+  OS_Unuse(&geni_master);
+
+  // get device
+  if (GetDevice(unit_index, &device))
+  {
+    // verify device type
+    if (device == DEVICE_DDA)
+    {
+      OS_Use(&geni_class_data);
+      geni_value |= (U32)s_cl2_id012[unit_index]<<24;     // Maximum possible pressure in dosing
+      geni_value |= (U32)s_cl2_id013[unit_index]<<16;    
+      geni_value |= (U32)s_cl2_id014[unit_index]<<8;
+      geni_value |= (U32)s_cl2_id015[unit_index];      
+      OS_Unuse(&geni_class_data);
+      if (geni_value < 0xFF000000)
+      {
+        *pValue = 1.0f*geni_value;
+        ret_val = true;
+      }
+    }
+  }
+
+  return ret_val;
+}
+
+/*****************************************************************************
+ * Function - GetDDA Actual pressure in dosing head
+ * DESCRIPTION:
+*****************************************************************************/
+bool GeniSlaveIf::GetDDA_flow_mon_press(IO351_NO_TYPE moduleNo, float* pValue)
+{
+  U8 unit_index;
+  U8 geni_value;
+  GENI_DEVICE_TYPE device;
+  bool ret_val = false;
+
+  // find unit
+  OS_Use(&geni_master);
+  unit_index = FindUnit(GetUnitAddress(moduleNo));
+  OS_Unuse(&geni_master);
+
+  // get device
+  if (GetDevice(unit_index, &device))
+  {
+    // verify device type
+    if (device == DEVICE_DDA)
+    {
+      OS_Use(&geni_class_data);
+      geni_value = (U8)s_cl2_id016[unit_index];     // Maximum possible pressure in dosing
+      OS_Unuse(&geni_class_data);
+      if (geni_value < 0xFF)
+      {
+        *pValue = 1.0f*geni_value;
+        ret_val = true;
+      }
+    }
+  }
+  return ret_val;
+}
+
+/*****************************************************************************
+ * Function - GetDDA total dosing volume
+ * DESCRIPTION:
+*****************************************************************************/
+bool GeniSlaveIf::GetDDA_volume_total(IO351_NO_TYPE moduleNo, float* pValue)
+{
+  U8 unit_index;
+  U32 geni_value = 0;
+  GENI_DEVICE_TYPE device;
+  bool ret_val = false;
+
+  // find unit
+  OS_Use(&geni_master);
+  unit_index = FindUnit(GetUnitAddress(moduleNo));
+  OS_Unuse(&geni_master);
+
+  // get device
+  if (GetDevice(unit_index, &device))
+  {
+    // verify device type
+    if (device == DEVICE_DDA)
+    {
+      OS_Use(&geni_class_data);
+      geni_value |= (U32)s_cl2_id071[unit_index]<<24;     // Maximum possible pressure in dosing
+      geni_value |= (U32)s_cl2_id072[unit_index]<<16;    
+      geni_value |= (U32)s_cl2_id073[unit_index]<<8;
+      geni_value |= (U32)s_cl2_id074[unit_index];      
+      OS_Unuse(&geni_class_data);
+      if (geni_value < 0xFF000000)
+      {
+        *pValue = 1.0f*geni_value;
+        ret_val = true;
+      }
+    }
+  }
+
+  return ret_val;
+}
+
+/*****************************************************************************
+ * Function - GetDDA Pump system mode
+ * DESCRIPTION:
+*****************************************************************************/
+bool GeniSlaveIf::GetDDA_system_mode(IO351_NO_TYPE moduleNo, U8* pStatus)
+{
+  U8 unit_index;
+  U8 geni_value;
+  GENI_DEVICE_TYPE device;
+  bool ret_val = false;
+
+  // find unit
+  OS_Use(&geni_master);
+  unit_index = FindUnit(GetUnitAddress(moduleNo));
+  OS_Unuse(&geni_master);
+
+  // get device
+  if (GetDevice(unit_index, &device))
+  {
+    // verify device type
+    if (device == DEVICE_DDA)
+    {
+      OS_Use(&geni_class_data);
+      geni_value = (U8)s_cl2_id080[unit_index];     
+      OS_Unuse(&geni_class_data);
+      *pStatus = geni_value;
+      ret_val = true;
+    }
+  }
+  return ret_val;
+}
+
+/*****************************************************************************
+ * Function - GetDDA Pump Actual Operating mode
+ * DESCRIPTION:
+*****************************************************************************/
+bool GeniSlaveIf::GetDDA_operating_mode(IO351_NO_TYPE moduleNo, U8* pStatus)
+{
+  U8 unit_index;
+  U8 geni_value;
+  GENI_DEVICE_TYPE device;
+  bool ret_val = false;
+
+  // find unit
+  OS_Use(&geni_master);
+  unit_index = FindUnit(GetUnitAddress(moduleNo));
+  OS_Unuse(&geni_master);
+
+  // get device
+  if (GetDevice(unit_index, &device))
+  {
+    // verify device type
+    if (device == DEVICE_DDA)
+    {
+      OS_Use(&geni_class_data);
+      geni_value = (U8)s_cl2_id081[unit_index];     
+      OS_Unuse(&geni_class_data);
+      *pStatus = geni_value;
+      ret_val = true;
+    }
+  }
+  return ret_val;
+}
+
+/*****************************************************************************
+ * Function - GetDDA Pump Actual Control mode
+ * DESCRIPTION:
+*****************************************************************************/
+bool GeniSlaveIf::GetDDA_control_mode(IO351_NO_TYPE moduleNo, U8* pStatus)
+{
+  U8 unit_index;
+  U8 geni_value;
+  GENI_DEVICE_TYPE device;
+  bool ret_val = false;
+
+  // find unit
+  OS_Use(&geni_master);
+  unit_index = FindUnit(GetUnitAddress(moduleNo));
+  OS_Unuse(&geni_master);
+
+  // get device
+  if (GetDevice(unit_index, &device))
+  {
+    // verify device type
+    if (device == DEVICE_DDA)
+    {
+      OS_Use(&geni_class_data);
+      geni_value = (U8)s_cl2_id082[unit_index];     
+      OS_Unuse(&geni_class_data);
+      *pStatus = geni_value;
+      ret_val = true;
+    }
+  }
+  return ret_val;
+}
+
+/*****************************************************************************
+ * Function - GetDDA Pump Start/Stop state of the Operating mode control sources
+ * DESCRIPTION:
+*****************************************************************************/
+bool GeniSlaveIf::GetDDA_stop_ctr_state(IO351_NO_TYPE moduleNo, U8* pStatus)
+{
+  U8 unit_index;
+  U8 geni_value;
+  GENI_DEVICE_TYPE device;
+  bool ret_val = false;
+
+  // find unit
+  OS_Use(&geni_master);
+  unit_index = FindUnit(GetUnitAddress(moduleNo));
+  OS_Unuse(&geni_master);
+
+  // get device
+  if (GetDevice(unit_index, &device))
+  {
+    // verify device type
+    if (device == DEVICE_DDA)
+    {
+      OS_Use(&geni_class_data);
+      geni_value = (U8)s_cl2_id085[unit_index];     
+      OS_Unuse(&geni_class_data);
+      *pStatus = geni_value;
+      ret_val = true;
+    }
+  }
+  return ret_val;
+}
+
+/*****************************************************************************
+ * Function - GetDDA Pump control source currently active.
+ * DESCRIPTION:
+*****************************************************************************/
+bool GeniSlaveIf::GetDDA_ctr_source(IO351_NO_TYPE moduleNo, U8* pStatus)
+{
+  U8 unit_index;
+  U8 geni_value;
+  GENI_DEVICE_TYPE device;
+  bool ret_val = false;
+
+  // find unit
+  OS_Use(&geni_master);
+  unit_index = FindUnit(GetUnitAddress(moduleNo));
+  OS_Unuse(&geni_master);
+
+  // get device
+  if (GetDevice(unit_index, &device))
+  {
+    // verify device type
+    if (device == DEVICE_DDA)
+    {
+      OS_Use(&geni_class_data);
+      geni_value = (U8)s_cl2_id086[unit_index];     
+      OS_Unuse(&geni_class_data);
+      *pStatus = geni_value;
+      ret_val = true;
+    }
+  }
+  return ret_val;
+}
+
+/*****************************************************************************
+ * Function - GetDDA Pump running or not
+ * DESCRIPTION:
+*****************************************************************************/
+bool GeniSlaveIf::GetDDA_pumping_state(IO351_NO_TYPE moduleNo, bool* pStatus)
+{
+  U8 unit_index;
+  U8 geni_value;
+  GENI_DEVICE_TYPE device;
+  bool ret_val = false;
+
+  // find unit
+  OS_Use(&geni_master);
+  unit_index = FindUnit(GetUnitAddress(moduleNo));
+  OS_Unuse(&geni_master);
+
+    // get device
+  if (GetDevice(unit_index, &device))
+  {
+    // verify device type
+    if (device == DEVICE_DDA)
+    {
+      OS_Use(&geni_class_data);
+      geni_value = (U8)s_cl2_id087[unit_index];     
+      OS_Unuse(&geni_class_data);
+      
+      *pStatus = geni_value & 0x01;
+      ret_val = true;
+    }
+  }
+  return ret_val;
+}
+
+/*****************************************************************************
+ * Function - GetDDA Pump Alarm code
+ * DESCRIPTION:
+*****************************************************************************/
+bool GeniSlaveIf::GetDDA_alarm_code(IO351_NO_TYPE moduleNo, U8* pStatus)
+{
+  U8 unit_index;
+  U8 geni_value;
+  GENI_DEVICE_TYPE device;
+  bool ret_val = false;
+
+  // find unit
+  OS_Use(&geni_master);
+  unit_index = FindUnit(GetUnitAddress(moduleNo));
+  OS_Unuse(&geni_master);
+
+  // get device
+  if (GetDevice(unit_index, &device))
+  {
+    // verify device type
+    if (device == DEVICE_DDA)
+    {
+      OS_Use(&geni_class_data);
+      geni_value = (U8)s_cl2_id234[unit_index];     
+      OS_Unuse(&geni_class_data);
+      *pStatus = geni_value;
+      ret_val = true;
+    }
+  }
+  return ret_val;
+}
+
+/*****************************************************************************
+ * Function - GetDDA Pump Warning code
+ * DESCRIPTION:
+*****************************************************************************/
+bool GeniSlaveIf::GetDDA_warn_code(IO351_NO_TYPE moduleNo, U8* pStatus)
+{
+  U8 unit_index;
+  U8 geni_value;
+  GENI_DEVICE_TYPE device;
+  bool ret_val = false;
+
+  // find unit
+  OS_Use(&geni_master);
+  unit_index = FindUnit(GetUnitAddress(moduleNo));
+  OS_Unuse(&geni_master);
+
+  // get device
+  if (GetDevice(unit_index, &device))
+  {
+    // verify device type
+    if (device == DEVICE_DDA)
+    {
+      OS_Use(&geni_class_data);
+      geni_value = (U8)s_cl2_id235[unit_index];     
+      OS_Unuse(&geni_class_data);
+      *pStatus = geni_value;
+      ret_val = true;
+    }
+  }
+  return ret_val;
+}
+
+/*****************************************************************************
+ * Function - SetDDA Pump Dosing setpoint
+ * DESCRIPTION:
+*****************************************************************************/
+bool GeniSlaveIf::SetDDA_bus_ctr_dosing_cap(IO351_NO_TYPE moduleNo, U32* pValue)
+{
+  U8 unit_index;
+  //U32 geni_value = 0;
+  GENI_DEVICE_TYPE device;
+  bool ret_val = false;
+
+  // find unit
+  OS_Use(&geni_master);
+  unit_index = FindUnit(GetUnitAddress(moduleNo));
+  OS_Unuse(&geni_master);
+
+  // get device
+  if (GetDevice(unit_index, &device))
+  {
+    // verify device type
+    if (device == DEVICE_DDA)
+    {
+      OS_Use(&geni_class_data);
+      s_cl5_id001[unit_index] = (U8) (* pValue >>24) ;
+      s_cl5_id002[unit_index] = (U8) ((* pValue & 0x00FFFFFF) >>16) ;
+      s_cl5_id003[unit_index] = (U8) ((* pValue & 0x0000FFFF) >>8) ;
+      s_cl5_id004[unit_index] = (U8) (* pValue & 0x000000FF) ;      
+    
+      OS_Unuse(&geni_class_data);
+    }
+  }
+
+  return ret_val;
+}
+
+/*****************************************************************************
+ * Function - DDA Requested Stop
+ * DESCRIPTION:
+*****************************************************************************/
+void GeniSlaveIf::DDA_RequestStop(IO351_NO_TYPE moduleNo)
+{
+  OS_Use(&geni_master);
+  SendDirAPDU(DUMMY_RESP_FNC, (U8 *)apdu_stop, GetUnitAddress(moduleNo));
+  OS_Unuse(&geni_master);
+}
+
+/*****************************************************************************
+ * Function - DDA Requested Start
+ * DESCRIPTION:
+*****************************************************************************/
+void GeniSlaveIf::DDA_RequestStart(IO351_NO_TYPE moduleNo)
+{
+  OS_Use(&geni_master);
+  SendDirAPDU(DUMMY_RESP_FNC, (U8 *)apdu_start, GetUnitAddress(moduleNo));
+  OS_Unuse(&geni_master);
+}
+
+/*****************************************************************************
+ * Function - DDA Set to User Mode
+ * DESCRIPTION:
+*****************************************************************************/
+void GeniSlaveIf::DDA_SetToUserMode(IO351_NO_TYPE moduleNo)
+{
+  OS_Use(&geni_master);
+  SendDirAPDU(DUMMY_RESP_FNC, (U8 *)apdu_DDA_UseMode, GetUnitAddress(moduleNo));
+  OS_Unuse(&geni_master);
+}
+
+/*****************************************************************************
+ * Function - DDA Set to Manual Dosing Mode
+ * DESCRIPTION:
+*****************************************************************************/
+void GeniSlaveIf::DDA_SetToManualDosing(IO351_NO_TYPE moduleNo)
+{
+  OS_Use(&geni_master);
+  SendDirAPDU(DUMMY_RESP_FNC, (U8 *)apdu_DDA_ManualDosing, GetUnitAddress(moduleNo));
+  OS_Unuse(&geni_master);
+}
+
+/*****************************************************************************
+ * Function - DDA Set to Analogue Dosing Mode
+ * DESCRIPTION:
+*****************************************************************************/
+void GeniSlaveIf::DDA_SetToAnalogueDosing(IO351_NO_TYPE moduleNo)
+{
+  OS_Use(&geni_master);
+  SendDirAPDU(DUMMY_RESP_FNC, (U8 *)apdu_DDA_AnalogueDosing, GetUnitAddress(moduleNo));
+  OS_Unuse(&geni_master);
+}
+
+/*****************************************************************************
+ * Function - DDA Set to Pulse Dosing Mode
+ * DESCRIPTION:
+*****************************************************************************/
+void GeniSlaveIf::DDA_SetToPulseDosing(IO351_NO_TYPE moduleNo)
+{
+  OS_Use(&geni_master);
+  SendDirAPDU(DUMMY_RESP_FNC, (U8 *)apdu_DDA_PulseDosing, GetUnitAddress(moduleNo));
+  OS_Unuse(&geni_master);
+}
+
+/*****************************************************************************
+ * Function - DDA Press Start Key
+ * DESCRIPTION:
+*****************************************************************************/
+void GeniSlaveIf::DDA_PressStartKey(IO351_NO_TYPE moduleNo)
+{
+  OS_Use(&geni_master);
+  SendDirAPDU(DUMMY_RESP_FNC, (U8 *)apdu_DDA_PressStartKey, GetUnitAddress(moduleNo));
+  OS_Unuse(&geni_master);
+}
+
+/*****************************************************************************
+ * Function - DDA Press Stop Key
+ * DESCRIPTION:
+*****************************************************************************/
+void GeniSlaveIf::DDA_PressStopKey(IO351_NO_TYPE moduleNo)
+{
+  OS_Use(&geni_master);
+  SendDirAPDU(DUMMY_RESP_FNC, (U8 *)apdu_DDA_PressStopKey, GetUnitAddress(moduleNo));
+  OS_Unuse(&geni_master);
+}
+
+/*****************************************************************************
+ *
+ * End of DDA functions
+ *
+*****************************************************************************/
 
 /*****************************************************************************
  * Function - GetInstance

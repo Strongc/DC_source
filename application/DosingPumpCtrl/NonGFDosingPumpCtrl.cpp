@@ -194,7 +194,7 @@ void NonGFDosingPumpCtrl::SetSubjectPointer(int id, Subject* pSubject)
 {
   switch (id)
   {
-    case SP_DPC_DOSING_PUMP_ENABLED:
+    case SP_DPC_DOSING_PUMP_INSTALLED:
       mpDosingPumpEnable.Attach(pSubject);
       break;
     case SP_DPC_DOSING_PUMP_TYPE:

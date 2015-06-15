@@ -25,12 +25,7 @@ const ID_PTR ref16_tab[] =
 /* ID   3 */ UC_ADDR_0_LI(gai_13_3_ana_out_user_3), // 
 /* ID   4 */ NA,
 /* ID   5 */ NA,
-/* ID   6 */ NA,
-/* ID   7 */ NA,
-/* ID   8 */ NA,
-/* ID   9 */ NA,
-/* ID  10 */ UC_ADDR_0_LI(gai_13_10_dosing_feed_tank_level), // 
-/* ID  11 */ UC_ADDR_0_LI(gai_13_11_chemical_total_dosed) // 
+/* ID   6 */ UC_ADDR_0_LI(gai_13_6_set_dosing_ref) // 
 };
 
 /**************************************************************************
@@ -44,10 +39,5 @@ const ID_INFO ref16_info_tab[] =
 /* ID   3 */ COMMON_INFO + COM_INDEX_EXT_PERCENTAGE_DOT1PCT, // 
 /* ID   4 */ NI,
 /* ID   5 */ NI,
-/* ID   6 */ NI,
-/* ID   7 */ NI,
-/* ID   8 */ NI,
-/* ID   9 */ NI,
-/* ID  10 */ COMMON_INFO + COM_INDEX_EXT_DIMLESS_254, // 
-/* ID  11 */ COMMON_INFO + COM_INDEX_EXT_DIMLESS_254 // 
+/* ID   6 */ COMMON_INFO + COM_INDEX_EXT_FLOW_DOT1LH // 
 };

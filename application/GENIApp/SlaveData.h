@@ -55,7 +55,10 @@
 #define MAX_NUMBER_OF_IO_MODULES   3
 #define MAX_NUMBER_OF_IO_111       6
 #define MAX_NUMBER_OF_CUE          6
-#define MAX_NUMBER_OF_UNITS        MAX_NUMBER_OF_IO_MODULES + MAX_NUMBER_OF_IO_111 + MAX_NUMBER_OF_CUE
+
+#define MAX_NUMBER_OF_DDA          1
+
+#define MAX_NUMBER_OF_UNITS        MAX_NUMBER_OF_IO_MODULES + MAX_NUMBER_OF_IO_111 + MAX_NUMBER_OF_CUE + MAX_NUMBER_OF_DDA
 
 /*****************************************************************************
   TYPE DEFINES
@@ -66,6 +69,7 @@
 #define DEVICE_IO351_IO_MODULE    DEVICE3
 #define DEVICE_IO351_PUMP_MODULE  DEVICE4
 #define DEVICE_IO111              DEVICE5
+#define DEVICE_DDA                DEVICE6
 
 /*****************************************************************************
  * Prototypes:
@@ -73,8 +77,22 @@
  * GENIpro sw
  *
  ******************************************************************************/
-                                            //CUE Parameter      IO 351 Parameter       IO111 Parameter   MP204 Parameter
-                                            //--------------     ----------------       ----------------  ----------------
+                                            //CUE Parameter      IO 351 Parameter       IO111 Parameter   MP204 Parameter    DDA Parameter
+                                            //--------------     ----------------       ----------------  ----------------   -----------------
+EXTERN U8 s_cl2_id000[MAX_NUMBER_OF_UNITS];
+EXTERN U8 s_cl2_id001[MAX_NUMBER_OF_UNITS];
+EXTERN U8 s_cl2_id002[MAX_NUMBER_OF_UNITS];
+EXTERN U8 s_cl2_id003[MAX_NUMBER_OF_UNITS];
+EXTERN U8 s_cl2_id008[MAX_NUMBER_OF_UNITS];
+EXTERN U8 s_cl2_id009[MAX_NUMBER_OF_UNITS];
+EXTERN U8 s_cl2_id010[MAX_NUMBER_OF_UNITS];
+EXTERN U8 s_cl2_id011[MAX_NUMBER_OF_UNITS];
+EXTERN U8 s_cl2_id012[MAX_NUMBER_OF_UNITS];
+EXTERN U8 s_cl2_id013[MAX_NUMBER_OF_UNITS];
+EXTERN U8 s_cl2_id014[MAX_NUMBER_OF_UNITS];
+EXTERN U8 s_cl2_id015[MAX_NUMBER_OF_UNITS];
+EXTERN U8 s_cl2_id016[MAX_NUMBER_OF_UNITS];
+
 EXTERN U8 s_cl2_id020[MAX_NUMBER_OF_UNITS]; //                   s_ana_in_1_hi
 EXTERN U8 s_cl2_id021[MAX_NUMBER_OF_UNITS]; //                   s_ana_in_1_lo          s_t_support_bear
 EXTERN U8 s_cl2_id022[MAX_NUMBER_OF_UNITS]; //                   s_ana_in_2_hi          s_t_main_bear
@@ -108,9 +126,23 @@ EXTERN U8 s_cl2_id069[MAX_NUMBER_OF_UNITS]; //                                  
 EXTERN U8 s_cl2_id070[MAX_NUMBER_OF_UNITS]; //                                                            energy_lo1
 EXTERN U8 s_cl2_id071[MAX_NUMBER_OF_UNITS]; //                                                            energy_lo2
 EXTERN U8 s_cl2_id072[MAX_NUMBER_OF_UNITS]; //                                                            energy_lo3
+
+EXTERN U8 s_cl2_id073[MAX_NUMBER_OF_UNITS];
+EXTERN U8 s_cl2_id074[MAX_NUMBER_OF_UNITS];
+EXTERN U8 s_cl2_id080[MAX_NUMBER_OF_UNITS];
+
 EXTERN U8 s_cl2_id081[MAX_NUMBER_OF_UNITS]; //s_act_mode1
+
+EXTERN U8 s_cl2_id082[MAX_NUMBER_OF_UNITS];
+
 EXTERN U8 s_cl2_id083[MAX_NUMBER_OF_UNITS]; //s_act_mode3
+
+EXTERN U8 s_cl2_id085[MAX_NUMBER_OF_UNITS];
+
 EXTERN U8 s_cl2_id086[MAX_NUMBER_OF_UNITS]; //s_t_remote_2
+
+EXTERN U8 s_cl2_id087[MAX_NUMBER_OF_UNITS];
+
 EXTERN U8 s_cl2_id094[MAX_NUMBER_OF_UNITS]; //                                                            r_insulation
 EXTERN U8 s_cl2_id095[MAX_NUMBER_OF_UNITS]; //drive_modes1
 EXTERN U8 s_cl2_id099[MAX_NUMBER_OF_UNITS]; //                                                            dig_in
@@ -131,11 +163,19 @@ EXTERN U8 s_cl2_id158[MAX_NUMBER_OF_UNITS]; //s_alarm_code
 EXTERN U8 s_cl2_id195[MAX_NUMBER_OF_UNITS]; //                   s_power_on_cnt_hi
 EXTERN U8 s_cl2_id196[MAX_NUMBER_OF_UNITS]; //                   s_power_on_cnt_lo
 
+EXTERN U8 s_cl2_id232[MAX_NUMBER_OF_UNITS];
+EXTERN U8 s_cl2_id233[MAX_NUMBER_OF_UNITS];
+EXTERN U8 s_cl2_id234[MAX_NUMBER_OF_UNITS];
+EXTERN U8 s_cl2_id235[MAX_NUMBER_OF_UNITS];
+
 EXTERN U8 s_cl4_id030[MAX_NUMBER_OF_UNITS]; //f_upper
 
 EXTERN U8 s_cl5_id001[MAX_NUMBER_OF_UNITS]; //s_motor_reference  ana_out_1_set - IO351
 EXTERN U8 s_cl5_id002[MAX_NUMBER_OF_UNITS]; //                   ana_out_2_set - IO351
 EXTERN U8 s_cl5_id003[MAX_NUMBER_OF_UNITS]; //                   ana_out_3_set - IO351
+
+EXTERN U8 s_cl5_id004[MAX_NUMBER_OF_UNITS];
+
 EXTERN U8 s_cl5_id007[MAX_NUMBER_OF_UNITS]; //                   dig_in_1_cnt_hi
 EXTERN U8 s_cl5_id008[MAX_NUMBER_OF_UNITS]; //                   dig_in_1_cnt_lo1
 EXTERN U8 s_cl5_id009[MAX_NUMBER_OF_UNITS]; //                   dig_in_1_cnt_lo2

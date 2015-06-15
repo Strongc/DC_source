@@ -186,6 +186,37 @@ class GeniSlaveIf : public SubTask, public Observer
     bool SetIO351DigitalOutputStatus(IO351_NO_TYPE moduleNo, IO351_DIG_OUT_NO_TYPE digOutNo, bool status);
     bool GetIO351AnalogInputValue(IO351_NO_TYPE moduleNo, IO351_ANA_IN_NO_TYPE anaInNo, float* pValue);
     bool SetIO351AnalogOutput(IO351_NO_TYPE moduleNo, IO351_ANA_OUT_NO_TYPE anaOutNo, float outValue);
+
+
+   // DDA methods
+    bool ConnectDDA(IO351_NO_TYPE moduleNo);
+    void DisconnectDDA(IO351_NO_TYPE moduleNo);
+    void DDAReset(IO351_NO_TYPE moduleNo);
+    void DDA_AlarmReset(IO351_NO_TYPE moduleNo);
+    bool GetDDA_pressure_max(IO351_NO_TYPE moduleNo, float* pValue);
+    bool GetDDA_dosing_cap_max(IO351_NO_TYPE moduleNo, float* pValue);
+    bool GetDDA_flow_mon_dosing_cap(IO351_NO_TYPE moduleNo, float* pValue);
+    bool GetDDA_flow_mon_press(IO351_NO_TYPE moduleNo, float* pValue);
+    bool GetDDA_volume_total(IO351_NO_TYPE moduleNo, float* pValue);
+    bool GetDDA_system_mode(IO351_NO_TYPE moduleNo, U8* pStatus);
+    bool GetDDA_operating_mode(IO351_NO_TYPE moduleNo, U8* pStatus);
+    bool GetDDA_control_mode(IO351_NO_TYPE moduleNo, U8* pStatus);
+    bool GetDDA_stop_ctr_state(IO351_NO_TYPE moduleNo, U8* pStatus);
+    bool GetDDA_ctr_source(IO351_NO_TYPE moduleNo, U8* pStatus);
+    bool GetDDA_pumping_state(IO351_NO_TYPE moduleNo, bool* pStatus);
+    bool GetDDA_alarm_code(IO351_NO_TYPE moduleNo, U8* pStatus);
+    bool GetDDA_warn_code(IO351_NO_TYPE moduleNo, U8* pStatus);
+    bool SetDDA_bus_ctr_dosing_cap(IO351_NO_TYPE moduleNo, U32* pValue);
+    void DDA_RequestStop(IO351_NO_TYPE moduleNo);
+    void DDA_RequestStart(IO351_NO_TYPE moduleNo);
+    void DDA_SetToUserMode(IO351_NO_TYPE moduleNo);
+    void DDA_SetToManualDosing(IO351_NO_TYPE moduleNo);
+    void DDA_SetToAnalogueDosing(IO351_NO_TYPE moduleNo);
+    void DDA_SetToPulseDosing(IO351_NO_TYPE moduleNo);
+    void DDA_PressStartKey(IO351_NO_TYPE moduleNo);
+    void DDA_PressStopKey(IO351_NO_TYPE moduleNo);
+    
+   
     void IncomingIO351ModuleConfig(void);
 
     static GeniSlaveIf* GetInstance();

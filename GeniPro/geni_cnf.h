@@ -196,7 +196,7 @@
 #define   HIGH_ASCII_ID     16      // [0; 255] Highest ID in Class 7, ASCII Strings
 #define   HIGH_OBJECT_ID    10      // [0; 255] Highest ID in Class 10, data objects
 
-#define   COM_INFO_LEN      35      // [0; 64]  Length of common_info_tab
+#define   COM_INFO_LEN      38      // [0; 64]  Length of common_info_tab
 #define   COM_PTR_LEN       0       // [0; 64]  Length of common_ptr_tab
 
 #define   HIGH_MEAS16_ID    FACTORY_HIGH_MEAS16_ID
@@ -362,7 +362,7 @@ EXTERN void set_geni_error(unsigned char nw_index, unsigned char fault_state);
 /*  Fill out if CTO_BUS_TYPE == Master  or CTO_PLM_TYPE == Master or         */
 /*  CTO_RS232_TYPE == Master                                                 */
 /*****************************************************************************/
-#define MAS_MAX_NO_GROUPS            8              // 8 possible parameter groups
+#define MAS_MAX_NO_GROUPS            11             // 11 possible parameter groups
 #define MAS_MAX_REQ_APDU             50             // Max number of ID's in an request APDU
 #define MAS_MAX_UNIT_COUNT           20             // Max number of units on the bus
 #define MAS_TICK_TIME                20             // *5 ms - Time for master poll cycle

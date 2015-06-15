@@ -396,8 +396,7 @@ U16 gai_13_0_event_log_clear_id;  // 13,0 event_log_clear_id
 U16 gai_13_1_ana_out_user_1;  // 13,1 
 U16 gai_13_2_ana_out_user_2;  // 13,2 
 U16 gai_13_3_ana_out_user_3;  // 13,3 
-U16 gai_13_10_dosing_feed_tank_level;  // 13,10 
-U16 gai_13_11_chemical_total_dosed;  // 13,11 
+U16 gai_13_6_set_dosing_ref;  // 13,6 
 U32 gai_14_0_pit_power;  // 14,0 pit_power
 U32 gai_14_1_pit_energy;  // 14,1 pit_energy
 U32 gai_14_2_pit_pumped_volume;  // 14,2 pit_pumped_volume
@@ -461,6 +460,10 @@ U32 gai_14_178_yesterday_udc_counter3;  // 14,178
 U32 gai_14_179_overflow_volume;  // 14,179 overflow volume
 U32 gai_14_180_overflow_time;  // 14,180 overflow time
 U32 gai_14_190_h2s_level;  // 14,190 
+U32 gai_14_191_h2s_level_today;  // 14,191 
+U32 gai_14_192_h2s_level_yesterday;  // 14,192 
+U32 gai_14_193_dosing_feed_tank_level;  // 14,193 
+U32 gai_14_194_chemical_total_dosed;  // 14,194 
 U32 gai_15_1_dummy15;  // 15,1 Dummy: Last id must be > 0
 U32 gai_16_0_set_real_time_clock;  // 16,0 set_real_time_clock
 U32 gai_16_1_dummy16;  // 16,1 Dummy: Last id must be > 0

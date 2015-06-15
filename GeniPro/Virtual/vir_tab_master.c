@@ -156,6 +156,52 @@ const UCHAR mp204_status_slow[] = // MP204 class 2
   148,    // unit family
 };
 
+const UCHAR DDA_module_capability[] = // DDA, class 2
+{
+    0,	// pressure_max 
+    1,	// dosing_cap_max_hi 
+    2,	// dosing_cap_max_lo1
+    3,	// dosing_cap_max_lo2
+    8,	// dosing_cap_ref_hi
+    9,	// dosing_cap_ref_lo1
+    10,	// dosing_cap_ref_lo2
+    11,	// dosing_cap_ref_lo3
+};
+
+const UCHAR DDA_module_status[] = // DDA, class 2
+{
+    12,	// flow_mon_dosing_cap_hi
+    13,	// flow_mon_dosing_cap_lo1
+    14,	// flow_mon_dosing_cap_lo2
+    15,	// flow_mon_dosing_cap_lo3
+    16,	// flow_mon_press
+    71, // volume_total_hi
+    72, // volume_total_lo1
+    73, // volume_total_lo2
+    74, // volume_total_lo3
+    80, // system_mode
+    81, // operating_mode
+    82, // control_mode
+    85, // stop_ctr_state
+    86, // ctr_source
+    87, // pumping_state
+    232, // warn_bits1
+    233, // warn_bits2
+    234, // alarm_code
+    235, // warn_code   
+};
+
+const UCHAR DDA_module_ref[] = // DDA, class 5
+{
+    1, // bus_ctr_dosing_cap_hi
+    2, // bus_ctr_dosing_cap_lo1
+    3, // bus_ctr_dosing_cap_lo2
+    4, // bus_ctr_dosing_cap_lo3   
+};
+
+
+
+
 
 
 //
@@ -173,7 +219,11 @@ const GROUP_TAB_TYPE group_table[MAS_MAX_NO_GROUPS] = {
   { MEAS_APDU, GET, 2,   sizeof(cue_module_measurements), (UCHAR *)cue_module_measurements, DEVICE_E_PUMP },
   { MEAS_APDU, GET, 2,   sizeof(mp204_status_slow),       (UCHAR *)mp204_status_slow,       DEVICE_MP204 },
   { MEAS_APDU, GET, 1,   sizeof(io111_status_fast),       (UCHAR *)io111_status_fast,       DEVICE_IO111 },
-  { CONF_APDU, GET, 20,  sizeof(cue_module_f_upper),      (UCHAR *)cue_module_f_upper,      DEVICE_E_PUMP }
+  { CONF_APDU, GET, 20,  sizeof(cue_module_f_upper),      (UCHAR *)cue_module_f_upper,      DEVICE_E_PUMP },
+  { MEAS_APDU, GET, 1,   sizeof(DDA_module_capability),   (UCHAR *)DDA_module_capability,   DEVICE_DDA },
+  { MEAS_APDU, GET, 1,   sizeof(DDA_module_status),       (UCHAR *)DDA_module_status,       DEVICE_DDA },
+  { REF_APDU,  SET, 1,   sizeof(DDA_module_ref),          (UCHAR *)DDA_module_ref,          DEVICE_DDA }
+	  
 };
 
 //  if static_apdu_tgm has a size > 0 this apdu will be included in every telegram
@@ -229,10 +279,21 @@ UCHAR dummy;
 UINT d16;
 ULONG d32;
 const ID_PTR mas_meas_tab[] = {
-   NA, NA, NA,                                       /*   0 -  2            */
-   NA,                                               /*  ID   3             */
-   NA, NA, NA, NA, NA, NA,                           /*   4 -  9            */
-   NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,           /*  10 - 19            */
+   s_cl2_id000,     				                         /*  ID   0             */
+   s_cl2_id001,                                      /*  ID   1             */
+   s_cl2_id002,                                      /*  ID   2             */
+   s_cl2_id003,                                      /*  ID   3             */
+   NA, NA, NA, NA,                                   /*   4 -  7            */
+   s_cl2_id008,                                      /*  ID   8             */
+   s_cl2_id009,                                      /*  ID   9             */
+   s_cl2_id010,                                      /*  ID   10            */
+   s_cl2_id011,                                      /*  ID   11            */
+   s_cl2_id012,                                      /*  ID   12            */
+   s_cl2_id013,                                      /*  ID   13            */
+   s_cl2_id014,                                      /*  ID   14            */
+   s_cl2_id015,                                      /*  ID   15            */
+   s_cl2_id016,                                      /*  ID   16            */  
+   NA, NA, NA,                                       /*  17 - 19            */
    s_cl2_id020,                                      /*  ID  20             */
    s_cl2_id021,                                      /*  ID  21             */
    s_cl2_id022,                                      /*  ID  22             */
@@ -272,14 +333,18 @@ const ID_PTR mas_meas_tab[] = {
    s_cl2_id070,                                      /*  ID  70             */
    s_cl2_id071,                                      /*  ID  71             */
    s_cl2_id072,                                      /*  ID  72             */
-   NA, NA, NA, NA, NA, NA, NA,                       /*  73 - 79            */
-   NA,                                               /*  ID  80             */
+   s_cl2_id073,                                      /*  ID  73             */
+   s_cl2_id074,                                      /*  ID  74             */  
+   NA, NA, NA, NA, NA,                               /*  75 - 79            */
+   s_cl2_id080,                                      /*  ID  80             */
    s_cl2_id081,                                      /*  ID  81             */
-   NA,                                               /*  ID  82             */
+   s_cl2_id082,                                      /*  ID  82             */
    s_cl2_id083,                                      /*  ID  83             */
-   NA, NA,                                           /*  84 - 85            */
+   NA,                                               /*  84                 */
+   s_cl2_id085,                                      /*  ID  85             */   
    s_cl2_id086,                                      /*  ID  86             */
-   NA, NA, NA,                                       /*  87 - 89            */
+   s_cl2_id087,                                      /*  ID  87             */
+   NA, NA,                                           /*  88 - 89            */
    NA,                                               /*  ID  90             */
    NA,                                               /*  ID  91             */
    NA,                                               /*  ID  92             */
@@ -328,7 +393,12 @@ const ID_PTR mas_meas_tab[] = {
    NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,           /*  200 - 209          */
    NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,           /*  210 - 219          */
    NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,           /*  220 - 229          */
-   NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,           /*  230 - 239          */
+   NA, NA,                                           /*  230 - 231          */
+   s_cl2_id232,                                      /*  ID 232             */   
+   s_cl2_id233,                                      /*  ID 233             */
+   s_cl2_id234,                                      /*  ID 234             */
+   s_cl2_id235,                                      /*  ID 235             */ 
+   NA, NA, NA, NA,                                   /*  236 - 239          */   
    NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,           /*  240 - 249          */
    NA, NA, NA, NA, NA, NA};                          /*  250 - 255          */
 
@@ -373,7 +443,7 @@ const ID_PTR   mas_ref_tab[]   = {
    s_cl5_id001,                                      /*  01                  */
    s_cl5_id002,                                      /*  02                  */
    s_cl5_id003,                                      /*  03                  */
-   NA,                                               /*  04                  */
+   s_cl5_id004,                                      /*  04                  */
    NA,                                               /*  05                  */
    NA,                                               /*  06                  */
    s_cl5_id007,                                      /*  07                  */

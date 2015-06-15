@@ -448,8 +448,7 @@ typedef enum
   GAI_VAR_ANA_OUT_USER_1 = 0x0D01,  // 13,1 
   GAI_VAR_ANA_OUT_USER_2 = 0x0D02,  // 13,2 
   GAI_VAR_ANA_OUT_USER_3 = 0x0D03,  // 13,3 
-  GAI_VAR_DOSING_FEED_TANK_LEVEL = 0x0D0A,  // 13,10 
-  GAI_VAR_CHEMICAL_TOTAL_DOSED = 0x0D0B,  // 13,11 
+  GAI_VAR_SET_DOSING_REF = 0x0D06,  // 13,6 
   GAI_VAR_PIT_POWER = 0x0E00,  // 14,0 pit_power
   GAI_VAR_PIT_ENERGY = 0x0E01,  // 14,1 pit_energy
   GAI_VAR_PIT_PUMPED_VOLUME = 0x0E02,  // 14,2 pit_pumped_volume
@@ -513,6 +512,10 @@ typedef enum
   GAI_VAR_OVERFLOW_VOLUME = 0x0EB3,  // 14,179 overflow volume
   GAI_VAR_OVERFLOW_TIME = 0x0EB4,  // 14,180 overflow time
   GAI_VAR_H2S_LEVEL = 0x0EBE,  // 14,190 
+  GAI_VAR_H2S_LEVEL_TODAY = 0x0EBF,  // 14,191 
+  GAI_VAR_H2S_LEVEL_YESTERDAY = 0x0EC0,  // 14,192 
+  GAI_VAR_DOSING_FEED_TANK_LEVEL = 0x0EC1,  // 14,193 
+  GAI_VAR_CHEMICAL_TOTAL_DOSED = 0x0EC2,  // 14,194 
   GAI_VAR_DUMMY15 = 0x0F01,  // 15,1 Dummy: Last id must be > 0
   GAI_VAR_SET_REAL_TIME_CLOCK = 0x1000,  // 16,0 set_real_time_clock
   GAI_VAR_DUMMY16 = 0x1001  // 16,1 Dummy: Last id must be > 0
@@ -898,8 +901,7 @@ EXTERN U16 gai_13_0_event_log_clear_id;  // 13,0 event_log_clear_id
 EXTERN U16 gai_13_1_ana_out_user_1;  // 13,1 
 EXTERN U16 gai_13_2_ana_out_user_2;  // 13,2 
 EXTERN U16 gai_13_3_ana_out_user_3;  // 13,3 
-EXTERN U16 gai_13_10_dosing_feed_tank_level;  // 13,10 
-EXTERN U16 gai_13_11_chemical_total_dosed;  // 13,11 
+EXTERN U16 gai_13_6_set_dosing_ref;  // 13,6 
 EXTERN U32 gai_14_0_pit_power;  // 14,0 pit_power
 EXTERN U32 gai_14_1_pit_energy;  // 14,1 pit_energy
 EXTERN U32 gai_14_2_pit_pumped_volume;  // 14,2 pit_pumped_volume
@@ -963,6 +965,10 @@ EXTERN U32 gai_14_178_yesterday_udc_counter3;  // 14,178
 EXTERN U32 gai_14_179_overflow_volume;  // 14,179 overflow volume
 EXTERN U32 gai_14_180_overflow_time;  // 14,180 overflow time
 EXTERN U32 gai_14_190_h2s_level;  // 14,190 
+EXTERN U32 gai_14_191_h2s_level_today;  // 14,191 
+EXTERN U32 gai_14_192_h2s_level_yesterday;  // 14,192 
+EXTERN U32 gai_14_193_dosing_feed_tank_level;  // 14,193 
+EXTERN U32 gai_14_194_chemical_total_dosed;  // 14,194 
 EXTERN U32 gai_15_1_dummy15;  // 15,1 Dummy: Last id must be > 0
 EXTERN U32 gai_16_0_set_real_time_clock;  // 16,0 set_real_time_clock
 EXTERN U32 gai_16_1_dummy16;  // 16,1 Dummy: Last id must be > 0

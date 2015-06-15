@@ -56,6 +56,7 @@
 #include <U16DataPoint.h>
 #include <AlarmDelay.h>
 #include <U8DataPoint.h>
+#include <FloatDataPoint.h>
 
 /*****************************************************************************
   LOCAL INCLUDES
@@ -145,8 +146,10 @@ class DDACtrl : public SubTask, public SwTimerBaseClass
 
     SubjectPtr<BoolDataPoint*> mpDDAed;
     SubjectPtr<U32DataPoint*> mpDDALevelAct;
-    SubjectPtr<U32DataPoint*> mpDDADosingFeedTankLevel;
-    SubjectPtr<U32DataPoint*> mpDDAChemicalTotalDosed;
+    SubjectPtr<U32DataPoint*> mpDDALevelToday;
+    SubjectPtr<U32DataPoint*> mpDDALevelYesterday;
+    SubjectPtr<FloatDataPoint*> mpDDADosingFeedTankLevel;
+    SubjectPtr<FloatDataPoint*> mpDDAChemicalTotalDosed;
     SubjectPtr<EnumDataPoint<DOSING_PUMP_TYPE_TYPE>*>  mpDosingPumpType;
 
     DDA_STATE mDDAState;

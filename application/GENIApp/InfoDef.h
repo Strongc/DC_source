@@ -81,6 +81,8 @@
 #define GENI_UNIT_DOT1PCT        12
 #define GENI_UNIT_1PCT           30
 #define GENI_UNIT_10PCT          76
+#define GENI_UNIT_1PPM           113
+
 /* Pressure */
 #define GENI_UNIT_1MBAR          51
 #define GENI_UNIT_DOT01BAR       27
@@ -94,9 +96,12 @@
 #define GENI_UNIT_100M3H         93
 #define GENI_UNIT_1LS            52
 #define GENI_UNIT_DOT1LS         63
+#define GENI_UNIT_DOT1LH         114
 /* Volume */
 #define GENI_UNIT_1M3            86
 #define GENI_UNIT_DOT1M3         64
+#define GENI_UNIT_PEDDOT1M3      64
+#define GENI_UNIT_1ML            88
 /* Level */
 #define GENI_UNIT_1M             25
 #define GENI_UNIT_DOT01M         83
@@ -215,6 +220,9 @@ typedef enum
   COM_INDEX_EXT_TOTAL_VOLUME_DOT1M3,
   COM_INDEX_EXT_OVER_VOLUME_DOT1M3,
   COM_INDEX_EXT_FREQUENCY_2HZ,
+  COM_INDEX_EXT_PERCENTAGE_1PPM,
+  COM_INDEX_EXT_FLOW_DOT1LH,
+  COM_INDEX_EXT_VOLUME_1ML,
   /****************/
   LAST_COM_INDEX_EXT,
   NO_OF_COM_INDEX_EXT = LAST_COM_INDEX_EXT - 1
