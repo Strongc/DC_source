@@ -462,6 +462,28 @@ void AnaOutCtrl::HandleFuncChange(bool UpdateAllConfigurations)
         output_quality = DP_AVAILABLE;
         break;
 
+      case Q_FLOW:
+        mpConfAnaOutMin[i]->SetMinValue(0.0f);
+        mpConfAnaOutMin[i]->SetMaxValue(100.0f);
+        mpConfAnaOutMin[i]->SetQuantity(Q_FLOW);
+        mpConfAnaOutMin[i]->SetQuality(DP_AVAILABLE);
+
+        mpConfAnaOutMax[i]->SetMinValue(0.0f);
+        mpConfAnaOutMax[i]->SetMaxValue(100.0f);
+        mpConfAnaOutMax[i]->SetQuantity(Q_FLOW);
+        mpConfAnaOutMax[i]->SetQuality(DP_AVAILABLE);
+
+        if (mpAnaOutSetupFromGeniFlag->GetValue() == false
+          && !UpdateAllConfigurations)
+        {
+          // the change is not arisen from GENI, so set min. + max.
+          mpConfAnaOutMin[i]->SetValue(0.0f); // 0
+          mpConfAnaOutMax[i]->SetValue(5.0f); // 5
+        }
+
+        output_quality = DP_AVAILABLE;
+        break;
+
       default:
         DisableRangeDatapoints(i);
 

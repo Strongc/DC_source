@@ -73,37 +73,13 @@
 
 typedef enum
 {
-  DDA_PREVENTED,
-  DDA_LEGAL
-} DDA_STATE;
-
-
-typedef enum
-{
-  DDA_LEGAL_WAITING,
-  DDA_LEGAL_REQUESTED,
-  DDA_LEGAL_RUNNING
-} DDA_LEGAL_STATE;
-
-
-typedef enum
-{
-  FIRST_DDA_FAULT_OBJ,
-  DDA_FAULT_OBJ = FIRST_DDA_FAULT_OBJ,
+  FIRST_DDAC_FAULT_OBJ,
+  DDA_FAULT_OBJ_H2S = FIRST_DDAC_FAULT_OBJ,
   //DDA_FAULT_OBJ_EMPTY_TANK,
 
-  NO_OF_DDA_FAULT_OBJ,
-  LAST_DDA_FAULT_OBJ = NO_OF_DDA_FAULT_OBJ - 1
-}DDA_FAULT_OBJ_TYPE;
-
-typedef struct
-{
- U8 Pumping_Status;
- U8 Chemical_Status;
- U8 Alarm_status;
-
-}DDA_STATUS;
-
+  NO_OF_DDAC_FAULT_OBJ,
+  LAST_DDAC_FAULT_OBJ = NO_OF_DDAC_FAULT_OBJ - 1
+}DDAC_FAULT_OBJ_TYPE;
 /*****************************************************************************
  * CLASS:
  * DESCRIPTION:
@@ -144,7 +120,10 @@ class DDACtrl : public SubTask, public SwTimerBaseClass
     ATTRIBUTE
     ********************************************************************/
 
-    SubjectPtr<BoolDataPoint*> mpDDAed;
+    SubjectPtr<BoolDataPoint*> mpDosingPumpInstalled;
+    SubjectPtr<BoolDataPoint*> mpDDAInstalled;
+    SubjectPtr<FloatDataPoint*> mpSetDosingRef;
+    SubjectPtr<U32DataPoint*> mpDDARef;
     SubjectPtr<U32DataPoint*> mpDDALevelAct;
     SubjectPtr<U32DataPoint*> mpDDALevelToday;
     SubjectPtr<U32DataPoint*> mpDDALevelYesterday;
@@ -152,20 +131,15 @@ class DDACtrl : public SubTask, public SwTimerBaseClass
     SubjectPtr<FloatDataPoint*> mpDDAChemicalTotalDosed;
     SubjectPtr<EnumDataPoint<DOSING_PUMP_TYPE_TYPE>*>  mpDosingPumpType;
 
-    DDA_STATE mDDAState;
-    DDA_LEGAL_STATE mDDALegalState;
-    //DDA_STATUS *dda_pump_status;
     //DOSING_PUMP_TYPE_TYPE mDosingPumpType;
 
     bool mDDAWaitTimerFlag;
     bool mDDARunTimerFlag;
     bool mRunRequestedFlag;
 
-    /* Variables for alarm handling */
-    SubjectPtr<AlarmDataPoint*> mDDAAlarms[NO_OF_DDA_FAULT_OBJ];
-    AlarmDelay* mpDDAAlarmDelay[NO_OF_DDA_FAULT_OBJ];
-    bool mDDAAlarmDelayCheckFlag[NO_OF_DDA_FAULT_OBJ];
-    static int counter;
+    SubjectPtr<AlarmDataPoint*> mAlarms[NO_OF_DDAC_FAULT_OBJ];
+    AlarmDelay* mpAlarmDelay[NO_OF_DDAC_FAULT_OBJ];
+    bool mAlarmDelayCheckFlag[NO_OF_DDAC_FAULT_OBJ];
 
   protected:
     /********************************************************************

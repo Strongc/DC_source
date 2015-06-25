@@ -204,9 +204,9 @@ class GeniSlaveIf : public SubTask, public Observer
     bool GetDDA_stop_ctr_state(IO351_NO_TYPE moduleNo, U8* pStatus);
     bool GetDDA_ctr_source(IO351_NO_TYPE moduleNo, U8* pStatus);
     bool GetDDA_pumping_state(IO351_NO_TYPE moduleNo, bool* pStatus);
-    bool GetDDA_alarm_code(IO351_NO_TYPE moduleNo, U8* pStatus);
-    bool GetDDA_warn_code(IO351_NO_TYPE moduleNo, U8* pStatus);
-    bool SetDDA_bus_ctr_dosing_cap(IO351_NO_TYPE moduleNo, U32* pValue);
+    bool GetDDAAlarmCode(IO351_NO_TYPE moduleNo, ALARM_ID_TYPE* pValue);
+    bool GetDDAWarningCode(IO351_NO_TYPE moduleNo, U32* pValue);
+    bool SetDDAReference(IO351_NO_TYPE moduleNo, U32 pValue);
     void DDA_RequestStop(IO351_NO_TYPE moduleNo);
     void DDA_RequestStart(IO351_NO_TYPE moduleNo);
     void DDA_SetToUserMode(IO351_NO_TYPE moduleNo);

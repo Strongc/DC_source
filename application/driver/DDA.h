@@ -35,6 +35,7 @@
 /*****************************************************************************
   SYSTEM INCLUDES
  *****************************************************************************/
+#include <AppTypeDefs.h>
 
 /*****************************************************************************
   PROJECT INCLUDES
@@ -44,6 +45,13 @@
 #include <SubTask.h>
 #include <SwTimerBassClass.h>
 #include <SwTimer.h>
+#include <AlarmDelay.h>
+#include <EventDataPoint.h>
+#include <EnumDataPoint.h>
+#include <BoolDataPoint.h>
+#include <U32DataPoint.h>
+#include <U16DataPoint.h>
+#include <U8DataPoint.h>
 #include <FloatDataPoint.h>
 
 
@@ -54,6 +62,27 @@
 /*****************************************************************************
   DEFINES
  *****************************************************************************/
+/*typedef enum*/
+//{
+  //FIRST_DDA_FAULT_OBJ,
+  //DDA_FAULT_OBJ_GENI_COMM = FIRST_DDA_FAULT_OBJ,
+  //DDA_FAULT_OBJ_ALARM,
+  //DDA_FAULT_OBJ_WARNING,
+
+  //NO_OF_DDA_FAULT_OBJ,
+  //LAST_DDA_FAULT_OBJ = NO_OF_DDA_FAULT_OBJ - 1
+//} DDA_FAULT_OBJ_TYPE;
+
+typedef enum
+{
+  FIRST_DDA_FAULT_OBJ,
+  DDA_FAULT_OBJ_GENI_COMM = FIRST_DDA_FAULT_OBJ,
+  DDA_FAULT_OBJ_ALARM,
+
+  NO_OF_DDA_FAULT_OBJ,
+  LAST_DDA_FAULT_OBJ = NO_OF_DDA_FAULT_OBJ - 1
+} DDA_FAULT_OBJ_TYPE;
+
 
 /*****************************************************************************
   TYPE DEFINES
@@ -114,12 +143,19 @@ class DDA : public SubTask, public Observer
     // Config
     
     // Input
+    SubjectPtr<EventDataPoint*> mpSystemAlarmResetEvent;
 
-    SubjectPtr<FloatDataPoint*> mpSetDosingRef;
+    SubjectPtr<U32DataPoint*> mpDDARef;
+    SubjectPtr<BoolDataPoint*> mpDDAInstalled;
 
+
+    /* Variables for alarm handling */
+    SubjectPtr<AlarmDataPoint*> mDDAAlarms[NO_OF_DDA_FAULT_OBJ];
+    AlarmDelay* mpDDAAlarmDelay[NO_OF_DDA_FAULT_OBJ];
+    bool mDDAAlarmDelayCheckFlag[NO_OF_DDA_FAULT_OBJ];
+
+    // Local variables
     GeniSlaveIf* mpGeniSlaveIf;
-
-
   
   protected:
     /********************************************************************

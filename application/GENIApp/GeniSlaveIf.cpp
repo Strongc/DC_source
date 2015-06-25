@@ -3474,10 +3474,9 @@ bool GeniSlaveIf::GetDDA_pumping_state(IO351_NO_TYPE moduleNo, bool* pStatus)
  * Function - GetDDA Pump Alarm code
  * DESCRIPTION:
 *****************************************************************************/
-bool GeniSlaveIf::GetDDA_alarm_code(IO351_NO_TYPE moduleNo, U8* pStatus)
+bool GeniSlaveIf::GetDDAAlarmCode(IO351_NO_TYPE moduleNo, ALARM_ID_TYPE* pValue)
 {
   U8 unit_index;
-  U8 geni_value;
   GENI_DEVICE_TYPE device;
   bool ret_val = false;
 
@@ -3493,9 +3492,8 @@ bool GeniSlaveIf::GetDDA_alarm_code(IO351_NO_TYPE moduleNo, U8* pStatus)
     if (device == DEVICE_DDA)
     {
       OS_Use(&geni_class_data);
-      geni_value = (U8)s_cl2_id234[unit_index];     
+      *pValue = (ALARM_ID_TYPE)s_cl2_id234[unit_index];     
       OS_Unuse(&geni_class_data);
-      *pStatus = geni_value;
       ret_val = true;
     }
   }
@@ -3506,10 +3504,9 @@ bool GeniSlaveIf::GetDDA_alarm_code(IO351_NO_TYPE moduleNo, U8* pStatus)
  * Function - GetDDA Pump Warning code
  * DESCRIPTION:
 *****************************************************************************/
-bool GeniSlaveIf::GetDDA_warn_code(IO351_NO_TYPE moduleNo, U8* pStatus)
+bool GeniSlaveIf::GetDDAWarningCode(IO351_NO_TYPE moduleNo, U32* pValue)
 {
   U8 unit_index;
-  U8 geni_value;
   GENI_DEVICE_TYPE device;
   bool ret_val = false;
 
@@ -3525,9 +3522,8 @@ bool GeniSlaveIf::GetDDA_warn_code(IO351_NO_TYPE moduleNo, U8* pStatus)
     if (device == DEVICE_DDA)
     {
       OS_Use(&geni_class_data);
-      geni_value = (U8)s_cl2_id235[unit_index];     
+      *pValue = (U32)s_cl2_id235[unit_index];
       OS_Unuse(&geni_class_data);
-      *pStatus = geni_value;
       ret_val = true;
     }
   }
@@ -3538,7 +3534,7 @@ bool GeniSlaveIf::GetDDA_warn_code(IO351_NO_TYPE moduleNo, U8* pStatus)
  * Function - SetDDA Pump Dosing setpoint
  * DESCRIPTION:
 *****************************************************************************/
-bool GeniSlaveIf::SetDDA_bus_ctr_dosing_cap(IO351_NO_TYPE moduleNo, U32* pValue)
+bool GeniSlaveIf::SetDDAReference(IO351_NO_TYPE moduleNo, U32 pValue)
 {
   U8 unit_index;
   //U32 geni_value = 0;
@@ -3557,11 +3553,10 @@ bool GeniSlaveIf::SetDDA_bus_ctr_dosing_cap(IO351_NO_TYPE moduleNo, U32* pValue)
     if (device == DEVICE_DDA)
     {
       OS_Use(&geni_class_data);
-      s_cl5_id001[unit_index] = (U8) (* pValue >>24) ;
-      s_cl5_id002[unit_index] = (U8) ((* pValue & 0x00FFFFFF) >>16) ;
-      s_cl5_id003[unit_index] = (U8) ((* pValue & 0x0000FFFF) >>8) ;
-      s_cl5_id004[unit_index] = (U8) (* pValue & 0x000000FF) ;      
-    
+      s_cl5_id001[unit_index] = (U8)(pValue >>24) ;
+      s_cl5_id002[unit_index] = (U8)((pValue & 0x00FFFFFF) >> 16);
+      s_cl5_id003[unit_index] = (U8)((pValue & 0x0000FFFF) >> 8);
+      s_cl5_id004[unit_index] = (U8)(pValue & 0x000000FF);      
       OS_Unuse(&geni_class_data);
     }
   }
