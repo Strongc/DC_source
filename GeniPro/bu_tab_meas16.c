@@ -74,8 +74,8 @@ const ID_PTR meas16_tab[] =
 /* ID  52 */ UC_ADDR_0_LI(gai_11_52_pit_1_pumps_opr_time_today), // pit_1_pumps_opr_time_today
 /* ID  53 */ UC_ADDR_0_LI(gai_11_53_discharge_pressure), // Discharge pressure
 /* ID  54 */ NA,
-/* ID  55 */ NA,
-/* ID  56 */ NA,
+/* ID  55 */ UC_ADDR_0_LI(gai_11_55_pit_alarms4), // 
+/* ID  56 */ UC_ADDR_0_LI(gai_11_56_pit_warn4), // 
 /* ID  57 */ NA,
 /* ID  58 */ NA,
 /* ID  59 */ UC_ADDR_0_LI(gai_11_59_power_on_counter), // power_on_counter (not in profile)
@@ -335,8 +335,8 @@ const ID_INFO meas16_info_tab[] =
 /* ID  52 */ COMMON_INFO + COM_INDEX_EXT_TIME_1MIN, // pit_1_pumps_opr_time_today
 /* ID  53 */ COMMON_INFO + COM_INDEX_EXT_PRESSURE_1MBAR, // Discharge pressure
 /* ID  54 */ NI,
-/* ID  55 */ NI,
-/* ID  56 */ NI,
+/* ID  55 */ BITVAR_255, // 
+/* ID  56 */ BITVAR_255, // 
 /* ID  57 */ NI,
 /* ID  58 */ NI,
 /* ID  59 */ COMMON_INFO + COM_INDEX_EXT_DIMLESS_254, // power_on_counter (not in profile)

@@ -75,7 +75,6 @@ typedef enum
 {
   FIRST_DDAC_FAULT_OBJ,
   DDA_FAULT_OBJ_H2S = FIRST_DDAC_FAULT_OBJ,
-  //DDA_FAULT_OBJ_EMPTY_TANK,
 
   NO_OF_DDAC_FAULT_OBJ,
   LAST_DDAC_FAULT_OBJ = NO_OF_DDAC_FAULT_OBJ - 1
@@ -124,12 +123,16 @@ class DDACtrl : public SubTask, public SwTimerBaseClass
     SubjectPtr<BoolDataPoint*> mpDDAInstalled;
     SubjectPtr<FloatDataPoint*> mpSetDosingRef;
     SubjectPtr<U32DataPoint*> mpDDARef;
-    SubjectPtr<U32DataPoint*> mpDDALevelAct;
+    SubjectPtr<U16DataPoint*> mpSetH2SFault;
+    SubjectPtr<U32DataPoint*> mpH2SLevelAct;
+    SubjectPtr<U32DataPoint*> mpSetH2SLevel;
     SubjectPtr<U32DataPoint*> mpDDALevelToday;
     SubjectPtr<U32DataPoint*> mpDDALevelYesterday;
     SubjectPtr<FloatDataPoint*> mpDDADosingFeedTankLevel;
     SubjectPtr<FloatDataPoint*> mpDDAChemicalTotalDosed;
     SubjectPtr<EnumDataPoint<DOSING_PUMP_TYPE_TYPE>*>  mpDosingPumpType;
+
+    //For test
 
     //DOSING_PUMP_TYPE_TYPE mDosingPumpType;
 

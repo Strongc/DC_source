@@ -104,6 +104,7 @@ class AlarmStatusCtrl : public Observer, public SubTask
     ********************************************************************/
     bool ConvertSystemAlarmToGeniStatus(ALARM_ID_TYPE alarm_id, U16 &word_no, U16 &bit_no);
     bool ConvertPumpAlarmToGeniStatus(ALARM_ID_TYPE alarm_id, U16 &word_no, U16 &bit_no);
+    bool ConvertDosingPumpAlarmToGeniStatus(ALARM_ID_TYPE alarm_id, U16 &word_no, U16 &bit_no);
 
     /********************************************************************
     ATTRIBUTE

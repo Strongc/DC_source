@@ -100,11 +100,10 @@ void NonGFDosingPumpCtrl::InitSubTask()
  *****************************************************************************/
 void NonGFDosingPumpCtrl::RunSubTask()
 {
-  bool dosing_pump_ed = 0;
+  bool non_gf_dosing_pump_installed = 0;
   ACTUAL_OPERATION_MODE_TYPE actual_operation_mode;
   ALARM_ID_TYPE new_alarm_code = ALARM_ID_NO_ALARM;
 
-  dosing_pump_ed = mpDosingPumpEnable->GetValue();
 
   for (unsigned int i = FIRST_DOSING_PUMP_FAULT_OBJ; i < NO_OF_DOSING_PUMP_FAULT_OBJ; i++)
   {
@@ -120,12 +119,14 @@ void NonGFDosingPumpCtrl::RunSubTask()
   //if (mpDosingPumpDigInRequest.IsUpdated())
   //{
     //if (mpDosingPumpDigInRequest->GetValue() == DIGITAL_INPUT_FUNC_STATE_ACTIVE)
-  if (dosing_pump_ed && (mpDosingPumpType->GetValue() == DOSING_PUMP_TYPE_ANALOG))
+  if ((mpDosingPumpInstalled->GetValue() == true) && (mpDosingPumpType->GetValue() == DOSING_PUMP_TYPE_ANALOG))
   {
+    non_gf_dosing_pump_installed = true;
     mpDosingPumpAlarmDelay[DOSING_PUMP_FAULT_OBJ]->SetFault();
   }
   else
   {
+    non_gf_dosing_pump_installed = false;
     mpDosingPumpAlarmDelay[DOSING_PUMP_FAULT_OBJ]->ResetFault();
   }
   
@@ -142,7 +143,7 @@ void NonGFDosingPumpCtrl::RunSubTask()
  *****************************************************************************/
 void NonGFDosingPumpCtrl::ConnectToSubjects()
 {
-  mpDosingPumpEnable->Subscribe(this);
+  mpDosingPumpInstalled->Subscribe(this);
   mpDosingPumpType->Subscribe(this);
   mpDosingPumpDigInRequest->Subscribe(this);
   for (unsigned int i = FIRST_DOSING_PUMP_FAULT_OBJ; i < NO_OF_DOSING_PUMP_FAULT_OBJ; i++)
@@ -158,7 +159,7 @@ void NonGFDosingPumpCtrl::ConnectToSubjects()
  *****************************************************************************/
 void NonGFDosingPumpCtrl::Update(Subject* pSubject)
 {
-  mpDosingPumpEnable.Update(pSubject);
+  mpDosingPumpInstalled.Update(pSubject);
   mpDosingPumpType.Update(pSubject);
   mpDosingPumpDigInRequest.Update(pSubject);
 
@@ -195,7 +196,7 @@ void NonGFDosingPumpCtrl::SetSubjectPointer(int id, Subject* pSubject)
   switch (id)
   {
     case SP_DPC_DOSING_PUMP_INSTALLED:
-      mpDosingPumpEnable.Attach(pSubject);
+      mpDosingPumpInstalled.Attach(pSubject);
       break;
     case SP_DPC_DOSING_PUMP_TYPE:
       mpDosingPumpType.Attach(pSubject);

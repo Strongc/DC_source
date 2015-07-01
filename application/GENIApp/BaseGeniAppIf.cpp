@@ -1295,6 +1295,12 @@ void BaseGeniAppIf::SetSubjectPointer(int /*id*/, Subject* pSubject)
   case SUBJECT_ID_SET_DOSING_REF:
     mp_set_dosing_ref.Attach(pSubject);
     break;
+  case SUBJECT_ID_SET_H2S_FAULT:
+    mp_set_h2s_fault.Attach(pSubject);
+    break;
+  case SUBJECT_ID_SET_H2S_LEVEL:
+    mp_set_h2s_level.Attach(pSubject);
+    break;
   case SUBJECT_ID_SIGNAL_LEVEL_ACT_GENI:
     mp_signal_level_act_geni.Attach(pSubject);
     break;
@@ -1376,6 +1382,9 @@ void BaseGeniAppIf::SetSubjectPointer(int /*id*/, Subject* pSubject)
   case SUBJECT_ID_SYSTEM_ALARM_STATUS_3:
     mp_system_alarm_status_3.Attach(pSubject);
     break;
+  case SUBJECT_ID_SYSTEM_ALARM_STATUS_4:
+    mp_system_alarm_status_4.Attach(pSubject);
+    break;
   case SUBJECT_ID_SYSTEM_FLOW:
     mp_system_flow.Attach(pSubject);
     break;
@@ -1393,6 +1402,9 @@ void BaseGeniAppIf::SetSubjectPointer(int /*id*/, Subject* pSubject)
     break;
   case SUBJECT_ID_SYSTEM_WARNING_STATUS_3:
     mp_system_warning_status_3.Attach(pSubject);
+    break;
+  case SUBJECT_ID_SYSTEM_WARNING_STATUS_4:
+    mp_system_warning_status_4.Attach(pSubject);
     break;
   case SUBJECT_ID_TODAY_USER_DEFINED_COUNTER_1:
     mp_today_user_defined_counter_1.Attach(pSubject);
@@ -2001,6 +2013,8 @@ void BaseGeniAppIf::ConnectToSubjects(void)
   mp_scada_pin_code_enabled->Subscribe(this);
   mp_service_mode_enabled->Subscribe(this);
   mp_set_dosing_ref->Subscribe(this);
+  mp_set_h2s_fault->Subscribe(this);
+  mp_set_h2s_level->Subscribe(this);
   mp_signal_level_act_geni->Subscribe(this);
   mp_signal_level_avg_geni->Subscribe(this);
   mp_sim_card_status->Subscribe(this);
@@ -2028,12 +2042,14 @@ void BaseGeniAppIf::ConnectToSubjects(void)
   mp_system_alarm_status_1->Subscribe(this);
   mp_system_alarm_status_2->Subscribe(this);
   mp_system_alarm_status_3->Subscribe(this);
+  mp_system_alarm_status_4->Subscribe(this);
   mp_system_flow->Subscribe(this);
   mp_system_power->Subscribe(this);
   mp_system_run_time->Subscribe(this);
   mp_system_warning_status_1->Subscribe(this);
   mp_system_warning_status_2->Subscribe(this);
   mp_system_warning_status_3->Subscribe(this);
+  mp_system_warning_status_4->Subscribe(this);
   mp_today_user_defined_counter_1->Subscribe(this);
   mp_today_user_defined_counter_2->Subscribe(this);
   mp_today_user_defined_counter_3->Subscribe(this);
@@ -3229,6 +3245,12 @@ bool BaseGeniAppIf::SubjectToGeni(Subject* pSubject)
   case SUBJECT_ID_PUMP_6_WARNING_STATUS_4:
     gai_11_239_p6_warn4 = ToGeni16bitValue(mp_pump_6_warning_status_4.GetSubject(), GENI_CONVERT_ID_BITVAR_255);
     break;
+  case SUBJECT_ID_SYSTEM_ALARM_STATUS_4:
+    gai_11_55_pit_alarms4 = ToGeni16bitValue(mp_system_alarm_status_4.GetSubject(), GENI_CONVERT_ID_BITVAR_255);
+    break;
+  case SUBJECT_ID_SYSTEM_WARNING_STATUS_4:
+    gai_11_56_pit_warn4 = ToGeni16bitValue(mp_system_warning_status_4.GetSubject(), GENI_CONVERT_ID_BITVAR_255);
+    break;
   case SUBJECT_ID_MEASURED_VALUE_OUTLET_PRESSURE:
     gai_11_53_discharge_pressure = ToGeni16bitValue(mp_measured_value_outlet_pressure.GetSubject(), GENI_CONVERT_ID_PRESSURE_1MBAR);
     break;
@@ -3301,6 +3323,12 @@ bool BaseGeniAppIf::SubjectToGeni(Subject* pSubject)
     break;
   case SUBJECT_ID_CHEMICAL_TOTAL_DOSED:
     gai_14_194_chemical_total_dosed = ToGeni32bitValue(mp_chemical_total_dosed.GetSubject(), GENI_CONVERT_ID_VOLUME_1ML);
+    break;
+  case SUBJECT_ID_SET_H2S_LEVEL:
+    gai_13_4_set_h2s_level = ToGeni16bitValue(mp_set_h2s_level.GetSubject(), GENI_CONVERT_ID_PERCENTAGE_1PPM);
+    break;
+  case SUBJECT_ID_SET_H2S_FAULT:
+    gai_13_5_set_h2s_fault = ToGeni16bitValue(mp_set_h2s_fault.GetSubject(), GENI_CONVERT_ID_BITVAR_255);
     break;
   case SUBJECT_ID_SET_DOSING_REF:
     gai_13_6_set_dosing_ref = ToGeni16bitValue(mp_set_dosing_ref.GetSubject(), GENI_CONVERT_ID_FLOW_DOT1LH);
@@ -3748,6 +3776,12 @@ bool BaseGeniAppIf::GeniToSubject(GAI_VAR_TYPE geniVar, U16 newValue)
     break;
   case GAI_VAR_ANA_OUT_USER_3:
     GeniToDataPoint(newValue, mp_ana_out_user_3.GetSubject(), GENI_CONVERT_ID_PERCENTAGE_DOT1PCT);
+    break;
+  case GAI_VAR_SET_H2S_LEVEL:
+    GeniToDataPoint(newValue, mp_set_h2s_level.GetSubject(), GENI_CONVERT_ID_PERCENTAGE_1PPM);
+    break;
+  case GAI_VAR_SET_H2S_FAULT:
+    GeniToDataPoint(newValue, mp_set_h2s_fault.GetSubject(), GENI_CONVERT_ID_BITVAR_255);
     break;
   case GAI_VAR_SET_DOSING_REF:
     GeniToDataPoint(newValue, mp_set_dosing_ref.GetSubject(), GENI_CONVERT_ID_FLOW_DOT1LH);

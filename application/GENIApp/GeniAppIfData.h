@@ -240,6 +240,8 @@ typedef enum
   GAI_VAR_PIT_0_PUMPS_OPR_TIME_TODAY = 0x0B33,  // 11,51 pit_0_pumps_opr_time_today
   GAI_VAR_PIT_1_PUMPS_OPR_TIME_TODAY = 0x0B34,  // 11,52 pit_1_pumps_opr_time_today
   GAI_VAR_DISCHARGE_PRESSURE = 0x0B35,  // 11,53 Discharge pressure
+  GAI_VAR_PIT_ALARMS4 = 0x0B37,  // 11,55 
+  GAI_VAR_PIT_WARN4 = 0x0B38,  // 11,56 
   GAI_VAR_POWER_ON_COUNTER = 0x0B3B,  // 11,59 power_on_counter (not in profile)
   GAI_VAR_P1_OPR_TIME_YESTERDAY = 0x0B3C,  // 11,60 p1_opr_time_yesterday
   GAI_VAR_P1_OPR_TIME_TODAY = 0x0B3D,  // 11,61 p1_opr_time_today
@@ -448,6 +450,8 @@ typedef enum
   GAI_VAR_ANA_OUT_USER_1 = 0x0D01,  // 13,1 
   GAI_VAR_ANA_OUT_USER_2 = 0x0D02,  // 13,2 
   GAI_VAR_ANA_OUT_USER_3 = 0x0D03,  // 13,3 
+  GAI_VAR_SET_H2S_LEVEL = 0x0D04,  // 13,4 
+  GAI_VAR_SET_H2S_FAULT = 0x0D05,  // 13,5 
   GAI_VAR_SET_DOSING_REF = 0x0D06,  // 13,6 
   GAI_VAR_PIT_POWER = 0x0E00,  // 14,0 pit_power
   GAI_VAR_PIT_ENERGY = 0x0E01,  // 14,1 pit_energy
@@ -693,6 +697,8 @@ EXTERN U16 gai_11_50_pit_1_pumps_opr_time_yesterday;  // 11,50 pit_1_pumps_opr_t
 EXTERN U16 gai_11_51_pit_0_pumps_opr_time_today;  // 11,51 pit_0_pumps_opr_time_today
 EXTERN U16 gai_11_52_pit_1_pumps_opr_time_today;  // 11,52 pit_1_pumps_opr_time_today
 EXTERN U16 gai_11_53_discharge_pressure;  // 11,53 Discharge pressure
+EXTERN U16 gai_11_55_pit_alarms4;  // 11,55 
+EXTERN U16 gai_11_56_pit_warn4;  // 11,56 
 EXTERN U16 gai_11_59_power_on_counter;  // 11,59 power_on_counter (not in profile)
 EXTERN U16 gai_11_60_p1_opr_time_yesterday;  // 11,60 p1_opr_time_yesterday
 EXTERN U16 gai_11_61_p1_opr_time_today;  // 11,61 p1_opr_time_today
@@ -901,6 +907,8 @@ EXTERN U16 gai_13_0_event_log_clear_id;  // 13,0 event_log_clear_id
 EXTERN U16 gai_13_1_ana_out_user_1;  // 13,1 
 EXTERN U16 gai_13_2_ana_out_user_2;  // 13,2 
 EXTERN U16 gai_13_3_ana_out_user_3;  // 13,3 
+EXTERN U16 gai_13_4_set_h2s_level;  // 13,4 
+EXTERN U16 gai_13_5_set_h2s_fault;  // 13,5 
 EXTERN U16 gai_13_6_set_dosing_ref;  // 13,6 
 EXTERN U32 gai_14_0_pit_power;  // 14,0 pit_power
 EXTERN U32 gai_14_1_pit_energy;  // 14,1 pit_energy

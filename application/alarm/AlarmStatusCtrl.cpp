@@ -232,7 +232,38 @@ void AlarmStatusCtrl::RunSubTask()
               }
             }
             break;
+          case ERRONEOUS_UNIT_DOSING_PUMP :
+            if (ConvertDosingPumpAlarmToGeniStatus(alarm_id, word_idx, bit) == true && word_idx < NO_OF_GENI_STATUS_WORDS)
+            {
+              // although it is dosing pump unit type, but also belong to pit alarm 4
+              if (p_alarm_event->GetAlarmType() == ALARM_STATE_ALARM)
+              {
+                if ( (mpScadaEnabled->GetValue() == true)
+                  && (p_alarm_event->GetErrorSource()->GetAlarmConfig()->GetScadaEnabled() == true)
+                  && (p_alarm_event->GetArrivalTime()->GetSecondsSince1Jan1970() > mpTimeStampLastScadaAck->GetValue()) )
+                {
+                  mSystemAlarmScadaPending[word_idx] |= (0x1<<bit);
+                }
+                mSystemAlarmStatus[word_idx] |= (0x1<<bit);
 
+                //Handle mixer alarms
+                if (p_alarm_event->GetErroneousUnit() == ERRONEOUS_UNIT_MIXER )
+                {
+                  SET_BIT_HIGH(mPumpFault, 12);
+                }
+              }
+              else if (p_alarm_event->GetAlarmType() == ALARM_STATE_WARNING)
+              {
+                if ( (mpScadaEnabled->GetValue() == true)
+                  && (p_alarm_event->GetErrorSource()->GetAlarmConfig()->GetScadaEnabled() == true)
+                  && (p_alarm_event->GetArrivalTime()->GetSecondsSince1Jan1970() > mpTimeStampLastScadaAck->GetValue()) )
+                {
+                  mSystemWarningScadaPending[word_idx] |= (0x1<<bit);
+                }
+                mSystemWarningStatus[word_idx] |= (0x1<<bit);
+              }
+            }
+            break;
           default: // Handle as system alarms/warnings
             if (ConvertSystemAlarmToGeniStatus(alarm_id, word_idx, bit) == true && word_idx < NO_OF_GENI_STATUS_WORDS)
             {
@@ -704,7 +735,8 @@ bool AlarmStatusCtrl::ConvertSystemAlarmToGeniStatus(ALARM_ID_TYPE alarm_id, U16
     case ALARM_ID_EXTRA_FAULT_2:                            word_no = 2; bit_no = 4; break; // 250
     case ALARM_ID_EXTRA_FAULT_3:                            word_no = 2; bit_no = 5; break; // 251
     case ALARM_ID_EXTRA_FAULT_4:                            word_no = 2; bit_no = 6; break; // 252
-    case ALARM_ID_SCADA_CALLBACK_TEST:                      word_no = 2; bit_no = 7; break; // 253
+    case ALARM_ID_H2S_SENSOR_FAULT:                         word_no = 2; bit_no = 7; break; // 118
+    case ALARM_ID_SCADA_CALLBACK_TEST:                      word_no = 2; bit_no = 8; break; // 253
 
     default:
       found = false;
@@ -794,6 +826,44 @@ bool AlarmStatusCtrl::ConvertPumpAlarmToGeniStatus(ALARM_ID_TYPE alarm_id, U16 &
     case 16:                                                word_no = 3;  bit_no = 12;  break;  //  16
     case ALARM_ID_PUMP_MOTOR_BLOCKED:                       word_no = 3;  bit_no = 13;  break;  //  51
     case ALARM_ID_POWER_METER:                              word_no = 3;  bit_no = 14;  break;  //  186
+
+    default:
+      found = false;
+      break;  // No bit to set (should not happen)
+  }
+
+  return found;
+}
+
+/*****************************************************************************
+ * Function - ConvertDosingPumpAlarmToGeniStatus
+ * DESCRIPTION: Look up the Geni error word+bit for the given system alarm
+ *              (See the event status table in the Geni profile)
+ *
+ *****************************************************************************/
+bool AlarmStatusCtrl::ConvertDosingPumpAlarmToGeniStatus(ALARM_ID_TYPE alarm_id, U16 &word_no, U16 &bit_no)
+{
+  bool found = true;
+
+  switch (alarm_id)
+  {
+    // Alarm status 4:
+    case ALARM_ID_OVER_PRESSURE:                            word_no = 3; bit_no = 0; break; // 210
+    case ALARM_ID_MEAN_PRESSURE_TO_LOW:                     word_no = 3; bit_no = 1; break; // 211
+    case ALARM_ID_GAS_IN_PUMP_HEAD:                         word_no = 3; bit_no = 2; break; // 35
+    case ALARM_ID_CAVITATIONS:                              word_no = 3; bit_no = 3; break; // 208
+    case ALARM_ID_PRESSURE_VALVE_LEAKAGE:                   word_no = 3; bit_no = 4; break; // 36
+    case ALARM_ID_SUCTION_VALVE_LEAKAGE:                    word_no = 3; bit_no = 5; break; // 37
+    case ALARM_ID_VENTING_VALVE_DEFECT:                     word_no = 3; bit_no = 6; break; // 38
+    case ALARM_ID_TIME_FOR_SERVICE:                         word_no = 3; bit_no = 7; break; // TODO 12
+    case ALARM_ID_SOON_TIME_FOR_SERVICE:                    word_no = 3; bit_no = 8; break; // 33
+    case ALARM_ID_CAPACITY_TOO_LOW:                         word_no = 3; bit_no = 9; break; // 17
+    case ALARM_ID_DIAPHRAGM_BREAK:                          word_no = 3; bit_no = 10; break; // 19
+    case ALARM_ID_PUMP_MOTOR_BLOCKED:                       word_no = 3; bit_no = 11; break; // TODO 51
+    case ALARM_ID_PRE_EMPTY_TANK:                           word_no = 3; bit_no = 12; break; // 206
+    case ALARM_ID_DRY_RUNNING:                              word_no = 3; bit_no = 13; break; // TODO 57
+    case ALARM_ID_FLOW_SENSOR_SIGNAL_FAULT:                 word_no = 3; bit_no = 14; break; // TODO 169
+    case ALARM_ID_CABLE_BREAKDOWN_ON_ANALOGUE:              word_no = 3; bit_no = 15; break; // 47
 
     default:
       found = false;

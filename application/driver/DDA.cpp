@@ -232,18 +232,24 @@ void DDA::RunSubTask()
   {
     if (mpDDAInstalled->GetValue() == true)
     {
+      // Insert in auto poll list
       mpGeniSlaveIf->ConnectDDA(DDA_NO_1);
+
       // Test
       mpDDAAlarmDelay[DDA_FAULT_OBJ_GENI_COMM]->SetFault();
-      mDDAAlarms[DDA_FAULT_OBJ_ALARM]->SetValue((ALARM_ID_TYPE)258);
+      mDDAAlarms[DDA_FAULT_OBJ_ALARM]->SetValue((ALARM_ID_TYPE)35);
       mpDDAAlarmDelay[DDA_FAULT_OBJ_ALARM]->SetFault();
     }
     else
     {
+      // Remove from auto poll list
 	    mpGeniSlaveIf->DisconnectDDA(DDA_NO_1);
+
       // Test
-      mpDDAAlarmDelay[DDA_FAULT_OBJ_GENI_COMM]->ResetFault();
       mpDDAAlarmDelay[DDA_FAULT_OBJ_ALARM]->ResetFault();
+
+      // The module is not present - make certain that all errors and data from the module is cleared
+      mpDDAAlarmDelay[DDA_FAULT_OBJ_GENI_COMM]->ResetFault();
     }
   }
 
@@ -264,6 +270,34 @@ void DDA::RunSubTask()
     if (mpGeniSlaveIf->GetDDAAlarmCode(DDA_NO_1, &new_alarm_code) &&
         mpGeniSlaveIf->GetDDAWarningCode(DDA_NO_1, &new_warning_code))
     {
+      HandleDDAAlarm(new_alarm_code);
+      HandleDDAWarning(new_warning_code);
+      //Run state machine
+
+      if (new_alarm_code == 0 && new_warning_code == 0)
+      {
+        //mpMP204DeviceStatus->SetValue(IO_DEVICE_STATUS_PRESENT_AND_OK);
+      }
+      else
+      {
+        //mpMP204DeviceStatus->SetValue(IO_DEVICE_STATUS_PRESENT_WITH_ERROR);
+      }
+    }
+    else
+    {
+      // we were unable to get the alarm code from GENI, set alarm and set data not available
+      if (mpDDAAlarmDelay[DDA_FAULT_OBJ_GENI_COMM]->GetFault() != true)
+      {
+        // clear any alarms and/or warnings caused by the DDA
+        HandleDDAAlarm(ALARM_ID_NO_ALARM);
+        HandleDDAWarning(0);
+        //mpMP204CommunicationFlag->SetValue(false);  // TODO don't need this?
+        #ifndef __PC__
+        mpDDAAlarmDelay[DDA_FAULT_OBJ_GENI_COMM]->SetFault();
+        //SetMP204DataAvailability(DP_NOT_AVAILABLE);
+        //mpMP204DeviceStatus->SetValue(IO_DEVICE_STATUS_NO_COMMUNICATION);  // TODO need this?
+        #endif
+      }
     }
   }
   // Service AlarmDelays
@@ -280,5 +314,71 @@ void DDA::RunSubTask()
  *
  *
  ****************************************************************************/
+/*****************************************************************************
+ * Function - HandleDDAAlarm
+ * DESCRIPTION:
+ ****************************************************************************/
+void DDA::HandleDDAAlarm(ALARM_ID_TYPE alarm_code)
+{
+  /*
+  if (mExistingAlarmCode != alarm_code)
+  {
+    if (alarm_code == ALARM_ID_NO_ALARM || mExistingAlarmCode != ALARM_ID_NO_ALARM)
+    {
+      // The existing alarm code is no longer reported from MP204 - it can be cleared
+      mpMP204AlarmDelay[MP204_FAULT_OBJ_ALARM]->ResetFault();
+      mExistingAlarmCode = ALARM_ID_NO_ALARM;
+    }
+    else if (alarm_code != 255) // Use an 'else' here to ensure a bit of time between alarm Reset/Set
+    {
+      // Convert from MP204 alarm code to CU361 alarm code
+      int index = 0;
+      ALARM_ID_TYPE cu361_alarm = ALARM_ID_OTHER;
+      while (cu361_alarm == ALARM_ID_OTHER && index < ALARM_TABLE_SIZE)
+      {
+        if (alarm_code == alarm_table[index].mp204_alarm)
+        {
+          cu361_alarm = alarm_table[index].cu361_alarm;
+        }
+        index++;
+      }
+      mpMP204AlarmObj->SetValue(cu361_alarm);
+      mpMP204AlarmDelay[MP204_FAULT_OBJ_ALARM]->SetFault();
+      mExistingAlarmCode = alarm_code;
+    }
+  }
+  */
+}
+
+/*****************************************************************************
+ * Function - HandleMP204Warning
+ * DESCRIPTION:
+ ****************************************************************************/
+void DDA::HandleDDAWarning(U32 warnings)
+{
+  /*
+  if (mExistingWarnings != warnings && warnings < 0xFFFFFF)
+  {
+    mExistingWarnings = warnings;
+    // Check all warnings in list
+    U32 check_pattern;
+    for (int index = 0; index < WARNING_TABLE_SIZE; index++)
+    {
+      check_pattern = warning_table[index].mp204_warning_bit;
+      if (warnings & check_pattern)
+      {
+        // Clear the bit to prepare for a check for unknown alarms at the end of the list.
+        // This works since the check pattern at the end of the list is 0xFFFFFFFF.
+        warnings &= ~check_pattern;
+        mpMP204AlarmDelay[warning_table[index].fault_obj]->SetFault();
+      }
+      else
+      {
+        mpMP204AlarmDelay[warning_table[index].fault_obj]->ResetFault();
+      }
+    }
+  }
+  */
+}
 
  

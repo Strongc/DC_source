@@ -76,6 +76,7 @@ static OUT_TYPE ConvertToGeni(IN_TYPE value, GENI_CONVERT_ID_TYPE convertId, U32
     case GENI_CONVERT_ID_TIME_1SEC:
     case GENI_CONVERT_ID_FREQUENCY_1HZ:
     case GENI_CONVERT_ID_RESISTANCE_1OHM:
+    case GENI_CONVERT_ID_PERCENTAGE_1PPM:
       convertedValue = (U32)value;
       break;
 
@@ -169,22 +170,18 @@ static OUT_TYPE ConvertToGeni(IN_TYPE value, GENI_CONVERT_ID_TYPE convertId, U32
       convertedValue = (U32)(value/(3600000.0f/10.0f) + 0.5f);
       break;
 
-   case GENI_CONVERT_ID_PRESSURE_1MBAR:
+    case GENI_CONVERT_ID_PRESSURE_1MBAR:
       convertedValue = (U32)(value * 0.01f + 0.5f);
       break;
 
-    case GENI_CONVERT_ID_PERCENTAGE_1PPM:
-      convertedValue = (U32)(value * 1000000.0f + 0.5f);
-      break;
-      
-     case GENI_CONVERT_ID_FLOW_DOT1LH:
+    case GENI_CONVERT_ID_FLOW_DOT1LH:
       convertedValue = (U32)(value * 1.0f + 0.5f);
       break;
 
-     case GENI_CONVERT_ID_VOLUME_1ML:
+    case GENI_CONVERT_ID_VOLUME_1ML:
       convertedValue = (U32)(value * 1000.0f + 0.5f);
       break;
-	  
+
     default:
       convertedValue = (U32)0; // unhandled convert id
       break;
@@ -224,6 +221,7 @@ static OUT_TYPE ConvertFromGeni(IN_TYPE value, GENI_CONVERT_ID_TYPE convertId)
     case GENI_CONVERT_ID_TIME_1SEC:
     case GENI_CONVERT_ID_FREQUENCY_1HZ:
     case GENI_CONVERT_ID_RESISTANCE_1OHM:	
+    case GENI_CONVERT_ID_PERCENTAGE_1PPM:
       convertedValue = (OUT_TYPE)value;
     break;
 	
@@ -301,10 +299,6 @@ static OUT_TYPE ConvertFromGeni(IN_TYPE value, GENI_CONVERT_ID_TYPE convertId)
 
     case GENI_CONVERT_ID_ENERGY_JOULE_DOT1KWH:
       convertedValue = (OUT_TYPE)value*3600000.0f / 10.0f;
-      break;
-      
-    case GENI_CONVERT_ID_PERCENTAGE_1PPM:
-      convertedValue = (OUT_TYPE)value / 1000000.0f ;
       break;
       
     case GENI_CONVERT_ID_FLOW_DOT1LH:

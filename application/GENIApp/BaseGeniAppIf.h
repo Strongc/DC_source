@@ -403,6 +403,8 @@ protected:
   SubjectPtr<U16DataPoint*> mp_pump_4_warning_status_4;
   SubjectPtr<U16DataPoint*> mp_pump_5_warning_status_4;
   SubjectPtr<U16DataPoint*> mp_pump_6_warning_status_4;
+  SubjectPtr<U16DataPoint*> mp_system_alarm_status_4;
+  SubjectPtr<U16DataPoint*> mp_system_warning_status_4;
   SubjectPtr<U32DataPoint*> mp_anti_blocking_performed_counter_pump_1;
   SubjectPtr<U32DataPoint*> mp_anti_blocking_performed_counter_pump_2;
   SubjectPtr<U32DataPoint*> mp_anti_blocking_performed_counter_pump_3;
@@ -423,6 +425,8 @@ protected:
   SubjectPtr<U32DataPoint*> mp_h2s_level_act;
   SubjectPtr<U32DataPoint*> mp_h2s_level_today;
   SubjectPtr<U32DataPoint*> mp_h2s_level_yesterday;
+  SubjectPtr<U32DataPoint*> mp_set_h2s_level;
+  SubjectPtr<U16DataPoint*> mp_set_h2s_fault;
   SubjectPtr<EnumDataPoint<APPLICATION_MODE_TYPE>*> mp_application_mode;
   SubjectPtr<EnumDataPoint<MEASURED_VALUE_TYPE>*> mp_ana_in_1_conf_measured_value;
   SubjectPtr<EnumDataPoint<MEASURED_VALUE_TYPE>*> mp_ana_in_2_conf_measured_value;

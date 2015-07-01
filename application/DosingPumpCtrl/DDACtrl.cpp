@@ -93,7 +93,7 @@ void DDACtrl::InitSubTask()
 {
   //mpTimerObjList[DDA_RUN_TIMER] = new SwTimer(mpDDARunTime->GetValue(), S, false, false, this);
   //mpTimerObjList[ANTI_SEIZE_WAIT_TIMER] = new SwTimer(mpDDAWaitTime->GetValue(), S, true, false, this);
-  mpDDALevelAct->SetValue(10);
+  mpH2SLevelAct->SetValue(10);
   mpDDADosingFeedTankLevel->SetAsFloat(23.55555);
   mpDDAChemicalTotalDosed->SetAsFloat(32.55555);
   //mRunRequestedFlag = true;
@@ -104,6 +104,7 @@ void DDACtrl::InitSubTask()
     mpAlarmDelay[i]->ResetWarning();
     mAlarmDelayCheckFlag[i] = false;
   }
+  mpDDAInstalled->SetValue(mpDosingPumpInstalled->GetValue() == true && (mpDosingPumpType->GetValue() == DOSING_PUMP_TYPE_DDA));
   ReqTaskTime();                         // Assures task is run at startup
 }
 /*****************************************************************************
@@ -115,13 +116,11 @@ void DDACtrl::RunSubTask()
 {
   ACTUAL_OPERATION_MODE_TYPE actual_operation_mode;
   ALARM_ID_TYPE new_alarm_code = ALARM_ID_NO_ALARM;
-  bool dda_ed = 0;
   U32 dda_h2s_level_act;
   float dda_dosing_feed_tank_level;
   float dda_chemical_total_dosed;
 
-  dda_ed = mpDosingPumpInstalled->GetValue();
-  dda_h2s_level_act = mpDDALevelAct->GetValue();
+  dda_h2s_level_act = mpH2SLevelAct->GetValue();
   dda_dosing_feed_tank_level = mpDDADosingFeedTankLevel->GetValue();
   dda_chemical_total_dosed = mpDDAChemicalTotalDosed->GetValue();
 
@@ -143,14 +142,24 @@ void DDACtrl::RunSubTask()
     mpDDAInstalled->SetValue(mpDosingPumpInstalled->GetValue() == true && (mpDosingPumpType->GetValue() == DOSING_PUMP_TYPE_DDA));
   }
   
+  // set reference value everytime
   mpDDARef->SetValue((U32)(10.0 * mpSetDosingRef->GetValue()));
 
   //test
-  if (mpDDARef->GetValue() == 20)
+  //if (mpDDARef->GetValue() == 20)
+  //{
+    //mpAlarmDelay[DDA_FAULT_OBJ_H2S]->SetFault();
+  //}
+  //mAlarms[DDA_FAULT_OBJ_H2S]->SetValue((ALARM_ID_TYPE)118);
+  //mpAlarmDelay[DDA_FAULT_OBJ_H2S]->SetFault();
+  if (mpSetH2SLevel.IsUpdated())
+  {
+    mpH2SLevelAct->SetValue(mpSetH2SLevel->GetValue());
+  }
+  if (mpSetH2SFault->GetValue() & 0x01)
   {
     mpAlarmDelay[DDA_FAULT_OBJ_H2S]->SetFault();
   }
-  mpDDALevelAct->SetValue(mpDDARef->GetValue());
 
   // Service AlarmDelays
   for (unsigned int i = FIRST_DDAC_FAULT_OBJ; i < NO_OF_DDAC_FAULT_OBJ; i++)
@@ -169,8 +178,10 @@ void DDACtrl::ConnectToSubjects()
   mpDosingPumpInstalled->Subscribe(this);
   mpDosingPumpType->Subscribe(this);
   mpSetDosingRef->Subscribe(this);
+  mpSetH2SFault->Subscribe(this);
   mpDDARef->Subscribe(this);
-  mpDDALevelAct->Subscribe(this);
+  mpH2SLevelAct->Subscribe(this);
+  mpSetH2SLevel->Subscribe(this);
   mpDDALevelToday->Subscribe(this);
   mpDDALevelYesterday->Subscribe(this);
   mpDDADosingFeedTankLevel->Subscribe(this);
@@ -192,8 +203,10 @@ void DDACtrl::Update(Subject* pSubject)
   mpDosingPumpInstalled.Update(pSubject);
   mpDosingPumpType.Update(pSubject);
   mpSetDosingRef.Update(pSubject);
+  mpSetH2SFault.Update(pSubject);
   mpDDARef.Update(pSubject);
-  mpDDALevelAct.Update(pSubject);
+  mpH2SLevelAct.Update(pSubject);
+  mpSetH2SLevel.Update(pSubject);
   mpDDALevelToday.Update(pSubject);
   mpDDALevelYesterday.Update(pSubject);
   mpDDADosingFeedTankLevel.Update(pSubject);
@@ -224,7 +237,7 @@ void DDACtrl::SubscribtionCancelled(Subject* pSubject)
 /*****************************************************************************
  * Function - SetSubjectPointer
  * DESCRIPTION: If the id is equal to a id for a subject observed.
- * Then take a copy of pSubjet to the member pointer for this subject.
+ * Then take a copy of pSubject to the member pointer for this subject.
  *
  *****************************************************************************/
 void DDACtrl::SetSubjectPointer(int id, Subject* pSubject)
@@ -240,6 +253,9 @@ void DDACtrl::SetSubjectPointer(int id, Subject* pSubject)
     case SP_DDAC_DDA_INSTALLED:
       mpDDAInstalled.Attach(pSubject);
       break;
+    case SP_DDAC_SET_H2S_FAULT:
+      mpSetH2SFault.Attach(pSubject);
+      break;
     case SP_DDAC_SET_DOSING_REF:
       mpSetDosingRef.Attach(pSubject);
       break;
@@ -247,7 +263,10 @@ void DDACtrl::SetSubjectPointer(int id, Subject* pSubject)
       mpDDARef.Attach(pSubject);
       break;
     case SP_DDAC_H2S_LEVEL_ACT:
-      mpDDALevelAct.Attach(pSubject);
+      mpH2SLevelAct.Attach(pSubject);
+      break;
+    case SP_DDAC_SET_H2S_LEVEL:
+      mpSetH2SLevel.Attach(pSubject);
       break;
     case SP_DDAC_H2S_LEVEL_TODAY:
       mpDDALevelToday.Attach(pSubject);

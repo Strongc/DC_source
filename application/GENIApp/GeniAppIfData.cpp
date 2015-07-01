@@ -188,6 +188,8 @@ U16 gai_11_50_pit_1_pumps_opr_time_yesterday;  // 11,50 pit_1_pumps_opr_time_yes
 U16 gai_11_51_pit_0_pumps_opr_time_today;  // 11,51 pit_0_pumps_opr_time_today
 U16 gai_11_52_pit_1_pumps_opr_time_today;  // 11,52 pit_1_pumps_opr_time_today
 U16 gai_11_53_discharge_pressure;  // 11,53 Discharge pressure
+U16 gai_11_55_pit_alarms4;  // 11,55 
+U16 gai_11_56_pit_warn4;  // 11,56 
 U16 gai_11_59_power_on_counter;  // 11,59 power_on_counter (not in profile)
 U16 gai_11_60_p1_opr_time_yesterday;  // 11,60 p1_opr_time_yesterday
 U16 gai_11_61_p1_opr_time_today;  // 11,61 p1_opr_time_today
@@ -396,6 +398,8 @@ U16 gai_13_0_event_log_clear_id;  // 13,0 event_log_clear_id
 U16 gai_13_1_ana_out_user_1;  // 13,1 
 U16 gai_13_2_ana_out_user_2;  // 13,2 
 U16 gai_13_3_ana_out_user_3;  // 13,3 
+U16 gai_13_4_set_h2s_level;  // 13,4 
+U16 gai_13_5_set_h2s_fault;  // 13,5 
 U16 gai_13_6_set_dosing_ref;  // 13,6 
 U32 gai_14_0_pit_power;  // 14,0 pit_power
 U32 gai_14_1_pit_energy;  // 14,1 pit_energy

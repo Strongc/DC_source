@@ -128,13 +128,12 @@ class DDA : public SubTask, public Observer
     void InitSubTask(void);
     void RunSubTask();
 
-
-    
   private:
     /********************************************************************
     OPERATIONS
     ********************************************************************/
-
+    void HandleDDAAlarm(ALARM_ID_TYPE warning_code);
+    void HandleDDAWarning(U32 warnings);
 
     /********************************************************************
     ATTRIBUTES
