@@ -83,6 +83,13 @@ typedef enum
   LAST_DDA_FAULT_OBJ = NO_OF_DDA_FAULT_OBJ - 1
 } DDA_FAULT_OBJ_TYPE;
 
+typedef enum
+{
+  DDA_INIT,
+  DDA_INIT_WAITING,
+  DDA_RUN,
+  DDA_RUN_WAITING
+} DDA_STATUS;
 
 /*****************************************************************************
   TYPE DEFINES
@@ -98,7 +105,7 @@ class GeniSlaveIf;
  * CLASS: MP204Module
  * DESCRIPTION: MP204 driver
  *****************************************************************************/
-class DDA : public SubTask, public Observer
+class DDA : public SubTask, public SwTimerBaseClass 
 {
   public:
     /********************************************************************
@@ -132,8 +139,15 @@ class DDA : public SubTask, public Observer
     /********************************************************************
     OPERATIONS
     ********************************************************************/
+    void RunStateMachine();
     void HandleDDAAlarm(ALARM_ID_TYPE warning_code);
     void HandleDDAWarning(U32 warnings);
+    void DDAInit();
+    bool CheckInitRespond();
+    bool CheckRunRespond();
+    bool CheckSetpoint();
+    void Test();  //TODO remove later
+    void RunSubTask1();
 
     /********************************************************************
     ATTRIBUTES
@@ -154,7 +168,12 @@ class DDA : public SubTask, public Observer
     bool mDDAAlarmDelayCheckFlag[NO_OF_DDA_FAULT_OBJ];
 
     // Local variables
-    GeniSlaveIf* mpGeniSlaveIf;
+    bool          mInitTimeOutFlag;
+    bool          mRunTimeOutFlag;
+    GeniSlaveIf*  mpGeniSlaveIf;
+    DDA_STATUS    mDDAStatus;
+    ALARM_ID_TYPE mExistingAlarmCode;
+    U32           mExistingWarnings;
   
   protected:
     /********************************************************************

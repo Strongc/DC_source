@@ -3084,7 +3084,7 @@ void GeniSlaveIf::DDAReset(IO351_NO_TYPE moduleNo)
  * Function - DDAAlarmReset
  * DESCRIPTION:
 *****************************************************************************/
-void GeniSlaveIf::DDA_AlarmReset(IO351_NO_TYPE moduleNo)
+void GeniSlaveIf::DDAAlarmReset(IO351_NO_TYPE moduleNo)
 {
   OS_Use(&geni_master);
   SendDirAPDU(DUMMY_RESP_FNC, (U8 *)apdu_alarm_reset, GetUnitAddress(moduleNo));
@@ -3095,7 +3095,7 @@ void GeniSlaveIf::DDA_AlarmReset(IO351_NO_TYPE moduleNo)
  * Function - GetDDA pressure_max
  * DESCRIPTION:
 *****************************************************************************/
-bool GeniSlaveIf::GetDDA_pressure_max(IO351_NO_TYPE moduleNo, float* pValue)
+bool GeniSlaveIf::GetDDAMaxPressure(IO351_NO_TYPE moduleNo, float* pValue)
 {
   U8 unit_index;
   U8 geni_value;
@@ -3130,7 +3130,7 @@ bool GeniSlaveIf::GetDDA_pressure_max(IO351_NO_TYPE moduleNo, float* pValue)
  * Function - GetDDA Maximum possible dosing capacity
  * DESCRIPTION:
 *****************************************************************************/
-bool GeniSlaveIf::GetDDA_dosing_cap_max(IO351_NO_TYPE moduleNo, float* pValue)
+bool GeniSlaveIf::GetDDAMaxDosingCap(IO351_NO_TYPE moduleNo, float* pValue)
 {
   U8 unit_index;
   U32 geni_value = 0;
@@ -3168,7 +3168,7 @@ bool GeniSlaveIf::GetDDA_dosing_cap_max(IO351_NO_TYPE moduleNo, float* pValue)
  * Function - GetDDA flow monitor dosing capacity
  * DESCRIPTION:
 *****************************************************************************/
-bool GeniSlaveIf::GetDDA_flow_mon_dosing_cap(IO351_NO_TYPE moduleNo, float* pValue)
+bool GeniSlaveIf::GetDDADosingCapacity(IO351_NO_TYPE moduleNo, float* pValue)
 {
   U8 unit_index;
   U32 geni_value = 0;
@@ -3207,7 +3207,7 @@ bool GeniSlaveIf::GetDDA_flow_mon_dosing_cap(IO351_NO_TYPE moduleNo, float* pVal
  * Function - GetDDA Actual pressure in dosing head
  * DESCRIPTION:
 *****************************************************************************/
-bool GeniSlaveIf::GetDDA_flow_mon_press(IO351_NO_TYPE moduleNo, float* pValue)
+bool GeniSlaveIf::GetDDAActPresssure(IO351_NO_TYPE moduleNo, float* pValue)
 {
   U8 unit_index;
   U8 geni_value;
@@ -3242,7 +3242,7 @@ bool GeniSlaveIf::GetDDA_flow_mon_press(IO351_NO_TYPE moduleNo, float* pValue)
  * Function - GetDDA total dosing volume
  * DESCRIPTION:
 *****************************************************************************/
-bool GeniSlaveIf::GetDDA_volume_total(IO351_NO_TYPE moduleNo, float* pValue)
+bool GeniSlaveIf::GetDDATotalVolume(IO351_NO_TYPE moduleNo, float* pValue)
 {
   U8 unit_index;
   U32 geni_value = 0;
@@ -3281,7 +3281,7 @@ bool GeniSlaveIf::GetDDA_volume_total(IO351_NO_TYPE moduleNo, float* pValue)
  * Function - GetDDA Pump system mode
  * DESCRIPTION:
 *****************************************************************************/
-bool GeniSlaveIf::GetDDA_system_mode(IO351_NO_TYPE moduleNo, U8* pStatus)
+bool GeniSlaveIf::GetDDASystemMode(IO351_NO_TYPE moduleNo, U8* pStatus)
 {
   U8 unit_index;
   U8 geni_value;
@@ -3313,7 +3313,7 @@ bool GeniSlaveIf::GetDDA_system_mode(IO351_NO_TYPE moduleNo, U8* pStatus)
  * Function - GetDDA Pump Actual Operating mode
  * DESCRIPTION:
 *****************************************************************************/
-bool GeniSlaveIf::GetDDA_operating_mode(IO351_NO_TYPE moduleNo, U8* pStatus)
+bool GeniSlaveIf::GetDDAOperatingMode(IO351_NO_TYPE moduleNo, U8* pStatus)
 {
   U8 unit_index;
   U8 geni_value;
@@ -3345,7 +3345,7 @@ bool GeniSlaveIf::GetDDA_operating_mode(IO351_NO_TYPE moduleNo, U8* pStatus)
  * Function - GetDDA Pump Actual Control mode
  * DESCRIPTION:
 *****************************************************************************/
-bool GeniSlaveIf::GetDDA_control_mode(IO351_NO_TYPE moduleNo, U8* pStatus)
+bool GeniSlaveIf::GetDDAControlMode(IO351_NO_TYPE moduleNo, U8* pStatus)
 {
   U8 unit_index;
   U8 geni_value;
@@ -3377,7 +3377,7 @@ bool GeniSlaveIf::GetDDA_control_mode(IO351_NO_TYPE moduleNo, U8* pStatus)
  * Function - GetDDA Pump Start/Stop state of the Operating mode control sources
  * DESCRIPTION:
 *****************************************************************************/
-bool GeniSlaveIf::GetDDA_stop_ctr_state(IO351_NO_TYPE moduleNo, U8* pStatus)
+bool GeniSlaveIf::GetDDAStopCtrState(IO351_NO_TYPE moduleNo, U8* pStatus)
 {
   U8 unit_index;
   U8 geni_value;
@@ -3409,7 +3409,7 @@ bool GeniSlaveIf::GetDDA_stop_ctr_state(IO351_NO_TYPE moduleNo, U8* pStatus)
  * Function - GetDDA Pump control source currently active.
  * DESCRIPTION:
 *****************************************************************************/
-bool GeniSlaveIf::GetDDA_ctr_source(IO351_NO_TYPE moduleNo, U8* pStatus)
+bool GeniSlaveIf::GetDDACtrSource(IO351_NO_TYPE moduleNo, U8* pStatus)
 {
   U8 unit_index;
   U8 geni_value;
@@ -3441,7 +3441,7 @@ bool GeniSlaveIf::GetDDA_ctr_source(IO351_NO_TYPE moduleNo, U8* pStatus)
  * Function - GetDDA Pump running or not
  * DESCRIPTION:
 *****************************************************************************/
-bool GeniSlaveIf::GetDDA_pumping_state(IO351_NO_TYPE moduleNo, bool* pStatus)
+bool GeniSlaveIf::GetDDAPumpingState(IO351_NO_TYPE moduleNo, bool* pStatus)
 {
   U8 unit_index;
   U8 geni_value;
@@ -3568,7 +3568,7 @@ bool GeniSlaveIf::SetDDAReference(IO351_NO_TYPE moduleNo, U32 pValue)
  * Function - DDA Requested Stop
  * DESCRIPTION:
 *****************************************************************************/
-void GeniSlaveIf::DDA_RequestStop(IO351_NO_TYPE moduleNo)
+void GeniSlaveIf::DDARequestStop(IO351_NO_TYPE moduleNo)
 {
   OS_Use(&geni_master);
   SendDirAPDU(DUMMY_RESP_FNC, (U8 *)apdu_stop, GetUnitAddress(moduleNo));
@@ -3579,7 +3579,7 @@ void GeniSlaveIf::DDA_RequestStop(IO351_NO_TYPE moduleNo)
  * Function - DDA Requested Start
  * DESCRIPTION:
 *****************************************************************************/
-void GeniSlaveIf::DDA_RequestStart(IO351_NO_TYPE moduleNo)
+void GeniSlaveIf::DDARequestStart(IO351_NO_TYPE moduleNo)
 {
   OS_Use(&geni_master);
   SendDirAPDU(DUMMY_RESP_FNC, (U8 *)apdu_start, GetUnitAddress(moduleNo));
@@ -3590,7 +3590,7 @@ void GeniSlaveIf::DDA_RequestStart(IO351_NO_TYPE moduleNo)
  * Function - DDA Set to User Mode
  * DESCRIPTION:
 *****************************************************************************/
-void GeniSlaveIf::DDA_SetToUserMode(IO351_NO_TYPE moduleNo)
+void GeniSlaveIf::DDASetToUserMode(IO351_NO_TYPE moduleNo)
 {
   OS_Use(&geni_master);
   SendDirAPDU(DUMMY_RESP_FNC, (U8 *)apdu_DDA_UseMode, GetUnitAddress(moduleNo));
@@ -3601,7 +3601,7 @@ void GeniSlaveIf::DDA_SetToUserMode(IO351_NO_TYPE moduleNo)
  * Function - DDA Set to Manual Dosing Mode
  * DESCRIPTION:
 *****************************************************************************/
-void GeniSlaveIf::DDA_SetToManualDosing(IO351_NO_TYPE moduleNo)
+void GeniSlaveIf::DDASetToManualDosing(IO351_NO_TYPE moduleNo)
 {
   OS_Use(&geni_master);
   SendDirAPDU(DUMMY_RESP_FNC, (U8 *)apdu_DDA_ManualDosing, GetUnitAddress(moduleNo));
@@ -3612,7 +3612,7 @@ void GeniSlaveIf::DDA_SetToManualDosing(IO351_NO_TYPE moduleNo)
  * Function - DDA Set to Analogue Dosing Mode
  * DESCRIPTION:
 *****************************************************************************/
-void GeniSlaveIf::DDA_SetToAnalogueDosing(IO351_NO_TYPE moduleNo)
+void GeniSlaveIf::DDASetToAnalogueDosing(IO351_NO_TYPE moduleNo)
 {
   OS_Use(&geni_master);
   SendDirAPDU(DUMMY_RESP_FNC, (U8 *)apdu_DDA_AnalogueDosing, GetUnitAddress(moduleNo));
@@ -3623,7 +3623,7 @@ void GeniSlaveIf::DDA_SetToAnalogueDosing(IO351_NO_TYPE moduleNo)
  * Function - DDA Set to Pulse Dosing Mode
  * DESCRIPTION:
 *****************************************************************************/
-void GeniSlaveIf::DDA_SetToPulseDosing(IO351_NO_TYPE moduleNo)
+void GeniSlaveIf::DDASetToPulseDosing(IO351_NO_TYPE moduleNo)
 {
   OS_Use(&geni_master);
   SendDirAPDU(DUMMY_RESP_FNC, (U8 *)apdu_DDA_PulseDosing, GetUnitAddress(moduleNo));
@@ -3634,7 +3634,7 @@ void GeniSlaveIf::DDA_SetToPulseDosing(IO351_NO_TYPE moduleNo)
  * Function - DDA Press Start Key
  * DESCRIPTION:
 *****************************************************************************/
-void GeniSlaveIf::DDA_PressStartKey(IO351_NO_TYPE moduleNo)
+void GeniSlaveIf::DDAPressStartKey(IO351_NO_TYPE moduleNo)
 {
   OS_Use(&geni_master);
   SendDirAPDU(DUMMY_RESP_FNC, (U8 *)apdu_DDA_PressStartKey, GetUnitAddress(moduleNo));
@@ -3645,7 +3645,7 @@ void GeniSlaveIf::DDA_PressStartKey(IO351_NO_TYPE moduleNo)
  * Function - DDA Press Stop Key
  * DESCRIPTION:
 *****************************************************************************/
-void GeniSlaveIf::DDA_PressStopKey(IO351_NO_TYPE moduleNo)
+void GeniSlaveIf::DDAPressStopKey(IO351_NO_TYPE moduleNo)
 {
   OS_Use(&geni_master);
   SendDirAPDU(DUMMY_RESP_FNC, (U8 *)apdu_DDA_PressStopKey, GetUnitAddress(moduleNo));

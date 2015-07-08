@@ -122,8 +122,10 @@ class NonGFDosingPumpCtrl : public SubTask, public SwTimerBaseClass
 
     SubjectPtr<BoolDataPoint*> mpDosingPumpInstalled;
     SubjectPtr<EnumDataPoint<DOSING_PUMP_TYPE_TYPE>*>  mpDosingPumpType;
+    SubjectPtr<FloatDataPoint*> mpSetDosingRef;
     SubjectPtr<EnumDataPoint<DIGITAL_INPUT_FUNC_STATE_TYPE>*> mpDosingPumpDigInRequest;
-    SubjectPtr<FloatDataPoint*> mpMeasuredValue;
+    SubjectPtr<FloatDataPoint*> mpDosingPumpSetpoint;
+    SubjectPtr<BoolDataPoint*> mpDosingPumpStart;
 
     //DDA_STATUS *dda_pump_status;
     //DOSING_PUMP_TYPE_TYPE mDosingPumpType;

@@ -101,8 +101,6 @@ void NonGFDosingPumpCtrl::InitSubTask()
 void NonGFDosingPumpCtrl::RunSubTask()
 {
   bool non_gf_dosing_pump_installed = 0;
-  ACTUAL_OPERATION_MODE_TYPE actual_operation_mode;
-  ALARM_ID_TYPE new_alarm_code = ALARM_ID_NO_ALARM;
 
 
   for (unsigned int i = FIRST_DOSING_PUMP_FAULT_OBJ; i < NO_OF_DOSING_PUMP_FAULT_OBJ; i++)
@@ -114,22 +112,34 @@ void NonGFDosingPumpCtrl::RunSubTask()
     }
   }
 
-  /* test through alarm */
-  //I guess this digital in is singal external, not the check state of checkbox in menu DI
-  //if (mpDosingPumpDigInRequest.IsUpdated())
-  //{
-    //if (mpDosingPumpDigInRequest->GetValue() == DIGITAL_INPUT_FUNC_STATE_ACTIVE)
+  
   if ((mpDosingPumpInstalled->GetValue() == true) && (mpDosingPumpType->GetValue() == DOSING_PUMP_TYPE_ANALOG))
   {
     non_gf_dosing_pump_installed = true;
-    mpDosingPumpAlarmDelay[DOSING_PUMP_FAULT_OBJ]->SetFault();
   }
   else
   {
     non_gf_dosing_pump_installed = false;
-    mpDosingPumpAlarmDelay[DOSING_PUMP_FAULT_OBJ]->ResetFault();
   }
-  
+
+  //DI
+  if (non_gf_dosing_pump_installed)
+  {
+    if (mpDosingPumpDigInRequest->GetValue() == DIGITAL_INPUT_FUNC_STATE_ACTIVE)
+    {
+      mpDosingPumpAlarmDelay[DOSING_PUMP_FAULT_OBJ]->SetFault();
+    }
+    {
+      mpDosingPumpAlarmDelay[DOSING_PUMP_FAULT_OBJ]->ResetFault();
+    }
+  }
+
+  //DO
+  mpDosingPumpStart->SetValue(true);
+
+  //AO
+  mpDosingPumpSetpoint->SetValue(0);
+
   // Service AlarmDelays
   for (unsigned int i = FIRST_DOSING_PUMP_FAULT_OBJ; i < NO_OF_DOSING_PUMP_FAULT_OBJ; i++)
   {
@@ -145,6 +155,7 @@ void NonGFDosingPumpCtrl::ConnectToSubjects()
 {
   mpDosingPumpInstalled->Subscribe(this);
   mpDosingPumpType->Subscribe(this);
+  mpSetDosingRef->Subscribe(this);
   mpDosingPumpDigInRequest->Subscribe(this);
   for (unsigned int i = FIRST_DOSING_PUMP_FAULT_OBJ; i < NO_OF_DOSING_PUMP_FAULT_OBJ; i++)
   {
@@ -161,6 +172,7 @@ void NonGFDosingPumpCtrl::Update(Subject* pSubject)
 {
   mpDosingPumpInstalled.Update(pSubject);
   mpDosingPumpType.Update(pSubject);
+  mpSetDosingRef.Update(pSubject);
   mpDosingPumpDigInRequest.Update(pSubject);
 
   for (unsigned int i = FIRST_DOSING_PUMP_FAULT_OBJ; i < NO_OF_DOSING_PUMP_FAULT_OBJ; i++)
@@ -188,7 +200,7 @@ void NonGFDosingPumpCtrl::SubscribtionCancelled(Subject* pSubject)
 /*****************************************************************************
  * Function - SetSubjectPointer
  * DESCRIPTION: If the id is equal to a id for a subject observed.
- * Then take a copy of pSubjet to the member pointer for this subject.
+ * Then take a copy of pSubject to the member pointer for this subject.
  *
  *****************************************************************************/
 void NonGFDosingPumpCtrl::SetSubjectPointer(int id, Subject* pSubject)
@@ -204,8 +216,14 @@ void NonGFDosingPumpCtrl::SetSubjectPointer(int id, Subject* pSubject)
     case SP_DPC_DOSING_PUMP_DIG_IN_REQUEST:
       mpDosingPumpDigInRequest.Attach(pSubject);
       break;
-    case SP_DPC_MEASURED_VALUE_CHEMICAL_CONTAINER:
-      mpMeasuredValue.Attach(pSubject);
+    case SP_DPC_RELAY_STATUS_RELAY_FUNC_DOSING_PUMP:
+      mpDosingPumpStart.Attach(pSubject);
+      break;
+    case SP_DPC_SET_DOSING_REF:
+      mpSetDosingRef.Attach(pSubject);
+      break;
+    case SP_DPC_AO_DOSING_PUMP_SETPOINT:
+      mpDosingPumpSetpoint.Attach(pSubject);
       break;
     case SP_DPC_SYS_ALARM_DOSING_PUMP_ALARM_OBJ:
       mDosingPumpAlarms[DOSING_PUMP_FAULT_OBJ].Attach(pSubject);

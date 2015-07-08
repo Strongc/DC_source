@@ -40,13 +40,6 @@
 /*****************************************************************************
   DEFINES
  *****************************************************************************/
-// SW Timers
-enum
-{
-  DDA_WAIT_TIMER,
-  DDA_RUN_TIMER
-};
-
 
 /*****************************************************************************
   TYPE DEFINES
@@ -91,12 +84,8 @@ DDACtrl::~DDACtrl()
  *****************************************************************************/
 void DDACtrl::InitSubTask()
 {
-  //mpTimerObjList[DDA_RUN_TIMER] = new SwTimer(mpDDARunTime->GetValue(), S, false, false, this);
-  //mpTimerObjList[ANTI_SEIZE_WAIT_TIMER] = new SwTimer(mpDDAWaitTime->GetValue(), S, true, false, this);
-  mpH2SLevelAct->SetValue(10);
-  mpDDADosingFeedTankLevel->SetAsFloat(23.55555);
-  mpDDAChemicalTotalDosed->SetAsFloat(32.55555);
-  //mRunRequestedFlag = true;
+  //mpH2SLevelAct->SetValue(10);
+  //mpDDAChemicalTotalDosed->SetAsFloat(32.55555);
   for (unsigned int i = FIRST_DDAC_FAULT_OBJ; i < NO_OF_DDAC_FAULT_OBJ; i++)
   {
     mpAlarmDelay[i]->InitAlarmDelay();
@@ -114,18 +103,6 @@ void DDACtrl::InitSubTask()
  *****************************************************************************/
 void DDACtrl::RunSubTask()
 {
-  ACTUAL_OPERATION_MODE_TYPE actual_operation_mode;
-  ALARM_ID_TYPE new_alarm_code = ALARM_ID_NO_ALARM;
-  U32 dda_h2s_level_act;
-  float dda_dosing_feed_tank_level;
-  float dda_chemical_total_dosed;
-
-  dda_h2s_level_act = mpH2SLevelAct->GetValue();
-  dda_dosing_feed_tank_level = mpDDADosingFeedTankLevel->GetValue();
-  dda_chemical_total_dosed = mpDDAChemicalTotalDosed->GetValue();
-
-  //mpDosingPumpType->SetValue(DOSING_PUMP_TYPE_ANALOG);
-
   // Service AlarmDelays
   for (unsigned int i = FIRST_DDAC_FAULT_OBJ; i < NO_OF_DDAC_FAULT_OBJ; i++)
   {
@@ -145,20 +122,18 @@ void DDACtrl::RunSubTask()
   // set reference value everytime
   mpDDARef->SetValue((U32)(10.0 * mpSetDosingRef->GetValue()));
 
-  //test
-  //if (mpDDARef->GetValue() == 20)
-  //{
-    //mpAlarmDelay[DDA_FAULT_OBJ_H2S]->SetFault();
-  //}
-  //mAlarms[DDA_FAULT_OBJ_H2S]->SetValue((ALARM_ID_TYPE)118);
-  //mpAlarmDelay[DDA_FAULT_OBJ_H2S]->SetFault();
   if (mpSetH2SLevel.IsUpdated())
   {
     mpH2SLevelAct->SetValue(mpSetH2SLevel->GetValue());
   }
-  if (mpSetH2SFault->GetValue() & 0x01)
+  if (mpSetH2SFault->GetValue() & 0x01)   //bit0 means the fault
   {
     mpAlarmDelay[DDA_FAULT_OBJ_H2S]->SetFault();
+  }
+  //set AI measured value to the feed tank level, displayed in HMI
+  if (mpMeasuredValue->IsAvailable())
+  {
+    mpDDADosingFeedTankLevel->SetValue(mpMeasuredValue->GetValue());
   }
 
   // Service AlarmDelays
@@ -184,6 +159,7 @@ void DDACtrl::ConnectToSubjects()
   mpSetH2SLevel->Subscribe(this);
   mpDDALevelToday->Subscribe(this);
   mpDDALevelYesterday->Subscribe(this);
+  mpDDADosingFeedTankLevel->Subscribe(this);
   mpDDADosingFeedTankLevel->Subscribe(this);
   mpDDAChemicalTotalDosed->Subscribe(this);
   mpDosingPumpType->Subscribe(this);
@@ -277,6 +253,9 @@ void DDACtrl::SetSubjectPointer(int id, Subject* pSubject)
     case SP_DDAC_DOSING_FEED_TANK_LEVEL:
       mpDDADosingFeedTankLevel.Attach(pSubject);
       break;
+    case SP_DDAC_MEASURED_VALUE_CHEMICAL_CONTAINER:
+      mpMeasuredValue.Attach(pSubject);
+      break;
     case SP_DDAC_CHEMICAL_TOTAL_DOSED:
       mpDDAChemicalTotalDosed.Attach(pSubject);
       break;
@@ -294,17 +273,7 @@ void DDACtrl::SetSubjectPointer(int id, Subject* pSubject)
  *
  *
  ****************************************************************************/
-/*****************************************************************************
- * Function - StopTimers
- * DESCRIPTION: Stop the run- and waittimer and clear all timerflags. Intended
- *              for initializing the timers.
- *
- *****************************************************************************/
-void DDACtrl::StopTimers(void)
-{
-  mDDAWaitTimerFlag = false;
-  mDDARunTimerFlag = false;
-}
+
 /*****************************************************************************
  *
  *
