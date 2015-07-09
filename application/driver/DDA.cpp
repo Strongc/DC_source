@@ -358,7 +358,7 @@ void DDA::RunSubTask()
         //mpMP204DeviceStatus->SetValue(IO_DEVICE_STATUS_NO_COMMUNICATION);  // TODO need this?
         //#endif
       }
-      Test();
+      //Test();
     }
   }
 
@@ -676,7 +676,7 @@ void DDA::Test()
   switch (mDDAStatus)
   {
     case DDA_INIT:
-      //DDAInit();
+      DDAInit();
       mpTimerObjList[DDA_INIT_TIMER]->SetSwTimerPeriod(INIT_DELAY_TIME, S, false);
       mpTimerObjList[DDA_INIT_TIMER]->RetriggerSwTimer();
       mDDAStatus = DDA_INIT_WAITING;
@@ -686,8 +686,8 @@ void DDA::Test()
       if (mInitTimeOutFlag)
       {
         mInitTimeOutFlag = false;
-        //if (CheckInitRespond())
-        if (true)
+        if (CheckInitRespond())
+        //if (true)
         {
           mDDAStatus = DDA_RUN;
         }
@@ -696,15 +696,15 @@ void DDA::Test()
           mDDAStatus = DDA_INIT;
         }
 
-        mpDDAAlarmDelay[DDA_FAULT_OBJ_ALARM]->ResetFault();
-        mDDAAlarms[DDA_FAULT_OBJ_ALARM]->SetValue((ALARM_ID_TYPE)35);
-        mpDDAAlarmDelay[DDA_FAULT_OBJ_ALARM]->SetFault();
+        //mpDDAAlarmDelay[DDA_FAULT_OBJ_ALARM]->ResetFault();
+        //mDDAAlarms[DDA_FAULT_OBJ_ALARM]->SetValue((ALARM_ID_TYPE)35);
+        //mpDDAAlarmDelay[DDA_FAULT_OBJ_ALARM]->SetFault();
       }
       break;
 
     case DDA_RUN:
-      //mpGeniSlaveIf->SetDDAReference(DDA_NO_1, &setpoint);
-      //mpGeniSlaveIf->DDARequestStart(DDA_NO_1);
+      mpGeniSlaveIf->SetDDAReference(DDA_NO_1, mpDDARef->GetValue());
+      mpGeniSlaveIf->DDARequestStart(DDA_NO_1);
       mpTimerObjList[DDA_RUN_TIMER]->SetSwTimerPeriod(RUN_DELAY_TIME, S, false);
       mpTimerObjList[DDA_RUN_TIMER]->RetriggerSwTimer();
       mRunTimeOutFlag = false;
@@ -714,9 +714,9 @@ void DDA::Test()
     case DDA_RUN_WAITING:
       if (mRunTimeOutFlag)
       {
-        mpDDAAlarmDelay[DDA_FAULT_OBJ_ALARM]->ResetFault();
-        mDDAAlarms[DDA_FAULT_OBJ_ALARM]->SetValue((ALARM_ID_TYPE)210);
-        mpDDAAlarmDelay[DDA_FAULT_OBJ_ALARM]->SetFault();
+        //mpDDAAlarmDelay[DDA_FAULT_OBJ_ALARM]->ResetFault();
+        //mDDAAlarms[DDA_FAULT_OBJ_ALARM]->SetValue((ALARM_ID_TYPE)210);
+        //mpDDAAlarmDelay[DDA_FAULT_OBJ_ALARM]->SetFault();
 
         mRunTimeOutFlag = false;
         mpTimerObjList[DDA_RUN_TIMER]->RetriggerSwTimer();
@@ -729,8 +729,8 @@ void DDA::Test()
         }
         else
         {
-          //if(CheckRunRespond())
-          if(true)
+          if(CheckRunRespond())
+          //if(true)
           {
             mDDAStatus = DDA_RUN_WAITING;
           }
