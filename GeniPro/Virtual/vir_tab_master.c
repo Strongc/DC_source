@@ -185,6 +185,7 @@ const UCHAR DDA_module_status[] = // DDA, class 2
     85, // stop_ctr_state
     86, // ctr_source
     87, // pumping_state
+    148, // unit family
     232, // warn_bits1
     233, // warn_bits2
     234, // alarm_code

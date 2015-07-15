@@ -64,6 +64,7 @@ DDACtrl::DDACtrl()
     mpAlarmDelay[i] = new AlarmDelay(this);
     mAlarmDelayCheckFlag[i] = false;
   }
+  mpGeniSlaveIf = GeniSlaveIf::GetInstance();
 }
 /*****************************************************************************
  * Function - Destructor
@@ -84,7 +85,7 @@ DDACtrl::~DDACtrl()
  *****************************************************************************/
 void DDACtrl::InitSubTask()
 {
-  //mpH2SLevelAct->SetValue(10);
+  mpH2SLevelAct->SetValue(10);
   //mpDDAChemicalTotalDosed->SetAsFloat(32.55555);
   for (unsigned int i = FIRST_DDAC_FAULT_OBJ; i < NO_OF_DDAC_FAULT_OBJ; i++)
   {
@@ -103,6 +104,10 @@ void DDACtrl::InitSubTask()
  *****************************************************************************/
 void DDACtrl::RunSubTask()
 {
+  ALARM_ID_TYPE new_alarm_code = ALARM_ID_NO_ALARM;
+  U32 new_warning_code = 0;
+  bool pStatus = false;  //TODO remove
+  U32 max_setpoint = 0;  //TODO remove
   // Service AlarmDelays
   for (unsigned int i = FIRST_DDAC_FAULT_OBJ; i < NO_OF_DDAC_FAULT_OBJ; i++)
   {
@@ -120,7 +125,7 @@ void DDACtrl::RunSubTask()
   }
   
   // set reference value everytime
-  mpDDARef->SetValue((U32)(10.0 * mpSetDosingRef->GetValue()));
+  mpDDARef->SetValue((U32)(10000.0 * mpSetDosingRef->GetValue()));  // 0.1l/h -> 1ml/h
 
   if (mpSetH2SLevel.IsUpdated())
   {
@@ -135,6 +140,18 @@ void DDACtrl::RunSubTask()
   {
     mpDDADosingFeedTankLevel->SetValue(mpMeasuredValue->GetValue());
   }
+
+  //TODO test, use geni to test dda alarm
+  //mpGeniSlaveIf->GetDDAWarningCode(DDA_NO_1, &new_warning_code);
+  //pStatus = (mpGeniSlaveIf->GetDDAAlarmCode(DDA_NO_1, &new_alarm_code) && mpGeniSlaveIf->GetDDAWarningCode(DDA_NO_1, &new_warning_code));
+  pStatus = mpGeniSlaveIf->GetDDAAlarmCode(DDA_NO_1, &new_alarm_code);
+  //pStatus = mpGeniSlaveIf->GetDDAWarningCode(DDA_NO_1, &new_warning_code);
+  //mpGeniSlaveIf->GetDDAPumpingState(DDA_NO_1, &pStatus);
+  mpH2SLevelAct->SetValue((U32)new_alarm_code);
+  //mpH2SLevelAct->SetValue(new_warning_code);
+  //mpH2SLevelAct->SetValue((U32)pStatus);
+  //mpGeniSlaveIf->GetDDAMaxDosingCap(DDA_NO_1, &max_setpoint);
+  //mpDDADosingFeedTankLevel->SetValue((float)max_setpoint);
 
   // Service AlarmDelays
   for (unsigned int i = FIRST_DDAC_FAULT_OBJ; i < NO_OF_DDAC_FAULT_OBJ; i++)

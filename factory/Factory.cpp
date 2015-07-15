@@ -501,9 +501,9 @@ typedef enum
   ObTypeScadaCallbackTestCtrl,
   ObTypeScadaStateCtrl,
   ObTypeWatchSmsAlarm,
+  ObTypeDDA,
   ObTypeDDACtrl,
-  ObTypeNonGFDosingPumpCtrl,
-  ObTypeDDA
+  ObTypeNonGFDosingPumpCtrl
 } OBSERVER_TYPE;
 
 typedef enum
@@ -4956,9 +4956,9 @@ const DbFloatDataPoint FLOAT_DATAPOINTS[] = {
   {4470, 0.000000f, 99999996802856925000000000000000000000.000000f, 0.000000f, Q_ENERGY}, 
   {4512, 0.000000f, 100000000.000000f, 0.000000f, Q_VOLUME}, 
   {4514, 0.000000f, 100000000.000000f, 0.000000f, Q_VOLUME}, 
-  {4554, 0.000000f, 999.900024f, 0.100000f, Q_DEPTH}, 
-  {4555, 0.000000f, 999.900024f, 0.100000f, Q_VOLUME}, 
-  {4558, 0.000000f, 999.000000f, 0.000000f, Q_HEIGHT}, 
+  {4554, 0.000000f, 999.900024f, 0.000000f, Q_DEPTH}, 
+  {4555, 0.000000f, 999999.875000f, 0.000000f, Q_VOLUME}, 
+  {4558, 0.000000f, 999999.000000f, 0.000000f, Q_HEIGHT}, 
   {4572, 0.000000f, 100.000000f, 0.000000f, Q_HEIGHT}, 
   {4573, 0.000000f, 100.000000f, 0.000000f, Q_FLOW}
 };
@@ -7857,9 +7857,9 @@ const DbObserver OBSERVERS[] = {
   {1034, ObTypeScadaCallbackTestCtrl, -1}, // scada_callback_test_ctrl
   {1035, ObTypeScadaStateCtrl, -1}, // scada_state_ctrl
   {1036, ObTypeWatchSmsAlarm, -1}, // watch_sms_alarm
-  {1037, ObTypeDDACtrl, -1}, // dda_ctrl
-  {1038, ObTypeNonGFDosingPumpCtrl, -1}, // dosing_pump_ctrl
-  {1039, ObTypeDDA, -1} // dda
+  {1037, ObTypeDDA, -1}, // dda
+  {1038, ObTypeDDACtrl, -1}, // dda_ctrl
+  {1039, ObTypeNonGFDosingPumpCtrl, -1} // dosing_pump_ctrl
 };
 
 const int OBSERVERS_CNT = 570;
@@ -17545,32 +17545,32 @@ const DbObserverSubject OBSERVER_SUBJECTS[] = {
   {4500, 1036, SP_WSA_SCADA_WATCH_ENABLED}, 
   {4504, 1036, SP_WSA_SCADA_STATE}, 
   {4510, 1036, SP_WSA_SCADA_STATE_UPDATED}, 
-  {4548, 1037, SP_DDAC_DOSING_PUMP_INSTALLED}, 
-  {4549, 1037, SP_DDAC_DDA_INSTALLED}, 
-  {4550, 1037, SP_DDAC_DOSING_PUMP_TYPE}, 
-  {4551, 1037, SP_DDAC_H2S_LEVEL_ACT}, 
-  {4552, 1037, SP_DDAC_H2S_LEVEL_TODAY}, 
-  {4553, 1037, SP_DDAC_H2S_LEVEL_YESTERDAY}, 
-  {4554, 1037, SP_DDAC_DOSING_FEED_TANK_LEVEL}, 
-  {4555, 1037, SP_DDAC_CHEMICAL_TOTAL_DOSED}, 
-  {4556, 1037, SP_DDAC_SET_H2S_LEVEL}, 
-  {4557, 1037, SP_DDAC_SET_H2S_FAULT}, 
-  {4558, 1037, SP_DDAC_SET_DOSING_REF}, 
-  {4559, 1037, SP_DDAC_DDA_REFERENCE}, 
-  {4561, 1037, SP_DDAC_H2S_SENSOR_FAULT_OBJ}, 
-  {4572, 1037, SP_DDAC_MEASURED_VALUE_CHEMICAL_CONTAINER}, 
-  {4548, 1038, SP_DPC_DOSING_PUMP_INSTALLED}, 
-  {4550, 1038, SP_DPC_DOSING_PUMP_TYPE}, 
-  {4558, 1038, SP_DPC_SET_DOSING_REF}, 
-  {4567, 1038, SP_DPC_SYS_ALARM_DOSING_PUMP_ALARM_OBJ}, 
-  {4569, 1038, SP_DPC_DOSING_PUMP_DIG_IN_REQUEST}, 
-  {4570, 1038, SP_DPC_RELAY_STATUS_RELAY_FUNC_DOSING_PUMP}, 
-  {4573, 1038, SP_DPC_AO_DOSING_PUMP_SETPOINT}, 
-  {132, 1039, SP_DDA_SYSTEM_ALARM_RESET_EVENT}, 
-  {4549, 1039, SP_DDA_DDA_INSTALLED}, 
-  {4559, 1039, SP_DDA_DDA_REFERENCE}, 
-  {4563, 1039, SP_DDA_DDA_GENI_COMM_FAULT_OBJ}, 
-  {4565, 1039, SP_DDA_SYS_ALARM_DDA_FAULT_ALARM_OBJ}
+  {132, 1037, SP_DDA_SYSTEM_ALARM_RESET_EVENT}, 
+  {4549, 1037, SP_DDA_DDA_INSTALLED}, 
+  {4559, 1037, SP_DDA_DDA_REFERENCE}, 
+  {4563, 1037, SP_DDA_DDA_GENI_COMM_FAULT_OBJ}, 
+  {4565, 1037, SP_DDA_SYS_ALARM_DDA_FAULT_ALARM_OBJ}, 
+  {4548, 1038, SP_DDAC_DOSING_PUMP_INSTALLED}, 
+  {4549, 1038, SP_DDAC_DDA_INSTALLED}, 
+  {4550, 1038, SP_DDAC_DOSING_PUMP_TYPE}, 
+  {4551, 1038, SP_DDAC_H2S_LEVEL_ACT}, 
+  {4552, 1038, SP_DDAC_H2S_LEVEL_TODAY}, 
+  {4553, 1038, SP_DDAC_H2S_LEVEL_YESTERDAY}, 
+  {4554, 1038, SP_DDAC_DOSING_FEED_TANK_LEVEL}, 
+  {4555, 1038, SP_DDAC_CHEMICAL_TOTAL_DOSED}, 
+  {4556, 1038, SP_DDAC_SET_H2S_LEVEL}, 
+  {4557, 1038, SP_DDAC_SET_H2S_FAULT}, 
+  {4558, 1038, SP_DDAC_SET_DOSING_REF}, 
+  {4559, 1038, SP_DDAC_DDA_REFERENCE}, 
+  {4561, 1038, SP_DDAC_H2S_SENSOR_FAULT_OBJ}, 
+  {4572, 1038, SP_DDAC_MEASURED_VALUE_CHEMICAL_CONTAINER}, 
+  {4548, 1039, SP_DPC_DOSING_PUMP_INSTALLED}, 
+  {4550, 1039, SP_DPC_DOSING_PUMP_TYPE}, 
+  {4558, 1039, SP_DPC_SET_DOSING_REF}, 
+  {4567, 1039, SP_DPC_SYS_ALARM_DOSING_PUMP_ALARM_OBJ}, 
+  {4569, 1039, SP_DPC_DOSING_PUMP_DIG_IN_REQUEST}, 
+  {4570, 1039, SP_DPC_RELAY_STATUS_RELAY_FUNC_DOSING_PUMP}, 
+  {4573, 1039, SP_DPC_AO_DOSING_PUMP_SETPOINT}
 };
 
 const int OBSERVER_SUBJECTS_CNT = 6216;
@@ -40373,15 +40373,15 @@ const DbLabel DISPLAY_LABEL[] = {
   {6922, 2089}, 
   {6924, 2090}, 
   {6926, 2091}, 
-  {6928, 2092}, 
-  {6930, 2093}, 
-  {6931, 2093}, 
-  {6933, 2094}, 
-  {6935, 2094}, 
+  {6928, 2090}, 
+  {6930, 2092}, 
+  {6931, 2092}, 
+  {6933, 2093}, 
+  {6935, 2093}, 
   {6937, 1482}, 
-  {6938, 2095}, 
-  {6939, 2096}, 
-  {6941, 2097}, 
+  {6938, 2094}, 
+  {6939, 2095}, 
+  {6941, 2096}, 
   {6943, 1513}, 
   {6944, 1341}
 };
@@ -40549,8 +40549,8 @@ const DbDisplay DISPLAY[] = {
   {175, 6686, 1977, 1, 0, 6687, 0, "4.5.8"}, 
   {176, 6721, 1985, 1, 0, 6722, 0, "4.4.7"}, 
   {177, 6796, 2023, 1, 0, 6798, 0, "4.4.7.1"}, 
-  {178, 6931, 2093, 1, 0, 6932, 0, "4.2.14"}, 
-  {179, 6935, 2094, 1, 0, 6936, 0, "4.2.14.1"}
+  {178, 6931, 2092, 1, 0, 6932, 0, "4.2.14"}, 
+  {179, 6935, 2093, 1, 0, 6936, 0, "4.2.14.1"}
 };
 
 const int DISPLAY_CNT = 162;
@@ -43690,12 +43690,12 @@ static Observer* ConstructObserver(const U16 observerId)
     return new ScadaStateCtrl();
   case 1036: // watch_sms_alarm
     return new WatchSmsAlarm();
-  case 1037: // dda_ctrl
+  case 1037: // dda
+    return new DDA(DDA_NO_1);
+  case 1038: // dda_ctrl
     return new DDACtrl();
-  case 1038: // dosing_pump_ctrl
+  case 1039: // dosing_pump_ctrl
     return new NonGFDosingPumpCtrl();
-  case 1039: // dda
-    return new DDA();
   default:
     return NULL;
   }
@@ -45411,13 +45411,13 @@ void RunFactory(void)
       case ObTypeWatchSmsAlarm:
         p_observer = ConstructObserver(OBSERVERS[j].Id);
       break;
+      case ObTypeDDA:
+        p_observer = ConstructObserver(OBSERVERS[j].Id);
+      break;
       case ObTypeDDACtrl:
         p_observer = ConstructObserver(OBSERVERS[j].Id);
       break;
       case ObTypeNonGFDosingPumpCtrl:
-        p_observer = ConstructObserver(OBSERVERS[j].Id);
-      break;
-      case ObTypeDDA:
         p_observer = ConstructObserver(OBSERVERS[j].Id);
       break;
 

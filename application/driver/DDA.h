@@ -105,13 +105,13 @@ class GeniSlaveIf;
  * CLASS: MP204Module
  * DESCRIPTION: MP204 driver
  *****************************************************************************/
-class DDA : public SubTask, public SwTimerBaseClass 
+class DDA : public IO351, public SubTask, public SwTimerBaseClass 
 {
   public:
     /********************************************************************
     LIFECYCLE - Constructor
     ********************************************************************/
-    DDA();
+    DDA(const IO351_NO_TYPE moduleNo);
 
     /********************************************************************
     DDAModule - Destructor
@@ -147,7 +147,9 @@ class DDA : public SubTask, public SwTimerBaseClass
     bool CheckRunRespond();
     bool CheckSetpoint();
     void Test();  //TODO remove later
-    void RunSubTask1();
+
+    // IO351 class overrides
+    virtual void ConfigReceived(bool rxedOk, U8 noOfPumps, U8 noOfVlt, U8 pumpOffset, U8 moduleType);
 
     /********************************************************************
     ATTRIBUTES
@@ -168,12 +170,14 @@ class DDA : public SubTask, public SwTimerBaseClass
     bool mDDAAlarmDelayCheckFlag[NO_OF_DDA_FAULT_OBJ];
 
     // Local variables
+    U32           mSkipRunCounter;
     bool          mInitTimeOutFlag;
     bool          mRunTimeOutFlag;
     GeniSlaveIf*  mpGeniSlaveIf;
     DDA_STATUS    mDDAStatus;
     ALARM_ID_TYPE mExistingAlarmCode;
     U32           mExistingWarnings;
+    U32           mMaxDosingCapacity;
   
   protected:
     /********************************************************************

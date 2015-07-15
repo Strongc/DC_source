@@ -175,7 +175,7 @@ static OUT_TYPE ConvertToGeni(IN_TYPE value, GENI_CONVERT_ID_TYPE convertId, U32
       break;
 
     case GENI_CONVERT_ID_FLOW_DOT1LH:
-      convertedValue = (U32)(value * 1.0f + 0.5f);
+      convertedValue = (U32)(value * 10.0f + 0.5f);
       break;
 
     case GENI_CONVERT_ID_VOLUME_1ML:
@@ -302,7 +302,7 @@ static OUT_TYPE ConvertFromGeni(IN_TYPE value, GENI_CONVERT_ID_TYPE convertId)
       break;
       
     case GENI_CONVERT_ID_FLOW_DOT1LH:
-      convertedValue = (OUT_TYPE)value / 1.0f ;
+      convertedValue = (OUT_TYPE)value / 10.0f ;
       break;
 
     case GENI_CONVERT_ID_VOLUME_1ML:

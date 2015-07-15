@@ -65,6 +65,7 @@
 /*****************************************************************************
   DEFINES
  *****************************************************************************/
+class GeniSlaveIf;
 
 
 /*****************************************************************************
@@ -144,6 +145,8 @@ class DDACtrl : public SubTask, public SwTimerBaseClass
     SubjectPtr<AlarmDataPoint*> mAlarms[NO_OF_DDAC_FAULT_OBJ];
     AlarmDelay* mpAlarmDelay[NO_OF_DDAC_FAULT_OBJ];
     bool mAlarmDelayCheckFlag[NO_OF_DDAC_FAULT_OBJ];
+
+    GeniSlaveIf*  mpGeniSlaveIf;
 
   protected:
     /********************************************************************

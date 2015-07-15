@@ -65,6 +65,7 @@ extern "C"
 #define UNIT_FAMILY_CUE              2
 #define UNIT_FAMILY_MP204            7
 #define UNIT_FAMILY_IO11x            22
+#define UNIT_FAMILY_DDA              30
 
 #define GENI_UCHAR_2_FLOAT           2.54f
 #define GENI_I_MO_SCALE              0.1f    //A
@@ -3130,7 +3131,7 @@ bool GeniSlaveIf::GetDDAMaxPressure(IO351_NO_TYPE moduleNo, float* pValue)
  * Function - GetDDA Maximum possible dosing capacity
  * DESCRIPTION:
 *****************************************************************************/
-bool GeniSlaveIf::GetDDAMaxDosingCap(IO351_NO_TYPE moduleNo, float* pValue)
+bool GeniSlaveIf::GetDDAMaxDosingCap(IO351_NO_TYPE moduleNo, U32* pValue)
 {
   U8 unit_index;
   U32 geni_value = 0;
@@ -3150,12 +3151,12 @@ bool GeniSlaveIf::GetDDAMaxDosingCap(IO351_NO_TYPE moduleNo, float* pValue)
     {
       OS_Use(&geni_class_data);
       geni_value |= (U32)s_cl2_id001[unit_index]<<16;     // Maximum possible pressure in dosing
-      geni_value |= (U32)s_cl2_id002[unit_index]<<8;    
+      geni_value |= (U32)s_cl2_id002[unit_index]<<8;
       geni_value |= (U32)s_cl2_id003[unit_index];
       OS_Unuse(&geni_class_data);
       if (geni_value < 0xFF0000)
       {
-	  *pValue = 1.0f * geni_value;
+        *pValue = geni_value;
         ret_val = true;
       }
     }
@@ -3194,7 +3195,7 @@ bool GeniSlaveIf::GetDDADosingCapacity(IO351_NO_TYPE moduleNo, float* pValue)
       OS_Unuse(&geni_class_data);
       if (geni_value < 0xFF000000)
       {
-        *pValue = 1.0f*geni_value;
+        *pValue = 1.0f * geni_value;
         ret_val = true;
       }
     }
@@ -3474,9 +3475,39 @@ bool GeniSlaveIf::GetDDAPumpingState(IO351_NO_TYPE moduleNo, bool* pStatus)
  * Function - GetDDA Pump Alarm code
  * DESCRIPTION:
 *****************************************************************************/
+/*bool GeniSlaveIf::GetDDAAlarmCode(IO351_NO_TYPE moduleNo, ALARM_ID_TYPE* pValue)*/
+//{
+  //U8 unit_index, geni_value, unit_family;
+  //GENI_DEVICE_TYPE device;
+  //bool ret_val = false;
+
+  //// find unit
+  //OS_Use(&geni_master);
+  //unit_index = FindUnit(GetUnitAddress(moduleNo));
+  //OS_Unuse(&geni_master);
+
+  //// get device
+  //if (GetDevice(unit_index, &device))
+  //{
+    //// verify device type
+    //if (device == DEVICE_DDA)
+    //{
+      //OS_Use(&geni_class_data);
+      //geni_value = s_cl2_id234[unit_index];     
+      //unit_family = s_cl2_id148[unit_index];
+      //OS_Unuse(&geni_class_data);
+      //if (unit_family == UNIT_FAMILY_DDA) // Yes, it's a DDA
+      //{
+        //*pValue = (ALARM_ID_TYPE)(geni_value);
+        //ret_val = true;
+      //}
+    //}
+  //}
+  //return ret_val;
+/*}*/
 bool GeniSlaveIf::GetDDAAlarmCode(IO351_NO_TYPE moduleNo, ALARM_ID_TYPE* pValue)
 {
-  U8 unit_index;
+  U8 unit_index, geni_value, unit_family;
   GENI_DEVICE_TYPE device;
   bool ret_val = false;
 
@@ -3492,11 +3523,24 @@ bool GeniSlaveIf::GetDDAAlarmCode(IO351_NO_TYPE moduleNo, ALARM_ID_TYPE* pValue)
     if (device == DEVICE_DDA)
     {
       OS_Use(&geni_class_data);
-      *pValue = (ALARM_ID_TYPE)s_cl2_id234[unit_index];     
+      geni_value = s_cl2_id234[unit_index];     
       OS_Unuse(&geni_class_data);
+      *pValue = (ALARM_ID_TYPE)(geni_value);
       ret_val = true;
     }
   }
+  else
+  {
+    if (unit_index != NO_UNIT)
+    {
+      if (mUnitCommError[unit_index] == true)
+      {
+        *pValue = ALARM_ID_COMMUNICATION_FAULT;
+        ret_val = true;
+      }
+    }
+  }
+
   return ret_val;
 }
 
@@ -3506,7 +3550,7 @@ bool GeniSlaveIf::GetDDAAlarmCode(IO351_NO_TYPE moduleNo, ALARM_ID_TYPE* pValue)
 *****************************************************************************/
 bool GeniSlaveIf::GetDDAWarningCode(IO351_NO_TYPE moduleNo, U32* pValue)
 {
-  U8 unit_index;
+  U8 unit_index, geni_value, unit_family;
   GENI_DEVICE_TYPE device;
   bool ret_val = false;
 
@@ -3522,9 +3566,14 @@ bool GeniSlaveIf::GetDDAWarningCode(IO351_NO_TYPE moduleNo, U32* pValue)
     if (device == DEVICE_DDA)
     {
       OS_Use(&geni_class_data);
-      *pValue = (U32)s_cl2_id235[unit_index];
+      geni_value = s_cl2_id235[unit_index];     
+      unit_family = s_cl2_id148[unit_index];
       OS_Unuse(&geni_class_data);
-      ret_val = true;
+      if (unit_family == UNIT_FAMILY_DDA) // Yes, it's a DDA
+      {
+        *pValue = (U32)(geni_value);
+        ret_val = true;
+      }
     }
   }
   return ret_val;
@@ -4752,7 +4801,7 @@ void GeniSlaveIf::CheckForAutoPollEnableDisable()
     int loop_count = 0;
     while ( loop_count < (MAX_NUMBER_OF_UNITS)/2 )  // Just test half the units in each run
     {
-      if ( mUnit2Device[unit_index] == DEVICE_E_PUMP || mUnit2Device[unit_index] == DEVICE_IO111 || mUnit2Device[unit_index] == DEVICE_MP204 )
+      if ( mUnit2Device[unit_index] == DEVICE_E_PUMP || mUnit2Device[unit_index] == DEVICE_IO111 || mUnit2Device[unit_index] == DEVICE_MP204 || mUnit2Device[unit_index] == DEVICE_DDA)
       {
         if ( mUnitCommError[unit_index] == true )
         {
