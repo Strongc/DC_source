@@ -467,7 +467,9 @@ U32 gai_14_190_h2s_level;  // 14,190
 U32 gai_14_191_h2s_level_today;  // 14,191 
 U32 gai_14_192_h2s_level_yesterday;  // 14,192 
 U32 gai_14_193_dosing_feed_tank_level;  // 14,193 
-U32 gai_14_194_chemical_total_dosed;  // 14,194 
+U32 gai_14_194_dosing_volume_total_log;  // 14,194 
+U32 gai_14_195_dosing_volume_today_log;  // 14,195 
+U32 gai_14_196_dosing_volume_yesterday_log;  // 14,196 
 U32 gai_15_1_dummy15;  // 15,1 Dummy: Last id must be > 0
 U32 gai_16_0_set_real_time_clock;  // 16,0 set_real_time_clock
 U32 gai_16_1_dummy16;  // 16,1 Dummy: Last id must be > 0

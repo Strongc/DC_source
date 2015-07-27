@@ -96,6 +96,7 @@ void LoggingCtrl::InitSubTask()
   mLastOverflowTime               = mpOverflowTime->GetValue();
   mLastParallelOperationTime      = mpParallelOperationTime->GetValue();
   mLastFreeRunningEnergy          = mpFreeRunningEnergy->GetValue();
+  mLastDosingVolume               = mpRunningDosingVolume->GetValue();
   for (int pump_no = FIRST_PUMP_NO; pump_no < NO_OF_PUMPS; pump_no++)
   {
     mLastOperationTime[pump_no]   = mpOperationTime[pump_no]->GetValue();
@@ -349,6 +350,9 @@ void LoggingCtrl::SetSubjectPointer(int id, Subject* pSubject)
     case SP_LOG_PUMP_6_FILTERED_CURRENT:
       mpFilteredCurrent[PUMP_6].Attach(pSubject);
       break;
+    case SP_LOG_RUNNING_DOSING_VOLUME:
+      mpRunningDosingVolume.Attach(pSubject);
+      break;
 
     // Outputs:
     case SP_LOG_PUMPED_VOLUME_1H_ACC:
@@ -437,6 +441,19 @@ void LoggingCtrl::SetSubjectPointer(int id, Subject* pSubject)
       break;
     case SP_LOG_EFFICIENCY_YESTERDAY_LOG:
       mpEfficiencyYesterdayLog.Attach(pSubject);
+      break;
+
+    case SP_LOG_DOSING_VOLUME_1H_ACC:
+      mpDosingVolume1hAcc.Attach(pSubject);
+      break;
+    case SP_LOG_DOSING_VOLUME_72H_LOG:
+      mpDosingVolume72hLog.Attach(pSubject);
+      break;
+    case SP_LOG_DOSING_VOLUME_TODAY_LOG:
+      mpDosingVolumeTodayLog.Attach(pSubject);
+      break;
+    case SP_LOG_DOSING_VOLUME_YESTERDAY_LOG:
+      mpDosingVolumeYesterdayLog.Attach(pSubject);
       break;
 
     case SP_LOG_PUMP_1_OPERATION_TIME_1H_ACC:
@@ -799,6 +816,7 @@ void LoggingCtrl::UpdateRunningAccumulators()
   UpdateU32Accumulator(mpOverflowTime,  mLastOverflowTime, mpOverflowTime1hAcc, mpOverflowTimeTodayLog);
   UpdateU32Accumulator(mpParallelOperationTime,  mLastParallelOperationTime, mpParallelOperationTime1hAcc, mpParallelOperationTimeTodayLog);
   UpdateFloatAccumulator(mpFreeRunningEnergy, mLastFreeRunningEnergy, mpEnergyConsumption1hAcc, mpEnergyConsumptionTodayLog, 0.001f);
+  UpdateFloatAccumulator(mpRunningDosingVolume, mLastDosingVolume, mpDosingVolume1hAcc, mpDosingVolumeTodayLog, 0.001f);
 
   for (int pump_no = FIRST_PUMP_NO; pump_no < NO_OF_PUMPS; pump_no++)
   {
@@ -854,6 +872,10 @@ void LoggingCtrl::UpdateHourLog()
   mpEnergyConsumption1hAcc->SetValue(0);
   mpEnergyConsumption72hLog->PushValue(0.001f*hour_acc); // Wh --> kWh
 
+  hour_acc = mpDosingVolume1hAcc->GetValue();
+  mpDosingVolume1hAcc->SetValue(0);
+  mpDosingVolume72hLog->PushValue(0.001f*hour_acc);
+
   for (int pump_no = FIRST_PUMP_NO; pump_no < NO_OF_PUMPS; pump_no++)
   {
     hour_acc = mpOperationTime1hAcc[pump_no]->GetValue();
@@ -902,6 +924,8 @@ void LoggingCtrl::UpdateDayLog()
   mpEnergyConsumptionTodayLog->SetValue(0);
   mpEfficiencyYesterdayLog->SetValue(mpEfficiencyTodayLog->GetValue());
   mpEfficiencyTodayLog->SetValue(0);
+  mpDosingVolumeYesterdayLog->SetValue(mpDosingVolumeTodayLog->GetValue());
+  mpDosingVolumeTodayLog->SetValue(0);
 
   for (int pump_no = FIRST_PUMP_NO; pump_no < NO_OF_PUMPS; pump_no++)
   {
@@ -936,6 +960,7 @@ void LoggingCtrl::MarkHourLogInvalid(U32 noOfHours)
   mpParallelOperationTime72hLog->PushValue(INVALID_MARK, noOfHours);
   mpEnergyConsumption72hLog->PushValue(INVALID_MARK, noOfHours);
   mpEfficiency72hLog->PushValue(INVALID_MARK, noOfHours);
+  mpDosingVolume72hLog->PushValue(INVALID_MARK, noOfHours);
 
   for (int pump_no = FIRST_PUMP_NO; pump_no < NO_OF_PUMPS; pump_no++)
   {
@@ -1012,6 +1037,10 @@ void LoggingCtrl::UpdateTodayAccumulators(U32 noOfHours)
   temp_float = mpEnergyConsumption72hLog->GetSum(0, noOfHours, INVALID_MARK);
   temp_float += 0.001f*mpEnergyConsumption1hAcc->GetValue();
   mpEnergyConsumptionTodayLog->SetValue(temp_float);
+
+  temp_float = mpDosingVolume72hLog->GetSum(0, noOfHours, INVALID_MARK);
+  temp_float += 0.001f*mpDosingVolume1hAcc->GetValue();
+  mpDosingVolumeTodayLog->SetValue(temp_float);
 
   for (int pump_no = FIRST_PUMP_NO; pump_no < NO_OF_PUMPS; pump_no++)
   {

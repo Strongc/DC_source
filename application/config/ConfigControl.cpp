@@ -562,7 +562,7 @@ ConfigControl::ConfigControl()
   mpConfigBlock = new FlashBlock(this, "WWMidrange Config v1", 34000, NON_VOLATILE_CONFIG_SUBJECTS, NON_VOLATILE_CONFIG_SUBJECTS_CNT, FLASH_CONTROL_BLOCK_ID_CONFIG);
   // NOTE: A large log block (> 3000 bytes) should be avoided to ensure saving of log data during power down. (So I think we fucked up some time ago)
  // mpLogBlock = new FlashBlock(this, "WWMidrange Log v1", 4096, NON_VOLATILE_LOG_SUBJECTS, NON_VOLATILE_LOG_SUBJECTS_CNT, FLASH_CONTROL_BLOCK_ID_LOG);
-  mpLogBlock = new FlashBlock(this, "WWMidrange Log v1", 4160, NON_VOLATILE_LOG_SUBJECTS, NON_VOLATILE_LOG_SUBJECTS_CNT, FLASH_CONTROL_BLOCK_ID_LOG);
+  mpLogBlock = new FlashBlock(this, "WWMidrange Log v1", 4224, NON_VOLATILE_LOG_SUBJECTS, NON_VOLATILE_LOG_SUBJECTS_CNT, FLASH_CONTROL_BLOCK_ID_LOG);
   mpGSCBlock = new FlashBlock(this, "WWMidrange GSC v1", 512, NON_VOLATILE_GSC_SUBJECTS, NON_VOLATILE_GSC_SUBJECTS_CNT, FLASH_CONTROL_BLOCK_ID_GSC);
   mpNoBootBlock = new FlashBlock(this, "WWMidrange No-Boot v1", 512, NON_VOLATILE_NOBOOT_SUBJECTS, NON_VOLATILE_NOBOOT_SUBJECTS_CNT, FLASH_CONTROL_BLOCK_ID_NO_BOOT);
   // Some special handling for user log (not factory generated)

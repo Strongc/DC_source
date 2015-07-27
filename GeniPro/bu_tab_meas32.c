@@ -213,7 +213,9 @@ const ID_PTR meas32_tab[] =
 /* ID 191 */ UC_ADDR_0_LI(gai_14_191_h2s_level_today), // 
 /* ID 192 */ UC_ADDR_0_LI(gai_14_192_h2s_level_yesterday), // 
 /* ID 193 */ UC_ADDR_0_LI(gai_14_193_dosing_feed_tank_level), // 
-/* ID 194 */ UC_ADDR_0_LI(gai_14_194_chemical_total_dosed) // 
+/* ID 194 */ UC_ADDR_0_LI(gai_14_194_dosing_volume_total_log), // 
+/* ID 195 */ UC_ADDR_0_LI(gai_14_195_dosing_volume_today_log), // 
+/* ID 196 */ UC_ADDR_0_LI(gai_14_196_dosing_volume_yesterday_log) // 
 };
 
 /**************************************************************************
@@ -415,5 +417,7 @@ const ID_INFO meas32_info_tab[] =
 /* ID 191 */ COMMON_INFO + COM_INDEX_EXT_PERCENTAGE_1PPM, // 
 /* ID 192 */ COMMON_INFO + COM_INDEX_EXT_PERCENTAGE_1PPM, // 
 /* ID 193 */ COMMON_INFO + COM_INDEX_EXT_DIMLESS_254, // 
-/* ID 194 */ COMMON_INFO + COM_INDEX_EXT_VOLUME_1ML // 
+/* ID 194 */ COMMON_INFO + COM_INDEX_EXT_VOLUME_1ML, // 
+/* ID 195 */ COMMON_INFO + COM_INDEX_EXT_VOLUME_1ML, // 
+/* ID 196 */ COMMON_INFO + COM_INDEX_EXT_VOLUME_1ML // 
 };

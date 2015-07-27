@@ -45,8 +45,8 @@
 /*****************************************************************************
   DEFINES
  *****************************************************************************/
-#define INIT_DELAY_TIME 20
-#define RUN_DELAY_TIME 20
+#define INIT_DELAY_TIME 200
+#define RUN_DELAY_TIME 200
 
 // SW Timers
 enum
@@ -150,6 +150,15 @@ void DDA::SetSubjectPointer(int id, Subject* pSubject)
      case SP_DDA_DDA_INSTALLED:
        mpDDAInstalled.Attach(pSubject);
        break;
+     case SP_DDA_CHEMICAL_TOTAL_DOSED:
+       mpChemicalTotalDosed.Attach(pSubject);
+       break;
+     case SP_DDA_RUNNING_DOSING_VOLUME:
+       mpRunningDosingVolume.Attach(pSubject);
+       break;
+     case SP_DDA_DOSING_VOLUME_TOTAL_LOG:
+       mpDosingVolumeTotalLog.Attach(pSubject);
+       break;
      case SP_DDA_SYSTEM_ALARM_RESET_EVENT:
        mpSystemAlarmResetEvent.Attach(pSubject);
        break;
@@ -177,6 +186,7 @@ void DDA::Update(Subject* pSubject)
 {
   mpDDARef.Update(pSubject);
   mpDDAInstalled.Update(pSubject);
+  mpChemicalTotalDosed.Update(pSubject);
   mpSystemAlarmResetEvent.Update(pSubject);
   if (pSubject == mpTimerObjList[DDA_INIT_TIMER])
   {
@@ -205,6 +215,7 @@ void DDA::ConnectToSubjects()
 {
   mpDDARef->Subscribe(this);
   mpDDAInstalled->Subscribe(this);
+  mpChemicalTotalDosed->Subscribe(this);
   mpSystemAlarmResetEvent->Subscribe(this);
   for (unsigned int i = FIRST_DDA_FAULT_OBJ; i < NO_OF_DDA_FAULT_OBJ; i++)
   {
@@ -241,6 +252,7 @@ void DDA::InitSubTask()
   mpTimerObjList[DDA_RUN_TIMER] = new SwTimer(RUN_DELAY_TIME, MS, true, false, this);
   mInitTimeOutFlag = false;
   mRunTimeOutFlag = false;
+  SetDDADataAvailability(DP_NEVER_AVAILABLE);
 
   for (unsigned int i = FIRST_DDA_FAULT_OBJ; i < NO_OF_DDA_FAULT_OBJ; i++)
   {
@@ -259,7 +271,7 @@ void DDA::InitSubTask()
 void DDA::RunSubTask()
 {
   ALARM_ID_TYPE new_alarm_code = ALARM_ID_NO_ALARM;
-  U32 new_warning_code = 0;
+  U8 pStatus;
 
   // Service AlarmDelays
   for (unsigned int i = FIRST_DDA_FAULT_OBJ; i < NO_OF_DDA_FAULT_OBJ; i++)
@@ -271,32 +283,15 @@ void DDA::RunSubTask()
     }
   }
 
-  // NOTICE: Send the reference as fast as possible.
-  // There is no need to check if the DDA is installed as the reference is not sent directly
-  // to the DDA. It is put into the class 5 table and here we must always have the newest reference - no
-  // matter if the DDA is present or not.
-  if (mpDDARef.IsUpdated())
-  {
-    //mpGeniSlaveIf->SetDDAReference(mModuleNo, mpDDARef->GetValue());
-  }
-  //mpGeniSlaveIf->SetDDAReference(mModuleNo, 100);  //TODO 100ml, remove later, just let it slow to avoid noise
-
-  mSkipRunCounter++;
-  if (mSkipRunCounter < 10)
-  {
-    // Just run this subtask every 10th time i.e. every 100 ms instead of every 10 ms.
-    // This makes a significant reduction of the CPU load, due to the service of 50 alarms. (25 alarms and 2 instanses)
-    //return;
-  }
-  mSkipRunCounter = 0;
-
   // Reset alarms
   //if (mpSystemAlarmResetEvent.IsUpdated() || mpModuleAlarmResetEvent.IsUpdated())
   if (mpSystemAlarmResetEvent.IsUpdated())
   {
     if (mpDDAInstalled->GetValue() == true)
     {
-      mpGeniSlaveIf->DDAAlarmReset(mModuleNo);
+      //mpGeniSlaveIf->DDAAlarmReset(mModuleNo);
+      DDAInit();
+      mDDAStatus = DDA_INIT;
       mpDDAAlarmDelay[DDA_FAULT_OBJ_ALARM]->ResetFault();
     }
   }
@@ -314,82 +309,28 @@ void DDA::RunSubTask()
       // Remove from auto poll list
 	    mpGeniSlaveIf->DisconnectDDA(mModuleNo);
 
-      // Test
-      //mpDDAAlarmDelay[DDA_FAULT_OBJ_ALARM]->ResetFault();
-
       // The module is not present - make certain that all errors and data from the module is cleared
       HandleDDAAlarm(ALARM_ID_NO_ALARM);
       HandleDDAWarning(0);
+      SetDDADataAvailability(DP_NEVER_AVAILABLE);
       //request stop
       mpGeniSlaveIf->DDARequestStop(mModuleNo);
       mpDDAAlarmDelay[DDA_FAULT_OBJ_GENI_COMM]->ResetFault();
     }
   }
 
-/* cue,mp204,io111 method
-  // module expected?
   if (mpDDAInstalled->GetValue() == true)
   {
-    //if request_stop_event
-
-    if (mpGeniSlaveIf->GetDDAAlarmCode(mModuleNo, &new_alarm_code) && mpGeniSlaveIf->GetDDAWarningCode(mModuleNo, &new_warning_code))
-    //if (mpGeniSlaveIf->GetDDAAlarmCode(mModuleNo, &new_alarm_code))
-    //if (mpGeniSlaveIf->GetDDAWarningCode(mModuleNo, &new_warning_code))
-    //if (true)
-    {
-      //HandleDDAAlarm(new_alarm_code);
-      HandleDDAWarning(new_warning_code);
-      HandleDDAAlarm((ALARM_ID_TYPE)new_warning_code);
-      mpDDAAlarmDelay[DDA_FAULT_OBJ_GENI_COMM]->ResetFault();
-
-      if (new_alarm_code == 0 && new_warning_code == 0)
-      {
-        //RunStateMachine();
-        Test();
-        //mpMP204DeviceStatus->SetValue(IO_DEVICE_STATUS_PRESENT_AND_OK);
-      }
-      else
-      {
-        mDDAStatus = DDA_INIT;
-        mpGeniSlaveIf->DDARequestStop(mModuleNo);
-        //mpMP204DeviceStatus->SetValue(IO_DEVICE_STATUS_PRESENT_WITH_ERROR);
-      }
-    }
-    else
-    {
-      // we were unable to get the alarm code from GENI, set alarm and set data not available
-      if (mpDDAAlarmDelay[DDA_FAULT_OBJ_GENI_COMM]->GetFault() != true)
-      {
-        // clear any alarms and/or warnings caused by the DDA
-        HandleDDAAlarm(ALARM_ID_NO_ALARM);
-        HandleDDAWarning(0);
-        mDDAStatus = DDA_INIT;
-        //mpMP204CommunicationFlag->SetValue(false);  // TODO don't need this?
-        //#ifndef __PC__
-        mpDDAAlarmDelay[DDA_FAULT_OBJ_GENI_COMM]->SetFault();
-        //mpMP204DeviceStatus->SetValue(IO_DEVICE_STATUS_NO_COMMUNICATION);  // TODO need this?
-        //#endif
-      }
-      //Test();
-    }
-  }
-*/
-
-/* IO351 method */
-  if (mpDDAInstalled->GetValue() == true)
-  {
-    //if request_stop_event
-
     if (mpGeniSlaveIf->GetDDAAlarmCode(mModuleNo, &new_alarm_code))
     {
       // communication OK?
       if (new_alarm_code == ALARM_ID_NO_ALARM)
       {
-        HandleDDAAlarm(new_alarm_code);
-        HandleDDAWarning(new_warning_code);
-        //HandleDDAAlarm((ALARM_ID_TYPE)new_warning_code);
         mpDDAAlarmDelay[DDA_FAULT_OBJ_GENI_COMM]->ResetFault();
-        Test();
+        HandleDDAAlarm(new_alarm_code);
+        //HandleDDAWarning(new_warning_code);
+        HandleDDAMeasuredValues();
+        RunDDA();
       }
       else
       {
@@ -397,31 +338,34 @@ void DDA::RunSubTask()
         {
           // clear any alarms and/or warnings caused by the DDA
           HandleDDAAlarm(ALARM_ID_NO_ALARM);
-          HandleDDAWarning(0);
+          //HandleDDAWarning(0);
           mpDDAAlarmDelay[DDA_FAULT_OBJ_GENI_COMM]->SetFault();
           //mDDAStatus = DDA_INIT;
         }
         else
         {
-          //HandleDDAAlarm(new_alarm_code);
-          HandleDDAWarning(new_warning_code);
-          HandleDDAAlarm((ALARM_ID_TYPE)new_warning_code);
-          mpDDAAlarmDelay[DDA_FAULT_OBJ_GENI_COMM]->ResetFault();
-          mDDAStatus = DDA_INIT;
-          mpGeniSlaveIf->DDARequestStop(mModuleNo);
+          mpGeniSlaveIf->GetDDASystemMode(mModuleNo, &pStatus);
+          if (pStatus == SYSTEM_MODE_ALARM)
+          {
+            HandleDDAAlarm(new_alarm_code);
+            //HandleDDAWarning(new_warning_code);
+            mpDDAAlarmDelay[DDA_FAULT_OBJ_GENI_COMM]->ResetFault();
+            mDDAStatus = DDA_INIT;
+            mpGeniSlaveIf->DDARequestStop(mModuleNo);
+          }
         }
       }
-      /*
-      */
     }
     else
     {
       // we were unable to get the alarm code from GENI, set alarm and set data not available
       mpDDAAlarmDelay[DDA_FAULT_OBJ_GENI_COMM]->SetFault();
+      SetDDADataAvailability(DP_NOT_AVAILABLE);
       mDDAStatus = DDA_INIT;
     }
   }
 
+  UpdateDosingVolume();
   // Service AlarmDelays
   for (unsigned int i = FIRST_DDA_FAULT_OBJ; i < NO_OF_DDA_FAULT_OBJ; i++)
   {
@@ -437,11 +381,73 @@ void DDA::RunSubTask()
  *
  ****************************************************************************/
 /*****************************************************************************
- * Function - RunStateMachine
+ * Function - RunDDA 
  * DESCRIPTION:
  ****************************************************************************/
-void DDA::RunStateMachine()
+void DDA::RunDDA()
 {
+  switch (mDDAStatus)
+  {
+    case DDA_INIT:
+      DDAInit();
+      mpTimerObjList[DDA_INIT_TIMER]->SetSwTimerPeriod(INIT_DELAY_TIME, MS, false);
+      mpTimerObjList[DDA_INIT_TIMER]->RetriggerSwTimer();
+      mDDAStatus = DDA_INIT_WAITING;
+      mInitTimeOutFlag = false;
+      break;
+    case DDA_INIT_WAITING:
+      if (mInitTimeOutFlag)
+      {
+        mInitTimeOutFlag = false;
+        if (CheckInitRespond())
+        {
+          mDDAStatus = DDA_RUN;
+        }
+        else
+        {
+          mDDAStatus = DDA_INIT;
+        }
+      }
+      break;
+
+    case DDA_RUN:
+      //mpGeniSlaveIf->SetDDAReference(mModuleNo, mpDDARef->GetValue());
+      if (ValidateSetpoint())
+      {
+        mpGeniSlaveIf->DDARequestStart(mModuleNo);
+        mpTimerObjList[DDA_RUN_TIMER]->SetSwTimerPeriod(RUN_DELAY_TIME, MS, false);
+        mpTimerObjList[DDA_RUN_TIMER]->RetriggerSwTimer();
+        mRunTimeOutFlag = false;
+        mDDAStatus = DDA_RUN_WAITING;
+      }
+      break;
+
+    case DDA_RUN_WAITING:
+      if (mRunTimeOutFlag)
+      {
+        mRunTimeOutFlag = false;
+        mpTimerObjList[DDA_RUN_TIMER]->RetriggerSwTimer();
+        if (ValidateSetpoint())
+        {
+          //if(CheckRunRespond())
+          //{
+            mDDAStatus = DDA_RUN_WAITING;
+          //}
+          //else
+          //{
+            //mDDAStatus = DDA_INIT;
+          //}
+        }
+        else
+        {
+          mDDAStatus = DDA_INIT;
+        }
+      }
+      break;
+
+    default:
+      break;
+  }
 }
 
 /*****************************************************************************
@@ -509,7 +515,6 @@ void DDA::HandleDDAWarning(U32 warnings)
   */
 }
 
-
 /*****************************************************************************
  * Function - DDAInit
  * DESCRIPTION:
@@ -530,7 +535,7 @@ bool DDA::CheckInitRespond()
   bool retval = false;
 
   mpGeniSlaveIf->GetDDASystemMode(mModuleNo, &pStatus);
-  retval = (pStatus == SYSTEM_MODE_NORMAL) ? true : false;
+  retval = ((pStatus == SYSTEM_MODE_NORMAL) || (pStatus == SYSTEM_MODE_NORMAL_WITH_WARNING)) ? true : false;
 
   if (retval)
   {
@@ -556,23 +561,19 @@ bool DDA::CheckRunRespond()
   return retval;
 }
 
-bool DDA::CheckSetpoint()
+bool DDA::ValidateSetpoint()
 {
-  U32 max_flow_capcitance = 0x0124f8;
-  U32 min_flow_capacity = 26; //26 ml
+  U32 min_capacity = 26; //26 ml/h
   bool retval = true;
   U32 set_point = 0;
   if (mMaxDosingCapacity == 0xFFFFFFFF)
   {
-    mpGeniSlaveIf->GetDDAMaxDosingCap(mModuleNo, &mMaxDosingCapacity); // For DDA, it is 75000(0.1ml/h)
+    mpGeniSlaveIf->GetDDAMaxDosingCap(mModuleNo, &mMaxDosingCapacity); // For DDA, it should be 75000(0.1ml/h)
   }
 
-  //if (mpDDARef.IsUpdated())
-  {
-    set_point = mpDDARef->GetValue();
-    //retval = true;
-  }
-  if (set_point < min_flow_capacity)
+  set_point = mpDDARef->GetValue();
+
+  if (set_point < min_capacity)
   {
     mpGeniSlaveIf->DDARequestStop(mModuleNo);
     retval = false;
@@ -586,81 +587,42 @@ bool DDA::CheckSetpoint()
   return retval;
 }
 
-void DDA::Test()
+void DDA::HandleDDAMeasuredValues()
 {
-  switch (mDDAStatus)
+  U32 int_value;
+
+  if (mpGeniSlaveIf->GetDDATotalVolume(mModuleNo, &int_value))
   {
-    case DDA_INIT:
-      DDAInit();
-      mpTimerObjList[DDA_INIT_TIMER]->SetSwTimerPeriod(INIT_DELAY_TIME, MS, false);
-      mpTimerObjList[DDA_INIT_TIMER]->RetriggerSwTimer();
-      mDDAStatus = DDA_INIT_WAITING;
-      mInitTimeOutFlag = false;
-      break;
-    case DDA_INIT_WAITING:
-      if (mInitTimeOutFlag)
-      {
-        mInitTimeOutFlag = false;
-        if (CheckInitRespond())
-        //if (true)
-        {
-          mDDAStatus = DDA_RUN;
-        }
-        else
-        {
-          mDDAStatus = DDA_INIT;
-        }
-      }
-      break;
-
-    case DDA_RUN:
-      //mpGeniSlaveIf->SetDDAReference(mModuleNo, mpDDARef->GetValue());
-      if (CheckSetpoint())
-      {
-      mpGeniSlaveIf->DDARequestStart(mModuleNo);
-      mpTimerObjList[DDA_RUN_TIMER]->SetSwTimerPeriod(RUN_DELAY_TIME, MS, false);
-      mpTimerObjList[DDA_RUN_TIMER]->RetriggerSwTimer();
-      mRunTimeOutFlag = false;
-      mDDAStatus = DDA_RUN_WAITING;
-      }
-      break;
-
-    case DDA_RUN_WAITING:
-      if (mRunTimeOutFlag)
-      {
-        mRunTimeOutFlag = false;
-        mpTimerObjList[DDA_RUN_TIMER]->RetriggerSwTimer();
-        //if (mpDDARef.IsUpdated())
-        //{
-          //CheckSetpoint();
-          //mpGeniSlaveIf->DDARequestStop(mModuleNo);
-          //mpGeniSlaveIf->SetDDAReference(mModuleNo, mpDDARef->GetValue());
-          //mDDAStatus = DDA_INIT;
-        //}
-        //else
-        //if (mpDDARef.IsUpdated() && CheckSetpoint())
-        if (CheckSetpoint())
-        {
-          if(CheckRunRespond())
-          {
-            mDDAStatus = DDA_RUN_WAITING;
-          }
-          else
-          {
-            mDDAStatus = DDA_INIT;
-          }
-        }
-        else
-        {
-          mDDAStatus = DDA_INIT;
-        }
-      }
-
-    default:
-      break;
+    mpChemicalTotalDosed->SetValue(int_value/1000000.0);     //ml -> m3
+    mpRunningDosingVolume->SetValue(int_value);
+  }
+  else
+  {
+    mpChemicalTotalDosed->SetQuality(DP_NOT_AVAILABLE);
   }
 }
 
+void DDA::SetDDADataAvailability(DP_QUALITY_TYPE quality)
+{
+  mpChemicalTotalDosed->SetQuality(quality);
+}
+
+void DDA::UpdateDosingVolume()
+{
+  if (mpChemicalTotalDosed->GetQuality() == DP_NEVER_AVAILABLE)
+  {
+    mpDosingVolumeTotalLog->SetQuality(DP_NEVER_AVAILABLE);
+  }
+  else if(mpChemicalTotalDosed->GetQuality() == DP_NOT_AVAILABLE)
+  {
+    mpDosingVolumeTotalLog->SetQuality(DP_AVAILABLE);
+  }
+  else
+  {
+    mpDosingVolumeTotalLog->SetQuality(DP_AVAILABLE);
+    mpDosingVolumeTotalLog->SetValue(0.001f*mpRunningDosingVolume->GetValue());
+  }
+}
 /*****************************************************************************
  * Function - ConfigReceived
  * DESCRIPTION: Empty function to satisfy virtual function in base class.

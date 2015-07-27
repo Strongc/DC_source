@@ -86,7 +86,6 @@ DDACtrl::~DDACtrl()
 void DDACtrl::InitSubTask()
 {
   mpH2SLevelAct->SetValue(10);
-  //mpDDAChemicalTotalDosed->SetAsFloat(32.55555);
   for (unsigned int i = FIRST_DDAC_FAULT_OBJ; i < NO_OF_DDAC_FAULT_OBJ; i++)
   {
     mpAlarmDelay[i]->InitAlarmDelay();
@@ -95,6 +94,7 @@ void DDACtrl::InitSubTask()
     mAlarmDelayCheckFlag[i] = false;
   }
   mpDDAInstalled->SetValue(mpDosingPumpInstalled->GetValue() == true && (mpDosingPumpType->GetValue() == DOSING_PUMP_TYPE_DDA));
+  mpDDARef->SetValue((U32)(10000.0 * mpSetDosingRef->GetValue()));  // 0.1l/h -> 1ml/h
   ReqTaskTime();                         // Assures task is run at startup
 }
 /*****************************************************************************
@@ -104,10 +104,10 @@ void DDACtrl::InitSubTask()
  *****************************************************************************/
 void DDACtrl::RunSubTask()
 {
-  ALARM_ID_TYPE new_alarm_code = ALARM_ID_NO_ALARM;
-  U32 new_warning_code = 0;
+  ALARM_ID_TYPE new_alarm_code = ALARM_ID_NO_ALARM;  //TODO remove
+  U32 new_warning_code = 0;  //TODO remove
   bool pStatus = false;  //TODO remove
-  U32 max_setpoint = 0;  //TODO remove
+
   // Service AlarmDelays
   for (unsigned int i = FIRST_DDAC_FAULT_OBJ; i < NO_OF_DDAC_FAULT_OBJ; i++)
   {
@@ -124,34 +124,48 @@ void DDACtrl::RunSubTask()
     mpDDAInstalled->SetValue(mpDosingPumpInstalled->GetValue() == true && (mpDosingPumpType->GetValue() == DOSING_PUMP_TYPE_DDA));
   }
   
-  // set reference value everytime
-  mpDDARef->SetValue((U32)(10000.0 * mpSetDosingRef->GetValue()));  // 0.1l/h -> 1ml/h
+  // set reference value
+  if (mpSetDosingRef.IsUpdated())
+  {
+    mpDDARef->SetValue((U32)(10000.0 * mpSetDosingRef->GetValue()));  // 0.1l/h -> 1ml/h
+  }
 
   if (mpSetH2SLevel.IsUpdated())
   {
     mpH2SLevelAct->SetValue(mpSetH2SLevel->GetValue());
   }
-  if (mpSetH2SFault->GetValue() & 0x01)   //bit0 means the fault
+
+  if (mpDDAInstalled->GetValue())
   {
-    mpAlarmDelay[DDA_FAULT_OBJ_H2S]->SetFault();
+    if (mpSetH2SFault->GetValue() & 0x01)   //bit0 means the fault
+    {
+      mpAlarmDelay[DDA_FAULT_OBJ_H2S]->SetFault();
+    }
   }
+  else
+  {
+    mpAlarmDelay[DDA_FAULT_OBJ_H2S]->ResetFault();
+  }
+
   //set AI measured value to the feed tank level, displayed in HMI
   if (mpMeasuredValue->IsAvailable())
   {
     mpDDADosingFeedTankLevel->SetValue(mpMeasuredValue->GetValue());
   }
+  else
+  {
+    mpDDADosingFeedTankLevel->SetQuality(DP_NOT_AVAILABLE);
+  }
 
   //TODO test, use geni to test dda alarm
   //mpGeniSlaveIf->GetDDAWarningCode(DDA_NO_1, &new_warning_code);
   //pStatus = (mpGeniSlaveIf->GetDDAAlarmCode(DDA_NO_1, &new_alarm_code) && mpGeniSlaveIf->GetDDAWarningCode(DDA_NO_1, &new_warning_code));
-  pStatus = mpGeniSlaveIf->GetDDAAlarmCode(DDA_NO_1, &new_alarm_code);
+  //pStatus = mpGeniSlaveIf->GetDDAAlarmCode(DDA_NO_1, &new_alarm_code);
   //pStatus = mpGeniSlaveIf->GetDDAWarningCode(DDA_NO_1, &new_warning_code);
   //mpGeniSlaveIf->GetDDAPumpingState(DDA_NO_1, &pStatus);
-  mpH2SLevelAct->SetValue((U32)new_alarm_code);
+  //mpH2SLevelAct->SetValue((U32)new_alarm_code);
   //mpH2SLevelAct->SetValue(new_warning_code);
   //mpH2SLevelAct->SetValue((U32)pStatus);
-  //mpGeniSlaveIf->GetDDAMaxDosingCap(DDA_NO_1, &max_setpoint);
-  //mpDDADosingFeedTankLevel->SetValue((float)max_setpoint);
 
   // Service AlarmDelays
   for (unsigned int i = FIRST_DDAC_FAULT_OBJ; i < NO_OF_DDAC_FAULT_OBJ; i++)
@@ -168,7 +182,6 @@ void DDACtrl::RunSubTask()
 void DDACtrl::ConnectToSubjects()
 {
   mpDosingPumpInstalled->Subscribe(this);
-  mpDosingPumpType->Subscribe(this);
   mpSetDosingRef->Subscribe(this);
   mpSetH2SFault->Subscribe(this);
   mpDDARef->Subscribe(this);
@@ -177,8 +190,6 @@ void DDACtrl::ConnectToSubjects()
   mpDDALevelToday->Subscribe(this);
   mpDDALevelYesterday->Subscribe(this);
   mpDDADosingFeedTankLevel->Subscribe(this);
-  mpDDADosingFeedTankLevel->Subscribe(this);
-  mpDDAChemicalTotalDosed->Subscribe(this);
   mpDosingPumpType->Subscribe(this);
   for (unsigned int i = FIRST_DDAC_FAULT_OBJ; i < NO_OF_DDAC_FAULT_OBJ; i++)
   {
@@ -203,7 +214,6 @@ void DDACtrl::Update(Subject* pSubject)
   mpDDALevelToday.Update(pSubject);
   mpDDALevelYesterday.Update(pSubject);
   mpDDADosingFeedTankLevel.Update(pSubject);
-  mpDDAChemicalTotalDosed.Update(pSubject);
 
   for (unsigned int i = FIRST_DDAC_FAULT_OBJ; i < NO_OF_DDAC_FAULT_OBJ; i++)
   {
@@ -272,9 +282,6 @@ void DDACtrl::SetSubjectPointer(int id, Subject* pSubject)
       break;
     case SP_DDAC_MEASURED_VALUE_CHEMICAL_CONTAINER:
       mpMeasuredValue.Attach(pSubject);
-      break;
-    case SP_DDAC_CHEMICAL_TOTAL_DOSED:
-      mpDDAChemicalTotalDosed.Attach(pSubject);
       break;
     case SP_DDAC_H2S_SENSOR_FAULT_OBJ:
       mAlarms[DDA_FAULT_OBJ_H2S].Attach(pSubject);

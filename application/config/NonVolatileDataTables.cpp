@@ -1050,14 +1050,16 @@ const NON_VOLATILE_SUBJECT_TYPE NON_VOLATILE_CONFIG_SUBJECTS[] = {
   {4548, FLASH_SAVE_VALUE}, // dosing_pump_installed
   {4549, FLASH_SAVE_VALUE}, // dda_installed
   {4550, FLASH_SAVE_VALUE}, // dosing_pump_type
-  {4559, FLASH_SAVE_VALUE}, // dda_reference
-  {4560, FLASH_SAVE_VALUE}, // h2s_sensor_fault_conf
-  {4562, FLASH_SAVE_VALUE}, // dda_geni_comm_fault_conf
-  {4564, FLASH_SAVE_VALUE}, // sys_alarm_dda_fault_alarm_conf
-  {4566, FLASH_SAVE_VALUE} // sys_alarm_dosing_pump_alarm_conf
+  {4559, FLASH_SAVE_VALUE}, // dosing_volume_yesterday_log
+  {4561, FLASH_SAVE_VALUE}, // dosing_volume_72h_log
+  {4565, FLASH_SAVE_VALUE}, // dda_reference
+  {4566, FLASH_SAVE_VALUE}, // h2s_sensor_fault_conf
+  {4568, FLASH_SAVE_VALUE}, // dda_geni_comm_fault_conf
+  {4570, FLASH_SAVE_VALUE}, // sys_alarm_dda_fault_alarm_conf
+  {4572, FLASH_SAVE_VALUE} // sys_alarm_dosing_pump_alarm_conf
 };
 
-const int NON_VOLATILE_CONFIG_SUBJECTS_CNT = 1044;
+const int NON_VOLATILE_CONFIG_SUBJECTS_CNT = 1046;
 
 /**************************************************************************
  LOG Flash Block subjects
@@ -1239,10 +1241,13 @@ const NON_VOLATILE_SUBJECT_TYPE NON_VOLATILE_LOG_SUBJECTS[] = {
   {4541, FLASH_SAVE_VALUE}, // today_user_defined_counter_2
   {4542, FLASH_SAVE_VALUE}, // today_user_defined_counter_3
   {4543, FLASH_SAVE_VALUE}, // dummy_user_defined_counter1
-  {4544, FLASH_SAVE_VALUE} // dummy_user_defined_counter2
+  {4544, FLASH_SAVE_VALUE}, // dummy_user_defined_counter2
+  {4557, FLASH_SAVE_VALUE}, // dosing_volume_total_log
+  {4558, FLASH_SAVE_VALUE}, // dosing_volume_today_log
+  {4560, FLASH_SAVE_VALUE} // dosing_volume_1h_acc
 };
 
-const int NON_VOLATILE_LOG_SUBJECTS_CNT = 177;
+const int NON_VOLATILE_LOG_SUBJECTS_CNT = 180;
 
 /**************************************************************************
  GSC Flash Block subjects

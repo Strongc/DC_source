@@ -197,7 +197,7 @@ class GeniSlaveIf : public SubTask, public Observer
     bool GetDDAMaxDosingCap(IO351_NO_TYPE moduleNo, U32* pValue);
     bool GetDDADosingCapacity(IO351_NO_TYPE moduleNo, float* pValue);
     bool GetDDAActPresssure(IO351_NO_TYPE moduleNo, float* pValue);
-    bool GetDDATotalVolume(IO351_NO_TYPE moduleNo, float* pValue);
+    bool GetDDATotalVolume(IO351_NO_TYPE moduleNo, U32* pValue);
     bool GetDDASystemMode(IO351_NO_TYPE moduleNo, U8* pStatus);
     bool GetDDAOperatingMode(IO351_NO_TYPE moduleNo, U8* pStatus);
     bool GetDDAControlMode(IO351_NO_TYPE moduleNo, U8* pStatus);

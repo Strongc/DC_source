@@ -139,14 +139,16 @@ class DDA : public IO351, public SubTask, public SwTimerBaseClass
     /********************************************************************
     OPERATIONS
     ********************************************************************/
-    void RunStateMachine();
+    void RunDDA();
     void HandleDDAAlarm(ALARM_ID_TYPE warning_code);
     void HandleDDAWarning(U32 warnings);
     void DDAInit();
     bool CheckInitRespond();
     bool CheckRunRespond();
-    bool CheckSetpoint();
-    void Test();  //TODO remove later
+    bool ValidateSetpoint();
+    void HandleDDAMeasuredValues();
+    void SetDDADataAvailability(DP_QUALITY_TYPE quality);
+    void UpdateDosingVolume();
 
     // IO351 class overrides
     virtual void ConfigReceived(bool rxedOk, U8 noOfPumps, U8 noOfVlt, U8 pumpOffset, U8 moduleType);
@@ -162,6 +164,9 @@ class DDA : public IO351, public SubTask, public SwTimerBaseClass
 
     SubjectPtr<U32DataPoint*> mpDDARef;
     SubjectPtr<BoolDataPoint*> mpDDAInstalled;
+    SubjectPtr<FloatDataPoint*> mpChemicalTotalDosed;
+    SubjectPtr<U32DataPoint*> mpRunningDosingVolume;
+    SubjectPtr<FloatDataPoint*> mpDosingVolumeTotalLog;
 
 
     /* Variables for alarm handling */

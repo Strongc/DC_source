@@ -131,7 +131,6 @@ class DDACtrl : public SubTask, public SwTimerBaseClass
     SubjectPtr<U32DataPoint*> mpDDALevelYesterday;
     SubjectPtr<FloatDataPoint*> mpMeasuredValue;
     SubjectPtr<FloatDataPoint*> mpDDADosingFeedTankLevel;
-    SubjectPtr<FloatDataPoint*> mpDDAChemicalTotalDosed;
     SubjectPtr<EnumDataPoint<DOSING_PUMP_TYPE_TYPE>*>  mpDosingPumpType;
 
     //For test

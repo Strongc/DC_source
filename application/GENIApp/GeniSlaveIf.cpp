@@ -3243,7 +3243,7 @@ bool GeniSlaveIf::GetDDAActPresssure(IO351_NO_TYPE moduleNo, float* pValue)
  * Function - GetDDA total dosing volume
  * DESCRIPTION:
 *****************************************************************************/
-bool GeniSlaveIf::GetDDATotalVolume(IO351_NO_TYPE moduleNo, float* pValue)
+bool GeniSlaveIf::GetDDATotalVolume(IO351_NO_TYPE moduleNo, U32* pValue)
 {
   U8 unit_index;
   U32 geni_value = 0;
@@ -3269,7 +3269,7 @@ bool GeniSlaveIf::GetDDATotalVolume(IO351_NO_TYPE moduleNo, float* pValue)
       OS_Unuse(&geni_class_data);
       if (geni_value < 0xFF000000)
       {
-        *pValue = 1.0f*geni_value;
+        *pValue = geni_value;
         ret_val = true;
       }
     }

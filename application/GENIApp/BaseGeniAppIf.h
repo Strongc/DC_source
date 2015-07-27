@@ -192,7 +192,9 @@ protected:
   SubjectPtr<FloatDataPoint*> mp_resulting_value_motor_current_pump_6;
   SubjectPtr<FloatDataPoint*> mp_measured_value_outlet_pressure;
   SubjectPtr<FloatDataPoint*> mp_dosing_feed_tank_level;
-  SubjectPtr<FloatDataPoint*> mp_chemical_total_dosed;
+  SubjectPtr<FloatDataPoint*> mp_dosing_volume_total_log;
+  SubjectPtr<FloatDataPoint*> mp_dosing_volume_today_log;
+  SubjectPtr<FloatDataPoint*> mp_dosing_volume_yesterday_log;
   SubjectPtr<FloatDataPoint*> mp_set_dosing_ref;
   SubjectPtr<U32DataPoint*> mp_ethernet_mac_address_hi;
   SubjectPtr<U32DataPoint*> mp_ethernet_mac_address_lo;
