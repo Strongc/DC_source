@@ -195,6 +195,7 @@ protected:
   SubjectPtr<FloatDataPoint*> mp_dosing_volume_total_log;
   SubjectPtr<FloatDataPoint*> mp_dosing_volume_today_log;
   SubjectPtr<FloatDataPoint*> mp_dosing_volume_yesterday_log;
+  SubjectPtr<FloatDataPoint*> mp_dosing_ref_act;
   SubjectPtr<FloatDataPoint*> mp_set_dosing_ref;
   SubjectPtr<U32DataPoint*> mp_ethernet_mac_address_hi;
   SubjectPtr<U32DataPoint*> mp_ethernet_mac_address_lo;
@@ -425,8 +426,8 @@ protected:
   SubjectPtr<U16DataPoint*> mp_today_user_defined_counter_2;
   SubjectPtr<U16DataPoint*> mp_today_user_defined_counter_3;
   SubjectPtr<U32DataPoint*> mp_h2s_level_act;
-  SubjectPtr<U32DataPoint*> mp_h2s_level_today;
-  SubjectPtr<U32DataPoint*> mp_h2s_level_yesterday;
+  SubjectPtr<U32DataPoint*> mp_h2s_level_today_log;
+  SubjectPtr<U32DataPoint*> mp_h2s_level_yesterday_log;
   SubjectPtr<U32DataPoint*> mp_set_h2s_level;
   SubjectPtr<U16DataPoint*> mp_set_h2s_fault;
   SubjectPtr<EnumDataPoint<APPLICATION_MODE_TYPE>*> mp_application_mode;

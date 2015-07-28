@@ -350,6 +350,9 @@ void LoggingCtrl::SetSubjectPointer(int id, Subject* pSubject)
     case SP_LOG_PUMP_6_FILTERED_CURRENT:
       mpFilteredCurrent[PUMP_6].Attach(pSubject);
       break;
+    case SP_LOG_H2S_LEVEL_ACT:
+      mpH2SLevelAct.Attach(pSubject);
+      break;
     case SP_LOG_RUNNING_DOSING_VOLUME:
       mpRunningDosingVolume.Attach(pSubject);
       break;
@@ -441,6 +444,16 @@ void LoggingCtrl::SetSubjectPointer(int id, Subject* pSubject)
       break;
     case SP_LOG_EFFICIENCY_YESTERDAY_LOG:
       mpEfficiencyYesterdayLog.Attach(pSubject);
+      break;
+
+    case SP_LOG_H2S_LEVEL_72H_LOG:
+      mpH2SLevel72hLog.Attach(pSubject);
+      break;
+    case SP_LOG_H2S_LEVEL_TODAY_LOG:
+      mpH2SLevelTodayLog.Attach(pSubject);
+      break;
+    case SP_LOG_H2S_LEVEL_YESTERDAY_LOG:
+      mpH2SLevelYesterdayLog.Attach(pSubject);
       break;
 
     case SP_LOG_DOSING_VOLUME_1H_ACC:
@@ -872,6 +885,8 @@ void LoggingCtrl::UpdateHourLog()
   mpEnergyConsumption1hAcc->SetValue(0);
   mpEnergyConsumption72hLog->PushValue(0.001f*hour_acc); // Wh --> kWh
 
+  mpH2SLevel72hLog->PushValue(mpH2SLevelAct->GetValue());
+
   hour_acc = mpDosingVolume1hAcc->GetValue();
   mpDosingVolume1hAcc->SetValue(0);
   mpDosingVolume72hLog->PushValue(0.001f*hour_acc);
@@ -924,6 +939,8 @@ void LoggingCtrl::UpdateDayLog()
   mpEnergyConsumptionTodayLog->SetValue(0);
   mpEfficiencyYesterdayLog->SetValue(mpEfficiencyTodayLog->GetValue());
   mpEfficiencyTodayLog->SetValue(0);
+  mpH2SLevelYesterdayLog->SetValue(mpH2SLevelTodayLog->GetValue());
+  mpH2SLevelTodayLog->SetValue(0);
   mpDosingVolumeYesterdayLog->SetValue(mpDosingVolumeTodayLog->GetValue());
   mpDosingVolumeTodayLog->SetValue(0);
 
@@ -960,6 +977,7 @@ void LoggingCtrl::MarkHourLogInvalid(U32 noOfHours)
   mpParallelOperationTime72hLog->PushValue(INVALID_MARK, noOfHours);
   mpEnergyConsumption72hLog->PushValue(INVALID_MARK, noOfHours);
   mpEfficiency72hLog->PushValue(INVALID_MARK, noOfHours);
+  mpH2SLevel72hLog->PushValue(INVALID_MARK, noOfHours);
   mpDosingVolume72hLog->PushValue(INVALID_MARK, noOfHours);
 
   for (int pump_no = FIRST_PUMP_NO; pump_no < NO_OF_PUMPS; pump_no++)
@@ -985,6 +1003,7 @@ void LoggingCtrl::MarkHourLogInvalid(U32 noOfHours)
 void LoggingCtrl::UpdateTodayAverages(U32 noOfHours)
 {
   float temp_float;
+  U32   temp_int;
 
   if (noOfHours == 0)
   {
@@ -993,6 +1012,9 @@ void LoggingCtrl::UpdateTodayAverages(U32 noOfHours)
 
   temp_float = mpEfficiency72hLog->GetAverage(0, noOfHours, INVALID_MARK);
   mpEfficiencyTodayLog->SetValue(temp_float);
+
+  temp_int = mpH2SLevel72hLog->GetAverage(0, noOfHours, INVALID_MARK);
+  mpH2SLevelTodayLog->SetValue(temp_int);
 
   for (int pump_no = FIRST_PUMP_NO; pump_no < NO_OF_PUMPS; pump_no++)
   {

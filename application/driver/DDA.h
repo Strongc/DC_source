@@ -62,17 +62,6 @@
 /*****************************************************************************
   DEFINES
  *****************************************************************************/
-/*typedef enum*/
-//{
-  //FIRST_DDA_FAULT_OBJ,
-  //DDA_FAULT_OBJ_GENI_COMM = FIRST_DDA_FAULT_OBJ,
-  //DDA_FAULT_OBJ_ALARM,
-  //DDA_FAULT_OBJ_WARNING,
-
-  //NO_OF_DDA_FAULT_OBJ,
-  //LAST_DDA_FAULT_OBJ = NO_OF_DDA_FAULT_OBJ - 1
-//} DDA_FAULT_OBJ_TYPE;
-
 typedef enum
 {
   FIRST_DDA_FAULT_OBJ,
@@ -141,7 +130,6 @@ class DDA : public IO351, public SubTask, public SwTimerBaseClass
     ********************************************************************/
     void RunDDA();
     void HandleDDAAlarm(ALARM_ID_TYPE warning_code);
-    void HandleDDAWarning(U32 warnings);
     void DDAInit();
     bool CheckInitRespond();
     bool CheckRunRespond();
@@ -160,13 +148,12 @@ class DDA : public IO351, public SubTask, public SwTimerBaseClass
     // Config
     
     // Input
-    SubjectPtr<EventDataPoint*> mpSystemAlarmResetEvent;
-
-    SubjectPtr<U32DataPoint*> mpDDARef;
-    SubjectPtr<BoolDataPoint*> mpDDAInstalled;
-    SubjectPtr<FloatDataPoint*> mpChemicalTotalDosed;
-    SubjectPtr<U32DataPoint*> mpRunningDosingVolume;
-    SubjectPtr<FloatDataPoint*> mpDosingVolumeTotalLog;
+    SubjectPtr<EventDataPoint*>     mpSystemAlarmResetEvent;
+    SubjectPtr<U32DataPoint*>       mpDDARef;
+    SubjectPtr<BoolDataPoint*>      mpDDAInstalled;
+    SubjectPtr<FloatDataPoint*>     mpChemicalTotalDosed;
+    SubjectPtr<U32DataPoint*>       mpRunningDosingVolume;
+    SubjectPtr<FloatDataPoint*>     mpDosingVolumeTotalLog;
 
 
     /* Variables for alarm handling */
@@ -175,7 +162,6 @@ class DDA : public IO351, public SubTask, public SwTimerBaseClass
     bool mDDAAlarmDelayCheckFlag[NO_OF_DDA_FAULT_OBJ];
 
     // Local variables
-    U32           mSkipRunCounter;
     bool          mInitTimeOutFlag;
     bool          mRunTimeOutFlag;
     GeniSlaveIf*  mpGeniSlaveIf;

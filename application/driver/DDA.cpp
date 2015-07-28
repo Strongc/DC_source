@@ -284,7 +284,6 @@ void DDA::RunSubTask()
   }
 
   // Reset alarms
-  //if (mpSystemAlarmResetEvent.IsUpdated() || mpModuleAlarmResetEvent.IsUpdated())
   if (mpSystemAlarmResetEvent.IsUpdated())
   {
     if (mpDDAInstalled->GetValue() == true)
@@ -311,7 +310,6 @@ void DDA::RunSubTask()
 
       // The module is not present - make certain that all errors and data from the module is cleared
       HandleDDAAlarm(ALARM_ID_NO_ALARM);
-      HandleDDAWarning(0);
       SetDDADataAvailability(DP_NEVER_AVAILABLE);
       //request stop
       mpGeniSlaveIf->DDARequestStop(mModuleNo);
@@ -328,7 +326,6 @@ void DDA::RunSubTask()
       {
         mpDDAAlarmDelay[DDA_FAULT_OBJ_GENI_COMM]->ResetFault();
         HandleDDAAlarm(new_alarm_code);
-        //HandleDDAWarning(new_warning_code);
         HandleDDAMeasuredValues();
         RunDDA();
       }
@@ -338,7 +335,6 @@ void DDA::RunSubTask()
         {
           // clear any alarms and/or warnings caused by the DDA
           HandleDDAAlarm(ALARM_ID_NO_ALARM);
-          //HandleDDAWarning(0);
           mpDDAAlarmDelay[DDA_FAULT_OBJ_GENI_COMM]->SetFault();
           //mDDAStatus = DDA_INIT;
         }
@@ -348,7 +344,6 @@ void DDA::RunSubTask()
           if (pStatus == SYSTEM_MODE_ALARM)
           {
             HandleDDAAlarm(new_alarm_code);
-            //HandleDDAWarning(new_warning_code);
             mpDDAAlarmDelay[DDA_FAULT_OBJ_GENI_COMM]->ResetFault();
             mDDAStatus = DDA_INIT;
             mpGeniSlaveIf->DDARequestStop(mModuleNo);
@@ -381,7 +376,7 @@ void DDA::RunSubTask()
  *
  ****************************************************************************/
 /*****************************************************************************
- * Function - RunDDA 
+ * Function - RunDDA
  * DESCRIPTION:
  ****************************************************************************/
 void DDA::RunDDA()
@@ -399,14 +394,7 @@ void DDA::RunDDA()
       if (mInitTimeOutFlag)
       {
         mInitTimeOutFlag = false;
-        if (CheckInitRespond())
-        {
-          mDDAStatus = DDA_RUN;
-        }
-        else
-        {
-          mDDAStatus = DDA_INIT;
-        }
+        mDDAStatus = CheckInitRespond() ? DDA_RUN : DDA_INIT;
       }
       break;
 
@@ -429,14 +417,7 @@ void DDA::RunDDA()
         mpTimerObjList[DDA_RUN_TIMER]->RetriggerSwTimer();
         if (ValidateSetpoint())
         {
-          //if(CheckRunRespond())
-          //{
-            mDDAStatus = DDA_RUN_WAITING;
-          //}
-          //else
-          //{
-            //mDDAStatus = DDA_INIT;
-          //}
+          mDDAStatus = CheckRunRespond() ? DDA_RUN_WAITING : DDA_INIT;
         }
         else
         {
@@ -482,37 +463,6 @@ void DDA::HandleDDAAlarm(ALARM_ID_TYPE alarm_code)
       mExistingAlarmCode = alarm_code;
     }
   }
-}
-
-/*****************************************************************************
- * Function - HandleDDAWarning
- * DESCRIPTION:
- ****************************************************************************/
-void DDA::HandleDDAWarning(U32 warnings)
-{
-  /*
-  if (mExistingWarnings != warnings && warnings < 0xFFFFFF)
-  {
-    mExistingWarnings = warnings;
-    // Check all warnings in list
-    U32 check_pattern;
-    for (int index = 0; index < WARNING_TABLE_SIZE; index++)
-    {
-      check_pattern = warning_table[index].mp204_warning_bit;
-      if (warnings & check_pattern)
-      {
-        // Clear the bit to prepare for a check for unknown alarms at the end of the list.
-        // This works since the check pattern at the end of the list is 0xFFFFFFFF.
-        warnings &= ~check_pattern;
-        mpMP204AlarmDelay[warning_table[index].fault_obj]->SetFault();
-      }
-      else
-      {
-        mpMP204AlarmDelay[warning_table[index].fault_obj]->ResetFault();
-      }
-    }
-  }
-  */
 }
 
 /*****************************************************************************

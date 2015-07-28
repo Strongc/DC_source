@@ -123,12 +123,11 @@ class DDACtrl : public SubTask, public SwTimerBaseClass
     SubjectPtr<BoolDataPoint*> mpDosingPumpInstalled;
     SubjectPtr<BoolDataPoint*> mpDDAInstalled;
     SubjectPtr<FloatDataPoint*> mpSetDosingRef;
+    SubjectPtr<FloatDataPoint*> mpDosingRefAct;
     SubjectPtr<U32DataPoint*> mpDDARef;
     SubjectPtr<U16DataPoint*> mpSetH2SFault;
     SubjectPtr<U32DataPoint*> mpH2SLevelAct;
     SubjectPtr<U32DataPoint*> mpSetH2SLevel;
-    SubjectPtr<U32DataPoint*> mpDDALevelToday;
-    SubjectPtr<U32DataPoint*> mpDDALevelYesterday;
     SubjectPtr<FloatDataPoint*> mpMeasuredValue;
     SubjectPtr<FloatDataPoint*> mpDDADosingFeedTankLevel;
     SubjectPtr<EnumDataPoint<DOSING_PUMP_TYPE_TYPE>*>  mpDosingPumpType;

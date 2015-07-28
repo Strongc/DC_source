@@ -128,6 +128,7 @@ class LoggingCtrl : public SubTask, public Observer
     SubjectPtr<U32DataPoint*>           mpOverflowTime;
     SubjectPtr<U32DataPoint*>           mpParallelOperationTime;
     SubjectPtr<U32DataPoint*>           mpFreeRunningEnergy;
+    SubjectPtr<U32DataPoint*>           mpH2SLevelAct;
     SubjectPtr<U32DataPoint*>           mpRunningDosingVolume;
 
     SubjectPtr<U32DataPoint*>           mpOperationTime[NO_OF_PUMPS];
@@ -163,6 +164,9 @@ class LoggingCtrl : public SubTask, public Observer
     SubjectPtr<FloatVectorDataPoint*>   mpEfficiency72hLog;
     SubjectPtr<FloatDataPoint*>         mpEfficiencyTodayLog;
     SubjectPtr<FloatDataPoint*>         mpEfficiencyYesterdayLog;
+    SubjectPtr<I32VectorDataPoint*>     mpH2SLevel72hLog;
+    SubjectPtr<U32DataPoint*>           mpH2SLevelTodayLog;
+    SubjectPtr<U32DataPoint*>           mpH2SLevelYesterdayLog;
     SubjectPtr<U32DataPoint*>           mpDosingVolume1hAcc;
     SubjectPtr<I32VectorDataPoint*>     mpDosingVolume72hLog;
     SubjectPtr<FloatDataPoint*>         mpDosingVolumeTodayLog;
