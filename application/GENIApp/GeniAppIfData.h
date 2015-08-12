@@ -231,6 +231,7 @@ typedef enum
   GAI_VAR_PIT_WARN2 = 0x0B29,  // 11,41 pit_warn2
   GAI_VAR_PIT_WARN3 = 0x0B2A,  // 11,42 pit_warn3
   GAI_VAR_EVENT_LOG_LATEST_ID = 0x0B2B,  // 11,43 event_log_latest_id
+  GAI_VAR_INTERLOCK_REMAIN_TIME = 0x0B2C,  // 11,44 
   GAI_VAR_USER_ANA_IN_1 = 0x0B2D,  // 11,45 user_ana_in_1
   GAI_VAR_USER_ANA_IN_2 = 0x0B2E,  // 11,46 user_ana_in_2
   GAI_VAR_USER_ANA_IN_3 = 0x0B2F,  // 11,47 user_ana_in_3
@@ -515,7 +516,7 @@ typedef enum
   GAI_VAR_YESTERDAY_UDC_COUNTER3 = 0x0EB2,  // 14,178 
   GAI_VAR_OVERFLOW_VOLUME = 0x0EB3,  // 14,179 overflow volume
   GAI_VAR_OVERFLOW_TIME = 0x0EB4,  // 14,180 overflow time
-  GAI_VAR_H2S_LEVEL = 0x0EBE,  // 14,190 
+  GAI_VAR_H2S_LEVEL_ACT = 0x0EBE,  // 14,190 
   GAI_VAR_H2S_LEVEL_TODAY_LOG = 0x0EBF,  // 14,191 
   GAI_VAR_H2S_LEVEL_YESTERDAY_LOG = 0x0EC0,  // 14,192 
   GAI_VAR_DOSING_FEED_TANK_LEVEL = 0x0EC1,  // 14,193 
@@ -691,6 +692,7 @@ EXTERN U16 gai_11_40_pit_warn1;  // 11,40 pit_warn1
 EXTERN U16 gai_11_41_pit_warn2;  // 11,41 pit_warn2
 EXTERN U16 gai_11_42_pit_warn3;  // 11,42 pit_warn3
 EXTERN U16 gai_11_43_event_log_latest_id;  // 11,43 event_log_latest_id
+EXTERN U16 gai_11_44_interlock_remain_time;  // 11,44 
 EXTERN U16 gai_11_45_user_ana_in_1;  // 11,45 user_ana_in_1
 EXTERN U16 gai_11_46_user_ana_in_2;  // 11,46 user_ana_in_2
 EXTERN U16 gai_11_47_user_ana_in_3;  // 11,47 user_ana_in_3
@@ -975,7 +977,7 @@ EXTERN U32 gai_14_177_yesterday_udc_counter2;  // 14,177
 EXTERN U32 gai_14_178_yesterday_udc_counter3;  // 14,178 
 EXTERN U32 gai_14_179_overflow_volume;  // 14,179 overflow volume
 EXTERN U32 gai_14_180_overflow_time;  // 14,180 overflow time
-EXTERN U32 gai_14_190_h2s_level;  // 14,190 
+EXTERN U32 gai_14_190_h2s_level_act;  // 14,190 
 EXTERN U32 gai_14_191_h2s_level_today_log;  // 14,191 
 EXTERN U32 gai_14_192_h2s_level_yesterday_log;  // 14,192 
 EXTERN U32 gai_14_193_dosing_feed_tank_level;  // 14,193 

@@ -931,6 +931,10 @@ bool GeniAppIf::HandleSpecialBitPacking(Subject* pSubject)
       // Mixer bits
       gai_11_36_pit_pump_ctr_source &= ~(BIT12+BIT13);
 
+
+      // Dosing pump
+      gai_11_36_pit_pump_ctr_source &= ~(BIT14+BIT15);
+
       break;
 
     case SUBJECT_ID_PIT_LEVEL_CTRL_TYPE:
@@ -1085,6 +1089,17 @@ bool GeniAppIf::HandleSpecialBitPacking(Subject* pSubject)
       }
       break;
 
+    case SUBJECT_ID_DOSING_PUMP_OPERATING_MODE:
+      gai_11_32_pit_pump_mode &= ~(BIT14+BIT15);
+      switch (mp_dosing_pump_operating_mode->GetValue())
+      {
+        case ACTUAL_OPERATION_MODE_STARTED:       gai_11_32_pit_pump_mode |= 0; break;
+        case ACTUAL_OPERATION_MODE_STOPPED:       gai_11_32_pit_pump_mode |= BIT14; break;
+        case ACTUAL_OPERATION_MODE_DISABLED:      gai_11_32_pit_pump_mode |= BIT15; break;
+        case ACTUAL_OPERATION_MODE_NOT_INSTALLED: gai_11_32_pit_pump_mode |= (BIT14+BIT15); break;
+      }
+      break;
+
     case SUBJECT_ID_RELAY_FUNC_OUTPUT_PUMP_1:
     case SUBJECT_ID_VFD_1_INSTALLED:
       gai_11_35_pit_pump_conn_type &= ~(BIT0+BIT1);
@@ -1141,6 +1156,11 @@ bool GeniAppIf::HandleSpecialBitPacking(Subject* pSubject)
     case SUBJECT_ID_RELAY_STATUS_RELAY_FUNC_MIXER:
       gai_11_35_pit_pump_conn_type &= ~(BIT12+BIT13);
       gai_11_35_pit_pump_conn_type |= BIT12*(mp_relay_status_relay_func_mixer->GetValue() > 2); // Relay number > 2 is on IO351
+
+    case SUBJECT_ID_DOSING_PUMP_TYPE:
+      gai_11_35_pit_pump_conn_type &= ~(BIT14+BIT15);
+      gai_11_35_pit_pump_conn_type |= BIT14*(mp_dosing_pump_type->GetValue() == DOSING_PUMP_TYPE_ANALOG);
+      gai_11_35_pit_pump_conn_type |= (BIT14+BIT15)*(mp_dosing_pump_type->GetValue() == DOSING_PUMP_TYPE_DDA);
 
     case SUBJECT_ID_PUMP_1_IO111_DEVICE_STATUS:
     case SUBJECT_ID_PUMP_2_IO111_DEVICE_STATUS:

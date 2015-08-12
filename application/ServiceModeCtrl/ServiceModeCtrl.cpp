@@ -93,9 +93,20 @@ void ServiceModeCtrl::RunSubTask()
 {
   mReqTaskTimeFlag = false;
   ServiceModeEnabled* p_show_service_icon = ServiceModeEnabled::GetInstance();
+  
+  ///\Todo 20151203 JMH->Add Display Check box handle here
+  if (mpScadaCallBackEnabled.IsUpdated())
+  {
+    mpDisplayScadaCallBackEnabled->SetValue(mpScadaCallBackEnabled->GetValue());
+  }
+  else
+  {
+    mpScadaCallBackEnabled->SetValue(mpDisplayScadaCallBackEnabled->GetValue());
+  }
 
   if (mpDIServiceMode->GetValue() == DIGITAL_INPUT_FUNC_STATE_ACTIVE)
   {
+    ///\Todo 20151203 JMH->Disable Scada remove for debugging
     mpScadaCallBackEnabled->SetValue(false);
     mpServiceModeEnabled->SetValue(true);
     p_show_service_icon->SetValue(true);
@@ -106,6 +117,7 @@ void ServiceModeCtrl::RunSubTask()
     mpServiceModeEnabled->SetValue(false);
     p_show_service_icon->SetValue(mpServiceLanguageEnabled->GetValue());
   }
+
 }
 
 /*****************************************************************************
@@ -116,6 +128,7 @@ void ServiceModeCtrl::RunSubTask()
 void ServiceModeCtrl::ConnectToSubjects()
 {
   mpDisplayScadaCallBackEnabled->Subscribe(this);
+  mpScadaCallBackEnabled->Subscribe(this);
   mpDIServiceMode->Subscribe(this);
   mpServiceLanguageEnabled->Subscribe(this);
 }
@@ -128,6 +141,7 @@ void ServiceModeCtrl::ConnectToSubjects()
 void ServiceModeCtrl::Update(Subject* pSubject)
 {
   mpDisplayScadaCallBackEnabled.Update(pSubject);
+  mpScadaCallBackEnabled.Update(pSubject);
   mpDIServiceMode.Update(pSubject);
 
   if (mReqTaskTimeFlag == false)

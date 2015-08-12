@@ -209,7 +209,7 @@ const ID_PTR meas32_tab[] =
 /* ID 187 */ NA,
 /* ID 188 */ NA,
 /* ID 189 */ NA,
-/* ID 190 */ UC_ADDR_0_LI(gai_14_190_h2s_level), // 
+/* ID 190 */ UC_ADDR_0_LI(gai_14_190_h2s_level_act), // 
 /* ID 191 */ UC_ADDR_0_LI(gai_14_191_h2s_level_today_log), // 
 /* ID 192 */ UC_ADDR_0_LI(gai_14_192_h2s_level_yesterday_log), // 
 /* ID 193 */ UC_ADDR_0_LI(gai_14_193_dosing_feed_tank_level), // 
@@ -417,7 +417,7 @@ const ID_INFO meas32_info_tab[] =
 /* ID 190 */ COMMON_INFO + COM_INDEX_EXT_PERCENTAGE_1PPM, // 
 /* ID 191 */ COMMON_INFO + COM_INDEX_EXT_PERCENTAGE_1PPM, // 
 /* ID 192 */ COMMON_INFO + COM_INDEX_EXT_PERCENTAGE_1PPM, // 
-/* ID 193 */ COMMON_INFO + COM_INDEX_EXT_DIMLESS_254, // 
+/* ID 193 */ COMMON_INFO + COM_INDEX_EXT_HEAD_DOT01M, // 
 /* ID 194 */ COMMON_INFO + COM_INDEX_EXT_VOLUME_1ML, // 
 /* ID 195 */ COMMON_INFO + COM_INDEX_EXT_VOLUME_1ML, // 
 /* ID 196 */ COMMON_INFO + COM_INDEX_EXT_VOLUME_1ML, // 

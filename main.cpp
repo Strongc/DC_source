@@ -84,7 +84,6 @@ extern "C"
 /*****************************************************************************
   DEFINES
  ***************************************************************************/
-#define DISABLE_WATCHDOG
 #ifdef  DISABLE_WATCHDOG
   #undef  ENABLE_WATCHDOG
 #else

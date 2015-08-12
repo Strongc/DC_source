@@ -60,7 +60,7 @@ extern "C"
 #define IO113_MIXER_ADDR_OFFSET      0x32 // IO113 (MIXER)     (0x32= 50)
 #define IO351_PM_ADDR_OFFSET         0x3E // IO351 Pump Module (0x3E = 62, first number on unit is 31)
 #define IO351_IOM_ADDR_OFFSET        0x48 // IO351 IO Module   (0x48 = 72, first number on unit is 41)
-#define DDA_ADDR_OFFSET              0x52 // DDA Module   (0x52 = 82, first number on unit is 51 (31+51))
+#define DDA_ADDR_OFFSET              0x52 // DDA Module        (0x52 = 82, first number on unit is 51 (31+51))
 
 #define UNIT_FAMILY_CUE              2
 #define UNIT_FAMILY_MP204            7
@@ -238,52 +238,52 @@ const U8 apdu_local[] =
   0x08  //LOCAL
   };
 
-const U8 apdu_DDA_UseMode[] =
+const U8 apdu_dda_use_mode[] =
   {
   0x03, //Length of the rest of buffer
   0x03, //Class
   0x81, //OPERATION=SET + Length of APDU
-  19  //Use Mode
+  0x13  //Use Mode
   };
 
-const U8 apdu_DDA_ManualDosing[] =
+const U8 apdu_dda_manual_dosing[] =
   {
   0x03, //Length of the rest of buffer
   0x03, //Class
   0x81, //OPERATION=SET + Length of APDU
-  61    //Sets the pump in Control mode ¡°Manual dosing¡±
+  0x3D  //Sets the pump in Control mode "Manual dosing"
   };
 
-const U8 apdu_DDA_AnalogueDosing[] =
+const U8 apdu_dda_analogue_dosing[] =
   {
   0x03, //Length of the rest of buffer
   0x03, //Class
   0x81, //OPERATION=SET + Length of APDU
-  63    //Sets the pump in Control mode "Analogue dosing"
+  0x3F  //Sets the pump in Control mode "Analogue dosing"
   };
 
-const U8 apdu_DDA_PulseDosing[] =
+const U8 apdu_dda_pulse_dosing[] =
   {
   0x03, //Length of the rest of buffer
   0x03, //Class
   0x81, //OPERATION=SET + Length of APDU
-  62    //Sets the pump in Control mode "Pulse dosing"
+  0x3E  //Sets the pump in Control mode "Pulse dosing"
   };
 
-const U8 apdu_DDA_PressStartKey[] =
+const U8 apdu_dda_press_start_key[] =
   {
   0x03, //Length of the rest of buffer
   0x03, //Class
   0x81, //OPERATION=SET + Length of APDU
-  67    //Start the Manual dosing
+  0x43  //Start the Manual dosing
   };
 
-const U8 apdu_DDA_PressStopKey[] =
+const U8 apdu_dda_press_stop_key[] =
   {
   0x03, //Length of the rest of buffer
   0x03, //Class
   0x81, //OPERATION=SET + Length of APDU
-  68    //Stop the Manual dosing
+  0x44  //Stop the Manual dosing
   };
 
 
@@ -3472,39 +3472,9 @@ bool GeniSlaveIf::GetDDAPumpingState(IO351_NO_TYPE moduleNo, bool* pStatus)
 }
 
 /*****************************************************************************
- * Function - GetDDA Pump Alarm code
+ * Function - Get DDA Pump Alarm code
  * DESCRIPTION:
 *****************************************************************************/
-/*bool GeniSlaveIf::GetDDAAlarmCode(IO351_NO_TYPE moduleNo, ALARM_ID_TYPE* pValue)*/
-//{
-  //U8 unit_index, geni_value, unit_family;
-  //GENI_DEVICE_TYPE device;
-  //bool ret_val = false;
-
-  //// find unit
-  //OS_Use(&geni_master);
-  //unit_index = FindUnit(GetUnitAddress(moduleNo));
-  //OS_Unuse(&geni_master);
-
-  //// get device
-  //if (GetDevice(unit_index, &device))
-  //{
-    //// verify device type
-    //if (device == DEVICE_DDA)
-    //{
-      //OS_Use(&geni_class_data);
-      //geni_value = s_cl2_id234[unit_index];     
-      //unit_family = s_cl2_id148[unit_index];
-      //OS_Unuse(&geni_class_data);
-      //if (unit_family == UNIT_FAMILY_DDA) // Yes, it's a DDA
-      //{
-        //*pValue = (ALARM_ID_TYPE)(geni_value);
-        //ret_val = true;
-      //}
-    //}
-  //}
-  //return ret_val;
-/*}*/
 bool GeniSlaveIf::GetDDAAlarmCode(IO351_NO_TYPE moduleNo, ALARM_ID_TYPE* pValue)
 {
   U8 unit_index, geni_value, unit_family;
@@ -3540,12 +3510,11 @@ bool GeniSlaveIf::GetDDAAlarmCode(IO351_NO_TYPE moduleNo, ALARM_ID_TYPE* pValue)
       }
     }
   }
-
   return ret_val;
 }
 
 /*****************************************************************************
- * Function - GetDDA Pump Warning code
+ * Function - Get DDA Pump Warning code
  * DESCRIPTION:
 *****************************************************************************/
 bool GeniSlaveIf::GetDDAWarningCode(IO351_NO_TYPE moduleNo, U32* pValue)
@@ -3567,11 +3536,18 @@ bool GeniSlaveIf::GetDDAWarningCode(IO351_NO_TYPE moduleNo, U32* pValue)
     {
       OS_Use(&geni_class_data);
       geni_value = s_cl2_id235[unit_index];     
-      unit_family = s_cl2_id148[unit_index];
       OS_Unuse(&geni_class_data);
-      if (unit_family == UNIT_FAMILY_DDA) // Yes, it's a DDA
+      *pValue = (U32)(geni_value);
+      ret_val = true;
+    }
+  }
+  else
+  {
+    if (unit_index != NO_UNIT)
+    {
+      if (mUnitCommError[unit_index] == true)
       {
-        *pValue = (U32)(geni_value);
+        *pValue = ALARM_ID_COMMUNICATION_FAULT;
         ret_val = true;
       }
     }
@@ -3642,7 +3618,7 @@ void GeniSlaveIf::DDARequestStart(IO351_NO_TYPE moduleNo)
 void GeniSlaveIf::DDASetToUserMode(IO351_NO_TYPE moduleNo)
 {
   OS_Use(&geni_master);
-  SendDirAPDU(DUMMY_RESP_FNC, (U8 *)apdu_DDA_UseMode, GetUnitAddress(moduleNo));
+  SendDirAPDU(DUMMY_RESP_FNC, (U8 *)apdu_dda_use_mode, GetUnitAddress(moduleNo));
   OS_Unuse(&geni_master);
 }
 
@@ -3653,7 +3629,7 @@ void GeniSlaveIf::DDASetToUserMode(IO351_NO_TYPE moduleNo)
 void GeniSlaveIf::DDASetToManualDosing(IO351_NO_TYPE moduleNo)
 {
   OS_Use(&geni_master);
-  SendDirAPDU(DUMMY_RESP_FNC, (U8 *)apdu_DDA_ManualDosing, GetUnitAddress(moduleNo));
+  SendDirAPDU(DUMMY_RESP_FNC, (U8 *)apdu_dda_manual_dosing, GetUnitAddress(moduleNo));
   OS_Unuse(&geni_master);
 }
 
@@ -3664,7 +3640,7 @@ void GeniSlaveIf::DDASetToManualDosing(IO351_NO_TYPE moduleNo)
 void GeniSlaveIf::DDASetToAnalogueDosing(IO351_NO_TYPE moduleNo)
 {
   OS_Use(&geni_master);
-  SendDirAPDU(DUMMY_RESP_FNC, (U8 *)apdu_DDA_AnalogueDosing, GetUnitAddress(moduleNo));
+  SendDirAPDU(DUMMY_RESP_FNC, (U8 *)apdu_dda_analogue_dosing, GetUnitAddress(moduleNo));
   OS_Unuse(&geni_master);
 }
 
@@ -3675,7 +3651,7 @@ void GeniSlaveIf::DDASetToAnalogueDosing(IO351_NO_TYPE moduleNo)
 void GeniSlaveIf::DDASetToPulseDosing(IO351_NO_TYPE moduleNo)
 {
   OS_Use(&geni_master);
-  SendDirAPDU(DUMMY_RESP_FNC, (U8 *)apdu_DDA_PulseDosing, GetUnitAddress(moduleNo));
+  SendDirAPDU(DUMMY_RESP_FNC, (U8 *)apdu_dda_pulse_dosing, GetUnitAddress(moduleNo));
   OS_Unuse(&geni_master);
 }
 
@@ -3686,7 +3662,7 @@ void GeniSlaveIf::DDASetToPulseDosing(IO351_NO_TYPE moduleNo)
 void GeniSlaveIf::DDAPressStartKey(IO351_NO_TYPE moduleNo)
 {
   OS_Use(&geni_master);
-  SendDirAPDU(DUMMY_RESP_FNC, (U8 *)apdu_DDA_PressStartKey, GetUnitAddress(moduleNo));
+  SendDirAPDU(DUMMY_RESP_FNC, (U8 *)apdu_dda_press_start_key, GetUnitAddress(moduleNo));
   OS_Unuse(&geni_master);
 }
 
@@ -3697,7 +3673,7 @@ void GeniSlaveIf::DDAPressStartKey(IO351_NO_TYPE moduleNo)
 void GeniSlaveIf::DDAPressStopKey(IO351_NO_TYPE moduleNo)
 {
   OS_Use(&geni_master);
-  SendDirAPDU(DUMMY_RESP_FNC, (U8 *)apdu_DDA_PressStopKey, GetUnitAddress(moduleNo));
+  SendDirAPDU(DUMMY_RESP_FNC, (U8 *)apdu_dda_press_stop_key, GetUnitAddress(moduleNo));
   OS_Unuse(&geni_master);
 }
 

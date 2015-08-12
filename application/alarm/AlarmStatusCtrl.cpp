@@ -246,11 +246,7 @@ void AlarmStatusCtrl::RunSubTask()
                 }
                 mSystemAlarmStatus[word_idx] |= (0x1<<bit);
 
-                //Handle mixer alarms
-                if (p_alarm_event->GetErroneousUnit() == ERRONEOUS_UNIT_MIXER )
-                {
-                  SET_BIT_HIGH(mPumpFault, 12);
-                }
+                SET_BIT_HIGH(mPumpFault, 14);
               }
               else if (p_alarm_event->GetAlarmType() == ALARM_STATE_WARNING)
               {
@@ -261,6 +257,7 @@ void AlarmStatusCtrl::RunSubTask()
                   mSystemWarningScadaPending[word_idx] |= (0x1<<bit);
                 }
                 mSystemWarningStatus[word_idx] |= (0x1<<bit);
+                SET_BIT_HIGH(mPumpFault, 15);
               }
             }
             break;
@@ -318,8 +315,12 @@ void AlarmStatusCtrl::RunSubTask()
               }
               if (alarm_id == ALARM_ID_GENIBUS_IO_MODULE) // IO351 comm fault
               {
-                mPumpMonitoringFault |= 0x7F; // Pump 1+2+3+4+5+6 + Mixer fault
+                mPumpMonitoringFault |= 0xFF; // Pump 1+2+3+4+5+6 + Mixer + Dosing pump fault
               }
+              //if (alarm_id == ALARM_ID_GENIBUS_PUMP_MODULE) // Dosing pump
+              //{
+                //mPumpMonitoringFault |= (0x1<<8);  //bit7 - Monitoring fault dosing pump
+              //}
             }
             break;
         }
@@ -736,7 +737,8 @@ bool AlarmStatusCtrl::ConvertSystemAlarmToGeniStatus(ALARM_ID_TYPE alarm_id, U16
     case ALARM_ID_EXTRA_FAULT_3:                            word_no = 2; bit_no = 5; break; // 251
     case ALARM_ID_EXTRA_FAULT_4:                            word_no = 2; bit_no = 6; break; // 252
     case ALARM_ID_H2S_SENSOR_FAULT:                         word_no = 2; bit_no = 7; break; // 118
-    case ALARM_ID_SCADA_CALLBACK_TEST:                      word_no = 2; bit_no = 8; break; // 253
+    case ALARM_ID_DOSING_PUMP_NOT_READY:                    word_no = 2; bit_no = 8; break; // 102
+    case ALARM_ID_SCADA_CALLBACK_TEST:                      word_no = 2; bit_no = 9; break; // 253
 
     default:
       found = false;

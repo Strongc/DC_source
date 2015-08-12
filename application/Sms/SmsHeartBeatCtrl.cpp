@@ -208,6 +208,10 @@ void SmsHeartBeatCtrl::SetSubjectPointer(int id, Subject* pSubject)
     case SP_SHBC_NO_OF_PUMPS:
       mpNoOfPumps.Attach(pSubject);
       break;
+    ///\Todo 20150326 JMH-> Send to Both Primary and Secondary Phone
+    case SP_SHBC_SMS_RECIPIENT:
+      mpSmsRecipient.Attach(pSubject);
+      break;
     default:
       break;
 
@@ -236,15 +240,20 @@ void SmsHeartBeatCtrl::SendHeartBeatSms(void)
   {
     strncat( s, pStr->GetValue(), 50 );
   }
-  strcat(s, "\n" );                                                       // CR LF
+  strcat(s, "\n" ); 
   strncat(s, Languages::GetInstance()->GetString( SID_I_AM_ALIVE ), 148); // "I'm alive"
+
   my_sms->AllowInstallationName(false);
   my_sms->SetSmsMessage( s );
-  my_sms->SetSendTo( SMS_RECIPIENT_PRI );
   
   status_sms1 = SmsCtrl::GetInstance()->GetStatusSms(1);
   status_sms2 = SmsCtrl::GetInstance()->GetStatusSms(2);
   status_sms3 = SmsCtrl::GetInstance()->GetStatusSms(3);
+  ///\Todo 20150326 JMH-> Send to Both Primary and Secondary Phone
+  my_sms->SetSendTo( mpSmsRecipient->GetValue() );
+  status_sms1->SetSendTo( mpSmsRecipient->GetValue() );
+  status_sms2->SetSendTo( mpSmsRecipient->GetValue() );
+  status_sms3->SetSendTo( mpSmsRecipient->GetValue() );
   SmsCtrl::GetInstance()->SendSms( my_sms );
   SmsCtrl::GetInstance()->SendSms( status_sms1 );
   if(mpNoOfPumps->GetValue() > 2)
@@ -255,6 +264,7 @@ void SmsHeartBeatCtrl::SendHeartBeatSms(void)
   {
     SmsCtrl::GetInstance()->SendSms( status_sms3 );
   }
+
 }
 
 

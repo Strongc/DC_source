@@ -46,7 +46,8 @@
 // SW Timers
 enum
 {
-  INTERLOCKED_TIMEOUT_TIMER
+  INTERLOCKED_TIMEOUT_TIMER,
+  INTERLOCKED_REMAIN_TIME_TIMER
   };
 
 
@@ -91,6 +92,9 @@ void InterLockedCtrl::InitSubTask()
 {
   mInterLockTimeoutTimerFlag = false;
   mpTimerObjList[INTERLOCKED_TIMEOUT_TIMER] = new SwTimer(mpInterLockTimeout->GetValue(), S, false, false, this);
+  ///\Todo 20150424 JMH-> Add Interlock Update Timer Here
+  mpTimerObjList[INTERLOCKED_REMAIN_TIME_TIMER] = new SwTimer( 1, S, true, true, this);
+
   if (mpInterLocked->GetValue() == true)
   {
     // The system is starting up in the interlocked state - the timeout timer must be started.
@@ -164,6 +168,8 @@ void InterLockedCtrl::RunSubTask()
       mInterLockTimeoutTimerFlag = false;  // This flag is cleared because it is not needed now that the timer has been stopped.
       mpInterLocked->SetValue(false);
     }
+
+
   }
   else
   {
@@ -225,6 +231,9 @@ void InterLockedCtrl::Update(Subject* pSubject)
     mRunRequestedFlag = true;
     ReqTaskTime();
   }
+
+  ///\Todo 20150424 JMH-> Add Interlock Remain Time Here
+  mpInterLockTimeRemain->SetValue(mpTimerObjList[INTERLOCKED_TIMEOUT_TIMER]->GetSwTimerValue());
 }
 
 /*****************************************************************************
@@ -264,6 +273,8 @@ void InterLockedCtrl::SetSubjectPointer(int id, Subject* pSubject)
     case SP_ILC_INTERLOCK_DIG_IN_REQUEST:
       mpInterlockDigInRequest.Attach(pSubject);
       break;
+    case SP_ILC_INTERLOCK_REMAIN_TIME:
+      mpInterLockTimeRemain.Attach(pSubject);
 
     default:
       break;

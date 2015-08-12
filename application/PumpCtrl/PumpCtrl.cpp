@@ -170,7 +170,9 @@ void PumpCtrl::RunSubTask()
     }
     for( i=0; i<no_of_pumps; i++ )
     {
-      if (pump_group[i] == 1 && found<min_no_of_pumps)
+      ///\Todo 20150401 JMH-> Fix Pump Ref invoke args
+      //if (pump_group[i] == 1 && found<min_no_of_pumps)
+      if (found<min_no_of_pumps)
       {
         new_pump_ref.SetRef( i );
         found++;

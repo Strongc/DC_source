@@ -92,8 +92,9 @@ void DDACtrl::InitSubTask()
     mpAlarmDelay[i]->ResetWarning();
     mAlarmDelayCheckFlag[i] = false;
   }
+  mpH2SLevelAct->SetQuality(DP_NOT_AVAILABLE);
   mpDDAInstalled->SetValue(mpDosingPumpInstalled->GetValue() == true && (mpDosingPumpType->GetValue() == DOSING_PUMP_TYPE_DDA));
-  mpDDARef->SetValue((U32)(10000.0 * mpSetDosingRef->GetValue()));  // 0.1l/h -> 1ml/h
+  mpDDARef->SetValue((U32)(10000.0 * mpSetDosingRef->GetValue()));  // l/h -> 0.1ml/h
   ReqTaskTime();                         // Assures task is run at startup
 }
 /*****************************************************************************
@@ -116,13 +117,17 @@ void DDACtrl::RunSubTask()
   // Set a DDA installed flag.
   if (mpDosingPumpInstalled.IsUpdated() || mpDosingPumpType.IsUpdated())
   {
+    if (mpDosingPumpInstalled->GetValue() == false)
+    {
+      mpOprModeDosingPump->SetValue(ACTUAL_OPERATION_MODE_NOT_INSTALLED);
+    }
     mpDDAInstalled->SetValue(mpDosingPumpInstalled->GetValue() == true && (mpDosingPumpType->GetValue() == DOSING_PUMP_TYPE_DDA));
   }
   
   // set reference value
   if (mpSetDosingRef.IsUpdated())
   {
-    mpDDARef->SetValue((U32)(10000.0 * mpSetDosingRef->GetValue()));  // 0.1l/h -> 1ml/h
+    mpDDARef->SetValue((U32)(10000.0 * mpSetDosingRef->GetValue()));  // l/h -> 0.1ml/h
     mpDosingRefAct->SetValue(mpSetDosingRef->GetValue());
   }
 
@@ -133,13 +138,16 @@ void DDACtrl::RunSubTask()
 
   if (mpDDAInstalled->GetValue())
   {
-    if (mpSetH2SFault->GetValue() & 0x01)   //bit0 means the fault
+    if (mpSetH2SFault.IsUpdated())
     {
-      mpAlarmDelay[DDA_FAULT_OBJ_H2S]->SetFault();
-    }
-    else
-    {
-      mpAlarmDelay[DDA_FAULT_OBJ_H2S]->ResetFault();
+      if (mpSetH2SFault->GetValue() & 0x01)   //bit0 means the fault
+      {
+        mpAlarmDelay[DDA_FAULT_OBJ_H2S]->SetFault();
+      }
+      else
+      {
+        mpAlarmDelay[DDA_FAULT_OBJ_H2S]->ResetFault();
+      }
     }
   }
   else
@@ -237,6 +245,9 @@ void DDACtrl::SetSubjectPointer(int id, Subject* pSubject)
   {
     case SP_DDAC_DOSING_PUMP_INSTALLED:
       mpDosingPumpInstalled.Attach(pSubject);
+      break;
+    case SP_DDAC_OPERATION_MODE_DOSING_PUMP:
+      mpOprModeDosingPump.Attach(pSubject);
       break;
     case SP_DDAC_DOSING_PUMP_TYPE:
       mpDosingPumpType.Attach(pSubject);

@@ -49,6 +49,7 @@
 #include <BoolDataPoint.h>
 #include <I32DataPoint.h>
 #include <U8DataPoint.h>
+#include <EnumDataPoint.h>
 
 /*****************************************************************************
   LOCAL INCLUDES
@@ -109,6 +110,7 @@ class SmsHeartBeatCtrl : public SubTask, public SwTimerBaseClass
     SubjectPtr<BoolDataPoint*> mpDaysED[7];        //One for each weekday
     SubjectPtr<I32DataPoint*> mpHeartBeatTimeCfg;  //Seounds since midnight
     SubjectPtr<U8DataPoint*> mpNoOfPumps;
+    SubjectPtr<EnumDataPoint<SMS_RECIPIENT_TYPE>*> mpSmsRecipient;
 
     bool mTimeForHeartBeat;
     bool mRunRequestedFlag;

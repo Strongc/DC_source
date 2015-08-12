@@ -48,7 +48,7 @@
 /*****************************************************************************
   DEFINES
  *****************************************************************************/
-#define CPU_SW_VERSION_NO 0x00031100    //version no  V  0x##VVRRPP
+#define CPU_SW_VERSION_NO 0x00040000    //version no  V  0x##VVRRPP
                                         //                 ## not used
                                         //                 VV version no
                                         //                 RR revision no

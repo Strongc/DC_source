@@ -150,6 +150,9 @@ void DDA::SetSubjectPointer(int id, Subject* pSubject)
      case SP_DDA_DDA_INSTALLED:
        mpDDAInstalled.Attach(pSubject);
        break;
+     case SP_DDA_OPERATION_MODE_DOSING_PUMP:
+       mpOprModeDosingPump.Attach(pSubject);
+       break;
      case SP_DDA_CHEMICAL_TOTAL_DOSED:
        mpChemicalTotalDosed.Attach(pSubject);
        break;
@@ -252,7 +255,10 @@ void DDA::InitSubTask()
   mpTimerObjList[DDA_RUN_TIMER] = new SwTimer(RUN_DELAY_TIME, MS, true, false, this);
   mInitTimeOutFlag = false;
   mRunTimeOutFlag = false;
-  SetDDADataAvailability(DP_NEVER_AVAILABLE);
+  mDosingVolumeWhenStart = 0;
+  mpDDAInstalled.SetUpdated();
+  mpChemicalTotalDosed->SetValue(mpDosingVolumeTotalLog->GetValue()/1000.f);  //l->m3
+  //SetDDADataAvailability(DP_NOT_AVAILABLE);
 
   for (unsigned int i = FIRST_DDA_FAULT_OBJ; i < NO_OF_DDA_FAULT_OBJ; i++)
   {
@@ -288,7 +294,6 @@ void DDA::RunSubTask()
   {
     if (mpDDAInstalled->GetValue() == true)
     {
-      //mpGeniSlaveIf->DDAAlarmReset(mModuleNo);
       DDAInit();
       mDDAStatus = DDA_INIT;
       mpDDAAlarmDelay[DDA_FAULT_OBJ_ALARM]->ResetFault();
@@ -310,7 +315,7 @@ void DDA::RunSubTask()
 
       // The module is not present - make certain that all errors and data from the module is cleared
       HandleDDAAlarm(ALARM_ID_NO_ALARM);
-      SetDDADataAvailability(DP_NEVER_AVAILABLE);
+      //SetDDADataAvailability(DP_NOT_AVAILABLE);
       //request stop
       mpGeniSlaveIf->DDARequestStop(mModuleNo);
       mpDDAAlarmDelay[DDA_FAULT_OBJ_GENI_COMM]->ResetFault();
@@ -326,7 +331,6 @@ void DDA::RunSubTask()
       {
         mpDDAAlarmDelay[DDA_FAULT_OBJ_GENI_COMM]->ResetFault();
         HandleDDAAlarm(new_alarm_code);
-        HandleDDAMeasuredValues();
         RunDDA();
       }
       else
@@ -336,7 +340,7 @@ void DDA::RunSubTask()
           // clear any alarms and/or warnings caused by the DDA
           HandleDDAAlarm(ALARM_ID_NO_ALARM);
           mpDDAAlarmDelay[DDA_FAULT_OBJ_GENI_COMM]->SetFault();
-          //mDDAStatus = DDA_INIT;
+          mpOprModeDosingPump->SetValue(ACTUAL_OPERATION_MODE_DISABLED);
         }
         else
         {
@@ -347,6 +351,7 @@ void DDA::RunSubTask()
             mpDDAAlarmDelay[DDA_FAULT_OBJ_GENI_COMM]->ResetFault();
             mDDAStatus = DDA_INIT;
             mpGeniSlaveIf->DDARequestStop(mModuleNo);
+            mpOprModeDosingPump->SetValue(ACTUAL_OPERATION_MODE_STOPPED);
           }
         }
       }
@@ -355,7 +360,7 @@ void DDA::RunSubTask()
     {
       // we were unable to get the alarm code from GENI, set alarm and set data not available
       mpDDAAlarmDelay[DDA_FAULT_OBJ_GENI_COMM]->SetFault();
-      SetDDADataAvailability(DP_NOT_AVAILABLE);
+      //SetDDADataAvailability(DP_NOT_AVAILABLE);
       mDDAStatus = DDA_INIT;
     }
   }
@@ -394,30 +399,34 @@ void DDA::RunDDA()
       if (mInitTimeOutFlag)
       {
         mInitTimeOutFlag = false;
-        mDDAStatus = CheckInitRespond() ? DDA_RUN : DDA_INIT;
+        mDDAStatus = CheckInitRespond() ? DDA_START : DDA_INIT;
       }
       break;
 
-    case DDA_RUN:
+    case DDA_START:
       //mpGeniSlaveIf->SetDDAReference(mModuleNo, mpDDARef->GetValue());
       if (ValidateSetpoint())
       {
         mpGeniSlaveIf->DDARequestStart(mModuleNo);
+        mpOprModeDosingPump->SetValue(ACTUAL_OPERATION_MODE_STARTED);
+        mpGeniSlaveIf->GetDDATotalVolume(mModuleNo, &mDosingVolumeWhenStart);
+        mLastChemicalTotalDosed = mpChemicalTotalDosed->GetValue();
         mpTimerObjList[DDA_RUN_TIMER]->SetSwTimerPeriod(RUN_DELAY_TIME, MS, false);
         mpTimerObjList[DDA_RUN_TIMER]->RetriggerSwTimer();
         mRunTimeOutFlag = false;
-        mDDAStatus = DDA_RUN_WAITING;
+        mDDAStatus = DDA_RUNNING;
       }
       break;
 
-    case DDA_RUN_WAITING:
+    case DDA_RUNNING:
       if (mRunTimeOutFlag)
       {
+        HandleDDAMeasuredValues();
         mRunTimeOutFlag = false;
         mpTimerObjList[DDA_RUN_TIMER]->RetriggerSwTimer();
         if (ValidateSetpoint())
         {
-          mDDAStatus = CheckRunRespond() ? DDA_RUN_WAITING : DDA_INIT;
+          mDDAStatus = CheckRunRespond() ? DDA_RUNNING : DDA_INIT;
         }
         else
         {
@@ -513,7 +522,7 @@ bool DDA::CheckRunRespond()
 
 bool DDA::ValidateSetpoint()
 {
-  U32 min_capacity = 26; //26 ml/h
+  U32 min_capacity = 26; //26 0.1ml/h
   bool retval = true;
   U32 set_point = 0;
   if (mMaxDosingCapacity == 0xFFFFFFFF)
@@ -526,6 +535,7 @@ bool DDA::ValidateSetpoint()
   if (set_point < min_capacity)
   {
     mpGeniSlaveIf->DDARequestStop(mModuleNo);
+    mpOprModeDosingPump->SetValue(ACTUAL_OPERATION_MODE_STOPPED);
     retval = false;
   }
   else if (set_point > mMaxDosingCapacity)
@@ -539,12 +549,13 @@ bool DDA::ValidateSetpoint()
 
 void DDA::HandleDDAMeasuredValues()
 {
-  U32 int_value;
+  U32 total_dosing_volume_value;
 
-  if (mpGeniSlaveIf->GetDDATotalVolume(mModuleNo, &int_value))
+  if (mpGeniSlaveIf->GetDDATotalVolume(mModuleNo, &total_dosing_volume_value))
   {
-    mpChemicalTotalDosed->SetValue(int_value/1000000.0);     //ml -> m3
-    mpRunningDosingVolume->SetValue(int_value);
+    U32 value = total_dosing_volume_value - mDosingVolumeWhenStart;
+    mpChemicalTotalDosed->SetValue(value/1000000.0f + mLastChemicalTotalDosed);     //ml -> m3
+    mpRunningDosingVolume->SetValue((U32)(mpChemicalTotalDosed->GetValue()*1000000));    //m3 -> ml
   }
   else
   {
@@ -559,19 +570,7 @@ void DDA::SetDDADataAvailability(DP_QUALITY_TYPE quality)
 
 void DDA::UpdateDosingVolume()
 {
-  if (mpChemicalTotalDosed->GetQuality() == DP_NEVER_AVAILABLE)
-  {
-    mpDosingVolumeTotalLog->SetQuality(DP_NEVER_AVAILABLE);
-  }
-  else if(mpChemicalTotalDosed->GetQuality() == DP_NOT_AVAILABLE)
-  {
-    mpDosingVolumeTotalLog->SetQuality(DP_AVAILABLE);
-  }
-  else
-  {
-    mpDosingVolumeTotalLog->SetQuality(DP_AVAILABLE);
-    mpDosingVolumeTotalLog->SetValue(0.001f*mpRunningDosingVolume->GetValue());
-  }
+  mpDosingVolumeTotalLog->SetValue(1000.0f*mpChemicalTotalDosed->GetValue());  //m3->l
 }
 /*****************************************************************************
  * Function - ConfigReceived

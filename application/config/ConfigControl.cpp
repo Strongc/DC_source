@@ -771,7 +771,8 @@ void ConfigControl::Doit()
   if (mpConfigBlock->IsModified())
   {
     mpConfigBlock->SaveToFlash();
-    ResetConfigSetUpId();
+    ///\Todo 20151203 JMH->Disable ResetConfigSetupID
+    //ResetConfigSetUpId();
   }
 
   // save GSC block if modified

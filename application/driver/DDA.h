@@ -76,8 +76,8 @@ typedef enum
 {
   DDA_INIT,
   DDA_INIT_WAITING,
-  DDA_RUN,
-  DDA_RUN_WAITING
+  DDA_START,
+  DDA_RUNNING
 } DDA_STATUS;
 
 /*****************************************************************************
@@ -148,6 +148,7 @@ class DDA : public IO351, public SubTask, public SwTimerBaseClass
     // Config
     
     // Input
+    SubjectPtr<EnumDataPoint<ACTUAL_OPERATION_MODE_TYPE>*> mpOprModeDosingPump;
     SubjectPtr<EventDataPoint*>     mpSystemAlarmResetEvent;
     SubjectPtr<U32DataPoint*>       mpDDARef;
     SubjectPtr<BoolDataPoint*>      mpDDAInstalled;
@@ -169,6 +170,8 @@ class DDA : public IO351, public SubTask, public SwTimerBaseClass
     ALARM_ID_TYPE mExistingAlarmCode;
     U32           mExistingWarnings;
     U32           mMaxDosingCapacity;
+    float         mLastChemicalTotalDosed;
+    U32           mDosingVolumeWhenStart;
   
   protected:
     /********************************************************************

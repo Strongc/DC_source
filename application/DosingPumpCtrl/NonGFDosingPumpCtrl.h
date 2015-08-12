@@ -81,6 +81,7 @@ typedef enum
   LAST_DOSING_PUMP_FAULT_OBJ = NO_OF_DOSING_PUMP_FAULT_OBJ - 1
 }DOSING_PUMP_FAULT_OBJ_TYPE;
 
+
 /*****************************************************************************
  * CLASS:
  * DESCRIPTION:
@@ -110,6 +111,8 @@ class NonGFDosingPumpCtrl : public SubTask, public SwTimerBaseClass
     void SubscribtionCancelled(Subject* pSubject);
     void ConnectToSubjects();
     void SetSubjectPointer(int id, Subject* pSubject);
+    void StartNonGFDosingPump();
+    void StopNonGFDosingPump();
 
   private:
     /********************************************************************
@@ -120,21 +123,24 @@ class NonGFDosingPumpCtrl : public SubTask, public SwTimerBaseClass
     ATTRIBUTE
     ********************************************************************/
 
-    SubjectPtr<BoolDataPoint*> mpDosingPumpInstalled;
-    SubjectPtr<EnumDataPoint<DOSING_PUMP_TYPE_TYPE>*>  mpDosingPumpType;
-    SubjectPtr<FloatDataPoint*> mpSetDosingRef;
+    SubjectPtr<BoolDataPoint*>                                mpDosingPumpInstalled;
+    SubjectPtr<EnumDataPoint<DOSING_PUMP_TYPE_TYPE>*>         mpDosingPumpType;
+    SubjectPtr<FloatDataPoint*>                               mpChemicalTotalDosed;
+    SubjectPtr<U32DataPoint*>                                 mpRunningDosingVolume;
+    SubjectPtr<FloatDataPoint*>                               mpDosingVolumeTotalLog;
+    SubjectPtr<FloatDataPoint*>                               mpSetDosingRef;
     SubjectPtr<EnumDataPoint<DIGITAL_INPUT_FUNC_STATE_TYPE>*> mpDosingPumpDigInRequest;
-    SubjectPtr<FloatDataPoint*> mpDosingPumpSetpoint;
-    SubjectPtr<BoolDataPoint*> mpDosingPumpStart;
-
-    //DDA_STATUS *dda_pump_status;
-    //DOSING_PUMP_TYPE_TYPE mDosingPumpType;
+    SubjectPtr<FloatDataPoint*>                               mpDosingPumpAOSetting;
+    SubjectPtr<BoolDataPoint*>                                mpDosingPumpStart;
+    SubjectPtr<EnumDataPoint<ACTUAL_OPERATION_MODE_TYPE>*>    mpOprModeDosingPump;
 
     /* Variables for alarm handling */
     SubjectPtr<AlarmDataPoint*> mDosingPumpAlarms[NO_OF_DOSING_PUMP_FAULT_OBJ];
     AlarmDelay* mpDosingPumpAlarmDelay[NO_OF_DOSING_PUMP_FAULT_OBJ];
     bool mDosingPumpAlarmDelayCheckFlag[NO_OF_DOSING_PUMP_FAULT_OBJ];
-    static int counter;
+
+    float         mLastChemicalTotalDosed;
+    bool          mRestartFlag;
 
   protected:
     /********************************************************************

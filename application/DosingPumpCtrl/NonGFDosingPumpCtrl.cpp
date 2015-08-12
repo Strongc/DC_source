@@ -37,13 +37,13 @@
  ****************************************************************************/
 #include "NonGFDosingPumpCtrl.h"
 #include <GeniSlaveIf.h>
+#include <MpcTime.h>
 /*****************************************************************************
   DEFINES
  *****************************************************************************/
 /*****************************************************************************
   TYPE DEFINES
  *****************************************************************************/
-int NonGFDosingPumpCtrl::counter;
 /*****************************************************************************
  *
  *
@@ -84,6 +84,11 @@ NonGFDosingPumpCtrl::~NonGFDosingPumpCtrl()
  *****************************************************************************/
 void NonGFDosingPumpCtrl::InitSubTask()
 {
+  mpChemicalTotalDosed->SetValue(mpDosingVolumeTotalLog->GetValue()/1000.f);  //l->m3
+  mLastChemicalTotalDosed = mpChemicalTotalDosed->GetValue();
+  mpDosingPumpInstalled.SetUpdated();
+  mRestartFlag = false;
+
   for (unsigned int i = FIRST_DOSING_PUMP_FAULT_OBJ; i < NO_OF_DOSING_PUMP_FAULT_OBJ; i++)
   {
     mpDosingPumpAlarmDelay[i]->InitAlarmDelay();
@@ -100,7 +105,7 @@ void NonGFDosingPumpCtrl::InitSubTask()
  *****************************************************************************/
 void NonGFDosingPumpCtrl::RunSubTask()
 {
-  bool non_gf_dosing_pump_installed = 0;
+  bool non_gf_dosing_pump_installed = false;
 
 
   for (unsigned int i = FIRST_DOSING_PUMP_FAULT_OBJ; i < NO_OF_DOSING_PUMP_FAULT_OBJ; i++)
@@ -112,33 +117,41 @@ void NonGFDosingPumpCtrl::RunSubTask()
     }
   }
 
-  
-  if ((mpDosingPumpInstalled->GetValue() == true) && (mpDosingPumpType->GetValue() == DOSING_PUMP_TYPE_ANALOG))
+  //Check Dosing Setup
+  if (mpDosingPumpInstalled.IsUpdated() || mpDosingPumpType.IsUpdated())
   {
-    non_gf_dosing_pump_installed = true;
+    mLastChemicalTotalDosed = mpChemicalTotalDosed->GetValue();
+    mRestartFlag = true;
   }
-  else
-  {
-    non_gf_dosing_pump_installed = false;
-  }
+  non_gf_dosing_pump_installed = (mpDosingPumpInstalled->GetValue() == true) && (mpDosingPumpType->GetValue() == DOSING_PUMP_TYPE_ANALOG);
 
-  //DI
   if (non_gf_dosing_pump_installed)
   {
     if (mpDosingPumpDigInRequest->GetValue() == DIGITAL_INPUT_FUNC_STATE_ACTIVE)
     {
-      mpDosingPumpAlarmDelay[DOSING_PUMP_FAULT_OBJ]->SetFault();
-    }
-    {
       mpDosingPumpAlarmDelay[DOSING_PUMP_FAULT_OBJ]->ResetFault();
+      if (mpSetDosingRef.IsUpdated())
+      {
+        mRestartFlag = true;
+      }
+      StartNonGFDosingPump();
+    }
+    else
+    {
+      //Alarm Active
+      mpDosingPumpAlarmDelay[DOSING_PUMP_FAULT_OBJ]->SetFault();
+      StopNonGFDosingPump();
+      //Pumping mode disabled
+      mpOprModeDosingPump->SetValue(ACTUAL_OPERATION_MODE_DISABLED);
     }
   }
-
-  //DO
-  mpDosingPumpStart->SetValue(true);
-
-  //AO
-  mpDosingPumpSetpoint->SetValue(0);
+  else
+  {
+    //Reset Alarm Once Dosing Disable
+    mpDosingPumpAlarmDelay[DOSING_PUMP_FAULT_OBJ]->ResetFault();
+    //AO Off
+    mpDosingPumpAOSetting->SetValue(0);
+  }
 
   // Service AlarmDelays
   for (unsigned int i = FIRST_DOSING_PUMP_FAULT_OBJ; i < NO_OF_DOSING_PUMP_FAULT_OBJ; i++)
@@ -155,6 +168,7 @@ void NonGFDosingPumpCtrl::ConnectToSubjects()
 {
   mpDosingPumpInstalled->Subscribe(this);
   mpDosingPumpType->Subscribe(this);
+  mpChemicalTotalDosed->Subscribe(this);
   mpSetDosingRef->Subscribe(this);
   mpDosingPumpDigInRequest->Subscribe(this);
   for (unsigned int i = FIRST_DOSING_PUMP_FAULT_OBJ; i < NO_OF_DOSING_PUMP_FAULT_OBJ; i++)
@@ -172,6 +186,7 @@ void NonGFDosingPumpCtrl::Update(Subject* pSubject)
 {
   mpDosingPumpInstalled.Update(pSubject);
   mpDosingPumpType.Update(pSubject);
+  mpChemicalTotalDosed.Update(pSubject);
   mpSetDosingRef.Update(pSubject);
   mpDosingPumpDigInRequest.Update(pSubject);
 
@@ -213,6 +228,18 @@ void NonGFDosingPumpCtrl::SetSubjectPointer(int id, Subject* pSubject)
     case SP_DPC_DOSING_PUMP_TYPE:
       mpDosingPumpType.Attach(pSubject);
       break;
+    case SP_DPC_OPERATION_MODE_DOSING_PUMP:
+      mpOprModeDosingPump.Attach(pSubject);
+      break;
+    case SP_DPC_CHEMICAL_TOTAL_DOSED:
+      mpChemicalTotalDosed.Attach(pSubject);
+      break;
+    case SP_DPC_RUNNING_DOSING_VOLUME:
+      mpRunningDosingVolume.Attach(pSubject);
+      break;
+    case SP_DPC_DOSING_VOLUME_TOTAL_LOG:
+      mpDosingVolumeTotalLog.Attach(pSubject);
+      break;
     case SP_DPC_DOSING_PUMP_DIG_IN_REQUEST:
       mpDosingPumpDigInRequest.Attach(pSubject);
       break;
@@ -223,7 +250,7 @@ void NonGFDosingPumpCtrl::SetSubjectPointer(int id, Subject* pSubject)
       mpSetDosingRef.Attach(pSubject);
       break;
     case SP_DPC_AO_DOSING_PUMP_SETPOINT:
-      mpDosingPumpSetpoint.Attach(pSubject);
+      mpDosingPumpAOSetting.Attach(pSubject);
       break;
     case SP_DPC_SYS_ALARM_DOSING_PUMP_ALARM_OBJ:
       mDosingPumpAlarms[DOSING_PUMP_FAULT_OBJ].Attach(pSubject);
@@ -232,6 +259,51 @@ void NonGFDosingPumpCtrl::SetSubjectPointer(int id, Subject* pSubject)
     default:
       break;
   }
+}
+
+void NonGFDosingPumpCtrl::StartNonGFDosingPump()
+{
+  MpcTime new_time(true);
+  static U32 new_start_time = new_time.GetSecondsSince1Jan1970();
+  U32 current_time = 0;
+  bool run_flag = false;
+  float ref_h2s = mpSetDosingRef->GetValue();
+
+  run_flag = (ref_h2s <= mpDosingPumpAOSetting->GetMinValue()) ? false : true;
+
+  if (mRestartFlag)
+  {
+    mLastChemicalTotalDosed = mpChemicalTotalDosed->GetValue();
+    new_start_time = new_time.GetSecondsSince1Jan1970();
+  }
+
+  mpDosingPumpStart->SetValue(run_flag);
+
+  if (run_flag)
+  {
+    mRestartFlag = false;
+    current_time = new_time.GetSecondsSince1Jan1970();
+    mpOprModeDosingPump->SetValue(ACTUAL_OPERATION_MODE_STARTED);
+    // convert ref_h2s from l/h to l/s, multiple seconds is 1l, then convert l to m3
+    mpChemicalTotalDosed->SetValue(((current_time-new_start_time)*(ref_h2s/3600))/1000.0f + mLastChemicalTotalDosed);
+    mpRunningDosingVolume->SetValue((U32)(mpChemicalTotalDosed->GetValue()*1000000));    //m3 -> ml
+  }
+  else
+  {
+    mRestartFlag = true;
+    mpOprModeDosingPump->SetValue(ACTUAL_OPERATION_MODE_STOPPED);
+  }
+  mpDosingPumpAOSetting->SetValue(((ref_h2s/3600000.0) > mpDosingPumpAOSetting->GetMaxValue()) ? mpDosingPumpAOSetting->GetMaxValue():(ref_h2s/3600000.0));
+
+  return;
+}
+
+void NonGFDosingPumpCtrl::StopNonGFDosingPump()
+{
+  mRestartFlag = true;
+  mpDosingPumpStart->SetValue(false);
+  //AO Off
+  mpDosingPumpAOSetting->SetValue(0);
 }
 /*****************************************************************************
  *

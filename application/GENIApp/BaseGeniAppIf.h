@@ -425,6 +425,7 @@ protected:
   SubjectPtr<U16DataPoint*> mp_today_user_defined_counter_1;
   SubjectPtr<U16DataPoint*> mp_today_user_defined_counter_2;
   SubjectPtr<U16DataPoint*> mp_today_user_defined_counter_3;
+  SubjectPtr<U32DataPoint*> mp_interlock_remain_time;
   SubjectPtr<U32DataPoint*> mp_h2s_level_act;
   SubjectPtr<U32DataPoint*> mp_h2s_level_today_log;
   SubjectPtr<U32DataPoint*> mp_h2s_level_yesterday_log;
@@ -524,6 +525,8 @@ protected:
   SubjectPtr<EnumDataPoint<IO_DEVICE_STATUS_TYPE>*> mp_mp204_4_device_status;
   SubjectPtr<EnumDataPoint<IO_DEVICE_STATUS_TYPE>*> mp_mp204_5_device_status;
   SubjectPtr<EnumDataPoint<IO_DEVICE_STATUS_TYPE>*> mp_mp204_6_device_status;
+  SubjectPtr<EnumDataPoint<DOSING_PUMP_TYPE_TYPE>*> mp_dosing_pump_type;
+  SubjectPtr<EnumDataPoint<ACTUAL_OPERATION_MODE_TYPE>*> mp_dosing_pump_operating_mode;
   SubjectPtr<BoolDataPoint*> mp_display_wizard_enable;
   SubjectPtr<BoolDataPoint*> mp_relay_status_relay_func_relay_custom;
   SubjectPtr<BoolDataPoint*> mp_pit_level_sim_enabled;

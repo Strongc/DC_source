@@ -63,7 +63,7 @@ const ID_PTR meas16_tab[] =
 /* ID  41 */ UC_ADDR_0_LI(gai_11_41_pit_warn2), // pit_warn2
 /* ID  42 */ UC_ADDR_0_LI(gai_11_42_pit_warn3), // pit_warn3
 /* ID  43 */ UC_ADDR_0_LI(gai_11_43_event_log_latest_id), // event_log_latest_id
-/* ID  44 */ NA,
+/* ID  44 */ UC_ADDR_0_LI(gai_11_44_interlock_remain_time), // 
 /* ID  45 */ UC_ADDR_0_LI(gai_11_45_user_ana_in_1), // user_ana_in_1
 /* ID  46 */ UC_ADDR_0_LI(gai_11_46_user_ana_in_2), // user_ana_in_2
 /* ID  47 */ UC_ADDR_0_LI(gai_11_47_user_ana_in_3), // user_ana_in_3
@@ -324,7 +324,7 @@ const ID_INFO meas16_info_tab[] =
 /* ID  41 */ BITVAR_255, // pit_warn2
 /* ID  42 */ BITVAR_255, // pit_warn3
 /* ID  43 */ COMMON_INFO + COM_INDEX_EXT_DIMLESS_255, // event_log_latest_id
-/* ID  44 */ NI,
+/* ID  44 */ COMMON_INFO + COM_INDEX_EXT_TIME_1SEC, // 
 /* ID  45 */ COMMON_INFO + COM_INDEX_EXT_PERCENTAGE_DOT1PCT, // user_ana_in_1
 /* ID  46 */ COMMON_INFO + COM_INDEX_EXT_PERCENTAGE_DOT1PCT, // user_ana_in_2
 /* ID  47 */ COMMON_INFO + COM_INDEX_EXT_PERCENTAGE_DOT1PCT, // user_ana_in_3

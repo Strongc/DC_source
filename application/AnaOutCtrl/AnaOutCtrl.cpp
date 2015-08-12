@@ -397,12 +397,12 @@ void AnaOutCtrl::HandleFuncChange(bool UpdateAllConfigurations)
       {
       case Q_FREQUENCY:
         mpConfAnaOutMin[i]->SetMinValue(0.0f);
-        mpConfAnaOutMin[i]->SetMaxValue(100.0f);
+        mpConfAnaOutMin[i]->SetMaxValue(10000.0f);
         mpConfAnaOutMin[i]->SetQuantity(Q_FREQUENCY);
         mpConfAnaOutMin[i]->SetQuality(DP_AVAILABLE);
 
         mpConfAnaOutMax[i]->SetMinValue(0.0f);
-        mpConfAnaOutMax[i]->SetMaxValue(100.0f);
+        mpConfAnaOutMax[i]->SetMaxValue(10000.0f);
         mpConfAnaOutMax[i]->SetQuantity(Q_FREQUENCY);
         mpConfAnaOutMax[i]->SetQuality(DP_AVAILABLE);
 
@@ -419,12 +419,12 @@ void AnaOutCtrl::HandleFuncChange(bool UpdateAllConfigurations)
 
       case Q_HEIGHT:
         mpConfAnaOutMin[i]->SetMinValue(0.0f);
-        mpConfAnaOutMin[i]->SetMaxValue(100.0f);
+        mpConfAnaOutMin[i]->SetMaxValue(10000.0f);
         mpConfAnaOutMin[i]->SetQuantity(Q_HEIGHT);
         mpConfAnaOutMin[i]->SetQuality(DP_AVAILABLE);
 
         mpConfAnaOutMax[i]->SetMinValue(0.0f);
-        mpConfAnaOutMax[i]->SetMaxValue(100.0f);
+        mpConfAnaOutMax[i]->SetMaxValue(10000.0f);
         mpConfAnaOutMax[i]->SetQuantity(Q_HEIGHT);
         mpConfAnaOutMax[i]->SetQuality(DP_AVAILABLE);
 
@@ -442,12 +442,12 @@ void AnaOutCtrl::HandleFuncChange(bool UpdateAllConfigurations)
 
       case Q_PERCENT:
         mpConfAnaOutMin[i]->SetMinValue(0.0f);
-        mpConfAnaOutMin[i]->SetMaxValue(100.0f);
+        mpConfAnaOutMin[i]->SetMaxValue(10000.0f);
         mpConfAnaOutMin[i]->SetQuantity(Q_PERCENT);
         mpConfAnaOutMin[i]->SetQuality(DP_AVAILABLE);
 
         mpConfAnaOutMax[i]->SetMinValue(0.0f);
-        mpConfAnaOutMax[i]->SetMaxValue(100.0f);
+        mpConfAnaOutMax[i]->SetMaxValue(10000.0f);
         mpConfAnaOutMax[i]->SetQuantity(Q_PERCENT);
         mpConfAnaOutMax[i]->SetQuality(DP_AVAILABLE);
 
@@ -464,12 +464,12 @@ void AnaOutCtrl::HandleFuncChange(bool UpdateAllConfigurations)
 
       case Q_FLOW:
         mpConfAnaOutMin[i]->SetMinValue(0.0f);
-        mpConfAnaOutMin[i]->SetMaxValue(100.0f);
+        mpConfAnaOutMin[i]->SetMaxValue(0.00027778f);
         mpConfAnaOutMin[i]->SetQuantity(Q_FLOW);
         mpConfAnaOutMin[i]->SetQuality(DP_AVAILABLE);
 
         mpConfAnaOutMax[i]->SetMinValue(0.0f);
-        mpConfAnaOutMax[i]->SetMaxValue(100.0f);
+        mpConfAnaOutMax[i]->SetMaxValue(0.00027778f);
         mpConfAnaOutMax[i]->SetQuantity(Q_FLOW);
         mpConfAnaOutMax[i]->SetQuality(DP_AVAILABLE);
 
@@ -478,7 +478,7 @@ void AnaOutCtrl::HandleFuncChange(bool UpdateAllConfigurations)
         {
           // the change is not arisen from GENI, so set min. + max.
           mpConfAnaOutMin[i]->SetValue(0.0f); // 0
-          mpConfAnaOutMax[i]->SetValue(5.0f); // 5
+          mpConfAnaOutMax[i]->SetValue(0.0f); // 
         }
 
         output_quality = DP_AVAILABLE;
@@ -527,6 +527,28 @@ void AnaOutCtrl::CalculateOutput(void)
     if (func != ANA_OUT_FUNC_NO_FUNCTION)
     {
       mpAnaOutOutputValue[i]->CopyValues(mpAnaOutInputValue[func].GetSubject());
+      ///Todo 20150810 ->Overwrite the max as below to avoid decimal point
+      switch(func)
+      {
+        case ANA_OUT_FUNC_VFD_1:
+        case ANA_OUT_FUNC_VFD_2:
+        case ANA_OUT_FUNC_VFD_3:
+        case ANA_OUT_FUNC_VFD_4:
+        case ANA_OUT_FUNC_VFD_5:
+        case ANA_OUT_FUNC_VFD_6:
+          mpAnaOutOutputValue[i]->SetMaxValue(6000.0f);
+          break;
+        case ANA_OUT_FUNC_LEVEL:
+        case ANA_OUT_FUNC_USER_DEFINED_1:
+        case ANA_OUT_FUNC_USER_DEFINED_2:
+        case ANA_OUT_FUNC_USER_DEFINED_3:
+          mpAnaOutOutputValue[i]->SetMaxValue(10000.0f);
+          break;
+        case ANA_OUT_FUNC_DOSING_PUMP:
+          mpAnaOutOutputValue[i]->SetMaxValue(0.00027778f);
+          break;
+      }
+  
     }
 
     if (func_value < min)

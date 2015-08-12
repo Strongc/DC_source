@@ -108,6 +108,7 @@ class InterLockedCtrl : public SubTask, public SwTimerBaseClass
     SubjectPtr<EventDataPoint*> mpInterLockOffEvent;
     SubjectPtr<BoolDataPoint*> mpInterLocked;
     SubjectPtr<U32DataPoint*> mpInterLockTimeout;
+    SubjectPtr<U32DataPoint*> mpInterLockTimeRemain;
     SubjectPtr<BoolDataPoint*> mpInterLockIgnore;
     SubjectPtr<EnumDataPoint<DIGITAL_INPUT_FUNC_STATE_TYPE>*> mpInterlockDigInRequest;
 

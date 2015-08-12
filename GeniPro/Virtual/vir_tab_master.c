@@ -156,7 +156,7 @@ const UCHAR mp204_status_slow[] = // MP204 class 2
   148,    // unit family
 };
 
-const UCHAR DDA_module_capability[] = // DDA, class 2
+const UCHAR dda_module_capability[] = // DDA, class 2
 {
     0,	// pressure_max 
     1,	// dosing_cap_max_hi 
@@ -168,7 +168,7 @@ const UCHAR DDA_module_capability[] = // DDA, class 2
     11,	// dosing_cap_ref_lo3
 };
 
-const UCHAR DDA_module_status[] = // DDA, class 2
+const UCHAR dda_module_status[] = // DDA, class 2
 {
     12,	// flow_mon_dosing_cap_hi
     13,	// flow_mon_dosing_cap_lo1
@@ -192,7 +192,7 @@ const UCHAR DDA_module_status[] = // DDA, class 2
     235, // warn_code   
 };
 
-const UCHAR DDA_module_ref[] = // DDA, class 5
+const UCHAR dda_module_ref[] = // DDA, class 5
 {
     1, // bus_ctr_dosing_cap_hi
     2, // bus_ctr_dosing_cap_lo1
@@ -221,9 +221,9 @@ const GROUP_TAB_TYPE group_table[MAS_MAX_NO_GROUPS] = {
   { MEAS_APDU, GET, 2,   sizeof(mp204_status_slow),       (UCHAR *)mp204_status_slow,       DEVICE_MP204 },
   { MEAS_APDU, GET, 1,   sizeof(io111_status_fast),       (UCHAR *)io111_status_fast,       DEVICE_IO111 },
   { CONF_APDU, GET, 20,  sizeof(cue_module_f_upper),      (UCHAR *)cue_module_f_upper,      DEVICE_E_PUMP },
-  { MEAS_APDU, GET, 1,   sizeof(DDA_module_capability),   (UCHAR *)DDA_module_capability,   DEVICE_DDA },
-  { MEAS_APDU, GET, 1,   sizeof(DDA_module_status),       (UCHAR *)DDA_module_status,       DEVICE_DDA },
-  { REF_APDU,  SET, 1,   sizeof(DDA_module_ref),          (UCHAR *)DDA_module_ref,          DEVICE_DDA }
+  { MEAS_APDU, GET, 1,   sizeof(dda_module_capability),   (UCHAR *)dda_module_capability,   DEVICE_DDA },
+  { MEAS_APDU, GET, 1,   sizeof(dda_module_status),       (UCHAR *)dda_module_status,       DEVICE_DDA },
+  { REF_APDU,  SET, 1,   sizeof(dda_module_ref),          (UCHAR *)dda_module_ref,          DEVICE_DDA }
 	  
 };
 

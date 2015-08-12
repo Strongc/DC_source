@@ -131,6 +131,7 @@ class DDACtrl : public SubTask, public SwTimerBaseClass
     SubjectPtr<FloatDataPoint*> mpMeasuredValue;
     SubjectPtr<FloatDataPoint*> mpDDADosingFeedTankLevel;
     SubjectPtr<EnumDataPoint<DOSING_PUMP_TYPE_TYPE>*>  mpDosingPumpType;
+    SubjectPtr<EnumDataPoint<ACTUAL_OPERATION_MODE_TYPE>*> mpOprModeDosingPump;
 
     //For test
 

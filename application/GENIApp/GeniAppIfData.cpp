@@ -179,6 +179,7 @@ U16 gai_11_40_pit_warn1;  // 11,40 pit_warn1
 U16 gai_11_41_pit_warn2;  // 11,41 pit_warn2
 U16 gai_11_42_pit_warn3;  // 11,42 pit_warn3
 U16 gai_11_43_event_log_latest_id;  // 11,43 event_log_latest_id
+U16 gai_11_44_interlock_remain_time;  // 11,44 
 U16 gai_11_45_user_ana_in_1;  // 11,45 user_ana_in_1
 U16 gai_11_46_user_ana_in_2;  // 11,46 user_ana_in_2
 U16 gai_11_47_user_ana_in_3;  // 11,47 user_ana_in_3
@@ -463,7 +464,7 @@ U32 gai_14_177_yesterday_udc_counter2;  // 14,177
 U32 gai_14_178_yesterday_udc_counter3;  // 14,178 
 U32 gai_14_179_overflow_volume;  // 14,179 overflow volume
 U32 gai_14_180_overflow_time;  // 14,180 overflow time
-U32 gai_14_190_h2s_level;  // 14,190 
+U32 gai_14_190_h2s_level_act;  // 14,190 
 U32 gai_14_191_h2s_level_today_log;  // 14,191 
 U32 gai_14_192_h2s_level_yesterday_log;  // 14,192 
 U32 gai_14_193_dosing_feed_tank_level;  // 14,193 

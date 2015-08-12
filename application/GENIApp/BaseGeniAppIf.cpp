@@ -248,6 +248,12 @@ void BaseGeniAppIf::SetSubjectPointer(int /*id*/, Subject* pSubject)
   case SUBJECT_ID_DOSING_FEED_TANK_LEVEL:
     mp_dosing_feed_tank_level.Attach(pSubject);
     break;
+  case SUBJECT_ID_DOSING_PUMP_OPERATING_MODE:
+    mp_dosing_pump_operating_mode.Attach(pSubject);
+    break;
+  case SUBJECT_ID_DOSING_PUMP_TYPE:
+    mp_dosing_pump_type.Attach(pSubject);
+    break;
   case SUBJECT_ID_DOSING_REF_ACT:
     mp_dosing_ref_act.Attach(pSubject);
     break;
@@ -391,6 +397,9 @@ void BaseGeniAppIf::SetSubjectPointer(int /*id*/, Subject* pSubject)
     break;
   case SUBJECT_ID_INTERLOCK_OFF_REQUEST:
     mp_interlock_off_request.Attach(pSubject);
+    break;
+  case SUBJECT_ID_INTERLOCK_REMAIN_TIME:
+    mp_interlock_remain_time.Attach(pSubject);
     break;
   case SUBJECT_ID_INTERLOCK_REQUEST:
     mp_interlock_request.Attach(pSubject);
@@ -1683,6 +1692,8 @@ void BaseGeniAppIf::ConnectToSubjects(void)
   mp_display_current_no_of_float_switches->Subscribe(this);
   mp_display_wizard_enable->Subscribe(this);
   mp_dosing_feed_tank_level->Subscribe(this);
+  mp_dosing_pump_operating_mode->Subscribe(this);
+  mp_dosing_pump_type->Subscribe(this);
   mp_dosing_ref_act->Subscribe(this);
   mp_dosing_volume_today_log->Subscribe(this);
   mp_dosing_volume_total_log->Subscribe(this);
@@ -1728,6 +1739,7 @@ void BaseGeniAppIf::ConnectToSubjects(void)
   mp_h2s_level_act->Subscribe(this);
   mp_h2s_level_today_log->Subscribe(this);
   mp_h2s_level_yesterday_log->Subscribe(this);
+  mp_interlock_remain_time->Subscribe(this);
   mp_interlock_timeout->Subscribe(this);
   mp_latest_value_motor_current_pump_1->Subscribe(this);
   mp_latest_value_motor_current_pump_2->Subscribe(this);
@@ -3321,8 +3333,11 @@ bool BaseGeniAppIf::SubjectToGeni(Subject* pSubject)
   case SUBJECT_ID_TODAY_USER_DEFINED_COUNTER_3:
     gai_14_175_today_udc_counter3 = ToGeni32bitValue(mp_today_user_defined_counter_3.GetSubject(), GENI_CONVERT_ID_DIMLESS_254);
     break;
+  case SUBJECT_ID_INTERLOCK_REMAIN_TIME:
+    gai_11_44_interlock_remain_time = ToGeni16bitValue(mp_interlock_remain_time.GetSubject(), GENI_CONVERT_ID_TIME_1SEC);
+    break;
   case SUBJECT_ID_H2S_LEVEL_ACT:
-    gai_14_190_h2s_level = ToGeni32bitValue(mp_h2s_level_act.GetSubject(), GENI_CONVERT_ID_PERCENTAGE_1PPM);
+    gai_14_190_h2s_level_act = ToGeni32bitValue(mp_h2s_level_act.GetSubject(), GENI_CONVERT_ID_PERCENTAGE_1PPM);
     break;
   case SUBJECT_ID_H2S_LEVEL_TODAY_LOG:
     gai_14_191_h2s_level_today_log = ToGeni32bitValue(mp_h2s_level_today_log.GetSubject(), GENI_CONVERT_ID_PERCENTAGE_1PPM);
@@ -3331,7 +3346,7 @@ bool BaseGeniAppIf::SubjectToGeni(Subject* pSubject)
     gai_14_192_h2s_level_yesterday_log = ToGeni32bitValue(mp_h2s_level_yesterday_log.GetSubject(), GENI_CONVERT_ID_PERCENTAGE_1PPM);
     break;
   case SUBJECT_ID_DOSING_FEED_TANK_LEVEL:
-    gai_14_193_dosing_feed_tank_level = ToGeni32bitValue(mp_dosing_feed_tank_level.GetSubject(), GENI_CONVERT_ID_DIMLESS_254);
+    gai_14_193_dosing_feed_tank_level = ToGeni32bitValue(mp_dosing_feed_tank_level.GetSubject(), GENI_CONVERT_ID_HEAD_DIST_DOT01M);
     break;
   case SUBJECT_ID_DOSING_VOLUME_TOTAL_LOG:
     gai_14_194_dosing_volume_total_log = ToGeni32bitValue(mp_dosing_volume_total_log.GetSubject(), GENI_CONVERT_ID_VOLUME_1ML);
