@@ -92,7 +92,7 @@ void DDACtrl::InitSubTask()
     mpAlarmDelay[i]->ResetWarning();
     mAlarmDelayCheckFlag[i] = false;
   }
-  mpH2SLevelAct->SetQuality(DP_NOT_AVAILABLE);
+  //mpH2SLevelAct->SetQuality(DP_NOT_AVAILABLE);
   mpDDAInstalled->SetValue(mpDosingPumpInstalled->GetValue() == true && (mpDosingPumpType->GetValue() == DOSING_PUMP_TYPE_DDA));
   mpDDARef->SetValue((U32)(10000.0 * mpSetDosingRef->GetValue()));  // l/h -> 0.1ml/h
   ReqTaskTime();                         // Assures task is run at startup
@@ -160,10 +160,10 @@ void DDACtrl::RunSubTask()
   {
     mpDDADosingFeedTankLevel->SetValue(mpMeasuredValue->GetValue());
   }
-  else
-  {
-    mpDDADosingFeedTankLevel->SetQuality(DP_NOT_AVAILABLE);
-  }
+  //else
+  //{
+    //mpDDADosingFeedTankLevel->SetQuality(DP_NOT_AVAILABLE);
+  //}
 
   // Service AlarmDelays
   for (unsigned int i = FIRST_DDAC_FAULT_OBJ; i < NO_OF_DDAC_FAULT_OBJ; i++)

@@ -149,8 +149,7 @@ void NonGFDosingPumpCtrl::RunSubTask()
   {
     //Reset Alarm Once Dosing Disable
     mpDosingPumpAlarmDelay[DOSING_PUMP_FAULT_OBJ]->ResetFault();
-    //AO Off
-    mpDosingPumpAOSetting->SetValue(0);
+    StopNonGFDosingPump();
   }
 
   // Service AlarmDelays
@@ -293,7 +292,7 @@ void NonGFDosingPumpCtrl::StartNonGFDosingPump()
     mRestartFlag = true;
     mpOprModeDosingPump->SetValue(ACTUAL_OPERATION_MODE_STOPPED);
   }
-  mpDosingPumpAOSetting->SetValue(((ref_h2s/3600000.0) > mpDosingPumpAOSetting->GetMaxValue()) ? mpDosingPumpAOSetting->GetMaxValue():(ref_h2s/3600000.0));
+  mpDosingPumpAOSetting->SetValue(ref_h2s*1000.0);
 
   return;
 }

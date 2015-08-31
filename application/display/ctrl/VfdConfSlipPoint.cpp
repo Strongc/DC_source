@@ -155,6 +155,8 @@ void VfdConfSlipPoint::RunSubTask(void)
     || mpVirtualMinVelocityEnabled.IsUpdated()
     || mpVirtualMinVelocity.IsUpdated()
     || mpVirtualPipeDiameter.IsUpdated()
+    ///\Todo 20150630 JMH->Append Max reverse frequency items
+    || mpVirtualCueMaxRevFreq.IsUpdated()
    )
   {
     UpdateCurrentVfdConf();
@@ -203,7 +205,10 @@ void VfdConfSlipPoint::RunSubTask(void)
         || mpPidSetpointFixed[vfd_no].IsUpdated()
         || mpMinVelocityEnabled[vfd_no].IsUpdated()
         || mpMinVelocity[vfd_no].IsUpdated()
-        || mpPipeDiameter[vfd_no].IsUpdated())
+        || mpPipeDiameter[vfd_no].IsUpdated()
+        ///\Todo 20150630 JMH->Append Max reverse frequency items
+        || mpCueMaxRevFreq[vfd_no].IsUpdated()
+        )
       {
         UpdateVirtualVfdConf();
 		vfd_check = 1;
@@ -216,12 +221,11 @@ void VfdConfSlipPoint::RunSubTask(void)
     }
 	if(vfd_check == 0)
 	{
-	  for (int vfd_number = 0; vfd_number < NO_OF_PUMPS; vfd_number++)
-      {
+      ///\Todo 20150818 JMH->Fix wrong Vfd index handling
+      const int vfd_number = mpCurrentVfdNumber->GetAsInt();
+
 		  if(mpVfdInstalled[vfd_number]->GetValue() == true)
 		  {
-			     if(vfd_number != vfd_no)
-				 {
 						if (mpFixedFreq[vfd_number].IsUpdated()
 						|| mpRunMode[vfd_number].IsUpdated()
 						|| mpPidFeedback[vfd_number].IsUpdated()
@@ -229,33 +233,21 @@ void VfdConfSlipPoint::RunSubTask(void)
 						|| mpPidSetpointAi[vfd_number].IsUpdated()
 						|| mpPidSetpointFixed[vfd_number].IsUpdated() )
 						{
-								int temp_vfd_no = vfd_no;
-								mpCurrentVfdNumber->SetAsInt(vfd_number);
 								UpdateVirtualVfdConf();
-								mpCurrentVfdNumber->SetAsInt(temp_vfd_no);
-								break;
-
 						}
-				 }
-
 		  }
 		  else
 		  {			  
 			  if(mpPidFeedback[vfd_number].IsUpdated())
 			  {				  
-				  mpPidFeedback[vfd_number]->SetValue(MEASURED_VALUE_FLOW);
-				  break;				  
+			      mpPidFeedback[vfd_number]->SetValue(MEASURED_VALUE_FLOW);				  
 			  }
 			  if(mpPidSetpointAi[vfd_number].IsUpdated())
 			  {
-				 mpPidSetpointAi[vfd_number]->SetValue(MEASURED_VALUE_USER_DEFINED_SOURCE_1);
-				 break;
-
+			      mpPidSetpointAi[vfd_number]->SetValue(MEASURED_VALUE_USER_DEFINED_SOURCE_1);
 			  }
 		  }
-
 	  }
-	}
   }
 
   mCurrentlyUpdating = false; // End of: Guard the SubTask
@@ -313,6 +305,8 @@ void VfdConfSlipPoint::Update(Subject* pSubject)
     else if (mpVirtualMinVelocityEnabled.Update(pSubject)){}
     else if (mpVirtualMinVelocity.Update(pSubject)){}
     else if (mpVirtualPipeDiameter.Update(pSubject)){}
+    ///\Todo 20150630 JMH->Append Max reverse frequency items
+    else if (mpVirtualCueMaxRevFreq.Update(pSubject)){}
     else
     {
       for (int vfd_no = 0; vfd_no < NO_OF_PUMPS; vfd_no++)
@@ -350,7 +344,8 @@ void VfdConfSlipPoint::Update(Subject* pSubject)
         else if(mpMinVelocityEnabled[vfd_no].Update(pSubject)){break;}
         else if(mpMinVelocity[vfd_no].Update(pSubject)){break;}
         else if(mpPipeDiameter[vfd_no].Update(pSubject)){break;}
-        
+        ///\Todo 20150630 JMH->Append Max reverse frequency items
+        else if(mpCueMaxRevFreq[vfd_no].Update(pSubject)){break;}
       }
     }
     ReqTaskTime();
@@ -1089,23 +1084,45 @@ void VfdConfSlipPoint::SetSubjectPointer(int Id, Subject* pSubject)
     mpMeasuredUserDefinedSensor3.Attach(pSubject);
     break;
   case SP_VCSP_VFD_INSTALLED_PUMP1:
-	mpVfdInstalled[PUMP_1].Attach(pSubject);
-	break;
+	  mpVfdInstalled[PUMP_1].Attach(pSubject);
+	  break;
   case SP_VCSP_VFD_INSTALLED_PUMP2:
-	mpVfdInstalled[PUMP_2].Attach(pSubject);
-	break;
+	  mpVfdInstalled[PUMP_2].Attach(pSubject);
+	  break;
   case SP_VCSP_VFD_INSTALLED_PUMP3:
-	mpVfdInstalled[PUMP_3].Attach(pSubject);
-	break;
+	  mpVfdInstalled[PUMP_3].Attach(pSubject);
+	  break;
   case SP_VCSP_VFD_INSTALLED_PUMP4:
-	mpVfdInstalled[PUMP_4].Attach(pSubject);
-	break;
+	  mpVfdInstalled[PUMP_4].Attach(pSubject);
+	  break;
   case SP_VCSP_VFD_INSTALLED_PUMP5:
-	mpVfdInstalled[PUMP_5].Attach(pSubject);
-	break;
+	  mpVfdInstalled[PUMP_5].Attach(pSubject);
+	  break;
   case SP_VCSP_VFD_INSTALLED_PUMP6:
-	mpVfdInstalled[PUMP_6].Attach(pSubject);
-	break;
+	  mpVfdInstalled[PUMP_6].Attach(pSubject);
+	  break;
+  ///\Todo 20150630 JMH->Append Max reverse frequency items
+  case SP_VCSP_VIRTUAL_CUE_MAX_REV_FREQ:
+    mpVirtualCueMaxRevFreq.Attach(pSubject);
+    break;
+  case SP_VCSP_CUE_MAX_REV_FREQ_PUMP_1:
+    mpCueMaxRevFreq[PUMP_1].Attach(pSubject);
+    break;
+  case SP_VCSP_CUE_MAX_REV_FREQ_PUMP_2:
+    mpCueMaxRevFreq[PUMP_2].Attach(pSubject);
+    break;
+  case SP_VCSP_CUE_MAX_REV_FREQ_PUMP_3:
+    mpCueMaxRevFreq[PUMP_3].Attach(pSubject);
+    break;
+  case SP_VCSP_CUE_MAX_REV_FREQ_PUMP_4:
+    mpCueMaxRevFreq[PUMP_4].Attach(pSubject);
+    break;
+  case SP_VCSP_CUE_MAX_REV_FREQ_PUMP_5:
+    mpCueMaxRevFreq[PUMP_5].Attach(pSubject);
+    break;
+  case SP_VCSP_CUE_MAX_REV_FREQ_PUMP_6:
+    mpCueMaxRevFreq[PUMP_6].Attach(pSubject);
+    break;
   }
 }
 
@@ -1153,7 +1170,9 @@ void VfdConfSlipPoint::ConnectToSubjects(void)
     mpMinVelocityEnabled[vfd_no]->Subscribe(this);
     mpMinVelocity[vfd_no]->Subscribe(this);
     mpPipeDiameter[vfd_no]->Subscribe(this);
-	mpVfdInstalled[vfd_no]->Subscribe(this);
+	  mpVfdInstalled[vfd_no]->Subscribe(this);
+    ///\Todo 20150630 JMH->Append Max reverse frequency items
+    mpCueMaxFreq[vfd_no]->Subscribe(this);
   }
 
   mpVirtualFixedFreq->Subscribe(this);
@@ -1189,6 +1208,8 @@ void VfdConfSlipPoint::ConnectToSubjects(void)
   mpVirtualMinVelocityEnabled->Subscribe(this);
   mpVirtualMinVelocity->Subscribe(this);
   mpVirtualPipeDiameter->Subscribe(this);
+  ///\Todo 20150630 JMH->Append Max reverse frequency items
+  mpVirtualCueMaxRevFreq->Subscribe(this);
 }
 
 
@@ -1206,6 +1227,9 @@ void VfdConfSlipPoint::UpdateVirtualVfdConf()
 
   if ((vfd_no >= 0) && (vfd_no < NO_OF_PUMPS))
   {
+    ///\Todo 20150630 JMH->Append Max reverse frequency items
+    mpVirtualCueMaxRevFreq->SetValue(mpCueMaxRevFreq[vfd_no]->GetValue());
+
     mpVirtualFixedFreq->SetValue(mpFixedFreq[vfd_no]->GetValue());
     mpVirtualEcoFreq->SetValue(mpEcoFreq[vfd_no]->GetValue());
     mpVirtualEcoLevel->SetValue(mpEcoLevel[vfd_no]->GetValue());
@@ -1328,6 +1352,9 @@ void VfdConfSlipPoint::UpdateCurrentVfdConf()
 
   if ((vfd_no >= 0) && (vfd_no < NO_OF_PUMPS))
   {
+    ///\Todo 20150630 JMH->Append Max reverse frequency items
+    mpCueMaxRevFreq[vfd_no]->SetValue(mpVirtualCueMaxRevFreq->GetValue());
+
     mpFixedFreq[vfd_no]->SetValue(mpVirtualFixedFreq->GetValue());
     mpEcoFreq[vfd_no]->SetValue(mpVirtualEcoFreq->GetValue());
     mpEcoLevel[vfd_no]->SetValue(mpVirtualEcoLevel->GetValue());

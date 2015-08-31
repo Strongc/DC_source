@@ -557,10 +557,10 @@ void DDA::HandleDDAMeasuredValues()
     mpChemicalTotalDosed->SetValue(value/1000000.0f + mLastChemicalTotalDosed);     //ml -> m3
     mpRunningDosingVolume->SetValue((U32)(mpChemicalTotalDosed->GetValue()*1000000));    //m3 -> ml
   }
-  else
-  {
-    mpChemicalTotalDosed->SetQuality(DP_NOT_AVAILABLE);
-  }
+  //else
+  //{
+    //mpChemicalTotalDosed->SetQuality(DP_NOT_AVAILABLE);
+  //}
 }
 
 void DDA::SetDDADataAvailability(DP_QUALITY_TYPE quality)

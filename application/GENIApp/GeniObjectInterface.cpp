@@ -237,7 +237,9 @@ const int vfd_setup_ids[][6] =
   {SUBJECT_ID_VFD_1_PID_FIXED_SETPOINT    , SUBJECT_ID_VFD_2_PID_FIXED_SETPOINT    , SUBJECT_ID_VFD_3_PID_FIXED_SETPOINT    , SUBJECT_ID_VFD_4_PID_FIXED_SETPOINT    , SUBJECT_ID_VFD_5_PID_FIXED_SETPOINT    , SUBJECT_ID_VFD_6_PID_FIXED_SETPOINT    },
   {SUBJECT_ID_VFD_1_ECONOMY_MIN_FREQUENCY , SUBJECT_ID_VFD_2_ECONOMY_MIN_FREQUENCY , SUBJECT_ID_VFD_3_ECONOMY_MIN_FREQUENCY , SUBJECT_ID_VFD_4_ECONOMY_MIN_FREQUENCY , SUBJECT_ID_VFD_5_ECONOMY_MIN_FREQUENCY , SUBJECT_ID_VFD_6_ECONOMY_MIN_FREQUENCY },
   {SUBJECT_ID_VFD_1_FIXED_FREQUENCY       , SUBJECT_ID_VFD_2_FIXED_FREQUENCY       , SUBJECT_ID_VFD_3_FIXED_FREQUENCY       , SUBJECT_ID_VFD_4_FIXED_FREQUENCY       , SUBJECT_ID_VFD_5_FIXED_FREQUENCY       , SUBJECT_ID_VFD_6_FIXED_FREQUENCY       },
-  {SUBJECT_ID_VFD_1_ECONOMY_SELF_LEARNING_ENABLED , SUBJECT_ID_VFD_2_ECONOMY_SELF_LEARNING_ENABLED , SUBJECT_ID_VFD_3_ECONOMY_SELF_LEARNING_ENABLED , SUBJECT_ID_VFD_4_ECONOMY_SELF_LEARNING_ENABLED , SUBJECT_ID_VFD_5_ECONOMY_SELF_LEARNING_ENABLED , SUBJECT_ID_VFD_6_ECONOMY_SELF_LEARNING_ENABLED}
+  {SUBJECT_ID_VFD_1_ECONOMY_SELF_LEARNING_ENABLED , SUBJECT_ID_VFD_2_ECONOMY_SELF_LEARNING_ENABLED , SUBJECT_ID_VFD_3_ECONOMY_SELF_LEARNING_ENABLED , SUBJECT_ID_VFD_4_ECONOMY_SELF_LEARNING_ENABLED , SUBJECT_ID_VFD_5_ECONOMY_SELF_LEARNING_ENABLED , SUBJECT_ID_VFD_6_ECONOMY_SELF_LEARNING_ENABLED},
+  ///\Todo 20150630 JMH->Append Max reverse frequency in vfd setup object
+  {SUBJECT_ID_VFD_MAX_REVERSE_FREQUENCY_1 , SUBJECT_ID_VFD_MAX_REVERSE_FREQUENCY_2 , SUBJECT_ID_VFD_MAX_REVERSE_FREQUENCY_3 , SUBJECT_ID_VFD_MAX_REVERSE_FREQUENCY_4 , SUBJECT_ID_VFD_MAX_REVERSE_FREQUENCY_5 , SUBJECT_ID_VFD_MAX_REVERSE_FREQUENCY_6 }
 };
 
 const int EnergyTestSetupSubjectIds[][6] =
@@ -644,6 +646,8 @@ const int OverflowSetupSubjectIds[][10] =
 #define ALARM_CONFIG_GAS_DETECTOR_SUB_ID_1                    ID_62+   741
 #define ALARM_CONFIG_MIXER_IO113_ALARM_SUB_ID_1               ID_62+   742
 #define ALARM_CONFIG_MIXER_IO113_WARNING_SUB_ID_1             ID_62+   743
+#define ALARM_CONFIG_DDA_FAULT_SUB_ID_1                       ID_62+   744
+#define ALARM_CONFIG_DOSING_PUMP_SUB_ID_1                     ID_62+   745
 #define ALARM_CONFIG_PUMP_GROUP_1_MOTOR_CURRENT_SENSOR_SUB_ID_1     ID_62+   461
 #define ALARM_CONFIG_PUMP_GROUP_1_VFD_SUB_ID_1                      ID_62+   648
 #define ALARM_CONFIG_PUMP_GROUP_1_TORQUE_SUB_ID_1                   ID_62+   650
@@ -930,6 +934,7 @@ const int OverflowSetupSubjectIds[][10] =
 #define CSD_TIME_OUTGOING_SUB_ID_1                            ID_62+   356
 #define CSD_TIME_INCOMMING_SUB_ID_1                           ID_62+   357
 #define ANTI_BLOCKING_SUB_ID_1                                ID_62+   660
+#define H2S_CONTROL_SETUP_SUB_ID_1                            ID_62+   661
 #define PUMP_1_SPECIFIC_ENERGY_TEST_SETUP                     ID_62+   1111
 #define PUMP_2_SPECIFIC_ENERGY_TEST_SETUP                     ID_62+   1211
 #define PUMP_3_SPECIFIC_ENERGY_TEST_SETUP                     ID_62+   1311
@@ -1235,10 +1240,11 @@ const int OverflowSetupSubjectIds[][10] =
 #define ANTI_BLOCKING_STATUS_PUMP_6_SUB_ID_1                  ID_65+  1622
 
 // Object type ID
-#define USD_CNT_OBJ_TYPE          1170
-#define PTC_IN_OBJ_TYPE           1174
-#define EXTRA_OVER_FLOW_SETUP     1171
-#define CONFIG_SETUP_ID_CODE      1169
+#define USD_CNT_OBJ_TYPE                    1170
+#define PTC_IN_OBJ_TYPE                     1174
+#define EXTRA_OVER_FLOW_SETUP               1171
+#define CONFIG_SETUP_ID_CODE                1169
+#define H2S_CONTROL_SETUP_OBJ_TYPE          1175
 
 /*****************************************************************************
   TYPE DEFINES
@@ -1939,6 +1945,12 @@ bool GeniObjectInterface::GetObject(U8 id, U16 subId)
       break;
     case ALARM_CONFIG_MIXER_IO113_WARNING_SUB_ID_1:
       GetAlarmConfig(SUBJECT_ID_DUMMY_ALARM_CONF);//TODO IO113 GetAlarmConfig(SUBJECT_ID_SYS_ALARM_MIXER_IO113_WARNING_ALARM_CONF);
+      break;
+    case ALARM_CONFIG_DDA_FAULT_SUB_ID_1:
+      GetAlarmConfig(SUBJECT_ID_SYS_ALARM_DDA_FAULT_ALARM_CONF);
+      break;
+    case ALARM_CONFIG_DOSING_PUMP_SUB_ID_1:
+      GetAlarmConfig(SUBJECT_ID_SYS_ALARM_DOSING_PUMP_ALARM_CONF);
       break;
     case ALARM_CONFIG_COMBI_ALARM_1_SUB_ID_1 :
       GetAlarmConfig(703);
@@ -2735,6 +2747,9 @@ bool GeniObjectInterface::GetObject(U8 id, U16 subId)
       break;
     case ANTI_BLOCKING_SUB_ID_1:
       GetAntiBlockingSetup();
+      break;
+    case H2S_CONTROL_SETUP_SUB_ID_1:
+      GetH2SControlSetup();
       break;
     case PUMP_1_SPECIFIC_ENERGY_TEST_SETUP:
       GetSpecificEnergyTestSetup(0);
@@ -3550,6 +3565,12 @@ bool GeniObjectInterface::HandleReceivedObj(U8 id, U16 subId)
     case ALARM_CONFIG_MIXER_IO113_WARNING_SUB_ID_1:
       HandleAlarmConfig(SUBJECT_ID_DUMMY_ALARM_CONF);//TODO IO113 HandleAlarmConfig(SUBJECT_ID_SYS_ALARM_MIXER_IO113_WARNING_ALARM_CONF);
       break;
+    case ALARM_CONFIG_DDA_FAULT_SUB_ID_1:
+      HandleAlarmConfig(SUBJECT_ID_SYS_ALARM_DDA_FAULT_ALARM_CONF);
+      break;
+    case ALARM_CONFIG_DOSING_PUMP_SUB_ID_1:
+      HandleAlarmConfig(SUBJECT_ID_SYS_ALARM_DOSING_PUMP_ALARM_CONF);
+      break;
     case ALARM_CONFIG_COMBI_ALARM_1_SUB_ID_1 :
       HandleAlarmConfig(703);
       break;
@@ -4301,6 +4322,9 @@ bool GeniObjectInterface::HandleReceivedObj(U8 id, U16 subId)
     case ANTI_BLOCKING_SUB_ID_1:
       SetAntiBlockingSetup();
       break;
+    case H2S_CONTROL_SETUP_SUB_ID_1:
+      SetH2SControlSetup();
+      break;
     case PUMP_1_SPECIFIC_ENERGY_TEST_SETUP:
       SetSpecificEnergyTestSetup(0);
       break;
@@ -4581,6 +4605,8 @@ bool GeniObjectInterface::FirstSubIdInObject(U8 id, U16 subId)
     case ALARM_CONFIG_GAS_DETECTOR_SUB_ID_1:
     case ALARM_CONFIG_MIXER_IO113_ALARM_SUB_ID_1:
     case ALARM_CONFIG_MIXER_IO113_WARNING_SUB_ID_1:
+    case ALARM_CONFIG_DDA_FAULT_SUB_ID_1: 
+    case ALARM_CONFIG_DOSING_PUMP_SUB_ID_1:
 
     /* Input/Output */
     case ANA_IN_CONFIG_1_SUB_ID_1 :
@@ -4799,6 +4825,7 @@ bool GeniObjectInterface::FirstSubIdInObject(U8 id, U16 subId)
     case CSD_TIME_OUTGOING_SUB_ID_1:
     case CSD_TIME_INCOMMING_SUB_ID_1:
     case ANTI_BLOCKING_SUB_ID_1:
+    case H2S_CONTROL_SETUP_SUB_ID_1:
     case PUMP_1_SPECIFIC_ENERGY_TEST_SETUP:
     case PUMP_2_SPECIFIC_ENERGY_TEST_SETUP:
     case PUMP_3_SPECIFIC_ENERGY_TEST_SETUP:
@@ -5948,6 +5975,8 @@ void GeniObjectInterface::GetVfdSetup(int pumpNo)
   InsertFloatInObjBuf(&i, vfd_setup_ids[j++][pumpNo], false); // SUBJECT_ID_VFD_._ECONOMY_MIN_FREQUENCY
   InsertFloatInObjBuf(&i, vfd_setup_ids[j++][pumpNo], false); // SUBJECT_ID_VFD_._FIXED_FREQUENCY
   InsertBoolInObjBuf(&i, vfd_setup_ids[j++][pumpNo], false); // SUBJECT_ID_VFD_._ECONOMY_SELF_LEARNING_ENABLED
+  ///\Todo 20150630 JMH->Append Max reverse frequency in vfd setup object
+  InsertFloatInObjBuf(&i, vfd_setup_ids[j++][pumpNo], false); // SUBJECT_ID_VFD_MAX_REVERSE_FREQUENCY
 
   InsertObjectHeader(i, 1050, 1);
 }
@@ -6024,6 +6053,8 @@ void GeniObjectInterface::SetVfdSetup(int pumpNo)
   GetFloatFromObjBuf(&i, vfd_setup_ids[j++][pumpNo]); // SUBJECT_ID_VFD_._ECONOMY_MIN_FREQUENCY
   GetFloatFromObjBuf(&i, vfd_setup_ids[j++][pumpNo]); // SUBJECT_ID_VFD_._FIXED_FREQUENCY
   GetBoolFromObjBuf(&i, vfd_setup_ids[j++][pumpNo]); // SUBJECT_ID_VFD_._ECONOMY_SELF_LEARNING_ENABLED
+  ///\Todo 20150630 JMH->Append Max reverse frequency in vfd setup object
+  GetFloatFromObjBuf(&i, vfd_setup_ids[j++][pumpNo]); // SUBJECT_ID_VFD_MAX_REVERSE_FREQUENCY
 }
 
 
@@ -6109,6 +6140,38 @@ void GeniObjectInterface::SetAntiBlockingSetup(void)
   GetFloatFromObjBuf(&i, SUBJECT_ID_ANTIBLOCK_ACCEPTABLE_POWER_VARIATION);
   GetFloatFromObjBuf(&i, SUBJECT_ID_ANTIBLOCK_ACCEPTABLE_COSPHI_VARIATION);
   GetU32FromObjBuf(&i, SUBJECT_ID_ANTIBLOCK_DETECTION_DELAY);
+}
+
+/*****************************************************************************
+ * Function - GetH2SControlSetup
+ * DESCRIPTION:
+ *
+ *****************************************************************************/
+void GeniObjectInterface::GetH2SControlSetup(void)
+{
+  int i = 6;
+
+  InsertU32InObjBuf(&i, SUBJECT_ID_H2S_LEVEL_ACT, false);
+  InsertFloatInObjBuf(&i, SUBJECT_ID_DOSING_FEED_TANK_LEVEL, false);
+  InsertFloatInObjBuf(&i, SUBJECT_ID_CHEMICAL_TOTAL_DOSED, false);
+  InsertEnumInObjBuf(&i, SUBJECT_ID_DOSING_PUMP_TYPE, false);
+
+  InsertObjectHeader(i, H2S_CONTROL_SETUP_OBJ_TYPE, 1);
+}
+
+/*****************************************************************************
+ * Function - SetH2SControlSetup 
+ * DESCRIPTION:
+ *
+ *****************************************************************************/
+void GeniObjectInterface::SetH2SControlSetup(void)
+{
+  int i = 6;
+
+  GetU32FromObjBuf(&i, SUBJECT_ID_H2S_LEVEL_ACT);
+  GetFloatFromObjBuf(&i, SUBJECT_ID_DOSING_FEED_TANK_LEVEL);
+  GetFloatFromObjBuf(&i, SUBJECT_ID_CHEMICAL_TOTAL_DOSED);
+  GetEnumFromObjBuf(&i, SUBJECT_ID_DOSING_PUMP_TYPE);
 }
 
 /*****************************************************************************
@@ -6266,6 +6329,11 @@ void GeniObjectInterface::GetPitStatus(void)
   InsertBoolInObjBuf(&i, SUBJECT_ID_MIXER_LEAKAGE, false);
   InsertU32InObjBuf(&i, GENI_VALUE_NA);//Mixer future use (U32)
   */
+
+  i = i + 4 + 1 + 4;  // above 3 mixer items not added, so here increase i manually
+  InsertFloatInObjBuf(&i, SUBJECT_ID_H2S_LEVEL_ACT, true);
+  InsertFloatInObjBuf(&i, SUBJECT_ID_CHEMICAL_TOTAL_DOSED, true);
+  
 
   InsertObjectHeader(i, 1151, 1);
 }
@@ -7701,6 +7769,8 @@ void GeniObjectInterface::GetSystemBasicConfig(void)
   {
     InsertWordInObjBuf(&i, (U16)GENI_VALUE_NA);
   }
+
+  InsertBoolInObjBuf(&i, SUBJECT_ID_DOSING_PUMP_INSTALLED, false);
 
   InsertObjectHeader(i, 1031, 1);
 }

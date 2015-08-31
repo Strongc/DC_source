@@ -119,7 +119,8 @@ EXTERN void PowerDownTask(void)
 
   // Watch dog is reinitiated and started
   FEED_DOG();
-  WATCH_DOG_INIT_1_SEC();
+  ///\Todo 20150604 JMH->Fix Reboot Issue
+  //WATCH_DOG_INIT_1_SEC();
 
   // Kill program!!!!
   while (1)

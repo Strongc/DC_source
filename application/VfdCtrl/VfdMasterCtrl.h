@@ -130,6 +130,7 @@ class VfdMasterCtrl : public SubTask, public Observer
     SubjectPtr<FloatDataPoint*>   mpVfdPidFrequency;
     SubjectPtr<FloatDataPoint*>   mpVfdEnergyTestFrequency;
     SubjectPtr<FloatDataPoint*>   mpVfdFlowTrainingFrequency;
+    SubjectPtr<FloatDataPoint*>   mpVfdMaxReverseSpeed;
 
     // Outputs:
     SubjectPtr<FloatDataPoint*>   mpVfdFrequency;

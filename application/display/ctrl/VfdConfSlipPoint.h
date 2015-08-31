@@ -194,7 +194,9 @@ class VfdConfSlipPoint: public SubTask, public Observer
     SubjectPtr<FloatDataPoint*> 	                mpMeasuredUserDefinedSensor3;
 
 	SubjectPtr<BoolDataPoint*>						mpVfdInstalled[NO_OF_PUMPS];
-
+    ///\Todo JMH 20150630->Append Max reverse frequency items
+    SubjectPtr<FloatDataPoint*>                     mpCueMaxRevFreq[NO_OF_PUMPS];
+    SubjectPtr<FloatDataPoint*>                     mpVirtualCueMaxRevFreq;
 
     bool mCurrentlyUpdating;
 

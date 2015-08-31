@@ -187,13 +187,13 @@ void SmsHeartBeatCtrl::SetSubjectPointer(int id, Subject* pSubject)
     case SP_SHBC_MON:
       mpDaysED[1].Attach(pSubject);
       break;
-    case SP_SHBC_THU:
+    case SP_SHBC_TUE:
       mpDaysED[2].Attach(pSubject);
       break;
     case SP_SHBC_WED:
       mpDaysED[3].Attach(pSubject);
       break;
-    case SP_SHBC_TUE:
+    case SP_SHBC_THU:
       mpDaysED[4].Attach(pSubject);
       break;
     case SP_SHBC_FRI:

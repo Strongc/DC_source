@@ -519,6 +519,7 @@ float MpcUnits::GetFromUnitNoToStandard(float value, QUANTITY_TYPE quantity, int
       case SP_UNITS_Q_SMALL_AREA               : mUnitsDataPoints[Q_SMALL_AREA].Attach(pSubject); break;
       case SP_UNITS_Q_HIGH_VELOCITY            : mUnitsDataPoints[Q_HIGH_VELOCITY].Attach(pSubject); break;
       case SP_UNITS_Q_PARTS_PER_MILLION        : mUnitsDataPoints[Q_PARTS_PER_MILLION].Attach(pSubject); break;
+      case SP_UNITS_Q_SMALL_FLOW               : mUnitsDataPoints[Q_SMALL_FLOW].Attach(pSubject); break;
       case SP_UNITS_DEFAULT_SI_SYSTEM          : mDefaultSI.Attach(pSubject); break;
       case SP_UNITS_DEFAULT_US_SYSTEM          : mDefaultUS.Attach(pSubject); break;
     }

@@ -857,14 +857,14 @@ bool AlarmStatusCtrl::ConvertDosingPumpAlarmToGeniStatus(ALARM_ID_TYPE alarm_id,
     case ALARM_ID_PRESSURE_VALVE_LEAKAGE:                   word_no = 3; bit_no = 4; break; // 36
     case ALARM_ID_SUCTION_VALVE_LEAKAGE:                    word_no = 3; bit_no = 5; break; // 37
     case ALARM_ID_VENTING_VALVE_DEFECT:                     word_no = 3; bit_no = 6; break; // 38
-    case ALARM_ID_TIME_FOR_SERVICE:                         word_no = 3; bit_no = 7; break; // TODO 12
+    case ALARM_ID_TIME_FOR_SERVICE:                         word_no = 3; bit_no = 7; break; // 12
     case ALARM_ID_SOON_TIME_FOR_SERVICE:                    word_no = 3; bit_no = 8; break; // 33
     case ALARM_ID_CAPACITY_TOO_LOW:                         word_no = 3; bit_no = 9; break; // 17
     case ALARM_ID_DIAPHRAGM_BREAK:                          word_no = 3; bit_no = 10; break; // 19
-    case ALARM_ID_PUMP_MOTOR_BLOCKED:                       word_no = 3; bit_no = 11; break; // TODO 51
+    case ALARM_ID_PUMP_MOTOR_BLOCKED:                       word_no = 3; bit_no = 11; break; // 51
     case ALARM_ID_PRE_EMPTY_TANK:                           word_no = 3; bit_no = 12; break; // 206
-    case ALARM_ID_DRY_RUNNING:                              word_no = 3; bit_no = 13; break; // TODO 57
-    case ALARM_ID_FLOW_SENSOR_SIGNAL_FAULT:                 word_no = 3; bit_no = 14; break; // TODO 169
+    case ALARM_ID_DRY_RUNNING:                              word_no = 3; bit_no = 13; break; // 57
+    case ALARM_ID_FLOW_SENSOR_SIGNAL_FAULT:                 word_no = 3; bit_no = 14; break; // 169
     case ALARM_ID_CABLE_BREAKDOWN_ON_ANALOGUE:              word_no = 3; bit_no = 15; break; // 47
 
     default:

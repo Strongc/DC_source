@@ -316,6 +316,9 @@ class GeniObjectInterface : public Observer, public SubTask
     void GetAntiBlockingSetup();
     void SetAntiBlockingSetup();
 
+    void GetH2SControlSetup();
+    void SetH2SControlSetup();
+
     void GetBasicPumpGroupSetup();
     void SetBasicPumpGroupSetup();
 

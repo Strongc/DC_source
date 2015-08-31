@@ -205,17 +205,25 @@ void VfdMasterCtrl::RunSubTask()
     // Validate and update frequency
     if (vfd_start == true)
     {
-      if (vfd_frequency < mpVfdMinFrequency->GetValue())
+      ///\Todo 20150525 JMH->Use anti-blocking max reverse speed instead of max limit
+      if (vfd_reverse == true)
       {
-        vfd_frequency = mpVfdMinFrequency->GetValue();
+        //Nothing Here
       }
-      if (vfd_frequency > mpVfdMaxFrequency->GetValue())
+      else
       {
-        vfd_frequency = mpVfdMaxFrequency->GetValue();
-      }
-      if (mpVfdReactionMode->GetValue() == VFD_REACTION_MODE_MAX_SPEED && mpNoOfRunningPumps->GetValue() > 1)
-      {
-        vfd_frequency = mpVfdMaxFrequency->GetValue();
+        if (vfd_frequency < mpVfdMinFrequency->GetValue())
+        {
+          vfd_frequency = mpVfdMinFrequency->GetValue();
+        }
+        if (vfd_frequency > mpVfdMaxFrequency->GetValue())
+        {
+          vfd_frequency = mpVfdMaxFrequency->GetValue();
+        }
+        if (mpVfdReactionMode->GetValue() == VFD_REACTION_MODE_MAX_SPEED && mpNoOfRunningPumps->GetValue() > 1)
+        {
+          vfd_frequency = mpVfdMaxFrequency->GetValue();
+        }
       }
     }
     else
@@ -250,6 +258,7 @@ void VfdMasterCtrl::ConnectToSubjects()
   mpVfdEconomyMaxLevel.Subscribe(this);
   mpVfdEconomyFrequency.Subscribe(this);
   mpVfdMaxFrequency.Subscribe(this);
+  mpVfdMaxReverseSpeed.Subscribe(this);
 }
 
 /*****************************************************************************
@@ -264,6 +273,7 @@ void VfdMasterCtrl::Update(Subject* pSubject)
   mpVfdEconomyMaxLevel.Update(pSubject);
   mpVfdEconomyFrequency.Update(pSubject);
   mpVfdMaxFrequency.Update(pSubject);
+  mpVfdMaxReverseSpeed.Update(pSubject);
 }
 
 /*****************************************************************************
@@ -347,6 +357,9 @@ void VfdMasterCtrl::SetSubjectPointer(int id, Subject* pSubject)
       break;
     case SP_VFM_VFD_FLOW_TRAINING_FREQUENCY:
       mpVfdFlowTrainingFrequency.Attach(pSubject);
+      break;
+    case SP_VFM_VFD_MAX_REVERSE_FREQUENCY:
+      mpVfdMaxReverseSpeed.Attach(pSubject);
       break;
 
     // Outputs:
@@ -464,7 +477,8 @@ VFD_OPERATION_MODE_TYPE VfdMasterCtrl::HandleAutoOperation(float &vfdFrequency, 
       break;
 
     case VFD_OPERATION_MODE_REV_FLUSH:
-      vfdFrequency = mpVfdMaxFrequency->GetValue();
+      ///\Todo 20150525 JMH->Use anti-blocking max reverse speed instead of max limit
+      vfdFrequency = mpVfdMaxReverseSpeed->GetValue();
       vfdStart = true;
       vfdReverse = true;
       break;

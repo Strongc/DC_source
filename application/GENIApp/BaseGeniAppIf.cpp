@@ -3334,7 +3334,7 @@ bool BaseGeniAppIf::SubjectToGeni(Subject* pSubject)
     gai_14_175_today_udc_counter3 = ToGeni32bitValue(mp_today_user_defined_counter_3.GetSubject(), GENI_CONVERT_ID_DIMLESS_254);
     break;
   case SUBJECT_ID_INTERLOCK_REMAIN_TIME:
-    gai_11_44_interlock_remain_time = ToGeni16bitValue(mp_interlock_remain_time.GetSubject(), GENI_CONVERT_ID_TIME_1SEC);
+    gai_11_44_interlock_remain_time = ToGeni16bitValue(mp_interlock_remain_time.GetSubject(), GENI_CONVERT_ID_TIME_1MIN);
     break;
   case SUBJECT_ID_H2S_LEVEL_ACT:
     gai_14_190_h2s_level_act = ToGeni32bitValue(mp_h2s_level_act.GetSubject(), GENI_CONVERT_ID_PERCENTAGE_1PPM);

@@ -233,7 +233,10 @@ void InterLockedCtrl::Update(Subject* pSubject)
   }
 
   ///\Todo 20150424 JMH-> Add Interlock Remain Time Here
-  mpInterLockTimeRemain->SetValue(mpTimerObjList[INTERLOCKED_TIMEOUT_TIMER]->GetSwTimerValue());
+  if (mpInterLocked->GetValue() == true)
+    mpInterLockTimeRemain->SetValue(mpTimerObjList[INTERLOCKED_TIMEOUT_TIMER]->GetSwTimerValue());
+  else
+    mpInterLockTimeRemain->SetValue(0);
 }
 
 /*****************************************************************************

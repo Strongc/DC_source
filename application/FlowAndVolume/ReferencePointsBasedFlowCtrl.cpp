@@ -361,9 +361,19 @@ float ReferencePointsBasedFlowCtrl::GetFlowAtLevel(float level)
 
       if (level < mSortedLevels[i])
       {
-        flow =  mFlowsOfLevels[i] - (mSortedLevels[i] - level) * coeff;
-        flow_found = true;
-        break;
+        if (i == 0)
+        {
+          coeff = (mFlowsOfLevels[i] - 0) / (mSortedLevels[i] - 0);
+          flow =  mFlowsOfLevels[i] - (mSortedLevels[i] - level) * coeff;
+          flow_found = true;
+          break;
+        }
+        else
+        {
+          flow =  mFlowsOfLevels[i] - (mSortedLevels[i] - level) * coeff;
+          flow_found = true;
+          break;
+        }
       }
       else if (mSortedLevels[i] < level && level < mSortedLevels[i + 1])
       {
