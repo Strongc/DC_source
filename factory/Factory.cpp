@@ -10966,23 +10966,24 @@ const DbDisplayObserverSingleSubject DISPLAY_OBSERVER_SINGLE_SUBJECT[] = {
   {6907, ObTypeOnOffCheckBox, 4545}, 
   {6909, ObTypeNumberQuantity, 4547}, 
   {6910, ObTypeAvalibleIfSet, 4556}, 
-  {6912, ObTypeWriteValueToDataPointAtKeyPressAndJumpToSpecificDisplay, 603}, 
-  {6914, ObTypeAlarmEnabledIconState, 4581}, 
-  {6915, ObTypeWarningEnabledIconState, 4581}, 
-  {6917, ObTypeWriteValueToDataPointAtKeyPressAndJumpToSpecificDisplay, 603}, 
-  {6919, ObTypeAlarmEnabledIconState, 4583}, 
-  {6920, ObTypeWarningEnabledIconState, 4583}, 
-  {6922, ObTypeModeCheckBox, 3440}, 
-  {6924, ObTypeNumberQuantity, 4560}, 
-  {6926, ObTypeNumberQuantity, 4564}, 
-  {6928, ObTypeNumberQuantity, 4565}, 
-  {6930, ObTypeOnOffCheckBox, 4556}, 
-  {6932, ObTypeNumberQuantity, 4565}, 
-  {6942, ObTypeModeCheckBox, 4558}, 
-  {6944, ObTypeModeCheckBox, 4558}
+  {6911, ObTypeAvalibleIfSet, 4558}, 
+  {6913, ObTypeWriteValueToDataPointAtKeyPressAndJumpToSpecificDisplay, 603}, 
+  {6915, ObTypeAlarmEnabledIconState, 4581}, 
+  {6916, ObTypeWarningEnabledIconState, 4581}, 
+  {6918, ObTypeWriteValueToDataPointAtKeyPressAndJumpToSpecificDisplay, 603}, 
+  {6920, ObTypeAlarmEnabledIconState, 4583}, 
+  {6921, ObTypeWarningEnabledIconState, 4583}, 
+  {6923, ObTypeModeCheckBox, 3440}, 
+  {6925, ObTypeNumberQuantity, 4560}, 
+  {6927, ObTypeNumberQuantity, 4564}, 
+  {6929, ObTypeNumberQuantity, 4565}, 
+  {6931, ObTypeOnOffCheckBox, 4556}, 
+  {6933, ObTypeNumberQuantity, 4565}, 
+  {6943, ObTypeModeCheckBox, 4558}, 
+  {6945, ObTypeModeCheckBox, 4558}
 };
 
-const int DISPLAY_OBSERVER_SINGLE_SUBJECT_CNT = 3080;
+const int DISPLAY_OBSERVER_SINGLE_SUBJECT_CNT = 3081;
 
 /**************************************************************************
  Observer Task table
@@ -12018,6 +12019,7 @@ const DbObserverSubject OBSERVER_SUBJECTS[] = {
   {4417, 193, SP_DICLV_NAME_EXTRA_FAULT_2}, 
   {4418, 193, SP_DICLV_NAME_EXTRA_FAULT_3}, 
   {4419, 193, SP_DICLV_NAME_EXTRA_FAULT_4}, 
+  {4558, 193, SP_DICLV_DOSING_PUMP_TYPE}, 
   {204, 195, SP_AICLV_FUNCTION}, 
   {343, 195, SP_AICLV_NO_OF_PUMPS}, 
   {83, 198, SP_DOCLV_FUNCTION}, 
@@ -12031,6 +12033,7 @@ const DbObserverSubject OBSERVER_SUBJECTS[] = {
   {1577, 198, SP_DOCLV_USER_IO_7}, 
   {1578, 198, SP_DOCLV_USER_IO_8}, 
   {2772, 198, SP_DOCLV_IS_HIGH_END}, 
+  {4558, 198, SP_DOCLV_DOSING_PUMP_TYPE}, 
   {132, 217, SP_RAC_ALARM_RESET_EVENT}, 
   {230, 217, SP_RAC_DIG_IN_FUNC_STATE_ALARM_RESET}, 
   {229, 218, SP_DIAC_DIG_IN_FUNC_STATE}, 
@@ -17637,7 +17640,7 @@ const DbObserverSubject OBSERVER_SUBJECTS[] = {
   {4582, 1039, SP_DDA_SYS_ALARM_DDA_FAULT_ALARM_OBJ}
 };
 
-const int OBSERVER_SUBJECTS_CNT = 6247;
+const int OBSERVER_SUBJECTS_CNT = 6249;
 
 const DbConfigSubject CONFIG_SUBJECTS_CONFIG[] = {
   {1}, // display_contrast
@@ -25588,42 +25591,42 @@ const DbComponent DISPLAY_COMPONENT[] = {
   {6908, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0}, 
   {6909, CmpTypeNumberQuantity, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0}, 
   {6910, CmpTypeAvalibleIfSet, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0}, 
-  {6911, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1212}, 
-  {6912, CmpTypeWriteValueToDataPointAtKeyPressAndJumpToSpecificDisplay, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 67, 0}, 
-  {6913, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1212}, 
-  {6914, CmpTypeAlarmEnabledIconState, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0}, 
-  {6915, CmpTypeWarningEnabledIconState, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0}, 
-  {6916, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1212}, 
-  {6917, CmpTypeWriteValueToDataPointAtKeyPressAndJumpToSpecificDisplay, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 67, 0}, 
-  {6918, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1212}, 
-  {6919, CmpTypeAlarmEnabledIconState, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0}, 
-  {6920, CmpTypeWarningEnabledIconState, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0}, 
-  {6921, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0}, 
-  {6922, CmpTypeModeCheckBox, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0}, 
-  {6923, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0}, 
-  {6924, CmpTypeNumberQuantity, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0}, 
-  {6925, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0}, 
-  {6926, CmpTypeNumberQuantity, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0}, 
-  {6927, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0}, 
-  {6928, CmpTypeNumberQuantity, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0}, 
-  {6929, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0}, 
-  {6930, CmpTypeOnOffCheckBox, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0}, 
-  {6931, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0}, 
-  {6932, CmpTypeNumberQuantity, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0}, 
-  {6933, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 178, 0}, 
-  {6934, CmpTypeGroup, 0, 0, 0, 0, 1, 0, 0, 0, 33, 239, 305, 0, 0}, 
-  {6935, CmpTypeListView, 6934, 0, 0, 0, 1, 0, 0, 0, 15, 239, 271, 0, 0}, 
-  {6936, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 179, 0}, 
-  {6937, CmpTypeGroup, 0, 0, 0, 0, 1, 0, 0, 0, 33, 239, 305, 0, 0}, 
-  {6938, CmpTypeListView, 6937, 0, 0, 0, 1, 0, 0, 0, 15, 239, 271, 0, 0}, 
-  {6939, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 137, 0}, 
-  {6940, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 1, 0, 239, 29, 0, 0}, 
-  {6941, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0}, 
-  {6942, CmpTypeModeCheckBox, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0}, 
-  {6943, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0}, 
-  {6944, CmpTypeModeCheckBox, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0}, 
-  {6945, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 143, 0}, 
-  {6946, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 35, 0}
+  {6911, CmpTypeAvalibleIfSet, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0}, 
+  {6912, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1212}, 
+  {6913, CmpTypeWriteValueToDataPointAtKeyPressAndJumpToSpecificDisplay, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 67, 0}, 
+  {6914, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1212}, 
+  {6915, CmpTypeAlarmEnabledIconState, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0}, 
+  {6916, CmpTypeWarningEnabledIconState, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0}, 
+  {6917, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1212}, 
+  {6918, CmpTypeWriteValueToDataPointAtKeyPressAndJumpToSpecificDisplay, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 67, 0}, 
+  {6919, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1212}, 
+  {6920, CmpTypeAlarmEnabledIconState, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0}, 
+  {6921, CmpTypeWarningEnabledIconState, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0}, 
+  {6922, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0}, 
+  {6923, CmpTypeModeCheckBox, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0}, 
+  {6924, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0}, 
+  {6925, CmpTypeNumberQuantity, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0}, 
+  {6926, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0}, 
+  {6927, CmpTypeNumberQuantity, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0}, 
+  {6928, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0}, 
+  {6929, CmpTypeNumberQuantity, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0}, 
+  {6930, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0}, 
+  {6931, CmpTypeOnOffCheckBox, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0}, 
+  {6932, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0}, 
+  {6933, CmpTypeNumberQuantity, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0}, 
+  {6934, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 178, 0}, 
+  {6935, CmpTypeGroup, 0, 0, 0, 0, 1, 0, 0, 0, 33, 239, 305, 0, 0}, 
+  {6936, CmpTypeListView, 6935, 0, 0, 0, 1, 0, 0, 0, 15, 239, 271, 0, 0}, 
+  {6937, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 179, 0}, 
+  {6938, CmpTypeGroup, 0, 0, 0, 0, 1, 0, 0, 0, 33, 239, 305, 0, 0}, 
+  {6939, CmpTypeListView, 6938, 0, 0, 0, 1, 0, 0, 0, 15, 239, 271, 0, 0}, 
+  {6940, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 137, 0}, 
+  {6941, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 1, 0, 239, 29, 0, 0}, 
+  {6942, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0}, 
+  {6943, CmpTypeModeCheckBox, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0}, 
+  {6944, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0}, 
+  {6945, CmpTypeModeCheckBox, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0}, 
+  {6946, CmpTypeLabel, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 47, 0}
 };
 
 const int DISPLAY_COMPONENT_CNT = 6123;
@@ -25941,8 +25944,8 @@ const DbListView DISPLAY_LISTVIEW[] = {
   {6885, 15, -1, 6103, 6100}, 
   {6895, 15, -1, 5768, 5767}, 
   {6903, 15, -1, 1813, 1821}, 
-  {6935, 15, 0, 0, 0}, 
-  {6938, 15, 0, 0, 0}
+  {6936, 15, 0, 0, 0}, 
+  {6939, 15, 0, 0, 0}
 };
 
 const int DISPLAY_LISTVIEW_CNT = 288;
@@ -26734,12 +26737,12 @@ const DbListViewColumns DISPLAY_LISTVIEW_COLUMNS[] = {
   {2, 6895, 72}, 
   {0, 6903, 164}, 
   {1, 6903, 62}, 
-  {0, 6935, 160}, 
-  {1, 6935, 64}, 
-  {2, 6935, 0}, 
-  {0, 6938, 164}, 
-  {1, 6938, 74}, 
-  {2, 6938, 0}
+  {0, 6936, 160}, 
+  {1, 6936, 64}, 
+  {2, 6936, 0}, 
+  {0, 6939, 164}, 
+  {1, 6939, 74}, 
+  {2, 6939, 0}
 };
 
 const int DISPLAY_LISTVIEW_COLUMNS_CNT = 792;
@@ -28485,11 +28488,11 @@ const DbListViewItem DISPLAY_LISTVIEW_ITEMS[] = {
   {1900, 5139, 8}, 
   {1901, 5139, 9}, 
   {1902, 5139, 10}, 
-  {1903, 5139, 11}, 
-  {2261, 5139, 12}, 
-  {2262, 5139, 13}, 
-  {2263, 5139, 14}, 
-  {2830, 5139, 15}, 
+  {2830, 5139, 11}, 
+  {1903, 5139, 12}, 
+  {2261, 5139, 13}, 
+  {2262, 5139, 14}, 
+  {2263, 5139, 15}, 
   {1904, 5163, 0}, 
   {1905, 5163, 1}, 
   {1926, 5208, 0}, 
@@ -29072,18 +29075,16 @@ const DbListViewItem DISPLAY_LISTVIEW_ITEMS[] = {
   {2814, 6895, 1}, 
   {2815, 6895, 2}, 
   {2820, 6903, 0}, 
-  {2838, 6935, 0}, 
-  {2839, 6935, 1}, 
-  {2840, 6938, 0}, 
-  {2841, 6938, 1}, 
-  {2842, 6938, 2}, 
-  {2843, 6938, 3}, 
-  {2844, 6938, 4}, 
-  {2845, 6938, 5}, 
-  {2846, 6938, 6}
+  {2838, 6936, 0}, 
+  {2839, 6936, 1}, 
+  {2840, 6939, 0}, 
+  {2841, 6939, 1}, 
+  {2842, 6939, 2}, 
+  {2843, 6939, 3}, 
+  {2844, 6939, 4}
 };
 
-const int DISPLAY_LISTVIEW_ITEMS_CNT = 2336;
+const int DISPLAY_LISTVIEW_ITEMS_CNT = 2334;
 
 const DbListViewItemComponent DISPLAY_LISTVIEW_ITEM_COMPONENTS[] = {
   {1, 1, 0, 16}, 
@@ -32444,8 +32445,6 @@ const DbListViewItemComponent DISPLAY_LISTVIEW_ITEM_COMPONENTS[] = {
   {5068, 1901, 1, 5725}, 
   {5069, 1902, 0, 5726}, 
   {5070, 1902, 1, 5727}, 
-  {6598, 1903, 0, 6921}, 
-  {6599, 1903, 1, 6922}, 
   {4191, 1904, 0, 5164}, 
   {4192, 1904, 1, 5165}, 
   {4193, 1905, 0, 5166}, 
@@ -32978,18 +32977,18 @@ const DbListViewItemComponent DISPLAY_LISTVIEW_ITEM_COMPONENTS[] = {
   {4869, 2182, 0, 5612}, 
   {4870, 2182, 2, 5613}, 
   {4855, 2182, 2, 5611}, 
-  {4856, 2182, 4, 5616}, 
   {4871, 2182, 4, 5616}, 
-  {4851, 2183, 0, 5608}, 
+  {4856, 2182, 4, 5616}, 
   {4866, 2183, 0, 5610}, 
+  {4851, 2183, 0, 5608}, 
   {4852, 2183, 2, 5609}, 
   {4867, 2183, 2, 5611}, 
   {4853, 2183, 4, 5616}, 
   {4868, 2183, 4, 5616}, 
   {4848, 2184, 0, 5606}, 
   {4849, 2184, 2, 5607}, 
-  {4865, 2184, 4, 5616}, 
   {4850, 2184, 4, 5616}, 
+  {4865, 2184, 4, 5616}, 
   {4845, 2185, 0, 5604}, 
   {4846, 2185, 2, 5605}, 
   {4847, 2185, 4, 5616}, 
@@ -33020,8 +33019,8 @@ const DbListViewItemComponent DISPLAY_LISTVIEW_ITEM_COMPONENTS[] = {
   {3835, 2194, 0, 5588}, 
   {3836, 2194, 2, 5589}, 
   {3837, 2194, 4, 4801}, 
-  {4857, 2195, 0, 5612}, 
   {4872, 2195, 0, 5614}, 
+  {4857, 2195, 0, 5612}, 
   {4858, 2195, 2, 5613}, 
   {4873, 2195, 2, 5615}, 
   {4859, 2195, 4, 5616}, 
@@ -33225,11 +33224,14 @@ const DbListViewItemComponent DISPLAY_LISTVIEW_ITEM_COMPONENTS[] = {
   {1929, 2259, 2, 2701}, 
   {1930, 2260, 1, 2702}, 
   {1931, 2260, 2, 2703}, 
-  {4183, 2262, 0, 5157}, 
-  {4184, 2262, 20, 5162}, 
-  {4185, 2263, 0, 5158}, 
-  {4186, 2263, 1, 5159}, 
-  {4187, 2263, 20, 5162}, 
+  {4183, 2261, 0, 5157}, 
+  {4184, 2261, 20, 5162}, 
+  {4185, 2262, 0, 5158}, 
+  {4186, 2262, 1, 5159}, 
+  {4187, 2262, 20, 5162}, 
+  {4188, 2263, 0, 5160}, 
+  {4189, 2263, 1, 5161}, 
+  {4190, 2263, 20, 5162}, 
   {1690, 2264, 0, 2443}, 
   {1691, 2264, 1, 2444}, 
   {5075, 2266, 0, 5729}, 
@@ -33570,8 +33572,8 @@ const DbListViewItemComponent DISPLAY_LISTVIEW_ITEM_COMPONENTS[] = {
   {5423, 2491, 0, 5975}, 
   {5424, 2491, 1, 5976}, 
   {5439, 2491, 3, 3259}, 
-  {5453, 2492, 0, 6057}, 
   {4860, 2492, 0, 5614}, 
+  {5453, 2492, 0, 6057}, 
   {5454, 2492, 2, 6058}, 
   {4861, 2492, 2, 5615}, 
   {4862, 2492, 4, 5616}, 
@@ -34346,46 +34348,47 @@ const DbListViewItemComponent DISPLAY_LISTVIEW_ITEM_COMPONENTS[] = {
   {6585, 2823, 1, 6907}, 
   {4051, 2824, 0, 4978}, 
   {4052, 2824, 1, 4979}, 
-  {6588, 2826, 0, 6911}, 
-  {6589, 2826, 1, 6912}, 
-  {6590, 2827, 0, 6913}, 
-  {6591, 2827, 1, 6914}, 
-  {6592, 2827, 2, 6915}, 
-  {6593, 2828, 0, 6916}, 
-  {6594, 2828, 1, 6917}, 
-  {6595, 2829, 0, 6918}, 
-  {6596, 2829, 1, 6919}, 
-  {6597, 2829, 2, 6920}, 
-  {4188, 2830, 0, 5160}, 
-  {4189, 2830, 1, 5161}, 
-  {4190, 2830, 20, 5162}, 
-  {6600, 2831, 0, 6923}, 
-  {6601, 2831, 2, 6924}, 
-  {6602, 2831, 4, 6910}, 
-  {6603, 2832, 0, 6925}, 
-  {6604, 2832, 2, 6926}, 
-  {6605, 2832, 4, 6910}, 
-  {6606, 2833, 0, 6927}, 
-  {6607, 2833, 2, 6928}, 
-  {6608, 2833, 4, 6910}, 
-  {6609, 2835, 0, 6929}, 
-  {6610, 2835, 1, 6930}, 
-  {6611, 2836, 0, 6931}, 
-  {6612, 2836, 2, 6932}, 
-  {6613, 2837, 0, 6933}, 
-  {6614, 2838, 0, 6936}, 
-  {6615, 2838, 2, 6910}, 
-  {6616, 2839, 0, 6939}, 
-  {6617, 2840, 0, 6940}, 
-  {6618, 2841, 0, 6941}, 
-  {6619, 2841, 1, 6942}, 
-  {6620, 2842, 0, 6943}, 
-  {6621, 2842, 1, 6944}, 
-  {6622, 2844, 0, 6945}, 
-  {6623, 2846, 0, 6946}
+  {6588, 2826, 0, 6912}, 
+  {6589, 2826, 1, 6913}, 
+  {6590, 2827, 0, 6914}, 
+  {6591, 2827, 1, 6915}, 
+  {6592, 2827, 2, 6916}, 
+  {6593, 2828, 0, 6917}, 
+  {6594, 2828, 1, 6918}, 
+  {6595, 2829, 0, 6919}, 
+  {6596, 2829, 1, 6920}, 
+  {6597, 2829, 2, 6921}, 
+  {6598, 2830, 0, 6922}, 
+  {6599, 2830, 1, 6923}, 
+  {6600, 2830, 2, 6911}, 
+  {6601, 2831, 0, 6924}, 
+  {6602, 2831, 2, 6925}, 
+  {6603, 2831, 4, 6910}, 
+  {6604, 2832, 0, 6926}, 
+  {6605, 2832, 2, 6927}, 
+  {6606, 2832, 4, 6910}, 
+  {6607, 2833, 0, 6928}, 
+  {6608, 2833, 2, 6929}, 
+  {6609, 2833, 4, 6910}, 
+  {6610, 2835, 0, 6930}, 
+  {6611, 2835, 1, 6931}, 
+  {6612, 2836, 0, 6932}, 
+  {6613, 2836, 2, 6933}, 
+  {6614, 2836, 4, 6910}, 
+  {6615, 2837, 0, 6934}, 
+  {6616, 2838, 0, 6937}, 
+  {6617, 2838, 2, 6910}, 
+  {6618, 2839, 0, 6940}, 
+  {6619, 2840, 0, 6941}, 
+  {6620, 2841, 0, 6942}, 
+  {6621, 2841, 1, 6943}, 
+  {6622, 2842, 0, 6944}, 
+  {6623, 2842, 1, 6945}, 
+  {6624, 2844, 0, 6946}, 
+  {6625, 2844, 2, 6911}
 };
 
-const int DISPLAY_LISTVIEW_ITEM_COMPONENTS_CNT = 5297;
+const int DISPLAY_LISTVIEW_ITEM_COMPONENTS_CNT = 5299;
 
 const DbText DISPLAY_TEXT[] = {
   {4, "", 14, DEFAULT_FONT_13_LANGUAGE_DEP, 1, 0, 0}, 
@@ -37432,35 +37435,34 @@ const DbText DISPLAY_TEXT[] = {
   {6905, "", 14, DEFAULT_FONT_13_LANGUAGE_DEP, 0, 0, 0}, 
   {6906, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 2, 0, 0}, 
   {6908, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 2, 0, 0}, 
-  {6911, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 8, 0, 0}, 
-  {6913, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 8, 0, 0}, 
-  {6916, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 8, 0, 0}, 
-  {6918, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 8, 0, 0}, 
-  {6921, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 8, 0, 0}, 
-  {6923, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 2, 0, 0}, 
-  {6924, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 0, 0, 0}, 
-  {6925, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 2, 0, 0}, 
-  {6926, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 0, 0, 0}, 
-  {6927, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 2, 0, 0}, 
-  {6928, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 0, 0, 0}, 
-  {6929, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 2, 0, 0}, 
-  {6931, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 8, 0, 0}, 
-  {6932, "", 14, DEFAULT_FONT_13_LANGUAGE_DEP, 0, 0, 0}, 
-  {6933, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 8, 0, 0}, 
+  {6912, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 8, 0, 0}, 
+  {6914, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 8, 0, 0}, 
+  {6917, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 8, 0, 0}, 
+  {6919, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 8, 0, 0}, 
+  {6922, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 8, 0, 0}, 
+  {6924, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 2, 0, 0}, 
+  {6925, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 0, 0, 0}, 
+  {6926, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 2, 0, 0}, 
+  {6927, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 0, 0, 0}, 
+  {6928, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 2, 0, 0}, 
+  {6929, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 0, 0, 0}, 
+  {6930, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 2, 0, 0}, 
+  {6932, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 8, 0, 0}, 
+  {6933, "", 14, DEFAULT_FONT_13_LANGUAGE_DEP, 0, 0, 0}, 
   {6934, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 8, 0, 0}, 
   {6935, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 8, 0, 0}, 
-  {6936, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 2, 1, 0}, 
-  {6937, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 8, 0, 0}, 
+  {6936, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 8, 0, 0}, 
+  {6937, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 2, 1, 0}, 
   {6938, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 8, 0, 0}, 
-  {6939, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 2, 1, 0}, 
-  {6940, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 0, 0, 0}, 
-  {6941, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 4, 0, 0}, 
-  {6943, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 4, 0, 0}, 
-  {6945, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 1, 0, 0}, 
+  {6939, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 8, 0, 0}, 
+  {6940, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 2, 1, 0}, 
+  {6941, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 0, 0, 0}, 
+  {6942, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 4, 0, 0}, 
+  {6944, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 4, 0, 0}, 
   {6946, "", 12, DEFAULT_FONT_13_LANGUAGE_DEP, 1, 0, 0}
 };
 
-const int DISPLAY_TEXT_CNT = 3070;
+const int DISPLAY_TEXT_CNT = 3069;
 
 const DbNumber DISPLAY_NUMBER[] = {
   {348, 3}, 
@@ -38200,10 +38202,10 @@ const DbNumberQuantity DISPLAY_NUMBER_QUANTITY[] = {
   {6887, Q_TIME_SUM, 5, DEFAULT_FONT_13_LANGUAGE_INDEP, DEFAULT_FONT_13_LANGUAGE_INDEP}, 
   {6905, Q_NO_UNIT, 3, DEFAULT_FONT_13_LANGUAGE_INDEP, DEFAULT_FONT_13_LANGUAGE_INDEP}, 
   {6909, Q_FREQUENCY, 3, DEFAULT_FONT_13_LANGUAGE_INDEP, DEFAULT_FONT_13_LANGUAGE_INDEP}, 
-  {6924, Q_PARTS_PER_MILLION, 3, DEFAULT_FONT_13_LANGUAGE_INDEP, DEFAULT_FONT_13_LANGUAGE_INDEP}, 
-  {6926, Q_DEPTH, 5, DEFAULT_FONT_13_LANGUAGE_INDEP, DEFAULT_FONT_13_LANGUAGE_INDEP}, 
-  {6928, Q_VOLUME, 7, DEFAULT_FONT_13_LANGUAGE_INDEP, DEFAULT_FONT_13_LANGUAGE_INDEP}, 
-  {6932, Q_VOLUME, 7, DEFAULT_FONT_13_LANGUAGE_INDEP, DEFAULT_FONT_13_LANGUAGE_INDEP}
+  {6925, Q_PARTS_PER_MILLION, 3, DEFAULT_FONT_13_LANGUAGE_INDEP, DEFAULT_FONT_13_LANGUAGE_INDEP}, 
+  {6927, Q_DEPTH, 5, DEFAULT_FONT_13_LANGUAGE_INDEP, DEFAULT_FONT_13_LANGUAGE_INDEP}, 
+  {6929, Q_VOLUME, 7, DEFAULT_FONT_13_LANGUAGE_INDEP, DEFAULT_FONT_13_LANGUAGE_INDEP}, 
+  {6933, Q_VOLUME, 7, DEFAULT_FONT_13_LANGUAGE_INDEP, DEFAULT_FONT_13_LANGUAGE_INDEP}
 };
 
 const int DISPLAY_NUMBER_QUANTITY_CNT = 629;
@@ -40461,29 +40463,28 @@ const DbLabel DISPLAY_LABEL[] = {
   {6904, 2071}, 
   {6906, 2072}, 
   {6908, 2075}, 
-  {6911, 2085}, 
-  {6913, 2085}, 
-  {6916, 2087}, 
-  {6918, 2087}, 
-  {6921, 2091}, 
-  {6923, 2092}, 
-  {6925, 2093}, 
-  {6927, 2094}, 
-  {6929, 2095}, 
-  {6931, 2094}, 
-  {6933, 2096}, 
+  {6912, 2085}, 
+  {6914, 2085}, 
+  {6917, 2087}, 
+  {6919, 2087}, 
+  {6922, 2091}, 
+  {6924, 2092}, 
+  {6926, 2093}, 
+  {6928, 2094}, 
+  {6930, 2095}, 
+  {6932, 2094}, 
   {6934, 2096}, 
-  {6936, 2097}, 
+  {6935, 2096}, 
   {6937, 2097}, 
-  {6939, 1482}, 
-  {6940, 2098}, 
-  {6941, 2099}, 
-  {6943, 2087}, 
-  {6945, 1513}, 
-  {6946, 1341}
+  {6938, 2097}, 
+  {6940, 1482}, 
+  {6941, 2098}, 
+  {6942, 2099}, 
+  {6944, 2087}, 
+  {6946, 2100}
 };
 
-const int DISPLAY_LABEL_CNT = 2272;
+const int DISPLAY_LABEL_CNT = 2271;
 
 const DbDisplay DISPLAY[] = {
   {1, 8, 395, 1, 1, 632, 0, "1"}, 
@@ -40646,8 +40647,8 @@ const DbDisplay DISPLAY[] = {
   {175, 6686, 1977, 1, 0, 6687, 0, "4.5.8"}, 
   {176, 6721, 1985, 1, 0, 6722, 0, "4.4.7"}, 
   {177, 6796, 2023, 1, 0, 6798, 0, "4.4.7.1"}, 
-  {178, 6934, 2096, 1, 0, 6935, 0, "4.2.14"}, 
-  {179, 6937, 2097, 1, 0, 6938, 0, "4.2.14.1"}
+  {178, 6935, 2096, 1, 0, 6936, 0, "4.2.14"}, 
+  {179, 6938, 2097, 1, 0, 6939, 0, "4.2.14.1"}
 };
 
 const int DISPLAY_CNT = 162;
@@ -41299,9 +41300,9 @@ const DbModeCheckBox DISPLAY_MODE_CHECK_BOX[] = {
   {6880, 50}, 
   {6884, 50}, 
   {6902, 4}, 
-  {6922, 11}, 
-  {6942, 0}, 
-  {6944, 1}
+  {6923, 11}, 
+  {6943, 0}, 
+  {6945, 1}
 };
 
 const int DISPLAY_MODE_CHECK_BOX_CNT = 608;
@@ -41784,10 +41785,11 @@ const DbAvailable DISPLAY_AVAILABLE[] = {
   {6278, 5}, 
   {6279, 5}, 
   {6888, 1}, 
-  {6910, 1}
+  {6910, 1}, 
+  {6911, 1}
 };
 
-const int DISPLAY_AVAILABLE_CNT = 478;
+const int DISPLAY_AVAILABLE_CNT = 479;
 
 const DbImage DISPLAY_IMAGE[] = {
   {731, &bmLargePitLeft}, 
@@ -42280,7 +42282,7 @@ const DbOnOffCheckBox DISPLAY_ONOFFCHECKBOX[] = {
   {6898, 1, 0}, 
   {6902, 1, 0}, 
   {6907, 1, 0}, 
-  {6930, 1, 0}
+  {6931, 1, 0}
 };
 
 const int DISPLAY_ONOFFCHECKBOX_CNT = 198;
@@ -42485,8 +42487,8 @@ const DbWriteValueToDataPointAtKeyPressAndJumpToSpecificDisplay WRITE_VALUE_TO_D
   {6791, 17}, 
   {6795, 18}, 
   {6812, 57}, 
-  {6912, 30}, 
-  {6917, 31}
+  {6913, 30}, 
+  {6918, 31}
 };
 
 const int WRITE_VALUE_TO_DATEPOINT_AT_KEYPRESS_AND_JUMP_TO_SPECIFIC_DISPLAY_CNT = 201;

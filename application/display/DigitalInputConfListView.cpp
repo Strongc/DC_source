@@ -149,6 +149,7 @@ namespace mpc
       InsertColumn(COLUMN_AVAILABLE_PUMPS);// availability check against selected DI for counter inputs,
                                            // or availability check against number of pumps for pump related inputs
       InsertColumn(COLUMN_VFD_INSTALLED);
+      InsertColumn(COLUMN_AVAILABLE_DOSING_PUMP);
 
       SetColumnWidth(COLUMN_LABEL, 75);
       SetColumnWidth(COLUMN_EDIT_NAME, 100);
@@ -156,6 +157,7 @@ namespace mpc
       SetColumnWidth(COLUMN_AVAILABLE_FSW, 0);
       SetColumnWidth(COLUMN_AVAILABLE_PUMPS, 0);
       SetColumnWidth(COLUMN_VFD_INSTALLED, 0);
+      SetColumnWidth(COLUMN_AVAILABLE_DOSING_PUMP, 0);
 
       int number_of_label_and_check_box_rows = LIST_VIEW_DATA_CNT - ((NO_OF_EXTRA_FAULTS * 2)+ NO_OF_USD_COUNTERS);
 
@@ -372,6 +374,11 @@ namespace mpc
               ((AvalibleIfSet*)(GetItem(i, COLUMN_VFD_INSTALLED)))->SetSubjectPointer(id, pSubject);
             }
             break;
+          case SP_DICLV_DOSING_PUMP_TYPE:
+            if (GetItem(i, COLUMN_AVAILABLE_DOSING_PUMP) && check_value == DIGITAL_INPUT_FUNC_DOSING_PUMP)
+            {
+              ((AvalibleIfSet*)(GetItem(i, COLUMN_AVAILABLE_DOSING_PUMP)))->SetSubjectPointer(id, pSubject);
+            }
         }
       }
     }
@@ -554,6 +561,13 @@ namespace mpc
           AvalibleIfSet* p_available_if_set = new AvalibleIfSet(this);
           p_available_if_set->AddCheckState(1);
           SetItem(rowIndex, COLUMN_VFD_INSTALLED, p_available_if_set);
+        }
+
+        if (checkValue == DIGITAL_INPUT_FUNC_DOSING_PUMP)
+        {
+          AvalibleIfSet* p_available_if_set = new AvalibleIfSet(this);
+          p_available_if_set->AddCheckState(1);
+          SetItem(rowIndex, COLUMN_AVAILABLE_DOSING_PUMP, p_available_if_set);
         }
 
     }

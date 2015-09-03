@@ -140,7 +140,8 @@ namespace mpc
           COLUMN_CHECK_BOX,
           COLUMN_AVAILABLE_FSW,
           COLUMN_AVAILABLE_PUMPS,
-          COLUMN_VFD_INSTALLED
+          COLUMN_VFD_INSTALLED,
+          COLUMN_AVAILABLE_DOSING_PUMP
         }COLUMN;
     };
 

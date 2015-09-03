@@ -120,11 +120,13 @@ namespace mpc
       InsertColumn(COLUMN_CHECK_BOX);
       InsertColumn(COLUMN_AVAILABLE);
       InsertColumn(COLUMN_HIGH_END_AVAILABLE);
+      InsertColumn(COLUMN_DOSING_PUMP);
 
       SetColumnWidth(COLUMN_LABEL, mpc1ST_COLUMN_WIDTH);
       SetColumnWidth(COLUMN_CHECK_BOX, mpc2ND_COLUMN_WIDTH);
       SetColumnWidth(COLUMN_AVAILABLE, mpcNO_WIDTH);
       SetColumnWidth(COLUMN_HIGH_END_AVAILABLE, mpcNO_WIDTH);
+      SetColumnWidth(COLUMN_DOSING_PUMP, mpcNO_WIDTH);
 
       for (int i = 0; i < LIST_VIEW_DATA_CNT; i++)
       {
@@ -196,6 +198,13 @@ namespace mpc
           SetItem(i, COLUMN_AVAILABLE, p_available_if_set);
         }
 
+        if (check_value == RELAY_FUNC_DOSING_PUMP)
+        {
+          p_available_if_set = new AvalibleIfSet(this);
+          p_available_if_set->AddCheckState(1);
+          SetItem(i, COLUMN_DOSING_PUMP, p_available_if_set);
+        }
+
         if (i>=FIRST_USER_IO_INDEX + USER_IO_1
           && i <= FIRST_USER_IO_INDEX + USER_IO_8)
         {
@@ -248,6 +257,12 @@ namespace mpc
         {
           ((AvalibleIfSet*)(GetItem(i, COLUMN_HIGH_END_AVAILABLE)))->SubscribtionCancelled(pSubject);
         }
+
+        if (GetItem(i, COLUMN_DOSING_PUMP))
+        {
+          ((AvalibleIfSet*)(GetItem(i, COLUMN_DOSING_PUMP)))->SubscribtionCancelled(pSubject);
+        }
+
       }
     }
     /* --------------------------------------------------
@@ -270,6 +285,15 @@ namespace mpc
             if (GetItem(i, COLUMN_AVAILABLE))
             {
               ((AvalibleIfSet*)(GetItem(i, COLUMN_AVAILABLE)))->SetSubjectPointer(Id,pSubject);
+            }
+          }
+          break;
+        case SP_DOCLV_DOSING_PUMP_TYPE:
+          for (int i = 0; i < LIST_VIEW_DATA_CNT; i++)
+          {
+            if (GetItem(i, COLUMN_DOSING_PUMP))
+            {
+              ((AvalibleIfSet*)(GetItem(i, COLUMN_DOSING_PUMP)))->SetSubjectPointer(Id,pSubject);
             }
           }
           break;
@@ -331,6 +355,11 @@ namespace mpc
         if (GetItem(i, COLUMN_HIGH_END_AVAILABLE))
         {
           ((AvalibleIfSet*)(GetItem(i, COLUMN_HIGH_END_AVAILABLE)))->ConnectToSubjects();
+        }
+
+        if (GetItem(i, COLUMN_DOSING_PUMP))
+        {
+          ((AvalibleIfSet*)(GetItem(i, COLUMN_DOSING_PUMP)))->ConnectToSubjects();
         }
       }
     }
