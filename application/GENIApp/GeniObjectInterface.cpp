@@ -963,6 +963,8 @@ const int OverflowSetupSubjectIds[][10] =
 #define EFFICIENCY_72H_SUB_ID_1                               ID_59+    80
 #define PUMPED_VOLUME_72H_SUB_ID_1                            ID_59+    90
 #define ENERGY_72H_SUB_ID_1                                   ID_59+   100
+#define H2S_LEVEL_72H_SUB_ID_1                                ID_59+   110
+#define DOSING_VOLUME_72H_SUB_ID_1                            ID_59+   120
 #define PUMP_1_OPERATING_TIME_72H_SUB_ID_1                    ID_59+   200
 #define PUMP_1_START_CNT_72H_SUB_ID_1                         ID_59+   210
 #define PUMP_1_AVG_FLOW_72H_SUB_ID_1                          ID_59+   220
@@ -2863,6 +2865,12 @@ bool GeniObjectInterface::GetObject(U8 id, U16 subId)
       break;
     case ENERGY_72H_SUB_ID_1:
       GetLogEnergy(SUBJECT_ID_ENERGY_CONSUMPTION_72H_LOG);
+      break;
+    case H2S_LEVEL_72H_SUB_ID_1:
+      GetLogI32Min(SUBJECT_ID_H2S_LEVEL_72H_LOG);
+      break;
+    case DOSING_VOLUME_72H_SUB_ID_1:
+      GetLogI32Min(SUBJECT_ID_DOSING_VOLUME_72H_LOG);
       break;
 
     case PUMP_1_OPERATING_TIME_72H_SUB_ID_1: GetLogI32Min   (SUBJECT_ID_PUMP_1_OPERATION_TIME_72H_LOG);   break;
@@ -4866,6 +4874,8 @@ bool GeniObjectInterface::FirstSubIdInObject(U8 id, U16 subId)
     case EFFICIENCY_72H_SUB_ID_1:
     case PUMPED_VOLUME_72H_SUB_ID_1:
     case ENERGY_72H_SUB_ID_1:
+    case H2S_LEVEL_72H_SUB_ID_1:
+    case DOSING_VOLUME_72H_SUB_ID_1: 
     case PUMP_1_OPERATING_TIME_72H_SUB_ID_1:
     case PUMP_1_START_CNT_72H_SUB_ID_1:
     case PUMP_1_AVG_FLOW_72H_SUB_ID_1:
@@ -6324,14 +6334,14 @@ void GeniObjectInterface::GetPitStatus(void)
   InsertU32InObjBuf(&i, SUBJECT_ID_TOTAL_USD_CNT_1, true);
   InsertU32InObjBuf(&i, SUBJECT_ID_TOTAL_USD_CNT_2, true);
   InsertU32InObjBuf(&i, SUBJECT_ID_TOTAL_USD_CNT_3, true);
-  /*//TODO IO113
-  InsertFloatInObjBuf(&i, SUBJECT_ID_MIXER_SPEED, true);
-  InsertBoolInObjBuf(&i, SUBJECT_ID_MIXER_LEAKAGE, false);
+  //TODO IO113
+  InsertU32InObjBuf(&i, GENI_VALUE_NA);
+  InsertBoolInObjBuf(&i, false);
   InsertU32InObjBuf(&i, GENI_VALUE_NA);//Mixer future use (U32)
-  */
-
-  i = i + 4 + 1 + 4;  // above 3 mixer items not added, so here increase i manually
+  
+  //i = i + 4 + 1 + 4;  // above 3 mixer items not added, so here increase i manually
   InsertFloatInObjBuf(&i, SUBJECT_ID_H2S_LEVEL_ACT, true);
+  InsertFloatInObjBuf(&i, SUBJECT_ID_DOSING_FEED_TANK_LEVEL, true);
   InsertFloatInObjBuf(&i, SUBJECT_ID_CHEMICAL_TOTAL_DOSED, true);
   
 
@@ -7799,6 +7809,7 @@ void GeniObjectInterface::SetSystemBasicConfig(void)
   {
     pBool->SetValue(main_frequency_is_60_hz);
   }
+  GetBoolFromObjBuf(&i, SUBJECT_ID_DOSING_PUMP_INSTALLED);
 }
 
 /*****************************************************************************

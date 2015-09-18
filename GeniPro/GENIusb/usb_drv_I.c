@@ -57,8 +57,8 @@
 #define USB_MAX_PACKET_SIZE  64
 #define GENI_TGM_MAX_SIZE    255 
 #define USB_TASK_STACK_SIZE  5000
-#define USBTX_TASK_PRIORITY  105 // Must be equal to or higher than GENI_SYS task priority (= 100)
-#define USBRX_TASK_PRIORITY  115
+#define USBTX_TASK_PRIORITY  205 // Must be equal to or higher than GENI_SYS task priority (= 100)
+#define USBRX_TASK_PRIORITY  215
 #define USB_TXSETUP_EVENT    1
 
 /****************************************************************************/
@@ -317,7 +317,8 @@ void USBInterfaceReceiveTask(void)
   {
     while ((USB_GetState() & (USB_STAT_CONFIGURED | USB_STAT_SUSPENDED)) != USB_STAT_CONFIGURED) 
     {
-      USB_OS_Delay(50);
+      ///\Todo 20150723 -> Change from 50ms to 150ms dur to larger Objcet
+      USB_OS_Delay(150);
     }
 
     num_bytes_received = 0;

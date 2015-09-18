@@ -75,7 +75,7 @@
                                        // Disable: Don't use RTOS
 // defines for using EMB_OS
 #define GENI_TASK_STACK_SIZE  1500       // Specify stack size in integers
-#define GENI_TASK_PRIORITY    100      // [0;255] | Specify Geni Task priority
+#define GENI_TASK_PRIORITY    200      // [0;255] | Specify Geni Task priority
 
 /*****************************************************************************/
 /* Configuration of event system in Geni_sys:                                */

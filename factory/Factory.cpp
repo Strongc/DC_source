@@ -5292,7 +5292,7 @@ const DbIntDataPoint INT_DATAPOINTS[] = {
   {1254, DP_MIN_MAX_TYPE_U8, 1, 1, 1, Q_NO_UNIT}, 
   {1256, DP_MIN_MAX_TYPE_U8, 1, 1, 1, Q_NO_UNIT}, 
   {1257, DP_MIN_MAX_TYPE_U8, 1, 1, 1, Q_NO_UNIT}, 
-  {1258, DP_MIN_MAX_TYPE_U8, 4, 4, 4, Q_NO_UNIT}, 
+  {1258, DP_MIN_MAX_TYPE_U8, 6, 6, 6, Q_NO_UNIT}, 
   {1259, DP_MIN_MAX_TYPE_U8, 0, 0, 0, Q_NO_UNIT}, 
   {1266, DP_MIN_MAX_TYPE_U32, 0, 63, 63, Q_NO_UNIT}, 
   {1267, DP_MIN_MAX_TYPE_U32, 0, 63, 63, Q_NO_UNIT}, 
@@ -6972,10 +6972,10 @@ const DbAlarmConfig ALARM_CONFIGS[] = {
   {4477, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1.0, SUBJECT_TYPE_BOOLDATAPOINT, ALARM_CRITERIA_E, 1, 1, 0, 0, 0, 0, 1, 1, Q_NO_UNIT}, 
   {4478, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1.0, SUBJECT_TYPE_BOOLDATAPOINT, ALARM_CRITERIA_E, 1, 1, 0, 0, 0, 0, 1, 1, Q_NO_UNIT}, 
   {4505, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1.0, SUBJECT_TYPE_BOOLDATAPOINT, ALARM_CRITERIA_E, 1, 1, 0, 0, 0, 0, 1, 1, Q_NO_UNIT}, 
-  {4577, 0, 0, 0, 0, 0, 0, 1, 0, 1, .0, SUBJECT_TYPE_BOOLDATAPOINT, ALARM_CRITERIA_E, 1, 1, 0, 0, 0, 0, 1, 1, Q_NO_UNIT}, 
-  {4579, 0, 0, 0, 0, 0, 0, 1, 0, 1, .0, SUBJECT_TYPE_BOOLDATAPOINT, ALARM_CRITERIA_E, 1, 1, 0, 0, 0, 0, 1, 1, Q_NO_UNIT}, 
-  {4581, 0, 0, 0, 0, 0, 0, 1, 1, 1, .0, SUBJECT_TYPE_BOOLDATAPOINT, ALARM_CRITERIA_E, 1, 1, 0, 0, 0, 0, 1, 1, Q_NO_UNIT}, 
-  {4583, 0, 0, 0, 0, 0, 0, 1, 1, 1, .0, SUBJECT_TYPE_BOOLDATAPOINT, ALARM_CRITERIA_E, 1, 1, 0, 0, 0, 0, 1, 1, Q_NO_UNIT}
+  {4577, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1.0, SUBJECT_TYPE_BOOLDATAPOINT, ALARM_CRITERIA_E, 1, 1, 0, 0, 0, 0, 1, 1, Q_NO_UNIT}, 
+  {4579, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1.0, SUBJECT_TYPE_BOOLDATAPOINT, ALARM_CRITERIA_E, 1, 1, 0, 0, 0, 0, 1, 1, Q_NO_UNIT}, 
+  {4581, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1.0, SUBJECT_TYPE_BOOLDATAPOINT, ALARM_CRITERIA_E, 1, 1, 0, 0, 0, 0, 1, 1, Q_NO_UNIT}, 
+  {4583, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1.0, SUBJECT_TYPE_BOOLDATAPOINT, ALARM_CRITERIA_E, 1, 1, 0, 0, 0, 0, 1, 1, Q_NO_UNIT}
 };
 
 const int ALARM_CONFIGS_CNT = 97;
@@ -40463,25 +40463,25 @@ const DbLabel DISPLAY_LABEL[] = {
   {6904, 2071}, 
   {6906, 2072}, 
   {6908, 2075}, 
-  {6912, 2085}, 
-  {6914, 2085}, 
-  {6917, 2087}, 
-  {6919, 2087}, 
-  {6922, 2091}, 
-  {6924, 2092}, 
-  {6926, 2093}, 
-  {6928, 2094}, 
-  {6930, 2095}, 
-  {6932, 2094}, 
-  {6934, 2096}, 
-  {6935, 2096}, 
-  {6937, 2097}, 
-  {6938, 2097}, 
+  {6912, 2086}, 
+  {6914, 2086}, 
+  {6917, 2088}, 
+  {6919, 2088}, 
+  {6922, 2092}, 
+  {6924, 2093}, 
+  {6926, 2094}, 
+  {6928, 2095}, 
+  {6930, 2096}, 
+  {6932, 2095}, 
+  {6934, 2097}, 
+  {6935, 2097}, 
+  {6937, 2098}, 
+  {6938, 2098}, 
   {6940, 1482}, 
-  {6941, 2098}, 
-  {6942, 2099}, 
-  {6944, 2087}, 
-  {6946, 2100}
+  {6941, 2099}, 
+  {6942, 2100}, 
+  {6944, 2088}, 
+  {6946, 2101}
 };
 
 const int DISPLAY_LABEL_CNT = 2271;
@@ -40647,8 +40647,8 @@ const DbDisplay DISPLAY[] = {
   {175, 6686, 1977, 1, 0, 6687, 0, "4.5.8"}, 
   {176, 6721, 1985, 1, 0, 6722, 0, "4.4.7"}, 
   {177, 6796, 2023, 1, 0, 6798, 0, "4.4.7.1"}, 
-  {178, 6935, 2096, 1, 0, 6936, 0, "4.2.14"}, 
-  {179, 6938, 2097, 1, 0, 6939, 0, "4.2.14.1"}
+  {178, 6935, 2097, 1, 0, 6936, 0, "4.2.14"}, 
+  {179, 6938, 2098, 1, 0, 6939, 0, "4.2.14.1"}
 };
 
 const int DISPLAY_CNT = 162;
@@ -41899,7 +41899,7 @@ const DbUnitStrings DISPLAY_UNIT_STRINGS[] = {
   {17, 2, 1967}, 
   {17, 3, 1967}, 
   {17, 4, 1967}, 
-  {18, 0, 987}
+  {18, 0, 2078}
 };
 
 const int DISPLAY_UNIT_STRINGS_CNT = 70;
@@ -41934,15 +41934,15 @@ const DbAlarmStrings DISPLAY_ALARM_STRINGS[] = {
   {27, 779}, 
   {30, 1679}, 
   {32, 445}, 
-  {33, 2083}, 
-  {35, 2079}, 
-  {36, 2080}, 
-  {37, 2081}, 
-  {38, 2082}, 
+  {33, 2084}, 
+  {35, 2080}, 
+  {36, 2081}, 
+  {37, 2082}, 
+  {38, 2083}, 
   {40, 446}, 
   {41, 447}, 
   {42, 448}, 
-  {47, 2084}, 
+  {47, 2085}, 
   {48, 449}, 
   {49, 450}, 
   {50, 451}, 
@@ -41989,7 +41989,7 @@ const DbAlarmStrings DISPLAY_ALARM_STRINGS[] = {
   {97, 515}, 
   {98, 516}, 
   {99, 517}, 
-  {102, 2086}, 
+  {102, 2087}, 
   {104, 518}, 
   {105, 457}, 
   {106, 458}, 
@@ -41997,7 +41997,7 @@ const DbAlarmStrings DISPLAY_ALARM_STRINGS[] = {
   {111, 520}, 
   {112, 521}, 
   {113, 522}, 
-  {118, 2078}, 
+  {118, 2079}, 
   {120, 523}, 
   {121, 524}, 
   {122, 525}, 

@@ -1014,7 +1014,8 @@ void UpdateTxMailBox(void)
   else 
   {
     /* Clear Buffer Directory */
-    sn_TxBufferDesc[0].Word[0] = 0x0;
+    ///Todo 20150907 JMH->Work around USB HALT issue
+    ///sn_TxBufferDesc[0].Word[0] = 0x0;
   }
 }
 

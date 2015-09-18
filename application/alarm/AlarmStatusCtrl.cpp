@@ -259,6 +259,10 @@ void AlarmStatusCtrl::RunSubTask()
                 mSystemWarningStatus[word_idx] |= (0x1<<bit);
                 SET_BIT_HIGH(mPumpFault, 15);
               }
+              if (alarm_id == ALARM_ID_GENIBUS_IO_MODULE) // IO351 comm fault
+              {
+                mPumpMonitoringFault |= 0x80; // Dosing pump fault
+              }
             }
             break;
           default: // Handle as system alarms/warnings
@@ -315,12 +319,8 @@ void AlarmStatusCtrl::RunSubTask()
               }
               if (alarm_id == ALARM_ID_GENIBUS_IO_MODULE) // IO351 comm fault
               {
-                mPumpMonitoringFault |= 0xFF; // Pump 1+2+3+4+5+6 + Mixer + Dosing pump fault
+                mPumpMonitoringFault |= 0x7F; // Pump 1+2+3+4+5+6 + Mixer fault
               }
-              //if (alarm_id == ALARM_ID_GENIBUS_PUMP_MODULE) // Dosing pump
-              //{
-                //mPumpMonitoringFault |= (0x1<<8);  //bit7 - Monitoring fault dosing pump
-              //}
             }
             break;
         }
@@ -849,6 +849,8 @@ bool AlarmStatusCtrl::ConvertDosingPumpAlarmToGeniStatus(ALARM_ID_TYPE alarm_id,
 
   switch (alarm_id)
   {
+    // Alarm status 1:
+    case ALARM_ID_GENIBUS_IO_MODULE:                        word_no = 0;  bit_no = 11;  break;  // 226
     // Alarm status 4:
     case ALARM_ID_OVER_PRESSURE:                            word_no = 3; bit_no = 0; break; // 210
     case ALARM_ID_MEAN_PRESSURE_TO_LOW:                     word_no = 3; bit_no = 1; break; // 211
