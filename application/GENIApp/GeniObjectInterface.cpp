@@ -6340,7 +6340,7 @@ void GeniObjectInterface::GetPitStatus(void)
   InsertU32InObjBuf(&i, GENI_VALUE_NA);//Mixer future use (U32)
   
   //i = i + 4 + 1 + 4;  // above 3 mixer items not added, so here increase i manually
-  InsertFloatInObjBuf(&i, SUBJECT_ID_H2S_LEVEL_ACT, true);
+  InsertU32InObjBuf(&i, SUBJECT_ID_H2S_LEVEL_ACT, true);
   InsertFloatInObjBuf(&i, SUBJECT_ID_DOSING_FEED_TANK_LEVEL, true);
   InsertFloatInObjBuf(&i, SUBJECT_ID_CHEMICAL_TOTAL_DOSED, true);
   

@@ -125,10 +125,18 @@ void DDACtrl::RunSubTask()
   }
   
   // set reference value
-  if (mpSetDosingRef.IsUpdated())
+  if (mpSetDosingRef.IsUpdated() || mpAnyPumpRunning.IsUpdated())
   {
-    mpDDARef->SetValue((U32)(10000.0 * mpSetDosingRef->GetValue()));  // l/h -> 0.1ml/h
-    mpDosingRefAct->SetValue(mpSetDosingRef->GetValue());
+    if (mpAnyPumpRunning->GetValue())
+    {
+      mpDDARef->SetValue((U32)(10000.0 * mpSetDosingRef->GetValue()));  // l/h -> 0.1ml/h
+      mpDosingRefAct->SetValue(mpSetDosingRef->GetValue());
+    }
+    else
+    {
+      mpDDARef->SetValue(0);
+      mpDosingRefAct->SetValue(0);
+    }
   }
 
   if (mpSetH2SLevel.IsUpdated())
@@ -186,6 +194,7 @@ void DDACtrl::ConnectToSubjects()
   mpDDARef->Subscribe(this);
   mpH2SLevelAct->Subscribe(this);
   mpSetH2SLevel->Subscribe(this);
+  mpAnyPumpRunning->Subscribe(this);
   mpDDADosingFeedTankLevel->Subscribe(this);
   mpDosingPumpType->Subscribe(this);
   for (unsigned int i = FIRST_DDAC_FAULT_OBJ; i < NO_OF_DDAC_FAULT_OBJ; i++)
@@ -201,6 +210,7 @@ void DDACtrl::ConnectToSubjects()
  *****************************************************************************/
 void DDACtrl::Update(Subject* pSubject)
 {
+  mpAnyPumpRunning.Update(pSubject);
   mpDosingPumpInstalled.Update(pSubject);
   mpDosingPumpType.Update(pSubject);
   mpSetDosingRef.Update(pSubject);
@@ -243,6 +253,9 @@ void DDACtrl::SetSubjectPointer(int id, Subject* pSubject)
 {
   switch (id)
   {
+    case SP_DDAC_ANY_PUMP_RUNNING:
+      mpAnyPumpRunning.Attach(pSubject);
+      break;
     case SP_DDAC_DOSING_PUMP_INSTALLED:
       mpDosingPumpInstalled.Attach(pSubject);
       break;

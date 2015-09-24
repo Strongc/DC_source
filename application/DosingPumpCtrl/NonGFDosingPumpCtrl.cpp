@@ -130,7 +130,7 @@ void NonGFDosingPumpCtrl::RunSubTask()
     if (mpDosingPumpDigInRequest->GetValue() == DIGITAL_INPUT_FUNC_STATE_ACTIVE)
     {
       mpDosingPumpAlarmDelay[DOSING_PUMP_FAULT_OBJ]->ResetFault();
-      if (mpSetDosingRef.IsUpdated())
+      if (mpDosingRefAct.IsUpdated())
       {
         mRestartFlag = true;
       }
@@ -168,7 +168,7 @@ void NonGFDosingPumpCtrl::ConnectToSubjects()
   mpDosingPumpInstalled->Subscribe(this);
   mpDosingPumpType->Subscribe(this);
   mpChemicalTotalDosed->Subscribe(this);
-  mpSetDosingRef->Subscribe(this);
+  mpDosingRefAct->Subscribe(this);
   mpDosingPumpDigInRequest->Subscribe(this);
   for (unsigned int i = FIRST_DOSING_PUMP_FAULT_OBJ; i < NO_OF_DOSING_PUMP_FAULT_OBJ; i++)
   {
@@ -186,7 +186,7 @@ void NonGFDosingPumpCtrl::Update(Subject* pSubject)
   mpDosingPumpInstalled.Update(pSubject);
   mpDosingPumpType.Update(pSubject);
   mpChemicalTotalDosed.Update(pSubject);
-  mpSetDosingRef.Update(pSubject);
+  mpDosingRefAct.Update(pSubject);
   mpDosingPumpDigInRequest.Update(pSubject);
 
   for (unsigned int i = FIRST_DOSING_PUMP_FAULT_OBJ; i < NO_OF_DOSING_PUMP_FAULT_OBJ; i++)
@@ -245,8 +245,8 @@ void NonGFDosingPumpCtrl::SetSubjectPointer(int id, Subject* pSubject)
     case SP_DPC_RELAY_STATUS_RELAY_FUNC_DOSING_PUMP:
       mpDosingPumpStart.Attach(pSubject);
       break;
-    case SP_DPC_SET_DOSING_REF:
-      mpSetDosingRef.Attach(pSubject);
+    case SP_DPC_DOSING_REF_ACT:
+      mpDosingRefAct.Attach(pSubject);
       break;
     case SP_DPC_AO_DOSING_PUMP_SETPOINT:
       mpDosingPumpAOSetting.Attach(pSubject);
@@ -266,7 +266,7 @@ void NonGFDosingPumpCtrl::StartNonGFDosingPump()
   static U32 new_start_time = new_time.GetSecondsSince1Jan1970();
   U32 current_time = 0;
   bool run_flag = false;
-  float ref_h2s = mpSetDosingRef->GetValue();
+  float ref_h2s = mpDosingRefAct->GetValue();
 
   run_flag = (ref_h2s <= mpDosingPumpAOSetting->GetMinValue()) ? false : true;
 

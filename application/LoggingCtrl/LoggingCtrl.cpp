@@ -889,7 +889,7 @@ void LoggingCtrl::UpdateHourLog()
 
   hour_acc = mpDosingVolume1hAcc->GetValue();
   mpDosingVolume1hAcc->SetValue(0);
-  mpDosingVolume72hLog->PushValue(0.001f*hour_acc);
+  mpDosingVolume72hLog->PushValue(hour_acc);
 
   for (int pump_no = FIRST_PUMP_NO; pump_no < NO_OF_PUMPS; pump_no++)
   {
@@ -1061,8 +1061,8 @@ void LoggingCtrl::UpdateTodayAccumulators(U32 noOfHours)
   mpEnergyConsumptionTodayLog->SetValue(temp_float);
 
   temp_float = mpDosingVolume72hLog->GetSum(0, noOfHours, INVALID_MARK);
-  temp_float += 0.001f*mpDosingVolume1hAcc->GetValue();
-  mpDosingVolumeTodayLog->SetValue(temp_float);
+  temp_float += mpDosingVolume1hAcc->GetValue();
+  mpDosingVolumeTodayLog->SetValue(temp_float*0.001f);
 
   for (int pump_no = FIRST_PUMP_NO; pump_no < NO_OF_PUMPS; pump_no++)
   {

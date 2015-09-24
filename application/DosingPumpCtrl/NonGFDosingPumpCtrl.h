@@ -128,7 +128,7 @@ class NonGFDosingPumpCtrl : public SubTask, public SwTimerBaseClass
     SubjectPtr<FloatDataPoint*>                               mpChemicalTotalDosed;
     SubjectPtr<U32DataPoint*>                                 mpRunningDosingVolume;
     SubjectPtr<FloatDataPoint*>                               mpDosingVolumeTotalLog;
-    SubjectPtr<FloatDataPoint*>                               mpSetDosingRef;
+    SubjectPtr<FloatDataPoint*>                               mpDosingRefAct;
     SubjectPtr<EnumDataPoint<DIGITAL_INPUT_FUNC_STATE_TYPE>*> mpDosingPumpDigInRequest;
     SubjectPtr<FloatDataPoint*>                               mpDosingPumpAOSetting;
     SubjectPtr<BoolDataPoint*>                                mpDosingPumpStart;

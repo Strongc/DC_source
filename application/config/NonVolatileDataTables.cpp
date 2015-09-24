@@ -1251,13 +1251,12 @@ const NON_VOLATILE_SUBJECT_TYPE NON_VOLATILE_LOG_SUBJECTS[] = {
   {4542, FLASH_SAVE_VALUE}, // today_user_defined_counter_3
   {4543, FLASH_SAVE_VALUE}, // dummy_user_defined_counter1
   {4544, FLASH_SAVE_VALUE}, // dummy_user_defined_counter2
-  {4560, FLASH_SAVE_VALUE}, // h2s_level_act
   {4561, FLASH_SAVE_VALUE}, // h2s_level_today_log
   {4568, FLASH_SAVE_VALUE}, // dosing_volume_today_log
   {4570, FLASH_SAVE_VALUE} // dosing_volume_1h_acc
 };
 
-const int NON_VOLATILE_LOG_SUBJECTS_CNT = 181;
+const int NON_VOLATILE_LOG_SUBJECTS_CNT = 180;
 
 /**************************************************************************
  GSC Flash Block subjects

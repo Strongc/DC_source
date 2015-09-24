@@ -120,6 +120,7 @@ class DDACtrl : public SubTask, public SwTimerBaseClass
     ATTRIBUTE
     ********************************************************************/
 
+    SubjectPtr<BoolDataPoint*> mpAnyPumpRunning;
     SubjectPtr<BoolDataPoint*> mpDosingPumpInstalled;
     SubjectPtr<BoolDataPoint*> mpDDAInstalled;
     SubjectPtr<FloatDataPoint*> mpSetDosingRef;
