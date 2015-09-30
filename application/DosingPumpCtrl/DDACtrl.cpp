@@ -94,7 +94,7 @@ void DDACtrl::InitSubTask()
   }
   //mpH2SLevelAct->SetQuality(DP_NOT_AVAILABLE);
   mpDDAInstalled->SetValue(mpDosingPumpInstalled->GetValue() == true && (mpDosingPumpType->GetValue() == DOSING_PUMP_TYPE_DDA));
-  mpDDARef->SetValue((U32)(10000.0 * mpSetDosingRef->GetValue()));  // l/h -> 0.1ml/h
+  mpDDARef->SetValue((U32)(1000.0 * mpSetDosingRef->GetValue()));  // l/h -> 1ml/h
   ReqTaskTime();                         // Assures task is run at startup
 }
 /*****************************************************************************
@@ -127,14 +127,13 @@ void DDACtrl::RunSubTask()
   // set reference value
   if (mpSetDosingRef.IsUpdated() || mpAnyPumpRunning.IsUpdated())
   {
+    mpDDARef->SetValue((U32)(1000.0 * mpSetDosingRef->GetValue()));  // l/h -> 1ml/h
     if (mpAnyPumpRunning->GetValue())
     {
-      mpDDARef->SetValue((U32)(10000.0 * mpSetDosingRef->GetValue()));  // l/h -> 0.1ml/h
       mpDosingRefAct->SetValue(mpSetDosingRef->GetValue());
     }
     else
     {
-      mpDDARef->SetValue(0);
       mpDosingRefAct->SetValue(0);
     }
   }
@@ -144,18 +143,15 @@ void DDACtrl::RunSubTask()
     mpH2SLevelAct->SetValue(mpSetH2SLevel->GetValue());
   }
 
-  if (mpDDAInstalled->GetValue())
+  if (mpDosingPumpInstalled->GetValue())
   {
-    if (mpSetH2SFault.IsUpdated())
+    if (mpSetH2SFault->GetValue() & 0x01)   //bit0 means the fault
     {
-      if (mpSetH2SFault->GetValue() & 0x01)   //bit0 means the fault
-      {
-        mpAlarmDelay[DDA_FAULT_OBJ_H2S]->SetFault();
-      }
-      else
-      {
-        mpAlarmDelay[DDA_FAULT_OBJ_H2S]->ResetFault();
-      }
+      mpAlarmDelay[DDA_FAULT_OBJ_H2S]->SetFault();
+    }
+    else
+    {
+      mpAlarmDelay[DDA_FAULT_OBJ_H2S]->ResetFault();
     }
   }
   else

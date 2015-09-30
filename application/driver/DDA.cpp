@@ -144,8 +144,8 @@ void DDA::SetSubjectPointer(int id, Subject* pSubject)
 {
    switch(id)
    {
-     case SP_DDA_DDA_REFERENCE:
-       mpDDARef.Attach(pSubject);
+     case SP_DDA_DOSING_REF_ACT:
+       mpDosingRefAct.Attach(pSubject);
        break;
      case SP_DDA_DDA_INSTALLED:
        mpDDAInstalled.Attach(pSubject);
@@ -187,7 +187,7 @@ void DDA::SetSubjectPointer(int id, Subject* pSubject)
  *****************************************************************************/
 void DDA::Update(Subject* pSubject)
 {
-  mpDDARef.Update(pSubject);
+  mpDosingRefAct.Update(pSubject);
   mpDDAInstalled.Update(pSubject);
   mpChemicalTotalDosed.Update(pSubject);
   mpSystemAlarmResetEvent.Update(pSubject);
@@ -216,7 +216,7 @@ void DDA::Update(Subject* pSubject)
  *****************************************************************************/
 void DDA::ConnectToSubjects()
 {
-  mpDDARef->Subscribe(this);
+  mpDosingRefAct->Subscribe(this);
   mpDDAInstalled->Subscribe(this);
   mpChemicalTotalDosed->Subscribe(this);
   mpSystemAlarmResetEvent->Subscribe(this);
@@ -404,7 +404,6 @@ void DDA::RunDDA()
       break;
 
     case DDA_START:
-      //mpGeniSlaveIf->SetDDAReference(mModuleNo, mpDDARef->GetValue());
       if (ValidateSetpoint())
       {
         mpGeniSlaveIf->DDARequestStart(mModuleNo);
@@ -530,7 +529,7 @@ bool DDA::ValidateSetpoint()
     mpGeniSlaveIf->GetDDAMaxDosingCap(mModuleNo, &mMaxDosingCapacity); // For DDA, it should be 75000(0.1ml/h)
   }
 
-  set_point = mpDDARef->GetValue();
+  set_point = (U32)(10000.0 * mpDosingRefAct->GetValue());  // l/h -> 0.1ml/h
 
   if (set_point < min_capacity)
   {

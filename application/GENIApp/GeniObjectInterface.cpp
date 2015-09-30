@@ -6343,6 +6343,7 @@ void GeniObjectInterface::GetPitStatus(void)
   InsertU32InObjBuf(&i, SUBJECT_ID_H2S_LEVEL_ACT, true);
   InsertFloatInObjBuf(&i, SUBJECT_ID_DOSING_FEED_TANK_LEVEL, true);
   InsertFloatInObjBuf(&i, SUBJECT_ID_CHEMICAL_TOTAL_DOSED, true);
+  InsertU32InObjBuf(&i, SUBJECT_ID_DDA_REFERENCE, true);
   
 
   InsertObjectHeader(i, 1151, 1);

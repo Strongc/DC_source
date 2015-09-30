@@ -150,7 +150,7 @@ class DDA : public IO351, public SubTask, public SwTimerBaseClass
     // Input
     SubjectPtr<EnumDataPoint<ACTUAL_OPERATION_MODE_TYPE>*> mpOprModeDosingPump;
     SubjectPtr<EventDataPoint*>     mpSystemAlarmResetEvent;
-    SubjectPtr<U32DataPoint*>       mpDDARef;
+    SubjectPtr<FloatDataPoint*>     mpDosingRefAct;
     SubjectPtr<BoolDataPoint*>      mpDDAInstalled;
     SubjectPtr<FloatDataPoint*>     mpChemicalTotalDosed;
     SubjectPtr<U32DataPoint*>       mpRunningDosingVolume;

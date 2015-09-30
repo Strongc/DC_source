@@ -1062,7 +1062,7 @@ void LoggingCtrl::UpdateTodayAccumulators(U32 noOfHours)
 
   temp_float = mpDosingVolume72hLog->GetSum(0, noOfHours, INVALID_MARK);
   temp_float += mpDosingVolume1hAcc->GetValue();
-  mpDosingVolumeTodayLog->SetValue(temp_float*0.001f);
+  mpDosingVolumeTodayLog->SetValue(temp_float*0.001f);     //ml->l
 
   for (int pump_no = FIRST_PUMP_NO; pump_no < NO_OF_PUMPS; pump_no++)
   {
