@@ -86,6 +86,7 @@ void NonGFDosingPumpCtrl::InitSubTask()
 {
   mpChemicalTotalDosed->SetValue(mpDosingVolumeTotalLog->GetValue()/1000.f);  //l->m3
   mLastChemicalTotalDosed = mpChemicalTotalDosed->GetValue();
+  //mpRunningDosingVolume->SetValue((U32)(mpChemicalTotalDosed->GetValue()*1000000));    //m3 -> ml
   mpDosingPumpInstalled.SetUpdated();
   mRestartFlag = false;
 
@@ -267,8 +268,12 @@ void NonGFDosingPumpCtrl::StartNonGFDosingPump()
   U32 current_time = 0;
   bool run_flag = false;
   float ref_h2s = mpDosingRefAct->GetValue();
+  float max_ao_value = 0;
 
   run_flag = (ref_h2s <= mpDosingPumpAOSetting->GetMinValue()) ? false : true;
+  max_ao_value = mpDosingPumpAOSetting->GetMaxValue();
+
+  ref_h2s = ((ref_h2s*1000.0f) > max_ao_value)? max_ao_value/1000.0f : ref_h2s;
 
   if (mRestartFlag)
   {

@@ -6161,9 +6161,9 @@ void GeniObjectInterface::GetH2SControlSetup(void)
 {
   int i = 6;
 
-  InsertU32InObjBuf(&i, SUBJECT_ID_H2S_LEVEL_ACT, false);
-  InsertFloatInObjBuf(&i, SUBJECT_ID_DOSING_FEED_TANK_LEVEL, false);
-  InsertFloatInObjBuf(&i, SUBJECT_ID_CHEMICAL_TOTAL_DOSED, false);
+  //InsertU32InObjBuf(&i, SUBJECT_ID_H2S_LEVEL_ACT, false);
+  //InsertFloatInObjBuf(&i, SUBJECT_ID_DOSING_FEED_TANK_LEVEL, false);
+  //InsertFloatInObjBuf(&i, SUBJECT_ID_CHEMICAL_TOTAL_DOSED, false);
   InsertEnumInObjBuf(&i, SUBJECT_ID_DOSING_PUMP_TYPE, false);
 
   InsertObjectHeader(i, H2S_CONTROL_SETUP_OBJ_TYPE, 1);
@@ -6178,9 +6178,9 @@ void GeniObjectInterface::SetH2SControlSetup(void)
 {
   int i = 6;
 
-  GetU32FromObjBuf(&i, SUBJECT_ID_H2S_LEVEL_ACT);
-  GetFloatFromObjBuf(&i, SUBJECT_ID_DOSING_FEED_TANK_LEVEL);
-  GetFloatFromObjBuf(&i, SUBJECT_ID_CHEMICAL_TOTAL_DOSED);
+  //GetU32FromObjBuf(&i, SUBJECT_ID_H2S_LEVEL_ACT);
+  //GetFloatFromObjBuf(&i, SUBJECT_ID_DOSING_FEED_TANK_LEVEL);
+  //GetFloatFromObjBuf(&i, SUBJECT_ID_CHEMICAL_TOTAL_DOSED);
   GetEnumFromObjBuf(&i, SUBJECT_ID_DOSING_PUMP_TYPE);
 }
 

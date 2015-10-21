@@ -532,7 +532,7 @@ void AnaOutCtrl::CalculateOutput(void)
     {
       mpAnaOutOutputValue[i]->CopyValues(mpAnaOutInputValue[func].GetSubject());
 
-      if (mpConfAnaOutMin[i].IsUpdated() || mpConfAnaOutMax[i].IsUpdated())
+      //if (mpConfAnaOutMin[i].IsUpdated() || mpConfAnaOutMax[i].IsUpdated())
       {
         switch (func) 
         {

@@ -1058,6 +1058,7 @@ const NON_VOLATILE_SUBJECT_TYPE NON_VOLATILE_CONFIG_SUBJECTS[] = {
   {4558, FLASH_SAVE_VALUE}, // dosing_pump_type
   {4562, FLASH_SAVE_VALUE}, // h2s_level_yesterday_log
   {4563, FLASH_SAVE_VALUE}, // h2s_level_72h_log
+  {4566, FLASH_SAVE_VALUE}, // running_dosing_volume
   {4567, FLASH_SAVE_VALUE}, // dosing_volume_total_log
   {4569, FLASH_SAVE_VALUE}, // dosing_volume_yesterday_log
   {4571, FLASH_SAVE_VALUE}, // dosing_volume_72h_log
@@ -1068,7 +1069,7 @@ const NON_VOLATILE_SUBJECT_TYPE NON_VOLATILE_CONFIG_SUBJECTS[] = {
   {4583, FLASH_SAVE_VALUE} // sys_alarm_dosing_pump_alarm_conf
 };
 
-const int NON_VOLATILE_CONFIG_SUBJECTS_CNT = 1055;
+const int NON_VOLATILE_CONFIG_SUBJECTS_CNT = 1056;
 
 /**************************************************************************
  LOG Flash Block subjects

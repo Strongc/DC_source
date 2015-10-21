@@ -18880,6 +18880,7 @@ const DbConfigSubject CONFIG_SUBJECTS_CONFIG[] = {
   {4561}, // h2s_level_today_log
   {4562}, // h2s_level_yesterday_log
   {4563}, // h2s_level_72h_log
+  {4566}, // running_dosing_volume
   {4567}, // dosing_volume_total_log
   {4568}, // dosing_volume_today_log
   {4569}, // dosing_volume_yesterday_log
@@ -18892,7 +18893,7 @@ const DbConfigSubject CONFIG_SUBJECTS_CONFIG[] = {
   {4583} // sys_alarm_dosing_pump_alarm_conf
 };
 
-const int CONFIG_SUBJECTS_CONFIG_CNT = 1245;
+const int CONFIG_SUBJECTS_CONFIG_CNT = 1246;
 
 const DbGeniAppIfSubject GENIAPPIF_SUBJECTS[] = {
   {38}, 
