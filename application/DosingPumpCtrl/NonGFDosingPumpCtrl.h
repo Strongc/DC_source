@@ -123,8 +123,7 @@ class NonGFDosingPumpCtrl : public SubTask, public SwTimerBaseClass
     ATTRIBUTE
     ********************************************************************/
 
-    SubjectPtr<BoolDataPoint*>                                mpDosingPumpInstalled;
-    SubjectPtr<EnumDataPoint<DOSING_PUMP_TYPE_TYPE>*>         mpDosingPumpType;
+    SubjectPtr<BoolDataPoint*>                                mpAnalogDosingPumpInstalled;
     SubjectPtr<FloatDataPoint*>                               mpChemicalTotalDosed;
     SubjectPtr<U32DataPoint*>                                 mpRunningDosingVolume;
     SubjectPtr<FloatDataPoint*>                               mpDosingVolumeTotalLog;

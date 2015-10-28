@@ -123,6 +123,7 @@ class DDACtrl : public SubTask, public SwTimerBaseClass
     SubjectPtr<BoolDataPoint*> mpAnyPumpRunning;
     SubjectPtr<BoolDataPoint*> mpDosingPumpInstalled;
     SubjectPtr<BoolDataPoint*> mpDDAInstalled;
+    SubjectPtr<BoolDataPoint*> mpAnalogDosingPumpInstalled;
     SubjectPtr<FloatDataPoint*> mpSetDosingRef;
     SubjectPtr<FloatDataPoint*> mpDosingRefAct;
     SubjectPtr<U32DataPoint*> mpDDARef;

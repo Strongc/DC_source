@@ -288,7 +288,7 @@ namespace mpc
             }
           }
           break;
-        case SP_DOCLV_DOSING_PUMP_TYPE:
+        case SP_DOCLV_ANALOG_DOSING_PUMP_INSTALLED:
           for (int i = 0; i < LIST_VIEW_DATA_CNT; i++)
           {
             if (GetItem(i, COLUMN_DOSING_PUMP))

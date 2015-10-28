@@ -374,7 +374,7 @@ namespace mpc
               ((AvalibleIfSet*)(GetItem(i, COLUMN_VFD_INSTALLED)))->SetSubjectPointer(id, pSubject);
             }
             break;
-          case SP_DICLV_DOSING_PUMP_TYPE:
+          case SP_DICLV_ANALOG_DOSING_PUMP_INSTALLED:
             if (GetItem(i, COLUMN_AVAILABLE_DOSING_PUMP) && check_value == DIGITAL_INPUT_FUNC_DOSING_PUMP)
             {
               ((AvalibleIfSet*)(GetItem(i, COLUMN_AVAILABLE_DOSING_PUMP)))->SetSubjectPointer(id, pSubject);

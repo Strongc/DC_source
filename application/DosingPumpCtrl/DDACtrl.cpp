@@ -94,6 +94,7 @@ void DDACtrl::InitSubTask()
   }
   //mpH2SLevelAct->SetQuality(DP_NOT_AVAILABLE);
   mpDDAInstalled->SetValue(mpDosingPumpInstalled->GetValue() == true && (mpDosingPumpType->GetValue() == DOSING_PUMP_TYPE_DDA));
+  mpAnalogDosingPumpInstalled->SetValue(mpDosingPumpInstalled->GetValue() == true && (mpDosingPumpType->GetValue() == DOSING_PUMP_TYPE_ANALOG));
   mpDDARef->SetValue((U32)(1000.0 * mpSetDosingRef->GetValue()));  // l/h -> 1ml/h
   ReqTaskTime();                         // Assures task is run at startup
 }
@@ -122,6 +123,7 @@ void DDACtrl::RunSubTask()
       mpOprModeDosingPump->SetValue(ACTUAL_OPERATION_MODE_NOT_INSTALLED);
     }
     mpDDAInstalled->SetValue(mpDosingPumpInstalled->GetValue() == true && (mpDosingPumpType->GetValue() == DOSING_PUMP_TYPE_DDA));
+    mpAnalogDosingPumpInstalled->SetValue(mpDosingPumpInstalled->GetValue() == true && (mpDosingPumpType->GetValue() == DOSING_PUMP_TYPE_ANALOG));
   }
   
   // set reference value
@@ -263,6 +265,9 @@ void DDACtrl::SetSubjectPointer(int id, Subject* pSubject)
       break;
     case SP_DDAC_DDA_INSTALLED:
       mpDDAInstalled.Attach(pSubject);
+      break;
+    case SP_DDAC_ANALOG_DOSING_PUMP_INSTALLED:
+      mpAnalogDosingPumpInstalled.Attach(pSubject);
       break;
     case SP_DDAC_SET_H2S_FAULT:
       mpSetH2SFault.Attach(pSubject);

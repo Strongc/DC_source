@@ -87,7 +87,7 @@ void NonGFDosingPumpCtrl::InitSubTask()
   mpChemicalTotalDosed->SetValue(mpDosingVolumeTotalLog->GetValue()/1000.f);  //l->m3
   mLastChemicalTotalDosed = mpChemicalTotalDosed->GetValue();
   //mpRunningDosingVolume->SetValue((U32)(mpChemicalTotalDosed->GetValue()*1000000));    //m3 -> ml
-  mpDosingPumpInstalled.SetUpdated();
+  mpAnalogDosingPumpInstalled.SetUpdated();
   mRestartFlag = false;
 
   for (unsigned int i = FIRST_DOSING_PUMP_FAULT_OBJ; i < NO_OF_DOSING_PUMP_FAULT_OBJ; i++)
@@ -106,9 +106,6 @@ void NonGFDosingPumpCtrl::InitSubTask()
  *****************************************************************************/
 void NonGFDosingPumpCtrl::RunSubTask()
 {
-  bool non_gf_dosing_pump_installed = false;
-
-
   for (unsigned int i = FIRST_DOSING_PUMP_FAULT_OBJ; i < NO_OF_DOSING_PUMP_FAULT_OBJ; i++)
   {
     if (mDosingPumpAlarmDelayCheckFlag[i] == true)
@@ -119,14 +116,13 @@ void NonGFDosingPumpCtrl::RunSubTask()
   }
 
   //Check Dosing Setup
-  if (mpDosingPumpInstalled.IsUpdated() || mpDosingPumpType.IsUpdated())
+  if (mpAnalogDosingPumpInstalled.IsUpdated())
   {
     mLastChemicalTotalDosed = mpChemicalTotalDosed->GetValue();
     mRestartFlag = true;
   }
-  non_gf_dosing_pump_installed = (mpDosingPumpInstalled->GetValue() == true) && (mpDosingPumpType->GetValue() == DOSING_PUMP_TYPE_ANALOG);
 
-  if (non_gf_dosing_pump_installed)
+  if (mpAnalogDosingPumpInstalled->GetValue())
   {
     if (mpDosingPumpDigInRequest->GetValue() == DIGITAL_INPUT_FUNC_STATE_ACTIVE)
     {
@@ -166,8 +162,7 @@ void NonGFDosingPumpCtrl::RunSubTask()
  *****************************************************************************/
 void NonGFDosingPumpCtrl::ConnectToSubjects()
 {
-  mpDosingPumpInstalled->Subscribe(this);
-  mpDosingPumpType->Subscribe(this);
+  mpAnalogDosingPumpInstalled->Subscribe(this);
   mpChemicalTotalDosed->Subscribe(this);
   mpDosingRefAct->Subscribe(this);
   mpDosingPumpDigInRequest->Subscribe(this);
@@ -184,8 +179,7 @@ void NonGFDosingPumpCtrl::ConnectToSubjects()
  *****************************************************************************/
 void NonGFDosingPumpCtrl::Update(Subject* pSubject)
 {
-  mpDosingPumpInstalled.Update(pSubject);
-  mpDosingPumpType.Update(pSubject);
+  mpAnalogDosingPumpInstalled.Update(pSubject);
   mpChemicalTotalDosed.Update(pSubject);
   mpDosingRefAct.Update(pSubject);
   mpDosingPumpDigInRequest.Update(pSubject);
@@ -222,11 +216,8 @@ void NonGFDosingPumpCtrl::SetSubjectPointer(int id, Subject* pSubject)
 {
   switch (id)
   {
-    case SP_DPC_DOSING_PUMP_INSTALLED:
-      mpDosingPumpInstalled.Attach(pSubject);
-      break;
-    case SP_DPC_DOSING_PUMP_TYPE:
-      mpDosingPumpType.Attach(pSubject);
+    case SP_DPC_ANALOG_DOSING_PUMP_INSTALLED:
+      mpAnalogDosingPumpInstalled.Attach(pSubject);
       break;
     case SP_DPC_OPERATION_MODE_DOSING_PUMP:
       mpOprModeDosingPump.Attach(pSubject);
