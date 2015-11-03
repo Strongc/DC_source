@@ -526,7 +526,7 @@ bool DDA::ValidateSetpoint()
   U32 set_point = 0;
   if (mMaxDosingCapacity == 0xFFFFFFFF)
   {
-    mpGeniSlaveIf->GetDDAMaxDosingCap(mModuleNo, &mMaxDosingCapacity); // For DDA, it should be 75000(0.1ml/h)
+    mpGeniSlaveIf->GetDDAMaxDosingCap(mModuleNo, &mMaxDosingCapacity); // For DDA in my hand, it should be 75000(0.1ml/h)
   }
 
   set_point = (U32)(10000.0 * mpDosingRefAct->GetValue());  // l/h -> 0.1ml/h
