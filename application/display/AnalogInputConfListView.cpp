@@ -120,10 +120,12 @@ namespace mpc
       InsertColumn(COLUMN_LABEL);
       InsertColumn(COLUMN_CHECK_BOX);
       InsertColumn(COLUMN_AVAILABLE_PUMPS); // availability check against number of pumps for pump related inputs
+      InsertColumn(COLUMN_AVAILABLE_DOSING_PUMP); // availability check dosing pump installed
 
       SetColumnWidth(COLUMN_LABEL, mpc1ST_COLUMN_WIDTH);
       SetColumnWidth(COLUMN_CHECK_BOX, mpc2ND_COLUMN_WIDTH);      
       SetColumnWidth(COLUMN_AVAILABLE_PUMPS, mpc3TH_COLUMN_WIDTH);
+      SetColumnWidth(COLUMN_AVAILABLE_DOSING_PUMP, mpc3TH_COLUMN_WIDTH);
 
       for (int i = 0; i < LIST_VIEW_DATA_CNT ; i++)
       {
@@ -152,6 +154,13 @@ namespace mpc
         p_mode_check_box->SetReadOnly(false);
         p_mode_check_box->Invalidate();
         SetItem(i, COLUMN_CHECK_BOX, p_mode_check_box);
+
+        if (check_value == MEASURED_VALUE_CHEMICAL_CONTAINER)
+        {
+          p_available_if_set = new AvalibleIfSet();
+          p_available_if_set->AddCheckState(1);
+          SetItem(i, COLUMN_AVAILABLE_DOSING_PUMP, p_available_if_set);
+        }
 
         if (check_value == MEASURED_VALUE_MOTOR_CURRENT_PUMP_2
           || check_value == MEASURED_VALUE_WATER_IN_OIL_PUMP_2
@@ -234,6 +243,10 @@ namespace mpc
         {
           ((AvalibleIfSet*)(GetItem(i, COLUMN_AVAILABLE_PUMPS)))->SubscribtionCancelled(pSubject);
         }
+        if (GetItem(i, COLUMN_AVAILABLE_DOSING_PUMP))
+        {
+          ((AvalibleIfSet*)(GetItem(i, COLUMN_AVAILABLE_DOSING_PUMP)))->SubscribtionCancelled(pSubject);
+        }
       }
     }
     /* --------------------------------------------------
@@ -256,6 +269,13 @@ namespace mpc
               ((AvalibleIfSet*)(GetItem(i, COLUMN_AVAILABLE_PUMPS)))->SetSubjectPointer(Id, pSubject);
             }
             break;
+
+          case SP_AICLV_DOSING_PUMP_INSTALLED:
+            if (GetItem(i, COLUMN_AVAILABLE_DOSING_PUMP))
+            {
+              ((AvalibleIfSet*)(GetItem(i, COLUMN_AVAILABLE_DOSING_PUMP)))->SetSubjectPointer(Id, pSubject);
+            }
+            break;
         }
 
         
@@ -273,6 +293,10 @@ namespace mpc
         if (GetItem(i, COLUMN_AVAILABLE_PUMPS))
         {
           ((AvalibleIfSet*)(GetItem(i, COLUMN_AVAILABLE_PUMPS)))->ConnectToSubjects();
+        }
+        if (GetItem(i, COLUMN_AVAILABLE_DOSING_PUMP))
+        {
+          ((AvalibleIfSet*)(GetItem(i, COLUMN_AVAILABLE_DOSING_PUMP)))->ConnectToSubjects();
         }
       }
     }

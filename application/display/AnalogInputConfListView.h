@@ -129,7 +129,8 @@ namespace mpc
         {
           COLUMN_LABEL = 0,
           COLUMN_CHECK_BOX,
-          COLUMN_AVAILABLE_PUMPS
+          COLUMN_AVAILABLE_PUMPS,
+          COLUMN_AVAILABLE_DOSING_PUMP
         }COLUMN;
     };
 

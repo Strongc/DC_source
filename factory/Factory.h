@@ -48,5 +48,5 @@ extern STRING_ID GetHelpString(int helpbox_index);
 #endif
 
 // observer-subject relationId for connecting alarm datapoints to alarm control
-#define SP_AC_ALARM_DATA_POINT 4319
-#define SP_EASC_ALARM_CONFIG 4320
+#define SP_AC_ALARM_DATA_POINT 4320
+#define SP_EASC_ALARM_CONFIG 4321
